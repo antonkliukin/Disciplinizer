@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Losing View Controller-->
+        <scene sceneID="ynb-Tj-mjR">
+            <objects>
+                <viewController storyboardIdentifier="LosingViewController" id="KCX-c9-j2p" customClass="LosingViewController" customModule="Concentration_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngq-Xf-loc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to unlock the app you need to make a purchase equal to your challenge bet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQI-eX-5Cs">
+                                <rect key="frame" x="20" y="244" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE8-Ux-s2a" customClass="MainButton" customModule="Concentration_tracker" customModuleProvider="target">
+                                <rect key="frame" x="20" y="359" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b6a-ug-LXQ"/>
+                                </constraints>
+                                <state key="normal" title="Unlock App"/>
+                                <connections>
+                                    <action selector="purchaseButtonTapped:" destination="KCX-c9-j2p" eventType="touchUpInside" id="PLB-Xa-hh7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="CTWhite"/>
+                        <constraints>
+                            <constraint firstItem="aE8-Ux-s2a" firstAttribute="leading" secondItem="zmj-U1-V5h" secondAttribute="leading" constant="20" id="0Bo-Cb-fMz"/>
+                            <constraint firstItem="zmj-U1-V5h" firstAttribute="trailing" secondItem="aE8-Ux-s2a" secondAttribute="trailing" constant="20" id="JOq-d5-IBj"/>
+                            <constraint firstItem="zmj-U1-V5h" firstAttribute="trailing" secondItem="oQI-eX-5Cs" secondAttribute="trailing" constant="20" id="LG3-Pe-vSP"/>
+                            <constraint firstItem="oQI-eX-5Cs" firstAttribute="top" secondItem="zmj-U1-V5h" secondAttribute="top" constant="200" id="f4r-hg-Qnt"/>
+                            <constraint firstItem="aE8-Ux-s2a" firstAttribute="top" secondItem="oQI-eX-5Cs" secondAttribute="bottom" constant="74" id="fIX-Ru-OsB"/>
+                            <constraint firstItem="oQI-eX-5Cs" firstAttribute="leading" secondItem="zmj-U1-V5h" secondAttribute="leading" constant="20" id="xdA-aK-pM5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zmj-U1-V5h"/>
+                    </view>
+                    <connections>
+                        <outlet property="loseMessageLabel" destination="oQI-eX-5Cs" id="7Zw-5Q-8ke"/>
+                        <outlet property="purchaseButton" destination="aE8-Ux-s2a" id="o1B-q3-h7X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-CF-0vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="CTWhite">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

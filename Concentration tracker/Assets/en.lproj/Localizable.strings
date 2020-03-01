@@ -1,0 +1,47 @@
+//******************************************************************************
+// Alert
+//******************************************************************************
+"alert.example" = "Localized string";
+
+//******************************************************************************
+// Guide
+//******************************************************************************
+"guide.next" = "Next";
+"guide.skip" = "Skip";
+"guide.gotIt" = "Got it!";
+
+"guide.firstPage.content" = "This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.\n\nTo improve your motivation we challenge you to make a real bet that costs you money or time!";
+
+"guide.firstPage.title" = "Hello!";
+
+"guide.secondPage.content" = "1. Set task time.\n\n2. Make a bet. You might choose between time and money, it will highly increase your motivation!\n\n3. The main rule is simple - do not leave the app. You can lock your phone or stay on the challenge screen.";
+
+"guide.secondPage.title" = "Does your task require concentration?";
+
+"guide.thirdPage.content" = "Follow the rules, stay focused and remember — time is money and you might lose it!";
+
+"guide.thirdPage.title" = "Start the challenge!";
+
+//******************************************************************************
+// Notifications
+//******************************************************************************
+"notifications.return.title" = "Click to avoid losing!";
+"notifications.return.body" = "You will lose your challenge if don't return to the app!";
+
+//******************************************************************************
+// Songs Names
+//******************************************************************************
+
+"songNames.mettingSun" = "Metting The Sun";
+"songNames.floatingPoint" = "Floating Point";
+"songNames.leavingWonderland" = "Leaving Wonderland";
+"songNames.distantPlace" = "Distant Place";
+"songNames.pillowTalk" = "Pillow Talk";
+"songNames.longDays" = "Long Days";
+
+//******************************************************************************
+// Lose
+//******************************************************************************
+
+"purchase.buttonTitle" = "Unlock App";
+"purchase.loseMessage" = "In order to unlock the app you need to make a purchase equal to your challenge bet";

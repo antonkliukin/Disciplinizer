@@ -1,0 +1,43 @@
+PODS:
+  - Alamofire (4.8.2)
+  - KeychainAccess (3.2.0)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
+  - SwiftySound (1.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - KeychainAccess (~> 3.0)
+  - R.swift (~> 5.0)
+  - RealmSwift (~> 3.0)
+  - SwiftySound (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - KeychainAccess
+    - R.swift
+    - R.swift.Library
+    - SwiftySound
+  trunk:
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
+  SwiftySound: eb46cc2399cf7d94f58c372f38216e15e0a6de3e
+
+PODFILE CHECKSUM: 240001096643d3db3d5d505109d6cc8dd7a32f83
+
+COCOAPODS: 1.8.4
