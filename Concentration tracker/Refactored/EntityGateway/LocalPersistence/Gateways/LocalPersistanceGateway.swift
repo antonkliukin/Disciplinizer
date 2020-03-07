@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 15.02.2020.
-//  Copyright © 2020 FutureCompanyName. All rights reserved.
+//  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
 import CoreData
@@ -22,9 +22,9 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
     // MARK: - ChallengesGateway
 
     func getLastChallenge(completionHandler: @escaping GetLastChallengeEntityGatewayCompletionHandler) {
-        if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self),
-            let lastCoreDataChallenge = coreDataChallenges.last {
-            completionHandler(.success(lastCoreDataChallenge.challenge))
+        if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self) {
+            let lastCoreDataChallenge = coreDataChallenges.last
+            completionHandler(.success(lastCoreDataChallenge?.challenge))
         } else {
             completionHandler(.failure(CoreError(message: "Failed retrieving last challenge from the data base")))
             return

@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 26.10.2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import UIKit
@@ -141,9 +141,11 @@ final class ChallengeManager {
     }
 
     func finishCurrentWith(result: ChallengeResult) {
-        guard var finishedChallenge = self.activeChallenge else {
+        guard var finishedChallenge = activeChallenge else {
             return
         }
+
+        activeChallenge = nil
 
         guard finishedChallenge.finishDate == nil else {
             print("Challenge with id \(finishedChallenge.id) has already been finished")

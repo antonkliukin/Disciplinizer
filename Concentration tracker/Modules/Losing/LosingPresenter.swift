@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 09.11.2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import Foundation
@@ -30,6 +30,10 @@ final class LosingPresenter: LosingPresenterProtocol {
     }
 
     func didTapPurchase() {
+        AppLockManager.shared.changeStateTo(.unlocked)
+        view?.router?.dismiss()
+        return
+
         guard NetworkState.isConnected else {
             // TODO: Show alert
             assertionFailure("Internet connection is needed")

@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 01/09/2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import UIKit
@@ -71,7 +71,7 @@ class Router: RouterProtocol {
     func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool = false) {
         if toRoot {
             var rootVC = initialController
-            var VCsToDismiss = [rootVC]
+            var VCsToDismiss: [UIViewController] = []
 
             while let vc = rootVC.presentingViewController {
                 VCsToDismiss.append(vc)

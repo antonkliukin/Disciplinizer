@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
   struct storyboard {
     /// Storyboard `Alert`.
     static let alert = _R.storyboard.alert()
@@ -106,8 +106,6 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Losing`.
     static let losing = _R.storyboard.losing()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
     /// Storyboard `PageNavigation`.
     static let pageNavigation = _R.storyboard.pageNavigation()
     /// Storyboard `Settings`.
@@ -159,13 +157,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Losing", bundle: ...)`
     static func losing(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.losing)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     #endif
 
@@ -880,7 +871,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
     /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
     struct launchScreen {
@@ -1294,31 +1285,6 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.main` struct is generated, and contains static references to 1 localization keys.
-    struct main {
-      /// ru translation: Action
-      ///
-      /// Locales: ru
-      static let bOR9iWUYNormalTitle = Rswift.StringResource(key: "bOR-9i-wUY.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-
-      /// ru translation: Action
-      ///
-      /// Locales: ru
-      static func bOR9iWUYNormalTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("bOR-9i-wUY.normalTitle", tableName: "Main", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
-          return "bOR-9i-wUY.normalTitle"
-        }
-
-        return NSLocalizedString("bOR-9i-wUY.normalTitle", tableName: "Main", bundle: bundle, comment: "")
-      }
-
-      fileprivate init() {}
-    }
-
     fileprivate init() {}
   }
 
@@ -1399,9 +1365,6 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try losing.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
-      try main.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try pageNavigation.validate()
@@ -1553,26 +1516,6 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Losing', but couldn't be loaded.") }
         }
         if _R.storyboard.losing().losingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'losingViewController' could not be loaded from storyboard 'Losing' as 'LosingViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
-      let name = "Main"
-
-      func mainViewController(_: Void = ()) -> MainViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
-      }
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
       }
 
       fileprivate init() {}

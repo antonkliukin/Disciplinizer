@@ -3,20 +3,12 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 01/09/2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import UIKit
 
 enum Controller {
-    static func main() -> UIViewController {
-        let vc = MainViewController.fromStoryboard(.main)
-        let presenter = MainPresenter(view: vc)
-        vc.presenter = presenter
-
-        return vc
-    }
-
     static func alert(_ message: String) -> UIViewController {
         let vc = AlertViewController.fromStoryboard(.alert)
         let presenter = AlertPresenter(view: vc, message: message)

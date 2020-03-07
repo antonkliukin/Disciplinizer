@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 09/10/2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import AVFoundation
@@ -11,6 +11,7 @@ import SwiftySound
 
 protocol CreateChallengePresenterProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func startButtonTapped()
     func didChooseMode(_ mode: ChallengeMode)
     //func didSetTimer(withTimeInMinutes minutes: Double)
@@ -57,6 +58,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         purchaseManager?.getAvailiableBets { [weak self] (bets) in
             self?.view?.setupBetSlider(withPossibleBets: bets)
         }
+    }
+
+    func viewWillAppear() {
+        view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
     }
 
     private var selectedDurationInSeconds: Double {

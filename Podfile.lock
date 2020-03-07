@@ -84,11 +84,6 @@ PODS:
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
-  - Realm (3.21.0):
-    - Realm/Headers (= 3.21.0)
-  - Realm/Headers (3.21.0)
-  - RealmSwift (3.21.0):
-    - Realm (= 3.21.0)
   - SwiftySound (1.2.0)
 
 DEPENDENCIES:
@@ -97,7 +92,6 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - KeychainAccess (~> 3.0)
   - R.swift (~> 5.0)
-  - RealmSwift (~> 3.0)
   - SwiftySound (~> 1.0)
 
 SPEC REPOS:
@@ -121,8 +115,6 @@ SPEC REPOS:
     - PromisesObjC
     - R.swift
     - R.swift.Library
-    - Realm
-    - RealmSwift
     - SwiftySound
 
 SPEC CHECKSUMS:
@@ -145,10 +137,8 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  Realm: 38e9dcb19104b58407167d99f70d4995f7c16023
-  RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
   SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 6f40f04981797a485fdf9be9b96a454b88237c2e
+PODFILE CHECKSUM: 8aec97c9bde6877c310e224e7b5cfd3811ba04e9
 
 COCOAPODS: 1.8.4

@@ -9,7 +9,6 @@ target 'Concentration tracker' do
   pod 'KeychainAccess', '~> 3.0'
   pod 'R.swift', '~> 5.0'
   pod 'SwiftySound', '~> 1.0'
-  pod 'RealmSwift', '~> 3.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
 

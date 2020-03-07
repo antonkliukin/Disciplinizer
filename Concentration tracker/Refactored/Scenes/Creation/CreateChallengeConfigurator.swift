@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 05.03.2020.
-//  Copyright © 2020 FutureCompanyName. All rights reserved.
+//  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
 import Foundation

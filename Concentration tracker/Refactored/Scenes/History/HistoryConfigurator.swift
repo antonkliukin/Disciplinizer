@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 29.02.2020.
-//  Copyright © 2020 FutureCompanyName. All rights reserved.
+//  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,6 @@ class HistoryConfigurator: HistoryConfiguratorProtocol {
 
         let displayChallengesUseCase = DisplayChallengesListUseCase(challengesGateway: coreDataChallengesGateway)
         let deleteChallengeUseCase = DeleteChallengeUseCase(challengeGateway: coreDataChallengesGateway)
-
-        let saveChallengeUseCase = AddChallengeUseCase(challengesGateway: coreDataChallengesGateway)
 
         let presenter = HistoryPresenter(view: historyViewController,
                                          displayChallengesUseCase: displayChallengesUseCase,

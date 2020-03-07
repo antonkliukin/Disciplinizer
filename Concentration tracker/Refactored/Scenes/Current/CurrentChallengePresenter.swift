@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Alexander Bakhmut on 19.10.2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import Foundation
@@ -75,10 +75,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         let timeString = convertSecondsToTimeString(durationInSeconds)
 
         view?.updateTimer(time: timeString)
-
-        if durationInSeconds != 0 {
-        } else {
-        }
     }
     
     private func invalidateTimer() {
@@ -92,6 +88,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     private func start(_ challenge: Challenge) {
+        print("New challenge has been started")
+
         self.challengeTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                                    target: self,
                                                    selector: #selector(self.updateTimer),
@@ -103,8 +101,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 assertionFailure()
                 return
             }
-
-            print("New challenge has been started")
 
             switch challengeResult {
             case .success(let finishedChallenge):
@@ -130,7 +126,10 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 let isLose = !updatedChallenge.isSuccess
 
                 if isLose {
+                    print("Lose")
                     AppLockManager.shared.changeStateTo(.locked)
+                } else {
+                    print("Win")
                 }
 
                 self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)

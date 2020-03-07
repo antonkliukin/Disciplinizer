@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 09/10/2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import UIKit
@@ -91,6 +91,12 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         hideTimerView(true, animated: false)
 
         presenter?.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        presenter?.viewWillAppear()
     }
 
     private func setupMainView() {

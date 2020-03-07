@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 17.10.2019.
-//  Copyright © 2019 FutureCompanyName. All rights reserved.
+//  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import UIKit
@@ -34,6 +34,8 @@ final class PageNavigationViewController: UIViewController, PageNavigationViewPr
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        configurator.configure(pageNavigationViewController: self)
 
         collectionView.panGestureRecognizer.addTarget(self, action: #selector(pagePanned(recognizer:)))
         view.layoutIfNeeded()

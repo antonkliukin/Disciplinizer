@@ -3,7 +3,7 @@
 //  Concentration tracker
 //
 //  Created by Anton Kliukin on 15.02.2020.
-//  Copyright © 2020 FutureCompanyName. All rights reserved.
+//  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
 import Foundation
@@ -16,4 +16,14 @@ struct Challenge {
     var isSuccess: Bool
     var isPaid: Bool
     var betId: String?
+}
+
+enum ChallengeResult {
+    case win
+    case lose
+}
+
+enum ChallengeMode {
+    case free
+    case paid
 }
