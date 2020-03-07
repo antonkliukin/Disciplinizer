@@ -29,14 +29,14 @@ extension LockStateRequestBuilder {
     }
 
     var headers: [String: String]? {
-        let jwt = JWT(keyID: "N3A6NPD78N", teamID: "F2Y5RN858Q", issueDate: Date(), expireDuration: 60 * 60)
+        let jwt = JWT(keyID: "5W8TN2PZMS", teamID: "YJ66LV4LL7", issueDate: Date(), expireDuration: 60 * 60)
 
         let p8 = """
 -----BEGIN PRIVATE KEY-----
-MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgEaZxDK8DqdA6bLv0
-xNotTLYecjWxme8X/aYv5nNnZ0qgCgYIKoZIzj0DAQehRANCAAS6bHsFlNbzRKTG
-lOQr1BMUgqptef41jrz53FZBczcA6aMe6//0z1ODg2CaYvYXRcnBDT5qHWOACAD5
-R21Od5Dc
+MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg4RHua5U+RECwB2ws
+HE9auhlDudxsH5rmiVu6VCAALgmgCgYIKoZIzj0DAQehRANCAAQ7H3xeSJyolvtO
+zK3dyEEhj8r+ACwvdavi6or/Q1pLcee9XVdmVS8rg1qTgfpkXHT8mUDtCunlIcVJ
+QBqpx79P
 -----END PRIVATE KEY-----
 """
 

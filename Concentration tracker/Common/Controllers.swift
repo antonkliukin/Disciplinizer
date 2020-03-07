@@ -36,11 +36,6 @@ enum Controller {
 
     static func createChallenge() -> UIViewController {
         let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
-        let challengeRepository = ChallengeRepository()
-        let purchaseManager = PurchasesManager()
-        let challengeManager = ChallengeManager(challengeRepository: challengeRepository)
-        let presenter = CreateChallengePresenter(view: vc, challengeManager: challengeManager, purchaseManager: purchaseManager)
-        vc.presenter = presenter
 
         return vc
     }
@@ -62,23 +57,18 @@ enum Controller {
         return vc
     }
     
-    static func currentChallenge(with challengeModel: Challenge, didTapGiveUp: @escaping () -> Void) -> UIViewController {
+    static func currentChallenge(with challengeModel: Challenge) -> UIViewController {
         let vc = CurrentChallengeViewController.fromStoryboard(.currentChallenge)
-        let presenter = CurrentChallengePresenter(view: vc, challenge: challengeModel, didTapGiveUp: didTapGiveUp)
+        let configurator = CurrentChallengeConfigurator(challenge: challengeModel)
+        vc.configurator = configurator
         vc.modalPresentationStyle = .fullScreen
-        vc.presenter = presenter
         
         return vc
     }
     
     static func createPageNavigation() -> UIViewController {
-        let challengeRepository = ChallengeRepository()
         let vc = PageNavigationViewController.fromStoryboard(.pageNavigation)
         vc.controllers = [createHistory(), createChallenge(), createSettings()]
-    
-        let presenter = PageNavigationPresenter(view: vc, challengeRepository: challengeRepository)
-
-        vc.presenter = presenter
 
         return vc
     }

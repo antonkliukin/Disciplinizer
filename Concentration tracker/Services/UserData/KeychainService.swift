@@ -13,7 +13,11 @@ class KeychainService {
         var status: OSStatus
 
         var localizedDescription: String {
-            return SecCopyErrorMessageString(status, nil) as String? ?? "Unknown error."
+            if #available(iOS 11.3, *) {
+                return SecCopyErrorMessageString(status, nil) as String? ?? "Unknown error."
+            } else {
+                return "Unknown error."
+            }
         }
     }
 

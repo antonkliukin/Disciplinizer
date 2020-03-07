@@ -15,6 +15,7 @@ final class Config {
 
     fileprivate enum Configuration: String {
         case debug = "Debug"
+        case release = "Release"
     }
 
     fileprivate enum ConfigurationKey: String {

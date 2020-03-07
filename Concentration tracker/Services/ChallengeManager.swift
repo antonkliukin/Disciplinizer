@@ -14,18 +14,19 @@ enum ChallengeManagerError: Error {
     case startError
     case notificationsNotAuthorized
     case storageError
+    case failedToSaveChallengeBeforeStart
 
     var localizedDescription: String {
         switch self {
         case .startError: return "startError"
         case .notificationsNotAuthorized: return "notificationsNotAuthorized"
         case .storageError: return "storageError"
+        case .failedToSaveChallengeBeforeStart: return "failedToSaveChallengeBeforeStare"
         }
     }
 }
 
 final class ChallengeManager {
-    private let challengeRepository: ChallengeStorageProtocol
     private var activeChallenge: Challenge? {
         willSet {
             isChallengeRunning = newValue != nil
@@ -34,7 +35,7 @@ final class ChallengeManager {
 
     private var winTimer: Timer?
     private var loseTimer: Timer?
-    private var onFinish: ((ChallengeResult) -> Void)?
+    private var onFinish: ((Result<Challenge, Error>) -> Void)?
     private var willResignActiveDate: Date?
 
     private var notifCenter = NotificationCenter.default
@@ -43,8 +44,7 @@ final class ChallengeManager {
         return UIScreen.main.brightness == 0.0
     }
 
-    init(challengeRepository: ChallengeStorageProtocol) {
-        self.challengeRepository = challengeRepository
+    init() {
         addAppDelegateObservers()
     }
 
@@ -120,50 +120,38 @@ final class ChallengeManager {
     }
 
     func start(_ challenge: Challenge,
-               onFinish: @escaping (ChallengeResult) -> Void) -> Result<Challenge, ChallengeManagerError> {
-        guard !isChallengeRunning else { return .failure(.startError) }
+               onFinish: @escaping (Result<Challenge, Error>) -> Void) {
+        guard !isChallengeRunning else {
+            assertionFailure()
+            return
+        }
 
         let isNotifEnabled = NotificationManager.shared.isAuthorized()
 
         guard isNotifEnabled else {
-            return .failure(ChallengeManagerError.notificationsNotAuthorized)
+            assertionFailure()
+            return
         }
 
         self.onFinish = onFinish
-        
-        let savingResult = challengeRepository.save(challenge)
 
-        switch savingResult {
-        case .failure:
-            return .failure(.startError)
-        case .success:
-            activeChallenge = challenge
+        activeChallenge = challenge
 
-            fireWinTimer(withInterval: challenge.duration)
-
-            return .success(challenge)
-        }
+        fireWinTimer(withInterval: challenge.duration)
     }
 
     func finishCurrentWith(result: ChallengeResult) {
-        guard let current = self.activeChallenge else {
+        guard var finishedChallenge = self.activeChallenge else {
             return
         }
 
-        guard current.finishDate == nil else {
-            print("Challenge with id \(current.id) has already been finished")
+        guard finishedChallenge.finishDate == nil else {
+            print("Challenge with id \(finishedChallenge.id) has already been finished")
             return
         }
 
-        _ = self.challengeRepository.update {
-            self.activeChallenge?.isSuccess = result == .win
-            self.activeChallenge?.finishDate = Date()
+        finishedChallenge.isSuccess = result == .win
 
-            print("\(result == .win ? "Succeeded" : "Failed") in challenge with id \(current.id)")
-
-            self.activeChallenge = nil
-        }
-
-        self.onFinish?(result)
+        self.onFinish?(.success(finishedChallenge))
     }
 }

@@ -11,12 +11,182 @@ import UIKit
 struct R: Rswift.Validatable {
   fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-  
+
+  /// Find first language and bundle for which the table exists
+  fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
+    // Filter preferredLanguages to localizations, use first locale
+    var languages = preferredLanguages
+      .map(Locale.init)
+      .prefix(1)
+      .flatMap { locale -> [String] in
+        if hostingBundle.localizations.contains(locale.identifier) {
+          if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+            return [locale.identifier, language]
+          } else {
+            return [locale.identifier]
+          }
+        } else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+          return [language]
+        } else {
+          return []
+        }
+      }
+
+    // If there's no languages, use development language as backstop
+    if languages.isEmpty {
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages = [developmentLocalization]
+      }
+    } else {
+      // Insert Base as second item (between locale identifier and languageCode)
+      languages.insert("Base", at: 1)
+
+      // Add development language as backstop
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages.append(developmentLocalization)
+      }
+    }
+
+    // Find first language for which table exists
+    // Note: key might not exist in chosen language (in that case, key will be shown)
+    for language in languages {
+      if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
+         let lbundle = Bundle(url: lproj)
+      {
+        let strings = lbundle.url(forResource: tableName, withExtension: "strings")
+        let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
+
+        if strings != nil || stringsdict != nil {
+          return (Locale(identifier: language), lbundle)
+        }
+      }
+    }
+
+    // If table is available in main bundle, don't look for localized resources
+    let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
+    let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
+
+    if strings != nil || stringsdict != nil {
+      return (applicationLocale, hostingBundle)
+    }
+
+    // If table is not found for requested languages, key will be shown
+    return nil
+  }
+
+  /// Load string from Info.plist file
+  fileprivate static func infoPlistString(path: [String], key: String) -> String? {
+    var dict = hostingBundle.infoDictionary
+    for step in path {
+      guard let obj = dict?[step] as? [String: Any] else { return nil }
+      dict = obj
+    }
+    return dict?[key] as? String
+  }
+
   static func validate() throws {
     try font.validate()
     try intern.validate()
   }
-  
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
+  struct storyboard {
+    /// Storyboard `Alert`.
+    static let alert = _R.storyboard.alert()
+    /// Storyboard `CreateChallenge`.
+    static let createChallenge = _R.storyboard.createChallenge()
+    /// Storyboard `CurrentChallenge`.
+    static let currentChallenge = _R.storyboard.currentChallenge()
+    /// Storyboard `Guide`.
+    static let guide = _R.storyboard.guide()
+    /// Storyboard `History`.
+    static let history = _R.storyboard.history()
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Losing`.
+    static let losing = _R.storyboard.losing()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
+    /// Storyboard `PageNavigation`.
+    static let pageNavigation = _R.storyboard.pageNavigation()
+    /// Storyboard `Settings`.
+    static let settings = _R.storyboard.settings()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Alert", bundle: ...)`
+    static func alert(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.alert)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CreateChallenge", bundle: ...)`
+    static func createChallenge(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.createChallenge)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CurrentChallenge", bundle: ...)`
+    static func currentChallenge(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.currentChallenge)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Guide", bundle: ...)`
+    static func guide(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.guide)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "History", bundle: ...)`
+    static func history(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.history)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Losing", bundle: ...)`
+    static func losing(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.losing)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PageNavigation", bundle: ...)`
+    static func pageNavigation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.pageNavigation)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Settings", bundle: ...)`
+    static func settings(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.settings)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+  #endif
+
   /// This `R.color` struct is generated, and contains static references to 7 colors.
   struct color {
     /// Color `AppColor`.
@@ -33,65 +203,137 @@ struct R: Rswift.Validatable {
     static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
     /// Color `CTWhite`.
     static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func appColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.appColor, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTBlack", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctBlack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctBlack, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTBlue", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctBlue, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTGray", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctGray, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTOrange", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctOrange(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctOrange, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTPurple", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctPurple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctPurple, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "CTWhite", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func ctWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctWhite, compatibleWith: traitCollection)
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
-  /// This `R.file` struct is generated, and contains static references to 9 files.
+
+  /// This `R.file` struct is generated, and contains static references to 38 files.
   struct file {
     /// Resource file `Config.plist`.
     static let configPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "plist")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `MuseoSans-100.otf`.
+    static let museoSans100Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-100", pathExtension: "otf")
+    /// Resource file `MuseoSans-100Italic.otf`.
+    static let museoSans100ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-100Italic", pathExtension: "otf")
+    /// Resource file `MuseoSans-300.otf`.
+    static let museoSans300Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-300", pathExtension: "otf")
+    /// Resource file `MuseoSans-300Italic.otf`.
+    static let museoSans300ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-300Italic", pathExtension: "otf")
+    /// Resource file `MuseoSans-500.otf`.
+    static let museoSans500Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-500", pathExtension: "otf")
+    /// Resource file `MuseoSans-500Italic.otf`.
+    static let museoSans500ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-500Italic", pathExtension: "otf")
+    /// Resource file `MuseoSans-700.otf`.
+    static let museoSans700Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-700", pathExtension: "otf")
+    /// Resource file `MuseoSans-700Italic.otf`.
+    static let museoSans700ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-700Italic", pathExtension: "otf")
+    /// Resource file `MuseoSans-900.otf`.
+    static let museoSans900Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-900", pathExtension: "otf")
+    /// Resource file `MuseoSans-900Italic.otf`.
+    static let museoSans900ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-900Italic", pathExtension: "otf")
+    /// Resource file `Oswald-Demi-BoldItalic.ttf`.
+    static let oswaldDemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Demi-BoldItalic", pathExtension: "ttf")
+    /// Resource file `Oswald-DemiBold.ttf`.
+    static let oswaldDemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-DemiBold", pathExtension: "ttf")
+    /// Resource file `Oswald-Light.ttf`.
+    static let oswaldLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Light", pathExtension: "ttf")
+    /// Resource file `Oswald-LightItalic.ttf`.
+    static let oswaldLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-LightItalic", pathExtension: "ttf")
+    /// Resource file `Oswald-Regular.ttf`.
+    static let oswaldRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Regular", pathExtension: "ttf")
+    /// Resource file `Oswald-RegularItalic.ttf`.
+    static let oswaldRegularItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-RegularItalic", pathExtension: "ttf")
     /// Resource file `SIL Open Font License.txt`.
     static let silOpenFontLicenseTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "SIL Open Font License", pathExtension: "txt")
+    /// Resource file `SourceSansPro-Black.otf`.
+    static let sourceSansProBlackOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Black", pathExtension: "otf")
+    /// Resource file `SourceSansPro-BlackIt.otf`.
+    static let sourceSansProBlackItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-BlackIt", pathExtension: "otf")
+    /// Resource file `SourceSansPro-Bold.otf`.
+    static let sourceSansProBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Bold", pathExtension: "otf")
+    /// Resource file `SourceSansPro-BoldIt.otf`.
+    static let sourceSansProBoldItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-BoldIt", pathExtension: "otf")
+    /// Resource file `SourceSansPro-ExtraLight.otf`.
+    static let sourceSansProExtraLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-ExtraLight", pathExtension: "otf")
+    /// Resource file `SourceSansPro-ExtraLightIt.otf`.
+    static let sourceSansProExtraLightItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-ExtraLightIt", pathExtension: "otf")
+    /// Resource file `SourceSansPro-It.otf`.
+    static let sourceSansProItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-It", pathExtension: "otf")
+    /// Resource file `SourceSansPro-Light.otf`.
+    static let sourceSansProLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Light", pathExtension: "otf")
+    /// Resource file `SourceSansPro-LightIt.otf`.
+    static let sourceSansProLightItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-LightIt", pathExtension: "otf")
+    /// Resource file `SourceSansPro-Regular.otf`.
+    static let sourceSansProRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Regular", pathExtension: "otf")
+    /// Resource file `SourceSansPro-Semibold.otf`.
+    static let sourceSansProSemiboldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Semibold", pathExtension: "otf")
+    /// Resource file `SourceSansPro-SemiboldIt.otf`.
+    static let sourceSansProSemiboldItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-SemiboldIt", pathExtension: "otf")
     /// Resource file `birds-0.mp3`.
     static let birds0Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "birds-0", pathExtension: "mp3")
     /// Resource file `birds-1.mp3`.
@@ -106,64 +348,238 @@ struct R: Rswift.Validatable {
     static let water0Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "water-0", pathExtension: "mp3")
     /// Resource file `water-1.mp3`.
     static let water1Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "water-1", pathExtension: "mp3")
-    
+
     /// `bundle.url(forResource: "Config", withExtension: "plist")`
     static func configPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.configPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-100", withExtension: "otf")`
+    static func museoSans100Otf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans100Otf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-100Italic", withExtension: "otf")`
+    static func museoSans100ItalicOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans100ItalicOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-300", withExtension: "otf")`
+    static func museoSans300Otf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans300Otf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-300Italic", withExtension: "otf")`
+    static func museoSans300ItalicOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans300ItalicOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-500", withExtension: "otf")`
+    static func museoSans500Otf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans500Otf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-500Italic", withExtension: "otf")`
+    static func museoSans500ItalicOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans500ItalicOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-700", withExtension: "otf")`
+    static func museoSans700Otf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans700Otf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-700Italic", withExtension: "otf")`
+    static func museoSans700ItalicOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans700ItalicOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-900", withExtension: "otf")`
+    static func museoSans900Otf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans900Otf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MuseoSans-900Italic", withExtension: "otf")`
+    static func museoSans900ItalicOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.museoSans900ItalicOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-Demi-BoldItalic", withExtension: "ttf")`
+    static func oswaldDemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldDemiBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-DemiBold", withExtension: "ttf")`
+    static func oswaldDemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldDemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-Light", withExtension: "ttf")`
+    static func oswaldLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-LightItalic", withExtension: "ttf")`
+    static func oswaldLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-Regular", withExtension: "ttf")`
+    static func oswaldRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Oswald-RegularItalic", withExtension: "ttf")`
+    static func oswaldRegularItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oswaldRegularItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "SIL Open Font License", withExtension: "txt")`
     static func silOpenFontLicenseTxt(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.silOpenFontLicenseTxt
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
+    /// `bundle.url(forResource: "SourceSansPro-Black", withExtension: "otf")`
+    static func sourceSansProBlackOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProBlackOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-BlackIt", withExtension: "otf")`
+    static func sourceSansProBlackItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProBlackItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Bold", withExtension: "otf")`
+    static func sourceSansProBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-BoldIt", withExtension: "otf")`
+    static func sourceSansProBoldItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProBoldItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-ExtraLight", withExtension: "otf")`
+    static func sourceSansProExtraLightOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProExtraLightOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-ExtraLightIt", withExtension: "otf")`
+    static func sourceSansProExtraLightItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProExtraLightItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-It", withExtension: "otf")`
+    static func sourceSansProItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Light", withExtension: "otf")`
+    static func sourceSansProLightOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProLightOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-LightIt", withExtension: "otf")`
+    static func sourceSansProLightItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProLightItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Regular", withExtension: "otf")`
+    static func sourceSansProRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Semibold", withExtension: "otf")`
+    static func sourceSansProSemiboldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProSemiboldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-SemiboldIt", withExtension: "otf")`
+    static func sourceSansProSemiboldItOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProSemiboldItOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "birds-0", withExtension: "mp3")`
     static func birds0Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.birds0Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "birds-1", withExtension: "mp3")`
     static func birds1Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.birds1Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "piano", withExtension: "wav")`
     static func pianoWav(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pianoWav
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "space-0", withExtension: "mp3")`
     static func space0Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.space0Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "space-1", withExtension: "mp3")`
     static func space1Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.space1Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "water-0", withExtension: "mp3")`
     static func water0Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.water0Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "water-1", withExtension: "mp3")`
     static func water1Mp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.water1Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.font` struct is generated, and contains static references to 28 fonts.
   struct font: Rswift.Validatable {
     /// Font `MuseoSans-100Italic`.
@@ -222,147 +638,147 @@ struct R: Rswift.Validatable {
     static let sourceSansProSemiboldIt = Rswift.FontResource(fontName: "SourceSansPro-SemiboldIt")
     /// Font `SourceSansPro-Semibold`.
     static let sourceSansProSemibold = Rswift.FontResource(fontName: "SourceSansPro-Semibold")
-    
+
     /// `UIFont(name: "MuseoSans-100", size: ...)`
     static func museoSans100(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans100, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-100Italic", size: ...)`
     static func museoSans100Italic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans100Italic, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-300", size: ...)`
     static func museoSans300(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans300, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-300Italic", size: ...)`
     static func museoSans300Italic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans300Italic, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-500", size: ...)`
     static func museoSans500(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans500, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-500Italic", size: ...)`
     static func museoSans500Italic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans500Italic, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-700", size: ...)`
     static func museoSans700(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans700, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-700Italic", size: ...)`
     static func museoSans700Italic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans700Italic, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-900", size: ...)`
     static func museoSans900(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans900, size: size)
     }
-    
+
     /// `UIFont(name: "MuseoSans-900Italic", size: ...)`
     static func museoSans900Italic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: museoSans900Italic, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-Demi-BoldItalic", size: ...)`
     static func oswaldDemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldDemiBoldItalic, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-DemiBold", size: ...)`
     static func oswaldDemiBold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldDemiBold, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-Light", size: ...)`
     static func oswaldLight(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldLight, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-LightItalic", size: ...)`
     static func oswaldLightItalic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldLightItalic, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-Regular", size: ...)`
     static func oswaldRegular(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldRegular, size: size)
     }
-    
+
     /// `UIFont(name: "Oswald-RegularItalic", size: ...)`
     static func oswaldRegularItalic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: oswaldRegularItalic, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-Black", size: ...)`
     static func sourceSansProBlack(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProBlack, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-BlackIt", size: ...)`
     static func sourceSansProBlackIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProBlackIt, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-Bold", size: ...)`
     static func sourceSansProBold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProBold, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-BoldIt", size: ...)`
     static func sourceSansProBoldIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProBoldIt, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-ExtraLight", size: ...)`
     static func sourceSansProExtraLight(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProExtraLight, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-ExtraLightIt", size: ...)`
     static func sourceSansProExtraLightIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProExtraLightIt, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-It", size: ...)`
     static func sourceSansProIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProIt, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-Light", size: ...)`
     static func sourceSansProLight(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProLight, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-LightIt", size: ...)`
     static func sourceSansProLightIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProLightIt, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-Regular", size: ...)`
     static func sourceSansProRegular(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProRegular, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-Semibold", size: ...)`
     static func sourceSansProSemibold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProSemibold, size: size)
     }
-    
+
     /// `UIFont(name: "SourceSansPro-SemiboldIt", size: ...)`
     static func sourceSansProSemiboldIt(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sourceSansProSemiboldIt, size: size)
     }
-    
+
     static func validate() throws {
       if R.font.museoSans100(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-100' could not be loaded, is 'MuseoSans-100.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.museoSans100Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-100Italic' could not be loaded, is 'MuseoSans-100Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
@@ -393,10 +809,10 @@ struct R: Rswift.Validatable {
       if R.font.sourceSansProSemibold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Semibold' could not be loaded, is 'SourceSansPro-Semibold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sourceSansProSemiboldIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-SemiboldIt' could not be loaded, is 'SourceSansPro-SemiboldIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `music.note.list`.
@@ -405,43 +821,51 @@ struct R: Rswift.Validatable {
     static let playFill = Rswift.ImageResource(bundle: R.hostingBundle, name: "play.fill")
     /// Image `play`.
     static let play = Rswift.ImageResource(bundle: R.hostingBundle, name: "play")
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "music.note.list", bundle: ..., traitCollection: ...)`
     static func musicNoteList(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.musicNoteList, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "play", bundle: ..., traitCollection: ...)`
     static func play(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.play, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "play.fill", bundle: ..., traitCollection: ...)`
     static func playFill(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.playFill, compatibleWith: traitCollection)
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     /// Nib `PageCollectionViewCell`.
     static let pageCollectionViewCell = _R.nib._PageCollectionViewCell()
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PageCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.pageCollectionViewCell) instead")
     static func pageCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.pageCollectionViewCell)
     }
-    
+    #endif
+
     static func pageCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PageCollectionViewCell? {
       return R.nib.pageCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PageCollectionViewCell
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `PageCell`.
@@ -452,600 +876,748 @@ struct R: Rswift.Validatable {
     static let songSelectCell: Rswift.ReuseIdentifier<SongSelectCell> = Rswift.ReuseIdentifier(identifier: "SongSelectCell")
     /// Reuse identifier `challengeCellId`.
     static let challengeCellId: Rswift.ReuseIdentifier<ChallengeCell> = Rswift.ReuseIdentifier(identifier: "challengeCellId")
-    
+
     fileprivate init() {}
   }
-  
-  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
-  struct storyboard {
-    /// Storyboard `Alert`.
-    static let alert = _R.storyboard.alert()
-    /// Storyboard `CreateChallenge`.
-    static let createChallenge = _R.storyboard.createChallenge()
-    /// Storyboard `CurrentChallenge`.
-    static let currentChallenge = _R.storyboard.currentChallenge()
-    /// Storyboard `Guide`.
-    static let guide = _R.storyboard.guide()
-    /// Storyboard `History`.
-    static let history = _R.storyboard.history()
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Losing`.
-    static let losing = _R.storyboard.losing()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
-    /// Storyboard `PageNavigation`.
-    static let pageNavigation = _R.storyboard.pageNavigation()
-    /// Storyboard `Settings`.
-    static let settings = _R.storyboard.settings()
-    
-    /// `UIStoryboard(name: "Alert", bundle: ...)`
-    static func alert(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.alert)
-    }
-    
-    /// `UIStoryboard(name: "CreateChallenge", bundle: ...)`
-    static func createChallenge(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.createChallenge)
-    }
-    
-    /// `UIStoryboard(name: "CurrentChallenge", bundle: ...)`
-    static func currentChallenge(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.currentChallenge)
-    }
-    
-    /// `UIStoryboard(name: "Guide", bundle: ...)`
-    static func guide(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.guide)
-    }
-    
-    /// `UIStoryboard(name: "History", bundle: ...)`
-    static func history(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.history)
-    }
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "Losing", bundle: ...)`
-    static func losing(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.losing)
-    }
-    
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "PageNavigation", bundle: ...)`
-    static func pageNavigation(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.pageNavigation)
-    }
-    
-    /// `UIStoryboard(name: "Settings", bundle: ...)`
-    static func settings(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.settings)
-    }
-    
-    fileprivate init() {}
-  }
-  
+
   /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
     /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
     struct launchScreen {
       fileprivate init() {}
     }
-    
+
     /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
     struct localizable {
       /// en translation: %#@value@
-      /// 
+      ///
       /// Locales: en, ru
       static let timerMinLeft = Rswift.StringResource(key: "timer.minLeft", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// ru translation: 1. Установите время испытания.  2. Выберите режим и сделайте вашу ставку. Деньги или время значительно увеличат вашу мотивацию!  3. Следуйте главному правилу — не покидайте приложение. Блокировать экран можно.
-      /// 
+      /// en translation: 1. Set task time.  2. Make a bet. You might choose between time and money, it will highly increase your motivation!  3. The main rule is simple - do not leave the app. You can lock your phone or stay on the challenge screen.
+      ///
       /// Locales: ru, en
       static let guideSecondPageContent = Rswift.StringResource(key: "guide.secondPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Distant Place
-      /// 
-      /// Locales: ru, en
-      static let songNamesDistantPlace = Rswift.StringResource(key: "songNames.distantPlace", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Floating Point
-      /// 
-      /// Locales: ru, en
-      static let songNamesFloatingPoint = Rswift.StringResource(key: "songNames.floatingPoint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Leaving Wonderland
-      /// 
-      /// Locales: ru, en
-      static let songNamesLeavingWonderland = Rswift.StringResource(key: "songNames.leavingWonderland", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Long Days
-      /// 
-      /// Locales: ru, en
-      static let songNamesLongDays = Rswift.StringResource(key: "songNames.longDays", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Metting The Sun
-      /// 
-      /// Locales: ru, en
-      static let songNamesMettingSun = Rswift.StringResource(key: "songNames.mettingSun", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Pillow Talk
-      /// 
-      /// Locales: ru, en
-      static let songNamesPillowTalk = Rswift.StringResource(key: "songNames.pillowTalk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Ваша задача требует концентрации?
-      /// 
-      /// Locales: ru, en
-      static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Вы проиграете в текущем испытании, если не вернетесь в приложение!
-      /// 
-      /// Locales: ru, en
-      static let notificationsReturnBody = Rswift.StringResource(key: "notifications.return.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Далее
-      /// 
-      /// Locales: ru, en
-      static let guideNext = Rswift.StringResource(key: "guide.next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Для того, чтобы разблокировать приложение Вам необходимо совершить покупку на сумму равную вашей ставке
-      /// 
-      /// Locales: ru, en
-      static let purchaseLoseMessage = Rswift.StringResource(key: "purchase.loseMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Локализованная строка
-      /// 
-      /// Locales: ru, en
-      static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Нажмите, чтобы не проиграть!
-      /// 
+      /// en translation: Click to avoid losing!
+      ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Начните испытание!
-      /// 
+      /// en translation: Distant Place
+      ///
       /// Locales: ru, en
-      static let guideThirdPageTitle = Rswift.StringResource(key: "guide.thirdPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Понятно!
-      /// 
+      static let songNamesDistantPlace = Rswift.StringResource(key: "songNames.distantPlace", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Does your task require concentration?
+      ///
       /// Locales: ru, en
-      static let guideGotIt = Rswift.StringResource(key: "guide.gotIt", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Привет!
-      /// 
+      static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Floating Point
+      ///
       /// Locales: ru, en
-      static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Пропустить
-      /// 
-      /// Locales: ru, en
-      static let guideSkip = Rswift.StringResource(key: "guide.skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Разблокировать
-      /// 
-      /// Locales: ru, en
-      static let purchaseButtonTitle = Rswift.StringResource(key: "purchase.buttonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Соблюдайте правила, сфокусируйтесь на вашей цели и помните, время — деньги, и вы можете их потерять!
-      /// 
+      static let songNamesFloatingPoint = Rswift.StringResource(key: "songNames.floatingPoint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
+      ///
       /// Locales: ru, en
       static let guideThirdPageContent = Rswift.StringResource(key: "guide.thirdPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// ru translation: Это приложение поможет вам сфокусироваться на важных задачах, не отвлекаясь на социальные сети, мессенджеры и игры.  Для достижения этой цели мы прелагаем вам испытание, ставкой в котором будет ваше время или деньги!
-      /// 
+      /// en translation: Got it!
+      ///
+      /// Locales: ru, en
+      static let guideGotIt = Rswift.StringResource(key: "guide.gotIt", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Hello!
+      ///
+      /// Locales: ru, en
+      static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
+      ///
+      /// Locales: ru, en
+      static let purchaseLoseMessage = Rswift.StringResource(key: "purchase.loseMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Leaving Wonderland
+      ///
+      /// Locales: ru, en
+      static let songNamesLeavingWonderland = Rswift.StringResource(key: "songNames.leavingWonderland", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Localized string
+      ///
+      /// Locales: ru, en
+      static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Long Days
+      ///
+      /// Locales: ru, en
+      static let songNamesLongDays = Rswift.StringResource(key: "songNames.longDays", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Metting The Sun
+      ///
+      /// Locales: ru, en
+      static let songNamesMettingSun = Rswift.StringResource(key: "songNames.mettingSun", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Next
+      ///
+      /// Locales: ru, en
+      static let guideNext = Rswift.StringResource(key: "guide.next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Pillow Talk
+      ///
+      /// Locales: ru, en
+      static let songNamesPillowTalk = Rswift.StringResource(key: "songNames.pillowTalk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Skip
+      ///
+      /// Locales: ru, en
+      static let guideSkip = Rswift.StringResource(key: "guide.skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Start the challenge!
+      ///
+      /// Locales: ru, en
+      static let guideThirdPageTitle = Rswift.StringResource(key: "guide.thirdPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
+      ///
       /// Locales: ru, en
       static let guideFirstPageContent = Rswift.StringResource(key: "guide.firstPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      
+      /// en translation: Unlock App
+      ///
+      /// Locales: ru, en
+      static let purchaseButtonTitle = Rswift.StringResource(key: "purchase.buttonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: You will lose your challenge if don't return to the app!
+      ///
+      /// Locales: ru, en
+      static let notificationsReturnBody = Rswift.StringResource(key: "notifications.return.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+
       /// en translation: %#@value@
-      /// 
+      ///
       /// Locales: en, ru
-      static func timerMinLeft(value value1: Int) -> String {
-        return String(format: NSLocalizedString("timer.minLeft", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      static func timerMinLeft(value value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("timer.minLeft", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timer.minLeft"
+        }
+
+        let format = NSLocalizedString("timer.minLeft", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
       }
-      
-      /// ru translation: 1. Установите время испытания.  2. Выберите режим и сделайте вашу ставку. Деньги или время значительно увеличат вашу мотивацию!  3. Следуйте главному правилу — не покидайте приложение. Блокировать экран можно.
-      /// 
+
+      /// en translation: 1. Set task time.  2. Make a bet. You might choose between time and money, it will highly increase your motivation!  3. The main rule is simple - do not leave the app. You can lock your phone or stay on the challenge screen.
+      ///
       /// Locales: ru, en
-      static func guideSecondPageContent(_: Void = ()) -> String {
-        return NSLocalizedString("guide.secondPage.content", bundle: R.hostingBundle, comment: "")
+      static func guideSecondPageContent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.secondPage.content", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.secondPage.content"
+        }
+
+        return NSLocalizedString("guide.secondPage.content", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Distant Place
-      /// 
+
+      /// en translation: Click to avoid losing!
+      ///
       /// Locales: ru, en
-      static func songNamesDistantPlace(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.distantPlace", bundle: R.hostingBundle, comment: "")
+      static func notificationsReturnTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications.return.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "notifications.return.title"
+        }
+
+        return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Floating Point
-      /// 
+
+      /// en translation: Distant Place
+      ///
       /// Locales: ru, en
-      static func songNamesFloatingPoint(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.floatingPoint", bundle: R.hostingBundle, comment: "")
+      static func songNamesDistantPlace(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.distantPlace", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.distantPlace"
+        }
+
+        return NSLocalizedString("songNames.distantPlace", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Leaving Wonderland
-      /// 
+
+      /// en translation: Does your task require concentration?
+      ///
       /// Locales: ru, en
-      static func songNamesLeavingWonderland(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.leavingWonderland", bundle: R.hostingBundle, comment: "")
+      static func guideSecondPageTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.secondPage.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.secondPage.title"
+        }
+
+        return NSLocalizedString("guide.secondPage.title", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Long Days
-      /// 
+
+      /// en translation: Floating Point
+      ///
       /// Locales: ru, en
-      static func songNamesLongDays(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.longDays", bundle: R.hostingBundle, comment: "")
+      static func songNamesFloatingPoint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.floatingPoint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.floatingPoint"
+        }
+
+        return NSLocalizedString("songNames.floatingPoint", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Metting The Sun
-      /// 
+
+      /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
+      ///
       /// Locales: ru, en
-      static func songNamesMettingSun(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.mettingSun", bundle: R.hostingBundle, comment: "")
+      static func guideThirdPageContent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.thirdPage.content", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.thirdPage.content"
+        }
+
+        return NSLocalizedString("guide.thirdPage.content", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Pillow Talk
-      /// 
+
+      /// en translation: Got it!
+      ///
       /// Locales: ru, en
-      static func songNamesPillowTalk(_: Void = ()) -> String {
-        return NSLocalizedString("songNames.pillowTalk", bundle: R.hostingBundle, comment: "")
+      static func guideGotIt(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.gotIt", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.gotIt"
+        }
+
+        return NSLocalizedString("guide.gotIt", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Ваша задача требует концентрации?
-      /// 
+
+      /// en translation: Hello!
+      ///
       /// Locales: ru, en
-      static func guideSecondPageTitle(_: Void = ()) -> String {
-        return NSLocalizedString("guide.secondPage.title", bundle: R.hostingBundle, comment: "")
+      static func guideFirstPageTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.firstPage.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.firstPage.title"
+        }
+
+        return NSLocalizedString("guide.firstPage.title", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Вы проиграете в текущем испытании, если не вернетесь в приложение!
-      /// 
+
+      /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
+      ///
       /// Locales: ru, en
-      static func notificationsReturnBody(_: Void = ()) -> String {
-        return NSLocalizedString("notifications.return.body", bundle: R.hostingBundle, comment: "")
+      static func purchaseLoseMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("purchase.loseMessage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "purchase.loseMessage"
+        }
+
+        return NSLocalizedString("purchase.loseMessage", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Далее
-      /// 
+
+      /// en translation: Leaving Wonderland
+      ///
       /// Locales: ru, en
-      static func guideNext(_: Void = ()) -> String {
-        return NSLocalizedString("guide.next", bundle: R.hostingBundle, comment: "")
+      static func songNamesLeavingWonderland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.leavingWonderland", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.leavingWonderland"
+        }
+
+        return NSLocalizedString("songNames.leavingWonderland", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Для того, чтобы разблокировать приложение Вам необходимо совершить покупку на сумму равную вашей ставке
-      /// 
+
+      /// en translation: Localized string
+      ///
       /// Locales: ru, en
-      static func purchaseLoseMessage(_: Void = ()) -> String {
-        return NSLocalizedString("purchase.loseMessage", bundle: R.hostingBundle, comment: "")
+      static func alertExample(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert.example", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert.example"
+        }
+
+        return NSLocalizedString("alert.example", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Локализованная строка
-      /// 
+
+      /// en translation: Long Days
+      ///
       /// Locales: ru, en
-      static func alertExample(_: Void = ()) -> String {
-        return NSLocalizedString("alert.example", bundle: R.hostingBundle, comment: "")
+      static func songNamesLongDays(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.longDays", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.longDays"
+        }
+
+        return NSLocalizedString("songNames.longDays", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Нажмите, чтобы не проиграть!
-      /// 
+
+      /// en translation: Metting The Sun
+      ///
       /// Locales: ru, en
-      static func notificationsReturnTitle(_: Void = ()) -> String {
-        return NSLocalizedString("notifications.return.title", bundle: R.hostingBundle, comment: "")
+      static func songNamesMettingSun(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.mettingSun", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.mettingSun"
+        }
+
+        return NSLocalizedString("songNames.mettingSun", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Начните испытание!
-      /// 
+
+      /// en translation: Next
+      ///
       /// Locales: ru, en
-      static func guideThirdPageTitle(_: Void = ()) -> String {
-        return NSLocalizedString("guide.thirdPage.title", bundle: R.hostingBundle, comment: "")
+      static func guideNext(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.next", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.next"
+        }
+
+        return NSLocalizedString("guide.next", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Понятно!
-      /// 
+
+      /// en translation: Pillow Talk
+      ///
       /// Locales: ru, en
-      static func guideGotIt(_: Void = ()) -> String {
-        return NSLocalizedString("guide.gotIt", bundle: R.hostingBundle, comment: "")
+      static func songNamesPillowTalk(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("songNames.pillowTalk", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "songNames.pillowTalk"
+        }
+
+        return NSLocalizedString("songNames.pillowTalk", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Привет!
-      /// 
+
+      /// en translation: Skip
+      ///
       /// Locales: ru, en
-      static func guideFirstPageTitle(_: Void = ()) -> String {
-        return NSLocalizedString("guide.firstPage.title", bundle: R.hostingBundle, comment: "")
+      static func guideSkip(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.skip", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.skip"
+        }
+
+        return NSLocalizedString("guide.skip", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Пропустить
-      /// 
+
+      /// en translation: Start the challenge!
+      ///
       /// Locales: ru, en
-      static func guideSkip(_: Void = ()) -> String {
-        return NSLocalizedString("guide.skip", bundle: R.hostingBundle, comment: "")
+      static func guideThirdPageTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.thirdPage.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.thirdPage.title"
+        }
+
+        return NSLocalizedString("guide.thirdPage.title", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Разблокировать
-      /// 
+
+      /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
+      ///
       /// Locales: ru, en
-      static func purchaseButtonTitle(_: Void = ()) -> String {
-        return NSLocalizedString("purchase.buttonTitle", bundle: R.hostingBundle, comment: "")
+      static func guideFirstPageContent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.firstPage.content", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.firstPage.content"
+        }
+
+        return NSLocalizedString("guide.firstPage.content", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Соблюдайте правила, сфокусируйтесь на вашей цели и помните, время — деньги, и вы можете их потерять!
-      /// 
+
+      /// en translation: Unlock App
+      ///
       /// Locales: ru, en
-      static func guideThirdPageContent(_: Void = ()) -> String {
-        return NSLocalizedString("guide.thirdPage.content", bundle: R.hostingBundle, comment: "")
+      static func purchaseButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("purchase.buttonTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "purchase.buttonTitle"
+        }
+
+        return NSLocalizedString("purchase.buttonTitle", bundle: bundle, comment: "")
       }
-      
-      /// ru translation: Это приложение поможет вам сфокусироваться на важных задачах, не отвлекаясь на социальные сети, мессенджеры и игры.  Для достижения этой цели мы прелагаем вам испытание, ставкой в котором будет ваше время или деньги!
-      /// 
+
+      /// en translation: You will lose your challenge if don't return to the app!
+      ///
       /// Locales: ru, en
-      static func guideFirstPageContent(_: Void = ()) -> String {
-        return NSLocalizedString("guide.firstPage.content", bundle: R.hostingBundle, comment: "")
+      static func notificationsReturnBody(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications.return.body", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "notifications.return.body"
+        }
+
+        return NSLocalizedString("notifications.return.body", bundle: bundle, comment: "")
       }
-      
+
       fileprivate init() {}
     }
-    
+
     /// This `R.string.main` struct is generated, and contains static references to 1 localization keys.
     struct main {
       /// ru translation: Action
-      /// 
+      ///
       /// Locales: ru
       static let bOR9iWUYNormalTitle = Rswift.StringResource(key: "bOR-9i-wUY.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      
+
       /// ru translation: Action
-      /// 
+      ///
       /// Locales: ru
-      static func bOR9iWUYNormalTitle(_: Void = ()) -> String {
-        return NSLocalizedString("bOR-9i-wUY.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      static func bOR9iWUYNormalTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bOR-9i-wUY.normalTitle", tableName: "Main", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
+          return "bOR-9i-wUY.normalTitle"
+        }
+
+        return NSLocalizedString("bOR-9i-wUY.normalTitle", tableName: "Main", bundle: bundle, comment: "")
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate class Class {}
-  
+
   fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
   static func validate() throws {
-    try storyboard.validate()
+    #if os(iOS) || os(tvOS)
     try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
+    try storyboard.validate()
+    #endif
   }
-  
+
+  #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _PageCollectionViewCell.validate()
     }
-    
+
     struct _PageCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = PageCollectionViewCell
-      
+
       let bundle = R.hostingBundle
       let identifier = "PageCollectionViewCell"
       let name = "PageCollectionViewCell"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PageCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PageCollectionViewCell
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in nib 'PageCollectionViewCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTBlack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlack' is used in storyboard 'PageCollectionViewCell', but couldn't be loaded.") }
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      #if os(iOS) || os(tvOS)
       try alert.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try createChallenge.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try currentChallenge.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try guide.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try history.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try losing.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try pageNavigation.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try settings.validate()
+      #endif
     }
-    
+
+    #if os(iOS) || os(tvOS)
     struct alert: Rswift.StoryboardResourceType, Rswift.Validatable {
       let alertViewController = StoryboardViewControllerResource<AlertViewController>(identifier: "AlertViewController")
       let bundle = R.hostingBundle
       let name = "Alert"
-      
+
       func alertViewController(_: Void = ()) -> AlertViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: alertViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.alert().alertViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'alertViewController' could not be loaded from storyboard 'Alert' as 'AlertViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct createChallenge: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let createChallengeViewController = StoryboardViewControllerResource<CreateChallengeViewController>(identifier: "CreateChallengeViewController")
       let name = "CreateChallenge"
-      
+
       func createChallengeViewController(_: Void = ()) -> CreateChallengeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createChallengeViewController)
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.createChallenge().createChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChallengeViewController' could not be loaded from storyboard 'CreateChallenge' as 'CreateChallengeViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct currentChallenge: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let currentChallengeViewController = StoryboardViewControllerResource<CurrentChallengeViewController>(identifier: "CurrentChallengeViewController")
       let name = "CurrentChallenge"
-      
+
       func currentChallengeViewController(_: Void = ()) -> CurrentChallengeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: currentChallengeViewController)
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "music.note.list", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'music.note.list' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
         if UIKit.UIImage(named: "play", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.currentChallenge().currentChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currentChallengeViewController' could not be loaded from storyboard 'CurrentChallenge' as 'CurrentChallengeViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct guide: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let guideViewController = StoryboardViewControllerResource<GuideViewController>(identifier: "GuideViewController")
       let name = "Guide"
-      
+
       func guideViewController(_: Void = ()) -> GuideViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: guideViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTGray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTGray' is used in storyboard 'Guide', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'Guide', but couldn't be loaded.") }
         }
         if _R.storyboard.guide().guideViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'guideViewController' could not be loaded from storyboard 'Guide' as 'GuideViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct history: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let historyViewController = StoryboardViewControllerResource<HistoryViewController>(identifier: "HistoryViewController")
       let name = "History"
-      
+
       func historyViewController(_: Void = ()) -> HistoryViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: historyViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'History', but couldn't be loaded.") }
         }
         if _R.storyboard.history().historyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'historyViewController' could not be loaded from storyboard 'History' as 'HistoryViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
-      
+
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct losing: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let losingViewController = StoryboardViewControllerResource<LosingViewController>(identifier: "LosingViewController")
       let name = "Losing"
-      
+
       func losingViewController(_: Void = ()) -> LosingViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: losingViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Losing', but couldn't be loaded.") }
         }
         if _R.storyboard.losing().losingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'losingViewController' could not be loaded from storyboard 'Losing' as 'LosingViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
       let name = "Main"
-      
+
       func mainViewController(_: Void = ()) -> MainViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct pageNavigation: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PageNavigation"
       let pageNavigationViewController = StoryboardViewControllerResource<PageNavigationViewController>(identifier: "PageNavigationViewController")
-      
+
       func pageNavigationViewController(_: Void = ()) -> PageNavigationViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pageNavigationViewController)
       }
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'PageNavigation', but couldn't be loaded.") }
         }
         if _R.storyboard.pageNavigation().pageNavigationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pageNavigationViewController' could not be loaded from storyboard 'PageNavigation' as 'PageNavigationViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct settings: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let musicSelectViewController = StoryboardViewControllerResource<MusicSelectViewController>(identifier: "MusicSelectViewController")
       let name = "Settings"
       let settingsViewController = StoryboardViewControllerResource<SettingsViewController>(identifier: "SettingsViewController")
-      
+
       func musicSelectViewController(_: Void = ()) -> MusicSelectViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: musicSelectViewController)
       }
-      
+
       func settingsViewController(_: Void = ()) -> SettingsViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsViewController)
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "play", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play' is used in storyboard 'Settings', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTBlack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlack' is used in storyboard 'Settings', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTGray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTGray' is used in storyboard 'Settings', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'Settings', but couldn't be loaded.") }
@@ -1054,12 +1626,14 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.settings().musicSelectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'musicSelectViewController' could not be loaded from storyboard 'Settings' as 'MusicSelectViewController'.") }
         if _R.storyboard.settings().settingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewController' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+  #endif
+
   fileprivate init() {}
 }

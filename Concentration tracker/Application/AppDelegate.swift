@@ -9,6 +9,7 @@
 import UIKit
 import SwiftySound
 import AVFoundation
+import Firebase
 
 // swiftlint:disable line_length
 @UIApplicationMain
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        FirebaseApp.configure()
 
         let pageVC = Controller.createPageNavigation()
 

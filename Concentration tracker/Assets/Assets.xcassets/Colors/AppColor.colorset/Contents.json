@@ -17,6 +17,42 @@
       }
     },
     {
+      "idiom" : "universal",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
+      "idiom" : "universal",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
       "idiom" : "iphone",
       "color" : {
         "color-space" : "extended-srgb",
@@ -29,7 +65,79 @@
       }
     },
     {
+      "idiom" : "iphone",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
+      "idiom" : "iphone",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
       "idiom" : "ipad",
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
+      "idiom" : "ipad",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "color" : {
+        "color-space" : "extended-srgb",
+        "components" : {
+          "red" : "0.961",
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.761"
+        }
+      }
+    },
+    {
+      "idiom" : "ipad",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "color" : {
         "color-space" : "extended-srgb",
         "components" : {
