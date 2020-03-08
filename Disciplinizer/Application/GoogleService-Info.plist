@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>938464753247-01m0qvr2ulj0s863ife44ih6lb6rf1g2.apps.googleusercontent.com</string>
+	<string>938464753247-5mnk409a9aq3fov83hbng27g4hf1kd9a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.938464753247-01m0qvr2ulj0s863ife44ih6lb6rf1g2</string>
+	<string>com.googleusercontent.apps.938464753247-5mnk409a9aq3fov83hbng27g4hf1kd9a</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBjXw1_mWv2k6-4VcrxMI4FExGqNFMxzy8</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.antonkliukin.concentrationTracker</string>
+	<string>com.antonkliukin.disciplinizer</string>
 	<key>PROJECT_ID</key>
 	<string>concentration-tracker</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:938464753247:ios:d39c4b1da0a517686b8dea</string>
+	<string>1:938464753247:ios:241504a5354335ec6b8dea</string>
 	<key>DATABASE_URL</key>
 	<string>https://concentration-tracker.firebaseio.com</string>
 </dict>
