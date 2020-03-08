@@ -17,7 +17,6 @@ struct DeleteChallengeUseCaseNotifications {
 }
 
 protocol DeleteChallengeUseCaseProtocol {
-
     func delete(challenge: Challenge, completionHandler: @escaping DeleteChallengeUseCaseCompletionHandler)
     func deleteAll(completionHandler: @escaping DeleteAllChallengeUseCaseCompletionHandler)
 }

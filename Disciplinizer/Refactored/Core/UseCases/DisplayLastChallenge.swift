@@ -24,7 +24,7 @@ class DisplayLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol {
     // MARK: - DisplayChallengesUseCase
 
     func displayLastChallenge(completionHandler: @escaping (Result<Challenge?, Error>) -> Void) {
-        challengesGateway.getLastChallenge { (result) in
+        challengesGateway.getLast { (result) in
             // Do any additional processing & after that call the completion handler
             completionHandler(result)
         }

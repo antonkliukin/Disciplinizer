@@ -8,18 +8,17 @@
 
 import Foundation
 
-typealias GetChallengesEntityGatewayCompletionHandler = (_ challenges: Result<[Challenge], Error>) -> Void
-typealias GetLastChallengeEntityGatewayCompletionHandler = (_ challenges: Result<Challenge?, Error>) -> Void
-typealias AddChallengeEntityGatewayCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-typealias UpdateChallengeEntityGatewayCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-typealias DeleteChallengeEntityGatewayCompletionHandler = (_ challenge: Result<Void, Error>) -> Void
+typealias GetAllCompletionHandler = (_ challenges: Result<[Challenge], Error>) -> Void
+typealias GetLastCompletionHandler = (_ challenge: Result<Challenge?, Error>) -> Void
+typealias AddChallengeCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
+typealias UpdateChallengeCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
+typealias DeleteChallengeCompletionHandler = (_ challenge: Result<Void, Error>) -> Void
 
 protocol ChallengesGatewayProtocol {
-    func getChallenges(completionHandler: @escaping GetChallengesEntityGatewayCompletionHandler)
-    func getLastChallenge(completionHandler: @escaping GetLastChallengeEntityGatewayCompletionHandler)
-    func add(parameters: AddChallengeParameters, completionHandler: @escaping AddChallengeEntityGatewayCompletionHandler)
-    func update(challenge: Challenge, completionHandler: @escaping UpdateChallengeEntityGatewayCompletionHandler)
-    func delete(challenge: Challenge,
-                completionHandler: @escaping DeleteChallengeEntityGatewayCompletionHandler)
-    func deleteAll(completionHandler: @escaping DeleteChallengeEntityGatewayCompletionHandler)
+    func getAll(completionHandler: @escaping GetAllCompletionHandler)
+    func getLast(completionHandler: @escaping GetLastCompletionHandler)
+    func add(parameters: ChallengeParameters, completionHandler: @escaping AddChallengeCompletionHandler)
+    func update(challenge: Challenge, completionHandler: @escaping UpdateChallengeCompletionHandler)
+    func delete(challenge: Challenge, completionHandler: @escaping DeleteChallengeCompletionHandler)
+    func deleteAll(completionHandler: @escaping DeleteChallengeCompletionHandler)
 }

@@ -6,62 +6,35 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import AVFoundation
-import SwiftySound
+import Foundation
 
 protocol CreateChallengePresenterProtocol {
     func viewDidLoad()
-    func viewWillAppear()
     func startButtonTapped()
     func didChooseMode(_ mode: ChallengeMode)
-    //func didSetTimer(withTimeInMinutes minutes: Double)
+    func didSetTimer(withTimeInMinutes minutes: Int)
 }
 
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
-    private let addChallengeUseCase: AddChallengeUseCaseProtocol
+    private let addChallengeUseCase: CreateChallengeUseCaseProtocol
 
     private var purchaseManager: PurchasesManagerProtocol?
     private var possibleBets: [BetProtocol] = []
     private var newChallenge: Challenge!
 
-    private var activeChallengeTimer: Timer?
-    private var defaultTestDuration: TimeInterval = 30
-
-    private let defaultSound = Sound(url: R.file.pianoWav()!)
-
     init(view: CreateChallengeViewProtocol,
-         addChallengeUseCase: AddChallengeUseCaseProtocol) {
+         addChallengeUseCase: CreateChallengeUseCaseProtocol) {
         self.view = view
         self.addChallengeUseCase = addChallengeUseCase
     }
 
-    private func startMutedPlayback() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
-        } catch {
-            fatalError("AVAudioSession error occured.")
-        }
-
-        Sound.category = .playback
-        defaultSound?.volume = 0
-        defaultSound?.play(numberOfLoops: -1)
-    }
-
-    private func stopPlayback() {
-        defaultSound?.pause()
-    }
-
     func viewDidLoad() {
-        view?.changeStartButtonState(isActive: false)
+        view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
 
         purchaseManager?.getAvailiableBets { [weak self] (bets) in
-            self?.view?.setupBetSlider(withPossibleBets: bets)
+            self?.view?.setupBetSelector(withPossibleBets: bets)
         }
-    }
-
-    func viewWillAppear() {
-        view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
     }
 
     private var selectedDurationInSeconds: Double {
@@ -80,11 +53,6 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             return .free
         }
 
-        if selectedMode == .paid, !NetworkState.isConnected {
-            // TODO: Show alert
-            assertionFailure("Should not be possible to use paid without internet")
-        }
-
         return selectedMode
     }
 
@@ -92,27 +60,32 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         view?.changeStartButtonState(isActive: true)
     }
 
+    func didSetTimer(withTimeInMinutes minutes: Int) {}
+
     func startButtonTapped() {
-        // TODO: Check if notifications are enabled. If not, how alert redirecting user to notif settings
+        // TODO: Check if notifications are enabled. If not, show alert redirecting user to notif settings
 
         guard !isChallengeRunning else {
             assertionFailure("Should not be possible")
             return
         }
 
+        view?.changeStartButtonState(isActive: false)
+
+        createChallenge()
+    }
+
+    private func createChallenge() {
         let isPaid = selectedMode == .paid
         let betId = isPaid ? view?.selectedBetId : nil
-        let addParameters = AddChallengeParameters(startDate: Date(),
-                                                   finishDate: nil,
-                                                   duration: selectedDurationInSeconds,
-                                                   isSuccess: false,
-                                                   isPaid: isPaid,
-                                                   betId: betId)
+        let challengeParameters = ChallengeParameters(startDate: Date(),
+                                                      finishDate: nil,
+                                                      duration: selectedDurationInSeconds,
+                                                      isSuccess: false,
+                                                      isPaid: isPaid,
+                                                      betId: betId)
 
-        view?.changeStartButtonState(isActive: false)
-        startMutedPlayback()
-
-        addChallengeUseCase.add(parameters: addParameters) { [weak self] (addingResult) in
+        addChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (addingResult) in
             guard let self = self else {
                 assertionFailure()
                 return

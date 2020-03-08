@@ -25,12 +25,12 @@ class CurrentChallengeConfigurator: CurrentChallengeConfiguratorProtocol {
         let challengeManager = ChallengeManager()
 
         let startChallengeUseCase = StartChallengeUseCase(challengeManager: challengeManager)
-        let updateChallengeUseCase = UpdateChallengeUseCase(challengesGateway: coreDataChallengesGateway)
+        let finishChallengeUseCase = FinishChallengeUseCase(challengesGateway: coreDataChallengesGateway)
         
         let presenter = CurrentChallengePresenter(view: currentChallengeViewController,
                                                   challenge: challenge,
                                                   startChallengeUseCase: startChallengeUseCase,
-                                                  updateChallengeUseCase: updateChallengeUseCase)
+                                                  finishChallengeUseCase: finishChallengeUseCase)
         
         currentChallengeViewController.presenter = presenter
     }

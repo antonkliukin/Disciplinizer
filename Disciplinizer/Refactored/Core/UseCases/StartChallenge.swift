@@ -21,11 +21,7 @@ class StartChallengeUseCase: StartChallengeUseCaseProtocol {
         self.challengeManager = challengeManager
     }
 
-    // MARK: - StartChallengeUseCase
-
     func start(challenge: Challenge, completionHandler: @escaping (Result<Challenge, Error>) -> Void) {
-        // Do any additional processing & after that call the completion handler
-
         challengeManager.start(challenge) { (finishedChallenge) in
             completionHandler(finishedChallenge)
         }

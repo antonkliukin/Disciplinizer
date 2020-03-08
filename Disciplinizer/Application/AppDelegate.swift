@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
         } catch {
-            fatalError("AVAudioSession error occured.")
+            assertionFailure("AVAudioSession error occured.")
         }
 
         return true

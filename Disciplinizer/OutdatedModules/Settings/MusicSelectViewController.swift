@@ -20,7 +20,7 @@ final class MusicSelectViewController: UIViewController, MusicSelectViewProtocol
     private var transitionPositionObserver: NSKeyValueObservation?
     private var selectedSong: SongModel?
     
-    var presenter: MusicSelectPresenter?
+    var presenter: MusicSelectPresenterProtocol?
     
     weak var delegate: MusicSelectViewDelegate?
     

@@ -40,10 +40,12 @@
 		3A47D682230F217200B2B200 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47D681230F217200B2B200 /* KeychainService.swift */; };
 		3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */; };
 		3A60A92E23336E520037E0A4 /* piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A60A92D23336E520037E0A4 /* piano.wav */; };
+		3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7008312414EB990028CE21 /* CoreDataError.swift */; };
+		3A70083424151F070028CE21 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083324151F070028CE21 /* PageModel.swift */; };
 		3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6672410D07600225DA4 /* R.generated.swift */; };
 		3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */; };
 		3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6872413B05C00225DA4 /* StartChallenge.swift */; };
-		3A8DB68A2413B41500225DA4 /* UpdateChallengeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6892413B41500225DA4 /* UpdateChallengeUseCase.swift */; };
+		3A8DB68A2413B41500225DA4 /* FinishChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6892413B41500225DA4 /* FinishChallenge.swift */; };
 		3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */; };
 		3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */; };
 		3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */; };
@@ -57,8 +59,6 @@
 		3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1272F232ABD15004206E5 /* GuidePresenter.swift */; };
 		3AA12733232ABDA9004206E5 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA12731232ABDA8004206E5 /* PageCollectionViewCell.xib */; };
 		3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA12732232ABDA8004206E5 /* PageCollectionViewCell.swift */; };
-		3AA12738232ABDE5004206E5 /* PageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA12737232ABDE5004206E5 /* PageProvider.swift */; };
-		3AA12742232ABF93004206E5 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA12741232ABF93004206E5 /* PageModel.swift */; };
 		3AB765CA231BDBC1007FA888 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765C9231BDBC1007FA888 /* Router.swift */; };
 		3AB765CD231C299F007FA888 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CC231C299F007FA888 /* Controllers.swift */; };
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
@@ -71,9 +71,8 @@
 		3ACD2C5F240C2DE60017FABC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5A240C2DE60017FABC /* History.storyboard */; };
 		3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5B240C2DE60017FABC /* HistoryPresenter.swift */; };
 		3ACD2C61240C2DE60017FABC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */; };
-		3ACD2C74240C2E620017FABC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C63240C2E620017FABC /* Result.swift */; };
 		3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */; };
-		3ACD2C76240C2E620017FABC /* AddChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C67240C2E620017FABC /* AddChallenge.swift */; };
+		3ACD2C76240C2E620017FABC /* CreateChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C67240C2E620017FABC /* CreateChallenge.swift */; };
 		3ACD2C77240C2E620017FABC /* DisplayChallengesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C68240C2E620017FABC /* DisplayChallengesList.swift */; };
 		3ACD2C78240C2E620017FABC /* DeleteChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C69240C2E620017FABC /* DeleteChallenge.swift */; };
 		3ACD2C79240C2E620017FABC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C6B240C2E620017FABC /* Challenge.swift */; };
@@ -192,11 +191,13 @@
 		3A47D681230F217200B2B200 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A60A92D23336E520037E0A4 /* piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano.wav; sourceTree = "<group>"; };
+		3A7008312414EB990028CE21 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		3A70083324151F070028CE21 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		3A8DB6672410D07600225DA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3A8DB66B2410D7F900225DA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB6872413B05C00225DA4 /* StartChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChallenge.swift; sourceTree = "<group>"; };
-		3A8DB6892413B41500225DA4 /* UpdateChallengeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChallengeUseCase.swift; sourceTree = "<group>"; };
+		3A8DB6892413B41500225DA4 /* FinishChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishChallenge.swift; sourceTree = "<group>"; };
 		3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallnegeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLastChallenge.swift; sourceTree = "<group>"; };
 		3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationConfigurator.swift; sourceTree = "<group>"; };
@@ -208,10 +209,9 @@
 		3AA12729232ABC01004206E5 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		3AA1272D232ABC8D004206E5 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		3AA1272F232ABD15004206E5 /* GuidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePresenter.swift; sourceTree = "<group>"; };
-		3AA12731232ABDA8004206E5 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageCollectionViewCell.xib; path = Disciplinizer/Modules/Guide/Views/Cells/PageCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		3AA12732232ABDA8004206E5 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageCollectionViewCell.swift; path = Disciplinizer/Modules/Guide/Views/Cells/PageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3AA12731232ABDA8004206E5 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageCollectionViewCell.xib; path = Disciplinizer/OutdatedModules/Guide/Views/Cells/PageCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		3AA12732232ABDA8004206E5 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageCollectionViewCell.swift; path = Disciplinizer/OutdatedModules/Guide/Views/Cells/PageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3AA12737232ABDE5004206E5 /* PageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageProvider.swift; path = Disciplinizer/Modules/Main/PageProvider.swift; sourceTree = SOURCE_ROOT; };
-		3AA12741232ABF93004206E5 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageModel.swift; path = Disciplinizer/Modules/Guide/Models/PageModel.swift; sourceTree = SOURCE_ROOT; };
 		3AB765C9231BDBC1007FA888 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3AB765CC231C299F007FA888 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -224,9 +224,8 @@
 		3ACD2C5A240C2DE60017FABC /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		3ACD2C5B240C2DE60017FABC /* HistoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		3ACD2C63240C2E620017FABC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesGatewayProtocol.swift; sourceTree = "<group>"; };
-		3ACD2C67240C2E620017FABC /* AddChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChallenge.swift; sourceTree = "<group>"; };
+		3ACD2C67240C2E620017FABC /* CreateChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChallenge.swift; sourceTree = "<group>"; };
 		3ACD2C68240C2E620017FABC /* DisplayChallengesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayChallengesList.swift; sourceTree = "<group>"; };
 		3ACD2C69240C2E620017FABC /* DeleteChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteChallenge.swift; sourceTree = "<group>"; };
 		3ACD2C6B240C2E620017FABC /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -380,7 +379,7 @@
 		3A155149232B723000265B89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3AA12741232ABF93004206E5 /* PageModel.swift */,
+				3A70083324151F070028CE21 /* PageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,7 +429,7 @@
 				3A8DB66D2410DA4000225DA4 /* Refactored */,
 				3A47D677230F1DE600B2B200 /* Application */,
 				3AB765CB231C298D007FA888 /* Common */,
-				3A47D679230F1E2900B2B200 /* Modules */,
+				3A47D679230F1E2900B2B200 /* OutdatedModules */,
 				3A112B1D230F23F50064A7D9 /* Extensions */,
 				3A47D678230F1E1D00B2B200 /* Services */,
 				3A47D67A230F1E3A00B2B200 /* Assets */,
@@ -484,7 +483,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		3A47D679230F1E2900B2B200 /* Modules */ = {
+		3A47D679230F1E2900B2B200 /* OutdatedModules */ = {
 			isa = PBXGroup;
 			children = (
 				54C2AB8B2378A6C800BB2D90 /* Settings */,
@@ -492,7 +491,7 @@
 				3A2F572D2311B50300212317 /* Alert */,
 				3AA12728232ABB3C004206E5 /* Guide */,
 			);
-			path = Modules;
+			path = OutdatedModules;
 			sourceTree = "<group>";
 		};
 		3A47D67A230F1E3A00B2B200 /* Assets */ = {
@@ -636,7 +635,6 @@
 		3ACD2C62240C2E620017FABC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3ACD2C63240C2E620017FABC /* Result.swift */,
 				3ACD2C64240C2E620017FABC /* Gateways */,
 				3ACD2C66240C2E620017FABC /* UseCases */,
 				3ACD2C6A240C2E620017FABC /* Entities */,
@@ -655,12 +653,12 @@
 		3ACD2C66240C2E620017FABC /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				3ACD2C67240C2E620017FABC /* AddChallenge.swift */,
+				3ACD2C67240C2E620017FABC /* CreateChallenge.swift */,
 				3A8DB6872413B05C00225DA4 /* StartChallenge.swift */,
-				3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */,
+				3A8DB6892413B41500225DA4 /* FinishChallenge.swift */,
 				3ACD2C68240C2E620017FABC /* DisplayChallengesList.swift */,
+				3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */,
 				3ACD2C69240C2E620017FABC /* DeleteChallenge.swift */,
-				3A8DB6892413B41500225DA4 /* UpdateChallengeUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -689,6 +687,7 @@
 				3ACD2C71240C2E620017FABC /* NSManagedObjectContext-Utils.swift */,
 				3ACD2C6F240C2E620017FABC /* Gateways */,
 				3ACD2C72240C2E620017FABC /* Entities */,
+				3A7008312414EB990028CE21 /* CoreDataError.swift */,
 			);
 			path = LocalPersistence;
 			sourceTree = "<group>";
@@ -1160,19 +1159,18 @@
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,
 				3A2F573C231272DF00212317 /* LockStateRequests.swift in Sources */,
 				3A00A510238323410011ACDC /* JWTError.swift in Sources */,
+				3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */,
 				3A47D676230F1D6A00B2B200 /* RequestBuilder.swift in Sources */,
 				544EC47F233BAA7300417DAF /* MainButton.swift in Sources */,
 				3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */,
 				3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */,
 				3AB765CA231BDBC1007FA888 /* Router.swift in Sources */,
-				3AA12738232ABDE5004206E5 /* PageProvider.swift in Sources */,
 				3A00A50D2383188A0011ACDC /* P8.swift in Sources */,
 				3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */,
 				3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */,
-				3ACD2C74240C2E620017FABC /* Result.swift in Sources */,
 				3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */,
 				3AA1272E232ABC8D004206E5 /* CustomPageControl.swift in Sources */,
-				3ACD2C76240C2E620017FABC /* AddChallenge.swift in Sources */,
+				3ACD2C76240C2E620017FABC /* CreateChallenge.swift in Sources */,
 				54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */,
 				3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */,
 				3A9F9A72237709B300022C38 /* LosingViewController.swift in Sources */,
@@ -1184,6 +1182,7 @@
 				3ACD2C79240C2E620017FABC /* Challenge.swift in Sources */,
 				3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */,
 				3A00A519238323EC0011ACDC /* ASN1.swift in Sources */,
+				3A70083424151F070028CE21 /* PageModel.swift in Sources */,
 				3ACD2C78240C2E620017FABC /* DeleteChallenge.swift in Sources */,
 				C1FE2042234FB36A00377004 /* NotificationManager.swift in Sources */,
 				54008D8B237C9F2D0072EC00 /* SongModel.swift in Sources */,
@@ -1193,12 +1192,11 @@
 				3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */,
 				3A0D5A1B234E5E6F00F20BC3 /* CreateChallengeViewController.swift in Sources */,
 				3AA1272A232ABC01004206E5 /* GuideViewController.swift in Sources */,
-				3A8DB68A2413B41500225DA4 /* UpdateChallengeUseCase.swift in Sources */,
+				3A8DB68A2413B41500225DA4 /* FinishChallenge.swift in Sources */,
 				3AD0689A2358F085003D30A6 /* PageNavigationPresenter.swift in Sources */,
 				3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */,
 				3A9F9A792377200300022C38 /* PurchasesManager.swift in Sources */,
 				3ACD2C7D240C2E620017FABC /* CDChallenge.swift in Sources */,
-				3AA12742232ABF93004206E5 /* PageModel.swift in Sources */,
 				3A47D65C230F18FB00B2B200 /* AppDelegate.swift in Sources */,
 				3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */,
 				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,

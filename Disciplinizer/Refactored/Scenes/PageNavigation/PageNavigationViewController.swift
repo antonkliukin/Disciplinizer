@@ -22,7 +22,11 @@ final class PageNavigationViewController: UIViewController, PageNavigationViewPr
     var presenter: PageNavigationPresenterProtocol?
     var controllers: [UIViewController] = [] {
         didSet {
-            guard controllers.count == 3 else { fatalError("Must has 3 controllers.") }
+            guard controllers.count == 3 else {
+                assertionFailure("Must has 3 controllers.")
+                return
+            }
+
             maxPageIndex = controllers.count - 1
         }
     }

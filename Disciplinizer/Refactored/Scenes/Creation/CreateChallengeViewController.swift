@@ -14,7 +14,9 @@ protocol CreateChallengeViewProtocol: ViewProtocol {
     var selectedBetId: String { get }
 
     func changeStartButtonState(isActive: Bool)
-    func setupBetSlider(withPossibleBets bets: [BetProtocol])
+    func setupBetSelector(withPossibleBets bets: [BetProtocol])
+    func setupModeSelectorWith(_ mode: ChallengeMode)
+    func setupDurationSelectorWith(minutes: Int)
 }
 
 final class CreateChallengeViewController: UIViewController, CreateChallengeViewProtocol {
@@ -53,7 +55,9 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     private var currentBetIndex = 0
     private var bets: [BetProtocol] = []
 
-    var presenter: CreateChallengePresenter?
+    var presenter: CreateChallengePresenterProtocol?
+
+    // MARK: View Protocol
 
     var selectedMode: ChallengeMode? {
         guard modeSegmentedControl.selectedSegmentIndex >= 0 else {
@@ -70,6 +74,39 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
 
     var selectedBetId: String {
         return bets[currentBetIndex].id
+    }
+
+    func changeStartButtonState(isActive: Bool) {
+        startButton.alpha = isActive ? 1 : 0.5
+        startButton.isEnabled = isActive
+    }
+
+    func setupBetSelector(withPossibleBets bets: [BetProtocol]) {
+        DispatchQueue.main.async {
+        self.bets = bets
+        let values = Array(0..<bets.count)
+            self.betSlider.minimumValue = Float(values.min() ?? 0)
+            self.betSlider.maximumValue = Float(values.max() ?? 0)
+
+            self.currentBetIndex = values.last ?? 0
+            self.betSlider.value = Float(self.currentBetIndex)
+
+            if self.currentBetIndex < bets.count {
+                self.betLabel.text = bets[self.currentBetIndex].localizedPrice ?? "Loading bets..."
+        }
+
+            self.betSlider.addTarget(self, action: #selector(self.betSliderDidChanged(sender:)), for: .valueChanged)
+        }
+    }
+
+    func setupModeSelectorWith(_ mode: ChallengeMode) {
+        let index = mode == .paid ? 0 : 1
+        modeSegmentedControl.selectedSegmentIndex = index
+    }
+
+    func setupDurationSelectorWith(minutes: Int) {
+        setupTimer(withSelectedMinutesValue: minutes)
+        setupTimerLabel(valueInMinutes: minutes)
     }
 
     override func viewDidLoad() {
@@ -93,12 +130,6 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         presenter?.viewDidLoad()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        presenter?.viewWillAppear()
-    }
-
     private func setupMainView() {
         initialMainViewTop = mainViewTop.constant
         initialMainViewHeight = mainViewHeight.constant
@@ -112,29 +143,11 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         }
     }
 
-    private func setupTimer() {
+    private func setupTimer(withSelectedMinutesValue minutes: Int = 10) {
         timerSlider.minimumValue = 10
         timerSlider.maximumValue = 120
-        timerSlider.value = 10
+        timerSlider.value = Float(minutes)
         timerSlider.addTarget(self, action: #selector(timerSliderDidChanged(sender:)), for: .valueChanged)
-    }
-
-    func setupBetSlider(withPossibleBets bets: [BetProtocol]) {
-        DispatchQueue.main.async {
-        self.bets = bets
-        let values = Array(0..<bets.count)
-            self.betSlider.minimumValue = Float(values.min() ?? 0)
-            self.betSlider.maximumValue = Float(values.max() ?? 0)
-        
-            self.currentBetIndex = values.last ?? 0
-            self.betSlider.value = Float(self.currentBetIndex)
-
-            if self.currentBetIndex < bets.count {
-                self.betLabel.text = bets[self.currentBetIndex].localizedPrice ?? "Loading bets..."
-        }
-
-            self.betSlider.addTarget(self, action: #selector(self.betSliderDidChanged(sender:)), for: .valueChanged)
-        }
     }
 
     private func setupModePicker() {
@@ -186,8 +199,12 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         }
     }
 
+    private func setupTimerLabel(valueInMinutes: Int) {
+        timerLabel.text = "\(valueInMinutes) Min"
+    }
+
     @objc private func timerSliderDidChanged(sender: UISlider) {
-        timerLabel.text = "\(Int(sender.value)) Min"
+        setupTimerLabel(valueInMinutes: Int(sender.value))
     }
 
     @objc private func betSliderDidChanged(sender: UISlider) {
@@ -207,11 +224,6 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
                 betLabel.text = bets[currentBetIndex].localizedPrice ?? "Localized Price"
             }
         }
-    }
-
-    func changeStartButtonState(isActive: Bool) {
-        startButton.alpha = isActive ? 1 : 0.5
-        startButton.isEnabled = isActive
     }
 
     @IBAction private func startButtonTapped(_ sender: Any) {

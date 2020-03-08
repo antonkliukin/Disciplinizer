@@ -25,19 +25,21 @@ final class Config {
     static let shared = Config()
 
     fileprivate var configs: [ConfigurationKey: String]
-    fileprivate var configuration: Configuration
+    fileprivate var configuration: Configuration?
 
     private init() {
         configs = [ConfigurationKey: String]()
 
         guard let currentConfiguration = Bundle.main.object(forInfoDictionaryKey: Constants.config) as? String else {
-            fatalError("Config - init(): No 'config' key in Config.plist.")
+            assertionFailure("Config - init(): No 'config' key in Config.plist.")
+            return
         }
 
         let splittedCurrentConfiguration = currentConfiguration.split(separator: "\n")
 
         guard let configuration = Configuration(rawValue: String(splittedCurrentConfiguration[0])) else {
-                fatalError("Config - init(): Unsupported configuration.")
+            assertionFailure("Config - init(): Unsupported configuration.")
+            return
         }
 
         self.configuration = configuration
@@ -45,11 +47,13 @@ final class Config {
         guard let pathToDict = Bundle.main.path(forResource: "Config", ofType: "plist"),
             let dictFromPath = NSDictionary(contentsOfFile: pathToDict),
             let dict = dictFromPath.object(forKey: configuration.rawValue) as? [String: String] else {
-                fatalError("Config - init(): No '" + configuration.rawValue + "' key in Config.plist.")
+                assertionFailure("Config - init(): No '" + configuration.rawValue + "' key in Config.plist.")
+                return
         }
 
         guard let deviceCheckBaseURL = dict[ConfigurationKey.deviceCheckBaseURL.rawValue]  else {
-                fatalError("Config - init(): No '" + ConfigurationKey.deviceCheckBaseURL.rawValue + "' key in Config.plist.")
+            assertionFailure("Config - init(): No '" + ConfigurationKey.deviceCheckBaseURL.rawValue + "' key in Config.plist.")
+            return
         }
 
         configs[.deviceCheckBaseURL] = deviceCheckBaseURL

@@ -1,8 +1,8 @@
 //
-//  Result.swift
+//  CoreDataError.swift
 //  Disciplinizer
 //
-//  Created by Anton Kliukin on 15.02.2020.
+//  Created by Anton Kliukin on 08.03.2020.
 //  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
@@ -15,5 +15,3 @@ struct CoreError: Error {
 
     var message = ""
 }
-
-//typealias Result<T> = Swift.Result<T, Error>

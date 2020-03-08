@@ -6,9 +6,8 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - Current Challenge Presenter Protocol
+import AVFoundation
+import SwiftySound
 
 protocol CurrentChallengePresenterProtocol: class {
     func didTapStopChallenge()
@@ -18,14 +17,12 @@ protocol CurrentChallengePresenterProtocol: class {
     func viewDidAppear()
 }
 
-// MARK: - Current Challenge Presenter
-
 final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     
     weak var view: CurrentChallengeViewProtocol?
 
     private let startChallengeUseCase: StartChallengeUseCaseProtocol
-    private let updateChallengeUseCase: UpdateChallengeUseCaseProtocol
+    private let finishChallengeUseCase: FinishChallengeUseCaseProtocol
     
     private let challenge: Challenge
     private var challengeTimer: Timer?
@@ -34,12 +31,12 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     required init(view: CurrentChallengeViewProtocol,
                   challenge: Challenge,
                   startChallengeUseCase: StartChallengeUseCaseProtocol,
-                  updateChallengeUseCase: UpdateChallengeUseCaseProtocol) {
+                  finishChallengeUseCase: FinishChallengeUseCaseProtocol) {
         self.view = view
         self.challenge = challenge
         self.durationInSeconds = Int(challenge.duration)
         self.startChallengeUseCase = startChallengeUseCase
-        self.updateChallengeUseCase = updateChallengeUseCase
+        self.finishChallengeUseCase = finishChallengeUseCase
     }
 
     func viewDidLoad() {
@@ -56,8 +53,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         // TODO: - Add confirmation alert
         view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
         stopMusic()
+        stopMutedPlayback()
     }
-    
+
     func didTapMusicSelect() {
         let controller = Controller.createMusicSelect()
         controller.delegate = self
@@ -66,7 +64,16 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     
     func didTapPlayButton() {
         let soundManager = SoundManager.shared
-        (SoundManager.shared.selectedSong?.sound?.playing ?? false) ? soundManager.stopSelected() : soundManager.playSelected()
+
+        let didTapStop = SoundManager.shared.selectedSong?.sound?.playing ?? false
+
+        if didTapStop {
+            soundManager.stopSelected()
+
+            startMutedPlayback()
+        } else {
+            soundManager.playSelected()
+        }
     }
     
     @objc private func updateTimer() {
@@ -87,8 +94,28 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         SoundManager.shared.stopSelected()
     }
 
+    private let defaultSound = Sound(url: R.file.pianoWav()!)
+
+    private func startMutedPlayback() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
+        } catch {
+            assertionFailure("AVAudioSession error occured.")
+        }
+
+        Sound.category = .playback
+        defaultSound?.volume = 0
+        defaultSound?.play(numberOfLoops: -1)
+    }
+
+    private func stopMutedPlayback() {
+        defaultSound?.stop()
+    }
+
     private func start(_ challenge: Challenge) {
         print("New challenge has been started")
+
+        startMutedPlayback()
 
         self.challengeTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                                    target: self,
@@ -112,7 +139,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     private func saveFinishedChallenge(_ challenge: Challenge) {
-        updateChallengeUseCase.update(challenge: challenge) { [weak self] (updateResult) in
+        finishChallengeUseCase.finish(challenge: challenge) { [weak self] (finishingResult) in
             guard let self = self else {
                 assertionFailure()
                 return
@@ -121,9 +148,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
             self.invalidateTimer()
             self.stopMusic()
 
-            switch updateResult {
-            case .success(let updatedChallenge):
-                let isLose = !updatedChallenge.isSuccess
+            switch finishingResult {
+            case .success(let finishedChallenge):
+                let isLose = !finishedChallenge.isSuccess
 
                 if isLose {
                     print("Lose")

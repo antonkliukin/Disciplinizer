@@ -43,11 +43,11 @@ class GuidePresenter {
 
 extension GuidePresenter: GuidePresenterProtocol {
     func viewDidLoad() {
-        pageModels = PageProvider().getPages()
+        //pageModels = PageProvider().getPages()
     }
 
     func getPageViewModels() -> [PageModel]? {
-        return PageProvider().getPages()
+        return []//PageProvider().getPages()
     }
 
     func didScrollToPage(atIndex index: Int) {

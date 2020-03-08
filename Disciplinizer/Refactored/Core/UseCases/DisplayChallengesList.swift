@@ -21,11 +21,8 @@ class DisplayChallengesListUseCase: DisplayChallengesUseCaseProtocol {
         self.challengesGateway = challengesGateway
     }
 
-    // MARK: - DisplayChallengesUseCase
-
     func displayChallenges(completionHandler: @escaping (Result<[Challenge], Error>) -> Void) {
-        challengesGateway.getChallenges { (result) in
-            // Do any additional processing & after that call the completion handler
+        challengesGateway.getAll { (result) in
             completionHandler(result)
         }
     }

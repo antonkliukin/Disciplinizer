@@ -19,7 +19,7 @@ extension CDChallenge {
                          betId: betId)
     }
 
-    func populate(with parameters: AddChallengeParameters) {
+    func populate(with parameters: ChallengeParameters) {
         // Normally this id should be used at some point during the sync with the API backend
         id = NSUUID().uuidString
 

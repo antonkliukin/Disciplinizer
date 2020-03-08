@@ -13,7 +13,7 @@ protocol MusicSelectPresenterProtocol {
     func didSelect(song: SongModel?)
 }
 
-final class MusicSelectPresenter: MusicSelectViewProtocol {
+final class MusicSelectPresenter: MusicSelectPresenterProtocol {
     private let songsNames = [Strings.songNamesPillowTalk(),
                               Strings.songNamesLongDays(),
                               Strings.songNamesDistantPlace(),
