@@ -1,10 +1,10 @@
 platform :ios, '11.0'
 
-target 'Concentration tracker' do
+target 'Disciplinizer' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Concentration tracker
+  # Pods for Disciplinizer
   pod 'Alamofire', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
   pod 'R.swift', '~> 5.0'
