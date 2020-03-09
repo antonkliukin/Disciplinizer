@@ -18,6 +18,12 @@ struct Challenge {
     var betId: String?
 }
 
+extension Challenge: Equatable { }
+
+func == (lhs: Challenge, rhs: Challenge) -> Bool {
+    return lhs.id == rhs.id
+}
+
 enum ChallengeResult {
     case win
     case lose

@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol LosingPresenterProtocol {
+protocol BlockedPresenterProtocol {
     func didTapPurchase()
     func viewDidLoad()
 }
 
-final class LosingPresenter: LosingPresenterProtocol {
-    private weak var view: LosingViewProtocol?
+final class BlockedPresenter: BlockedPresenterProtocol {
+    private weak var view: BlockedViewProtocol?
     private var challenge: Challenge
     private var purchasesManager: PurchasesManagerProtocol
 
-    init(view: LosingViewProtocol, failedChallenge: Challenge, purchasesManager: PurchasesManagerProtocol) {
+    init(view: BlockedViewProtocol, failedChallenge: Challenge, purchasesManager: PurchasesManagerProtocol) {
         self.view = view
         self.challenge = failedChallenge
         self.purchasesManager = purchasesManager

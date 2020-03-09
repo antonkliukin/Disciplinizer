@@ -1,5 +1,5 @@
 //
-//  LosingViewController.swift
+//  BlockedViewController.swift
 //  Disciplinizer
 //
 //  Created by Anton Kliukin on 09.11.2019.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol LosingViewProtocol: ViewProtocol {
+protocol BlockedViewProtocol: ViewProtocol {
     func configureLoseMessage(_ message: String)
     func setButtonTitle(_ title: String)
     func showError(_ message: String)
 }
 
-final class LosingViewController: UIViewController, LosingViewProtocol {
+final class BlockedViewController: UIViewController, BlockedViewProtocol {
     @IBOutlet private weak var loseMessageLabel: UILabel!
     @IBOutlet private weak var purchaseButton: MainButton!
 
-    var presenter: LosingPresenterProtocol?
+    var presenter: BlockedPresenterProtocol?
 
     override func viewDidLoad() {
         presenter?.viewDidLoad()

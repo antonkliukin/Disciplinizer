@@ -23,7 +23,7 @@ enum BetType: CaseIterable, BetProtocol {
     static var availiableBets: [String: String] = [:]
 
     var id: String {
-        let baseId = "com.d80.concentrationTracker"
+        let baseId = "com.antonkliukin.disciplinizer"
 
         switch self {
         case .oneDollar: return baseId + ".one"

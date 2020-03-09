@@ -10,14 +10,13 @@ import UIKit
 
 extension UIViewController {
     enum Storyboard: String {
-        case main = "Main"
         case alert = "Alert"
         case guide = "Guide"
         case createChallenge = "CreateChallenge"
         case pageNavigation = "PageNavigation"
         case settings = "Settings"
         case history = "History"
-        case losing = "Losing"
+        case blocked = "Blocked"
         case currentChallenge = "CurrentChallenge"
     }
 

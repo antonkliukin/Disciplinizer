@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3ACD2C83240CD6210017FABC"
-               BuildableName = "ConcentrationTrackerTests.xctest"
-               BlueprintName = "ConcentrationTrackerTests"
+               BuildableName = "DisciplinizerTests.xctest"
+               BlueprintName = "DisciplinizerTests"
                ReferencedContainer = "container:Disciplinizer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +40,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -50,14 +52,23 @@
             ReferencedContainer = "container:Disciplinizer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A47D657230F18FB00B2B200"
+            BuildableName = "Disciplinizer.app"
+            BlueprintName = "Disciplinizer"
+            ReferencedContainer = "container:Disciplinizer.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3ACD2C83240CD6210017FABC"
-               BuildableName = "ConcentrationTrackerTests.xctest"
-               BlueprintName = "ConcentrationTrackerTests"
+               BuildableName = "DisciplinizerTests.xctest"
+               BlueprintName = "DisciplinizerTests"
                ReferencedContainer = "container:Disciplinizer.xcodeproj">
             </BuildableReference>
          </TestableReference>

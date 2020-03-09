@@ -8,7 +8,7 @@
 
 import CoreData
 
-@testable import Concentration_tracker
+@testable import Disciplinizer
 
 class InMemoryCoreDataStack: CoreDataStackProtocol {
 

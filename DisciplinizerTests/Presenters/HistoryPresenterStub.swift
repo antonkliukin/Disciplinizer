@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import Concentration_tracker
+@testable import Disciplinizer
 
 class HistoryPresenterStub: HistoryPresenterProtocol {
     func viewDidLoad() {}

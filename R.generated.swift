@@ -94,6 +94,8 @@ struct R: Rswift.Validatable {
   struct storyboard {
     /// Storyboard `Alert`.
     static let alert = _R.storyboard.alert()
+    /// Storyboard `Blocked`.
+    static let blocked = _R.storyboard.blocked()
     /// Storyboard `CreateChallenge`.
     static let createChallenge = _R.storyboard.createChallenge()
     /// Storyboard `CurrentChallenge`.
@@ -104,8 +106,6 @@ struct R: Rswift.Validatable {
     static let history = _R.storyboard.history()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Losing`.
-    static let losing = _R.storyboard.losing()
     /// Storyboard `PageNavigation`.
     static let pageNavigation = _R.storyboard.pageNavigation()
     /// Storyboard `Settings`.
@@ -115,6 +115,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Alert", bundle: ...)`
     static func alert(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.alert)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Blocked", bundle: ...)`
+    static func blocked(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.blocked)
     }
     #endif
 
@@ -150,13 +157,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Losing", bundle: ...)`
-    static func losing(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.losing)
     }
     #endif
 
@@ -1349,6 +1349,9 @@ struct _R: Rswift.Validatable {
       try alert.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try blocked.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try createChallenge.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1362,9 +1365,6 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
-      try losing.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try pageNavigation.validate()
@@ -1388,6 +1388,27 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.alert().alertViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'alertViewController' could not be loaded from storyboard 'Alert' as 'AlertViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct blocked: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let losingViewController = StoryboardViewControllerResource<BlockedViewController>(identifier: "LosingViewController")
+      let name = "Blocked"
+
+      func losingViewController(_: Void = ()) -> BlockedViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: losingViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Blocked', but couldn't be loaded.") }
+        }
+        if _R.storyboard.blocked().losingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'losingViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
       }
 
       fileprivate init() {}
@@ -1495,27 +1516,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct losing: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let losingViewController = StoryboardViewControllerResource<LosingViewController>(identifier: "LosingViewController")
-      let name = "Losing"
-
-      func losingViewController(_: Void = ()) -> LosingViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: losingViewController)
-      }
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Losing', but couldn't be loaded.") }
-        }
-        if _R.storyboard.losing().losingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'losingViewController' could not be loaded from storyboard 'Losing' as 'LosingViewController'.") }
       }
 
       fileprivate init() {}
