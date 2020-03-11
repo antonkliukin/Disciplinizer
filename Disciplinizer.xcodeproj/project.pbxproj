@@ -42,9 +42,11 @@
 		3A60A92E23336E520037E0A4 /* piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A60A92D23336E520037E0A4 /* piano.wav */; };
 		3A653D9A24155E2700BE613C /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9924155E2700BE613C /* NSError.swift */; };
 		3A653D9C2416378C00BE613C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9B2416378C00BE613C /* Result.swift */; };
+		3A653DA2241808CE00BE613C /* MakePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DA1241808CE00BE613C /* MakePayment.swift */; };
+		3A653DA424180A9300BE613C /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DA324180A9300BE613C /* Payment.swift */; };
+		3A653DA624180B1F00BE613C /* PaymentsGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DA524180B1F00BE613C /* PaymentsGatewayProtocol.swift */; };
 		3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7008312414EB990028CE21 /* CoreDataError.swift */; };
 		3A70083424151F070028CE21 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083324151F070028CE21 /* PageModel.swift */; };
-		3A700837241523BE0028CE21 /* UnblockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A700836241523BD0028CE21 /* UnblockApp.swift */; };
 		3A70083924153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */; };
 		3A70083F24153FF90028CE21 /* ChallengesGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */; };
 		3A70084624154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */; };
@@ -68,7 +70,6 @@
 		3AB765CA231BDBC1007FA888 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765C9231BDBC1007FA888 /* Router.swift */; };
 		3AB765CD231C299F007FA888 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CC231C299F007FA888 /* Controllers.swift */; };
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
-		3AC223732364B22A0075C773 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223722364B22A0075C773 /* ChallengeManager.swift */; };
 		3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223772365AB840075C773 /* Date+Extensions.swift */; };
 		3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223792365B3710075C773 /* Result+Success.swift */; };
 		3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C48240C2D730017FABC /* DataBaseSchema.xcdatamodeld */; };
@@ -199,9 +200,11 @@
 		3A60A92D23336E520037E0A4 /* piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano.wav; sourceTree = "<group>"; };
 		3A653D9924155E2700BE613C /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		3A653D9B2416378C00BE613C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3A653DA1241808CE00BE613C /* MakePayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePayment.swift; sourceTree = "<group>"; };
+		3A653DA324180A9300BE613C /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		3A653DA524180B1F00BE613C /* PaymentsGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGatewayProtocol.swift; sourceTree = "<group>"; };
 		3A7008312414EB990028CE21 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		3A70083324151F070028CE21 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		3A700836241523BD0028CE21 /* UnblockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnblockApp.swift; sourceTree = "<group>"; };
 		3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChallengesUseCaseTest.swift; sourceTree = "<group>"; };
 		3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesGatewaySpy.swift; sourceTree = "<group>"; };
 		3A700843241545350028CE21 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,7 +231,6 @@
 		3AB765C9231BDBC1007FA888 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3AB765CC231C299F007FA888 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
-		3AC223722364B22A0075C773 /* ChallengeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
 		3AC223772365AB840075C773 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		3AC223792365B3710075C773 /* Result+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Success.swift"; sourceTree = "<group>"; };
 		3ACD2C49240C2D730017FABC /* ChallengeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeCoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -490,7 +492,6 @@
 				3A47D680230F215C00B2B200 /* UserData */,
 				3A47D66D230F1CE200B2B200 /* Networking */,
 				C1FE2041234FB36A00377004 /* NotificationManager.swift */,
-				3AC223722364B22A0075C773 /* ChallengeManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -557,6 +558,13 @@
 				3A60A92D23336E520037E0A4 /* piano.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3A653DA724180BFE00BE613C /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		3A70083A24153F6C0028CE21 /* Helpers */ = {
@@ -693,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */,
+				3A653DA524180B1F00BE613C /* PaymentsGatewayProtocol.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -706,7 +715,7 @@
 				3ACD2C68240C2E620017FABC /* DisplayChallengesList.swift */,
 				3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */,
 				3ACD2C69240C2E620017FABC /* DeleteChallenge.swift */,
-				3A700836241523BD0028CE21 /* UnblockApp.swift */,
+				3A653DA1241808CE00BE613C /* MakePayment.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -715,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				3ACD2C6B240C2E620017FABC /* Challenge.swift */,
+				3A653DA324180A9300BE613C /* Payment.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -722,6 +732,7 @@
 		3ACD2C6C240C2E620017FABC /* EntityGateway */ = {
 			isa = PBXGroup;
 			children = (
+				3A653DA724180BFE00BE613C /* Payments */,
 				3ACD2C6D240C2E620017FABC /* LocalPersistence */,
 			);
 			path = EntityGateway;
@@ -1185,10 +1196,10 @@
 				3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */,
 				3A2F573523125E4000212317 /* UIViewController+Extension.swift in Sources */,
 				3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */,
-				3AC223732364B22A0075C773 /* ChallengeManager.swift in Sources */,
 				5432587A237A094D0082DEB0 /* SongSelectCell.swift in Sources */,
 				3A47D671230F1D1A00B2B200 /* NetworkError.swift in Sources */,
 				3ACD2C7C240C2E620017FABC /* NSManagedObjectContext-Utils.swift in Sources */,
+				3A653DA2241808CE00BE613C /* MakePayment.swift in Sources */,
 				546A863123845D78003DDC36 /* SoundManager.swift in Sources */,
 				3ACD2C5D240C2DE60017FABC /* ChallengeCell.swift in Sources */,
 				3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */,
@@ -1213,6 +1224,7 @@
 				3A47D676230F1D6A00B2B200 /* RequestBuilder.swift in Sources */,
 				544EC47F233BAA7300417DAF /* MainButton.swift in Sources */,
 				3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */,
+				3A653DA424180A9300BE613C /* Payment.swift in Sources */,
 				3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */,
 				3AB765CA231BDBC1007FA888 /* Router.swift in Sources */,
 				3A00A50D2383188A0011ACDC /* P8.swift in Sources */,
@@ -1223,7 +1235,6 @@
 				3ACD2C76240C2E620017FABC /* CreateChallenge.swift in Sources */,
 				54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */,
 				3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */,
-				3A700837241523BE0028CE21 /* UnblockApp.swift in Sources */,
 				3A9F9A72237709B300022C38 /* BlockedViewController.swift in Sources */,
 				3ACD2C7A240C2E620017FABC /* CoreDataStack.swift in Sources */,
 				3A47D682230F217200B2B200 /* KeychainService.swift in Sources */,
@@ -1238,6 +1249,7 @@
 				C1FE2042234FB36A00377004 /* NotificationManager.swift in Sources */,
 				54008D8B237C9F2D0072EC00 /* SongModel.swift in Sources */,
 				3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */,
+				3A653DA624180B1F00BE613C /* PaymentsGatewayProtocol.swift in Sources */,
 				3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */,
 				3AB765CD231C299F007FA888 /* Controllers.swift in Sources */,
 				3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */,

@@ -34,7 +34,7 @@ class CoreDataChallengesGatewayTest: XCTestCase {
         // Given
         let challengeParameters = ChallengeParameters.createParameters()
 
-        let addChallengeCompletionHandlerExpectation = expectation(description: "Add challenge completion handler expectation")
+        let (_ challenge: Result<Challenge, Error>) -> VoidExpectation = expectation(description: "Add challenge completion handler expectation")
         let getChallengesCompletionHandlerExpectation = expectation(description: "Get challenges completion handler expectation")
 
         // When
@@ -48,7 +48,7 @@ class CoreDataChallengesGatewayTest: XCTestCase {
             assert(challenge: challenge, builtFromParameters: challengeParameters)
             assert(challenge: challenge, wasAddedIn: self.inMemoryCoreDataBooksGateway, expectation: getChallengesCompletionHandlerExpectation)
 
-            addChallengeCompletionHandlerExpectation.fulfill()
+            (_ challenge: Result<Challenge, Error>) -> VoidExpectation.fulfill()
         }
 
         waitForExpectations(timeout: 1, handler: nil)

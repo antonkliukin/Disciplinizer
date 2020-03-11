@@ -37,7 +37,7 @@ class DeleteChallengesUseCaseTest: XCTestCase {
 //        let expectedResultToBeReturned: Result<Void, Error> = Result.success(())
 //        challengesGatewaySpy.deleteAllResultToBeReturned = expectedResultToBeReturned
 //
-//        let deleteChallengeCompletionHandlerExpectation = expectation(description: "Delete Challenge Expectation")
+//        let (_ challenge: Result<Void, Error>) -> VoidExpectation = expectation(description: "Delete Challenge Expectation")
 //
 //        // When
 //        deleteChallengesUseCase.deleteAll(completionHandler: )

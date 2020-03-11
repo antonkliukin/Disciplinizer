@@ -8,17 +8,14 @@
 
 import Foundation
 
-typealias DeleteChallengeUseCaseCompletionHandler = (_ challenges: Result<Void, Error>) -> Void
-typealias DeleteAllChallengeUseCaseCompletionHandler = (_ challenges: Result<Void, Error>) -> Void
-
 struct DeleteChallengeUseCaseNotifications {
     // Notification sent when a challnege is deleted having the challenge set to the notification object
     static let didDeleteChallenge = Notification.Name("didDeleteChallengeNotification")
 }
 
 protocol DeleteChallengeUseCaseProtocol {
-    func delete(challenge: Challenge, completionHandler: @escaping DeleteChallengeUseCaseCompletionHandler)
-    func deleteAll(completionHandler: @escaping DeleteAllChallengeUseCaseCompletionHandler)
+    func delete(challenge: Challenge, completionHandler: @escaping (_ challenges: Result<Void, Error>) -> Void)
+    func deleteAll(completionHandler: @escaping (_ challenges: Result<Void, Error>) -> Void)
 }
 
 class DeleteChallengeUseCase: DeleteChallengeUseCaseProtocol {
@@ -45,7 +42,7 @@ class DeleteChallengeUseCase: DeleteChallengeUseCaseProtocol {
         }
     }
 
-    func deleteAll(completionHandler: @escaping DeleteAllChallengeUseCaseCompletionHandler) {
+    func deleteAll(completionHandler: @escaping (_ challenges: Result<Void, Error>) -> Void) {
         challengeGateway.deleteAll { (result) in
             switch result {
             case .success:

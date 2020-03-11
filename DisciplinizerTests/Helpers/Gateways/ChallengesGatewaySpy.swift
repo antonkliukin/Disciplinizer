@@ -18,11 +18,11 @@ class ChallengesGatewaySpy: ChallengesGatewayProtocol {
 
     var deletedChallenge: Challenge!
 
-    func add(parameters: ChallengeParameters, completionHandler: @escaping AddChallengeCompletionHandler) {
+    func add(parameters: ChallengeParameters, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void) {
 
     }
 
-    func delete(challenge: Challenge, completionHandler: @escaping DeleteChallengeCompletionHandler) {
+    func delete(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void) {
 
     }
 
@@ -30,15 +30,15 @@ class ChallengesGatewaySpy: ChallengesGatewayProtocol {
 
     }
 
-    func getLast(completionHandler: @escaping GetLastCompletionHandler) {
+    func getLast(completionHandler: @escaping (_ challenge: Result<Challenge?, Error>) -> Void) {
 
     }
 
-    func update(challenge: Challenge, completionHandler: @escaping UpdateChallengeCompletionHandler) {
+    func update(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void) {
 
     }
 
-    func deleteAll(completionHandler: @escaping DeleteChallengeCompletionHandler) {
+    func deleteAll(completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void) {
 
     }
 

@@ -8,10 +8,8 @@
 
 import Foundation
 
-typealias CreateChallengeUseCaseCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-
 protocol CreateChallengeUseCaseProtocol {
-    func createWith(parameters: ChallengeParameters, completionHandler: @escaping CreateChallengeUseCaseCompletionHandler)
+    func createWith(parameters: ChallengeParameters, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void)
 }
 
 // This class is used across all layers - Core, UI and Network

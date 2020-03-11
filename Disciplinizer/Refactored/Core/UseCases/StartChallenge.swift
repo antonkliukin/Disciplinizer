@@ -8,22 +8,14 @@
 
 import Foundation
 
-typealias StartChallengeUseCaseCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-
 protocol StartChallengeUseCaseProtocol {
-    func start(challenge: Challenge, completionHandler: @escaping StartChallengeUseCaseCompletionHandler)
+    func start(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void)
 }
 
 class StartChallengeUseCase: StartChallengeUseCaseProtocol {
-    let challengeManager: ChallengeManager
-
-    init(challengeManager: ChallengeManager) {
-        self.challengeManager = challengeManager
+    init() {
     }
 
     func start(challenge: Challenge, completionHandler: @escaping (Result<Challenge, Error>) -> Void) {
-        challengeManager.start(challenge) { (finishedChallenge) in
-            completionHandler(finishedChallenge)
-        }
     }
 }

@@ -17,22 +17,22 @@ protocol CreateChallengePresenterProtocol {
 
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
-    private let addChallengeUseCase: CreateChallengeUseCaseProtocol
+    private let createChallengeUseCase: CreateChallengeUseCaseProtocol
 
-    private var purchaseManager: PurchasesManagerProtocol?
+    private var purchaseManager = PurchasesManager()
     private var possibleBets: [BetProtocol] = []
     private var newChallenge: Challenge!
 
     init(view: CreateChallengeViewProtocol,
-         addChallengeUseCase: CreateChallengeUseCaseProtocol) {
+         createChallengeUseCase: CreateChallengeUseCaseProtocol) {
         self.view = view
-        self.addChallengeUseCase = addChallengeUseCase
+        self.createChallengeUseCase = createChallengeUseCase
     }
 
     func viewDidLoad() {
         view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
 
-        purchaseManager?.getAvailiableBets { [weak self] (bets) in
+        purchaseManager.getAvailiableBets { [weak self] (bets) in
             self?.view?.setupBetSelector(withPossibleBets: bets)
         }
     }
@@ -64,9 +64,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
 
     func startButtonTapped() {
         // TODO: Check if notifications are enabled. If not, show alert redirecting user to notif settings
+        let isNotifEnabled = NotificationManager.shared.isAuthorized()
 
-        guard !isChallengeRunning else {
-            assertionFailure("Should not be possible")
+        guard isNotifEnabled else {
+            assertionFailure()
             return
         }
 
@@ -85,15 +86,15 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                                                       isPaid: isPaid,
                                                       betId: betId)
 
-        addChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (addingResult) in
+        createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
             guard let self = self else {
                 assertionFailure()
                 return
             }
 
-            switch addingResult {
-            case .success(let addedChallenge):
-                self.view?.router?.present(Controller.currentChallenge(with: addedChallenge))
+            switch creationResult {
+            case .success(let createdChallenge):
+                self.view?.router?.present(Controller.currentChallenge(with: createdChallenge))
             case .failure:
                 assertionFailure()
             }

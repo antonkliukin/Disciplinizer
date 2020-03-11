@@ -8,10 +8,8 @@
 
 import Foundation
 
-typealias DisplayLastChallengeUseCaseCompletionHandler = (_ challenges: Result<Challenge?, Error>) -> Void
-
 protocol DisplayLastChallengeUseCaseProtocol {
-    func displayLastChallenge(completionHandler: @escaping DisplayLastChallengeUseCaseCompletionHandler)
+    func displayLastChallenge(completionHandler: @escaping (_ challenges: Result<Challenge?, Error>) -> Void)
 }
 
 class DisplayLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol {

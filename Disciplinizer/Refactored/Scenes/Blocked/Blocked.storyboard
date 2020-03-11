@@ -12,7 +12,7 @@
         <!--Blocked View Controller-->
         <scene sceneID="ynb-Tj-mjR">
             <objects>
-                <viewController storyboardIdentifier="LosingViewController" id="KCX-c9-j2p" customClass="BlockedViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlockedViewController" id="KCX-c9-j2p" customClass="BlockedViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ngq-Xf-loc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

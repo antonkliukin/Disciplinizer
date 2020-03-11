@@ -21,7 +21,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
 
     // MARK: - ChallengesGateway
 
-    func getLast(completionHandler: @escaping GetLastCompletionHandler) {
+    func getLast(completionHandler: @escaping (_ challenge: Result<Challenge?, Error>) -> Void) {
         if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self) {
             let lastCoreDataChallenge = coreDataChallenges.last
             completionHandler(.success(lastCoreDataChallenge?.challenge))
@@ -31,7 +31,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
         }
     }
 
-    func getAll(completionHandler: GetAllCompletionHandler) {
+    func getAll(completionHandler: @escaping (_ challenges: Result<[Challenge], Error>) -> Void) {
         if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self) {
             let challenges = coreDataChallenges.map { $0.challenge }
             completionHandler(.success(challenges))
@@ -40,7 +40,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
         }
     }
 
-    func add(parameters: ChallengeParameters, completionHandler: AddChallengeCompletionHandler) {
+    func add(parameters: ChallengeParameters, completionHandler: (_ challenge: Result<Challenge, Error>) -> Void) {
         guard let coreDataChallenge = viewContext.addEntity(withType: CDChallenge.self) else {
             completionHandler(.failure(CoreError(message: "Failed adding the challenge in the data base")))
             return
@@ -57,7 +57,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
         }
     }
 
-    func update(challenge: Challenge, completionHandler: @escaping UpdateChallengeCompletionHandler) {
+    func update(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void) {
         let idPredicate = NSPredicate(format: "id = %@", challenge.id)
 
         if let challengeFetchResult = try? viewContext.allEntities(withType: CDChallenge.self, predicate: idPredicate),
@@ -78,7 +78,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
         }
     }
 
-    func delete(challenge: Challenge, completionHandler: DeleteChallengeCompletionHandler) {
+    func delete(challenge: Challenge, completionHandler: (_ challenge: Result<Void, Error>) -> Void) {
         let predicate = NSPredicate(format: "id==%@", challenge.id)
 
         if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self, predicate: predicate),
@@ -98,7 +98,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
 
     }
 
-    func deleteAll(completionHandler: @escaping DeleteChallengeCompletionHandler) {
+    func deleteAll(completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void) {
         if let coreDataChallenges = try? viewContext.allEntities(withType: CDChallenge.self) {
             coreDataChallenges.forEach { viewContext.delete($0) }
         } else {

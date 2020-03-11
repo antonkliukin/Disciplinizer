@@ -45,8 +45,6 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
 
     func clearButtonTapped() {
-        guard !isChallengeRunning else { return }
-
         deleteChallengesUseCase.deleteAll { [weak self] (result) in
             switch result {
             case .success:

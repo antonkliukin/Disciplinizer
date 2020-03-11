@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Current Challenge View Protocol
 
 protocol CurrentChallengeViewProtocol: ViewProtocol {
+    var isDeviceLocked: Bool { get }
     func updateTimer(time: String)
     func updatePlayButton()
 }
@@ -28,6 +29,12 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
 
+    var isDeviceLocked: Bool {
+        UIScreen.main.brightness == 0.0
+    }
+
+    private var notifCenter = NotificationCenter.default
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +42,7 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         
         presenter?.viewDidLoad()
         setupUI()
+        addAppDelegateObservers()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -70,5 +78,28 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         timerView.addShadow()
         musicSelectView.roundCorners()
         musicSelectView.addShadow(opacity: 0.1)
+    }
+
+    private func addAppDelegateObservers() {
+        notifCenter.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notifCenter.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notifCenter.addObserver(self, selector: #selector(willTerminate), name: UIApplication.willTerminateNotification, object: nil)
+        notifCenter.addObserver(self, selector: #selector(willResingActive), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+
+    @objc private func willResingActive() {
+        presenter?.willLeaveApp()
+    }
+
+    @objc private func didEnterBackground() {
+        presenter?.didLeaveApp()
+    }
+
+    @objc private func didBecomeActive() {
+        presenter?.didReturnToApp()
+    }
+
+    @objc private func willTerminate() {
+        presenter?.didCloseApp()
     }
 }

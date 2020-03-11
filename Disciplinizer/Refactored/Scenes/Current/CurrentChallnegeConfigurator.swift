@@ -22,9 +22,8 @@ class CurrentChallengeConfigurator: CurrentChallengeConfiguratorProtocol {
     func configure(currentChallengeViewController: CurrentChallengeViewController) {
         let viewContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
         let coreDataChallengesGateway = CoreDataChallengesGateway(viewContext: viewContext)
-        let challengeManager = ChallengeManager()
 
-        let startChallengeUseCase = StartChallengeUseCase(challengeManager: challengeManager)
+        let startChallengeUseCase = StartChallengeUseCase()
         let finishChallengeUseCase = FinishChallengeUseCase(challengesGateway: coreDataChallengesGateway)
         
         let presenter = CurrentChallengePresenter(view: currentChallengeViewController,

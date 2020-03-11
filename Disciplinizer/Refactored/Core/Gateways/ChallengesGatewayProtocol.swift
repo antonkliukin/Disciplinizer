@@ -8,17 +8,11 @@
 
 import Foundation
 
-typealias GetAllCompletionHandler = (_ challenges: Result<[Challenge], Error>) -> Void
-typealias GetLastCompletionHandler = (_ challenge: Result<Challenge?, Error>) -> Void
-typealias AddChallengeCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-typealias UpdateChallengeCompletionHandler = (_ challenge: Result<Challenge, Error>) -> Void
-typealias DeleteChallengeCompletionHandler = (_ challenge: Result<Void, Error>) -> Void
-
 protocol ChallengesGatewayProtocol {
-    func getAll(completionHandler: @escaping GetAllCompletionHandler)
-    func getLast(completionHandler: @escaping GetLastCompletionHandler)
-    func add(parameters: ChallengeParameters, completionHandler: @escaping AddChallengeCompletionHandler)
-    func update(challenge: Challenge, completionHandler: @escaping UpdateChallengeCompletionHandler)
-    func delete(challenge: Challenge, completionHandler: @escaping DeleteChallengeCompletionHandler)
-    func deleteAll(completionHandler: @escaping DeleteChallengeCompletionHandler)
+    func getAll(completionHandler: @escaping (_ challenges: Result<[Challenge], Error>) -> Void)
+    func getLast(completionHandler: @escaping (_ challenge: Result<Challenge?, Error>) -> Void)
+    func add(parameters: ChallengeParameters, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void)
+    func update(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void)
+    func delete(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void)
+    func deleteAll(completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void)
 }

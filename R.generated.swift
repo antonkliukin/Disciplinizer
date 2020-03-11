@@ -1396,19 +1396,19 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct blocked: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let blockedViewController = StoryboardViewControllerResource<BlockedViewController>(identifier: "BlockedViewController")
       let bundle = R.hostingBundle
-      let losingViewController = StoryboardViewControllerResource<BlockedViewController>(identifier: "LosingViewController")
       let name = "Blocked"
 
-      func losingViewController(_: Void = ()) -> BlockedViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: losingViewController)
+      func blockedViewController(_: Void = ()) -> BlockedViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: blockedViewController)
       }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Blocked', but couldn't be loaded.") }
         }
-        if _R.storyboard.blocked().losingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'losingViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
+        if _R.storyboard.blocked().blockedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blockedViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
       }
 
       fileprivate init() {}

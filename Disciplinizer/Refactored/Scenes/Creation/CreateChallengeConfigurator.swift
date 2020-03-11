@@ -18,10 +18,10 @@ class CreateChallengeConfigurator: CreateChallengeConfiguratorProtocol {
         let viewContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
         let coreDataChallengesGateway = CoreDataChallengesGateway(viewContext: viewContext)
 
-        let addChallengeUseCase = CreateChallengeUseCase(challengesGateway: coreDataChallengesGateway)
+        let createChallengeUseCase = CreateChallengeUseCase(challengesGateway: coreDataChallengesGateway)
 
         let presenter = CreateChallengePresenter(view: createChallengeViewController,
-                                                 addChallengeUseCase: addChallengeUseCase)
+                                                 createChallengeUseCase: createChallengeUseCase)
 
         createChallengeViewController.presenter = presenter
     }

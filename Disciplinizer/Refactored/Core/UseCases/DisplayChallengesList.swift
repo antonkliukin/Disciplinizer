@@ -8,10 +8,8 @@
 
 import Foundation
 
-typealias DisplayChallengesUseCaseCompletionHandler = (_ challenges: Result<[Challenge], Error>) -> Void
-
 protocol DisplayChallengesUseCaseProtocol {
-    func displayChallenges(completionHandler: @escaping DisplayChallengesUseCaseCompletionHandler)
+    func displayChallenges(completionHandler: @escaping (_ challenges: Result<[Challenge], Error>) -> Void)
 }
 
 class DisplayChallengesListUseCase: DisplayChallengesUseCaseProtocol {

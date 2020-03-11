@@ -6,10 +6,10 @@
 //  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
-typealias FinishChallengeUseCaseCompletionHandler = (_ challenges: Result<Challenge, Error>) -> Void
+import Foundation
 
 protocol FinishChallengeUseCaseProtocol {
-    func finish(challenge: Challenge, completionHandler: @escaping FinishChallengeUseCaseCompletionHandler)
+    func finish(challenge: Challenge, completionHandler: @escaping (_ challenge: Result<Challenge, Error>) -> Void)
 }
 
 class FinishChallengeUseCase: FinishChallengeUseCaseProtocol {
@@ -18,8 +18,6 @@ class FinishChallengeUseCase: FinishChallengeUseCaseProtocol {
     init(challengesGateway: ChallengesGatewayProtocol) {
         self.challengesGateway = challengesGateway
     }
-
-    // MARK: - AddChallengeUseCase
 
     func finish(challenge: Challenge, completionHandler: @escaping (Result<Challenge, Error>) -> Void) {
         challengesGateway.update(challenge: challenge, completionHandler: completionHandler)

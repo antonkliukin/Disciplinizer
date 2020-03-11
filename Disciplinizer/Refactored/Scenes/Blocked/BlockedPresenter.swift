@@ -30,10 +30,6 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     }
 
     func didTapPurchase() {
-        AppLockManager.shared.changeStateTo(.unlocked)
-        view?.router?.dismiss()
-        return
-
         guard NetworkState.isConnected else {
             // TODO: Show alert
             assertionFailure("Internet connection is needed")
