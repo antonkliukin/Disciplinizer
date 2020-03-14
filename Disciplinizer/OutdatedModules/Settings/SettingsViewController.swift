@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = title
     }
     
     @IBAction private func selectMusicButtonTapped(_ sender: Any) {

@@ -56,9 +56,7 @@ final class BlockedPresenter: BlockedPresenterProtocol {
                 }
             }
         } else {
-            // TODO: Add free mode
-            AppLockManager.shared.changeStateTo(.unlocked)
-            view?.router?.dismiss()
+            view?.router?.present(Controller.createAdVC())
         }
     }
 }

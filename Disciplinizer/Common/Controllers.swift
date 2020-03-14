@@ -9,6 +9,46 @@
 import UIKit
 
 enum Controller {
+    static func createNavigaionVC(withRoot rootVC: UIViewController) -> UINavigationController {
+        let vc = UINavigationController(rootViewController: rootVC)
+        return vc
+    }
+
+    static func createPageNavigation() -> UIViewController {
+        let vc = PageNavigationViewController.fromStoryboard(.pageNavigation)
+        let viewControllers = [createHistory(), createChallenge(), createSettings()]
+        var wrappedVCs: [UINavigationController] = []
+
+        for vc in viewControllers {
+            let navVC = createNavigaionVC(withRoot: vc)
+            wrappedVCs.append(navVC)
+        }
+
+        vc.controllers = wrappedVCs
+
+        return vc
+    }
+
+    static func createHistory() -> UIViewController {
+        let vc = HistoryViewController.fromStoryboard(.history)
+
+        return vc
+    }
+
+    static func createChallenge() -> UIViewController {
+        let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
+
+        return vc
+    }
+
+    static func createSettings() -> UIViewController {
+        let vc = SettingsViewController.fromStoryboard(.settings)
+        let presenter = SettingsPresenter(view: vc)
+        vc.presenter = presenter
+
+        return vc
+    }
+
     static func alert(_ message: String) -> UIViewController {
         let vc = AlertViewController.fromStoryboard(.alert)
         let presenter = AlertPresenter(view: vc, message: message)
@@ -26,20 +66,6 @@ enum Controller {
         return vc
     }
 
-    static func createChallenge() -> UIViewController {
-        let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
-
-        return vc
-    }
-    
-    static func createSettings() -> UIViewController {
-        let vc = SettingsViewController.fromStoryboard(.settings)
-        let presenter = SettingsPresenter(view: vc)
-        vc.presenter = presenter
-
-        return vc
-    }
-    
     static func createMusicSelect() -> MusicSelectViewController {
         let vc = MusicSelectViewController.fromStoryboard(.settings)
         vc.modalPresentationStyle = .overCurrentContext
@@ -56,24 +82,19 @@ enum Controller {
         
         return vc
     }
-    
-    static func createPageNavigation() -> UIViewController {
-        let vc = PageNavigationViewController.fromStoryboard(.pageNavigation)
-        vc.controllers = [createHistory(), createChallenge(), createSettings()]
-
-        return vc
-    }
-
-    static func createHistory() -> UIViewController {
-        let vc = HistoryViewController.fromStoryboard(.history)
-
-        return vc
-    }
 
     static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
         let vc = BlockedViewController.fromStoryboard(.blocked)
         vc.modalPresentationStyle = .fullScreen
         let configurator = BlockedStateConfigurator(challenge: challenge)
+        vc.configurator = configurator
+
+        return vc
+    }
+
+    static func createAdVC() -> UIViewController {
+        let vc = AdViewController.fromStoryboard(.ad)
+        vc.modalPresentationStyle = .fullScreen
 
         return vc
     }

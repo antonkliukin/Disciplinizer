@@ -29,11 +29,15 @@ final class HistoryPresenter: HistoryPresenterProtocol {
 
     private func presentChallenges() {
         displayChallengesUseCase.displayChallenges { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let challenges):
-                self?.view?.show(challenges)
+                let test = Challenge
+
+
+                self.view?.show(self.createDateChallengeDict(challenges: challenges))
             case .failure(let error):
-                self?.view?.showError(errorMessage: error.localizedDescription)
+                self.view?.showError(errorMessage: error.localizedDescription)
             }
         }
     }
@@ -53,5 +57,20 @@ final class HistoryPresenter: HistoryPresenterProtocol {
                 self?.view?.showError(errorMessage: error.localizedDescription)
             }
         }
+    }
+
+    private func createDateChallengeDict(challenges: [Challenge]) -> [Date: [Challenge]] {
+        var dict: [Date: [Challenge]] = [:]
+
+        for challenge in challenges {
+            guard let date = challenge.startDate else {
+                assertionFailure()
+                continue
+            }
+
+            dict[date]?.append(challenge)
+        }
+
+        return dict
     }
 }

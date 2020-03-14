@@ -17,7 +17,6 @@
 		3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A514238323BB0011ACDC /* ECPrivateKey.swift */; };
 		3A00A517238323DA0011ACDC /* ECKeyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A516238323DA0011ACDC /* ECKeyData.swift */; };
 		3A00A519238323EC0011ACDC /* ASN1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A518238323EC0011ACDC /* ASN1.swift */; };
-		3A0D5A19234E5E5B00F20BC3 /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0D5A18234E5E5B00F20BC3 /* CreateChallenge.storyboard */; };
 		3A0D5A1B234E5E6F00F20BC3 /* CreateChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */; };
 		3A0D5A1D234E5EAC00F20BC3 /* CreateChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */; };
 		3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15514A232B7C8300265B89 /* R+Shortcuts.swift */; };
@@ -49,6 +48,13 @@
 		3A653DBE241ABA8600BE613C /* ChangePlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DBD241ABA8600BE613C /* ChangePlaybackState.swift */; };
 		3A653DC0241CC13400BE613C /* MusicSelectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DBF241CC13400BE613C /* MusicSelectionConfigurator.swift */; };
 		3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DC1241CD3CF00BE613C /* ChangeMutedPlaybackState.swift */; };
+		3A653DC5241CE92F00BE613C /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DC4241CE92F00BE613C /* AdViewController.swift */; };
+		3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DC6241CE98A00BE613C /* AdPresenter.swift */; };
+		3A653DC9241CE9E800BE613C /* AdConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DC8241CE9E800BE613C /* AdConfigurator.swift */; };
+		3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DCA241CF16800BE613C /* Ad.storyboard */; };
+		3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DCE241D2A5100BE613C /* Settings.storyboard */; };
+		3A653DD1241D2A9000BE613C /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DD3241D2A9000BE613C /* History.storyboard */; };
+		3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */; };
 		3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7008312414EB990028CE21 /* CoreDataError.swift */; };
 		3A70083424151F070028CE21 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083324151F070028CE21 /* PageModel.swift */; };
 		3A70083924153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */; };
@@ -77,9 +83,8 @@
 		3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223772365AB840075C773 /* Date+Extensions.swift */; };
 		3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223792365B3710075C773 /* Result+Success.swift */; };
 		3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C48240C2D730017FABC /* DataBaseSchema.xcdatamodeld */; };
-		3ACD2C5D240C2DE60017FABC /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C58240C2DE60017FABC /* ChallengeCell.swift */; };
+		3ACD2C5D240C2DE60017FABC /* HistoryChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */; };
 		3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C59240C2DE60017FABC /* HistoryConfigurator.swift */; };
-		3ACD2C5F240C2DE60017FABC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5A240C2DE60017FABC /* History.storyboard */; };
 		3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5B240C2DE60017FABC /* HistoryPresenter.swift */; };
 		3ACD2C61240C2DE60017FABC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */; };
 		3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */; };
@@ -145,7 +150,6 @@
 		54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */; };
 		54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76F2378B98500752B2A /* SettingsPresenter.swift */; };
 		54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */; };
-		54C2AB8F2378A79B00BB2D90 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C2AB8E2378A79B00BB2D90 /* Settings.storyboard */; };
 		8E23F3A6ED7BF56A9CA451B5 /* Pods_Disciplinizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */; };
 		C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */; };
 		C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */; };
@@ -177,7 +181,6 @@
 		3A00A514238323BB0011ACDC /* ECPrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPrivateKey.swift; sourceTree = "<group>"; };
 		3A00A516238323DA0011ACDC /* ECKeyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECKeyData.swift; sourceTree = "<group>"; };
 		3A00A518238323EC0011ACDC /* ASN1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1.swift; sourceTree = "<group>"; };
-		3A0D5A18234E5E5B00F20BC3 /* CreateChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChallenge.storyboard; sourceTree = "<group>"; };
 		3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewController.swift; sourceTree = "<group>"; };
 		3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengePresenter.swift; sourceTree = "<group>"; };
 		3A15514A232B7C8300265B89 /* R+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -210,6 +213,16 @@
 		3A653DBD241ABA8600BE613C /* ChangePlaybackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlaybackState.swift; sourceTree = "<group>"; };
 		3A653DBF241CC13400BE613C /* MusicSelectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionConfigurator.swift; sourceTree = "<group>"; };
 		3A653DC1241CD3CF00BE613C /* ChangeMutedPlaybackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMutedPlaybackState.swift; sourceTree = "<group>"; };
+		3A653DC4241CE92F00BE613C /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
+		3A653DC6241CE98A00BE613C /* AdPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPresenter.swift; sourceTree = "<group>"; };
+		3A653DC8241CE9E800BE613C /* AdConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfigurator.swift; sourceTree = "<group>"; };
+		3A653DCA241CF16800BE613C /* Ad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ad.storyboard; sourceTree = "<group>"; };
+		3A653DCD241D2A5100BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		3A653DD0241D2A6900BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
+		3A653DD8241D2AAA00BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/History.storyboard; sourceTree = "<group>"; };
+		3A653DDA241D2ACF00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/History.strings; sourceTree = "<group>"; };
+		3A653DDC241D2AE900BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CreateChallenge.storyboard; sourceTree = "<group>"; };
+		3A653DDF241D2AEE00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateChallenge.strings; sourceTree = "<group>"; };
 		3A7008312414EB990028CE21 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		3A70083324151F070028CE21 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChallengesUseCaseTest.swift; sourceTree = "<group>"; };
@@ -241,9 +254,8 @@
 		3AC223772365AB840075C773 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		3AC223792365B3710075C773 /* Result+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Success.swift"; sourceTree = "<group>"; };
 		3ACD2C49240C2D730017FABC /* ChallengeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeCoreData.xcdatamodel; sourceTree = "<group>"; };
-		3ACD2C58240C2DE60017FABC /* ChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryChallengeCell.swift; sourceTree = "<group>"; };
 		3ACD2C59240C2DE60017FABC /* HistoryConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryConfigurator.swift; sourceTree = "<group>"; };
-		3ACD2C5A240C2DE60017FABC /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		3ACD2C5B240C2DE60017FABC /* HistoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesGatewayProtocol.swift; sourceTree = "<group>"; };
@@ -310,7 +322,6 @@
 		54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionViewController.swift; sourceTree = "<group>"; };
 		54B9D76F2378B98500752B2A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		54C2AB8E2378A79B00BB2D90 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.debug.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disciplinizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.release.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.release.xcconfig"; sourceTree = "<group>"; };
@@ -367,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */,
-				3A0D5A18234E5E5B00F20BC3 /* CreateChallenge.storyboard */,
+				3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */,
 				3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */,
 				3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */,
 			);
@@ -614,6 +625,17 @@
 			path = Songs;
 			sourceTree = "<group>";
 		};
+		3A653DC3241CE91200BE613C /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				3A653DC8241CE9E800BE613C /* AdConfigurator.swift */,
+				3A653DC6241CE98A00BE613C /* AdPresenter.swift */,
+				3A653DC4241CE92F00BE613C /* AdViewController.swift */,
+				3A653DCA241CF16800BE613C /* Ad.storyboard */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		3A70083A24153F6C0028CE21 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +742,7 @@
 				3ACD2C57240C2DE60017FABC /* History */,
 				3A9F9A702377099400022C38 /* Blocked */,
 				3A653DB1241A10B400BE613C /* Music */,
+				3A653DC3241CE91200BE613C /* Ad */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -728,10 +751,10 @@
 			isa = PBXGroup;
 			children = (
 				3ACD2C59240C2DE60017FABC /* HistoryConfigurator.swift */,
-				3ACD2C58240C2DE60017FABC /* ChallengeCell.swift */,
-				3ACD2C5A240C2DE60017FABC /* History.storyboard */,
 				3ACD2C5B240C2DE60017FABC /* HistoryPresenter.swift */,
 				3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */,
+				3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */,
+				3A653DD3241D2A9000BE613C /* History.storyboard */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -846,9 +869,9 @@
 			isa = PBXGroup;
 			children = (
 				3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */,
-				3AD068952358ED09003D30A6 /* PageNavigation.storyboard */,
-				3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */,
 				3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */,
+				3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */,
+				3AD068952358ED09003D30A6 /* PageNavigation.storyboard */,
 				3AD0689E235B175B003D30A6 /* PageCell.swift */,
 			);
 			path = Navigation;
@@ -911,7 +934,7 @@
 			children = (
 				54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */,
 				54B9D76F2378B98500752B2A /* SettingsPresenter.swift */,
-				54C2AB8E2378A79B00BB2D90 /* Settings.storyboard */,
+				3A653DCE241D2A5100BE613C /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1038,7 +1061,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0D5A19234E5E5B00F20BC3 /* CreateChallenge.storyboard in Resources */,
+				3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
 				547174E3233BA78B000D2AC5 /* SourceSansPro-It.otf in Resources */,
@@ -1069,9 +1092,10 @@
 				547174F6233BA78B000D2AC5 /* SourceSansPro-Black.otf in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
 				5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */,
+				3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */,
 				547174F1233BA78B000D2AC5 /* MuseoSans-100Italic.otf in Resources */,
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,
-				54C2AB8F2378A79B00BB2D90 /* Settings.storyboard in Resources */,
+				3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */,
 				3AD068962358ED09003D30A6 /* PageNavigation.storyboard in Resources */,
 				547174F7233BA78B000D2AC5 /* Oswald-Demi-BoldItalic.ttf in Resources */,
 				3ACD2C7F240C2EB00017FABC /* Guide.storyboard in Resources */,
@@ -1087,7 +1111,7 @@
 				547174F9233BA78B000D2AC5 /* MuseoSans-700Italic.otf in Resources */,
 				547174E7233BA78B000D2AC5 /* SourceSansPro-BoldIt.otf in Resources */,
 				3AA12733232ABDA9004206E5 /* PageCollectionViewCell.xib in Resources */,
-				3ACD2C5F240C2DE60017FABC /* History.storyboard in Resources */,
+				3A653DD1241D2A9000BE613C /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,6 +1247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A653DC5241CE92F00BE613C /* AdViewController.swift in Sources */,
 				3A47D673230F1D3600B2B200 /* NetworkService.swift in Sources */,
 				3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */,
 				3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */,
@@ -1233,7 +1258,7 @@
 				3A47D671230F1D1A00B2B200 /* NetworkError.swift in Sources */,
 				3A653DBC241ABA6600BE613C /* DisplayAvailableSongs.swift in Sources */,
 				3ACD2C7C240C2E620017FABC /* NSManagedObjectContext-Utils.swift in Sources */,
-				3ACD2C5D240C2DE60017FABC /* ChallengeCell.swift in Sources */,
+				3ACD2C5D240C2DE60017FABC /* HistoryChallengeCell.swift in Sources */,
 				3A653DB024196C5400BE613C /* AdGatewayProtocol.swift in Sources */,
 				3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */,
 				3A00A517238323DA0011ACDC /* ECKeyData.swift in Sources */,
@@ -1248,6 +1273,7 @@
 				3A0D5A1D234E5EAC00F20BC3 /* CreateChallengePresenter.swift in Sources */,
 				54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */,
 				54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */,
+				3A653DC9241CE9E800BE613C /* AdConfigurator.swift in Sources */,
 				3A00A50B2383187F0011ACDC /* JWT.swift in Sources */,
 				C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */,
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,
@@ -1279,6 +1305,7 @@
 				3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */,
 				3A00A519238323EC0011ACDC /* ASN1.swift in Sources */,
 				3A70083424151F070028CE21 /* PageModel.swift in Sources */,
+				3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */,
 				3ACD2C78240C2E620017FABC /* DeleteChallenge.swift in Sources */,
 				C1FE2042234FB36A00377004 /* NotificationManager.swift in Sources */,
 				54008D8B237C9F2D0072EC00 /* Song.swift in Sources */,
@@ -1361,6 +1388,33 @@
 				3A008BD6231F93FA00B9286B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3A653DCE241D2A5100BE613C /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A653DCD241D2A5100BE613C /* en */,
+				3A653DD0241D2A6900BE613C /* ru */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		3A653DD3241D2A9000BE613C /* History.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A653DD8241D2AAA00BE613C /* en */,
+				3A653DDA241D2ACF00BE613C /* ru */,
+			);
+			name = History.storyboard;
+			sourceTree = "<group>";
+		};
+		3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A653DDC241D2AE900BE613C /* en */,
+				3A653DDF241D2AEE00BE613C /* ru */,
+			);
+			name = CreateChallenge.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

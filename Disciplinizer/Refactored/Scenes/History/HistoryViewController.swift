@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HistoryViewProtocol: ViewProtocol {
-    func show(_ challenges: [Challenge])
+    func show(_ challenges: [Date: [Challenge]])
     func showError(errorMessage: String)
 }
 
@@ -20,7 +20,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
 
     private let configurator = HistoryConfigurator()
 
-    private var challenges: [Challenge] = [] {
+    private var challenges: [Date: [Challenge]] = [:] {
         didSet {
             tableView.reloadData()
         }
@@ -28,6 +28,8 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = title
 
         configurator.configure(historyViewController: self)
 
@@ -50,7 +52,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
         presenter?.clearButtonTapped()
     }
 
-    func show(_ challenges: [Challenge]) {
+    func show(_ challenges: [Date: [Challenge]]) {
         self.challenges = challenges
     }
 
@@ -60,14 +62,37 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        challenges.keys.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return challenges.count
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let key = sortedKeys[section]
+
+        return challenges[key]?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+
+        return date.toString()
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let key = sortedKeys[indexPath.section]
+
+        guard let challenges = challenges[key] else {
+            assertionFailure()
+            return UITableViewCell()
+        }
+
         let challenge = challenges[indexPath.row]
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "challengeCellId", for: indexPath) as? ChallengeCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "challengeCellId", for: indexPath) as? HistoryChallengeCell {
             cell.idTitle.text = "ID - \(String(challenge.id))"
             cell.startDateTitle.text = "Started at - \(challenge.startDate!.toString())"
             cell.finishDateTitle.text = "Finished at - \(challenge.finishDate?.toString() ?? "-")"

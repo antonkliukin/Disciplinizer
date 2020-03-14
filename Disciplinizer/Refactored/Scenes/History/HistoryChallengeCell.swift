@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChallengeCell: UITableViewCell {
+final class HistoryChallengeCell: UITableViewCell {
     @IBOutlet weak var idTitle: UILabel!
     @IBOutlet weak var startDateTitle: UILabel!
     @IBOutlet weak var finishDateTitle: UILabel!

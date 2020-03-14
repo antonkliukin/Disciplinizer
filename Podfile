@@ -11,5 +11,6 @@ target 'Disciplinizer' do
   pod 'SwiftySound', '~> 1.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'Google-Mobile-Ads-SDK'
 
 end

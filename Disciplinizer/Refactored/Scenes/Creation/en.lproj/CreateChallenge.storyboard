@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Challenge View Controller-->
+        <!--New Challenge-->
         <scene sceneID="Gke-OL-UFZ">
             <objects>
-                <viewController storyboardIdentifier="CreateChallengeViewController" id="2EJ-rf-Swg" customClass="CreateChallengeViewController" customModule="Concentration_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateChallengeViewController" title="New Challenge" id="2EJ-rf-Swg" customClass="CreateChallengeViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpN-9L-hrs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,23 +23,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCy-Ii-Etw" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="922"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHB-YL-ee9" customClass="ShadowView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHB-YL-ee9" customClass="ShadowView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="30" width="335" height="230"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YR-BN-Ztl" customClass="ShadowView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YR-BN-Ztl" customClass="ShadowView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="280" width="335" height="121"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-TW-bAR" customClass="ShadowView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-TW-bAR" customClass="ShadowView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="421" width="335" height="131"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-Hg-3Kn" customClass="ShadowView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-Hg-3Kn" customClass="ShadowView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="572" width="335" height="132"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-ui-baN" customClass="RoundedView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-ui-baN" customClass="RoundedView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="280" width="335" height="121"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-JM-g5N">
@@ -71,7 +71,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Ct5-JM-g5N" secondAttribute="bottom" constant="25" id="sSb-WW-B2D"/>
                                                 </constraints>
                                             </view>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9Z-br-wJ3" customClass="RoundedView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9Z-br-wJ3" customClass="RoundedView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="421" width="335" height="131"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsv-bS-0eZ">
@@ -105,7 +105,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="jsv-bS-0eZ" secondAttribute="trailing" constant="20" id="zbg-5u-lcN"/>
                                                 </constraints>
                                             </view>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keb-o4-Syc" customClass="RoundedView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keb-o4-Syc" customClass="RoundedView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="572" width="335" height="132"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR BET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed9-8g-RUE">
@@ -139,7 +139,7 @@
                                                     <constraint firstItem="ed9-8g-RUE" firstAttribute="leading" secondItem="keb-o4-Syc" secondAttribute="leading" constant="20" id="vC0-Gg-gl4"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cct-OF-4TY" customClass="MainButton" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cct-OF-4TY" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="842" width="335" height="50"/>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
@@ -150,7 +150,7 @@
                                                     <action selector="startButtonTapped:" destination="2EJ-rf-Swg" eventType="touchUpInside" id="ACI-N1-WlG"/>
                                                 </connections>
                                             </button>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdu-0P-gIb" customClass="RoundedView" customModule="Concentration_tracker" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdu-0P-gIb" customClass="RoundedView" customModule="Disciplinizer" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="30" width="335" height="230"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ylu-BW-bTg">
@@ -243,6 +243,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NHf-0l-wmZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YFp-Wx-28r"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="betLabel" destination="pBl-73-Ejc" id="4nQ-GL-E7R"/>
@@ -268,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s47-ko-zB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="14.77832512315271"/>
+            <point key="canvasLocation" x="591" y="-3"/>
         </scene>
     </scenes>
     <resources>

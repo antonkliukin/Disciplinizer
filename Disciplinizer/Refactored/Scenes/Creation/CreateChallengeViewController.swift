@@ -112,6 +112,8 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = title
+
         configurator.configure(createChallengeViewController: self)
 
         setupMainView()

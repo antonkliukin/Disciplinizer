@@ -187,6 +187,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
 
         let isWin = result == .win
         challengeToSave.isSuccess = isWin
+        challengeToSave.finishDate = Date()
 
         finishChallengeUseCase.finish(challenge: challengeToSave) { [weak self] (finishingResult) in
             guard let self = self else {

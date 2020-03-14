@@ -46,6 +46,8 @@ PODS:
     - FirebaseInstallations (~> 1.0)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
+  - Google-Mobile-Ads-SDK (7.56.0):
+    - GoogleAppMeasurement (~> 6.0)
   - GoogleAppMeasurement (6.3.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -90,6 +92,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - Google-Mobile-Ads-SDK
   - KeychainAccess (~> 3.0)
   - R.swift (~> 5.0)
   - SwiftySound (~> 1.0)
@@ -106,6 +109,7 @@ SPEC REPOS:
     - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseInstanceID
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -128,6 +132,7 @@ SPEC CHECKSUMS:
   FirebaseCrashlytics: 1dff71c846a3a138f524f79d4740ffed5fdd0c04
   FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
   FirebaseInstanceID: 7ee0d6777013bb952f377b41965bf132b6a075be
+  Google-Mobile-Ads-SDK: 65e335fadc97c5a91a9d4546214bfd3a2fb11047
   GoogleAppMeasurement: 39ecba10918b21c83877d392246157f65db351cf
   GoogleDataTransport: 653963cf5be60fb59cf051e070f0836fdc305f81
   GoogleDataTransportCCTSupport: 84e4d4bbab642f2e9d83ee65d78aca2b5527d314
@@ -139,6 +144,6 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 7dba8095bfb4a2fcee751ffd254cfce029c299d9
+PODFILE CHECKSUM: 0a5a1a006226820586af890f5a5f6e5a977f9b72
 
 COCOAPODS: 1.8.4

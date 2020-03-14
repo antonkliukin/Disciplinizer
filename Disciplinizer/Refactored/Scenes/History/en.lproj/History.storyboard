@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--History View Controller-->
+        <!--History-->
         <scene sceneID="GB0-eu-vXr">
             <objects>
-                <viewController storyboardIdentifier="HistoryViewController" id="mzH-k2-TF2" customClass="HistoryViewController" customModule="Concentration_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" title="History" id="mzH-k2-TF2" customClass="HistoryViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLh-TB-uQs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="102" width="414" height="794"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengeCellId" rowHeight="231" id="oPk-wb-cF9" customClass="ChallengeCell" customModule="Concentration_tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengeCellId" rowHeight="231" id="oPk-wb-cF9" customClass="HistoryChallengeCell" customModule="Disciplinizer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="231"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oPk-wb-cF9" id="fSq-j6-4pN">
@@ -90,9 +90,11 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-q7-cfM">
-                                <rect key="frame" x="287" y="54" width="107" height="38"/>
+                                <rect key="frame" x="338" y="54" width="56" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Clear history"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" name="CTGray"/>
+                                </state>
                                 <connections>
                                     <action selector="clearButtonTapped:" destination="mzH-k2-TF2" eventType="touchUpInside" id="OuP-Is-gOg"/>
                                 </connections>
@@ -109,16 +111,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TBj-Ts-zVe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xq2-Xi-bmF"/>
                     <connections>
                         <outlet property="tableView" destination="HUs-dh-q65" id="mEQ-5Y-SQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kY-in-sJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124.6376811594203" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1034.7826086956522" y="114.50892857142857"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="CTGray">
+            <color red="0.3919999897480011" green="0.3919999897480011" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="CTWhite">
             <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

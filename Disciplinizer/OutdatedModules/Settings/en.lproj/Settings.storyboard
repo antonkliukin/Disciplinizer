@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="p5o-yL-u6b">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="0gI-Yx-x24" customClass="SettingsViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" title="Settings" id="0gI-Yx-x24" customClass="SettingsViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pp3-Yc-sxO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,13 +103,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uP3-B4-3ta"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qyW-N5-xm3"/>
                     <connections>
                         <outlet property="songNameLabel" destination="gFQ-SR-w58" id="g9v-XG-acj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPn-YP-cEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="75.669642857142847"/>
         </scene>
         <!--Music Select View Controller-->
         <scene sceneID="r1z-aI-BU7">
@@ -238,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMa-aA-3zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913.04347826086962" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1823.1884057971015" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>

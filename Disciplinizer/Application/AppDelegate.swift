@@ -10,6 +10,7 @@ import UIKit
 import SwiftySound
 import AVFoundation
 import Firebase
+import GoogleMobileAds
 
 // swiftlint:disable line_length
 @UIApplicationMain
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
+
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
 
         let pageVC = Controller.createPageNavigation()
 
