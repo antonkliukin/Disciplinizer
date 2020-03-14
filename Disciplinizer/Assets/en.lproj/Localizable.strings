@@ -29,17 +29,6 @@
 "notifications.return.body" = "You will lose your challenge if don't return to the app!";
 
 //******************************************************************************
-// Songs Names
-//******************************************************************************
-
-"songNames.mettingSun" = "Metting The Sun";
-"songNames.floatingPoint" = "Floating Point";
-"songNames.leavingWonderland" = "Leaving Wonderland";
-"songNames.distantPlace" = "Distant Place";
-"songNames.pillowTalk" = "Pillow Talk";
-"songNames.longDays" = "Long Days";
-
-//******************************************************************************
 // Lose
 //******************************************************************************
 

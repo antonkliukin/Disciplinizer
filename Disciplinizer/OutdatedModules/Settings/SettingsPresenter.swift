@@ -21,15 +21,7 @@ final class SettingsPresenter: SettingsPresenterProtocol {
     
     func didTapMusicSelect() {
         let vc = Controller.createMusicSelect()
-        vc.delegate = self
-        self.view.router?.present(vc)
-    }
-}
 
-extension SettingsPresenter: MusicSelectViewDelegate {
-    func didSelect(song: SongModel?) {
-        if let song = song {
-            view.updateMusicConfiguration(with: song)
-        }
+        self.view.router?.present(vc)
     }
 }

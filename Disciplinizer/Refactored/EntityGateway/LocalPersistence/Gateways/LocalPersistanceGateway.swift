@@ -6,7 +6,7 @@
 //  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
-import CoreData
+import Foundation
 
 protocol LocalPersistenceChallengesGatewayProtocol: ChallengesGatewayProtocol {
     //func update(challenge: Challenge)

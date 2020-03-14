@@ -25,11 +25,15 @@ class CurrentChallengeConfigurator: CurrentChallengeConfiguratorProtocol {
 
         let startChallengeUseCase = StartChallengeUseCase()
         let finishChallengeUseCase = FinishChallengeUseCase(challengesGateway: coreDataChallengesGateway)
+
+        let songsGateway = SongsGateway()
+        let changeMutedPlaybackStateUseCase = ChangeMutedPlaybackStateUseCase(songsGateway: songsGateway)
         
         let presenter = CurrentChallengePresenter(view: currentChallengeViewController,
                                                   challenge: challenge,
                                                   startChallengeUseCase: startChallengeUseCase,
-                                                  finishChallengeUseCase: finishChallengeUseCase)
+                                                  finishChallengeUseCase: finishChallengeUseCase,
+                                                  changeMutedPlaybackStateUseCase: changeMutedPlaybackStateUseCase)
         
         currentChallengeViewController.presenter = presenter
     }

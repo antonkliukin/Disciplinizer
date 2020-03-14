@@ -6,15 +6,13 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import AVFoundation
-import SwiftySound
+import Foundation
 
 protocol CurrentChallengePresenterProtocol: class {
-    func didTapStopChallenge()
-    func didTapMusicSelect()
-    func didTapPlayButton()
     func viewDidLoad()
     func viewDidAppear()
+    func didTapStopChallenge()
+    func didTapMusicSelection()
 
     func willLeaveApp()
     func didLeaveApp()
@@ -25,10 +23,12 @@ protocol CurrentChallengePresenterProtocol: class {
 final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     
     weak var view: CurrentChallengeViewProtocol?
+    var musicView: MusicSelectionViewProtocol?
 
     private let startChallengeUseCase: StartChallengeUseCaseProtocol
     private let finishChallengeUseCase: FinishChallengeUseCaseProtocol
-    
+    private let changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol
+
     private let challenge: Challenge
     private var challengeTimer: Timer?
     private var durationInSeconds = 0
@@ -39,15 +39,19 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     required init(view: CurrentChallengeViewProtocol,
                   challenge: Challenge,
                   startChallengeUseCase: StartChallengeUseCaseProtocol,
-                  finishChallengeUseCase: FinishChallengeUseCaseProtocol) {
+                  finishChallengeUseCase: FinishChallengeUseCaseProtocol,
+                  changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol) {
         self.view = view
         self.challenge = challenge
         self.durationInSeconds = Int(challenge.duration)
         self.startChallengeUseCase = startChallengeUseCase
         self.finishChallengeUseCase = finishChallengeUseCase
+        self.changeMutedPlaybackStateUseCase = changeMutedPlaybackStateUseCase
     }
 
     func viewDidLoad() {
+        setupMusicController()
+
         view?.updateTimer(time: convertSecondsToTimeString(durationInSeconds))
     }
 
@@ -59,30 +63,21 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         invalidateTimer()
 
         // TODO: - Add confirmation alert
-        stopMutedPlayback()
-        stopMusic()
-
         saveFinishedChallenge(challenge, withResult: .lose)
     }
 
-    func didTapMusicSelect() {
-        let controller = Controller.createMusicSelect()
-        controller.delegate = self
-        view?.router?.present(controller)
-    }
-    
-    func didTapPlayButton() {
-        let soundManager = SoundManager.shared
-
-        let didTapStop = SoundManager.shared.selectedSong?.sound?.playing ?? false
-
-        if didTapStop {
-            soundManager.stopSelected()
-
-            startMutedPlayback()
-        } else {
-            soundManager.playSelected()
+    func didTapMusicSelection() {
+        guard let vc = musicView as? MusicSelectViewController else {
+            assertionFailure()
+            return
         }
+
+        view?.router?.present(vc)
+    }
+
+    private func setupMusicController() {
+        let musicController = Controller.createMusicSelect()
+        musicView = musicController
     }
 
     private func convertSecondsToTimeString(_ timeInSeconds: Int) -> String {
@@ -110,28 +105,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         if let timer = challengeTimer {
             timer.invalidate()
         }
-    }
-    
-    private func stopMusic() {
-        SoundManager.shared.stopSelected()
-    }
-
-    private let defaultSound = Sound(url: R.file.pianoWav()!)
-
-    private func startMutedPlayback() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
-        } catch {
-            assertionFailure("AVAudioSession error occured.")
-        }
-
-        Sound.category = .playback
-        defaultSound?.volume = 0
-        defaultSound?.play(numberOfLoops: -1)
-    }
-
-    private func stopMutedPlayback() {
-        defaultSound?.stop()
     }
 
     private func isBackgroundLegal(handler: @escaping (Bool) -> Void) {
@@ -178,15 +151,15 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
             }
         }
 
-        // TODO: Legal BG check - Version 1
-        //        isBackgroundLegal { (isLegal) in
-        //            if isLegal {
-        //                print("Background is legal")
-        //            } else {
-        //                self.fireLoseTimer(withInterval: 10)
-        //                print("Background is NOT legal. Lose timer has been started.")
-        //            }
-        //        }
+//         TODO: Legal BG check - Version 1
+//        isBackgroundLegal { (isLegal) in
+//            if isLegal {
+//                print("Background is legal")
+//            } else {
+//                self.fireLoseTimer(withInterval: 10)
+//                print("Background is NOT legal. Lose timer has been started.")
+//            }
+//        }
     }
 
     func didReturnToApp() {
@@ -200,7 +173,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     private func start(_ challenge: Challenge) {
         print("New challenge has been started")
 
-        startMutedPlayback()
+        self.changeMutedPlaybackStateUseCase.startMutedPlayback { (_) in return }
 
         self.challengeTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                                    target: self,
@@ -222,7 +195,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
             }
 
             self.invalidateTimer()
-            self.stopMusic()
+            self.changeMutedPlaybackStateUseCase.stopMutedPlayback { (_) in return }
 
             switch finishingResult {
             case .success(let finishedChallenge):
@@ -240,12 +213,5 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 assertionFailure()
             }
         }
-    }
-}
-
-extension CurrentChallengePresenter: MusicSelectViewDelegate {
-    func didSelect(song: SongModel?) {
-        SoundManager.shared.playSelected()
-        view?.updatePlayButton()
     }
 }

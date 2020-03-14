@@ -43,8 +43,8 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             return 0
         }
 
-        // TODO: For test
-        return 60 //selectedDuration * 60
+        // TODO: Test duration
+        return 600 //selectedDuration * 60
     }
 
     private var selectedMode: ChallengeMode {

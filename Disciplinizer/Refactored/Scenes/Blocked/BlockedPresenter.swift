@@ -18,7 +18,9 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     private var challenge: Challenge
     private var purchasesManager: PurchasesManagerProtocol
 
-    init(view: BlockedViewProtocol, failedChallenge: Challenge, purchasesManager: PurchasesManagerProtocol) {
+    init(view: BlockedViewProtocol,
+         failedChallenge: Challenge,
+         purchasesManager: PurchasesManagerProtocol) {
         self.view = view
         self.challenge = failedChallenge
         self.purchasesManager = purchasesManager

@@ -261,12 +261,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 38 files.
+  /// This `R.file` struct is generated, and contains static references to 37 files.
   struct file {
     /// Resource file `Config.plist`.
     static let configPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "plist")
+    /// Resource file `Distant Place.mp3`.
+    static let distantPlaceMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Distant Place", pathExtension: "mp3")
+    /// Resource file `Floating Point.mp3`.
+    static let floatingPointMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Floating Point", pathExtension: "mp3")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `Leaving Wonderland.mp3`.
+    static let leavingWonderlandMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Leaving Wonderland", pathExtension: "mp3")
+    /// Resource file `Long Days.mp3`.
+    static let longDaysMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Long Days", pathExtension: "mp3")
+    /// Resource file `Metting The Sun.mp3`.
+    static let mettingTheSunMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Metting The Sun", pathExtension: "mp3")
     /// Resource file `MuseoSans-100.otf`.
     static let museoSans100Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-100", pathExtension: "otf")
     /// Resource file `MuseoSans-100Italic.otf`.
@@ -299,6 +309,8 @@ struct R: Rswift.Validatable {
     static let oswaldRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Regular", pathExtension: "ttf")
     /// Resource file `Oswald-RegularItalic.ttf`.
     static let oswaldRegularItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-RegularItalic", pathExtension: "ttf")
+    /// Resource file `Pillow Talk.mp3`.
+    static let pillowTalkMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Pillow Talk", pathExtension: "mp3")
     /// Resource file `SIL Open Font License.txt`.
     static let silOpenFontLicenseTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "SIL Open Font License", pathExtension: "txt")
     /// Resource file `SourceSansPro-Black.otf`.
@@ -325,20 +337,6 @@ struct R: Rswift.Validatable {
     static let sourceSansProSemiboldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Semibold", pathExtension: "otf")
     /// Resource file `SourceSansPro-SemiboldIt.otf`.
     static let sourceSansProSemiboldItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-SemiboldIt", pathExtension: "otf")
-    /// Resource file `birds-0.mp3`.
-    static let birds0Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "birds-0", pathExtension: "mp3")
-    /// Resource file `birds-1.mp3`.
-    static let birds1Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "birds-1", pathExtension: "mp3")
-    /// Resource file `piano.wav`.
-    static let pianoWav = Rswift.FileResource(bundle: R.hostingBundle, name: "piano", pathExtension: "wav")
-    /// Resource file `space-0.mp3`.
-    static let space0Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "space-0", pathExtension: "mp3")
-    /// Resource file `space-1.mp3`.
-    static let space1Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "space-1", pathExtension: "mp3")
-    /// Resource file `water-0.mp3`.
-    static let water0Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "water-0", pathExtension: "mp3")
-    /// Resource file `water-1.mp3`.
-    static let water1Mp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "water-1", pathExtension: "mp3")
 
     /// `bundle.url(forResource: "Config", withExtension: "plist")`
     static func configPlist(_: Void = ()) -> Foundation.URL? {
@@ -346,9 +344,39 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "Distant Place", withExtension: "mp3")`
+    static func distantPlaceMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.distantPlaceMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Floating Point", withExtension: "mp3")`
+    static func floatingPointMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.floatingPointMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Leaving Wonderland", withExtension: "mp3")`
+    static func leavingWonderlandMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.leavingWonderlandMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Long Days", withExtension: "mp3")`
+    static func longDaysMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.longDaysMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Metting The Sun", withExtension: "mp3")`
+    static func mettingTheSunMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.mettingTheSunMp3
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -448,6 +476,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "Pillow Talk", withExtension: "mp3")`
+    static func pillowTalkMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pillowTalkMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "SIL Open Font License", withExtension: "txt")`
     static func silOpenFontLicenseTxt(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.silOpenFontLicenseTxt
@@ -523,48 +557,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "SourceSansPro-SemiboldIt", withExtension: "otf")`
     static func sourceSansProSemiboldItOtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sourceSansProSemiboldItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "birds-0", withExtension: "mp3")`
-    static func birds0Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.birds0Mp3
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "birds-1", withExtension: "mp3")`
-    static func birds1Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.birds1Mp3
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "piano", withExtension: "wav")`
-    static func pianoWav(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pianoWav
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "space-0", withExtension: "mp3")`
-    static func space0Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.space0Mp3
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "space-1", withExtension: "mp3")`
-    static func space1Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.space1Mp3
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "water-0", withExtension: "mp3")`
-    static func water0Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.water0Mp3
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "water-1", withExtension: "mp3")`
-    static func water1Mp3(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.water1Mp3
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -878,7 +870,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -892,18 +884,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Distant Place
-      ///
-      /// Locales: ru, en
-      static let songNamesDistantPlace = Rswift.StringResource(key: "songNames.distantPlace", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Does your task require concentration?
       ///
       /// Locales: ru, en
       static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Floating Point
-      ///
-      /// Locales: ru, en
-      static let songNamesFloatingPoint = Rswift.StringResource(key: "songNames.floatingPoint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
       ///
       /// Locales: ru, en
@@ -920,30 +904,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let purchaseLoseMessage = Rswift.StringResource(key: "purchase.loseMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Leaving Wonderland
-      ///
-      /// Locales: ru, en
-      static let songNamesLeavingWonderland = Rswift.StringResource(key: "songNames.leavingWonderland", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Localized string
       ///
       /// Locales: ru, en
       static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Long Days
-      ///
-      /// Locales: ru, en
-      static let songNamesLongDays = Rswift.StringResource(key: "songNames.longDays", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Metting The Sun
-      ///
-      /// Locales: ru, en
-      static let songNamesMettingSun = Rswift.StringResource(key: "songNames.mettingSun", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Next
       ///
       /// Locales: ru, en
       static let guideNext = Rswift.StringResource(key: "guide.next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Pillow Talk
-      ///
-      /// Locales: ru, en
-      static let songNamesPillowTalk = Rswift.StringResource(key: "songNames.pillowTalk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Skip
       ///
       /// Locales: ru, en
@@ -1012,21 +980,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Distant Place
-      ///
-      /// Locales: ru, en
-      static func songNamesDistantPlace(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.distantPlace", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.distantPlace"
-        }
-
-        return NSLocalizedString("songNames.distantPlace", bundle: bundle, comment: "")
-      }
-
       /// en translation: Does your task require concentration?
       ///
       /// Locales: ru, en
@@ -1040,21 +993,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.secondPage.title", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Floating Point
-      ///
-      /// Locales: ru, en
-      static func songNamesFloatingPoint(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.floatingPoint", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.floatingPoint"
-        }
-
-        return NSLocalizedString("songNames.floatingPoint", bundle: bundle, comment: "")
       }
 
       /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
@@ -1117,21 +1055,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("purchase.loseMessage", bundle: bundle, comment: "")
       }
 
-      /// en translation: Leaving Wonderland
-      ///
-      /// Locales: ru, en
-      static func songNamesLeavingWonderland(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.leavingWonderland", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.leavingWonderland"
-        }
-
-        return NSLocalizedString("songNames.leavingWonderland", bundle: bundle, comment: "")
-      }
-
       /// en translation: Localized string
       ///
       /// Locales: ru, en
@@ -1147,36 +1070,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("alert.example", bundle: bundle, comment: "")
       }
 
-      /// en translation: Long Days
-      ///
-      /// Locales: ru, en
-      static func songNamesLongDays(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.longDays", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.longDays"
-        }
-
-        return NSLocalizedString("songNames.longDays", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Metting The Sun
-      ///
-      /// Locales: ru, en
-      static func songNamesMettingSun(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.mettingSun", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.mettingSun"
-        }
-
-        return NSLocalizedString("songNames.mettingSun", bundle: bundle, comment: "")
-      }
-
       /// en translation: Next
       ///
       /// Locales: ru, en
@@ -1190,21 +1083,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.next", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Pillow Talk
-      ///
-      /// Locales: ru, en
-      static func songNamesPillowTalk(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("songNames.pillowTalk", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "songNames.pillowTalk"
-        }
-
-        return NSLocalizedString("songNames.pillowTalk", bundle: bundle, comment: "")
       }
 
       /// en translation: Skip

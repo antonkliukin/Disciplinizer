@@ -42,7 +42,6 @@ enum Controller {
     
     static func createMusicSelect() -> MusicSelectViewController {
         let vc = MusicSelectViewController.fromStoryboard(.settings)
-        vc.presenter = MusicSelectPresenter(view: vc)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         
@@ -72,11 +71,9 @@ enum Controller {
     }
 
     static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
-        let purchasesManager = PurchasesManager()
         let vc = BlockedViewController.fromStoryboard(.blocked)
         vc.modalPresentationStyle = .fullScreen
-        let presenter = BlockedPresenter(view: vc, failedChallenge: challenge, purchasesManager: purchasesManager)
-        vc.presenter = presenter
+        let configurator = BlockedStateConfigurator(challenge: challenge)
 
         return vc
     }

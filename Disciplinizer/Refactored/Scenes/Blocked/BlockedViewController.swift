@@ -19,8 +19,10 @@ final class BlockedViewController: UIViewController, BlockedViewProtocol {
     @IBOutlet private weak var purchaseButton: MainButton!
 
     var presenter: BlockedPresenterProtocol?
+    var configurator: BlockedStateConfiguratorProtocol?
 
     override func viewDidLoad() {
+        configurator?.configure(blockedViewController: self)
         presenter?.viewDidLoad()
     }
 

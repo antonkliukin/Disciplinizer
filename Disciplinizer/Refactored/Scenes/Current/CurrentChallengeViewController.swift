@@ -13,7 +13,6 @@ import UIKit
 protocol CurrentChallengeViewProtocol: ViewProtocol {
     var isDeviceLocked: Bool { get }
     func updateTimer(time: String)
-    func updatePlayButton()
 }
 
 // MARK: - Current Challenge View Controller
@@ -56,21 +55,11 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     }
     
     @IBAction private func onMusicSelectTap(_ sender: UIButton) {
-        presenter?.didTapMusicSelect()
+        presenter?.didTapMusicSelection()
     }
-    
-    @IBAction private func onPlaySoundTap(_ sender: UIButton) {
-        presenter?.didTapPlayButton()
-        updatePlayButton()
-    }
-    
+        
     func updateTimer(time: String) {
         timerLabel.text = time
-    }
-    
-    func updatePlayButton() {
-        let image = (SoundManager.shared.selectedSong?.sound?.playing ?? false) ? R.image.playFill() :  R.image.play()
-        playSoundButton.setImage(image, for: .normal)
     }
 
     private func setupUI() {

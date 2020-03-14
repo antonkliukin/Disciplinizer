@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Current Challenge View Controller-->
         <scene sceneID="hhr-29-jac">
             <objects>
-                <viewController storyboardIdentifier="CurrentChallengeViewController" id="vrb-aV-sEL" customClass="CurrentChallengeViewController" customModule="Concentration_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentChallengeViewController" id="vrb-aV-sEL" customClass="CurrentChallengeViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="asX-k3-r91">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                     <constraint firstItem="hUh-Hf-ifj" firstAttribute="top" secondItem="lci-T7-9qP" secondAttribute="bottom" constant="10" id="yJJ-WW-Csk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I" customClass="MainButton" customModule="Concentration_tracker" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="534" width="374" height="50"/>
                                 <color key="backgroundColor" name="CTOrange"/>
                                 <constraints>
@@ -71,9 +71,6 @@
                                         <state key="normal" image="play">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
                                         </state>
-                                        <connections>
-                                            <action selector="onPlaySoundTap:" destination="vrb-aV-sEL" eventType="touchUpInside" id="Fkc-hc-1XF"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-Ym-Tqb">
                                         <rect key="frame" x="12" y="16" width="24" height="24"/>
