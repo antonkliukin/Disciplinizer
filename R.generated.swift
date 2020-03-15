@@ -1096,24 +1096,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.history` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.history` struct is generated, and contains static references to 5 localization keys.
     struct history {
-      /// ru translation: Clear history
-      ///
-      /// Locales: ru
-      static let ufGQ7CfMNormalTitle = Rswift.StringResource(key: "UfG-q7-cfM.normalTitle", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Duration
       ///
       /// Locales: ru
       static let iVpHgORqText = Rswift.StringResource(key: "IVp-hg-ORq.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Finish date
-      ///
-      /// Locales: ru
-      static let jqySDIcIText = Rswift.StringResource(key: "jqy-SD-icI.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Id
-      ///
-      /// Locales: ru
-      static let ruWMo3fsText = Rswift.StringResource(key: "ruW-Mo-3fs.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Is paid
       ///
       /// Locales: ru
@@ -1122,29 +1110,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru
       static let qMeRrUexText = Rswift.StringResource(key: "qMe-Rr-Uex.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Start date
-      ///
-      /// Locales: ru
-      static let nJw96IpyText = Rswift.StringResource(key: "NJw-96-ipy.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: История
       ///
       /// Locales: ru
       static let mzHK2TF2Title = Rswift.StringResource(key: "mzH-k2-TF2.title", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-
-      /// ru translation: Clear history
+      /// ru translation: Отчистить
       ///
       /// Locales: ru
-      static func ufGQ7CfMNormalTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "UfG-q7-cfM.normalTitle"
-        }
-
-        return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: bundle, comment: "")
-      }
+      static let ufGQ7CfMNormalTitle = Rswift.StringResource(key: "UfG-q7-cfM.normalTitle", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
 
       /// ru translation: Duration
       ///
@@ -1159,36 +1132,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("IVp-hg-ORq.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Finish date
-      ///
-      /// Locales: ru
-      static func jqySDIcIText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("jqy-SD-icI.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "jqy-SD-icI.text"
-        }
-
-        return NSLocalizedString("jqy-SD-icI.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Id
-      ///
-      /// Locales: ru
-      static func ruWMo3fsText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("ruW-Mo-3fs.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "ruW-Mo-3fs.text"
-        }
-
-        return NSLocalizedString("ruW-Mo-3fs.text", tableName: "History", bundle: bundle, comment: "")
       }
 
       /// ru translation: Is paid
@@ -1221,21 +1164,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("qMe-Rr-Uex.text", tableName: "History", bundle: bundle, comment: "")
       }
 
-      /// ru translation: Start date
-      ///
-      /// Locales: ru
-      static func nJw96IpyText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("NJw-96-ipy.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "NJw-96-ipy.text"
-        }
-
-        return NSLocalizedString("NJw-96-ipy.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
       /// ru translation: История
       ///
       /// Locales: ru
@@ -1249,6 +1177,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("mzH-k2-TF2.title", tableName: "History", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Отчистить
+      ///
+      /// Locales: ru
+      static func ufGQ7CfMNormalTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
+          return "UfG-q7-cfM.normalTitle"
+        }
+
+        return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

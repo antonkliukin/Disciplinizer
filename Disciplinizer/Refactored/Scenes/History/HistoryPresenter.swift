@@ -9,8 +9,12 @@
 import Foundation
 
 protocol HistoryPresenterProtocol {
-    func viewDidLoad()
-    func viewDidAppear()
+    var numberOfDates: Int { get }
+
+    func numberOfChallengesForDate(section: Int) -> Int
+    func titleForDate(section: Int) -> String
+    func configure(cell: HistoryChallengeCellViewProtocol, forRow row: Int, inSection section: Int)
+    func viewWillAppear()
     func clearButtonTapped()
 }
 
@@ -18,6 +22,30 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     private weak var view: HistoryViewProtocol?
     private let displayChallengesUseCase: DisplayChallengesUseCaseProtocol
     private let deleteChallengesUseCase: DeleteChallengeUseCaseProtocol
+
+    private var challenges: [String: [Challenge]] = [:] {
+        didSet {
+            view?.refresh()
+        }
+    }
+
+    var numberOfDates: Int {
+        challenges.keys.count
+    }
+
+    func numberOfChallengesForDate(section: Int) -> Int {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let key = sortedKeys[section]
+
+        return challenges[key]?.count ?? 0
+    }
+
+    func titleForDate(section: Int) -> String {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+
+        return date
+    }
 
     init(view: HistoryViewProtocol,
          displayChallengesUseCase: DisplayChallengesUseCaseProtocol,
@@ -32,19 +60,14 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let challenges):
-                let test = Challenge
-
-
-                self.view?.show(self.createDateChallengeDict(challenges: challenges))
+                self.challenges = self.createDateChallengeDict(challenges: challenges)
             case .failure(let error):
                 self.view?.showError(errorMessage: error.localizedDescription)
             }
         }
     }
 
-    func viewDidLoad() {}
-
-    func viewDidAppear() {
+    func viewWillAppear() {
         presentChallenges()
     }
 
@@ -59,8 +82,23 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         }
     }
 
-    private func createDateChallengeDict(challenges: [Challenge]) -> [Date: [Challenge]] {
-        var dict: [Date: [Challenge]] = [:]
+    func configure(cell: HistoryChallengeCellViewProtocol, forRow row: Int, inSection section: Int) {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+        guard let challenges = challenges[date], challenges.count > row else {
+            assertionFailure()
+            return
+        }
+
+        let challenge = challenges[row]
+
+        cell.display(result: challenge.isSuccess ? "Success" : "Loose")
+        cell.display(duration: "Duration: \(challenge.duration / 60) mins")
+        cell.display(motivationType: "Motivation: \(challenge.isPaid ? "Golden Coin" : "Watching Ad")")
+    }
+
+    private func createDateChallengeDict(challenges: [Challenge]) -> [String: [Challenge]] {
+        var dict: [String: [Challenge]] = [:]
 
         for challenge in challenges {
             guard let date = challenge.startDate else {
@@ -68,7 +106,11 @@ final class HistoryPresenter: HistoryPresenterProtocol {
                 continue
             }
 
-            dict[date]?.append(challenge)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            let stringDate = formatter.string(from: date)
+
+            dict[stringDate, default: []].append(challenge)
         }
 
         return dict

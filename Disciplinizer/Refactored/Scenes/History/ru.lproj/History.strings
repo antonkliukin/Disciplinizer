@@ -5,20 +5,11 @@
 /* Class = "UILabel"; text = "Duration"; ObjectID = "IVp-hg-ORq"; */
 "IVp-hg-ORq.text" = "Duration";
 
-/* Class = "UILabel"; text = "Start date"; ObjectID = "NJw-96-ipy"; */
-"NJw-96-ipy.text" = "Start date";
-
-/* Class = "UIButton"; normalTitle = "Clear history"; ObjectID = "UfG-q7-cfM"; */
-"UfG-q7-cfM.normalTitle" = "Clear history";
-
-/* Class = "UILabel"; text = "Finish date"; ObjectID = "jqy-SD-icI"; */
-"jqy-SD-icI.text" = "Finish date";
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "UfG-q7-cfM"; */
+"UfG-q7-cfM.normalTitle" = "Отчистить";
 
 /* Class = "UIViewController"; title = "History"; ObjectID = "mzH-k2-TF2"; */
 "mzH-k2-TF2.title" = "История";
 
 /* Class = "UILabel"; text = "Is success"; ObjectID = "qMe-Rr-Uex"; */
 "qMe-Rr-Uex.text" = "Is success";
-
-/* Class = "UILabel"; text = "Id"; ObjectID = "ruW-Mo-3fs"; */
-"ruW-Mo-3fs.text" = "Id";

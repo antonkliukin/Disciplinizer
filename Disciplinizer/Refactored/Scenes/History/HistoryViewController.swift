@@ -9,22 +9,16 @@
 import UIKit
 
 protocol HistoryViewProtocol: ViewProtocol {
-    func show(_ challenges: [Date: [Challenge]])
     func showError(errorMessage: String)
+    func refresh()
 }
 
 final class HistoryViewController: UIViewController, HistoryViewProtocol {
     @IBOutlet private weak var tableView: UITableView!
 
-    var presenter: HistoryPresenterProtocol?
+    var presenter: HistoryPresenterProtocol!
 
     private let configurator = HistoryConfigurator()
-
-    private var challenges: [Date: [Challenge]] = [:] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,67 +32,44 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
-
-        presenter?.viewDidLoad()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        presenter?.viewDidAppear()
+        presenter.viewWillAppear()
     }
 
     @IBAction func clearButtonTapped(_ sender: Any) {
-        presenter?.clearButtonTapped()
-    }
-
-    func show(_ challenges: [Date: [Challenge]]) {
-        self.challenges = challenges
+        presenter.clearButtonTapped()
     }
 
     func showError(errorMessage: String) {
         print("Error occured: \(errorMessage)")
     }
+
+    func refresh() {
+        tableView.reloadData()
+    }
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        challenges.keys.count
+        presenter.numberOfDates
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
-        let key = sortedKeys[section]
-
-        return challenges[key]?.count ?? 0
+        presenter.numberOfChallengesForDate(section: section)
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
-        let date = sortedKeys[section]
-
-        return date.toString()
-
+        presenter.titleForDate(section: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
-        let key = sortedKeys[indexPath.section]
 
-        guard let challenges = challenges[key] else {
-            assertionFailure()
-            return UITableViewCell()
-        }
-
-        let challenge = challenges[indexPath.row]
-
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "challengeCellId", for: indexPath) as? HistoryChallengeCell {
-            cell.idTitle.text = "ID - \(String(challenge.id))"
-            cell.startDateTitle.text = "Started at - \(challenge.startDate!.toString())"
-            cell.finishDateTitle.text = "Finished at - \(challenge.finishDate?.toString() ?? "-")"
-            cell.durationTitle.text = "Duration - \(String(Int(challenge.duration))) seconds"
-            cell.isPaidTitle.text = "Mode - \(String(challenge.isPaid ? "Paid" : "Free"))"
-            cell.isSuccessTitle.text = "Result - \(String(challenge.isSuccess ? "Win" : "Lose"))"
+        if let cell = tableView.dequeueReusableCell(withIdentifier: HistoryChallengeCell.reuseId, for: indexPath) as? HistoryChallengeCell {
+            presenter.configure(cell: cell, forRow: indexPath.row, inSection: indexPath.section)
 
             return cell
         }

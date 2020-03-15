@@ -191,6 +191,7 @@
 		3A2F573623125EEA00212317 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		3A2F57392312729800212317 /* LockStateRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequestManager.swift; sourceTree = "<group>"; };
 		3A2F573B231272DF00212317 /* LockStateRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequests.swift; sourceTree = "<group>"; };
+		3A40A38C241E06C500272231 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/History.strings; sourceTree = "<group>"; };
 		3A47D658230F18FB00B2B200 /* Disciplinizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disciplinizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A47D65B230F18FB00B2B200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A47D662230F18FC00B2B200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,7 +221,6 @@
 		3A653DCD241D2A5100BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		3A653DD0241D2A6900BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
 		3A653DD8241D2AAA00BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/History.storyboard; sourceTree = "<group>"; };
-		3A653DDA241D2ACF00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/History.strings; sourceTree = "<group>"; };
 		3A653DDC241D2AE900BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CreateChallenge.storyboard; sourceTree = "<group>"; };
 		3A653DDF241D2AEE00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateChallenge.strings; sourceTree = "<group>"; };
 		3A7008312414EB990028CE21 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
@@ -1403,7 +1403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A653DD8241D2AAA00BE613C /* en */,
-				3A653DDA241D2ACF00BE613C /* ru */,
+				3A40A38C241E06C500272231 /* ru */,
 			);
 			name = History.storyboard;
 			sourceTree = "<group>";
