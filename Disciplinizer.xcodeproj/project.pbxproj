@@ -17,9 +17,23 @@
 		3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A514238323BB0011ACDC /* ECPrivateKey.swift */; };
 		3A00A517238323DA0011ACDC /* ECKeyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A516238323DA0011ACDC /* ECKeyData.swift */; };
 		3A00A519238323EC0011ACDC /* ASN1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00A518238323EC0011ACDC /* ASN1.swift */; };
+		3A0742A3241E2BCB003B1A83 /* MotivationSelectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A2241E2BCB003B1A83 /* MotivationSelectionConfigurator.swift */; };
+		3A0742A5241E2BE5003B1A83 /* MotivationSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A4241E2BE5003B1A83 /* MotivationSelectionPresenter.swift */; };
+		3A0742A7241E2BF8003B1A83 /* MotivationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A6241E2BF8003B1A83 /* MotivationSelectionViewController.swift */; };
+		3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0742A8241E2C0D003B1A83 /* MotivationSelection.storyboard */; };
+		3A0742AF241E3AAB003B1A83 /* TimeSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0742AB241E3AAB003B1A83 /* TimeSelection.storyboard */; };
+		3A0742B0241E3AAB003B1A83 /* TimeSelectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742AC241E3AAB003B1A83 /* TimeSelectionConfigurator.swift */; };
+		3A0742B1241E3AAB003B1A83 /* TimeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742AD241E3AAB003B1A83 /* TimeSelectionViewController.swift */; };
+		3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742AE241E3AAB003B1A83 /* TimeSelectionPresenter.swift */; };
+		3A0742B4241E5970003B1A83 /* MotivationalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B3241E5970003B1A83 /* MotivationalItem.swift */; };
+		3A0742B6241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B5241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift */; };
+		3A0742B9241E5D22003B1A83 /* ChallengeParametersPersistenceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B8241E5D22003B1A83 /* ChallengeParametersPersistenceGateway.swift */; };
 		3A0D5A1B234E5E6F00F20BC3 /* CreateChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */; };
 		3A0D5A1D234E5EAC00F20BC3 /* CreateChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */; };
 		3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15514A232B7C8300265B89 /* R+Shortcuts.swift */; };
+		3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */; };
+		3A1AC66C241E5FB000DB3CFA /* ItemParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */; };
+		3A1AC66E241E5FBA00DB3CFA /* DurationParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */; };
 		3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F572E2311B51800212317 /* AlertViewController.swift */; };
 		3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F57302311B5BF00212317 /* AlertPresenter.swift */; };
 		3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */; };
@@ -41,7 +55,6 @@
 		3A653D9A24155E2700BE613C /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9924155E2700BE613C /* NSError.swift */; };
 		3A653D9C2416378C00BE613C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9B2416378C00BE613C /* Result.swift */; };
 		3A653DAE24196B6B00BE613C /* BlockedStateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */; };
-		3A653DB024196C5400BE613C /* AdGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DAF24196C5400BE613C /* AdGatewayProtocol.swift */; };
 		3A653DB5241A129A00BE613C /* SongsGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DB4241A129A00BE613C /* SongsGatewayProtocol.swift */; };
 		3A653DB9241A155400BE613C /* SongsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DB8241A155400BE613C /* SongsGateway.swift */; };
 		3A653DBC241ABA6600BE613C /* DisplayAvailableSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DBB241ABA6600BE613C /* DisplayAvailableSongs.swift */; };
@@ -181,9 +194,23 @@
 		3A00A514238323BB0011ACDC /* ECPrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPrivateKey.swift; sourceTree = "<group>"; };
 		3A00A516238323DA0011ACDC /* ECKeyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECKeyData.swift; sourceTree = "<group>"; };
 		3A00A518238323EC0011ACDC /* ASN1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1.swift; sourceTree = "<group>"; };
+		3A0742A2241E2BCB003B1A83 /* MotivationSelectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationSelectionConfigurator.swift; sourceTree = "<group>"; };
+		3A0742A4241E2BE5003B1A83 /* MotivationSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationSelectionPresenter.swift; sourceTree = "<group>"; };
+		3A0742A6241E2BF8003B1A83 /* MotivationSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationSelectionViewController.swift; sourceTree = "<group>"; };
+		3A0742A8241E2C0D003B1A83 /* MotivationSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MotivationSelection.storyboard; sourceTree = "<group>"; };
+		3A0742AB241E3AAB003B1A83 /* TimeSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeSelection.storyboard; sourceTree = "<group>"; };
+		3A0742AC241E3AAB003B1A83 /* TimeSelectionConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectionConfigurator.swift; sourceTree = "<group>"; };
+		3A0742AD241E3AAB003B1A83 /* TimeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectionViewController.swift; sourceTree = "<group>"; };
+		3A0742AE241E3AAB003B1A83 /* TimeSelectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectionPresenter.swift; sourceTree = "<group>"; };
+		3A0742B3241E5970003B1A83 /* MotivationalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationalItem.swift; sourceTree = "<group>"; };
+		3A0742B5241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeParametersGatewayProtocol.swift; sourceTree = "<group>"; };
+		3A0742B8241E5D22003B1A83 /* ChallengeParametersPersistenceGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeParametersPersistenceGateway.swift; sourceTree = "<group>"; };
 		3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewController.swift; sourceTree = "<group>"; };
 		3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengePresenter.swift; sourceTree = "<group>"; };
 		3A15514A232B7C8300265B89 /* R+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Shortcuts.swift"; sourceTree = "<group>"; };
+		3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
+		3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemParameterUseCase.swift; sourceTree = "<group>"; };
+		3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationParameter.swift; sourceTree = "<group>"; };
 		3A2F572E2311B51800212317 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3A2F57302311B5BF00212317 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+NameOfClass.swift"; sourceTree = "<group>"; };
@@ -207,7 +234,6 @@
 		3A653D9924155E2700BE613C /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		3A653D9B2416378C00BE613C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedStateConfigurator.swift; sourceTree = "<group>"; };
-		3A653DAF24196C5400BE613C /* AdGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdGatewayProtocol.swift; sourceTree = "<group>"; };
 		3A653DB4241A129A00BE613C /* SongsGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsGatewayProtocol.swift; sourceTree = "<group>"; };
 		3A653DB8241A155400BE613C /* SongsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsGateway.swift; sourceTree = "<group>"; };
 		3A653DBB241ABA6600BE613C /* DisplayAvailableSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAvailableSongs.swift; sourceTree = "<group>"; };
@@ -374,13 +400,52 @@
 			path = JWTToken;
 			sourceTree = "<group>";
 		};
+		3A0742A1241E2B65003B1A83 /* MotivationSelection */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742A2241E2BCB003B1A83 /* MotivationSelectionConfigurator.swift */,
+				3A0742A4241E2BE5003B1A83 /* MotivationSelectionPresenter.swift */,
+				3A0742A6241E2BF8003B1A83 /* MotivationSelectionViewController.swift */,
+				3A0742A8241E2C0D003B1A83 /* MotivationSelection.storyboard */,
+			);
+			path = MotivationSelection;
+			sourceTree = "<group>";
+		};
+		3A0742AA241E3A5A003B1A83 /* TimeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742AC241E3AAB003B1A83 /* TimeSelectionConfigurator.swift */,
+				3A0742AE241E3AAB003B1A83 /* TimeSelectionPresenter.swift */,
+				3A0742AD241E3AAB003B1A83 /* TimeSelectionViewController.swift */,
+				3A0742AB241E3AAB003B1A83 /* TimeSelection.storyboard */,
+			);
+			path = TimeSelection;
+			sourceTree = "<group>";
+		};
+		3A0742B7241E5CE4003B1A83 /* ChallengeParametersPersistence */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742BA241E5D25003B1A83 /* Gateways */,
+				3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */,
+			);
+			path = ChallengeParametersPersistence;
+			sourceTree = "<group>";
+		};
+		3A0742BA241E5D25003B1A83 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742B8241E5D22003B1A83 /* ChallengeParametersPersistenceGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
 		3A0D5A17234E5CDD00F20BC3 /* Creation */ = {
 			isa = PBXGroup;
 			children = (
 				3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */,
-				3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */,
-				3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */,
 				3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */,
+				3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */,
+				3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -413,6 +478,15 @@
 				3A70083324151F070028CE21 /* PageModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3A1AC66A241E5F9900DB3CFA /* ChallengeParameters */ = {
+			isa = PBXGroup;
+			children = (
+				3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */,
+				3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */,
+			);
+			path = ChallengeParameters;
 			sourceTree = "<group>";
 		};
 		3A2F572D2311B50300212317 /* Alert */ = {
@@ -738,6 +812,8 @@
 			children = (
 				3AD068942358ECD2003D30A6 /* Navigation */,
 				3A0D5A17234E5CDD00F20BC3 /* Creation */,
+				3A0742A1241E2B65003B1A83 /* MotivationSelection */,
+				3A0742AA241E3A5A003B1A83 /* TimeSelection */,
 				C13CFA1D23660E640022863E /* Current */,
 				3ACD2C57240C2DE60017FABC /* History */,
 				3A9F9A702377099400022C38 /* Blocked */,
@@ -773,8 +849,8 @@
 			isa = PBXGroup;
 			children = (
 				3ACD2C65240C2E620017FABC /* ChallengesGatewayProtocol.swift */,
-				3A653DAF24196C5400BE613C /* AdGatewayProtocol.swift */,
 				3A653DB4241A129A00BE613C /* SongsGatewayProtocol.swift */,
+				3A0742B5241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -782,6 +858,7 @@
 		3ACD2C66240C2E620017FABC /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AC66A241E5F9900DB3CFA /* ChallengeParameters */,
 				3A653DB2241A114100BE613C /* Challenge */,
 				3A653DBA241ABA3D00BE613C /* Songs */,
 			);
@@ -793,6 +870,7 @@
 			children = (
 				3ACD2C6B240C2E620017FABC /* Challenge.swift */,
 				54008D8A237C9F2D0072EC00 /* Song.swift */,
+				3A0742B3241E5970003B1A83 /* MotivationalItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -800,6 +878,7 @@
 		3ACD2C6C240C2E620017FABC /* EntityGateway */ = {
 			isa = PBXGroup;
 			children = (
+				3A0742B7241E5CE4003B1A83 /* ChallengeParametersPersistence */,
 				3A653DB6241A151500BE613C /* MusicPlayback */,
 				3ACD2C6D240C2E620017FABC /* LocalPersistence */,
 			);
@@ -1094,6 +1173,7 @@
 				5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */,
 				3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */,
 				547174F1233BA78B000D2AC5 /* MuseoSans-100Italic.otf in Resources */,
+				3A0742AF241E3AAB003B1A83 /* TimeSelection.storyboard in Resources */,
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,
 				3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */,
 				3AD068962358ED09003D30A6 /* PageNavigation.storyboard in Resources */,
@@ -1110,6 +1190,7 @@
 				547174E0233BA78B000D2AC5 /* SourceSansPro-SemiboldIt.otf in Resources */,
 				547174F9233BA78B000D2AC5 /* MuseoSans-700Italic.otf in Resources */,
 				547174E7233BA78B000D2AC5 /* SourceSansPro-BoldIt.otf in Resources */,
+				3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */,
 				3AA12733232ABDA9004206E5 /* PageCollectionViewCell.xib in Resources */,
 				3A653DD1241D2A9000BE613C /* History.storyboard in Resources */,
 			);
@@ -1254,12 +1335,12 @@
 				3A2F573523125E4000212317 /* UIViewController+Extension.swift in Sources */,
 				3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */,
 				3A653DC0241CC13400BE613C /* MusicSelectionConfigurator.swift in Sources */,
+				3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */,
 				5432587A237A094D0082DEB0 /* SongSelectCell.swift in Sources */,
 				3A47D671230F1D1A00B2B200 /* NetworkError.swift in Sources */,
 				3A653DBC241ABA6600BE613C /* DisplayAvailableSongs.swift in Sources */,
 				3ACD2C7C240C2E620017FABC /* NSManagedObjectContext-Utils.swift in Sources */,
 				3ACD2C5D240C2DE60017FABC /* HistoryChallengeCell.swift in Sources */,
-				3A653DB024196C5400BE613C /* AdGatewayProtocol.swift in Sources */,
 				3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */,
 				3A00A517238323DA0011ACDC /* ECKeyData.swift in Sources */,
 				3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */,
@@ -1274,18 +1355,22 @@
 				54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */,
 				54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */,
 				3A653DC9241CE9E800BE613C /* AdConfigurator.swift in Sources */,
+				3A0742B4241E5970003B1A83 /* MotivationalItem.swift in Sources */,
 				3A00A50B2383187F0011ACDC /* JWT.swift in Sources */,
 				C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */,
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,
 				3A653DB9241A155400BE613C /* SongsGateway.swift in Sources */,
 				3A2F573C231272DF00212317 /* LockStateRequests.swift in Sources */,
 				3A00A510238323410011ACDC /* JWTError.swift in Sources */,
+				3A0742B0241E3AAB003B1A83 /* TimeSelectionConfigurator.swift in Sources */,
 				3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */,
 				3A47D676230F1D6A00B2B200 /* RequestBuilder.swift in Sources */,
 				544EC47F233BAA7300417DAF /* MainButton.swift in Sources */,
+				3A1AC66C241E5FB000DB3CFA /* ItemParameterUseCase.swift in Sources */,
 				3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */,
 				3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */,
 				3AB765CA231BDBC1007FA888 /* Router.swift in Sources */,
+				3A0742A3241E2BCB003B1A83 /* MotivationSelectionConfigurator.swift in Sources */,
 				3A00A50D2383188A0011ACDC /* P8.swift in Sources */,
 				3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */,
 				3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */,
@@ -1303,6 +1388,9 @@
 				544EC485233BB04800417DAF /* UIButton+Factory.swift in Sources */,
 				3ACD2C79240C2E620017FABC /* Challenge.swift in Sources */,
 				3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */,
+				3A0742B1241E3AAB003B1A83 /* TimeSelectionViewController.swift in Sources */,
+				3A0742A7241E2BF8003B1A83 /* MotivationSelectionViewController.swift in Sources */,
+				3A1AC66E241E5FBA00DB3CFA /* DurationParameter.swift in Sources */,
 				3A00A519238323EC0011ACDC /* ASN1.swift in Sources */,
 				3A70083424151F070028CE21 /* PageModel.swift in Sources */,
 				3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */,
@@ -1317,10 +1405,13 @@
 				3AA1272A232ABC01004206E5 /* GuideViewController.swift in Sources */,
 				3A8DB68A2413B41500225DA4 /* FinishChallenge.swift in Sources */,
 				3AD0689A2358F085003D30A6 /* PageNavigationPresenter.swift in Sources */,
+				3A0742B9241E5D22003B1A83 /* ChallengeParametersPersistenceGateway.swift in Sources */,
 				3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */,
 				3A9F9A792377200300022C38 /* PurchasesManager.swift in Sources */,
+				3A0742A5241E2BE5003B1A83 /* MotivationSelectionPresenter.swift in Sources */,
 				3ACD2C7D240C2E620017FABC /* CDChallenge.swift in Sources */,
 				3A47D65C230F18FB00B2B200 /* AppDelegate.swift in Sources */,
+				3A0742B6241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift in Sources */,
 				3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */,
 				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,
 				3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */,
@@ -1329,6 +1420,7 @@
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
+				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,
 				C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */,
 				3A653DBE241ABA8600BE613C /* ChangePlaybackState.swift in Sources */,
 				3A653DAE24196B6B00BE613C /* BlockedStateConfigurator.swift in Sources */,

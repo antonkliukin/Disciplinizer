@@ -19,6 +19,8 @@ extension UIViewController {
         case blocked = "Blocked"
         case currentChallenge = "CurrentChallenge"
         case ad = "Ad"
+        case motivationSelection = "MotivationSelection"
+        case timeSelection = "TimeSelection"
     }
 
     class func instantiateControllerInStoryboard<T: UIViewController>(_ storyboard: UIStoryboard, identifier: String) -> T {

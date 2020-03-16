@@ -49,6 +49,18 @@ enum Controller {
         return vc
     }
 
+    static func motivationSelection() -> UIViewController {
+        let vc = MotivatonSelectionViewController.fromStoryboard(.motivationSelection)
+
+        return vc
+    }
+
+    static func timeSelection() -> UIViewController {
+        let vc = TimeSelectionViewController.fromStoryboard(.timeSelection)
+
+        return vc
+    }
+
     static func alert(_ message: String) -> UIViewController {
         let vc = AlertViewController.fromStoryboard(.alert)
         let presenter = AlertPresenter(view: vc, message: message)

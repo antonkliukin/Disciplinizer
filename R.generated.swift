@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 12 storyboards.
   struct storyboard {
     /// Storyboard `Ad`.
     static let ad = _R.storyboard.ad()
@@ -108,10 +108,14 @@ struct R: Rswift.Validatable {
     static let history = _R.storyboard.history()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `MotivationSelection`.
+    static let motivationSelection = _R.storyboard.motivationSelection()
     /// Storyboard `PageNavigation`.
     static let pageNavigation = _R.storyboard.pageNavigation()
     /// Storyboard `Settings`.
     static let settings = _R.storyboard.settings()
+    /// Storyboard `TimeSelection`.
+    static let timeSelection = _R.storyboard.timeSelection()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Ad", bundle: ...)`
@@ -170,6 +174,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MotivationSelection", bundle: ...)`
+    static func motivationSelection(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.motivationSelection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "PageNavigation", bundle: ...)`
     static func pageNavigation(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.pageNavigation)
@@ -180,6 +191,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Settings", bundle: ...)`
     static func settings(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.settings)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "TimeSelection", bundle: ...)`
+    static func timeSelection(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.timeSelection)
     }
     #endif
 
@@ -1202,7 +1220,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1212,6 +1230,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSecondPageContent = Rswift.StringResource(key: "guide.secondPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Big Coin
+      ///
+      /// Locales: en
+      static let motivationItemBigCoin = Rswift.StringResource(key: "motivationItem.bigCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Click to avoid losing!
       ///
       /// Locales: ru, en
@@ -1232,6 +1254,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Huge Coin
+      ///
+      /// Locales: en
+      static let motivationItemHugeCoin = Rswift.StringResource(key: "motivationItem.hugeCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
       ///
       /// Locales: ru, en
@@ -1240,6 +1266,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Medium Coin
+      ///
+      /// Locales: en
+      static let motivationItemMediumCoin = Rswift.StringResource(key: "motivationItem.mediumCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Next
       ///
       /// Locales: ru, en
@@ -1248,6 +1278,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSkip = Rswift.StringResource(key: "guide.skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Small Coin
+      ///
+      /// Locales: en
+      static let motivationItemSmallCoin = Rswift.StringResource(key: "motivationItem.smallCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Start the challenge!
       ///
       /// Locales: ru, en
@@ -1256,10 +1290,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageContent = Rswift.StringResource(key: "guide.firstPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Tiny Coin
+      ///
+      /// Locales: en
+      static let motivationItemTinyCoin = Rswift.StringResource(key: "motivationItem.tinyCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Unlock App
       ///
       /// Locales: ru, en
       static let purchaseButtonTitle = Rswift.StringResource(key: "purchase.buttonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Watching Ad
+      ///
+      /// Locales: en
+      static let motivationItemAd = Rswift.StringResource(key: "motivationItem.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: You will lose your challenge if don't return to the app!
       ///
       /// Locales: ru, en
@@ -1295,6 +1337,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.secondPage.content", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Big Coin
+      ///
+      /// Locales: en
+      static func motivationItemBigCoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.bigCoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.bigCoin"
+        }
+
+        return NSLocalizedString("motivationItem.bigCoin", bundle: bundle, comment: "")
       }
 
       /// en translation: Click to avoid losing!
@@ -1372,6 +1429,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.firstPage.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Huge Coin
+      ///
+      /// Locales: en
+      static func motivationItemHugeCoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.hugeCoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.hugeCoin"
+        }
+
+        return NSLocalizedString("motivationItem.hugeCoin", bundle: bundle, comment: "")
+      }
+
       /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
       ///
       /// Locales: ru, en
@@ -1400,6 +1472,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert.example", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Medium Coin
+      ///
+      /// Locales: en
+      static func motivationItemMediumCoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.mediumCoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.mediumCoin"
+        }
+
+        return NSLocalizedString("motivationItem.mediumCoin", bundle: bundle, comment: "")
       }
 
       /// en translation: Next
@@ -1432,6 +1519,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.skip", bundle: bundle, comment: "")
       }
 
+      /// en translation: Small Coin
+      ///
+      /// Locales: en
+      static func motivationItemSmallCoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.smallCoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.smallCoin"
+        }
+
+        return NSLocalizedString("motivationItem.smallCoin", bundle: bundle, comment: "")
+      }
+
       /// en translation: Start the challenge!
       ///
       /// Locales: ru, en
@@ -1462,6 +1564,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.firstPage.content", bundle: bundle, comment: "")
       }
 
+      /// en translation: Tiny Coin
+      ///
+      /// Locales: en
+      static func motivationItemTinyCoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.tinyCoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.tinyCoin"
+        }
+
+        return NSLocalizedString("motivationItem.tinyCoin", bundle: bundle, comment: "")
+      }
+
       /// en translation: Unlock App
       ///
       /// Locales: ru, en
@@ -1475,6 +1592,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("purchase.buttonTitle", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Watching Ad
+      ///
+      /// Locales: en
+      static func motivationItemAd(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.ad", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.ad"
+        }
+
+        return NSLocalizedString("motivationItem.ad", bundle: bundle, comment: "")
       }
 
       /// en translation: You will lose your challenge if don't return to the app!
@@ -1643,10 +1775,16 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try motivationSelection.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try pageNavigation.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try settings.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try timeSelection.validate()
       #endif
     }
 
@@ -1723,10 +1861,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.createChallenge().createChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChallengeViewController' could not be loaded from storyboard 'CreateChallenge' as 'CreateChallengeViewController'.") }
@@ -1821,6 +1957,30 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct motivationSelection: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let motivatonSelectionViewController = StoryboardViewControllerResource<MotivatonSelectionViewController>(identifier: "MotivatonSelectionViewController")
+      let name = "MotivationSelection"
+
+      func motivatonSelectionViewController(_: Void = ()) -> MotivatonSelectionViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: motivatonSelectionViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+        }
+        if _R.storyboard.motivationSelection().motivatonSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'motivatonSelectionViewController' could not be loaded from storyboard 'MotivationSelection' as 'MotivatonSelectionViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct pageNavigation: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PageNavigation"
@@ -1865,6 +2025,30 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.settings().musicSelectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'musicSelectViewController' could not be loaded from storyboard 'Settings' as 'MusicSelectViewController'.") }
         if _R.storyboard.settings().settingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewController' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct timeSelection: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TimeSelection"
+      let timeSelectionViewController = StoryboardViewControllerResource<TimeSelectionViewController>(identifier: "TimeSelectionViewController")
+
+      func timeSelectionViewController(_: Void = ()) -> TimeSelectionViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: timeSelectionViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+        }
+        if _R.storyboard.timeSelection().timeSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timeSelectionViewController' could not be loaded from storyboard 'TimeSelection' as 'TimeSelectionViewController'.") }
       }
 
       fileprivate init() {}

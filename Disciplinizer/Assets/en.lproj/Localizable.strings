@@ -34,3 +34,13 @@
 
 "purchase.buttonTitle" = "Unlock App";
 "purchase.loseMessage" = "In order to unlock the app you need to make a purchase equal to your challenge bet";
+
+//******************************************************************************
+// Motivational Item
+//******************************************************************************
+"motivationItem.ad" = "Watching Ad";
+"motivationItem.tinyCoin" = "Tiny Coin";
+"motivationItem.smallCoin" = "Small Coin";
+"motivationItem.mediumCoin" = "Medium Coin";
+"motivationItem.bigCoin" = "Big Coin";
+"motivationItem.hugeCoin" = "Huge Coin";

@@ -13,20 +13,28 @@ protocol CreateChallengePresenterProtocol {
     func startButtonTapped()
     func didChooseMode(_ mode: ChallengeMode)
     func didSetTimer(withTimeInMinutes minutes: Int)
+    func didTapChangeMotivation()
+    func didTapChangeTime()
 }
 
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
     private let createChallengeUseCase: CreateChallengeUseCaseProtocol
+    private let motivationalItemUseCase: ItemParameterUseCaseProtocol
+    private let durationParameterUseCase: DurationParameterUseCaseProtocol
 
     private var purchaseManager = PurchasesManager()
     private var possibleBets: [BetProtocol] = []
     private var newChallenge: Challenge!
 
     init(view: CreateChallengeViewProtocol,
-         createChallengeUseCase: CreateChallengeUseCaseProtocol) {
+         createChallengeUseCase: CreateChallengeUseCaseProtocol,
+         motivationalItemUseCase: ItemParameterUseCaseProtocol,
+         durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
         self.createChallengeUseCase = createChallengeUseCase
+        self.motivationalItemUseCase = motivationalItemUseCase
+        self.durationParameterUseCase = durationParameterUseCase
     }
 
     func viewDidLoad() {
@@ -74,6 +82,16 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         view?.changeStartButtonState(isActive: false)
 
         createChallenge()
+    }
+
+    func didTapChangeMotivation() {
+        let selectMotivationVC = Controller.motivationSelection()
+        view?.router?.push(selectMotivationVC)
+    }
+
+    func didTapChangeTime() {
+        let selectTimeVC = Controller.timeSelection()
+        view?.router?.push(selectTimeVC)
     }
 
     private func createChallenge() {
