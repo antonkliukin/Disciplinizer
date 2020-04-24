@@ -31,7 +31,7 @@ class MainButton: UIButton {
     private func configure() {
         self.alpha = isEnabled ? 1 : 0.5
         self.backgroundColor = .gray
-        self.titleLabel?.font = R.font.museoSans700(size: 20)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.layer.cornerRadius = Constants.cornerRaduis
         setTitleColor(.white, for: .normal)
     }

@@ -85,7 +85,6 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
-    try font.validate()
     try intern.validate()
   }
 
@@ -288,7 +287,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 37 files.
+  /// This `R.file` struct is generated, and contains static references to 9 files.
   struct file {
     /// Resource file `Config.plist`.
     static let configPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "plist")
@@ -304,66 +303,10 @@ struct R: Rswift.Validatable {
     static let longDaysMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Long Days", pathExtension: "mp3")
     /// Resource file `Metting The Sun.mp3`.
     static let mettingTheSunMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Metting The Sun", pathExtension: "mp3")
-    /// Resource file `MuseoSans-100.otf`.
-    static let museoSans100Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-100", pathExtension: "otf")
-    /// Resource file `MuseoSans-100Italic.otf`.
-    static let museoSans100ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-100Italic", pathExtension: "otf")
-    /// Resource file `MuseoSans-300.otf`.
-    static let museoSans300Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-300", pathExtension: "otf")
-    /// Resource file `MuseoSans-300Italic.otf`.
-    static let museoSans300ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-300Italic", pathExtension: "otf")
-    /// Resource file `MuseoSans-500.otf`.
-    static let museoSans500Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-500", pathExtension: "otf")
-    /// Resource file `MuseoSans-500Italic.otf`.
-    static let museoSans500ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-500Italic", pathExtension: "otf")
-    /// Resource file `MuseoSans-700.otf`.
-    static let museoSans700Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-700", pathExtension: "otf")
-    /// Resource file `MuseoSans-700Italic.otf`.
-    static let museoSans700ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-700Italic", pathExtension: "otf")
-    /// Resource file `MuseoSans-900.otf`.
-    static let museoSans900Otf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-900", pathExtension: "otf")
-    /// Resource file `MuseoSans-900Italic.otf`.
-    static let museoSans900ItalicOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MuseoSans-900Italic", pathExtension: "otf")
-    /// Resource file `Oswald-Demi-BoldItalic.ttf`.
-    static let oswaldDemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Demi-BoldItalic", pathExtension: "ttf")
-    /// Resource file `Oswald-DemiBold.ttf`.
-    static let oswaldDemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-DemiBold", pathExtension: "ttf")
-    /// Resource file `Oswald-Light.ttf`.
-    static let oswaldLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Light", pathExtension: "ttf")
-    /// Resource file `Oswald-LightItalic.ttf`.
-    static let oswaldLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-LightItalic", pathExtension: "ttf")
-    /// Resource file `Oswald-Regular.ttf`.
-    static let oswaldRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-Regular", pathExtension: "ttf")
-    /// Resource file `Oswald-RegularItalic.ttf`.
-    static let oswaldRegularItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Oswald-RegularItalic", pathExtension: "ttf")
     /// Resource file `Pillow Talk.mp3`.
     static let pillowTalkMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Pillow Talk", pathExtension: "mp3")
-    /// Resource file `SIL Open Font License.txt`.
-    static let silOpenFontLicenseTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "SIL Open Font License", pathExtension: "txt")
-    /// Resource file `SourceSansPro-Black.otf`.
-    static let sourceSansProBlackOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Black", pathExtension: "otf")
-    /// Resource file `SourceSansPro-BlackIt.otf`.
-    static let sourceSansProBlackItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-BlackIt", pathExtension: "otf")
-    /// Resource file `SourceSansPro-Bold.otf`.
-    static let sourceSansProBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Bold", pathExtension: "otf")
-    /// Resource file `SourceSansPro-BoldIt.otf`.
-    static let sourceSansProBoldItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-BoldIt", pathExtension: "otf")
-    /// Resource file `SourceSansPro-ExtraLight.otf`.
-    static let sourceSansProExtraLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-ExtraLight", pathExtension: "otf")
-    /// Resource file `SourceSansPro-ExtraLightIt.otf`.
-    static let sourceSansProExtraLightItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-ExtraLightIt", pathExtension: "otf")
-    /// Resource file `SourceSansPro-It.otf`.
-    static let sourceSansProItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-It", pathExtension: "otf")
-    /// Resource file `SourceSansPro-Light.otf`.
-    static let sourceSansProLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Light", pathExtension: "otf")
-    /// Resource file `SourceSansPro-LightIt.otf`.
-    static let sourceSansProLightItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-LightIt", pathExtension: "otf")
-    /// Resource file `SourceSansPro-Regular.otf`.
-    static let sourceSansProRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Regular", pathExtension: "otf")
-    /// Resource file `SourceSansPro-Semibold.otf`.
-    static let sourceSansProSemiboldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Semibold", pathExtension: "otf")
-    /// Resource file `SourceSansPro-SemiboldIt.otf`.
-    static let sourceSansProSemiboldItOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-SemiboldIt", pathExtension: "otf")
+    /// Resource file `launch_title.pdf`.
+    static let launch_titlePdf = Rswift.FileResource(bundle: R.hostingBundle, name: "launch_title", pathExtension: "pdf")
 
     /// `bundle.url(forResource: "Config", withExtension: "plist")`
     static func configPlist(_: Void = ()) -> Foundation.URL? {
@@ -407,426 +350,29 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "MuseoSans-100", withExtension: "otf")`
-    static func museoSans100Otf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans100Otf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-100Italic", withExtension: "otf")`
-    static func museoSans100ItalicOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans100ItalicOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-300", withExtension: "otf")`
-    static func museoSans300Otf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans300Otf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-300Italic", withExtension: "otf")`
-    static func museoSans300ItalicOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans300ItalicOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-500", withExtension: "otf")`
-    static func museoSans500Otf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans500Otf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-500Italic", withExtension: "otf")`
-    static func museoSans500ItalicOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans500ItalicOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-700", withExtension: "otf")`
-    static func museoSans700Otf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans700Otf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-700Italic", withExtension: "otf")`
-    static func museoSans700ItalicOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans700ItalicOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-900", withExtension: "otf")`
-    static func museoSans900Otf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans900Otf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "MuseoSans-900Italic", withExtension: "otf")`
-    static func museoSans900ItalicOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.museoSans900ItalicOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-Demi-BoldItalic", withExtension: "ttf")`
-    static func oswaldDemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldDemiBoldItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-DemiBold", withExtension: "ttf")`
-    static func oswaldDemiBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldDemiBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-Light", withExtension: "ttf")`
-    static func oswaldLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-LightItalic", withExtension: "ttf")`
-    static func oswaldLightItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldLightItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-Regular", withExtension: "ttf")`
-    static func oswaldRegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldRegularTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Oswald-RegularItalic", withExtension: "ttf")`
-    static func oswaldRegularItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.oswaldRegularItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "Pillow Talk", withExtension: "mp3")`
     static func pillowTalkMp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pillowTalkMp3
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SIL Open Font License", withExtension: "txt")`
-    static func silOpenFontLicenseTxt(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.silOpenFontLicenseTxt
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-Black", withExtension: "otf")`
-    static func sourceSansProBlackOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProBlackOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-BlackIt", withExtension: "otf")`
-    static func sourceSansProBlackItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProBlackItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-Bold", withExtension: "otf")`
-    static func sourceSansProBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProBoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-BoldIt", withExtension: "otf")`
-    static func sourceSansProBoldItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProBoldItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-ExtraLight", withExtension: "otf")`
-    static func sourceSansProExtraLightOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProExtraLightOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-ExtraLightIt", withExtension: "otf")`
-    static func sourceSansProExtraLightItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProExtraLightItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-It", withExtension: "otf")`
-    static func sourceSansProItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-Light", withExtension: "otf")`
-    static func sourceSansProLightOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProLightOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-LightIt", withExtension: "otf")`
-    static func sourceSansProLightItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProLightItOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-Regular", withExtension: "otf")`
-    static func sourceSansProRegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProRegularOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-Semibold", withExtension: "otf")`
-    static func sourceSansProSemiboldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProSemiboldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SourceSansPro-SemiboldIt", withExtension: "otf")`
-    static func sourceSansProSemiboldItOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProSemiboldItOtf
+    /// `bundle.url(forResource: "launch_title", withExtension: "pdf")`
+    static func launch_titlePdf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.launch_titlePdf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 28 fonts.
-  struct font: Rswift.Validatable {
-    /// Font `MuseoSans-100Italic`.
-    static let museoSans100Italic = Rswift.FontResource(fontName: "MuseoSans-100Italic")
-    /// Font `MuseoSans-100`.
-    static let museoSans100 = Rswift.FontResource(fontName: "MuseoSans-100")
-    /// Font `MuseoSans-300Italic`.
-    static let museoSans300Italic = Rswift.FontResource(fontName: "MuseoSans-300Italic")
-    /// Font `MuseoSans-300`.
-    static let museoSans300 = Rswift.FontResource(fontName: "MuseoSans-300")
-    /// Font `MuseoSans-500Italic`.
-    static let museoSans500Italic = Rswift.FontResource(fontName: "MuseoSans-500Italic")
-    /// Font `MuseoSans-500`.
-    static let museoSans500 = Rswift.FontResource(fontName: "MuseoSans-500")
-    /// Font `MuseoSans-700Italic`.
-    static let museoSans700Italic = Rswift.FontResource(fontName: "MuseoSans-700Italic")
-    /// Font `MuseoSans-700`.
-    static let museoSans700 = Rswift.FontResource(fontName: "MuseoSans-700")
-    /// Font `MuseoSans-900Italic`.
-    static let museoSans900Italic = Rswift.FontResource(fontName: "MuseoSans-900Italic")
-    /// Font `MuseoSans-900`.
-    static let museoSans900 = Rswift.FontResource(fontName: "MuseoSans-900")
-    /// Font `Oswald-Demi-BoldItalic`.
-    static let oswaldDemiBoldItalic = Rswift.FontResource(fontName: "Oswald-Demi-BoldItalic")
-    /// Font `Oswald-DemiBold`.
-    static let oswaldDemiBold = Rswift.FontResource(fontName: "Oswald-DemiBold")
-    /// Font `Oswald-LightItalic`.
-    static let oswaldLightItalic = Rswift.FontResource(fontName: "Oswald-LightItalic")
-    /// Font `Oswald-Light`.
-    static let oswaldLight = Rswift.FontResource(fontName: "Oswald-Light")
-    /// Font `Oswald-RegularItalic`.
-    static let oswaldRegularItalic = Rswift.FontResource(fontName: "Oswald-RegularItalic")
-    /// Font `Oswald-Regular`.
-    static let oswaldRegular = Rswift.FontResource(fontName: "Oswald-Regular")
-    /// Font `SourceSansPro-BlackIt`.
-    static let sourceSansProBlackIt = Rswift.FontResource(fontName: "SourceSansPro-BlackIt")
-    /// Font `SourceSansPro-Black`.
-    static let sourceSansProBlack = Rswift.FontResource(fontName: "SourceSansPro-Black")
-    /// Font `SourceSansPro-BoldIt`.
-    static let sourceSansProBoldIt = Rswift.FontResource(fontName: "SourceSansPro-BoldIt")
-    /// Font `SourceSansPro-Bold`.
-    static let sourceSansProBold = Rswift.FontResource(fontName: "SourceSansPro-Bold")
-    /// Font `SourceSansPro-ExtraLightIt`.
-    static let sourceSansProExtraLightIt = Rswift.FontResource(fontName: "SourceSansPro-ExtraLightIt")
-    /// Font `SourceSansPro-ExtraLight`.
-    static let sourceSansProExtraLight = Rswift.FontResource(fontName: "SourceSansPro-ExtraLight")
-    /// Font `SourceSansPro-It`.
-    static let sourceSansProIt = Rswift.FontResource(fontName: "SourceSansPro-It")
-    /// Font `SourceSansPro-LightIt`.
-    static let sourceSansProLightIt = Rswift.FontResource(fontName: "SourceSansPro-LightIt")
-    /// Font `SourceSansPro-Light`.
-    static let sourceSansProLight = Rswift.FontResource(fontName: "SourceSansPro-Light")
-    /// Font `SourceSansPro-Regular`.
-    static let sourceSansProRegular = Rswift.FontResource(fontName: "SourceSansPro-Regular")
-    /// Font `SourceSansPro-SemiboldIt`.
-    static let sourceSansProSemiboldIt = Rswift.FontResource(fontName: "SourceSansPro-SemiboldIt")
-    /// Font `SourceSansPro-Semibold`.
-    static let sourceSansProSemibold = Rswift.FontResource(fontName: "SourceSansPro-Semibold")
-
-    /// `UIFont(name: "MuseoSans-100", size: ...)`
-    static func museoSans100(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans100, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-100Italic", size: ...)`
-    static func museoSans100Italic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans100Italic, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-300", size: ...)`
-    static func museoSans300(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans300, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-300Italic", size: ...)`
-    static func museoSans300Italic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans300Italic, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-500", size: ...)`
-    static func museoSans500(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans500, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-500Italic", size: ...)`
-    static func museoSans500Italic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans500Italic, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-700", size: ...)`
-    static func museoSans700(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans700, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-700Italic", size: ...)`
-    static func museoSans700Italic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans700Italic, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-900", size: ...)`
-    static func museoSans900(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans900, size: size)
-    }
-
-    /// `UIFont(name: "MuseoSans-900Italic", size: ...)`
-    static func museoSans900Italic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: museoSans900Italic, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-Demi-BoldItalic", size: ...)`
-    static func oswaldDemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldDemiBoldItalic, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-DemiBold", size: ...)`
-    static func oswaldDemiBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldDemiBold, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-Light", size: ...)`
-    static func oswaldLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldLight, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-LightItalic", size: ...)`
-    static func oswaldLightItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldLightItalic, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-Regular", size: ...)`
-    static func oswaldRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldRegular, size: size)
-    }
-
-    /// `UIFont(name: "Oswald-RegularItalic", size: ...)`
-    static func oswaldRegularItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: oswaldRegularItalic, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-Black", size: ...)`
-    static func sourceSansProBlack(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProBlack, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-BlackIt", size: ...)`
-    static func sourceSansProBlackIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProBlackIt, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-Bold", size: ...)`
-    static func sourceSansProBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProBold, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-BoldIt", size: ...)`
-    static func sourceSansProBoldIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProBoldIt, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-ExtraLight", size: ...)`
-    static func sourceSansProExtraLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProExtraLight, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-ExtraLightIt", size: ...)`
-    static func sourceSansProExtraLightIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProExtraLightIt, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-It", size: ...)`
-    static func sourceSansProIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProIt, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-Light", size: ...)`
-    static func sourceSansProLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProLight, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-LightIt", size: ...)`
-    static func sourceSansProLightIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProLightIt, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-Regular", size: ...)`
-    static func sourceSansProRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProRegular, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-Semibold", size: ...)`
-    static func sourceSansProSemibold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProSemibold, size: size)
-    }
-
-    /// `UIFont(name: "SourceSansPro-SemiboldIt", size: ...)`
-    static func sourceSansProSemiboldIt(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProSemiboldIt, size: size)
-    }
-
-    static func validate() throws {
-      if R.font.museoSans100(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-100' could not be loaded, is 'MuseoSans-100.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans100Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-100Italic' could not be loaded, is 'MuseoSans-100Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans300(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-300' could not be loaded, is 'MuseoSans-300.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans300Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-300Italic' could not be loaded, is 'MuseoSans-300Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans500(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-500' could not be loaded, is 'MuseoSans-500.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans500Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-500Italic' could not be loaded, is 'MuseoSans-500Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans700(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-700' could not be loaded, is 'MuseoSans-700.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans700Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-700Italic' could not be loaded, is 'MuseoSans-700Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans900(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-900' could not be loaded, is 'MuseoSans-900.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.museoSans900Italic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'MuseoSans-900Italic' could not be loaded, is 'MuseoSans-900Italic.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldDemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-Demi-BoldItalic' could not be loaded, is 'Oswald-Demi-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldDemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-DemiBold' could not be loaded, is 'Oswald-DemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-Light' could not be loaded, is 'Oswald-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-LightItalic' could not be loaded, is 'Oswald-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-Regular' could not be loaded, is 'Oswald-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.oswaldRegularItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Oswald-RegularItalic' could not be loaded, is 'Oswald-RegularItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProBlack(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Black' could not be loaded, is 'SourceSansPro-Black.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProBlackIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-BlackIt' could not be loaded, is 'SourceSansPro-BlackIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Bold' could not be loaded, is 'SourceSansPro-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProBoldIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-BoldIt' could not be loaded, is 'SourceSansPro-BoldIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-ExtraLight' could not be loaded, is 'SourceSansPro-ExtraLight.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProExtraLightIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-ExtraLightIt' could not be loaded, is 'SourceSansPro-ExtraLightIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-It' could not be loaded, is 'SourceSansPro-It.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Light' could not be loaded, is 'SourceSansPro-Light.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProLightIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-LightIt' could not be loaded, is 'SourceSansPro-LightIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Regular' could not be loaded, is 'SourceSansPro-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProSemibold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Semibold' could not be loaded, is 'SourceSansPro-Semibold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProSemiboldIt(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-SemiboldIt' could not be loaded, is 'SourceSansPro-SemiboldIt.otf' added to the UIAppFonts array in this targets Info.plist?") }
-    }
-
-    fileprivate init() {}
-  }
-
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `bar-icon-25`.
     static let barIcon25 = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar-icon-25")
+    /// Image `launch_cat`.
+    static let launch_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_cat")
+    /// Image `launch_title`.
+    static let launch_title = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_title")
     /// Image `music.note.list`.
     static let musicNoteList = Rswift.ImageResource(bundle: R.hostingBundle, name: "music.note.list")
     /// Image `play.fill`.
@@ -838,6 +384,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "bar-icon-25", bundle: ..., traitCollection: ...)`
     static func barIcon25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.barIcon25, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "launch_cat", bundle: ..., traitCollection: ...)`
+    static func launch_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launch_cat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "launch_title", bundle: ..., traitCollection: ...)`
+    static func launch_title(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launch_title, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1948,7 +1508,10 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "launch_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_cat' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "launch_title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_title' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "CTBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlue' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
       }
 
