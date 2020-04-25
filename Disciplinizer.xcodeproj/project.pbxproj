@@ -95,7 +95,6 @@
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
 		3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223772365AB840075C773 /* Date+Extensions.swift */; };
 		3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC223792365B3710075C773 /* Result+Success.swift */; };
-		3AC7CD1024529F5E00797C58 /* launch_title.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7CD0F24529F5E00797C58 /* launch_title.pdf */; };
 		3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C48240C2D730017FABC /* DataBaseSchema.xcdatamodeld */; };
 		3ACD2C5D240C2DE60017FABC /* HistoryChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */; };
 		3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2C59240C2DE60017FABC /* HistoryConfigurator.swift */; };
@@ -251,8 +250,6 @@
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		3AC223772365AB840075C773 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		3AC223792365B3710075C773 /* Result+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Success.swift"; sourceTree = "<group>"; };
-		3AC7CD0D24529EE400797C58 /* launch_title.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = launch_title.pdf; sourceTree = "<group>"; };
-		3AC7CD0F24529F5E00797C58 /* launch_title.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = launch_title.pdf; path = ../Assets/launch_title.pdf; sourceTree = "<group>"; };
 		3ACD2C49240C2D730017FABC /* ChallengeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeCoreData.xcdatamodel; sourceTree = "<group>"; };
 		3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryChallengeCell.swift; sourceTree = "<group>"; };
 		3ACD2C59240C2DE60017FABC /* HistoryConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryConfigurator.swift; sourceTree = "<group>"; };
@@ -456,8 +453,6 @@
 		3A47D64F230F18FB00B2B200 = {
 			isa = PBXGroup;
 			children = (
-				3AC7CD0D24529EE400797C58 /* launch_title.pdf */,
-				3AC7CD0F24529F5E00797C58 /* launch_title.pdf */,
 				3A47D65A230F18FB00B2B200 /* Disciplinizer */,
 				3ACD2C85240CD6210017FABC /* DisciplinizerTests */,
 				3A47D659230F18FB00B2B200 /* Products */,
@@ -1050,7 +1045,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC7CD1024529F5E00797C58 /* launch_title.pdf in Resources */,
 				3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
