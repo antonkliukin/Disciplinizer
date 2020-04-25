@@ -204,7 +204,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 7 colors.
+  /// This `R.color` struct is generated, and contains static references to 8 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -220,6 +220,8 @@ struct R: Rswift.Validatable {
     static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
     /// Color `CTWhite`.
     static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
+    /// Color `NavigationItemSelected`.
+    static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
@@ -284,10 +286,19 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "NavigationItemSelected", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func navigationItemSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.navigationItemSelected, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 9 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `Config.plist`.
     static let configPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "plist")
@@ -305,8 +316,6 @@ struct R: Rswift.Validatable {
     static let mettingTheSunMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Metting The Sun", pathExtension: "mp3")
     /// Resource file `Pillow Talk.mp3`.
     static let pillowTalkMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Pillow Talk", pathExtension: "mp3")
-    /// Resource file `launch_title.pdf`.
-    static let launch_titlePdf = Rswift.FileResource(bundle: R.hostingBundle, name: "launch_title", pathExtension: "pdf")
 
     /// `bundle.url(forResource: "Config", withExtension: "plist")`
     static func configPlist(_: Void = ()) -> Foundation.URL? {
@@ -356,19 +365,15 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "launch_title", withExtension: "pdf")`
-    static func launch_titlePdf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.launch_titlePdf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `bar-icon-25`.
     static let barIcon25 = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar-icon-25")
+    /// Image `history_icon`.
+    static let history_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "history_icon")
     /// Image `launch_cat`.
     static let launch_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_cat")
     /// Image `launch_title`.
@@ -379,11 +384,22 @@ struct R: Rswift.Validatable {
     static let playFill = Rswift.ImageResource(bundle: R.hostingBundle, name: "play.fill")
     /// Image `play`.
     static let play = Rswift.ImageResource(bundle: R.hostingBundle, name: "play")
+    /// Image `settings_icon`.
+    static let settings_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_icon")
+    /// Image `tracker_icon`.
+    static let tracker_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tracker_icon")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "bar-icon-25", bundle: ..., traitCollection: ...)`
     static func barIcon25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.barIcon25, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "history_icon", bundle: ..., traitCollection: ...)`
+    static func history_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.history_icon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -419,6 +435,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "play.fill", bundle: ..., traitCollection: ...)`
     static func playFill(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.playFill, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "settings_icon", bundle: ..., traitCollection: ...)`
+    static func settings_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.settings_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tracker_icon", bundle: ..., traitCollection: ...)`
+    static func tracker_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tracker_icon, compatibleWith: traitCollection)
     }
     #endif
 

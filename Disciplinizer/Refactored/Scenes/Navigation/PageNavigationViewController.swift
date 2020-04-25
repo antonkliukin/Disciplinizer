@@ -33,14 +33,48 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
 
         presenter?.viewDidAppear()
     }
+    
+    override var selectedViewController: UIViewController? {
+        didSet {
+            updateTabBarItems()
+        }
+    }
+    
+    private func updateTabBarItems() {
+        guard let viewControllers = viewControllers else {
+            return
+        }
+        
+        for vc in viewControllers {
+            if vc == selectedViewController {
+                vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10, weight: .bold)], for: .normal)
+            } else {
+                vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10, weight: .regular)], for: .normal)
+            }
+        }
+    }
 
     private func selectTab(withIndex index: Int) {
         selectedIndex = index
     }
 
     private func setupTabBarItems() {
-        for item in tabBar.items ?? [] {
-            item.image = UIImage(named: "bar-icon-25")
+        tabBar.tintColor = R.color.navigationItemSelected()
+        
+        setupTabBarImages()
+        
+        updateTabBarItems()
+    }
+    
+    private func setupTabBarImages() {
+        for (index, item) in (tabBar.items ?? []).enumerated() {
+            switch index {
+            case 0: item.image = R.image.history_icon()
+            case 1: item.image = R.image.tracker_icon()
+            case 2: item.image = R.image.settings_icon()
+            default:
+                break
+            }
         }
     }
 }

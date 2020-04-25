@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Challenge-->
+        <!--Tracker-->
         <scene sceneID="6ih-dn-3gA">
             <objects>
-                <viewController storyboardIdentifier="CreateChallengeViewController" title="New Challenge" id="6g4-o3-cBP" customClass="CreateChallengeViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateChallengeViewController" title="Tracker" id="6g4-o3-cBP" customClass="CreateChallengeViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLX-jH-Nx7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
