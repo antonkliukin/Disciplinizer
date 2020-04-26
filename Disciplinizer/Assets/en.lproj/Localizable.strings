@@ -44,3 +44,10 @@
 "motivationItem.mediumCoin" = "Medium Coin";
 "motivationItem.bigCoin" = "Big Coin";
 "motivationItem.hugeCoin" = "Huge Coin";
+
+//******************************************************************************
+// Creation
+//******************************************************************************
+"creation.timeTitle" = "Time";
+"creation.motivationTitle" = "Motivation";
+"creation.actionTitle" = "Tap to change";

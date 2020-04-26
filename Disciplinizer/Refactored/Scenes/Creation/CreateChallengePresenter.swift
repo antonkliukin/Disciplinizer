@@ -13,8 +13,6 @@ protocol CreateChallengePresenterProtocol {
     func startButtonTapped()
     func didChooseMode(_ mode: ChallengeMode)
     func didSetTimer(withTimeInMinutes minutes: Int)
-    func didTapChangeMotivation()
-    func didTapChangeTime()
 }
 
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
@@ -39,6 +37,9 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
 
     func viewDidLoad() {
         view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
+        
+        configureTimeView()
+        configureMotivationView()
     }
 
     private var selectedDurationInSeconds: Double {
@@ -79,15 +80,29 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
 
         createChallenge()
     }
-
-    func didTapChangeMotivation() {
-        let selectMotivationVC = Controller.motivationSelection()
-        view?.router?.push(selectMotivationVC)
+    
+    func configureTimeView() {
+        let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
+                                               valueTitle: "Value",
+                                               actionTitle: Strings.creationActionTitle(),
+                                               action: {
+                                                let selectTimeVC = Controller.timeSelection()
+                                                self.view?.router?.push(selectTimeVC)
+        })
+        
+        view?.configureTimeView(model: timeViewModel)
     }
-
-    func didTapChangeTime() {
-        let selectTimeVC = Controller.timeSelection()
-        view?.router?.push(selectTimeVC)
+    
+    func configureMotivationView() {
+        let motivationViewModel = ParameterViewModel(title: Strings.creationMotivationTitle(),
+                                                     valueTitle: "Value",
+                                                     actionTitle: Strings.creationActionTitle(),
+                                                     action: {
+                                                        let selectMotivationVC = Controller.motivationSelection()
+                                                        self.view?.router?.push(selectMotivationVC)
+        })
+        
+        view?.configureMotivationView(model: motivationViewModel)
     }
 
     private func createChallenge() {

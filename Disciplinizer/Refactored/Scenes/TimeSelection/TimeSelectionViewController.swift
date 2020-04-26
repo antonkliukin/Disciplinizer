@@ -20,5 +20,14 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         super.viewDidLoad()
 
         configurator.configure(timeSelectionViewController: self)
+        
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .black
     }
 }

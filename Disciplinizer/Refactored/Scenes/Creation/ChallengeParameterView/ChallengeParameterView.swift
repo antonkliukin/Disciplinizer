@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct ParameterViewModel {
+    var title: String = ""
+    var valueTitle: String = ""
+    var actionTitle: String = ""
+    var action: () -> Void = {}
+}
+
 final class ChallengeParameterView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var parameterTitleLabel: UILabel!
@@ -44,14 +51,11 @@ final class ChallengeParameterView: UIView {
         addShadow()
     }
         
-    func configure(title: String = "",
-                   valueTitle: String = "",
-                   actionTitle: String = "",
-                   action: @escaping () -> Void = {}) {
-        parameterTitleLabel.text = title
-        parameterValueLabel.text = valueTitle
-        actionTitleLabel.text = actionTitle
-        self.action = action
+    func configure(model: ParameterViewModel) {
+        parameterTitleLabel.text = model.title
+        parameterValueLabel.text = model.valueTitle
+        actionTitleLabel.text = model.actionTitle
+        self.action = model.action
     }
     
     private func addTapGesture() {

@@ -14,6 +14,8 @@ protocol CreateChallengeViewProtocol: ViewProtocol {
     var selectedBetId: String { get }
 
     func changeStartButtonState(isActive: Bool)
+    func configureTimeView(model: ParameterViewModel)
+    func configureMotivationView(model: ParameterViewModel)
 }
 
 final class CreateChallengeViewController: UIViewController, CreateChallengeViewProtocol {
@@ -21,7 +23,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     @IBOutlet weak var contentViewLabel: UILabel!
     @IBOutlet weak var motivationTypeParameterView: ChallengeParameterView!
     @IBOutlet weak var timeParameterView: ChallengeParameterView!
-    @IBOutlet private weak var startButton: MainButton!
+    @IBOutlet private weak var startButton: UIButton!
 
     private let configurator = CreateChallengeConfigurator()
     private var feedbackGenerator: UISelectionFeedbackGenerator?
@@ -50,27 +52,42 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         startButton.alpha = isActive ? 1 : 0.5
         startButton.isEnabled = isActive
     }
+    
+    func configureTimeView(model: ParameterViewModel) {
+        timeParameterView.configure(model: model)
+    }
+    
+    func configureMotivationView(model: ParameterViewModel) {
+        motivationTypeParameterView.configure(model: model)
+    }
+    
+    func configureStartButton() {
+        startButton.roundCorners(corners: .all, radius: startButton.bounds.width / 2)
+        startButton.layer.borderWidth = 10
+        startButton.layer.borderColor = R.color.buttonLightBlue()!.cgColor
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupContentView()
+        configureStartButton()
         
         configurator.configure(createChallengeViewController: self)
         
-        setupNavigationBar()
-
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction private func startButtonTapped(_ sender: Any) {
         presenter.startButtonTapped()
     }
-    
-    private func setupNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
+        
     private func setupContentView() {
         contentViewLabel.text = title
         contentView.roundCorners(corners: .top, radius: 22)

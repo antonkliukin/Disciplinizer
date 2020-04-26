@@ -204,10 +204,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 11 colors.
+  /// This `R.color` struct is generated, and contains static references to 13 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
+    /// Color `BackgroundBlue`.
+    static let backgroundBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "BackgroundBlue")
     /// Color `CTBlack`.
     static let ctBlack = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTBlack")
     /// Color `CTBlue`.
@@ -228,6 +230,8 @@ struct R: Rswift.Validatable {
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
     static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
+    /// Color `buttonLightBlue`.
+    static let buttonLightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonLightBlue")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
@@ -235,6 +239,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func appColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.appColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "BackgroundBlue", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func backgroundBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.backgroundBlue, compatibleWith: traitCollection)
     }
     #endif
 
@@ -325,6 +338,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func navigationItemSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.navigationItemSelected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "buttonLightBlue", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func buttonLightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.buttonLightBlue, compatibleWith: traitCollection)
     }
     #endif
 
@@ -857,7 +879,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 24 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -907,6 +929,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let motivationItemMediumCoin = Rswift.StringResource(key: "motivationItem.mediumCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Motivation
+      ///
+      /// Locales: ru, en
+      static let creationMotivationTitle = Rswift.StringResource(key: "creation.motivationTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Next
       ///
       /// Locales: ru, en
@@ -923,10 +949,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideThirdPageTitle = Rswift.StringResource(key: "guide.thirdPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Tap to change
+      ///
+      /// Locales: ru, en
+      static let creationActionTitle = Rswift.StringResource(key: "creation.actionTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
       ///
       /// Locales: ru, en
       static let guideFirstPageContent = Rswift.StringResource(key: "guide.firstPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Time
+      ///
+      /// Locales: ru, en
+      static let creationTimeTitle = Rswift.StringResource(key: "creation.timeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tiny Coin
       ///
       /// Locales: en
@@ -1126,6 +1160,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.mediumCoin", bundle: bundle, comment: "")
       }
 
+      /// en translation: Motivation
+      ///
+      /// Locales: ru, en
+      static func creationMotivationTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.motivationTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.motivationTitle"
+        }
+
+        return NSLocalizedString("creation.motivationTitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Next
       ///
       /// Locales: ru, en
@@ -1186,6 +1235,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.thirdPage.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Tap to change
+      ///
+      /// Locales: ru, en
+      static func creationActionTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.actionTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.actionTitle"
+        }
+
+        return NSLocalizedString("creation.actionTitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
       ///
       /// Locales: ru, en
@@ -1199,6 +1263,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.firstPage.content", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Time
+      ///
+      /// Locales: ru, en
+      static func creationTimeTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.timeTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.timeTitle"
+        }
+
+        return NSLocalizedString("creation.timeTitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Tiny Coin
@@ -1509,8 +1588,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "BackgroundBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'BackgroundBlue' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
@@ -1699,6 +1781,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
         }
         if _R.storyboard.timeSelection().timeSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timeSelectionViewController' could not be loaded from storyboard 'TimeSelection' as 'TimeSelectionViewController'.") }
       }

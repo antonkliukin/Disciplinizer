@@ -8,10 +8,6 @@
 
 import UIKit
 
-private struct Constants {
-    static let cornerRaduis: CGFloat = 8
-}
-
 class MainButton: UIButton {
 
     override init(frame: CGRect) {
@@ -30,9 +26,9 @@ class MainButton: UIButton {
     
     private func configure() {
         self.alpha = isEnabled ? 1 : 0.5
-        self.backgroundColor = .gray
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        self.layer.cornerRadius = Constants.cornerRaduis
+        self.backgroundColor = R.color.lightBlue()
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        roundCorners(corners: .all, radius: 16)
         setTitleColor(.white, for: .normal)
     }
 }
