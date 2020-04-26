@@ -39,10 +39,6 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
 
     func viewDidLoad() {
         view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
-
-        purchaseManager.getAvailiableBets { [weak self] (bets) in
-            self?.view?.setupBetSelector(withPossibleBets: bets)
-        }
     }
 
     private var selectedDurationInSeconds: Double {

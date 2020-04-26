@@ -63,10 +63,10 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     }
 
     private func setupUI() {
-        timerView.roundCorners()
-        timerView.addShadow()
-        musicSelectView.roundCorners()
-        musicSelectView.addShadow(opacity: 0.1)
+//        timerView.roundCorners()
+//        timerView.addShadow()
+//        musicSelectView.roundCorners()
+//        musicSelectView.addShadow(opacity: 0.1)
     }
 
     private func addAppDelegateObservers() {

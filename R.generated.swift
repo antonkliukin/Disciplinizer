@@ -204,7 +204,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 8 colors.
+  /// This `R.color` struct is generated, and contains static references to 11 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -220,6 +220,12 @@ struct R: Rswift.Validatable {
     static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
     /// Color `CTWhite`.
     static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
+    /// Color `DarkBlueText`.
+    static let darkBlueText = Rswift.ColorResource(bundle: R.hostingBundle, name: "DarkBlueText")
+    /// Color `LightBlue`.
+    static let lightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightBlue")
+    /// Color `LightGreyText`.
+    static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
     static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
 
@@ -283,6 +289,33 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func ctWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctWhite, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "DarkBlueText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkBlueText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkBlueText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "LightBlue", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightBlue, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "LightGreyText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightGreyText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightGreyText, compatibleWith: traitCollection)
     }
     #endif
 
@@ -455,10 +488,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `ChallengeParameterView`.
+    static let challengeParameterView = _R.nib._ChallengeParameterView()
     /// Nib `PageCollectionViewCell`.
     static let pageCollectionViewCell = _R.nib._PageCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ChallengeParameterView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.challengeParameterView) instead")
+    static func challengeParameterView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.challengeParameterView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "PageCollectionViewCell", in: bundle)`
@@ -467,6 +510,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.pageCollectionViewCell)
     }
     #endif
+
+    static func challengeParameterView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func pageCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PageCollectionViewCell? {
       return R.nib.pageCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PageCollectionViewCell
@@ -1312,6 +1359,17 @@ struct _R: Rswift.Validatable {
       try _PageCollectionViewCell.validate()
     }
 
+    struct _ChallengeParameterView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ChallengeParameterView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PageCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = PageCollectionViewCell
 
@@ -1454,6 +1512,7 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.createChallenge().createChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChallengeViewController' could not be loaded from storyboard 'CreateChallenge' as 'CreateChallengeViewController'.") }
       }

@@ -90,6 +90,9 @@
 		3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1272F232ABD15004206E5 /* GuidePresenter.swift */; };
 		3AA12733232ABDA9004206E5 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA12731232ABDA8004206E5 /* PageCollectionViewCell.xib */; };
 		3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA12732232ABDA8004206E5 /* PageCollectionViewCell.swift */; };
+		3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A101245434DB00955BD5 /* ChallengeParameterView.xib */; };
+		3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A1032454373D00955BD5 /* ChallengeParameterView.swift */; };
+		3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A1062454690600955BD5 /* UIView+Extension.swift */; };
 		3AB765CA231BDBC1007FA888 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765C9231BDBC1007FA888 /* Router.swift */; };
 		3AB765CD231C299F007FA888 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CC231C299F007FA888 /* Controllers.swift */; };
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
@@ -118,7 +121,6 @@
 		3AD068982358ED1D003D30A6 /* PageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */; };
 		3AD0689A2358F085003D30A6 /* PageNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */; };
 		3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0689E235B175B003D30A6 /* PageCell.swift */; };
-		3AD068B4236026DE003D30A6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068B3236026DE003D30A6 /* UIView+Extension.swift */; };
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
@@ -245,6 +247,9 @@
 		3AA12731232ABDA8004206E5 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageCollectionViewCell.xib; path = Disciplinizer/OutdatedModules/Guide/Views/Cells/PageCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3AA12732232ABDA8004206E5 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageCollectionViewCell.swift; path = Disciplinizer/OutdatedModules/Guide/Views/Cells/PageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3AA12737232ABDE5004206E5 /* PageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageProvider.swift; path = Disciplinizer/Modules/Main/PageProvider.swift; sourceTree = SOURCE_ROOT; };
+		3AA1A101245434DB00955BD5 /* ChallengeParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeParameterView.xib; sourceTree = "<group>"; };
+		3AA1A1032454373D00955BD5 /* ChallengeParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeParameterView.swift; sourceTree = "<group>"; };
+		3AA1A1062454690600955BD5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3AB765C9231BDBC1007FA888 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3AB765CC231C299F007FA888 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -274,7 +279,6 @@
 		3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationViewController.swift; sourceTree = "<group>"; };
 		3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationPresenter.swift; sourceTree = "<group>"; };
 		3AD0689E235B175B003D30A6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
-		3AD068B3236026DE003D30A6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionPresenter.swift; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 				3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */,
 				3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */,
 				3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */,
+				3AA1A1052454375300955BD5 /* ChallengeParameterView */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -398,9 +403,9 @@
 				3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */,
 				544EC484233BB04800417DAF /* UIButton+Factory.swift */,
 				3A2F573423125E4000212317 /* UIViewController+Extension.swift */,
-				3AD068B3236026DE003D30A6 /* UIView+Extension.swift */,
 				3AC223772365AB840075C773 /* Date+Extensions.swift */,
 				3AC223792365B3710075C773 /* Result+Success.swift */,
+				3AA1A1062454690600955BD5 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -737,6 +742,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3AA1A1052454375300955BD5 /* ChallengeParameterView */ = {
+			isa = PBXGroup;
+			children = (
+				3AA1A101245434DB00955BD5 /* ChallengeParameterView.xib */,
+				3AA1A1032454373D00955BD5 /* ChallengeParameterView.swift */,
+			);
+			path = ChallengeParameterView;
+			sourceTree = "<group>";
+		};
 		3AB765CB231C298D007FA888 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1064,6 +1078,7 @@
 				3ACD2C7F240C2EB00017FABC /* Guide.storyboard in Resources */,
 				C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */,
 				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
+				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
 				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
 				3A008BD2231F93CA00B9286B /* Localizable.stringsdict in Resources */,
 				3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */,
@@ -1291,11 +1306,12 @@
 				3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */,
 				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,
 				3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */,
-				3AD068B4236026DE003D30A6 /* UIView+Extension.swift in Sources */,
+				3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */,
 				54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */,
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
+				3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */,
 				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,
 				C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */,
 				3A653DBE241ABA8600BE613C /* ChangePlaybackState.swift in Sources */,
