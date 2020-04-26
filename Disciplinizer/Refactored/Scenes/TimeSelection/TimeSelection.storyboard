@@ -286,10 +286,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Xr-3lY">
-                                                <rect key="frame" x="50" y="143.5" width="314" height="286"/>
+                                                <rect key="frame" x="50" y="138" width="314" height="297"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-5Y-oFW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="183"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
@@ -305,15 +305,48 @@ and don’t pick up your phone to succeed </string>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Minutes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7T-hn-3sB">
-                                                                <rect key="frame" x="0.0" y="138" width="314" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2GM-6W-gvs">
+                                                                <rect key="frame" x="0.0" y="138" width="314" height="45"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Minutes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7T-hn-3sB">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <connections>
+                                                                            <action selector="didEnterNumber:" destination="2Ik-c9-iwE" eventType="editingChanged" id="c27-TS-0WB"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iib-Zo-ebb">
+                                                                        <rect key="frame" x="0.0" y="22" width="314" height="2"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-w4-i6R">
+                                                                                <rect key="frame" x="50" y="0.5" width="214" height="1"/>
+                                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="mn1-J9-pdW"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="0UL-fa-CbF"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Rc6-w4-i6R" secondAttribute="trailing" constant="50" id="MJs-De-1GQ"/>
+                                                                            <constraint firstItem="Rc6-w4-i6R" firstAttribute="leading" secondItem="iib-Zo-ebb" secondAttribute="leading" constant="50" id="eTP-3p-OLb"/>
+                                                                            <constraint firstItem="Rc6-w4-i6R" firstAttribute="centerY" secondItem="iib-Zo-ebb" secondAttribute="centerY" id="mgk-ey-AFi"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-5G-cle">
+                                                                        <rect key="frame" x="0.0" y="29" width="314" height="16"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <color key="textColor" name="errorRed"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-PO-GT4" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="242" width="314" height="44"/>
+                                                        <rect key="frame" x="0.0" y="253" width="314" height="44"/>
                                                         <color key="backgroundColor" name="LightBlue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="62d-lj-wJO"/>
@@ -321,6 +354,9 @@ and don’t pick up your phone to succeed </string>
                                                         <state key="normal" title="Save">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="didTapSave:" destination="2Ik-c9-iwE" eventType="touchUpInside" id="3UO-5E-3lj"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -354,6 +390,12 @@ and don’t pick up your phone to succeed </string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kxy-nT-1Pg"/>
                     </view>
+                    <connections>
+                        <outlet property="errorMessageLabel" destination="Pbj-5G-cle" id="DPy-uO-Dlw"/>
+                        <outlet property="saveButton" destination="YY2-PO-GT4" id="BKQ-ke-Vyu"/>
+                        <outlet property="timeTextField" destination="U7T-hn-3sB" id="51T-Fl-wNU"/>
+                        <outlet property="timeTextFieldLineView" destination="Rc6-w4-i6R" id="4JI-48-lhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh7-Qf-Onm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,6 +415,9 @@ and don’t pick up your phone to succeed </string>
         </namedColor>
         <namedColor name="LightBlue">
             <color red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="errorRed">
+            <color red="0.95294117647058818" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

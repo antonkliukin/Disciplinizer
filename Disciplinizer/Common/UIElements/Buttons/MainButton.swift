@@ -9,6 +9,12 @@
 import UIKit
 
 class MainButton: UIButton {
+        
+    var isResponsive: Bool = false {
+        didSet {
+            backgroundColor = isResponsive ? R.color.lightBlue() : R.color.buttonGrey()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,10 +24,6 @@ class MainButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
-    }
-
-    @objc private func configureDownState() {
-        self.alpha = 0.5
     }
     
     private func configure() {

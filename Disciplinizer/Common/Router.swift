@@ -16,6 +16,8 @@ protocol RouterProtocol {
     func present(_ vc: UIViewController, animated: Bool, forcePresent: Bool, completion: (() -> Void)?)
     func push(_ viewController: UIViewController)
     func push(_ viewController: UIViewController, animated: Bool)
+    func pop()
+    func pop(animated: Bool)
     func dismiss()
     ///  - parameter toRoot: True - dismisses all presented VCs to root VC, false - dismesses the topmost presented VC.
     func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool)
@@ -90,6 +92,16 @@ class Router: RouterProtocol {
 
     func remove() {
         initialController.remove()
+    }
+    
+    func pop() {
+        pop(animated: true)
+    }
+    
+    func pop(animated: Bool) {
+        if let navVC = initialController.navigationController {
+            navVC.popViewController(animated: animated)
+        }
     }
 }
 

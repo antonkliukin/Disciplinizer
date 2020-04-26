@@ -8,11 +8,24 @@
 
 import UIKit
 
-protocol TimeSelectionViewProtocol: ViewProtocol {
+enum TimeSelectionViewState {
+    case onHold, valid, invalid
+}
 
+protocol TimeSelectionViewProtocol: ViewProtocol {
+    func showErrorMessage(_ message: String)
+    func hideErrorMessage()
+    func changeSaveButtonState(isEnabled: Bool)
+    func clearInput()
 }
 
 class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
+    
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var timeTextFieldLineView: UIView!
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var saveButton: MainButton!
+    
     var presenter: TimeSelectionPresenterProtocol!
     var configurator = TimeSelectionConfigurator()
 
@@ -22,6 +35,8 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         configurator.configure(timeSelectionViewController: self)
         
         navigationController?.navigationBar.isHidden = false
+        
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,5 +44,35 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
+    }
+        
+    func showErrorMessage(_ message: String) {
+        errorMessageLabel.text = message
+        timeTextFieldLineView.backgroundColor = R.color.errorRed()
+    }
+    
+    func hideErrorMessage() {
+        errorMessageLabel.text = " "
+        timeTextFieldLineView.backgroundColor = R.color.lightBlue()
+    }
+    
+    func changeSaveButtonState(isEnabled: Bool) {
+        saveButton.isResponsive = isEnabled
+    }
+    
+    @IBAction func didEnterNumber(_ sender: Any) {
+        guard let enteredText = timeTextField.text else {
+            return
+        }
+        
+        presenter?.didEnter(enteredText)
+    }
+    
+    func clearInput() {
+        timeTextField.text = ""
+    }
+    
+    @IBAction func didTapSave(_ sender: Any) {
+        presenter?.didTapSaveButton()
     }
 }

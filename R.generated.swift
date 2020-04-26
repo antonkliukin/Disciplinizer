@@ -204,7 +204,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 13 colors.
+  /// This `R.color` struct is generated, and contains static references to 15 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -230,8 +230,12 @@ struct R: Rswift.Validatable {
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
     static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
+    /// Color `buttonGrey`.
+    static let buttonGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonGrey")
     /// Color `buttonLightBlue`.
     static let buttonLightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonLightBlue")
+    /// Color `errorRed`.
+    static let errorRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "errorRed")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
@@ -342,11 +346,29 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "buttonGrey", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func buttonGrey(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.buttonGrey, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "buttonLightBlue", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func buttonLightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.buttonLightBlue, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "errorRed", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func errorRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.errorRed, compatibleWith: traitCollection)
     }
     #endif
 
@@ -879,7 +901,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 24 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 25 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -977,6 +999,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnBody = Rswift.StringResource(key: "notifications.return.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: please enter time from 15 to 120 minutes
+      ///
+      /// Locales: ru, en
+      static let timeSelectionErrorMessage = Rswift.StringResource(key: "timeSelection.errorMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
 
       /// en translation: %#@value@
       ///
@@ -1340,6 +1366,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.return.body", bundle: bundle, comment: "")
       }
 
+      /// en translation: please enter time from 15 to 120 minutes
+      ///
+      /// Locales: ru, en
+      static func timeSelectionErrorMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.errorMessage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.errorMessage"
+        }
+
+        return NSLocalizedString("timeSelection.errorMessage", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -1588,11 +1629,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "BackgroundBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'BackgroundBlue' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
@@ -1782,6 +1820,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "errorRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'errorRed' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
         }
         if _R.storyboard.timeSelection().timeSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timeSelectionViewController' could not be loaded from storyboard 'TimeSelection' as 'TimeSelectionViewController'.") }
       }

@@ -51,3 +51,9 @@
 "creation.timeTitle" = "Time";
 "creation.motivationTitle" = "Motivation";
 "creation.actionTitle" = "Tap to change";
+
+//******************************************************************************
+// Time Selection
+//******************************************************************************
+"timeSelection.errorMessage" = "please enter time from 15 to 120 minutes";
+
