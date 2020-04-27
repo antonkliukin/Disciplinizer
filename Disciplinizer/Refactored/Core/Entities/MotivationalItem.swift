@@ -10,20 +10,20 @@ import Foundation
 
 enum MotivationalItem: String {
     case ad = "0"
-    case tinyCoin = "1"
-    case smallCoin = "2"
-    case mediumCoin = "3"
-    case bigCoin = "4"
-    case hugeCoin = "5"
+    case level1 = "1"
+    case level2 = "2"
+    case level3 = "3"
+    case level4 = "4"
+    case level5 = "5"
 
     var title: String {
         switch self {
         case .ad: return Strings.motivationItemAd()
-        case .tinyCoin: return Strings.motivationItemTinyCoin()
-        case .smallCoin: return Strings.motivationItemSmallCoin()
-        case .mediumCoin: return Strings.motivationItemMediumCoin()
-        case .bigCoin: return Strings.motivationItemBigCoin()
-        case .hugeCoin: return Strings.motivationItemHugeCoin()
+        case .level1: return Strings.motivationItemLevel1()
+        case .level2: return Strings.motivationItemLevel2()
+        case .level3: return Strings.motivationItemLevel3()
+        case .level4: return Strings.motivationItemLevel4()
+        case .level5: return Strings.motivationItemLevel5()
         }
     }
 }

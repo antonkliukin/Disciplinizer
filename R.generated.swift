@@ -911,18 +911,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSecondPageContent = Rswift.StringResource(key: "guide.secondPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Big Coin
+      /// en translation: Ad
       ///
-      /// Locales: en
-      static let motivationItemBigCoin = Rswift.StringResource(key: "motivationItem.bigCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: ru, en
+      static let motivationItemAd = Rswift.StringResource(key: "motivationItem.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Click to avoid losing!
       ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Cuddly
+      ///
+      /// Locales: ru, en
+      static let motivationItemLevel1 = Rswift.StringResource(key: "motivationItem.level1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Does your task require concentration?
       ///
       /// Locales: ru, en
       static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Fluffy
+      ///
+      /// Locales: ru, en
+      static let motivationItemLevel2 = Rswift.StringResource(key: "motivationItem.level2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
       ///
       /// Locales: ru, en
@@ -935,10 +943,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Huge Coin
-      ///
-      /// Locales: en
-      static let motivationItemHugeCoin = Rswift.StringResource(key: "motivationItem.hugeCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
       ///
       /// Locales: ru, en
@@ -947,10 +951,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Medium Coin
-      ///
-      /// Locales: en
-      static let motivationItemMediumCoin = Rswift.StringResource(key: "motivationItem.mediumCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Motivation
       ///
       /// Locales: ru, en
@@ -959,14 +959,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideNext = Rswift.StringResource(key: "guide.next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Pinko
+      ///
+      /// Locales: ru, en
+      static let motivationItemLevel4 = Rswift.StringResource(key: "motivationItem.level4", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Skip
       ///
       /// Locales: ru, en
       static let guideSkip = Rswift.StringResource(key: "guide.skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Small Coin
-      ///
-      /// Locales: en
-      static let motivationItemSmallCoin = Rswift.StringResource(key: "motivationItem.smallCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Start the challenge!
       ///
       /// Locales: ru, en
@@ -979,22 +979,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageContent = Rswift.StringResource(key: "guide.firstPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Tilda
+      ///
+      /// Locales: ru, en
+      static let motivationItemLevel3 = Rswift.StringResource(key: "motivationItem.level3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Time
       ///
       /// Locales: ru, en
       static let creationTimeTitle = Rswift.StringResource(key: "creation.timeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Tiny Coin
-      ///
-      /// Locales: en
-      static let motivationItemTinyCoin = Rswift.StringResource(key: "motivationItem.tinyCoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Unlock App
       ///
       /// Locales: ru, en
       static let purchaseButtonTitle = Rswift.StringResource(key: "purchase.buttonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Watching Ad
+      /// en translation: Valli
       ///
-      /// Locales: en
-      static let motivationItemAd = Rswift.StringResource(key: "motivationItem.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: ru, en
+      static let motivationItemLevel5 = Rswift.StringResource(key: "motivationItem.level5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: You will lose your challenge if don't return to the app!
       ///
       /// Locales: ru, en
@@ -1036,19 +1036,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.secondPage.content", bundle: bundle, comment: "")
       }
 
-      /// en translation: Big Coin
+      /// en translation: Ad
       ///
-      /// Locales: en
-      static func motivationItemBigCoin(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: ru, en
+      static func motivationItemAd(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.bigCoin", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("motivationItem.ad", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.bigCoin"
+          return "motivationItem.ad"
         }
 
-        return NSLocalizedString("motivationItem.bigCoin", bundle: bundle, comment: "")
+        return NSLocalizedString("motivationItem.ad", bundle: bundle, comment: "")
       }
 
       /// en translation: Click to avoid losing!
@@ -1066,6 +1066,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Cuddly
+      ///
+      /// Locales: ru, en
+      static func motivationItemLevel1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.level1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.level1"
+        }
+
+        return NSLocalizedString("motivationItem.level1", bundle: bundle, comment: "")
+      }
+
       /// en translation: Does your task require concentration?
       ///
       /// Locales: ru, en
@@ -1079,6 +1094,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.secondPage.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Fluffy
+      ///
+      /// Locales: ru, en
+      static func motivationItemLevel2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.level2", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.level2"
+        }
+
+        return NSLocalizedString("motivationItem.level2", bundle: bundle, comment: "")
       }
 
       /// en translation: Follow the rules, stay focused and remember — time is money and you might lose it!
@@ -1126,21 +1156,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.firstPage.title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Huge Coin
-      ///
-      /// Locales: en
-      static func motivationItemHugeCoin(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.hugeCoin", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.hugeCoin"
-        }
-
-        return NSLocalizedString("motivationItem.hugeCoin", bundle: bundle, comment: "")
-      }
-
       /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
       ///
       /// Locales: ru, en
@@ -1169,21 +1184,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert.example", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Medium Coin
-      ///
-      /// Locales: en
-      static func motivationItemMediumCoin(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.mediumCoin", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.mediumCoin"
-        }
-
-        return NSLocalizedString("motivationItem.mediumCoin", bundle: bundle, comment: "")
       }
 
       /// en translation: Motivation
@@ -1216,6 +1216,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.next", bundle: bundle, comment: "")
       }
 
+      /// en translation: Pinko
+      ///
+      /// Locales: ru, en
+      static func motivationItemLevel4(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.level4", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.level4"
+        }
+
+        return NSLocalizedString("motivationItem.level4", bundle: bundle, comment: "")
+      }
+
       /// en translation: Skip
       ///
       /// Locales: ru, en
@@ -1229,21 +1244,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.skip", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Small Coin
-      ///
-      /// Locales: en
-      static func motivationItemSmallCoin(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.smallCoin", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.smallCoin"
-        }
-
-        return NSLocalizedString("motivationItem.smallCoin", bundle: bundle, comment: "")
       }
 
       /// en translation: Start the challenge!
@@ -1291,6 +1291,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.firstPage.content", bundle: bundle, comment: "")
       }
 
+      /// en translation: Tilda
+      ///
+      /// Locales: ru, en
+      static func motivationItemLevel3(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.level3", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.level3"
+        }
+
+        return NSLocalizedString("motivationItem.level3", bundle: bundle, comment: "")
+      }
+
       /// en translation: Time
       ///
       /// Locales: ru, en
@@ -1304,21 +1319,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.timeTitle", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Tiny Coin
-      ///
-      /// Locales: en
-      static func motivationItemTinyCoin(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.tinyCoin", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.tinyCoin"
-        }
-
-        return NSLocalizedString("motivationItem.tinyCoin", bundle: bundle, comment: "")
       }
 
       /// en translation: Unlock App
@@ -1336,19 +1336,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("purchase.buttonTitle", bundle: bundle, comment: "")
       }
 
-      /// en translation: Watching Ad
+      /// en translation: Valli
       ///
-      /// Locales: en
-      static func motivationItemAd(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: ru, en
+      static func motivationItemLevel5(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.ad", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("motivationItem.level5", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.ad"
+          return "motivationItem.level5"
         }
 
-        return NSLocalizedString("motivationItem.ad", bundle: bundle, comment: "")
+        return NSLocalizedString("motivationItem.level5", bundle: bundle, comment: "")
       }
 
       /// en translation: You will lose your challenge if don't return to the app!

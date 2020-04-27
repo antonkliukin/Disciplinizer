@@ -17,10 +17,15 @@ protocol TimeSelectionPresenterProtocol {
 class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     weak var view: TimeSelectionViewProtocol?
     
+    private var durationParameterUseCase: DurationParameterUseCaseProtocol
+    
     private var isEnteredTimeValid = false
+    private var enteredDurationInMinutes = 0
 
-    init(view: TimeSelectionViewProtocol) {
+    init(view: TimeSelectionViewProtocol,
+         durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
+        self.durationParameterUseCase = durationParameterUseCase
     }
     
     func viewDidLoad() {
@@ -66,14 +71,26 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
         
         let isInputValid = isValid(enteredTime: timeInMinutes)
         
-        changeViewState(isInputValid ? .valid : .invalid)
+        if isInputValid {
+            changeViewState(.valid)
+            enteredDurationInMinutes = timeInMinutes
+        } else {
+            changeViewState(.invalid)
+        }
     }
     
     func didTapSaveButton() {
         if isEnteredTimeValid {
-            view?.router?.pop()
+            durationParameterUseCase.select(duration: Int(enteredDurationInMinutes)) { (durationSavingResult) in
+                switch durationSavingResult {
+                case .success:
+                    self.view?.router?.pop()
+                case .failure:
+                    assertionFailure()
+                }
+            }
         } else {
-            view?.showErrorMessage(Strings.timeSelectionErrorMessage())
+            changeViewState(.invalid)
         }
     }
     

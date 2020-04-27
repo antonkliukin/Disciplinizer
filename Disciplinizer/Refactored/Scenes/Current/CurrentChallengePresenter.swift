@@ -119,8 +119,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         }
     }
 
-    private func fireLoseTimer(withInterval interval: TimeInterval) {
-        self.loseTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false, block: { [weak self] (_) in
+    private func fireLoseTimer(withInterval interval: Int) {
+        self.loseTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: false, block: { [weak self] (_) in
             guard let self = self else {
                 assertionFailure()
                 return

@@ -14,7 +14,7 @@ typealias NotificationManagerCallback = (Result<Bool, Error>) -> Void
 // MARK: - Notification Type
 
 enum NotificationType {
-    case triggered(title: String, message: String, timeInterval: TimeInterval)
+    case triggered(title: String, message: String, timeInterval: Int)
     case basic(title: String, message: String)
 }
 
@@ -76,7 +76,7 @@ class NotificationManager: NSObject {
         case .triggered(let title, let message, let timeInterval):
             notificationContent.title = title
             notificationContent.body = message
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
             request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
         case .basic(let title, let message):
             notificationContent.title = title

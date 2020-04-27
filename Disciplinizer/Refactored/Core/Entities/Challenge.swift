@@ -12,7 +12,7 @@ struct Challenge {
     var id: String
     var startDate: Date?
     var finishDate: Date?
-    var duration: TimeInterval
+    var duration: Int
     var isSuccess: Bool
     var isPaid: Bool
     var betId: String?

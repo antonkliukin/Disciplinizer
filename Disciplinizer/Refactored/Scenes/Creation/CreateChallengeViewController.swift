@@ -9,10 +9,6 @@
 import UIKit
 
 protocol CreateChallengeViewProtocol: ViewProtocol {
-    var selectedMode: ChallengeMode? { get }
-    var selectedDuration: TimeInterval { get }
-    var selectedBetId: String { get }
-
     func changeStartButtonState(isActive: Bool)
     func configureTimeView(model: ParameterViewModel)
     func configureMotivationView(model: ParameterViewModel)
@@ -26,28 +22,11 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     @IBOutlet private weak var startButton: UIButton!
 
     private let configurator = CreateChallengeConfigurator()
-    private var feedbackGenerator: UISelectionFeedbackGenerator?
-    private var currentBetIndex = 0
-    private var bets: [BetProtocol] = []
 
     var presenter: CreateChallengePresenterProtocol!
 
     // MARK: View Protocol
 
-    var selectedMode: ChallengeMode? {
-        // TODO: Replace with something
-        return ChallengeMode.free
-    }
-
-    var selectedDuration: TimeInterval {
-        // TODO: change
-        return Double(timeParameterView.parameterValueLabel.text ?? "0") ?? 0
-    }
-
-    var selectedBetId: String {
-        return bets[currentBetIndex].id
-    }
-    
     func changeStartButtonState(isActive: Bool) {
         startButton.alpha = isActive ? 1 : 0.5
         startButton.isEnabled = isActive
@@ -82,6 +61,8 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+        
+        presenter.viewWillAppear()
     }
     
     @IBAction private func startButtonTapped(_ sender: Any) {

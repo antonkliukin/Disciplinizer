@@ -13,9 +13,13 @@ protocol TimeSelectionConfiguratorProtocol {
 }
 
 class TimeSelectionConfigurator: TimeSelectionConfiguratorProtocol {
-
+    
     func configure(timeSelectionViewController: TimeSelectionViewController) {
-        let presenter = TimeSelectionPresenter(view: timeSelectionViewController)
+        let challengeParametersGateway = ChallengeParametersPersistenceGateway()
+        let durationParameterUseCase = DurationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
+
+        let presenter = TimeSelectionPresenter(view: timeSelectionViewController,
+                                               durationParameterUseCase: durationParameterUseCase)
 
         timeSelectionViewController.presenter = presenter
     }

@@ -38,12 +38,12 @@
 //******************************************************************************
 // Motivational Item
 //******************************************************************************
-"motivationItem.ad" = "Watching Ad";
-"motivationItem.tinyCoin" = "Tiny Coin";
-"motivationItem.smallCoin" = "Small Coin";
-"motivationItem.mediumCoin" = "Medium Coin";
-"motivationItem.bigCoin" = "Big Coin";
-"motivationItem.hugeCoin" = "Huge Coin";
+"motivationItem.ad" = "Ad";
+"motivationItem.level1" = "Cuddly";
+"motivationItem.level2" = "Fluffy";
+"motivationItem.level3" = "Tilda";
+"motivationItem.level4" = "Pinko";
+"motivationItem.level5" = "Valli";
 
 //******************************************************************************
 // Creation

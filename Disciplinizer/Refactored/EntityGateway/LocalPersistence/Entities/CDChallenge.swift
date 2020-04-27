@@ -13,7 +13,7 @@ extension CDChallenge {
         return Challenge(id: id ?? "",
                          startDate: startDate,
                          finishDate: finishDate,
-                         duration: duration,
+                         duration: Int(durationInMinutes),
                          isSuccess: isSuccess,
                          isPaid: isPaid,
                          betId: betId)
@@ -25,7 +25,7 @@ extension CDChallenge {
 
         startDate = parameters.startDate
         finishDate = parameters.finishDate
-        duration = parameters.duration
+        durationInMinutes = Int16(parameters.durationInMinutes)
         isSuccess = parameters.isSuccess
         isPaid = parameters.isPaid
         betId = parameters.betId
@@ -35,7 +35,7 @@ extension CDChallenge {
         id = challenge.id
         startDate = challenge.startDate
         finishDate = challenge.finishDate
-        duration = challenge.duration
+        durationInMinutes = Int16(challenge.duration)
         isSuccess = challenge.isSuccess
         isPaid = challenge.isPaid
         betId = challenge.betId

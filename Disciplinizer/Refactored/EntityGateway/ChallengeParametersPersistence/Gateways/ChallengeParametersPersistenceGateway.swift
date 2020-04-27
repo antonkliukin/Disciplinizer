@@ -13,7 +13,6 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
 
     private enum Key {
         static let item = "motivationalItem"
-        static let paidItem = "paidMotivationalItem"
         static let time = "time"
     }
 
@@ -30,12 +29,13 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
         completionHandler(.success(item))
     }
 
-    func select(duration: TimeInterval, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+    func select(duration: Int, completionHandler: @escaping (Result<Void, Error>) -> Void) {
         userDefaults.set(duration, forKey: Key.item)
+        completionHandler(.success)
     }
 
-    func getCurrentDuration(completionHandler: @escaping (Result<TimeInterval, Error>) -> Void) {
-        let duration = userDefaults.double(forKey: Key.item)
+    func getCurrentDuration(completionHandler: @escaping (Result<Int, Error>) -> Void) {
+        let duration = userDefaults.integer(forKey: Key.item)
         
         guard duration > 0 else {
             completionHandler(.failure(UserDefaultsError(message: "Duration is not saved.")))

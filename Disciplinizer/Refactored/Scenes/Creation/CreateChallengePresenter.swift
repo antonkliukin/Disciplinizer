@@ -10,6 +10,7 @@ import Foundation
 
 protocol CreateChallengePresenterProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func startButtonTapped()
     func didChooseMode(_ mode: ChallengeMode)
     func didSetTimer(withTimeInMinutes minutes: Int)
@@ -36,30 +37,16 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
 
     func viewDidLoad() {
-        view?.changeStartButtonState(isActive: !(view?.selectedMode == nil))
-        
+//        configureTimeView()
+//        configureMotivationView()
+    }
+    
+    func viewWillAppear() {
         configureTimeView()
         configureMotivationView()
     }
 
-    private var selectedDurationInSeconds: Double {
-        guard let selectedDuration = view?.selectedDuration else {
-            assertionFailure()
-            return 0
-        }
-
-        // TODO: Test duration
-        return 600 //selectedDuration * 60
-    }
-
-    private var selectedMode: ChallengeMode {
-        guard let selectedMode = view?.selectedMode else {
-            assertionFailure()
-            return .free
-        }
-
-        return selectedMode
-    }
+    private var selectedDurationInMinutes = 0
 
     func didChooseMode(_ mode: ChallengeMode) {
         view?.changeStartButtonState(isActive: true)
@@ -82,15 +69,34 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     func configureTimeView() {
-        let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
-                                               valueTitle: "Value",
-                                               actionTitle: Strings.creationActionTitle(),
-                                               action: {
-                                                let selectTimeVC = Controller.timeSelection()
-                                                self.view?.router?.push(selectTimeVC)
-        })
-        
-        view?.configureTimeView(model: timeViewModel)
+        durationParameterUseCase.getSelected { (selectedDurationResult) in
+            switch selectedDurationResult {
+            case .success(let durationInMinutes):
+                self.selectedDurationInMinutes = durationInMinutes
+                
+                let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
+                                                       valueTitle: "\(durationInMinutes) min",
+                                                       actionTitle: Strings.creationActionTitle(),
+                                                       action: {
+                                                        let selectTimeVC = Controller.timeSelection()
+                                                        self.view?.router?.push(selectTimeVC)
+                })
+                
+                self.view?.configureTimeView(model: timeViewModel)
+            case .failure:
+                self.selectedDurationInMinutes = 30 * 60
+                
+                let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
+                                                       valueTitle: "\(30) min",
+                                                       actionTitle: Strings.creationActionTitle(),
+                                                       action: {
+                                                        let selectTimeVC = Controller.timeSelection()
+                                                        self.view?.router?.push(selectTimeVC)
+                })
+                
+                self.view?.configureTimeView(model: timeViewModel)
+            }
+        }
     }
     
     func configureMotivationView() {
@@ -106,11 +112,12 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
 
     private func createChallenge() {
-        let isPaid = selectedMode == .paid
-        let betId = isPaid ? view?.selectedBetId : nil
+        let isPaid = false
+        let betId = "1"
+        
         let challengeParameters = ChallengeParameters(startDate: Date(),
                                                       finishDate: nil,
-                                                      duration: selectedDurationInSeconds,
+                                                      durationInMinutes: selectedDurationInMinutes,
                                                       isSuccess: false,
                                                       isPaid: isPaid,
                                                       betId: betId)

@@ -18,7 +18,7 @@ protocol CreateChallengeUseCaseProtocol {
 struct ChallengeParameters {
     var startDate: Date?
     var finishDate: Date?
-    var duration: TimeInterval
+    var durationInMinutes: Int
     var isSuccess: Bool
     var isPaid: Bool
     var betId: String?
