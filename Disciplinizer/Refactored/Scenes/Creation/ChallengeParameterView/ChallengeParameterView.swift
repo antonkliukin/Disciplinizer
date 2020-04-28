@@ -46,8 +46,8 @@ final class ChallengeParameterView: UIView {
         super.layoutSubviews()
         
         contentView.roundCorners()
-        roundCorners()
         
+        roundCorners()
         addShadow()
     }
         

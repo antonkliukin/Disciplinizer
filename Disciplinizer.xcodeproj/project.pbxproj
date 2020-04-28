@@ -93,6 +93,8 @@
 		3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A101245434DB00955BD5 /* ChallengeParameterView.xib */; };
 		3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A1032454373D00955BD5 /* ChallengeParameterView.swift */; };
 		3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A1062454690600955BD5 /* UIView+Extension.swift */; };
+		3AA1A10A24567EB800955BD5 /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A10924567EB800955BD5 /* MotivationView.swift */; };
+		3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A10B24567F0400955BD5 /* MotivationView.xib */; };
 		3AB765CA231BDBC1007FA888 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765C9231BDBC1007FA888 /* Router.swift */; };
 		3AB765CD231C299F007FA888 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CC231C299F007FA888 /* Controllers.swift */; };
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
@@ -250,6 +252,8 @@
 		3AA1A101245434DB00955BD5 /* ChallengeParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeParameterView.xib; sourceTree = "<group>"; };
 		3AA1A1032454373D00955BD5 /* ChallengeParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeParameterView.swift; sourceTree = "<group>"; };
 		3AA1A1062454690600955BD5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3AA1A10924567EB800955BD5 /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
+		3AA1A10B24567F0400955BD5 /* MotivationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MotivationView.xib; sourceTree = "<group>"; };
 		3AB765C9231BDBC1007FA888 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3AB765CC231C299F007FA888 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				3A0742A4241E2BE5003B1A83 /* MotivationSelectionPresenter.swift */,
 				3A0742A6241E2BF8003B1A83 /* MotivationSelectionViewController.swift */,
 				3A0742A8241E2C0D003B1A83 /* MotivationSelection.storyboard */,
+				3AA1A10824567E9200955BD5 /* MotivationView */,
 			);
 			path = MotivationSelection;
 			sourceTree = "<group>";
@@ -751,6 +756,15 @@
 			path = ChallengeParameterView;
 			sourceTree = "<group>";
 		};
+		3AA1A10824567E9200955BD5 /* MotivationView */ = {
+			isa = PBXGroup;
+			children = (
+				3AA1A10924567EB800955BD5 /* MotivationView.swift */,
+				3AA1A10B24567F0400955BD5 /* MotivationView.xib */,
+			);
+			path = MotivationView;
+			sourceTree = "<group>";
+		};
 		3AB765CB231C298D007FA888 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,6 +1091,7 @@
 				3AD068962358ED09003D30A6 /* PageNavigation.storyboard in Resources */,
 				3ACD2C7F240C2EB00017FABC /* Guide.storyboard in Resources */,
 				C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */,
+				3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */,
 				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
 				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
@@ -1253,6 +1268,7 @@
 				3A653DB9241A155400BE613C /* SongsGateway.swift in Sources */,
 				3A2F573C231272DF00212317 /* LockStateRequests.swift in Sources */,
 				3A00A510238323410011ACDC /* JWTError.swift in Sources */,
+				3AA1A10A24567EB800955BD5 /* MotivationView.swift in Sources */,
 				3A0742B0241E3AAB003B1A83 /* TimeSelectionConfigurator.swift in Sources */,
 				3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */,
 				3A47D676230F1D6A00B2B200 /* RequestBuilder.swift in Sources */,

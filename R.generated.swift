@@ -204,7 +204,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 15 colors.
+  /// This `R.color` struct is generated, and contains static references to 17 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -236,6 +236,10 @@ struct R: Rswift.Validatable {
     static let buttonLightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonLightBlue")
     /// Color `errorRed`.
     static let errorRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "errorRed")
+    /// Color `lightGrey`.
+    static let lightGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGrey")
+    /// Color `redText`.
+    static let redText = Rswift.ColorResource(bundle: R.hostingBundle, name: "redText")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
@@ -372,6 +376,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightGrey", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightGrey(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightGrey, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "redText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func redText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.redText, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
@@ -445,7 +467,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `bar-icon-25`.
     static let barIcon25 = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar-icon-25")
@@ -457,6 +479,8 @@ struct R: Rswift.Validatable {
     static let launch_title = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_title")
     /// Image `music.note.list`.
     static let musicNoteList = Rswift.ImageResource(bundle: R.hostingBundle, name: "music.note.list")
+    /// Image `no_cat`.
+    static let no_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "no_cat")
     /// Image `play.fill`.
     static let playFill = Rswift.ImageResource(bundle: R.hostingBundle, name: "play.fill")
     /// Image `play`.
@@ -502,6 +526,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "no_cat", bundle: ..., traitCollection: ...)`
+    static func no_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.no_cat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "play", bundle: ..., traitCollection: ...)`
     static func play(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.play, compatibleWith: traitCollection)
@@ -532,10 +563,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `ChallengeParameterView`.
     static let challengeParameterView = _R.nib._ChallengeParameterView()
+    /// Nib `MotivationView`.
+    static let motivationView = _R.nib._MotivationView()
     /// Nib `PageCollectionViewCell`.
     static let pageCollectionViewCell = _R.nib._PageCollectionViewCell()
 
@@ -544,6 +577,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.challengeParameterView) instead")
     static func challengeParameterView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.challengeParameterView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MotivationView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.motivationView) instead")
+    static func motivationView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.motivationView)
     }
     #endif
 
@@ -557,6 +598,10 @@ struct R: Rswift.Validatable {
 
     static func challengeParameterView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func motivationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.motivationView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func pageCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PageCollectionViewCell? {
@@ -1476,6 +1521,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _MotivationView.validate()
       try _PageCollectionViewCell.validate()
     }
 
@@ -1485,6 +1531,25 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MotivationView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "MotivationView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "no_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'no_cat' is used in nib 'MotivationView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "LightGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGrey' is used in storyboard 'MotivationView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "redText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'redText' is used in storyboard 'MotivationView', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}
@@ -1739,11 +1804,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
         }
         if _R.storyboard.motivationSelection().motivatonSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'motivatonSelectionViewController' could not be loaded from storyboard 'MotivationSelection' as 'MotivatonSelectionViewController'.") }
       }
@@ -1814,11 +1876,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "testIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'testIcon' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "AppColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AppColor' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
           if UIKit.UIColor(named: "errorRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'errorRed' is used in storyboard 'TimeSelection', but couldn't be loaded.") }
         }

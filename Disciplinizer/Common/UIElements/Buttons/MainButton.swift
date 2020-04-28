@@ -8,11 +8,21 @@
 
 import UIKit
 
+enum MainButtonStyle {
+    case main, secondary
+}
+
 class MainButton: UIButton {
-        
+    
+    var style: MainButtonStyle = .main
     var isResponsive: Bool = false {
         didSet {
-            backgroundColor = isResponsive ? R.color.lightBlue() : R.color.buttonGrey()
+            switch style {
+            case .main:
+                backgroundColor = isResponsive ? R.color.lightBlue() : R.color.buttonGrey()
+            case .secondary:
+                backgroundColor = isResponsive ? R.color.lightGrey() : R.color.lightGrey()
+            }
         }
     }
 
@@ -26,11 +36,19 @@ class MainButton: UIButton {
         configure()
     }
     
-    private func configure() {
-        self.alpha = isEnabled ? 1 : 0.5
-        self.backgroundColor = R.color.lightBlue()
+    func configure(withStyle style: MainButtonStyle = .main) {
+        self.style = style
+        
         self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         roundCorners(corners: .all, radius: 16)
-        setTitleColor(.white, for: .normal)
+        
+        switch style {
+        case .main:
+            self.backgroundColor = R.color.lightBlue()
+            setTitleColor(.white, for: .normal)
+        case .secondary:
+            self.backgroundColor = R.color.lightGrey()
+            setTitleColor(.black, for: .normal)
+        }
     }
 }

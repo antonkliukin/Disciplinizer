@@ -27,7 +27,7 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
 
         motivationalItemUseCase.getSelected(completionHandler: { (selectedItemResult) in
             guard let selectedItem = try? selectedItemResult.get() else {
-                assertionFailure()
+                //assertionFailure()
                 return
             }
 
