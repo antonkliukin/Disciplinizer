@@ -32,8 +32,8 @@
 		3A0D5A1D234E5EAC00F20BC3 /* CreateChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */; };
 		3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15514A232B7C8300265B89 /* R+Shortcuts.swift */; };
 		3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */; };
-		3A1AC66C241E5FB000DB3CFA /* ItemParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */; };
-		3A1AC66E241E5FBA00DB3CFA /* DurationParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */; };
+		3A1AC66C241E5FB000DB3CFA /* MotivationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */; };
+		3A1AC66E241E5FBA00DB3CFA /* DurationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */; };
 		3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F572E2311B51800212317 /* AlertViewController.swift */; };
 		3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F57302311B5BF00212317 /* AlertPresenter.swift */; };
 		3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */; };
@@ -184,8 +184,8 @@
 		3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengePresenter.swift; sourceTree = "<group>"; };
 		3A15514A232B7C8300265B89 /* R+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Shortcuts.swift"; sourceTree = "<group>"; };
 		3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
-		3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemParameterUseCase.swift; sourceTree = "<group>"; };
-		3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationParameter.swift; sourceTree = "<group>"; };
+		3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationParameterUseCase.swift; sourceTree = "<group>"; };
+		3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationParameterUseCase.swift; sourceTree = "<group>"; };
 		3A2F572E2311B51800212317 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3A2F57302311B5BF00212317 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+NameOfClass.swift"; sourceTree = "<group>"; };
@@ -435,8 +435,8 @@
 		3A1AC66A241E5F9900DB3CFA /* ChallengeParameters */ = {
 			isa = PBXGroup;
 			children = (
-				3A1AC66B241E5FAF00DB3CFA /* ItemParameterUseCase.swift */,
-				3A1AC66D241E5FBA00DB3CFA /* DurationParameter.swift */,
+				3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */,
+				3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */,
 			);
 			path = ChallengeParameters;
 			sourceTree = "<group>";
@@ -1273,7 +1273,7 @@
 				3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */,
 				3A47D676230F1D6A00B2B200 /* RequestBuilder.swift in Sources */,
 				544EC47F233BAA7300417DAF /* MainButton.swift in Sources */,
-				3A1AC66C241E5FB000DB3CFA /* ItemParameterUseCase.swift in Sources */,
+				3A1AC66C241E5FB000DB3CFA /* MotivationParameterUseCase.swift in Sources */,
 				3AA12734232ABDA9004206E5 /* PageCollectionViewCell.swift in Sources */,
 				3A00A515238323BB0011ACDC /* ECPrivateKey.swift in Sources */,
 				3AB765CA231BDBC1007FA888 /* Router.swift in Sources */,
@@ -1297,7 +1297,7 @@
 				3A15514B232B7C8300265B89 /* R+Shortcuts.swift in Sources */,
 				3A0742B1241E3AAB003B1A83 /* TimeSelectionViewController.swift in Sources */,
 				3A0742A7241E2BF8003B1A83 /* MotivationSelectionViewController.swift in Sources */,
-				3A1AC66E241E5FBA00DB3CFA /* DurationParameter.swift in Sources */,
+				3A1AC66E241E5FBA00DB3CFA /* DurationParameterUseCase.swift in Sources */,
 				3A00A519238323EC0011ACDC /* ASN1.swift in Sources */,
 				3A70083424151F070028CE21 /* PageModel.swift in Sources */,
 				3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */,

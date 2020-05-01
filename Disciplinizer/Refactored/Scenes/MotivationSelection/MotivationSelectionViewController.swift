@@ -9,64 +9,60 @@
 import UIKit
 
 protocol MotivationSelectionViewProtocol: ViewProtocol {
-    func setPaidMotivationTitle(text: String)
-    func setPaidMotivationDescription(text: String)
-    func setTimeMotivationTitle(text: String)
-    func setTimeMotivationDescription(text: String)
-    func setMainButtonTitle(text: String)
+    func configureMotivationView(title: String,
+                                 itemImage: UIImage,
+                                 descriptionTitle: String,
+                                 description: String,
+                                 info: String,
+                                 actionButtonTitle: String,
+                                 actionButtonAction: @escaping () -> Void)
 }
 
 class MotivatonSelectionViewController: UIViewController, MotivationSelectionViewProtocol {
-    @IBOutlet weak var mainButton: MainButton!
+    @IBOutlet weak var motivationItemView: MotivationView!
 
     var presenter: MotivationSelectionPresenterProtocol!
-    var configurator = MotivationSelectionConfigurator()
-
+    let configurator = MotivationSelectionConfigurator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configurator.configure(motivationSelectionViewController: self)
-
-        addTapGestures()
+        
+        presenter.viewDidLoad()
     }
-
-    private func addTapGestures() {
-        let paidViewTap = UITapGestureRecognizer(target: self, action: #selector(paidMotivationViewTapped))
-        //paidMotivatoinView.addGestureRecognizer(paidViewTap)
-
-        let timeViewTap = UITapGestureRecognizer(target: self, action: #selector(timeMotivationViewTapped))
-        //timeMotivationView.addGestureRecognizer(timeViewTap)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .black
     }
-
-    @objc private func paidMotivationViewTapped() {
-        presenter.didSelectPaidMotivation()
+    
+    func configureMotivationView(title: String,
+                                 itemImage: UIImage,
+                                 descriptionTitle: String,
+                                 description: String,
+                                 info: String,
+                                 actionButtonTitle: String,
+                                 actionButtonAction: @escaping () -> Void) {
+        motivationItemView.configure(title: title,
+                                     itemImage: itemImage,
+                                     descriptionTitle: descriptionTitle,
+                                     description: description,
+                                     info: info,
+                                     actionButtonTitle: actionButtonTitle,
+                                     actionButtonAction: actionButtonAction)
     }
-
-    @objc private func timeMotivationViewTapped() {
-        presenter.didSelectTimeMotivation()
+    
+    @IBAction func didSelectMode(_ sender: Any) {
+        if let segmentedControl = sender as? UISegmentedControl {
+            let selectedIndex = segmentedControl.selectedSegmentIndex
+            presenter.didSelectIndex(selectedIndex)
+        }
     }
-
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        presenter.didTapSaveButton()
-    }
-
-    func setPaidMotivationTitle(text: String) {
-        //paidMotivationTitleLabel.text = text
-    }
-
-    func setPaidMotivationDescription(text: String) {
-        //paidMotivationDescriptionLabel.text = text
-    }
-
-    func setTimeMotivationTitle(text: String) {
-        //timeMotivationTitleLabel.text = text
-    }
-
-    func setTimeMotivationDescription(text: String) {
-        //timeMotivationtDescriptionLabel.text = text
-    }
-
-    func setMainButtonTitle(text: String) {
-        mainButton.setTitle(text, for: .normal)
+    
+    @IBAction func setModeButtonTapped(_ sender: Any) {
+        presenter.didTapSetModeButton()
     }
 }

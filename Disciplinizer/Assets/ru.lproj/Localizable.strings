@@ -58,6 +58,16 @@
 "motivationItem.level4" = "Pinko";
 "motivationItem.level5" = "Valli";
 
+"motivationItem.descriptionTitle" = "Мотивация";
+
+"motivationItem.description.ad" = "Возможность потратить свое время на просмотр несколькиx рекламныx роликов будет тебя мотивировать.";
+"motivationItem.description.cat" = "Возможность потерять друга будет тебя мотивировать.";
+
+"motivationItem.info.haveCat" = "сейчас живет с тобой";
+"motivationItem.info.notCat" = "у тебя нет кота";
+
+"motivationItem.action.title" = "Выбрать";
+
 //******************************************************************************
 // Creation
 //******************************************************************************

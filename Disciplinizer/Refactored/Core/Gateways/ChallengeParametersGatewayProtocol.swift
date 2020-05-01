@@ -9,10 +9,10 @@
 import Foundation
 
 protocol ChallengeParametersGatewayProtocols {
-    func select(motivationalItem: MotivationalItem, completionHandler: @escaping (_ challenges: Result<Void, Error>) -> Void)
-    func getCurrentMotivationalItem(completionHandler: @escaping (_ challenge: Result<MotivationalItem, Error>) -> Void)
-    func select(duration: Int, completionHandler: @escaping (_ challenges: Result<Void, Error>) -> Void)
-    func getCurrentDuration(completionHandler: @escaping (_ challenge: Result<Int, Error>) -> Void)
-    func addPaid(motivationalItem: MotivationalItem, completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void)
-    func getPaid(completionHandler: @escaping (_ challenge: Result<MotivationalItem, Error>) -> Void)
+    func save(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void)
+    func getMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void)
+    func save(durationInMinutes: Int, completionHandler: @escaping (Result<Void, Error>) -> Void)
+    func getDurationInMinutes(completionHandler: @escaping (Result<Int, Error>) -> Void)
+    func savePaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void)
+    func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void)
 }

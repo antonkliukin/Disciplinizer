@@ -19,7 +19,7 @@ protocol CreateChallengePresenterProtocol {
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
     private let createChallengeUseCase: CreateChallengeUseCaseProtocol
-    private let motivationalItemUseCase: ItemParameterUseCaseProtocol
+    private let motivationalItemUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
 
     private var purchaseManager = PurchasesManager()
@@ -28,7 +28,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
 
     init(view: CreateChallengeViewProtocol,
          createChallengeUseCase: CreateChallengeUseCaseProtocol,
-         motivationalItemUseCase: ItemParameterUseCaseProtocol,
+         motivationalItemUseCase: MotivationParameterUseCaseProtocol,
          durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
         self.createChallengeUseCase = createChallengeUseCase

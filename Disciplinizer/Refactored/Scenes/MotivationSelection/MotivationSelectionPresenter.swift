@@ -9,50 +9,102 @@
 import Foundation
 
 protocol MotivationSelectionPresenterProtocol {
-    func didSelectMotivationalItem(item: MotivationalItem)
-    func didSelectPaidMotivation()
-    func didSelectTimeMotivation()
-    func didTapSaveButton()
+    func viewDidLoad()
+    func didSelectIndex(_ index: Int)
+    func didTapSetModeButton()
 }
 
 class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     weak var view: MotivationSelectionViewProtocol?
-    private let motivationalItemUseCase: ItemParameterUseCaseProtocol
-    private var selectedItem: MotivationalItem?
+    private let motivationalItemUseCase: MotivationParameterUseCaseProtocol
+    
+    private var selectedMotivation: MotivationalItem?
+    private let adMotivation: MotivationalItem = .ad
+    private var paidMotivation: MotivationalItem?
 
     init(view: MotivationSelectionViewProtocol,
-         motivationalItemUseCase: ItemParameterUseCaseProtocol) {
+         motivationalItemUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
         self.motivationalItemUseCase = motivationalItemUseCase
-
-        motivationalItemUseCase.getSelected(completionHandler: { (selectedItemResult) in
-            guard let selectedItem = try? selectedItemResult.get() else {
-                //assertionFailure()
-                return
-            }
-
-            self.selectedItem = selectedItem
-        })
     }
-
-    func didSelectMotivationalItem(item: MotivationalItem) {
-        motivationalItemUseCase.select(motivationalItem: item) { (_) in return }
+    
+    func viewDidLoad() {
+        configureMotivationView()
     }
-
-    func didSelectPaidMotivation() {
-        // check if user has it
-    }
-
-    func didSelectTimeMotivation() {
-        selectedItem = .ad
-    }
-
-    func didTapSaveButton() {
-        guard let selectedItem = selectedItem else {
+    
+    func didSelectIndex(_ index: Int) {
+        let motivation = index == 0 ? paidMotivation : adMotivation
+        
+        guard let selectedMotivation = motivation else {
             assertionFailure()
             return
         }
         
-        motivationalItemUseCase.select(motivationalItem: selectedItem) { (_) in return }
+        self.selectedMotivation = selectedMotivation
+        configureViewForMotivation(selectedMotivation)
+    }
+    
+    func didTapSetModeButton() {
+        guard let selectedMotivation = selectedMotivation else {
+            assertionFailure()
+            return
+        }
+        
+        motivationalItemUseCase.select(motivationalItem: selectedMotivation) { (_) in return }
+    }
+    
+    private func configureMotivationView() {
+        motivationalItemUseCase.getSelectedMotivationalItem(completionHandler: { (selectedItemResult) in
+            if let selectedMotivation = try? selectedItemResult.get() {
+                self.selectedMotivation = selectedMotivation
+                self.configureViewForMotivation(selectedMotivation)
+            } else {
+                self.selectedMotivation = self.adMotivation
+                self.configureViewForMotivation(self.adMotivation)
+            }
+        })
+    }
+        
+    func configureViewForMotivation(_ item: MotivationalItem) {
+        let info = getInfoFor(item)
+        let actionTitle = getActionTitleFor(item)
+                
+        view?.configureMotivationView(title: item.title,
+                                      itemImage: item.image,
+                                      descriptionTitle: item.descriptionTitle,
+                                      description: item.description,
+                                      info: info,
+                                      actionButtonTitle: actionTitle,
+                                      actionButtonAction: {
+                                        print("Go to cat store")
+        })
+    }
+    
+    private func getInfoFor(_ item: MotivationalItem) -> String {
+        var info = ""
+        let isPaidAvailable = paidMotivation != nil
+        let isPaidSelected = item != .ad
+        
+        if isPaidSelected {
+            if isPaidAvailable {
+                info = Strings.motivationItemInfoHaveCat()
+            } else {
+                info = Strings.motivationItemInfoNotCat()
+            }
+        }
+
+        return info
+    }
+    
+    private func getActionTitleFor(_ item: MotivationalItem) -> String {
+        var title = ""
+        let isPaidAvailable = paidMotivation != nil
+        let isPaidSelected = item != .ad
+        
+        if isPaidSelected, !isPaidAvailable {
+            title = Strings.motivationItemActionTitle()
+        }
+
+        return title
     }
 }

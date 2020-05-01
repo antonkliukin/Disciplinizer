@@ -38,12 +38,23 @@
 //******************************************************************************
 // Motivational Item
 //******************************************************************************
-"motivationItem.ad" = "Ad";
-"motivationItem.level1" = "Cuddly";
-"motivationItem.level2" = "Fluffy";
-"motivationItem.level3" = "Tilda";
-"motivationItem.level4" = "Pinko";
-"motivationItem.level5" = "Valli";
+"motivationItem.ad.title" = "Ad";
+"motivationItem.level1.title" = "Cuddly";
+"motivationItem.level2.title" = "Fluffy";
+"motivationItem.level3.title" = "Tilda";
+"motivationItem.level4.title" = "Pinko";
+"motivationItem.level5.title" = "Valli";
+
+"motivationItem.descriptionTitle" = "Motivation";
+
+"motivationItem.description.ad" = "Possibility of loosing time watching a few ads in case of fail will keep you motivated.";
+"motivationItem.description.cat" = "Having a freind that you could lose keeps you motivated.";
+
+"motivationItem.info.haveCat" = "now lives with you";
+"motivationItem.info.notCat" = "you have no cate";
+
+"motivationItem.action.title" = "Choose";
+
 
 //******************************************************************************
 // Creation

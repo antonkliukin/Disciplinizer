@@ -18,10 +18,15 @@ class MotivationView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var motivationTitleLabel: UILabel!
+    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var motivationDescriptionTitle: UILabel!
+    @IBOutlet weak var motivationDescription: UILabel!
     @IBOutlet weak var actionButton: MainButton!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoLabelActionButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var infoLabelMainViewConstraint: NSLayoutConstraint!
+    
+    private var action: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,6 +48,38 @@ class MotivationView: UIView {
         
         setupMainView()
         setupMotivationTitleLabel()
+    }
+    
+    func configure(title: String = "",
+                   itemImage: UIImage,
+                   descriptionTitle: String,
+                   description: String,
+                   info: String = "",
+                   actionButtonTitle: String = "",
+                   actionButtonAction: @escaping () -> Void = {}) {
+        motivationTitleLabel.isHidden = title.isEmpty
+        motivationTitleLabel.text = title
+                
+        infoLabel.isHidden = info.isEmpty
+        infoLabel.text = info
+        infoLabel.textColor = title.isEmpty ? R.color.redText() : R.color.greenText()!
+        
+        actionButton.isHidden = actionButtonTitle.isEmpty
+        actionButton.setTitle(actionButtonTitle, for: .normal)
+        action = actionButtonAction
+        
+        if actionButtonTitle.isEmpty {
+            infoLabelActionButtonConstraint.priority = .defaultLow
+            infoLabelMainViewConstraint.priority = .defaultHigh
+        }
+
+        itemImageView.image = itemImage
+        motivationDescriptionTitle.text = descriptionTitle
+        motivationDescription.text = description
+    }
+    
+    @IBAction func didTapActionButton(_ sender: Any) {
+        action?()
     }
         
     private func setupMainView() {

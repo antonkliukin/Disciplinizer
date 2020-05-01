@@ -81,7 +81,7 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     
     func didTapSaveButton() {
         if isEnteredTimeValid {
-            durationParameterUseCase.select(duration: Int(enteredDurationInMinutes)) { (durationSavingResult) in
+            durationParameterUseCase.select(durationInMinutes: Int(enteredDurationInMinutes)) { (durationSavingResult) in
                 switch durationSavingResult {
                 case .success:
                     self.view?.router?.pop()

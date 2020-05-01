@@ -9,28 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Change a mode-->
+        <!--Motivaton Selection View Controller-->
         <scene sceneID="FTa-d4-mdH">
             <objects>
-                <viewController storyboardIdentifier="MotivatonSelectionViewController" title="Change a mode" id="FfG-Zb-MfZ" customClass="MotivatonSelectionViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotivatonSelectionViewController" id="FfG-Zb-MfZ" customClass="MotivatonSelectionViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mx5-54-sF3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change a mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-iR-ZOG">
-                                <rect key="frame" x="25" y="94" width="157" height="26.5"/>
+                                <rect key="frame" x="25" y="60" width="157" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxG-e9-iqk" userLabel="ParentContenView">
-                                <rect key="frame" x="0.0" y="140.5" width="414" height="721.5"/>
+                                <rect key="frame" x="0.0" y="106.5" width="414" height="755.5"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-Ln-7nf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="721.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="755.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrY-oG-T4D" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="721.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="755.5"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-YS-bvu">
                                                         <rect key="frame" x="16" y="0.0" width="382" height="32"/>
@@ -38,12 +38,15 @@
                                                             <segment title="Cat mode"/>
                                                             <segment title="Time mode"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="didSelectMode:" destination="FfG-Zb-MfZ" eventType="valueChanged" id="z50-QT-Vv7"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCv-Zw-G3m" customClass="MotivationView" customModule="Disciplinizer" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="81" width="384" height="230"/>
+                                                        <rect key="frame" x="15" y="81" width="384" height="210"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="230" id="Qtb-LX-pLJ"/>
+                                                            <constraint firstAttribute="height" constant="210" id="Qtb-LX-pLJ"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -70,14 +73,17 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="4Bd-lP-5dx"/>
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-TT-GrP" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="637.5" width="364" height="44"/>
+                                        <rect key="frame" x="25" y="671.5" width="364" height="44"/>
                                         <color key="backgroundColor" name="LightBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="XZT-vL-WcD"/>
                                         </constraints>
-                                        <state key="normal" title="Save">
+                                        <state key="normal" title="Set mode">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="setModeButtonTapped:" destination="FfG-Zb-MfZ" eventType="touchUpInside" id="Ffr-pz-eBS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +100,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cCM-iR-ZOG" firstAttribute="top" secondItem="5tP-jo-ksd" secondAttribute="top" constant="50" id="F3C-cz-jxJ"/>
+                            <constraint firstItem="cCM-iR-ZOG" firstAttribute="top" secondItem="5tP-jo-ksd" secondAttribute="top" constant="16" id="F3C-cz-jxJ"/>
                             <constraint firstItem="5tP-jo-ksd" firstAttribute="bottom" secondItem="CxG-e9-iqk" secondAttribute="bottom" id="W6T-Rb-v6Z"/>
                             <constraint firstItem="CxG-e9-iqk" firstAttribute="top" secondItem="cCM-iR-ZOG" secondAttribute="bottom" constant="20" id="k6m-4j-LXO"/>
                             <constraint firstItem="5tP-jo-ksd" firstAttribute="trailing" secondItem="CxG-e9-iqk" secondAttribute="trailing" id="nNh-GD-06G"/>
@@ -104,7 +110,7 @@
                         <viewLayoutGuide key="safeArea" id="5tP-jo-ksd"/>
                     </view>
                     <connections>
-                        <outlet property="mainButton" destination="GCB-TT-GrP" id="l38-cg-I4h"/>
+                        <outlet property="motivationItemView" destination="nCv-Zw-G3m" id="XgS-8f-0c7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlV-Zy-2UY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

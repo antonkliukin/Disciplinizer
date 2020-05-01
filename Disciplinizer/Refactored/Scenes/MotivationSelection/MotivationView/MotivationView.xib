@@ -16,7 +16,10 @@
                 <outlet property="infoLabel" destination="OWi-fQ-So4" id="7Ba-fS-y0e"/>
                 <outlet property="infoLabelActionButtonConstraint" destination="Nnn-qW-ENv" id="cw3-yI-qIo"/>
                 <outlet property="infoLabelMainViewConstraint" destination="5To-IA-IIr" id="AgQ-mi-Cyx"/>
+                <outlet property="itemImageView" destination="6WA-nq-jbL" id="INj-ex-QT8"/>
                 <outlet property="mainView" destination="SdQ-Ku-r88" id="Bjl-6o-Qd5"/>
+                <outlet property="motivationDescription" destination="L9R-N9-Plr" id="GMl-ak-h1s"/>
+                <outlet property="motivationDescriptionTitle" destination="SUP-Gf-X6w" id="tnF-f5-JEu"/>
                 <outlet property="motivationTitleLabel" destination="RS7-aK-Rpt" id="0cU-RP-cfW"/>
             </connections>
         </placeholder>
@@ -28,19 +31,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Ku-r88">
                     <rect key="frame" x="30" y="15" width="291" height="276.33333333333331"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G1l-lQ-cPT">
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1l-lQ-cPT">
                             <rect key="frame" x="0.0" y="0.0" width="291" height="276.33333333333331"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqJ-gC-mxS">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="276.33333333333331"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="276.33333333333331"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_cat" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-nq-jbL">
-                                            <rect key="frame" x="-61" y="42.333333333333343" width="186" height="192"/>
+                                            <rect key="frame" x="0.0" y="69.000000000000014" width="145" height="138.33333333333337"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="6WA-nq-jbL" secondAttribute="trailing" id="Oq9-be-x6D"/>
+                                        <constraint firstItem="6WA-nq-jbL" firstAttribute="centerX" secondItem="KqJ-gC-mxS" secondAttribute="centerX" id="WD1-hb-N4D"/>
+                                        <constraint firstItem="6WA-nq-jbL" firstAttribute="height" secondItem="KqJ-gC-mxS" secondAttribute="height" multiplier="0.5" id="nEo-29-D2t"/>
                                         <constraint firstItem="6WA-nq-jbL" firstAttribute="centerY" secondItem="KqJ-gC-mxS" secondAttribute="centerY" id="tgV-lg-Grp"/>
                                     </constraints>
                                 </view>
@@ -71,16 +76,16 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4do-38-kNZ">
-                                    <rect key="frame" x="166" y="0.0" width="125" height="276.33333333333331"/>
+                                    <rect key="frame" x="146" y="0.0" width="145" height="276.33333333333331"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Motivation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUP-Gf-X6w">
-                                            <rect key="frame" x="0.0" y="30" width="117" height="18"/>
+                                            <rect key="frame" x="20" y="30" width="117" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Having a freind that you could lose keeps you motivated." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9R-N9-Plr">
-                                            <rect key="frame" x="0.0" y="52" width="117" height="57.333333333333343"/>
+                                            <rect key="frame" x="20" y="56" width="117" height="57.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -88,9 +93,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" id="Bdj-xh-GIm"/>
-                                        <constraint firstItem="SUP-Gf-X6w" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" id="Cap-nm-Hvv"/>
-                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="top" secondItem="SUP-Gf-X6w" secondAttribute="bottom" constant="4" id="DRG-Iy-4DJ"/>
+                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" constant="20" id="Bdj-xh-GIm"/>
+                                        <constraint firstItem="SUP-Gf-X6w" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" constant="20" id="Cap-nm-Hvv"/>
+                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="top" secondItem="SUP-Gf-X6w" secondAttribute="bottom" constant="8" id="DRG-Iy-4DJ"/>
                                         <constraint firstAttribute="trailing" secondItem="SUP-Gf-X6w" secondAttribute="trailing" constant="8" id="Usc-gD-nZN"/>
                                         <constraint firstAttribute="trailing" secondItem="L9R-N9-Plr" secondAttribute="trailing" constant="8" id="VxR-OS-kdQ"/>
                                         <constraint firstItem="SUP-Gf-X6w" firstAttribute="top" secondItem="4do-38-kNZ" secondAttribute="top" constant="30" id="eX3-3q-YZP"/>
@@ -132,6 +137,9 @@
                     <state key="normal" title="Choose">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
+                    <connections>
+                        <action selector="didTapActionButton:" destination="-1" eventType="touchUpInside" id="url-4y-E6B"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have no cat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWi-fQ-So4">
                     <rect key="frame" x="30" y="319.33333333333331" width="291" height="15.666666666666686"/>

@@ -16,11 +16,11 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
         static let time = "time"
     }
 
-    func select(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+    func save(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
         userDefaults.set(motivationalItem.rawValue, forKey: Key.item)
     }
 
-    func getCurrentMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void) {
+    func getMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void) {
         guard let itemId = userDefaults.string(forKey: Key.item), let item = MotivationalItem(rawValue: itemId) else {
             completionHandler(.failure(UserDefaultsError(message: "Item is not saved.")))
             return
@@ -29,12 +29,12 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
         completionHandler(.success(item))
     }
 
-    func select(duration: Int, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        userDefaults.set(duration, forKey: Key.item)
+    func save(durationInMinutes: Int, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        userDefaults.set(durationInMinutes, forKey: Key.item)
         completionHandler(.success)
     }
 
-    func getCurrentDuration(completionHandler: @escaping (Result<Int, Error>) -> Void) {
+    func getDurationInMinutes(completionHandler: @escaping (Result<Int, Error>) -> Void) {
         let duration = userDefaults.integer(forKey: Key.item)
         
         guard duration > 0 else {
@@ -45,11 +45,11 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
         completionHandler(.success(duration))
     }
 
-    func addPaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+    func savePaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
         
     }
 
-    func getPaid(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void) {
+    func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {
 
     }
 }

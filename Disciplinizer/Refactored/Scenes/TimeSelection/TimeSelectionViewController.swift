@@ -33,9 +33,7 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         super.viewDidLoad()
 
         configurator.configure(timeSelectionViewController: self)
-        
-        navigationController?.navigationBar.isHidden = false
-        
+                
         presenter.viewDidLoad()
     }
     
