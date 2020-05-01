@@ -48,10 +48,10 @@
 "motivationItem.descriptionTitle" = "Motivation";
 
 "motivationItem.description.ad" = "Possibility of loosing time watching a few ads in case of fail will keep you motivated.";
-"motivationItem.description.cat" = "Having a freind that you could lose keeps you motivated.";
+"motivationItem.description.cat" = "Having a friend that you can lose keeps you motivated.";
 
 "motivationItem.info.haveCat" = "now lives with you";
-"motivationItem.info.notCat" = "you have no cate";
+"motivationItem.info.notCat" = "you have no cat";
 
 "motivationItem.action.title" = "Choose";
 
