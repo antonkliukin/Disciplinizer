@@ -9,6 +9,7 @@
 import UIKit
 
 enum MotivationalItem: String {
+    case noPaidItem = "-1"
     case ad = "0"
     case level1 = "1"
     case level2 = "2"
@@ -26,6 +27,7 @@ enum MotivationalItem: String {
     
     var title: String {
         switch self {
+        case .noPaidItem: return ""
         case .ad: return Strings.motivationItemAdTitle()
         case .level1: return Strings.motivationItemLevel1Title()
         case .level2: return Strings.motivationItemLevel2Title()
@@ -37,6 +39,7 @@ enum MotivationalItem: String {
     
     var image: UIImage {
         switch self {
+        case .noPaidItem: return R.image.no_cat()!
         case .ad: return R.image.ad_icon()!
         case .level1: return R.image.cuddly_cat()!
         case .level2: return R.image.fluffy_cat()!
@@ -54,6 +57,21 @@ enum MotivationalItem: String {
         switch self {
         case .ad: return Strings.motivationItemDescriptionAd()
         default: return Strings.motivationItemDescriptionCat()
+        }
+    }
+        
+    var actionTitle: String {
+        switch self {
+        case .noPaidItem: return Strings.motivationItemActionTitle()
+        default: return ""
+        }
+    }
+    
+    var info: String {
+        switch self {
+        case .noPaidItem: return Strings.motivationItemInfoNotCat()
+        case .ad: return ""
+        default: return Strings.motivationItemInfoHaveCat()
         }
     }
 }

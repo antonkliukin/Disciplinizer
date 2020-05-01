@@ -110,7 +110,9 @@
                         <viewLayoutGuide key="safeArea" id="5tP-jo-ksd"/>
                     </view>
                     <connections>
+                        <outlet property="modeSegmentedControl" destination="iwN-YS-bvu" id="ymz-8n-a2c"/>
                         <outlet property="motivationItemView" destination="nCv-Zw-G3m" id="XgS-8f-0c7"/>
+                        <outlet property="setButton" destination="GCB-TT-GrP" id="cEe-wP-TJ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlV-Zy-2UY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

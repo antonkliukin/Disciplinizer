@@ -9,6 +9,9 @@
 import UIKit
 
 protocol MotivationSelectionViewProtocol: ViewProtocol {
+    func changeSetButtonTitle(title: String)
+    func changeSetButtonState(isResponsive: Bool)
+    func selectIndex(_ index: Int)
     func configureMotivationView(title: String,
                                  itemImage: UIImage,
                                  descriptionTitle: String,
@@ -20,7 +23,9 @@ protocol MotivationSelectionViewProtocol: ViewProtocol {
 
 class MotivatonSelectionViewController: UIViewController, MotivationSelectionViewProtocol {
     @IBOutlet weak var motivationItemView: MotivationView!
-
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var setButton: MainButton!
+    
     var presenter: MotivationSelectionPresenterProtocol!
     let configurator = MotivationSelectionConfigurator()
     
@@ -39,6 +44,14 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         navigationController?.navigationBar.tintColor = .black
     }
     
+    func changeSetButtonTitle(title: String) {
+        setButton.setTitle(title, for: .normal)
+    }
+    
+    func changeSetButtonState(isResponsive: Bool) {
+        setButton.isResponsive = isResponsive
+    }
+    
     func configureMotivationView(title: String,
                                  itemImage: UIImage,
                                  descriptionTitle: String,
@@ -53,6 +66,10 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
                                      info: info,
                                      actionButtonTitle: actionButtonTitle,
                                      actionButtonAction: actionButtonAction)
+    }
+    
+    func selectIndex(_ index: Int) {
+        modeSegmentedControl.selectedSegmentIndex = index
     }
     
     @IBAction func didSelectMode(_ sender: Any) {

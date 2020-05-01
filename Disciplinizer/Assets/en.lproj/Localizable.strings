@@ -55,6 +55,8 @@
 
 "motivationItem.action.title" = "Choose";
 
+"motivationItem.setButton.ableToSet" = "Set mode";
+"motivationItem.setButton.unableToSet" = "Mode is set";
 
 //******************************************************************************
 // Creation
@@ -62,6 +64,8 @@
 "creation.timeTitle" = "Time";
 "creation.motivationTitle" = "Motivation";
 "creation.actionTitle" = "Tap to change";
+"creation.saveTime" = "save time";
+"creation.saveCat" = "save a cat";
 
 //******************************************************************************
 // Time Selection

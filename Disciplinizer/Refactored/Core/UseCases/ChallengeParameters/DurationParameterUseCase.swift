@@ -10,7 +10,7 @@ import Foundation
 
 protocol DurationParameterUseCaseProtocol {
     func select(durationInMinutes: Int, completionHandler: @escaping (_ challenge: Result<Void, Error>) -> Void)
-    func getSelected(completionHandler: @escaping (_ challenge: Result<Int, Error>) -> Void)
+    func getSelectedDurationInMinutes(completionHandler: @escaping (_ challenge: Result<Int, Error>) -> Void)
 }
 
 class DurationParameterUseCase: DurationParameterUseCaseProtocol {
@@ -24,7 +24,7 @@ class DurationParameterUseCase: DurationParameterUseCaseProtocol {
         challengesParametersGateway.save(durationInMinutes: durationInMinutes, completionHandler: completionHandler)
     }
 
-    func getSelected(completionHandler: @escaping (Result<Int, Error>) -> Void) {
+    func getSelectedDurationInMinutes(completionHandler: @escaping (Result<Int, Error>) -> Void) {
         challengesParametersGateway.getDurationInMinutes(completionHandler: completionHandler)
     }
 }

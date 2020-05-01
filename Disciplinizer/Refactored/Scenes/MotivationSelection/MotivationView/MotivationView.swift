@@ -68,11 +68,9 @@ class MotivationView: UIView {
         actionButton.setTitle(actionButtonTitle, for: .normal)
         action = actionButtonAction
         
-        if actionButtonTitle.isEmpty {
-            infoLabelActionButtonConstraint.priority = .defaultLow
-            infoLabelMainViewConstraint.priority = .defaultHigh
-        }
-
+        infoLabelActionButtonConstraint.priority = actionButtonTitle.isEmpty ? .defaultLow : .defaultHigh
+        infoLabelMainViewConstraint.priority = actionButtonTitle.isEmpty ? .defaultHigh : .defaultLow
+        
         itemImageView.image = itemImage
         motivationDescriptionTitle.text = descriptionTitle
         motivationDescription.text = description

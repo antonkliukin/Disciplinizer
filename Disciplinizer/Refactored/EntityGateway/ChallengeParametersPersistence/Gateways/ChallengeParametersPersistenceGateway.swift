@@ -12,16 +12,18 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
     private var userDefaults = UserDefaults.standard
 
     private enum Key {
-        static let item = "motivationalItem"
-        static let time = "time"
+        static let purchasedItem = "purchasedItem"
+        static let selectedItem = "selectedItem"
+        static let selectedTime = "selectedTime"
     }
 
     func save(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        userDefaults.set(motivationalItem.rawValue, forKey: Key.item)
+        userDefaults.set(motivationalItem.rawValue, forKey: Key.selectedItem)
+        completionHandler(.success)
     }
 
     func getMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void) {
-        guard let itemId = userDefaults.string(forKey: Key.item), let item = MotivationalItem(rawValue: itemId) else {
+        guard let itemId = userDefaults.string(forKey: Key.selectedItem), let item = MotivationalItem(rawValue: itemId) else {
             completionHandler(.failure(UserDefaultsError(message: "Item is not saved.")))
             return
         }
@@ -30,12 +32,12 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
     }
 
     func save(durationInMinutes: Int, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        userDefaults.set(durationInMinutes, forKey: Key.item)
+        userDefaults.set(durationInMinutes, forKey: Key.selectedTime)
         completionHandler(.success)
     }
 
     func getDurationInMinutes(completionHandler: @escaping (Result<Int, Error>) -> Void) {
-        let duration = userDefaults.integer(forKey: Key.item)
+        let duration = userDefaults.integer(forKey: Key.selectedTime)
         
         guard duration > 0 else {
             completionHandler(.failure(UserDefaultsError(message: "Duration is not saved.")))
@@ -46,10 +48,20 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
     }
 
     func savePaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        
+        userDefaults.set(motivationalItem.rawValue, forKey: Key.purchasedItem)
     }
 
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {
+        guard let itemId = userDefaults.string(forKey: Key.selectedItem) else {
+            completionHandler(.failure(UserDefaultsError(message: "Item is not saved.")))
+            return
+        }
+        
+        guard let item = MotivationalItem(rawValue: itemId) else {
+            completionHandler(.success(nil))
+            return
+        }
 
+        completionHandler(.success(item))
     }
 }

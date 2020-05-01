@@ -68,12 +68,17 @@
 
 "motivationItem.action.title" = "Выбрать";
 
+"motivationItem.setButton.ableToSet" = "Выбрать режим";
+"motivationItem.setButton.unableToSet" = "Режим выбран";
+
 //******************************************************************************
 // Creation
 //******************************************************************************
 "creation.timeTitle" = "Время";
 "creation.motivationTitle" = "Мотивация";
 "creation.actionTitle" = "Нажмите чтобы изменить";
+"creation.saveTime" = "не потерять время";
+"creation.saveCat" = "не потерять кота";
 
 //******************************************************************************
 // Time Selection

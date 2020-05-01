@@ -19,7 +19,7 @@ protocol CreateChallengePresenterProtocol {
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
     private let createChallengeUseCase: CreateChallengeUseCaseProtocol
-    private let motivationalItemUseCase: MotivationParameterUseCaseProtocol
+    private let motivationItemUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
 
     private var purchaseManager = PurchasesManager()
@@ -32,7 +32,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
          durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
         self.createChallengeUseCase = createChallengeUseCase
-        self.motivationalItemUseCase = motivationalItemUseCase
+        self.motivationItemUseCase = motivationalItemUseCase
         self.durationParameterUseCase = durationParameterUseCase
     }
 
@@ -69,7 +69,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     func configureTimeView() {
-        durationParameterUseCase.getSelected { (selectedDurationResult) in
+        durationParameterUseCase.getSelectedDurationInMinutes { (selectedDurationResult) in
             switch selectedDurationResult {
             case .success(let durationInMinutes):
                 self.selectedDurationInMinutes = durationInMinutes
@@ -100,15 +100,24 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     func configureMotivationView() {
-        let motivationViewModel = ParameterViewModel(title: Strings.creationMotivationTitle(),
-                                                     valueTitle: "Value",
-                                                     actionTitle: Strings.creationActionTitle(),
-                                                     action: {
-                                                        let selectMotivationVC = Controller.motivationSelection()
-                                                        self.view?.router?.push(selectMotivationVC)
-        })
-        
-        view?.configureMotivationView(model: motivationViewModel)
+        motivationItemUseCase.getSelectedMotivationalItem { (result) in
+            switch result {
+            case .success(let item):
+                let title = item == .ad ? Strings.creationSaveTime() : Strings.creationSaveCat()
+                let motivationViewModel = ParameterViewModel(title: Strings.creationMotivationTitle(),
+                                                             valueTitle: title,
+                                                             actionTitle: Strings.creationActionTitle(),
+                                                             action: {
+                                                                let selectMotivationVC = Controller.motivationSelection()
+                                                                self.view?.router?.push(selectMotivationVC)
+                })
+
+                self.view?.configureMotivationView(model: motivationViewModel)
+            case .failure:
+                assertionFailure()
+                                                                
+            }
+        }
     }
 
     private func createChallenge() {

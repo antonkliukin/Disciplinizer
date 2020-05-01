@@ -18,9 +18,10 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     weak var view: MotivationSelectionViewProtocol?
     private let motivationalItemUseCase: MotivationParameterUseCaseProtocol
     
+    private var savedMotivation: MotivationalItem?
     private var selectedMotivation: MotivationalItem?
     private let adMotivation: MotivationalItem = .ad
-    private var paidMotivation: MotivationalItem?
+    private var paidMotivation: MotivationalItem = .noPaidItem
 
     init(view: MotivationSelectionViewProtocol,
          motivationalItemUseCase: MotivationParameterUseCaseProtocol) {
@@ -34,14 +35,16 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     
     func didSelectIndex(_ index: Int) {
         let motivation = index == 0 ? paidMotivation : adMotivation
+                
+        self.selectedMotivation = motivation
+        configureViewForMotivation(motivation)
         
-        guard let selectedMotivation = motivation else {
-            assertionFailure()
-            return
+        if motivation == .noPaidItem {
+            changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonAbleToSet())
+        } else {
+            let title = savedMotivation != selectedMotivation ? Strings.motivationItemSetButtonAbleToSet() : Strings.motivationItemSetButtonUnableToSet()
+            changeSetModeState(isAbleToSet: savedMotivation != selectedMotivation, andTitle: title)
         }
-        
-        self.selectedMotivation = selectedMotivation
-        configureViewForMotivation(selectedMotivation)
     }
     
     func didTapSetModeButton() {
@@ -49,62 +52,58 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
             assertionFailure()
             return
         }
+
+        guard selectedMotivation != .noPaidItem, selectedMotivation != savedMotivation else {
+            return
+        }
         
-        motivationalItemUseCase.select(motivationalItem: selectedMotivation) { (_) in return }
+        motivationalItemUseCase.select(motivationalItem: selectedMotivation) { (selectionResult) in
+            switch selectionResult {
+            case .success:
+                self.view?.router?.pop()
+            case .failure:
+                assertionFailure()
+                return
+            }
+        }
     }
     
     private func configureMotivationView() {
-        motivationalItemUseCase.getSelectedMotivationalItem(completionHandler: { (selectedItemResult) in
-            if let selectedMotivation = try? selectedItemResult.get() {
-                self.selectedMotivation = selectedMotivation
-                self.configureViewForMotivation(selectedMotivation)
+        motivationalItemUseCase.getSelectedMotivationalItem(completionHandler: { (result) in
+            if let savedMotivation = try? result.get() {
+                self.savedMotivation = savedMotivation
+                self.selectedMotivation = savedMotivation
+                self.configureViewForMotivation(savedMotivation)
+                
+                if savedMotivation != self.adMotivation {
+                    self.paidMotivation = savedMotivation
+                    self.view?.selectIndex(0)
+                } else {
+                    self.view?.selectIndex(1)
+                }
+                
+                self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonUnableToSet())
             } else {
-                self.selectedMotivation = self.adMotivation
-                self.configureViewForMotivation(self.adMotivation)
+                self.selectedMotivation = self.paidMotivation
+                self.configureViewForMotivation(self.paidMotivation)
             }
         })
     }
         
     func configureViewForMotivation(_ item: MotivationalItem) {
-        let info = getInfoFor(item)
-        let actionTitle = getActionTitleFor(item)
-                
         view?.configureMotivationView(title: item.title,
                                       itemImage: item.image,
                                       descriptionTitle: item.descriptionTitle,
                                       description: item.description,
-                                      info: info,
-                                      actionButtonTitle: actionTitle,
+                                      info: item.info,
+                                      actionButtonTitle: item.actionTitle,
                                       actionButtonAction: {
                                         print("Go to cat store")
         })
     }
     
-    private func getInfoFor(_ item: MotivationalItem) -> String {
-        var info = ""
-        let isPaidAvailable = paidMotivation != nil
-        let isPaidSelected = item != .ad
-        
-        if isPaidSelected {
-            if isPaidAvailable {
-                info = Strings.motivationItemInfoHaveCat()
-            } else {
-                info = Strings.motivationItemInfoNotCat()
-            }
-        }
-
-        return info
-    }
-    
-    private func getActionTitleFor(_ item: MotivationalItem) -> String {
-        var title = ""
-        let isPaidAvailable = paidMotivation != nil
-        let isPaidSelected = item != .ad
-        
-        if isPaidSelected, !isPaidAvailable {
-            title = Strings.motivationItemActionTitle()
-        }
-
-        return title
+    private func changeSetModeState(isAbleToSet: Bool, andTitle title: String) {
+        view?.changeSetButtonState(isResponsive: isAbleToSet)
+        view?.changeSetButtonTitle(title: title)
     }
 }

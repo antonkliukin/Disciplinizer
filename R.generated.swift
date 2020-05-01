@@ -1011,7 +1011,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 35 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1069,6 +1069,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertExample = Rswift.StringResource(key: "alert.example", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Mode is set
+      ///
+      /// Locales: ru, en
+      static let motivationItemSetButtonUnableToSet = Rswift.StringResource(key: "motivationItem.setButton.unableToSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Motivation
       ///
       /// Locales: ru, en
@@ -1089,6 +1093,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionAd = Rswift.StringResource(key: "motivationItem.description.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Set mode
+      ///
+      /// Locales: ru, en
+      static let motivationItemSetButtonAbleToSet = Rswift.StringResource(key: "motivationItem.setButton.ableToSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Skip
       ///
       /// Locales: ru, en
@@ -1133,6 +1141,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let timeSelectionErrorMessage = Rswift.StringResource(key: "timeSelection.errorMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: save a cat
+      ///
+      /// Locales: ru, en
+      static let creationSaveCat = Rswift.StringResource(key: "creation.saveCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: save time
+      ///
+      /// Locales: ru, en
+      static let creationSaveTime = Rswift.StringResource(key: "creation.saveTime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: you have no cate
       ///
       /// Locales: ru, en
@@ -1350,6 +1366,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("alert.example", bundle: bundle, comment: "")
       }
 
+      /// en translation: Mode is set
+      ///
+      /// Locales: ru, en
+      static func motivationItemSetButtonUnableToSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.setButton.unableToSet", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.setButton.unableToSet"
+        }
+
+        return NSLocalizedString("motivationItem.setButton.unableToSet", bundle: bundle, comment: "")
+      }
+
       /// en translation: Motivation
       ///
       /// Locales: ru, en
@@ -1423,6 +1454,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.description.ad", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Set mode
+      ///
+      /// Locales: ru, en
+      static func motivationItemSetButtonAbleToSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.setButton.ableToSet", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.setButton.ableToSet"
+        }
+
+        return NSLocalizedString("motivationItem.setButton.ableToSet", bundle: bundle, comment: "")
       }
 
       /// en translation: Skip
@@ -1588,6 +1634,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("timeSelection.errorMessage", bundle: bundle, comment: "")
+      }
+
+      /// en translation: save a cat
+      ///
+      /// Locales: ru, en
+      static func creationSaveCat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.saveCat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.saveCat"
+        }
+
+        return NSLocalizedString("creation.saveCat", bundle: bundle, comment: "")
+      }
+
+      /// en translation: save time
+      ///
+      /// Locales: ru, en
+      static func creationSaveTime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.saveTime", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.saveTime"
+        }
+
+        return NSLocalizedString("creation.saveTime", bundle: bundle, comment: "")
       }
 
       /// en translation: you have no cate
