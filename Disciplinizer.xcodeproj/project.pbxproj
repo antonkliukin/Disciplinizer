@@ -34,6 +34,13 @@
 		3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */; };
 		3A1AC66C241E5FB000DB3CFA /* MotivationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */; };
 		3A1AC66E241E5FBA00DB3CFA /* DurationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */; };
+		3A1FA56E245C1E05000BAA20 /* CatStoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA56D245C1E05000BAA20 /* CatStoreConfigurator.swift */; };
+		3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FA56F245C1E21000BAA20 /* CatStore.storyboard */; };
+		3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA571245C1E34000BAA20 /* CatStorePresenter.swift */; };
+		3A1FA574245C1E43000BAA20 /* CatStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA573245C1E43000BAA20 /* CatStoreViewController.swift */; };
+		3A1FA578245C247F000BAA20 /* CatStoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA576245C247F000BAA20 /* CatStoreCollectionCell.swift */; };
+		3A1FA579245C247F000BAA20 /* CatStoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FA577245C247F000BAA20 /* CatStoreCollectionCell.xib */; };
+		3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA57B245C3B15000BAA20 /* StackCollectionViewLayout.swift */; };
 		3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F572E2311B51800212317 /* AlertViewController.swift */; };
 		3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F57302311B5BF00212317 /* AlertPresenter.swift */; };
 		3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */; };
@@ -186,6 +193,13 @@
 		3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationParameterUseCase.swift; sourceTree = "<group>"; };
 		3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationParameterUseCase.swift; sourceTree = "<group>"; };
+		3A1FA56D245C1E05000BAA20 /* CatStoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStoreConfigurator.swift; sourceTree = "<group>"; };
+		3A1FA56F245C1E21000BAA20 /* CatStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatStore.storyboard; sourceTree = "<group>"; };
+		3A1FA571245C1E34000BAA20 /* CatStorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStorePresenter.swift; sourceTree = "<group>"; };
+		3A1FA573245C1E43000BAA20 /* CatStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStoreViewController.swift; sourceTree = "<group>"; };
+		3A1FA576245C247F000BAA20 /* CatStoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStoreCollectionCell.swift; sourceTree = "<group>"; };
+		3A1FA577245C247F000BAA20 /* CatStoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatStoreCollectionCell.xib; sourceTree = "<group>"; };
+		3A1FA57B245C3B15000BAA20 /* StackCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCollectionViewLayout.swift; sourceTree = "<group>"; };
 		3A2F572E2311B51800212317 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3A2F57302311B5BF00212317 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+NameOfClass.swift"; sourceTree = "<group>"; };
@@ -439,6 +453,36 @@
 				3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */,
 			);
 			path = ChallengeParameters;
+			sourceTree = "<group>";
+		};
+		3A1FA56C245C1CF4000BAA20 /* CatStore */ = {
+			isa = PBXGroup;
+			children = (
+				3A1FA56D245C1E05000BAA20 /* CatStoreConfigurator.swift */,
+				3A1FA571245C1E34000BAA20 /* CatStorePresenter.swift */,
+				3A1FA573245C1E43000BAA20 /* CatStoreViewController.swift */,
+				3A1FA56F245C1E21000BAA20 /* CatStore.storyboard */,
+				3A1FA575245C242F000BAA20 /* CatStoreCell */,
+				3A1FA57A245C3AF1000BAA20 /* StackCollectionViewLayout */,
+			);
+			path = CatStore;
+			sourceTree = "<group>";
+		};
+		3A1FA575245C242F000BAA20 /* CatStoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A1FA576245C247F000BAA20 /* CatStoreCollectionCell.swift */,
+				3A1FA577245C247F000BAA20 /* CatStoreCollectionCell.xib */,
+			);
+			path = CatStoreCell;
+			sourceTree = "<group>";
+		};
+		3A1FA57A245C3AF1000BAA20 /* StackCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3A1FA57B245C3B15000BAA20 /* StackCollectionViewLayout.swift */,
+			);
+			path = StackCollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		3A2F572D2311B50300212317 /* Alert */ = {
@@ -781,8 +825,9 @@
 			children = (
 				3AD068942358ECD2003D30A6 /* Navigation */,
 				3A0D5A17234E5CDD00F20BC3 /* Creation */,
-				3A0742A1241E2B65003B1A83 /* MotivationSelection */,
 				3A0742AA241E3A5A003B1A83 /* TimeSelection */,
+				3A0742A1241E2B65003B1A83 /* MotivationSelection */,
+				3A1FA56C245C1CF4000BAA20 /* CatStore */,
 				C13CFA1D23660E640022863E /* Current */,
 				3ACD2C57240C2DE60017FABC /* History */,
 				3A9F9A702377099400022C38 /* Blocked */,
@@ -1095,7 +1140,9 @@
 				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
 				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
+				3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */,
 				3A008BD2231F93CA00B9286B /* Localizable.stringsdict in Resources */,
+				3A1FA579245C247F000BAA20 /* CatStoreCollectionCell.xib in Resources */,
 				3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */,
 				3AA12733232ABDA9004206E5 /* PageCollectionViewCell.xib in Resources */,
 				3A653DD1241D2A9000BE613C /* History.storyboard in Resources */,
@@ -1239,6 +1286,7 @@
 				3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */,
 				3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */,
 				3A2F573523125E4000212317 /* UIViewController+Extension.swift in Sources */,
+				3A1FA574245C1E43000BAA20 /* CatStoreViewController.swift in Sources */,
 				3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */,
 				3A653DC0241CC13400BE613C /* MusicSelectionConfigurator.swift in Sources */,
 				3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */,
@@ -1253,6 +1301,7 @@
 				3ACD2C77240C2E620017FABC /* DisplayChallengesList.swift in Sources */,
 				3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */,
 				3A47D67D230F1E8100B2B200 /* Config.swift in Sources */,
+				3A1FA578245C247F000BAA20 /* CatStoreCollectionCell.swift in Sources */,
 				3ACD2C61240C2DE60017FABC /* HistoryViewController.swift in Sources */,
 				3ACD2C7B240C2E620017FABC /* LocalPersistanceGateway.swift in Sources */,
 				3AD068982358ED1D003D30A6 /* PageNavigationViewController.swift in Sources */,
@@ -1262,6 +1311,7 @@
 				54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */,
 				3A653DC9241CE9E800BE613C /* AdConfigurator.swift in Sources */,
 				3A0742B4241E5970003B1A83 /* MotivationalItem.swift in Sources */,
+				3A1FA56E245C1E05000BAA20 /* CatStoreConfigurator.swift in Sources */,
 				3A00A50B2383187F0011ACDC /* JWT.swift in Sources */,
 				C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */,
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,
@@ -1288,6 +1338,8 @@
 				54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */,
 				3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */,
 				3A9F9A72237709B300022C38 /* BlockedViewController.swift in Sources */,
+				3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */,
+				3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */,
 				3ACD2C7A240C2E620017FABC /* CoreDataStack.swift in Sources */,
 				3A47D682230F217200B2B200 /* KeychainService.swift in Sources */,
 				3A00A4EF238194B20011ACDC /* AppLockManager.swift in Sources */,

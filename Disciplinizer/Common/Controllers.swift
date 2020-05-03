@@ -54,6 +54,12 @@ enum Controller {
 
         return vc
     }
+    
+    static func catStore() -> UIViewController {
+        let vc = CatStoreViewController.fromStoryboard(.catStore)
+
+        return vc
+    }
 
     static func timeSelection() -> UIViewController {
         let vc = TimeSelectionViewController.fromStoryboard(.timeSelection)

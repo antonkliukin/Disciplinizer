@@ -21,6 +21,7 @@ class MotivationView: UIView {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var motivationDescriptionTitle: UILabel!
     @IBOutlet weak var motivationDescription: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var actionButton: MainButton!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoLabelActionButtonConstraint: NSLayoutConstraint!

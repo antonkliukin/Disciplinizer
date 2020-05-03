@@ -20,6 +20,7 @@ extension UIViewController {
         case currentChallenge = "CurrentChallenge"
         case ad = "Ad"
         case motivationSelection = "MotivationSelection"
+        case catStore = "CatStore"
         case timeSelection = "TimeSelection"
     }
 

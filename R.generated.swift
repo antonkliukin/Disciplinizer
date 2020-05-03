@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 12 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
   struct storyboard {
     /// Storyboard `Ad`.
     static let ad = _R.storyboard.ad()
@@ -97,6 +97,8 @@ struct R: Rswift.Validatable {
     static let alert = _R.storyboard.alert()
     /// Storyboard `Blocked`.
     static let blocked = _R.storyboard.blocked()
+    /// Storyboard `CatStore`.
+    static let catStore = _R.storyboard.catStore()
     /// Storyboard `CreateChallenge`.
     static let createChallenge = _R.storyboard.createChallenge()
     /// Storyboard `CurrentChallenge`.
@@ -134,6 +136,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Blocked", bundle: ...)`
     static func blocked(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.blocked)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CatStore", bundle: ...)`
+    static func catStore(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.catStore)
     }
     #endif
 
@@ -204,7 +213,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 18 colors.
+  /// This `R.color` struct is generated, and contains static references to 24 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -222,24 +231,36 @@ struct R: Rswift.Validatable {
     static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
     /// Color `CTWhite`.
     static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
-    /// Color `DarkBlueText`.
-    static let darkBlueText = Rswift.ColorResource(bundle: R.hostingBundle, name: "DarkBlueText")
     /// Color `LightBlue`.
     static let lightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightBlue")
     /// Color `LightGreyText`.
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
     static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
+    /// Color `brownCat`.
+    static let brownCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "brownCat")
     /// Color `buttonGrey`.
     static let buttonGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonGrey")
     /// Color `buttonLightBlue`.
     static let buttonLightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "buttonLightBlue")
+    /// Color `darkBlueText`.
+    static let darkBlueText = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkBlueText")
+    /// Color `darkOrange`.
+    static let darkOrange = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkOrange")
     /// Color `errorRed`.
     static let errorRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "errorRed")
     /// Color `greenText`.
     static let greenText = Rswift.ColorResource(bundle: R.hostingBundle, name: "greenText")
+    /// Color `greyCat`.
+    static let greyCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "greyCat")
+    /// Color `lightBlueCat`.
+    static let lightBlueCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightBlueCat")
     /// Color `lightGrey`.
     static let lightGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGrey")
+    /// Color `lightOrangeCat`.
+    static let lightOrangeCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightOrangeCat")
+    /// Color `pinkCat`.
+    static let pinkCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "pinkCat")
     /// Color `redText`.
     static let redText = Rswift.ColorResource(bundle: R.hostingBundle, name: "redText")
 
@@ -316,15 +337,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "DarkBlueText", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkBlueText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkBlueText, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "LightBlue", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -352,6 +364,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "brownCat", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func brownCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.brownCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "buttonGrey", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -366,6 +387,24 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func buttonLightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.buttonLightBlue, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkBlueText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkBlueText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkBlueText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkOrange", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkOrange(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkOrange, compatibleWith: traitCollection)
     }
     #endif
 
@@ -388,11 +427,47 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "greyCat", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func greyCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.greyCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightBlueCat", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightBlueCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightBlueCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "lightGrey", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func lightGrey(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.lightGrey, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightOrangeCat", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightOrangeCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightOrangeCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "pinkCat", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func pinkCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.pinkCat, compatibleWith: traitCollection)
     }
     #endif
 
@@ -628,14 +703,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `CatStoreCollectionCell`.
+    static let catStoreCollectionCell = _R.nib._CatStoreCollectionCell()
     /// Nib `ChallengeParameterView`.
     static let challengeParameterView = _R.nib._ChallengeParameterView()
     /// Nib `MotivationView`.
     static let motivationView = _R.nib._MotivationView()
     /// Nib `PageCollectionViewCell`.
     static let pageCollectionViewCell = _R.nib._PageCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CatStoreCollectionCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.catStoreCollectionCell) instead")
+    static func catStoreCollectionCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.catStoreCollectionCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ChallengeParameterView", in: bundle)`
@@ -660,6 +745,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.pageCollectionViewCell)
     }
     #endif
+
+    static func catStoreCollectionCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CatStoreCollectionCell? {
+      return R.nib.catStoreCollectionCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CatStoreCollectionCell
+    }
 
     static func challengeParameterView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -1053,7 +1142,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideGotIt = Rswift.StringResource(key: "guide.gotIt", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Having a freind that you could lose keeps you motivated.
+      /// en translation: Having a friend that you can lose keeps you motivated.
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionCat = Rswift.StringResource(key: "motivationItem.description.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1149,7 +1238,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationSaveTime = Rswift.StringResource(key: "creation.saveTime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: you have no cate
+      /// en translation: you have no cat
       ///
       /// Locales: ru, en
       static let motivationItemInfoNotCat = Rswift.StringResource(key: "motivationItem.info.notCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1306,7 +1395,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.gotIt", bundle: bundle, comment: "")
       }
 
-      /// en translation: Having a freind that you could lose keeps you motivated.
+      /// en translation: Having a friend that you can lose keeps you motivated.
       ///
       /// Locales: ru, en
       static func motivationItemDescriptionCat(preferredLanguages: [String]? = nil) -> String {
@@ -1666,7 +1755,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("creation.saveTime", bundle: bundle, comment: "")
       }
 
-      /// en translation: you have no cate
+      /// en translation: you have no cat
       ///
       /// Locales: ru, en
       static func motivationItemInfoNotCat(preferredLanguages: [String]? = nil) -> String {
@@ -1780,6 +1869,20 @@ struct _R: Rswift.Validatable {
       try _PageCollectionViewCell.validate()
     }
 
+    struct _CatStoreCollectionCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = CatStoreCollectionCell
+
+      let bundle = R.hostingBundle
+      let identifier = "CatStoreCell"
+      let name = "CatStoreCollectionCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CatStoreCollectionCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CatStoreCollectionCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _ChallengeParameterView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ChallengeParameterView"
@@ -1846,6 +1949,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try blocked.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try catStore.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try createChallenge.validate()
@@ -1932,6 +2038,26 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Blocked', but couldn't be loaded.") }
         }
         if _R.storyboard.blocked().blockedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blockedViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct catStore: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let catStoreViewController = StoryboardViewControllerResource<CatStoreViewController>(identifier: "CatStoreViewController")
+      let name = "CatStore"
+
+      func catStoreViewController(_: Void = ()) -> CatStoreViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: catStoreViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.catStore().catStoreViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'catStoreViewController' could not be loaded from storyboard 'CatStore' as 'CatStoreViewController'.") }
       }
 
       fileprivate init() {}

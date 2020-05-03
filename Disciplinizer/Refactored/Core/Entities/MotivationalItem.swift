@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MotivationalItem: String {
+enum MotivationalItem: String, CaseIterable {
     case noPaidItem = "-1"
     case ad = "0"
     case level1 = "1"
@@ -23,6 +23,10 @@ enum MotivationalItem: String {
         }
         
         self = item
+    }
+    
+    static var allCats: [MotivationalItem] {
+        allCases.filter { $0 != .ad && $0 != .noPaidItem }
     }
     
     var title: String {
@@ -72,6 +76,32 @@ enum MotivationalItem: String {
         case .noPaidItem: return Strings.motivationItemInfoNotCat()
         case .ad: return ""
         default: return Strings.motivationItemInfoHaveCat()
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .level1: return R.color.lightBlueCat()!
+        case .level2: return R.color.lightOrangeCat()!
+        case .level3: return R.color.greyCat()!
+        case .level4: return R.color.brownCat()!
+        case .level5: return R.color.pinkCat()!
+        default: return R.color.lightBlueCat()!
+        }
+    }
+    
+    var textColor: UIColor {
+        switch self {
+        case .level1: return R.color.darkBlueText()!
+        case .level2: return R.color.darkOrange()!
+        default: return .white
+        }
+    }
+    
+    var priceColor: UIColor {
+        switch self {
+        case .level1: return R.color.darkBlueText()!
+        default: return color
         }
     }
 }

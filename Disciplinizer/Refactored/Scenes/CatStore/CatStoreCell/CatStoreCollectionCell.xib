@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatStoreCell" id="gTV-IL-0wX" customClass="CatStoreCollectionCell" customModule="Disciplinizer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="598" height="308"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="598" height="308"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLv-at-GXJ" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="598" height="308"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-58-QSN" customClass="MotivationView" customModule="Disciplinizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="598" height="308"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BAv-58-QSN" firstAttribute="top" secondItem="dLv-at-GXJ" secondAttribute="top" id="BBz-i2-44w"/>
+                            <constraint firstAttribute="bottom" secondItem="BAv-58-QSN" secondAttribute="bottom" id="S4U-Su-K4F"/>
+                            <constraint firstItem="BAv-58-QSN" firstAttribute="leading" secondItem="dLv-at-GXJ" secondAttribute="leading" id="Zrc-nX-0J5"/>
+                            <constraint firstAttribute="trailing" secondItem="BAv-58-QSN" secondAttribute="trailing" id="mi3-2Z-8fa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dLv-at-GXJ" secondAttribute="trailing" id="3cu-dS-3hJ"/>
+                <constraint firstItem="dLv-at-GXJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Uf-qQ-3NA"/>
+                <constraint firstItem="dLv-at-GXJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Hfr-A2-Ljh"/>
+                <constraint firstAttribute="bottom" secondItem="dLv-at-GXJ" secondAttribute="bottom" id="m7y-nE-gAO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="598" height="308"/>
+            <connections>
+                <outlet property="catMotivationView" destination="BAv-58-QSN" id="gMs-BG-z3n"/>
+            </connections>
+            <point key="canvasLocation" x="-10.144927536231885" y="162.05357142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
