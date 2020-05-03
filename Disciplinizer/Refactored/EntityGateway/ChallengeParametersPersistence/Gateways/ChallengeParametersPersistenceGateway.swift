@@ -53,7 +53,7 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
     }
 
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {
-        guard let itemId = userDefaults.string(forKey: Key.selectedItem) else {
+        guard let itemId = userDefaults.string(forKey: Key.purchasedItem) else {
             completionHandler(.failure(UserDefaultsError(message: "Item is not saved.")))
             return
         }

@@ -18,10 +18,10 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     weak var view: MotivationSelectionViewProtocol?
     private let motivationalItemUseCase: MotivationParameterUseCaseProtocol
     
-    private var savedMotivation: MotivationalItem?
-    private var selectedMotivation: MotivationalItem?
-    private let adMotivation: MotivationalItem = .ad
-    private var paidMotivation: MotivationalItem = .noPaidItem
+    private var selectedMotivationalItem: MotivationalItem?
+    private var newlySelectedMotivationalItem: MotivationalItem?
+    private let adMotivationalItem: MotivationalItem = .ad
+    private var paidMotivationalItem: MotivationalItem = .noPaidItem
 
     init(view: MotivationSelectionViewProtocol,
          motivationalItemUseCase: MotivationParameterUseCaseProtocol) {
@@ -30,34 +30,46 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     }
     
     func viewDidLoad() {
-        configureMotivationView()
+        configureViewForSelectedMotivationalItem()
     }
     
     func didSelectIndex(_ index: Int) {
-        let motivation = index == 0 ? paidMotivation : adMotivation
-                
-        self.selectedMotivation = motivation
-        configureViewForMotivation(motivation)
+        let isPaidSelected = index == 0
         
-        if motivation == .noPaidItem {
-            changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonAbleToSet())
-        } else {
-            let title = savedMotivation != selectedMotivation ? Strings.motivationItemSetButtonAbleToSet() : Strings.motivationItemSetButtonUnableToSet()
-            changeSetModeState(isAbleToSet: savedMotivation != selectedMotivation, andTitle: title)
+        checkIfPaidAvailable { (result) in
+            if let paidItem = try? result.get(), isPaidSelected {
+                self.newlySelectedMotivationalItem = paidItem
+                self.paidMotivationalItem = paidItem
+            } else if isPaidSelected {
+                self.newlySelectedMotivationalItem = .noPaidItem
+            } else {
+                self.newlySelectedMotivationalItem = self.adMotivationalItem
+            }
+            
+            if let item = self.newlySelectedMotivationalItem {
+                if item == .noPaidItem {
+                    self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonAbleToSet())
+                } else {
+                    let title = self.newlySelectedMotivationalItem != self.selectedMotivationalItem ? Strings.motivationItemSetButtonAbleToSet() : Strings.motivationItemSetButtonUnableToSet()
+                    self.changeSetModeState(isAbleToSet: self.newlySelectedMotivationalItem != self.selectedMotivationalItem, andTitle: title)
+                }
+                
+                self.configureMotivationalView(withItem: item)
+            }
         }
     }
     
     func didTapSetModeButton() {
-        guard let selectedMotivation = selectedMotivation else {
+        guard let newlySelectedMotivationalItem = newlySelectedMotivationalItem else {
             assertionFailure()
             return
         }
 
-        guard selectedMotivation != .noPaidItem, selectedMotivation != savedMotivation else {
+        guard newlySelectedMotivationalItem != .noPaidItem, selectedMotivationalItem != newlySelectedMotivationalItem else {
             return
         }
         
-        motivationalItemUseCase.select(motivationalItem: selectedMotivation) { (selectionResult) in
+        motivationalItemUseCase.select(motivationalItem: newlySelectedMotivationalItem) { (selectionResult) in
             switch selectionResult {
             case .success:
                 self.view?.router?.pop()
@@ -68,15 +80,17 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
         }
     }
     
-    private func configureMotivationView() {
+    private func configureViewForSelectedMotivationalItem() {
         motivationalItemUseCase.getSelectedMotivationalItem(completionHandler: { (result) in
-            if let savedMotivation = try? result.get() {
-                self.savedMotivation = savedMotivation
-                self.selectedMotivation = savedMotivation
-                self.configureViewForMotivation(savedMotivation)
+            if let salectedMotivationalItem = try? result.get() {
+                self.newlySelectedMotivationalItem = salectedMotivationalItem
+                self.selectedMotivationalItem = salectedMotivationalItem
                 
-                if savedMotivation != self.adMotivation {
-                    self.paidMotivation = savedMotivation
+                self.configureMotivationalView(withItem: salectedMotivationalItem)
+                
+                let isSelectedItemPaid = salectedMotivationalItem != self.adMotivationalItem
+                if isSelectedItemPaid {
+                    self.paidMotivationalItem = salectedMotivationalItem
                     self.view?.selectIndex(0)
                 } else {
                     self.view?.selectIndex(1)
@@ -84,13 +98,17 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
                 
                 self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonUnableToSet())
             } else {
-                self.selectedMotivation = self.paidMotivation
-                self.configureViewForMotivation(self.paidMotivation)
+                self.selectedMotivationalItem = self.paidMotivationalItem
+                self.configureMotivationalView(withItem: self.paidMotivationalItem)
             }
         })
     }
+    
+    private func checkIfPaidAvailable(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {
+        motivationalItemUseCase.getPaid(completionHandler: completionHandler)
+    }
         
-    func configureViewForMotivation(_ item: MotivationalItem) {
+    func configureMotivationalView(withItem item: MotivationalItem) {
         view?.configureMotivationView(title: item.title,
                                       itemImage: item.image,
                                       descriptionTitle: item.descriptionTitle,

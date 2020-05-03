@@ -66,7 +66,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         createChallenge()
     }
     
-    func configureTimeView() {
+    private func configureTimeView() {
         durationParameterUseCase.getSelectedDurationInMinutes { (selectedDurationResult) in
             switch selectedDurationResult {
             case .success(let durationInMinutes):
@@ -97,7 +97,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         }
     }
     
-    func configureMotivationView() {
+    private func configureMotivationView() {
         motivationItemUseCase.getSelectedMotivationalItem { (result) in
             switch result {
             case .success(let item):
@@ -117,7 +117,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             }
         }
     }
-
+    
     private func createChallenge() {
         let isPaid = false
         let betId = "1"
