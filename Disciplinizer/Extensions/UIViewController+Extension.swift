@@ -22,6 +22,7 @@ extension UIViewController {
         case motivationSelection = "MotivationSelection"
         case catStore = "CatStore"
         case timeSelection = "TimeSelection"
+        case loading = "Loading"
     }
 
     class func instantiateControllerInStoryboard<T: UIViewController>(_ storyboard: UIStoryboard, identifier: String) -> T {

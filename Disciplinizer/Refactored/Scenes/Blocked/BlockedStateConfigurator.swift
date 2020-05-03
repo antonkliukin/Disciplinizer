@@ -20,7 +20,7 @@ class BlockedStateConfigurator: BlockedStateConfiguratorProtocol {
     }
 
     func configure(blockedViewController: BlockedViewController) {
-        let purchasesManager = PurchasesManager()
+        let purchasesManager = PurchasesManager.shared
         
         let presenter = BlockedPresenter(view: blockedViewController,
                                          failedChallenge: challenge,

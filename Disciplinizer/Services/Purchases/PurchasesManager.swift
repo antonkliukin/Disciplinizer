@@ -13,7 +13,7 @@ protocol BetProtocol {
     var id: String { get }
 }
 
-enum BetType: CaseIterable, BetProtocol {
+enum StoreProductPrice: CaseIterable, BetProtocol {
     case oneDollar
     case twoDollars
     case threeDollars
@@ -35,7 +35,7 @@ enum BetType: CaseIterable, BetProtocol {
     }
 
     var localizedPrice: String? {
-        return BetType.availiableBets[self.id]
+        return StoreProductPrice.availiableBets[self.id]
     }
 }
 
@@ -56,13 +56,10 @@ enum PurchaseError: Error {
     }
 }
 
-protocol PurchasesManagerProtocol {
-    func makePurchase(forBet betType: BetType, result: @escaping (Result<Void, PurchaseError>) -> Void)
-    func getAvailiableBets(completion: @escaping ([BetProtocol]) -> Void)
-}
-
-final class PurchasesManager: NSObject, PurchasesManagerProtocol, SKPaymentTransactionObserver {
-    var didFinishPurchasing: ((Result<Void, PurchaseError>) -> Void)?
+final class PurchasesManager: NSObject, SKPaymentTransactionObserver {
+    static let shared = PurchasesManager()
+    
+    var didFinishPurchasing: ((Result<SKPaymentTransactionState, PurchaseError>) -> Void)?
     var getBetsCompletion: (([BetProtocol]) -> Void)?
     var productsRequest: SKProductsRequest?
 
@@ -74,11 +71,16 @@ final class PurchasesManager: NSObject, PurchasesManagerProtocol, SKPaymentTrans
 
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
+            print("state", transaction.transactionState)
+            
             switch transaction.transactionState {
+            case .purchasing:
+                didFinishPurchasing?(.success(.purchasing))
+                print("Purchasing")
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
-                didFinishPurchasing?(.success)
-                print("Successfuly purchased bet with id: \(transaction.payment.productIdentifier)")
+                didFinishPurchasing?(.success(.purchased))
+                print("Successfuly purchased product with id: \(transaction.payment.productIdentifier)")
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 didFinishPurchasing?(.failure(.generalError))
@@ -93,21 +95,21 @@ final class PurchasesManager: NSObject, PurchasesManagerProtocol, SKPaymentTrans
         return SKPaymentQueue.canMakePayments()
     }
 
-    func makePurchase(forBet betType: BetType, result: @escaping (Result<Void, PurchaseError>) -> Void) {
+    func makePurchase(price: StoreProductPrice, result: @escaping (Result<SKPaymentTransactionState, PurchaseError>) -> Void) {
         guard userCanMakePayment else {
             result(.failure(.userError))
             return
         }
 
         let paymentRequest = SKMutablePayment()
-        paymentRequest.productIdentifier = betType.id
+        paymentRequest.productIdentifier = price.id
         SKPaymentQueue.default().add(paymentRequest)
 
         didFinishPurchasing = result
     }
 
     func getAvailiableBets(completion: @escaping ([BetProtocol]) -> Void) {
-        productsRequest = SKProductsRequest(productIdentifiers: Set(BetType.allCases.map { $0.id }))
+        productsRequest = SKProductsRequest(productIdentifiers: Set(StoreProductPrice.allCases.map { $0.id }))
         productsRequest?.delegate = self
         productsRequest?.start()
 
@@ -118,10 +120,10 @@ final class PurchasesManager: NSObject, PurchasesManagerProtocol, SKPaymentTrans
 extension PurchasesManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         for product in response.products {
-            BetType.availiableBets[product.productIdentifier] = product.localizedPrice
+            StoreProductPrice.availiableBets[product.productIdentifier] = product.localizedPrice
         }
 
-        getBetsCompletion?(BetType.allCases)
+        getBetsCompletion?(StoreProductPrice.allCases)
     }
 }
 

@@ -63,7 +63,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
                                              descriptionTitle: "",
                                              description: "",
                                              actionButtonTitle: "Buy") {
-                                                print("Start purchasing process")
+                                                self.presenter.didTapBuyButton(onItemWithIndex: indexPath.row)
             }
             
             cell.catMotivationView.motivationTitleLabel.backgroundColor = item.color
@@ -71,7 +71,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.catMotivationView.actionButton.setTitleColor(item.textColor, for: .normal)
             cell.catMotivationView.priceLabel.isHidden = false
             cell.catMotivationView.priceLabel.textColor = item.priceColor
-            cell.catMotivationView.priceLabel.text = "109 rub"
+            cell.catMotivationView.priceLabel.text = item.price.localizedPrice ?? "Price"
             
             return cell
         }

@@ -49,6 +49,7 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
 
     func savePaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
         userDefaults.set(motivationalItem.rawValue, forKey: Key.purchasedItem)
+        completionHandler(.success)
     }
 
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {

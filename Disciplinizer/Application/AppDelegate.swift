@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             assertionFailure("AVAudioSession error occured.")
         }
+        
+        PurchasesManager.shared.getAvailiableBets { (_) in return }
 
         return true
     }

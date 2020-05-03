@@ -17,7 +17,8 @@ protocol RouterProtocol {
     func push(_ viewController: UIViewController)
     func push(_ viewController: UIViewController, animated: Bool)
     func pop()
-    func pop(animated: Bool)
+    ///  - parameter toRoot: True - pops all pushed VCs to root VC, false - pops the topmost pushed VC.
+    func pop(animated: Bool, toRoot: Bool)
     func dismiss()
     ///  - parameter toRoot: True - dismisses all presented VCs to root VC, false - dismesses the topmost presented VC.
     func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool)
@@ -95,12 +96,16 @@ class Router: RouterProtocol {
     }
     
     func pop() {
-        pop(animated: true)
+        pop(animated: true, toRoot: false)
     }
     
-    func pop(animated: Bool) {
+    func pop(animated: Bool, toRoot: Bool) {
         if let navVC = initialController.navigationController {
-            navVC.popViewController(animated: animated)
+            if toRoot {
+                navVC.popToRootViewController(animated: animated)
+            } else {
+                navVC.popViewController(animated: animated)
+            }
         }
     }
 }

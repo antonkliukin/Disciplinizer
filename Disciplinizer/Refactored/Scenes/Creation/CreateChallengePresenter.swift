@@ -22,8 +22,6 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private let motivationItemUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
 
-    private var purchaseManager = PurchasesManager()
-    private var possibleBets: [BetProtocol] = []
     private var newChallenge: Challenge!
 
     init(view: CreateChallengeViewProtocol,

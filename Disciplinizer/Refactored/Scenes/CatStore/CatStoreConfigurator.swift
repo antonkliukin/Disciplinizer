@@ -15,7 +15,11 @@ protocol CatStoreConfiguratorProtocol {
 class CatStoreConfigurator: CatStoreConfiguratorProtocol {
 
     func configure(catStoreViewController: CatStoreViewController) {
-        let presenter = CatStorePresenter(view: catStoreViewController)
+        let challengesParameterGateway = ChallengeParametersPersistenceGateway()
+        let motivationParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengesParameterGateway)
+        
+        let presenter = CatStorePresenter(view: catStoreViewController,
+                                          motivationParameterUseCase: motivationParameterUseCase)
 
         catStoreViewController.presenter = presenter
     }

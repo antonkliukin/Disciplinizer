@@ -10,23 +10,26 @@ import Foundation
 
 protocol AlertPresenterProtocol {
     func viewDidLoad()
-    func didTapDismiss()
+    func didTapAlertAction()
 }
 
 class AlertPresenter: AlertPresenterProtocol {
     weak var view: AlertViewProtocol?
-    let message: String
-
-    required init(view: AlertViewProtocol, message: String) {
+    
+    let model: AlertModel
+    
+    init(view: AlertViewProtocol,
+         model: AlertModel) {
         self.view = view
-        self.message = message
+        self.model = model
     }
-
+    
     func viewDidLoad() {
-        view?.setMessageText(message)
+        view?.configure(model)
     }
 
-    func didTapDismiss() {
+    func didTapAlertAction() {
         view?.router?.dismiss()
+        model.action?()
     }
 }

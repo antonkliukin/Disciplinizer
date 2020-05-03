@@ -72,3 +72,9 @@
 //******************************************************************************
 "timeSelection.errorMessage" = "please enter time from 15 to 120 minutes";
 
+//******************************************************************************
+// Cat Store
+//******************************************************************************
+"alert.title.success" = "Success!";
+"alert.message.success" = "You now have a new pet in your home";
+"alert.action.back" = "Back";

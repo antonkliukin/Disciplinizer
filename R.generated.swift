@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
   struct storyboard {
     /// Storyboard `Ad`.
     static let ad = _R.storyboard.ad()
@@ -109,6 +109,8 @@ struct R: Rswift.Validatable {
     static let history = _R.storyboard.history()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Loading`.
+    static let loading = _R.storyboard.loading()
     /// Storyboard `MotivationSelection`.
     static let motivationSelection = _R.storyboard.motivationSelection()
     /// Storyboard `PageNavigation`.
@@ -178,6 +180,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Loading", bundle: ...)`
+    static func loading(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.loading)
     }
     #endif
 
@@ -1100,7 +1109,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 35 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1114,6 +1123,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let motivationItemAdTitle = Rswift.StringResource(key: "motivationItem.ad.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static let alertActionBack = Rswift.StringResource(key: "alert.action.back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Choose
       ///
       /// Locales: ru, en
@@ -1194,6 +1207,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideThirdPageTitle = Rswift.StringResource(key: "guide.thirdPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Success!
+      ///
+      /// Locales: ru, en
+      static let alertTitleSuccess = Rswift.StringResource(key: "alert.title.success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tap to change
       ///
       /// Locales: ru, en
@@ -1218,6 +1235,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let motivationItemLevel5Title = Rswift.StringResource(key: "motivationItem.level5.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: You now have a new pet in your home
+      ///
+      /// Locales: ru, en
+      static let alertMessageSuccess = Rswift.StringResource(key: "alert.message.success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: You will lose your challenge if don't return to the app!
       ///
       /// Locales: ru, en
@@ -1288,6 +1309,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.ad.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static func alertActionBack(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert.action.back", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert.action.back"
+        }
+
+        return NSLocalizedString("alert.action.back", bundle: bundle, comment: "")
       }
 
       /// en translation: Choose
@@ -1590,6 +1626,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.thirdPage.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Success!
+      ///
+      /// Locales: ru, en
+      static func alertTitleSuccess(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert.title.success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert.title.success"
+        }
+
+        return NSLocalizedString("alert.title.success", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tap to change
       ///
       /// Locales: ru, en
@@ -1678,6 +1729,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.level5.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You now have a new pet in your home
+      ///
+      /// Locales: ru, en
+      static func alertMessageSuccess(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert.message.success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert.message.success"
+        }
+
+        return NSLocalizedString("alert.message.success", bundle: bundle, comment: "")
       }
 
       /// en translation: You will lose your challenge if don't return to the app!
@@ -1969,6 +2035,9 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try loading.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try motivationSelection.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2168,6 +2237,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlue' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct loading: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let loadingViewController = StoryboardViewControllerResource<LoadingViewController>(identifier: "LoadingViewController")
+      let name = "Loading"
+
+      func loadingViewController(_: Void = ()) -> LoadingViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loadingViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.loading().loadingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loadingViewController' could not be loaded from storyboard 'Loading' as 'LoadingViewController'.") }
       }
 
       fileprivate init() {}

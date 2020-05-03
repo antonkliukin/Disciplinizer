@@ -98,6 +98,17 @@ enum MotivationalItem: String, CaseIterable {
         }
     }
     
+    var price: StoreProductPrice {
+        switch self {
+        case .level1: return .oneDollar
+        case .level2: return .twoDollars
+        case .level3: return .threeDollars
+        case .level4: return .fourDollars
+        case .level5: return .fiveDollars
+        default: return .fiveDollars
+        }
+    }
+    
     var priceColor: UIColor {
         switch self {
         case .level1: return R.color.darkBlueText()!

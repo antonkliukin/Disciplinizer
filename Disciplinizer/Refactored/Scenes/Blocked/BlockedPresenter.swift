@@ -16,11 +16,11 @@ protocol BlockedPresenterProtocol {
 final class BlockedPresenter: BlockedPresenterProtocol {
     private weak var view: BlockedViewProtocol?
     private var challenge: Challenge
-    private var purchasesManager: PurchasesManagerProtocol
+    private var purchasesManager: PurchasesManager
 
     init(view: BlockedViewProtocol,
          failedChallenge: Challenge,
-         purchasesManager: PurchasesManagerProtocol) {
+         purchasesManager: PurchasesManager) {
         self.view = view
         self.challenge = failedChallenge
         self.purchasesManager = purchasesManager
@@ -40,13 +40,13 @@ final class BlockedPresenter: BlockedPresenterProtocol {
 
         if challenge.isPaid {
             guard let betId = challenge.betId,
-                  let bet = BetType.allCases.first(where: { $0.id == betId }) else {
+                  let bet = StoreProductPrice.allCases.first(where: { $0.id == betId }) else {
                     AppLockManager.shared.changeStateTo(.unlocked)
                     view?.router?.dismiss()
                     return
             }
 
-            purchasesManager.makePurchase(forBet: bet) { [weak self] purchaseResult in
+            purchasesManager.makePurchase(price: bet) { [weak self] purchaseResult in
                 switch purchaseResult {
                 case .success:
                     AppLockManager.shared.changeStateTo(.unlocked)

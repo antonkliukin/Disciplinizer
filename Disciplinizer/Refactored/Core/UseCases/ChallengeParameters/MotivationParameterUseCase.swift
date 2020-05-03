@@ -15,7 +15,7 @@ protocol MotivationParameterUseCaseProtocol {
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void)
 }
 
-class ItemParameterUseCase: MotivationParameterUseCaseProtocol {
+class MotivationParameterUseCase: MotivationParameterUseCaseProtocol {
     let challengesParametersGateway: ChallengeParametersGatewayProtocols
 
     init(challengesParametersGateway: ChallengeParametersGatewayProtocols) {

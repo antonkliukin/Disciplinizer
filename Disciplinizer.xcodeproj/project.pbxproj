@@ -41,6 +41,11 @@
 		3A1FA578245C247F000BAA20 /* CatStoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA576245C247F000BAA20 /* CatStoreCollectionCell.swift */; };
 		3A1FA579245C247F000BAA20 /* CatStoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FA577245C247F000BAA20 /* CatStoreCollectionCell.xib */; };
 		3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA57B245C3B15000BAA20 /* StackCollectionViewLayout.swift */; };
+		3A1FA57F245E9B62000BAA20 /* AlertConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA57E245E9B62000BAA20 /* AlertConfigurator.swift */; };
+		3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA581245EA5D6000BAA20 /* LoadingConfigurator.swift */; };
+		3A1FA584245EA5E1000BAA20 /* LoadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA583245EA5E1000BAA20 /* LoadingPresenter.swift */; };
+		3A1FA586245EA5EE000BAA20 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA585245EA5EE000BAA20 /* LoadingViewController.swift */; };
+		3A1FA588245EA5F7000BAA20 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FA587245EA5F7000BAA20 /* Loading.storyboard */; };
 		3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F572E2311B51800212317 /* AlertViewController.swift */; };
 		3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F57302311B5BF00212317 /* AlertPresenter.swift */; };
 		3A2F573323125E2600212317 /* NSObject+NameOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */; };
@@ -200,6 +205,11 @@
 		3A1FA576245C247F000BAA20 /* CatStoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStoreCollectionCell.swift; sourceTree = "<group>"; };
 		3A1FA577245C247F000BAA20 /* CatStoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatStoreCollectionCell.xib; sourceTree = "<group>"; };
 		3A1FA57B245C3B15000BAA20 /* StackCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCollectionViewLayout.swift; sourceTree = "<group>"; };
+		3A1FA57E245E9B62000BAA20 /* AlertConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfigurator.swift; sourceTree = "<group>"; };
+		3A1FA581245EA5D6000BAA20 /* LoadingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingConfigurator.swift; sourceTree = "<group>"; };
+		3A1FA583245EA5E1000BAA20 /* LoadingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresenter.swift; sourceTree = "<group>"; };
+		3A1FA585245EA5EE000BAA20 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		3A1FA587245EA5F7000BAA20 /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
 		3A2F572E2311B51800212317 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3A2F57302311B5BF00212317 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3A2F573223125E2600212317 /* NSObject+NameOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+NameOfClass.swift"; sourceTree = "<group>"; };
@@ -485,11 +495,23 @@
 			path = StackCollectionViewLayout;
 			sourceTree = "<group>";
 		};
+		3A1FA580245EA5BA000BAA20 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				3A1FA581245EA5D6000BAA20 /* LoadingConfigurator.swift */,
+				3A1FA583245EA5E1000BAA20 /* LoadingPresenter.swift */,
+				3A1FA585245EA5EE000BAA20 /* LoadingViewController.swift */,
+				3A1FA587245EA5F7000BAA20 /* Loading.storyboard */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		3A2F572D2311B50300212317 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				3A2F572E2311B51800212317 /* AlertViewController.swift */,
+				3A1FA57E245E9B62000BAA20 /* AlertConfigurator.swift */,
 				3A2F57302311B5BF00212317 /* AlertPresenter.swift */,
+				3A2F572E2311B51800212317 /* AlertViewController.swift */,
 				3A2F573623125EEA00212317 /* Alert.storyboard */,
 			);
 			path = Alert;
@@ -586,7 +608,6 @@
 			isa = PBXGroup;
 			children = (
 				54C2AB8B2378A6C800BB2D90 /* Settings */,
-				3A2F572D2311B50300212317 /* Alert */,
 				3AA12728232ABB3C004206E5 /* Guide */,
 			);
 			path = OutdatedModules;
@@ -833,6 +854,8 @@
 				3A9F9A702377099400022C38 /* Blocked */,
 				3A653DB1241A10B400BE613C /* Music */,
 				3A653DC3241CE91200BE613C /* Ad */,
+				3A2F572D2311B50300212317 /* Alert */,
+				3A1FA580245EA5BA000BAA20 /* Loading */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1136,6 +1159,7 @@
 				3AD068962358ED09003D30A6 /* PageNavigation.storyboard in Resources */,
 				3ACD2C7F240C2EB00017FABC /* Guide.storyboard in Resources */,
 				C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */,
+				3A1FA588245EA5F7000BAA20 /* Loading.storyboard in Resources */,
 				3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */,
 				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
@@ -1286,6 +1310,7 @@
 				3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */,
 				3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */,
 				3A2F573523125E4000212317 /* UIViewController+Extension.swift in Sources */,
+				3A1FA57F245E9B62000BAA20 /* AlertConfigurator.swift in Sources */,
 				3A1FA574245C1E43000BAA20 /* CatStoreViewController.swift in Sources */,
 				3ACD2C60240C2DE60017FABC /* HistoryPresenter.swift in Sources */,
 				3A653DC0241CC13400BE613C /* MusicSelectionConfigurator.swift in Sources */,
@@ -1308,6 +1333,7 @@
 				3A2F573A2312729800212317 /* LockStateRequestManager.swift in Sources */,
 				3A0D5A1D234E5EAC00F20BC3 /* CreateChallengePresenter.swift in Sources */,
 				54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */,
+				3A1FA586245EA5EE000BAA20 /* LoadingViewController.swift in Sources */,
 				54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */,
 				3A653DC9241CE9E800BE613C /* AdConfigurator.swift in Sources */,
 				3A0742B4241E5970003B1A83 /* MotivationalItem.swift in Sources */,
@@ -1355,6 +1381,7 @@
 				3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */,
 				3ACD2C78240C2E620017FABC /* DeleteChallenge.swift in Sources */,
 				C1FE2042234FB36A00377004 /* NotificationManager.swift in Sources */,
+				3A1FA584245EA5E1000BAA20 /* LoadingPresenter.swift in Sources */,
 				54008D8B237C9F2D0072EC00 /* Song.swift in Sources */,
 				3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */,
 				3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */,
@@ -1378,6 +1405,7 @@
 				54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */,
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
+				3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
 				3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */,
 				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,

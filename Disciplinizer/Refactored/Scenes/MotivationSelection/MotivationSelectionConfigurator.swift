@@ -16,7 +16,7 @@ class MotivationSelectionConfigurator: MotivationSelectionConfiguratorProtocol {
 
     func configure(motivationSelectionViewController: MotivatonSelectionViewController) {
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()
-        let motivationalItemParameterUseCase = ItemParameterUseCase(challengesParametersGateway: challengeParametersGateway)
+        let motivationalItemParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
 
         let presenter = MotivatoinSelectionPresenter(view: motivationSelectionViewController,
                                                      motivationalItemUseCase: motivationalItemParameterUseCase)

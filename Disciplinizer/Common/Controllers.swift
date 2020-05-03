@@ -67,10 +67,16 @@ enum Controller {
         return vc
     }
 
-    static func alert(_ message: String) -> UIViewController {
+    static func alert(model: AlertModel) -> UIViewController {
         let vc = AlertViewController.fromStoryboard(.alert)
-        let presenter = AlertPresenter(view: vc, message: message)
-        vc.presenter = presenter
+        let configurator = AlertConfigurator(model: model)
+        vc.configurator = configurator
+
+        return vc
+    }
+    
+    static func loading() -> UIViewController {
+        let vc = LoadingViewController.fromStoryboard(.loading)
 
         return vc
     }
