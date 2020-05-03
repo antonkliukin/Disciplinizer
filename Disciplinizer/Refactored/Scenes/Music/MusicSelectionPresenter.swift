@@ -11,6 +11,7 @@ import Foundation
 protocol MusicSelectionPresenterProtocol {
     func viewDidLoad()
     func didSelect(song: Song)
+    func dismiss()
 }
 
 final class MusicSelectionPresenter: MusicSelectionPresenterProtocol {
@@ -43,5 +44,9 @@ final class MusicSelectionPresenter: MusicSelectionPresenterProtocol {
         view.router?.dismiss()
 
         changePlaybackStateUseCase.play(song: song, withVolume: 1) { (_) in return }
+    }
+    
+    func dismiss() {
+        view.router?.dismiss()
     }
 }

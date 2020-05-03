@@ -91,7 +91,7 @@ enum Controller {
     }
 
     static func createMusicSelect() -> MusicSelectViewController {
-        let vc = MusicSelectViewController.fromStoryboard(.settings)
+        let vc = MusicSelectViewController.fromStoryboard(.musicSelection)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         

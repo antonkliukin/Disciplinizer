@@ -31,7 +31,7 @@ class SongSelectCell: UITableViewCell {
     }
 
     private func playImage(active: Bool) -> UIImage? {
-        let image = active ? R.image.playFill() : R.image.play()
+        let image = active ? R.image.stop_button()! : R.image.play_button()!
         return image
     }
 }

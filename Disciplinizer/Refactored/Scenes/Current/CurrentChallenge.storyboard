@@ -17,107 +17,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDH-Zy-o0n">
-                                <rect key="frame" x="20" y="382" width="374" height="132"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
+                                <rect key="frame" x="107.5" y="373" width="199.5" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LEFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
-                                        <rect key="frame" x="20" y="20" width="334" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
+                                        <rect key="frame" x="69.5" y="0.0" width="60.5" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
-                                        <rect key="frame" x="20" y="51" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="199.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GBp-Sf-fEl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                        <color key="textColor" name="lightBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
+                                        <rect key="frame" x="11.5" y="100" width="176.5" height="50"/>
+                                        <string key="text">You’ll have to spend time
+watching 3 ads if you give up</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="lci-T7-9qP" firstAttribute="leading" secondItem="KDH-Zy-o0n" secondAttribute="leading" constant="20" id="ET8-bq-FP7"/>
-                                    <constraint firstAttribute="trailing" secondItem="lci-T7-9qP" secondAttribute="trailing" constant="20" id="F7n-tV-Eg7"/>
-                                    <constraint firstItem="lci-T7-9qP" firstAttribute="top" secondItem="KDH-Zy-o0n" secondAttribute="top" constant="20" id="O9E-Ap-Xxq"/>
-                                    <constraint firstAttribute="height" constant="132" id="g50-Km-WjJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="hUh-Hf-ifj" secondAttribute="trailing" constant="20" id="gLn-dN-zkF"/>
-                                    <constraint firstItem="hUh-Hf-ifj" firstAttribute="leading" secondItem="KDH-Zy-o0n" secondAttribute="leading" constant="20" id="muF-XU-fe7"/>
-                                    <constraint firstItem="hUh-Hf-ifj" firstAttribute="top" secondItem="lci-T7-9qP" secondAttribute="bottom" constant="10" id="yJJ-WW-Csk"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="534" width="374" height="50"/>
-                                <color key="backgroundColor" name="CTOrange"/>
+                                <rect key="frame" x="167" y="702" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Dcz-sQ-Dwp"/>
+                                    <constraint firstAttribute="width" constant="80" id="9Jf-xY-G9M"/>
+                                    <constraint firstAttribute="height" constant="80" id="KTD-KR-cJt"/>
                                 </constraints>
-                                <state key="normal" title="Give up!"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Give up">
+                                    <color key="titleColor" name="lightBlue"/>
+                                </state>
                                 <connections>
-                                    <action selector="onStopButtonTap:" destination="vrb-aV-sEL" eventType="touchUpInside" id="45b-iC-IH5"/>
+                                    <action selector="didTapGiveUpButton:" destination="vrb-aV-sEL" eventType="touchUpInside" id="fJ8-34-hUv"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-1L-ySj">
-                                <rect key="frame" x="346" y="76" width="48" height="112"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-g2-Q1R">
-                                        <rect key="frame" x="12" y="72" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="jiw-W8-n1T"/>
-                                            <constraint firstAttribute="height" constant="24" id="qXa-xr-5Q4"/>
-                                        </constraints>
-                                        <color key="tintColor" name="CTOrange"/>
-                                        <state key="normal" image="play">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-Ym-Tqb">
-                                        <rect key="frame" x="12" y="16" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="IaK-RU-irG"/>
-                                            <constraint firstAttribute="width" constant="24" id="Syc-gb-4Cj"/>
-                                        </constraints>
-                                        <color key="tintColor" name="CTOrange"/>
-                                        <state key="normal" image="music.note.list">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onMusicSelectTap:" destination="vrb-aV-sEL" eventType="touchUpInside" id="3yk-Ev-WeM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-Ym-Tqb">
+                                <rect key="frame" x="310" y="720" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="e2g-Ym-Tqb" firstAttribute="top" secondItem="eJP-1L-ySj" secondAttribute="top" constant="16" id="AZg-Bg-ZpV"/>
-                                    <constraint firstAttribute="bottom" secondItem="6ey-g2-Q1R" secondAttribute="bottom" constant="16" id="DEe-7l-g45"/>
-                                    <constraint firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="12" id="QaW-de-g7h"/>
-                                    <constraint firstItem="6ey-g2-Q1R" firstAttribute="centerX" secondItem="e2g-Ym-Tqb" secondAttribute="centerX" id="ZFO-5y-750"/>
-                                    <constraint firstItem="6ey-g2-Q1R" firstAttribute="top" secondItem="e2g-Ym-Tqb" secondAttribute="bottom" constant="32" id="lbf-1I-btT"/>
-                                    <constraint firstItem="e2g-Ym-Tqb" firstAttribute="leading" secondItem="eJP-1L-ySj" secondAttribute="leading" constant="12" id="sui-5M-gkZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="IaK-RU-irG"/>
+                                    <constraint firstAttribute="width" constant="44" id="Syc-gb-4Cj"/>
                                 </constraints>
-                            </view>
+                                <color key="tintColor" name="CTOrange"/>
+                                <state key="normal" image="music_icon">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapMusicSelectionButton:" destination="vrb-aV-sEL" eventType="touchUpInside" id="PaP-b9-apC"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" name="CTWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KDH-Zy-o0n" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" id="4kI-AW-Pxx"/>
-                            <constraint firstItem="eYj-Ov-J9I" firstAttribute="leading" secondItem="KDH-Zy-o0n" secondAttribute="leading" id="ARu-Am-wQS"/>
-                            <constraint firstItem="KDH-Zy-o0n" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="C0I-5V-eVv"/>
-                            <constraint firstItem="eJP-1L-ySj" firstAttribute="top" secondItem="Gtb-Pj-fHB" secondAttribute="top" constant="32" id="MKa-Rr-71R"/>
-                            <constraint firstItem="eYj-Ov-J9I" firstAttribute="top" secondItem="KDH-Zy-o0n" secondAttribute="bottom" constant="20" id="MjC-AQ-Nn8"/>
-                            <constraint firstItem="eYj-Ov-J9I" firstAttribute="width" secondItem="KDH-Zy-o0n" secondAttribute="width" id="hQl-6H-Tl1"/>
-                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="KDH-Zy-o0n" secondAttribute="trailing" constant="20" id="jKw-iX-Xg2"/>
-                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="eJP-1L-ySj" secondAttribute="trailing" constant="20" id="jiA-sC-fpM"/>
-                            <constraint firstItem="KDH-Zy-o0n" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="20" id="krj-eT-HZT"/>
+                            <constraint firstItem="eYj-Ov-J9I" firstAttribute="centerX" secondItem="Gtb-Pj-fHB" secondAttribute="centerX" id="5Mv-Vw-rGa"/>
+                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="6rq-dK-gMw"/>
+                            <constraint firstItem="e2g-Ym-Tqb" firstAttribute="centerY" secondItem="eYj-Ov-J9I" secondAttribute="centerY" id="A6j-Yu-ilw"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="80" id="Iqp-7b-S5V"/>
+                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" id="iBp-ZH-H7T"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="60" id="mvO-H6-9Us"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtb-Pj-fHB"/>
                     </view>
                     <connections>
-                        <outlet property="musicSelectView" destination="eJP-1L-ySj" id="ay7-5G-T37"/>
-                        <outlet property="playSoundButton" destination="6ey-g2-Q1R" id="5UJ-GH-hEq"/>
-                        <outlet property="stopButton" destination="eYj-Ov-J9I" id="p3e-L8-RJJ"/>
+                        <outlet property="giveUpButton" destination="eYj-Ov-J9I" id="dSJ-o0-908"/>
+                        <outlet property="musicSelectionButton" destination="e2g-Ym-Tqb" id="Zs4-2e-UGB"/>
                         <outlet property="timerLabel" destination="hUh-Hf-ifj" id="IDH-jg-Mee"/>
-                        <outlet property="timerView" destination="KDH-Zy-o0n" id="AWV-7e-cOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1a-Vu-3Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -126,13 +99,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="music.note.list" width="147" height="147"/>
-        <image name="play" width="147" height="147"/>
+        <image name="music_icon" width="16" height="16"/>
         <namedColor name="CTOrange">
             <color red="0.81599998474121094" green="0.60399997234344482" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="CTWhite">
-            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="lightBlue">
+            <color red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

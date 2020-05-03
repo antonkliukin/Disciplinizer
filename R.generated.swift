@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
     /// Storyboard `Ad`.
     static let ad = _R.storyboard.ad()
@@ -113,6 +113,8 @@ struct R: Rswift.Validatable {
     static let loading = _R.storyboard.loading()
     /// Storyboard `MotivationSelection`.
     static let motivationSelection = _R.storyboard.motivationSelection()
+    /// Storyboard `MusicSelection`.
+    static let musicSelection = _R.storyboard.musicSelection()
     /// Storyboard `PageNavigation`.
     static let pageNavigation = _R.storyboard.pageNavigation()
     /// Storyboard `Settings`.
@@ -198,6 +200,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MusicSelection", bundle: ...)`
+    static func musicSelection(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.musicSelection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "PageNavigation", bundle: ...)`
     static func pageNavigation(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.pageNavigation)
@@ -222,7 +231,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 24 colors.
+  /// This `R.color` struct is generated, and contains static references to 25 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
@@ -240,8 +249,6 @@ struct R: Rswift.Validatable {
     static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
     /// Color `CTWhite`.
     static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
-    /// Color `LightBlue`.
-    static let lightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightBlue")
     /// Color `LightGreyText`.
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
@@ -262,8 +269,12 @@ struct R: Rswift.Validatable {
     static let greenText = Rswift.ColorResource(bundle: R.hostingBundle, name: "greenText")
     /// Color `greyCat`.
     static let greyCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "greyCat")
+    /// Color `grey`.
+    static let grey = Rswift.ColorResource(bundle: R.hostingBundle, name: "grey")
     /// Color `lightBlueCat`.
     static let lightBlueCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightBlueCat")
+    /// Color `lightBlue`.
+    static let lightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightBlue")
     /// Color `lightGrey`.
     static let lightGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGrey")
     /// Color `lightOrangeCat`.
@@ -342,15 +353,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func ctWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.ctWhite, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "LightBlue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func lightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.lightBlue, compatibleWith: traitCollection)
     }
     #endif
 
@@ -436,11 +438,29 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "grey", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func grey(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.grey, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "greyCat", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func greyCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.greyCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightBlue", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightBlue, compatibleWith: traitCollection)
     }
     #endif
 
@@ -562,7 +582,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 16 images.
+  /// This `R.image` struct is generated, and contains static references to 20 images.
   struct image {
     /// Image `ad_icon`.
     static let ad_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad_icon")
@@ -580,18 +600,26 @@ struct R: Rswift.Validatable {
     static let launch_title = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_title")
     /// Image `music.note.list`.
     static let musicNoteList = Rswift.ImageResource(bundle: R.hostingBundle, name: "music.note.list")
+    /// Image `music_icon`.
+    static let music_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "music_icon")
     /// Image `no_cat`.
     static let no_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "no_cat")
     /// Image `pinko_cat`.
     static let pinko_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "pinko_cat")
     /// Image `play.fill`.
     static let playFill = Rswift.ImageResource(bundle: R.hostingBundle, name: "play.fill")
+    /// Image `play_button`.
+    static let play_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "play_button")
     /// Image `play`.
     static let play = Rswift.ImageResource(bundle: R.hostingBundle, name: "play")
     /// Image `settings_icon`.
     static let settings_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_icon")
+    /// Image `stop_button`.
+    static let stop_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "stop_button")
     /// Image `tilda_cat`.
     static let tilda_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "tilda_cat")
+    /// Image `timer_background`.
+    static let timer_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "timer_background")
     /// Image `tracker_icon`.
     static let tracker_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tracker_icon")
     /// Image `valli_cat`.
@@ -654,6 +682,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "music_icon", bundle: ..., traitCollection: ...)`
+    static func music_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.music_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "no_cat", bundle: ..., traitCollection: ...)`
     static func no_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.no_cat, compatibleWith: traitCollection)
@@ -682,6 +717,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "play_button", bundle: ..., traitCollection: ...)`
+    static func play_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.play_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "settings_icon", bundle: ..., traitCollection: ...)`
     static func settings_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.settings_icon, compatibleWith: traitCollection)
@@ -689,9 +731,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "stop_button", bundle: ..., traitCollection: ...)`
+    static func stop_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.stop_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "tilda_cat", bundle: ..., traitCollection: ...)`
     static func tilda_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tilda_cat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "timer_background", bundle: ..., traitCollection: ...)`
+    static func timer_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timer_background, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2041,6 +2097,9 @@ struct _R: Rswift.Validatable {
       try motivationSelection.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try musicSelection.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try pageNavigation.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2167,11 +2226,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "music.note.list", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'music.note.list' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "play", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "music_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'music_icon' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.currentChallenge().currentChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currentChallengeViewController' could not be loaded from storyboard 'CurrentChallenge' as 'CurrentChallengeViewController'.") }
       }
@@ -2285,6 +2343,30 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct musicSelection: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let musicSelectViewController = StoryboardViewControllerResource<MusicSelectViewController>(identifier: "MusicSelectViewController")
+      let name = "MusicSelection"
+
+      func musicSelectViewController(_: Void = ()) -> MusicSelectViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: musicSelectViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "play_button", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play_button' is used in storyboard 'MusicSelection', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'MusicSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "grey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'grey' is used in storyboard 'MusicSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'MusicSelection', but couldn't be loaded.") }
+        }
+        if _R.storyboard.musicSelection().musicSelectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'musicSelectViewController' could not be loaded from storyboard 'MusicSelection' as 'MusicSelectViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct pageNavigation: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PageNavigation"
@@ -2307,27 +2389,18 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct settings: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let musicSelectViewController = StoryboardViewControllerResource<MusicSelectViewController>(identifier: "MusicSelectViewController")
       let name = "Settings"
       let settingsViewController = StoryboardViewControllerResource<SettingsViewController>(identifier: "SettingsViewController")
-
-      func musicSelectViewController(_: Void = ()) -> MusicSelectViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: musicSelectViewController)
-      }
 
       func settingsViewController(_: Void = ()) -> SettingsViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsViewController)
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "play", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play' is used in storyboard 'Settings', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTBlack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlack' is used in storyboard 'Settings', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTGray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTGray' is used in storyboard 'Settings', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'Settings', but couldn't be loaded.") }
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Settings', but couldn't be loaded.") }
         }
-        if _R.storyboard.settings().musicSelectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'musicSelectViewController' could not be loaded from storyboard 'Settings' as 'MusicSelectViewController'.") }
         if _R.storyboard.settings().settingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewController' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
       }
 

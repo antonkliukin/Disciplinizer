@@ -52,7 +52,7 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
         UIView.animate(withDuration: 0.1, animations: {
             self.shadowView.alpha = 0
         }, completion: { _ in
-            //self.presenter?.didSelect(song: self.selectedSong)
+            self.presenter?.dismiss()
         })
     }
     

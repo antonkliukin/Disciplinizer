@@ -64,6 +64,7 @@
 		3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A47D67E230F1E8B00B2B200 /* Config.plist */; };
 		3A47D682230F217200B2B200 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47D681230F217200B2B200 /* KeychainService.swift */; };
 		3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */; };
+		3A5C53FE245EDCCC00BF1A26 /* MusicSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5C53FD245EDCCC00BF1A26 /* MusicSelection.storyboard */; };
 		3A653D9A24155E2700BE613C /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9924155E2700BE613C /* NSError.swift */; };
 		3A653D9C2416378C00BE613C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9B2416378C00BE613C /* Result.swift */; };
 		3A653DAE24196B6B00BE613C /* BlockedStateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */; };
@@ -230,6 +231,7 @@
 		3A47D67E230F1E8B00B2B200 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3A47D681230F217200B2B200 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3A5C53FD245EDCCC00BF1A26 /* MusicSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicSelection.storyboard; sourceTree = "<group>"; };
 		3A653D9924155E2700BE613C /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		3A653D9B2416378C00BE613C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedStateConfigurator.swift; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 				54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */,
 				54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */,
 				54325879237A094D0082DEB0 /* SongSelectCell.swift */,
+				3A5C53FD245EDCCC00BF1A26 /* MusicSelection.storyboard */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
 				5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */,
+				3A5C53FE245EDCCC00BF1A26 /* MusicSelection.storyboard in Resources */,
 				3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */,
 				3A0742AF241E3AAB003B1A83 /* TimeSelection.storyboard in Resources */,
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,

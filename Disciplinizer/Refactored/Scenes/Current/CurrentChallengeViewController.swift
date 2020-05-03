@@ -18,12 +18,9 @@ protocol CurrentChallengeViewProtocol: ViewProtocol {
 // MARK: - Current Challenge View Controller
 
 final class CurrentChallengeViewController: UIViewController, CurrentChallengeViewProtocol {
-    
-    @IBOutlet weak var timerView: UIView!
-    @IBOutlet weak var musicSelectView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var stopButton: MainButton!
-    @IBOutlet weak var playSoundButton: UIButton!
+    @IBOutlet weak var giveUpButton: MainButton!
+    @IBOutlet weak var musicSelectionButton: UIButton!
     
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
@@ -39,34 +36,35 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
 
         configurator?.configure(currentChallengeViewController: self)
         
-        presenter?.viewDidLoad()
         setupUI()
+        
+        presenter?.viewDidLoad()
+
         addAppDelegateObservers()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         presenter?.viewDidAppear()
     }
+    
+    private func setupUI() {
+        giveUpButton.roundCorners(corners: .all, radius: giveUpButton.bounds.size.height / 2)
+        musicSelectionButton.roundCorners(corners: .all, radius: musicSelectionButton.bounds.size.height / 2)
+    }
 
-    @IBAction private func onStopButtonTap(_ sender: MainButton) {
+    @IBAction private func didTapGiveUpButton(_ sender: MainButton) {
         presenter?.didTapStopChallenge()
     }
     
-    @IBAction private func onMusicSelectTap(_ sender: UIButton) {
+    
+    @IBAction private func didTapMusicSelectionButton(_ sender: Any) {
         presenter?.didTapMusicSelection()
     }
-        
+            
     func updateTimer(time: String) {
         timerLabel.text = time
-    }
-
-    private func setupUI() {
-//        timerView.roundCorners()
-//        timerView.addShadow()
-//        musicSelectView.roundCorners()
-//        musicSelectView.addShadow(opacity: 0.1)
     }
 
     private func addAppDelegateObservers() {
