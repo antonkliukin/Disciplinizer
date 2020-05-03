@@ -49,8 +49,8 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-8r-9BI">
-                                <rect key="frame" x="10" y="239" width="394" height="623"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="10" y="204" width="394" height="658"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Rh-kD-74d" customClass="StackCollectionViewLayout" customModule="Disciplinizer" customModuleProvider="target">
                                     <size key="itemSize" width="353" height="164"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RXk-CV-O0s" secondAttribute="leading" constant="30" id="NYh-uJ-SJq"/>
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="top" secondItem="RXk-CV-O0s" secondAttribute="top" constant="50" id="WaA-KJ-x6w"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rmn-d2-9Dz" secondAttribute="trailing" constant="30" id="Wlq-W1-9Ij"/>
-                            <constraint firstItem="Cvy-8r-9BI" firstAttribute="top" secondItem="Rmn-d2-9Dz" secondAttribute="bottom" constant="45" id="bWj-Ji-5i5"/>
+                            <constraint firstItem="Cvy-8r-9BI" firstAttribute="top" secondItem="Rmn-d2-9Dz" secondAttribute="bottom" constant="10" id="bWj-Ji-5i5"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="bottom" secondItem="Cvy-8r-9BI" secondAttribute="bottom" id="ifx-3w-oja"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" secondItem="Cvy-8r-9BI" secondAttribute="trailing" constant="10" id="kw2-wU-KUW"/>
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="centerX" secondItem="RXk-CV-O0s" secondAttribute="centerX" id="suw-7B-DvW"/>

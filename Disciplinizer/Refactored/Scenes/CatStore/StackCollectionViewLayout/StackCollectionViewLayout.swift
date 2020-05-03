@@ -9,7 +9,7 @@
 import UIKit
 
 class StackCollectionViewLayout: UICollectionViewFlowLayout {
-    private let topInset: CGFloat = 20
+    private let topInset: CGFloat = 50
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return super.layoutAttributesForElements(in: rect)?.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }.compactMap(addStackAnimationToAttributes)
@@ -45,11 +45,11 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
         
         if cellTopSpace >= 0 {
             attributes.frame.origin.y += cellTopSpace
-        } else {
-            attributes.alpha = 1 - abs(cellTopSpace / (cellHeight * 2))
-            let scaleFactor: CGFloat = 1 - abs(cellTopSpace / (cellHeight * 4.5))
-            attributes.transform = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
         }
+        
+        let scaleFactor: CGFloat = 1 - abs(cellTopSpace / (cellHeight * 4.5))
+        attributes.transform = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+        attributes.alpha = 1 - abs(cellTopSpace / (cellHeight * 2))
         
         let nextCellTopSpace = contentOffset.y - (cellHeight * CGFloat(attributes.indexPath.row + 1))
         let liftCellToTopRate: CGFloat = topInset - abs(nextCellTopSpace) / (cellHeight / topInset)

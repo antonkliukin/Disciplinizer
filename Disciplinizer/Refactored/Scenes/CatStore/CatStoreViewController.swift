@@ -82,7 +82,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension CatStoreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 0, bottom: 210, right: 0)
+        return UIEdgeInsets(top: 50, left: 0, bottom: 210, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
