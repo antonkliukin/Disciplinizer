@@ -59,8 +59,8 @@ class CatStorePresenter: CatStorePresenterProtocol {
         self.motivationParameterUseCase.addPaid(motivationalItem: item) { (result) in
             let alertModel = AlertModel(title: Strings.alertTitleSuccess(),
                                         message: Strings.alertMessageSuccess(),
-                                        actionTitle: Strings.alertActionBack(),
-                                        action: {
+                                        positiveActionTitle: Strings.alertActionBack(),
+                                        positiveAction: {
                                             self.view?.router?.pop(animated: true, toRoot: true)
             })
             

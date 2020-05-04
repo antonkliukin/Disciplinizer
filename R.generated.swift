@@ -1183,7 +1183,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 44 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 49 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1213,6 +1213,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Continue
+      ///
+      /// Locales: ru, en
+      static let currentAlertGiveUpPositive = Rswift.StringResource(key: "current.alert.giveUp.positive", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Continue without a cat
       ///
       /// Locales: ru, en
@@ -1221,6 +1225,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let motivationItemLevel1Title = Rswift.StringResource(key: "motivationItem.level1.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Do you really want to give up?
+      ///
+      /// Locales: ru, en
+      static let currentAlertGiveUpTitle = Rswift.StringResource(key: "current.alert.giveUp.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Does your task require concentration?
       ///
       /// Locales: ru, en
@@ -1241,6 +1249,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseCatMainButton = Rswift.StringResource(key: "lose.cat.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Give up
+      ///
+      /// Locales: ru, en
+      static let currentAlertGiveUpNegative = Rswift.StringResource(key: "current.alert.giveUp.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Got it!
       ///
       /// Locales: ru, en
@@ -1253,6 +1265,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: If you’ll give up, your cat will leave you
+      ///
+      /// Locales: ru, en
+      static let currentAlertGiveUpCatDescription = Rswift.StringResource(key: "current.alert.giveUp.catDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: If you’ll give up, you’ll have to watch 3 ads.
+      ///
+      /// Locales: ru, en
+      static let currentAlertGiveUpAdDescription = Rswift.StringResource(key: "current.alert.giveUp.adDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Localized string
       ///
       /// Locales: ru, en
@@ -1469,6 +1489,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Continue
+      ///
+      /// Locales: ru, en
+      static func currentAlertGiveUpPositive(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.alert.giveUp.positive", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.alert.giveUp.positive"
+        }
+
+        return NSLocalizedString("current.alert.giveUp.positive", bundle: bundle, comment: "")
+      }
+
       /// en translation: Continue without a cat
       ///
       /// Locales: ru, en
@@ -1497,6 +1532,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.level1.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Do you really want to give up?
+      ///
+      /// Locales: ru, en
+      static func currentAlertGiveUpTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.alert.giveUp.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.alert.giveUp.title"
+        }
+
+        return NSLocalizedString("current.alert.giveUp.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Does your task require concentration?
@@ -1574,6 +1624,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.cat.mainButton", bundle: bundle, comment: "")
       }
 
+      /// en translation: Give up
+      ///
+      /// Locales: ru, en
+      static func currentAlertGiveUpNegative(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.alert.giveUp.negative", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.alert.giveUp.negative"
+        }
+
+        return NSLocalizedString("current.alert.giveUp.negative", bundle: bundle, comment: "")
+      }
+
       /// en translation: Got it!
       ///
       /// Locales: ru, en
@@ -1617,6 +1682,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.firstPage.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: If you’ll give up, your cat will leave you
+      ///
+      /// Locales: ru, en
+      static func currentAlertGiveUpCatDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.alert.giveUp.catDescription", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.alert.giveUp.catDescription"
+        }
+
+        return NSLocalizedString("current.alert.giveUp.catDescription", bundle: bundle, comment: "")
+      }
+
+      /// en translation: If you’ll give up, you’ll have to watch 3 ads.
+      ///
+      /// Locales: ru, en
+      static func currentAlertGiveUpAdDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.alert.giveUp.adDescription", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.alert.giveUp.adDescription"
+        }
+
+        return NSLocalizedString("current.alert.giveUp.adDescription", bundle: bundle, comment: "")
       }
 
       /// en translation: Localized string

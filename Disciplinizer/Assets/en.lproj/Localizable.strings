@@ -80,6 +80,15 @@
 "timeSelection.errorMessage" = "please enter time from 15 to 120 minutes";
 
 //******************************************************************************
+// Current
+//******************************************************************************
+"current.alert.giveUp.title" = "Do you really want to give up?";
+"current.alert.giveUp.catDescription" = "If you’ll give up, your cat will leave you";
+"current.alert.giveUp.adDescription" = "If you’ll give up, you’ll have to watch 3 ads.";
+"current.alert.giveUp.positive" = "Continue";
+"current.alert.giveUp.negative" = "Give up";
+
+//******************************************************************************
 // Cat Store
 //******************************************************************************
 "alert.title.success" = "Success!";

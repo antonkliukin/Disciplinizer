@@ -10,7 +10,8 @@ import Foundation
 
 protocol AlertPresenterProtocol {
     func viewDidLoad()
-    func didTapAlertAction()
+    func didTapPositiveAlertAction()
+    func didTapNegativeAlertAction()
 }
 
 class AlertPresenter: AlertPresenterProtocol {
@@ -28,8 +29,13 @@ class AlertPresenter: AlertPresenterProtocol {
         view?.configure(model)
     }
 
-    func didTapAlertAction() {
+    func didTapPositiveAlertAction() {
         view?.router?.dismiss()
-        model.action?()
+        model.positiveAction?()
+    }
+    
+    func didTapNegativeAlertAction() {
+        view?.router?.dismiss()
+        model.negativeAction?()
     }
 }

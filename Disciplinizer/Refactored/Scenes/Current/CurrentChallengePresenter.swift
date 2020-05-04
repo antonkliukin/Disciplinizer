@@ -60,10 +60,21 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
     
     func didTapStopChallenge() {
-        invalidateTimer()
+        let alertDescription = challenge.motivationalItem == .ad ? Strings.currentAlertGiveUpAdDescription() : Strings.currentAlertGiveUpCatDescription()
+        
+        let alertModel = AlertModel(title: Strings.currentAlertGiveUpTitle(),
+                                    message: alertDescription,
+                                    positiveActionTitle: Strings.currentAlertGiveUpPositive(),
+                                    positiveAction: nil,
+                                    negativeActionTitle: Strings.currentAlertGiveUpNegative(),
+                                    negativeAction: {
+                                        self.invalidateTimer()
 
-        // TODO: - Add confirmation alert
-        saveFinishedChallenge(challenge, withResult: .lose)
+                                        self.saveFinishedChallenge(self.challenge, withResult: .lose)
+        })
+        
+        let alert = Controller.alert(model: alertModel)
+        view?.router?.present(alert)
     }
 
     func didTapMusicSelection() {

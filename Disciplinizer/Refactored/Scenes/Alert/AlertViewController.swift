@@ -12,8 +12,10 @@ import UIKit
 struct AlertModel {
     var title = ""
     var message = ""
-    var actionTitle = ""
-    var action: (() -> Void)? = nil
+    var positiveActionTitle = ""
+    var positiveAction: (() -> Void)? = nil
+    var negativeActionTitle = ""
+    var negativeAction: (() -> Void)? = nil
 }
 
 protocol AlertViewProtocol: ViewProtocol {
@@ -47,10 +49,19 @@ class AlertViewController: UIViewController, AlertViewProtocol {
     private func presentAlert() {
         let alert = UIAlertController(title: alertModel?.title, message: alertModel?.message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: alertModel?.actionTitle, style: .default) { (_) in
-            self.presenter.didTapAlertAction()
+        if let positiveTitle = alertModel?.positiveActionTitle {
+            let action = UIAlertAction(title: positiveTitle, style: .default) { (_) in
+                self.presenter.didTapPositiveAlertAction()
+            }
+            alert.addAction(action)
         }
-        alert.addAction(action)
+        
+        if let negativeTitle = alertModel?.negativeActionTitle {
+            let action = UIAlertAction(title: negativeTitle, style: .destructive) { (_) in
+                self.presenter.didTapNegativeAlertAction()
+            }
+            alert.addAction(action)
+        }
         
         present(alert, animated: true, completion: nil)
     }
