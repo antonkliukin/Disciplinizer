@@ -119,15 +119,12 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     private func createChallenge() {
-        let isPaid = false
-        let betId = "1"
-        
+
         let challengeParameters = ChallengeParameters(startDate: Date(),
                                                       finishDate: nil,
                                                       durationInMinutes: selectedDurationInMinutes,
                                                       isSuccess: false,
-                                                      isPaid: isPaid,
-                                                      betId: betId)
+                                                      motivationalItem: MotivationalItem.ad)
 
         createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
             guard let self = self else {

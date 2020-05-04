@@ -17,8 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer_background" translatesAutoresizingMaskIntoConstraints="NO" id="P5x-wf-5Z5">
+                                <rect key="frame" x="25" y="221" width="364" height="364"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="P5x-wf-5Z5" secondAttribute="height" id="dbt-du-wNa"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
-                                <rect key="frame" x="107.5" y="373" width="199.5" height="150"/>
+                                <rect key="frame" x="107.5" y="318" width="199.5" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
                                         <rect key="frame" x="69.5" y="0.0" width="60.5" height="50"/>
@@ -79,11 +85,15 @@ watching 3 ads if you give up</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eYj-Ov-J9I" firstAttribute="centerX" secondItem="Gtb-Pj-fHB" secondAttribute="centerX" id="5Mv-Vw-rGa"/>
-                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="6rq-dK-gMw"/>
                             <constraint firstItem="e2g-Ym-Tqb" firstAttribute="centerY" secondItem="eYj-Ov-J9I" secondAttribute="centerY" id="A6j-Yu-ilw"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="80" id="Iqp-7b-S5V"/>
-                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" id="iBp-ZH-H7T"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="P5x-wf-5Z5" secondAttribute="trailing" constant="25" id="LeS-QP-oNd"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" multiplier="0.9" id="MLN-6d-mO6"/>
+                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="P5x-wf-5Z5" secondAttribute="centerY" constant="-10" id="bsS-FX-yIh"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="60" id="mvO-H6-9Us"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="25" id="n8A-4a-foQ"/>
+                            <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="P5x-wf-5Z5" secondAttribute="centerX" id="nLi-kS-ly3"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="pbx-2U-GMh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtb-Pj-fHB"/>
                     </view>
@@ -100,6 +110,7 @@ watching 3 ads if you give up</string>
     </scenes>
     <resources>
         <image name="music_icon" width="16" height="16"/>
+        <image name="timer_background" width="326" height="319"/>
         <namedColor name="CTOrange">
             <color red="0.81599998474121094" green="0.60399997234344482" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -14,8 +14,7 @@ struct Challenge {
     var finishDate: Date?
     var duration: Int
     var isSuccess: Bool
-    var isPaid: Bool
-    var betId: String?
+    var motivationalItem: MotivationalItem
 }
 
 extension Challenge: Equatable { }

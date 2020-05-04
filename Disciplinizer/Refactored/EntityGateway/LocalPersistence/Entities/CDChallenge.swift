@@ -15,8 +15,7 @@ extension CDChallenge {
                          finishDate: finishDate,
                          duration: Int(durationInMinutes),
                          isSuccess: isSuccess,
-                         isPaid: isPaid,
-                         betId: betId)
+                         motivationalItem: MotivationalItem(rawValue: motivationalItemId ?? "0") ?? .ad)
     }
 
     func populate(with parameters: ChallengeParameters) {
@@ -27,8 +26,7 @@ extension CDChallenge {
         finishDate = parameters.finishDate
         durationInMinutes = Int16(parameters.durationInMinutes)
         isSuccess = parameters.isSuccess
-        isPaid = parameters.isPaid
-        betId = parameters.betId
+        motivationalItemId = parameters.motivationalItem.rawValue
     }
 
     func pupulate(with challenge: Challenge) {
@@ -37,7 +35,6 @@ extension CDChallenge {
         finishDate = challenge.finishDate
         durationInMinutes = Int16(challenge.duration)
         isSuccess = challenge.isSuccess
-        isPaid = challenge.isPaid
-        betId = challenge.betId
+        motivationalItemId = challenge.motivationalItem.rawValue
     }
 }

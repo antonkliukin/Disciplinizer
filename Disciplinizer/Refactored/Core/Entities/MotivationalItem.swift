@@ -16,15 +16,7 @@ enum MotivationalItem: String, CaseIterable {
     case level3 = "3"
     case level4 = "4"
     case level5 = "5"
-    
-    init?(index: Int) {
-        guard let item = MotivationalItem(rawValue: String(index)) else {
-            return nil
-        }
         
-        self = item
-    }
-    
     static var allCats: [MotivationalItem] {
         allCases.filter { $0 != .ad && $0 != .noPaidItem }
     }

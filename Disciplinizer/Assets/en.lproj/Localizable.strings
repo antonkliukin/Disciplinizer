@@ -32,8 +32,15 @@
 // Lose
 //******************************************************************************
 
-"purchase.buttonTitle" = "Unlock App";
-"purchase.loseMessage" = "In order to unlock the app you need to make a purchase equal to your challenge bet";
+"lose.cat.title" = "Your cat left you";
+"lose.cat.description" = "You live alone now";
+"lose.cat.mainButton" = "Get a new cat";
+"lose.cat.secondaryButton" = "Continue without a cat";
+
+"lose.ad.title" = "Time is your penalty";
+"lose.ad.description" = "Watch 3 ads";
+"lose.ad.mainButton" = "Execute a penalty and watch 3 ads";
+"lose.ad.secondaryButton" = "Buy a cat instead";
 
 //******************************************************************************
 // Motivational Item

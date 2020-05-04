@@ -582,12 +582,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 20 images.
+  /// This `R.image` struct is generated, and contains static references to 22 images.
   struct image {
     /// Image `ad_icon`.
     static let ad_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad_icon")
     /// Image `bar-icon-25`.
     static let barIcon25 = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar-icon-25")
+    /// Image `crying_cat`.
+    static let crying_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "crying_cat")
     /// Image `cuddly_cat`.
     static let cuddly_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "cuddly_cat")
     /// Image `fluffy_cat`.
@@ -620,6 +622,8 @@ struct R: Rswift.Validatable {
     static let tilda_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "tilda_cat")
     /// Image `timer_background`.
     static let timer_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "timer_background")
+    /// Image `timer`.
+    static let timer = Rswift.ImageResource(bundle: R.hostingBundle, name: "timer")
     /// Image `tracker_icon`.
     static let tracker_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tracker_icon")
     /// Image `valli_cat`.
@@ -636,6 +640,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "bar-icon-25", bundle: ..., traitCollection: ...)`
     static func barIcon25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.barIcon25, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "crying_cat", bundle: ..., traitCollection: ...)`
+    static func crying_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.crying_cat, compatibleWith: traitCollection)
     }
     #endif
 
@@ -741,6 +752,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tilda_cat", bundle: ..., traitCollection: ...)`
     static func tilda_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tilda_cat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "timer", bundle: ..., traitCollection: ...)`
+    static func timer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timer, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1165,7 +1183,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 44 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1183,6 +1201,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertActionBack = Rswift.StringResource(key: "alert.action.back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Buy a cat instead
+      ///
+      /// Locales: ru, en
+      static let loseAdSecondaryButton = Rswift.StringResource(key: "lose.ad.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Choose
       ///
       /// Locales: ru, en
@@ -1191,6 +1213,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Continue without a cat
+      ///
+      /// Locales: ru, en
+      static let loseCatSecondaryButton = Rswift.StringResource(key: "lose.cat.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Cuddly
       ///
       /// Locales: en
@@ -1199,6 +1225,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Execute a penalty and watch 3 ads
+      ///
+      /// Locales: ru, en
+      static let loseAdMainButton = Rswift.StringResource(key: "lose.ad.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Fluffy
       ///
       /// Locales: en
@@ -1207,6 +1237,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideThirdPageContent = Rswift.StringResource(key: "guide.thirdPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Get a new cat
+      ///
+      /// Locales: ru, en
+      static let loseCatMainButton = Rswift.StringResource(key: "lose.cat.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Got it!
       ///
       /// Locales: ru, en
@@ -1219,10 +1253,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideFirstPageTitle = Rswift.StringResource(key: "guide.firstPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
-      ///
-      /// Locales: ru, en
-      static let purchaseLoseMessage = Rswift.StringResource(key: "purchase.loseMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Localized string
       ///
       /// Locales: ru, en
@@ -1283,14 +1313,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationTimeTitle = Rswift.StringResource(key: "creation.timeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Unlock App
+      /// en translation: Time is your penalty
       ///
       /// Locales: ru, en
-      static let purchaseButtonTitle = Rswift.StringResource(key: "purchase.buttonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      static let loseAdTitle = Rswift.StringResource(key: "lose.ad.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Valli
       ///
       /// Locales: en
       static let motivationItemLevel5Title = Rswift.StringResource(key: "motivationItem.level5.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Watch 3 ads
+      ///
+      /// Locales: ru, en
+      static let loseAdDescription = Rswift.StringResource(key: "lose.ad.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: You live alone now
+      ///
+      /// Locales: ru, en
+      static let loseCatDescription = Rswift.StringResource(key: "lose.cat.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: You now have a new pet in your home
       ///
       /// Locales: ru, en
@@ -1299,6 +1337,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnBody = Rswift.StringResource(key: "notifications.return.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Your cat left you
+      ///
+      /// Locales: ru, en
+      static let loseCatTitle = Rswift.StringResource(key: "lose.cat.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: now lives with you
       ///
       /// Locales: ru, en
@@ -1382,6 +1424,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("alert.action.back", bundle: bundle, comment: "")
       }
 
+      /// en translation: Buy a cat instead
+      ///
+      /// Locales: ru, en
+      static func loseAdSecondaryButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.secondaryButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.secondaryButton"
+        }
+
+        return NSLocalizedString("lose.ad.secondaryButton", bundle: bundle, comment: "")
+      }
+
       /// en translation: Choose
       ///
       /// Locales: ru, en
@@ -1410,6 +1467,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Continue without a cat
+      ///
+      /// Locales: ru, en
+      static func loseCatSecondaryButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.cat.secondaryButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.cat.secondaryButton"
+        }
+
+        return NSLocalizedString("lose.cat.secondaryButton", bundle: bundle, comment: "")
       }
 
       /// en translation: Cuddly
@@ -1442,6 +1514,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.secondPage.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Execute a penalty and watch 3 ads
+      ///
+      /// Locales: ru, en
+      static func loseAdMainButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.mainButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.mainButton"
+        }
+
+        return NSLocalizedString("lose.ad.mainButton", bundle: bundle, comment: "")
+      }
+
       /// en translation: Fluffy
       ///
       /// Locales: en
@@ -1470,6 +1557,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.thirdPage.content", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Get a new cat
+      ///
+      /// Locales: ru, en
+      static func loseCatMainButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.cat.mainButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.cat.mainButton"
+        }
+
+        return NSLocalizedString("lose.cat.mainButton", bundle: bundle, comment: "")
       }
 
       /// en translation: Got it!
@@ -1515,21 +1617,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.firstPage.title", bundle: bundle, comment: "")
-      }
-
-      /// en translation: In order to unlock the app you need to make a purchase equal to your challenge bet
-      ///
-      /// Locales: ru, en
-      static func purchaseLoseMessage(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("purchase.loseMessage", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "purchase.loseMessage"
-        }
-
-        return NSLocalizedString("purchase.loseMessage", bundle: bundle, comment: "")
       }
 
       /// en translation: Localized string
@@ -1757,19 +1844,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("creation.timeTitle", bundle: bundle, comment: "")
       }
 
-      /// en translation: Unlock App
+      /// en translation: Time is your penalty
       ///
       /// Locales: ru, en
-      static func purchaseButtonTitle(preferredLanguages: [String]? = nil) -> String {
+      static func loseAdTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("purchase.buttonTitle", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("lose.ad.title", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "purchase.buttonTitle"
+          return "lose.ad.title"
         }
 
-        return NSLocalizedString("purchase.buttonTitle", bundle: bundle, comment: "")
+        return NSLocalizedString("lose.ad.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Valli
@@ -1785,6 +1872,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.level5.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Watch 3 ads
+      ///
+      /// Locales: ru, en
+      static func loseAdDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.description"
+        }
+
+        return NSLocalizedString("lose.ad.description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You live alone now
+      ///
+      /// Locales: ru, en
+      static func loseCatDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.cat.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.cat.description"
+        }
+
+        return NSLocalizedString("lose.cat.description", bundle: bundle, comment: "")
       }
 
       /// en translation: You now have a new pet in your home
@@ -1815,6 +1932,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications.return.body", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your cat left you
+      ///
+      /// Locales: ru, en
+      static func loseCatTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.cat.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.cat.title"
+        }
+
+        return NSLocalizedString("lose.cat.title", bundle: bundle, comment: "")
       }
 
       /// en translation: now lives with you
@@ -2162,8 +2294,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "crying_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crying_cat' is used in storyboard 'Blocked', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Blocked', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'Blocked', but couldn't be loaded.") }
         }
         if _R.storyboard.blocked().blockedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blockedViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
       }
@@ -2227,6 +2361,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "music_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'music_icon' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "timer_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'timer_background' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTOrange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTOrange' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'CurrentChallenge', but couldn't be loaded.") }

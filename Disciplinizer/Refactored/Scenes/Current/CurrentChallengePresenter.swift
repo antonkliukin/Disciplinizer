@@ -201,12 +201,13 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
             switch finishingResult {
             case .success(let finishedChallenge):
                 let isLose = !finishedChallenge.isSuccess
+                let adIsItem = finishedChallenge.motivationalItem == .ad
 
-                if isLose {
-                    print("Lose")
+                if isLose, adIsItem {
+                    print("Lose, app will be blocked until ad is viewed")
                     AppLockManager.shared.changeStateTo(.locked)
-                } else {
-                    print("Win")
+                } else if isLose {
+                    print("Lose without blocking")
                 }
 
                 self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)

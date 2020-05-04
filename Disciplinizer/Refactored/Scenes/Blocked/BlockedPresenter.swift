@@ -9,8 +9,9 @@
 import Foundation
 
 protocol BlockedPresenterProtocol {
-    func didTapPurchase()
     func viewDidLoad()
+    func didTapMainButton()
+    func didTapSecondaryButton()
 }
 
 final class BlockedPresenter: BlockedPresenterProtocol {
@@ -27,36 +28,34 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     }
 
     func viewDidLoad() {
-        view?.configureLoseMessage(Strings.purchaseLoseMessage())
-        view?.setButtonTitle(Strings.purchaseButtonTitle())
-    }
-
-    func didTapPurchase() {
-        guard NetworkState.isConnected else {
-            // TODO: Show alert
-            assertionFailure("Internet connection is needed")
-            return
-        }
-
-        if challenge.isPaid {
-            guard let betId = challenge.betId,
-                  let bet = StoreProductPrice.allCases.first(where: { $0.id == betId }) else {
-                    AppLockManager.shared.changeStateTo(.unlocked)
-                    view?.router?.dismiss()
-                    return
-            }
-
-            purchasesManager.makePurchase(price: bet) { [weak self] purchaseResult in
-                switch purchaseResult {
-                case .success:
-                    AppLockManager.shared.changeStateTo(.unlocked)
-                    self?.view?.router?.dismiss()
-                default:
-                    self?.view?.showError("Purchase error occured")
-                }
-            }
+        if challenge.motivationalItem == .ad {
+            view?.configureLoseTitle(Strings.loseAdTitle())
+            view?.configureLoseDescription(Strings.loseAdDescription())
+            view?.setMainButtonTitle(Strings.loseAdMainButton())
+            view?.setSecondaryButtonTitle(Strings.loseAdSecondaryButton())
+            view?.setImage(R.image.timer()!)
         } else {
+            view?.configureLoseTitle(Strings.loseCatTitle())
+            view?.configureLoseDescription(Strings.loseCatDescription())
+            view?.setMainButtonTitle(Strings.loseCatMainButton())
+            view?.setSecondaryButtonTitle(Strings.loseCatSecondaryButton())
+            view?.setImage(R.image.crying_cat()!)
+        }
+    }
+    
+    func didTapMainButton() {
+        if challenge.motivationalItem == .ad {
             view?.router?.present(Controller.createAdVC())
+        } else {
+            view?.router?.present(Controller.catStore())
+        }
+    }
+    
+    func didTapSecondaryButton() {
+        if challenge.motivationalItem == .ad {
+            view?.router?.present(Controller.catStore())
+        } else {
+            view?.router?.dismiss()
         }
     }
 }

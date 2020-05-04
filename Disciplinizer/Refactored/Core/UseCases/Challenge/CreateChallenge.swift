@@ -20,8 +20,7 @@ struct ChallengeParameters {
     var finishDate: Date?
     var durationInMinutes: Int
     var isSuccess: Bool
-    var isPaid: Bool
-    var betId: String?
+    var motivationalItem: MotivationalItem
 }
 
 class CreateChallengeUseCase: CreateChallengeUseCaseProtocol {

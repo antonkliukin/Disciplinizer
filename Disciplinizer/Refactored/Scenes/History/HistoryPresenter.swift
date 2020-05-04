@@ -94,7 +94,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
 
         cell.display(result: challenge.isSuccess ? "Success" : "Loose")
         cell.display(duration: "Duration: \(challenge.duration / 60) mins")
-        cell.display(motivationType: "Motivation: \(challenge.isPaid ? "Golden Coin" : "Watching Ad")")
+        // cell.display(motivationType: "Motivation: \(challenge.isPaid ? "Golden Coin" : "Watching Ad")")
     }
 
     private func createDateChallengeDict(challenges: [Challenge]) -> [String: [Challenge]] {
