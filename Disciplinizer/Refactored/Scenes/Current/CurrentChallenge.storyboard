@@ -24,25 +24,70 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
-                                <rect key="frame" x="107.5" y="318" width="199.5" height="150"/>
+                                <rect key="frame" x="107" y="318" width="200.5" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
-                                        <rect key="frame" x="69.5" y="0.0" width="60.5" height="50"/>
+                                        <rect key="frame" x="70" y="0.0" width="60.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
-                                        <rect key="frame" x="0.0" y="50" width="199.5" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W5-2K-w5e">
+                                        <rect key="frame" x="0.0" y="50" width="200.5" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
+                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="GBp-Sf-fEl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <color key="textColor" name="lightBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cw-4V-lwO">
+                                                <rect key="frame" x="58.5" y="0.0" width="12.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="6nT-aP-5Je"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <color key="textColor" name="lightBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTc-nR-cFY">
+                                                <rect key="frame" x="71" y="0.0" width="58.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="jpg-W2-klg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <color key="textColor" name="lightBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWX-Q3-Teh">
+                                                <rect key="frame" x="129.5" y="0.0" width="12.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Lpb-0X-QBX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <color key="textColor" name="lightBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hch-i9-Gc8">
+                                                <rect key="frame" x="142" y="0.0" width="58.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="wIl-bq-pT4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <color key="textColor" name="lightBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="GBp-Sf-fEl"/>
+                                            <constraint firstItem="hch-i9-Gc8" firstAttribute="width" secondItem="hUh-Hf-ifj" secondAttribute="width" id="cHe-7T-fT4"/>
+                                            <constraint firstItem="sTc-nR-cFY" firstAttribute="width" secondItem="hUh-Hf-ifj" secondAttribute="width" id="yvx-6y-eVQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
-                                        <color key="textColor" name="lightBlue"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
-                                        <rect key="frame" x="11.5" y="100" width="176.5" height="50"/>
+                                        <rect key="frame" x="12" y="100" width="176.5" height="50"/>
                                         <string key="text">You’ll have to spend time
 watching 3 ads if you give up</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -99,8 +144,10 @@ watching 3 ads if you give up</string>
                     </view>
                     <connections>
                         <outlet property="giveUpButton" destination="eYj-Ov-J9I" id="dSJ-o0-908"/>
+                        <outlet property="hoursLabel" destination="hUh-Hf-ifj" id="YjR-19-Aac"/>
+                        <outlet property="minutesLabel" destination="sTc-nR-cFY" id="LuR-Sg-XuG"/>
                         <outlet property="musicSelectionButton" destination="e2g-Ym-Tqb" id="Zs4-2e-UGB"/>
-                        <outlet property="timerLabel" destination="hUh-Hf-ifj" id="IDH-jg-Mee"/>
+                        <outlet property="secondsLabel" destination="hch-i9-Gc8" id="cXc-2r-riV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1a-Vu-3Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

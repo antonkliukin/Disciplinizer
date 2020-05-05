@@ -58,8 +58,6 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         configureStartButton()
         
         configurator.configure(createChallengeViewController: self)
-        
-        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

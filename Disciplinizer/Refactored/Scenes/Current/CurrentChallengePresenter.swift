@@ -52,13 +52,13 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     func viewDidLoad() {
         setupMusicController()
 
-        view?.updateTimer(time: convertSecondsToTimeString(durationInSeconds))
+        updateTimerView()
     }
 
     func viewDidAppear() {
         start(challenge)
     }
-    
+        
     func didTapStopChallenge() {
         let alertDescription = challenge.motivationalItem == .ad ? Strings.currentAlertGiveUpAdDescription() : Strings.currentAlertGiveUpCatDescription()
         
@@ -91,22 +91,19 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         musicView = musicController
     }
 
-    private func convertSecondsToTimeString(_ timeInSeconds: Int) -> String {
-        let seconds = timeInSeconds % 60
-        let minutes = (timeInSeconds / 60) % 60
-        let hours = timeInSeconds / 3600
-        let timeString = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
-
-        return timeString
+    private func convertSecondsToTimeString(_ timeInSeconds: Int) -> (hours: String, minutes: String, seconds: String) {
+        let seconds = String(format: "%0.2d", timeInSeconds % 60)
+        let minutes = String(format: "%0.2d", (timeInSeconds / 60) % 60)
+        let hours = String(format: "%0.2d", timeInSeconds / 3600)
+        
+        return (hours, minutes, seconds)
     }
     
     @objc private func updateTimer() {
         durationInSeconds -= 1
 
-        let timeString = convertSecondsToTimeString(durationInSeconds)
-
-        view?.updateTimer(time: timeString)
-
+        updateTimerView()
+        
         if durationInSeconds <= 0 {
             saveFinishedChallenge(challenge)
         }
@@ -226,5 +223,10 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 assertionFailure()
             }
         }
+    }
+    
+    private func updateTimerView() {
+        let timeString = convertSecondsToTimeString(durationInSeconds)
+        view?.updateTimer(hours: timeString.hours, minutes: timeString.minutes, seconds: timeString.seconds)
     }
 }

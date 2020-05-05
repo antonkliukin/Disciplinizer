@@ -23,6 +23,8 @@ class HistoryHeaderView: UITableViewHeaderFooterView {
         
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        contentView.backgroundColor = .white
                 
         mainView.roundCorners(corners: .all, radius: 8)
         mainView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.1),

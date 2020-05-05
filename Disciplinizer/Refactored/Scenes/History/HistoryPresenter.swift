@@ -199,14 +199,22 @@ final class HistoryPresenter: HistoryPresenterProtocol {
 
     private func createDateChallengeDict(challenges: [Challenge]) -> [Date: [Challenge]] {
         var dict: [Date: [Challenge]] = [:]
-
-        for challenge in challenges {
-            guard let date = challenge.startDate else {
+        let calendar = Calendar.current
+        
+        outerLoop: for challenge in challenges {
+            guard let startDate = challenge.startDate else {
                 assertionFailure()
                 continue
             }
+            
+            for (date, _) in dict {
+                if calendar.isDate(date, inSameDayAs: startDate) {
+                    dict[date, default: []].append(challenge)
+                    continue outerLoop
+                }
+            }
 
-            dict[date, default: []].append(challenge)
+            dict[startDate, default: []].append(challenge)
         }
 
         return dict

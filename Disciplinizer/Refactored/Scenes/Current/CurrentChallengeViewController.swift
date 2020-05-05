@@ -12,15 +12,19 @@ import UIKit
 
 protocol CurrentChallengeViewProtocol: ViewProtocol {
     var isDeviceLocked: Bool { get }
-    func updateTimer(time: String)
+    func updateTimer(hours: String, minutes: String, seconds: String)
 }
 
 // MARK: - Current Challenge View Controller
 
 final class CurrentChallengeViewController: UIViewController, CurrentChallengeViewProtocol {
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
+    @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var giveUpButton: MainButton!
     @IBOutlet weak var musicSelectionButton: UIButton!
+    
+    
     
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
@@ -62,11 +66,13 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     @IBAction private func didTapMusicSelectionButton(_ sender: Any) {
         presenter?.didTapMusicSelection()
     }
-            
-    func updateTimer(time: String) {
-        timerLabel.text = time
+    
+    func updateTimer(hours: String, minutes: String, seconds: String) {
+        hoursLabel.text = hours
+        minutesLabel.text = minutes
+        secondsLabel.text = seconds
     }
-
+            
     private func addAppDelegateObservers() {
         notifCenter.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notifCenter.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)

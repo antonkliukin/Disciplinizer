@@ -9,20 +9,18 @@
 import Foundation
 
 protocol CreateChallengePresenterProtocol {
-    func viewDidLoad()
     func viewWillAppear()
     func startButtonTapped()
-    func didChooseMode(_ mode: ChallengeMode)
-    func didSetTimer(withTimeInMinutes minutes: Int)
 }
 
 final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private weak var view: CreateChallengeViewProtocol?
     private let createChallengeUseCase: CreateChallengeUseCaseProtocol
-    private let motivationItemUseCase: MotivationParameterUseCaseProtocol
+    private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
 
     private var newChallenge: Challenge!
+    private var selectedDurationInMinutes = 0
 
     init(view: CreateChallengeViewProtocol,
          createChallengeUseCase: CreateChallengeUseCaseProtocol,
@@ -30,27 +28,16 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
          durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
         self.createChallengeUseCase = createChallengeUseCase
-        self.motivationItemUseCase = motivationalItemUseCase
+        self.motivationParameterUseCase = motivationalItemUseCase
         self.durationParameterUseCase = durationParameterUseCase
     }
 
-    func viewDidLoad() {
-//        configureTimeView()
-//        configureMotivationView()
-    }
-    
     func viewWillAppear() {
         configureTimeView()
         configureMotivationView()
-    }
-
-    private var selectedDurationInMinutes = 0
-
-    func didChooseMode(_ mode: ChallengeMode) {
+        
         view?.changeStartButtonState(isActive: true)
     }
-
-    func didSetTimer(withTimeInMinutes minutes: Int) {}
 
     func startButtonTapped() {
         // TODO: Check if notifications are enabled. If not, show alert redirecting user to notif settings
@@ -98,7 +85,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     private func configureMotivationView() {
-        motivationItemUseCase.getSelectedMotivationalItem { (result) in
+        motivationParameterUseCase.getSelectedMotivationalItem { (result) in
             switch result {
             case .success(let item):
                 let title = item == .ad ? Strings.creationSaveTime() : Strings.creationSaveCat()
@@ -119,24 +106,31 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     private func createChallenge() {
-
-        let challengeParameters = ChallengeParameters(startDate: Date(),
-                                                      finishDate: nil,
-                                                      durationInMinutes: selectedDurationInMinutes,
-                                                      isSuccess: false,
-                                                      motivationalItem: MotivationalItem.ad)
-
-        createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
-            guard let self = self else {
+        
+        motivationParameterUseCase.getSelectedMotivationalItem { (result) in
+            guard let item = try? result.get() else {
                 assertionFailure()
                 return
             }
+            
+            let challengeParameters = ChallengeParameters(startDate: Date(),
+                                                          finishDate: nil,
+                                                          durationInMinutes: self.selectedDurationInMinutes,
+                                                          isSuccess: false,
+                                                          motivationalItem: item)
 
-            switch creationResult {
-            case .success(let createdChallenge):
-                self.view?.router?.present(Controller.currentChallenge(with: createdChallenge))
-            case .failure:
-                assertionFailure()
+            self.createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
+                guard let self = self else {
+                    assertionFailure()
+                    return
+                }
+
+                switch creationResult {
+                case .success(let createdChallenge):
+                    self.view?.router?.present(Controller.currentChallenge(with: createdChallenge))
+                case .failure:
+                    assertionFailure()
+                }
             }
         }
     }

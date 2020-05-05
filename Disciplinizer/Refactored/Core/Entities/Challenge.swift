@@ -27,8 +27,3 @@ enum ChallengeResult {
     case win
     case lose
 }
-
-enum ChallengeMode {
-    case free
-    case paid
-}
