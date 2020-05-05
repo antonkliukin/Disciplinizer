@@ -115,3 +115,5 @@
 "history.failed" = "Провал";
 "history.motivation.cat" = "сохранить питомца";
 "history.motivation.ad" = "сохранить время";
+"history.today" = "Сегодня";
+"history.yesterday" = "Вчера";

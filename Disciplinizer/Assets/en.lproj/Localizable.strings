@@ -102,3 +102,5 @@
 "history.failed" = "Failed";
 "history.motivation.cat" = "cat mode";
 "history.motivation.ad" = "time mode";
+"history.today" = "Today";
+"history.yesterday" = "Yesterday";

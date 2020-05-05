@@ -887,8 +887,8 @@ struct R: Rswift.Validatable {
       return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func historyHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.historyHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func historyHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HistoryHeaderView? {
+      return R.nib.historyHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HistoryHeaderView
     }
 
     static func motivationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1237,12 +1237,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 53 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 56 localization keys.
     struct localizable {
-      /// en translation: %#@value@
+      /// en translation: %#@minutes@
       ///
       /// Locales: en, ru
-      static let timerMinLeft = Rswift.StringResource(key: "timer.minLeft", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      static let durationInMinutes = Rswift.StringResource(key: "durationInMinutes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: %#@totalDurationForDay@
+      ///
+      /// Locales: en, ru
+      static let historyConcentrationDuration = Rswift.StringResource(key: "history.concentrationDuration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: 1. Set task time.  2. Make a bet. You might choose between time and money, it will highly increase your motivation!  3. The main rule is simple - do not leave the app. You can lock your phone or stay on the challenge screen.
       ///
       /// Locales: ru, en
@@ -1399,6 +1403,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdTitle = Rswift.StringResource(key: "lose.ad.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Today
+      ///
+      /// Locales: ru, en
+      static let historyToday = Rswift.StringResource(key: "history.today", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Valli
       ///
       /// Locales: en
@@ -1407,6 +1415,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdDescription = Rswift.StringResource(key: "lose.ad.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Yesterday
+      ///
+      /// Locales: ru, en
+      static let historyYesterday = Rswift.StringResource(key: "history.yesterday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: You live alone now
       ///
       /// Locales: ru, en
@@ -1452,20 +1464,37 @@ struct R: Rswift.Validatable {
       /// Locales: ru, en
       static let motivationItemInfoNotCat = Rswift.StringResource(key: "motivationItem.info.notCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
 
-      /// en translation: %#@value@
+      /// en translation: %#@minutes@
       ///
       /// Locales: en, ru
-      static func timerMinLeft(value value1: Int, preferredLanguages: [String]? = nil) -> String {
+      static func durationInMinutes(minutes value1: Int, preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          let format = NSLocalizedString("timer.minLeft", bundle: hostingBundle, comment: "")
+          let format = NSLocalizedString("durationInMinutes", bundle: hostingBundle, comment: "")
           return String(format: format, locale: applicationLocale, value1)
         }
 
         guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "timer.minLeft"
+          return "durationInMinutes"
         }
 
-        let format = NSLocalizedString("timer.minLeft", bundle: bundle, comment: "")
+        let format = NSLocalizedString("durationInMinutes", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@totalDurationForDay@
+      ///
+      /// Locales: en, ru
+      static func historyConcentrationDuration(totalDurationForDay value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("history.concentrationDuration", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.concentrationDuration"
+        }
+
+        let format = NSLocalizedString("history.concentrationDuration", bundle: bundle, comment: "")
         return String(format: format, locale: locale, value1)
       }
 
@@ -2054,6 +2083,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.ad.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Today
+      ///
+      /// Locales: ru, en
+      static func historyToday(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.today", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.today"
+        }
+
+        return NSLocalizedString("history.today", bundle: bundle, comment: "")
+      }
+
       /// en translation: Valli
       ///
       /// Locales: en
@@ -2082,6 +2126,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lose.ad.description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Yesterday
+      ///
+      /// Locales: ru, en
+      static func historyYesterday(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.yesterday", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.yesterday"
+        }
+
+        return NSLocalizedString("history.yesterday", bundle: bundle, comment: "")
       }
 
       /// en translation: You live alone now
@@ -2377,8 +2436,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "HistoryHeaderView"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HistoryHeaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HistoryHeaderView
       }
 
       fileprivate init() {}

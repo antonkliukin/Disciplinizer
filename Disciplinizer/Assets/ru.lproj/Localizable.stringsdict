@@ -2,22 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>timer.minLeft</key>
+	<key>history.concentrationDuration</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@value@</string>
-		<key>value</key>
+		<string>%#@totalDurationForDay@</string>
+		<key>totalDurationForDay</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Нет результата за этот день</string>
+			<key>one</key>
+			<string>Время концентрации: %d минута</string>
+			<key> few</key>
+			<string>Время концентрации: %d минуты</string>
+			<key>many</key>
+			<string>Время концентрации: %d минут</string>
+			<key>other</key>
+			<string>Время концентрации: %d минуты</string>
+		</dict>
+	</dict>
+	<key>durationInMinutes</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutes@</string>
+		<key>minutes</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d минута</string>
-			<key>few</key>
-			<string>%d минуты</string>
-			<key>many</key>
-			<string>%d минут</string>
+			<string>%d мин</string>
+			<key>other</key>
+			<string>%d мин</string>
 		</dict>
 	</dict>
 </dict>

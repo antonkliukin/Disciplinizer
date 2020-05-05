@@ -42,10 +42,13 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 100
                 
-        tableView.register(HistoryHeaderView.self, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
+        let headerNib = UINib(nibName: "HistoryHeaderView", bundle: .main)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
         
         configureTopBackgroundView()
         configureBestResultView()
+        
+        presenter.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +65,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     
     private func configureBestResultView() {
         bestResultView.roundCorners(corners: .all, radius: 8)
-        bestResultView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.08),
+        bestResultView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.1),
                                  offSet: CGSize(width: 0, height: 4),
                                  opacity: 1,
                                  shadowRadius: 15)
@@ -82,6 +85,8 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
 
     func refresh() {
         tableView.reloadData()
+        configureTopBackgroundView()
+        configureBestResultView()
     }
 }
 
@@ -93,16 +98,27 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.numberOfChallengesForDate(section: section)
     }
-
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        presenter.titleForDate(section: section)
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-            "HistoryHeaderView") as? HistoryHeaderView
+        if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+            "HistoryHeaderView") as? HistoryHeaderView {
+            presenter.configure(header: view, forSection: section)
+            
+            return view
+        }
         
-        return view
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.didTapDelete(forRow: indexPath.row, inSection: indexPath.section)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,5 +130,13 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
     }
 }

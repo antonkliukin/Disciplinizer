@@ -2,20 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>timer.minLeft</key>
+	<key>history.concentrationDuration</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@value@</string>
-		<key>value</key>
+		<string>%#@totalDurationForDay@</string>
+		<key>totalDurationForDay</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>No concentration time for this day</string>
+			<key>one</key>
+			<string>Concentration time: %d minute</string>
+			<key>other</key>
+			<string>Concentration time: %d minutes</string>
+		</dict>
+	</dict>
+	<key>durationInMinutes</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutes@</string>
+		<key>minutes</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d min left</string>
+			<string>%d min</string>
 			<key>other</key>
-			<string>%d mins left</string>
+			<string>%d min</string>
 		</dict>
 	</dict>
 </dict>

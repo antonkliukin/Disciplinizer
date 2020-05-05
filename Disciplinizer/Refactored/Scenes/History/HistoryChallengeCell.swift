@@ -14,6 +14,7 @@ protocol HistoryChallengeCellViewProtocol {
     func display(duration: String)
     func display(timePeriod: String)
     func display(motivationType: String)
+    var deleteAction: () -> Void { get set }
 }
 
 final class HistoryChallengeCell: UITableViewCell, HistoryChallengeCellViewProtocol {
@@ -23,18 +24,20 @@ final class HistoryChallengeCell: UITableViewCell, HistoryChallengeCellViewProto
     @IBOutlet weak var challengeTimePeriodTitle: UILabel!
     @IBOutlet weak var modeTitleLabel: UILabel!
     
+    var deleteAction: () -> Void = {}
+    
     static var reuseId = "ChallengeCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         mainCellView.roundCorners(corners: .all, radius: 8)
-        mainCellView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.08),
-                                 offSet: CGSize(width: 0, height: 4),
-                                 opacity: 1,
-                                 shadowRadius: 10)
+        mainCellView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.1),
+                               offSet: CGSize(width: 0, height: 4),
+                               opacity: 1,
+                               shadowRadius: 5)
     }
-
+    
     func display(result: String) {
         challengeResultTitleLabel.text = result
     }
@@ -56,6 +59,6 @@ final class HistoryChallengeCell: UITableViewCell, HistoryChallengeCellViewProto
     }
     
     @IBAction func didTapDeleteButton(_ sender: Any) {
-        
+        deleteAction()
     }
 }

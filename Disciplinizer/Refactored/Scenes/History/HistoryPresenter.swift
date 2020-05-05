@@ -12,22 +12,19 @@ protocol HistoryPresenterProtocol {
     var numberOfDates: Int { get }
 
     func numberOfChallengesForDate(section: Int) -> Int
-    func titleForDate(section: Int) -> String
     func configure(cell: HistoryChallengeCellViewProtocol, forRow row: Int, inSection section: Int)
+    func configure(header: HistoryHeaderView, forSection section: Int)
+    func viewDidLoad()
     func viewWillAppear()
     func clearButtonTapped()
-}
+    func didTapDelete(forRow row: Int, inSection section: Int)}
 
 final class HistoryPresenter: HistoryPresenterProtocol {
     private weak var view: HistoryViewProtocol?
     private let displayChallengesUseCase: DisplayChallengesUseCaseProtocol
     private let deleteChallengesUseCase: DeleteChallengeUseCaseProtocol
 
-    private var challenges: [String: [Challenge]] = [:] {
-        didSet {
-            view?.refresh()
-        }
-    }
+    private var challenges: [Date: [Challenge]] = [:]
 
     var numberOfDates: Int {
         challenges.keys.count
@@ -40,13 +37,6 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         return challenges[key]?.count ?? 0
     }
 
-    func titleForDate(section: Int) -> String {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
-        let date = sortedKeys[section]
-
-        return date
-    }
-
     init(view: HistoryViewProtocol,
          displayChallengesUseCase: DisplayChallengesUseCaseProtocol,
          deleteChallengesUseCase: DeleteChallengeUseCaseProtocol) {
@@ -54,12 +44,16 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         self.displayChallengesUseCase = displayChallengesUseCase
         self.deleteChallengesUseCase = deleteChallengesUseCase
     }
+    
+    func viewDidLoad() {
+        //loadChallenges()
+    }
 
     func viewWillAppear() {
-        presentChallenges()
+        loadChallenges()
     }
     
-    private func presentChallenges() {
+    private func loadChallenges() {
         displayChallengesUseCase.displayChallenges { [weak self] (result) in
             guard let self = self else { return }
             switch result {
@@ -67,14 +61,20 @@ final class HistoryPresenter: HistoryPresenterProtocol {
                 
                 let dateChallengeDict = self.createDateChallengeDict(challenges: challenges)
                 self.challenges = dateChallengeDict
-                self.showTotalTodayResult(challenges: challenges)
-                self.showBestDayResult(challengesByDates: Array(dateChallengeDict.values))
+                self.refreshBestResultsView()
+                
+                self.view?.refresh()
             case .failure:
                 //self.view?.showError(errorMessage: error.localizedDescription)
                 assertionFailure()
                 return
             }
         }
+    }
+    
+    private func refreshBestResultsView() {
+        self.showTotalTodayResult(challenges: challenges.filter { Calendar.current.isDateInToday($0.key) }.flatMap { $0.value })
+        self.showBestDayResult(challengesByDates: Array(challenges.values))
     }
     
     private func showTotalTodayResult(challenges: [Challenge]) {
@@ -84,7 +84,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             return Calendar.current.isDateInToday(finishDate) ? result + challenge.duration : result
         }
         
-        self.view?.display(todayTotalDuration: String(todayTotalDuration))
+        self.view?.display(todayTotalDuration: Strings.durationInMinutes(minutes: todayTotalDuration))
     }
     
     private func showBestDayResult(challengesByDates: [[Challenge]]) {
@@ -95,14 +95,15 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             bestResult = max(bestResult, bestForDay)
         }
         
-        view?.display(bestTotalDuraion: String(bestResult))
+        view?.display(bestTotalDuraion: Strings.durationInMinutes(minutes: bestResult))
     }
 
     func clearButtonTapped() {
         deleteChallengesUseCase.deleteAll { [weak self] (result) in
             switch result {
             case .success:
-                self?.presentChallenges()
+                self?.view?.refresh()
+                return
             case .failure:
                 //self?.view?.showError(errorMessage: error.localizedDescription)
                 assertionFailure()
@@ -110,7 +111,30 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             }
         }
     }
-
+    
+    func didTapDelete(forRow row: Int, inSection section: Int) {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+        guard let challenges = challenges[date], challenges.count > row else {
+            assertionFailure()
+            return
+        }
+        
+        self.challenges[date]?.remove(at: row)
+        
+        refreshBestResultsView()
+        
+        deleteChallengesUseCase.delete(challenge: challenges[row]) { (deletionResult) in
+            switch deletionResult {
+            case .success:
+                return
+            case .failure:
+                assertionFailure()
+                return
+            }
+        }
+    }
+    
     func configure(cell: HistoryChallengeCellViewProtocol, forRow row: Int, inSection section: Int) {
         let sortedKeys = Array(challenges.keys).sorted(by: <)
         let date = sortedKeys[section]
@@ -122,12 +146,44 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         let challenge = challenges[row]
 
         cell.display(result: challenge.isSuccess ? Strings.historySuccess() : Strings.historyFailed())
-        cell.display(duration: "\(challenge.duration) min")
+        cell.display(duration: Strings.durationInMinutes(minutes: challenge.duration))
         cell.display(motivationType: challenge.motivationalItem == .ad ? Strings.historyMotivationAd() : Strings.historyMotivationCat())
         
         if let startDate = challenge.startDate, let finishDate = challenge.finishDate {
             cell.display(timePeriod: getTimePerion(startDate: startDate, finishDate: finishDate))
         }
+    }
+    
+    func configure(header: HistoryHeaderView, forSection section: Int) {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+        
+        let totalResultForDate = challenges[date]?.reduce(0, { $0 + $1.duration }) ?? 0
+        
+        let calendar = Calendar.current
+        var dateString = ""
+        
+        if calendar.isDateInToday(date) {
+            dateString = Strings.historyToday()
+        } else if calendar.isDateInTomorrow(date) {
+            dateString = Strings.historyYesterday()
+        } else {
+            dateString = titleForDate(section: section)
+        }
+        
+        header.dateLabel.text = dateString
+        header.todayDuration.text = Strings.historyConcentrationDuration(totalDurationForDay: totalResultForDate)
+    }
+    
+    private func titleForDate(section: Int) -> String {
+        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let date = sortedKeys[section]
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let stringDate = formatter.string(from: date)
+
+        return stringDate
     }
     
     private func getTimePerion(startDate: Date, finishDate: Date) -> String {
@@ -141,8 +197,8 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         return start + "-" + finish
     }
 
-    private func createDateChallengeDict(challenges: [Challenge]) -> [String: [Challenge]] {
-        var dict: [String: [Challenge]] = [:]
+    private func createDateChallengeDict(challenges: [Challenge]) -> [Date: [Challenge]] {
+        var dict: [Date: [Challenge]] = [:]
 
         for challenge in challenges {
             guard let date = challenge.startDate else {
@@ -150,11 +206,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
                 continue
             }
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            let stringDate = formatter.string(from: date)
-
-            dict[stringDate, default: []].append(challenge)
+            dict[date, default: []].append(challenge)
         }
 
         return dict
