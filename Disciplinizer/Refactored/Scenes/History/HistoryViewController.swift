@@ -118,6 +118,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             presenter.didTapDelete(forRow: indexPath.row, inSection: indexPath.section)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadSections([indexPath.section], with: .automatic)
         }
     }
 
