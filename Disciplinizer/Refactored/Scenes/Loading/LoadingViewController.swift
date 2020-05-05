@@ -24,6 +24,6 @@ class LoadingViewController: UIViewController, LoadingViewProtocol {
         configurator.configure(loadingViewController: self)
         
         activityIndicator.style = .whiteLarge
-        activityIndicator.color = R.color.backgroundBlue()
+        activityIndicator.color = R.color.blueBackground()
     }
 }

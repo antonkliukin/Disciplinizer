@@ -55,20 +55,47 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         self.deleteChallengesUseCase = deleteChallengesUseCase
     }
 
+    func viewWillAppear() {
+        presentChallenges()
+    }
+    
     private func presentChallenges() {
         displayChallengesUseCase.displayChallenges { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let challenges):
-                self.challenges = self.createDateChallengeDict(challenges: challenges)
-            case .failure(let error):
-                self.view?.showError(errorMessage: error.localizedDescription)
+                
+                let dateChallengeDict = self.createDateChallengeDict(challenges: challenges)
+                self.challenges = dateChallengeDict
+                self.showTotalTodayResult(challenges: challenges)
+                self.showBestDayResult(challengesByDates: Array(dateChallengeDict.values))
+            case .failure:
+                //self.view?.showError(errorMessage: error.localizedDescription)
+                assertionFailure()
+                return
             }
         }
     }
-
-    func viewWillAppear() {
-        presentChallenges()
+    
+    private func showTotalTodayResult(challenges: [Challenge]) {
+        let todayTotalDuration = challenges.reduce(0) { (result, challenge) -> Int in
+            guard let finishDate = challenge.finishDate else { return result }
+            
+            return Calendar.current.isDateInToday(finishDate) ? result + challenge.duration : result
+        }
+        
+        self.view?.display(todayTotalDuration: String(todayTotalDuration))
+    }
+    
+    private func showBestDayResult(challengesByDates: [[Challenge]]) {
+        var bestResult = 0
+        
+        for challenges in challengesByDates {
+            let bestForDay = challenges.reduce(0, { $0 + $1.duration })
+            bestResult = max(bestResult, bestForDay)
+        }
+        
+        view?.display(bestTotalDuraion: String(bestResult))
     }
 
     func clearButtonTapped() {
@@ -76,8 +103,10 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             switch result {
             case .success:
                 self?.presentChallenges()
-            case .failure(let error):
-                self?.view?.showError(errorMessage: error.localizedDescription)
+            case .failure:
+                //self?.view?.showError(errorMessage: error.localizedDescription)
+                assertionFailure()
+                return
             }
         }
     }
@@ -92,9 +121,24 @@ final class HistoryPresenter: HistoryPresenterProtocol {
 
         let challenge = challenges[row]
 
-        cell.display(result: challenge.isSuccess ? "Success" : "Loose")
-        cell.display(duration: "Duration: \(challenge.duration / 60) mins")
-        // cell.display(motivationType: "Motivation: \(challenge.isPaid ? "Golden Coin" : "Watching Ad")")
+        cell.display(result: challenge.isSuccess ? Strings.historySuccess() : Strings.historyFailed())
+        cell.display(duration: "\(challenge.duration) min")
+        cell.display(motivationType: challenge.motivationalItem == .ad ? Strings.historyMotivationAd() : Strings.historyMotivationCat())
+        
+        if let startDate = challenge.startDate, let finishDate = challenge.finishDate {
+            cell.display(timePeriod: getTimePerion(startDate: startDate, finishDate: finishDate))
+        }
+    }
+    
+    private func getTimePerion(startDate: Date, finishDate: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        
+        let start = formatter.string(from: startDate)
+        let finish = formatter.string(from: finishDate)
+        
+        return start + "-" + finish
     }
 
     private func createDateChallengeDict(challenges: [Challenge]) -> [String: [Challenge]] {

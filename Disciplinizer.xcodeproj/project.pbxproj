@@ -86,6 +86,8 @@
 		3A70083924153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */; };
 		3A70083F24153FF90028CE21 /* ChallengesGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */; };
 		3A70084624154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */; };
+		3A7EC84724603E91001EFC05 /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */; };
+		3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */; };
 		3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6672410D07600225DA4 /* R.generated.swift */; };
 		3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */; };
 		3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6872413B05C00225DA4 /* StartChallenge.swift */; };
@@ -256,6 +258,8 @@
 		3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesGatewaySpy.swift; sourceTree = "<group>"; };
 		3A700843241545350028CE21 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataChallengesGatewayTest.swift; sourceTree = "<group>"; };
+		3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
+		3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
 		3A8DB6672410D07600225DA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3A8DB66B2410D7F900225DA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeConfigurator.swift; sourceTree = "<group>"; };
@@ -764,6 +768,15 @@
 			path = Gateways;
 			sourceTree = "<group>";
 		};
+		3A7EC84524603E69001EFC05 /* HistoryHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */,
+				3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */,
+			);
+			path = HistoryHeaderView;
+			sourceTree = "<group>";
+		};
 		3A8DB66D2410DA4000225DA4 /* Refactored */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +884,7 @@
 				3ACD2C5C240C2DE60017FABC /* HistoryViewController.swift */,
 				3ACD2C58240C2DE60017FABC /* HistoryChallengeCell.swift */,
 				3A653DD3241D2A9000BE613C /* History.storyboard */,
+				3A7EC84524603E69001EFC05 /* HistoryHeaderView */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -1151,6 +1165,7 @@
 				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
 				3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */,
 				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
+				3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */,
 				54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */,
 				3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
@@ -1328,6 +1343,7 @@
 				3A00A517238323DA0011ACDC /* ECKeyData.swift in Sources */,
 				3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */,
 				3ACD2C77240C2E620017FABC /* DisplayChallengesList.swift in Sources */,
+				3A7EC84724603E91001EFC05 /* HistoryHeaderView.swift in Sources */,
 				3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */,
 				3A47D67D230F1E8100B2B200 /* Config.swift in Sources */,
 				3A1FA578245C247F000BAA20 /* CatStoreCollectionCell.swift in Sources */,

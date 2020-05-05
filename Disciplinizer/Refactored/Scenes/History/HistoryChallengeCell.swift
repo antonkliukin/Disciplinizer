@@ -10,26 +10,52 @@ import UIKit
 
 protocol HistoryChallengeCellViewProtocol {
     func display(result: String)
+    func setResultTextColor(color: UIColor)
     func display(duration: String)
+    func display(timePeriod: String)
     func display(motivationType: String)
 }
 
 final class HistoryChallengeCell: UITableViewCell, HistoryChallengeCellViewProtocol {
-    @IBOutlet private weak var resultTitle: UILabel!
-    @IBOutlet private weak var durationTitle: UILabel!
-    @IBOutlet private weak var motivationTypeTitle: UILabel!
-
-    static var reuseId = "challengeCellId"
+    @IBOutlet weak var mainCellView: UIView!
+    @IBOutlet private weak var challengeResultTitleLabel: UILabel!
+    @IBOutlet private weak var durationTitleLabel: UILabel!
+    @IBOutlet weak var challengeTimePeriodTitle: UILabel!
+    @IBOutlet weak var modeTitleLabel: UILabel!
+    
+    static var reuseId = "ChallengeCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        mainCellView.roundCorners(corners: .all, radius: 8)
+        mainCellView.addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.08),
+                                 offSet: CGSize(width: 0, height: 4),
+                                 opacity: 1,
+                                 shadowRadius: 10)
+    }
 
     func display(result: String) {
-        resultTitle.text = result
+        challengeResultTitleLabel.text = result
+    }
+    
+    func setResultTextColor(color: UIColor) {
+        challengeResultTitleLabel.textColor = color
     }
 
     func display(duration: String) {
-        durationTitle.text = duration
+        durationTitleLabel.text = duration
+    }
+    
+    func display(timePeriod: String) {
+        challengeTimePeriodTitle.text = timePeriod
     }
 
     func display(motivationType: String) {
-        motivationTypeTitle.text = motivationType
+        modeTitleLabel.text = motivationType
+    }
+    
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        
     }
 }

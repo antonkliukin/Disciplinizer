@@ -231,12 +231,10 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 25 colors.
+  /// This `R.color` struct is generated, and contains static references to 27 colors.
   struct color {
     /// Color `AppColor`.
     static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
-    /// Color `BackgroundBlue`.
-    static let backgroundBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "BackgroundBlue")
     /// Color `CTBlack`.
     static let ctBlack = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTBlack")
     /// Color `CTBlue`.
@@ -253,6 +251,8 @@ struct R: Rswift.Validatable {
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
     static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
+    /// Color `blueBackground`.
+    static let blueBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueBackground")
     /// Color `brownCat`.
     static let brownCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "brownCat")
     /// Color `buttonGrey`.
@@ -265,6 +265,8 @@ struct R: Rswift.Validatable {
     static let darkOrange = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkOrange")
     /// Color `errorRed`.
     static let errorRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "errorRed")
+    /// Color `greenLight`.
+    static let greenLight = Rswift.ColorResource(bundle: R.hostingBundle, name: "greenLight")
     /// Color `greenText`.
     static let greenText = Rswift.ColorResource(bundle: R.hostingBundle, name: "greenText")
     /// Color `greyCat`.
@@ -281,6 +283,8 @@ struct R: Rswift.Validatable {
     static let lightOrangeCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightOrangeCat")
     /// Color `pinkCat`.
     static let pinkCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "pinkCat")
+    /// Color `purple`.
+    static let purple = Rswift.ColorResource(bundle: R.hostingBundle, name: "purple")
     /// Color `redText`.
     static let redText = Rswift.ColorResource(bundle: R.hostingBundle, name: "redText")
 
@@ -290,15 +294,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func appColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.appColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "BackgroundBlue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func backgroundBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.backgroundBlue, compatibleWith: traitCollection)
     }
     #endif
 
@@ -375,6 +370,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "blueBackground", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func blueBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.blueBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "brownCat", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -425,6 +429,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func errorRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.errorRed, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "greenLight", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func greenLight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.greenLight, compatibleWith: traitCollection)
     }
     #endif
 
@@ -497,6 +510,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func pinkCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.pinkCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "purple", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func purple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.purple, compatibleWith: traitCollection)
     }
     #endif
 
@@ -582,7 +604,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 22 images.
+  /// This `R.image` struct is generated, and contains static references to 24 images.
   struct image {
     /// Image `ad_icon`.
     static let ad_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad_icon")
@@ -592,10 +614,14 @@ struct R: Rswift.Validatable {
     static let crying_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "crying_cat")
     /// Image `cuddly_cat`.
     static let cuddly_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "cuddly_cat")
+    /// Image `delete_icon`.
+    static let delete_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "delete_icon")
     /// Image `fluffy_cat`.
     static let fluffy_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "fluffy_cat")
     /// Image `history_icon`.
     static let history_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "history_icon")
+    /// Image `history_titleBackground`.
+    static let history_titleBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "history_titleBackground")
     /// Image `launch_cat`.
     static let launch_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_cat")
     /// Image `launch_title`.
@@ -658,6 +684,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "delete_icon", bundle: ..., traitCollection: ...)`
+    static func delete_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.delete_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "fluffy_cat", bundle: ..., traitCollection: ...)`
     static func fluffy_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fluffy_cat, compatibleWith: traitCollection)
@@ -668,6 +701,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "history_icon", bundle: ..., traitCollection: ...)`
     static func history_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.history_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "history_titleBackground", bundle: ..., traitCollection: ...)`
+    static func history_titleBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.history_titleBackground, compatibleWith: traitCollection)
     }
     #endif
 
@@ -786,12 +826,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `CatStoreCollectionCell`.
     static let catStoreCollectionCell = _R.nib._CatStoreCollectionCell()
     /// Nib `ChallengeParameterView`.
     static let challengeParameterView = _R.nib._ChallengeParameterView()
+    /// Nib `HistoryHeaderView`.
+    static let historyHeaderView = _R.nib._HistoryHeaderView()
     /// Nib `MotivationView`.
     static let motivationView = _R.nib._MotivationView()
     /// Nib `PageCollectionViewCell`.
@@ -810,6 +852,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.challengeParameterView) instead")
     static func challengeParameterView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.challengeParameterView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HistoryHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.historyHeaderView) instead")
+    static func historyHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.historyHeaderView)
     }
     #endif
 
@@ -837,6 +887,10 @@ struct R: Rswift.Validatable {
       return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func historyHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.historyHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func motivationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.motivationView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -850,12 +904,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `ChallengeCell`.
+    static let challengeCell: Rswift.ReuseIdentifier<HistoryChallengeCell> = Rswift.ReuseIdentifier(identifier: "ChallengeCell")
     /// Reuse identifier `PageCollectionViewCell`.
     static let pageCollectionViewCell: Rswift.ReuseIdentifier<PageCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PageCollectionViewCell")
     /// Reuse identifier `SongSelectCell`.
     static let songSelectCell: Rswift.ReuseIdentifier<SongSelectCell> = Rswift.ReuseIdentifier(identifier: "SongSelectCell")
-    /// Reuse identifier `challengeCellId`.
-    static let challengeCellId: Rswift.ReuseIdentifier<HistoryChallengeCell> = Rswift.ReuseIdentifier(identifier: "challengeCellId")
 
     fileprivate init() {}
   }
@@ -1183,7 +1237,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 49 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 53 localization keys.
     struct localizable {
       /// en translation: %#@value@
       ///
@@ -1237,6 +1291,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdMainButton = Rswift.StringResource(key: "lose.ad.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Failed
+      ///
+      /// Locales: ru, en
+      static let historyFailed = Rswift.StringResource(key: "history.failed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Fluffy
       ///
       /// Locales: en
@@ -1313,6 +1371,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideThirdPageTitle = Rswift.StringResource(key: "guide.thirdPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Success
+      ///
+      /// Locales: ru, en
+      static let historySuccess = Rswift.StringResource(key: "history.success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Success!
       ///
       /// Locales: ru, en
@@ -1361,6 +1423,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseCatTitle = Rswift.StringResource(key: "lose.cat.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: cat mode
+      ///
+      /// Locales: ru, en
+      static let historyMotivationCat = Rswift.StringResource(key: "history.motivation.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: now lives with you
       ///
       /// Locales: ru, en
@@ -1377,6 +1443,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationSaveTime = Rswift.StringResource(key: "creation.saveTime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: time mode
+      ///
+      /// Locales: ru, en
+      static let historyMotivationAd = Rswift.StringResource(key: "history.motivation.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: you have no cat
       ///
       /// Locales: ru, en
@@ -1577,6 +1647,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lose.ad.mainButton", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Failed
+      ///
+      /// Locales: ru, en
+      static func historyFailed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.failed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.failed"
+        }
+
+        return NSLocalizedString("history.failed", bundle: bundle, comment: "")
       }
 
       /// en translation: Fluffy
@@ -1864,6 +1949,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.thirdPage.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Success
+      ///
+      /// Locales: ru, en
+      static func historySuccess(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.success"
+        }
+
+        return NSLocalizedString("history.success", bundle: bundle, comment: "")
+      }
+
       /// en translation: Success!
       ///
       /// Locales: ru, en
@@ -2044,6 +2144,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.cat.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: cat mode
+      ///
+      /// Locales: ru, en
+      static func historyMotivationCat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.motivation.cat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.motivation.cat"
+        }
+
+        return NSLocalizedString("history.motivation.cat", bundle: bundle, comment: "")
+      }
+
       /// en translation: now lives with you
       ///
       /// Locales: ru, en
@@ -2102,6 +2217,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.saveTime", bundle: bundle, comment: "")
+      }
+
+      /// en translation: time mode
+      ///
+      /// Locales: ru, en
+      static func historyMotivationAd(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.motivation.ad", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.motivation.ad"
+        }
+
+        return NSLocalizedString("history.motivation.ad", bundle: bundle, comment: "")
       }
 
       /// en translation: you have no cat
@@ -2235,6 +2365,17 @@ struct _R: Rswift.Validatable {
     struct _ChallengeParameterView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ChallengeParameterView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _HistoryHeaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "HistoryHeaderView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -2501,9 +2642,15 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "delete_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete_icon' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "history_titleBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'history_titleBackground' is used in storyboard 'History', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CTGray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTGray' is used in storyboard 'History', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'History', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "blueBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blueBackground' is used in storyboard 'History', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "greenLight", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'greenLight' is used in storyboard 'History', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "greenText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'greenText' is used in storyboard 'History', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'History', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "purple", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'purple' is used in storyboard 'History', but couldn't be loaded.") }
         }
         if _R.storyboard.history().historyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'historyViewController' could not be loaded from storyboard 'History' as 'HistoryViewController'.") }
       }
