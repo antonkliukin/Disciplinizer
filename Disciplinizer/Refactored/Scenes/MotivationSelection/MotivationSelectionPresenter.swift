@@ -116,7 +116,7 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
                                       info: item.info,
                                       actionButtonTitle: item.actionTitle,
                                       actionButtonAction: {
-                                        self.view?.router?.push(Controller.catStore())
+                                        self.view?.router?.push(Controller.createCatStore())
         })
     }
     

@@ -47,13 +47,13 @@ final class BlockedPresenter: BlockedPresenterProtocol {
         if challenge.motivationalItem == .ad {
             view?.router?.present(Controller.createAdVC())
         } else {
-            view?.router?.present(Controller.catStore())
+            view?.router?.present(Controller.createCatStore())
         }
     }
     
     func didTapSecondaryButton() {
         if challenge.motivationalItem == .ad {
-            view?.router?.present(Controller.catStore())
+            view?.router?.present(Controller.createCatStore())
         } else {
             view?.router?.dismiss()
         }

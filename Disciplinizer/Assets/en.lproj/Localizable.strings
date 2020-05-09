@@ -94,6 +94,7 @@
 "alert.title.success" = "Success!";
 "alert.message.success" = "You now have a new pet in your home";
 "alert.action.back" = "Back";
+"buy.action" = "Buy";
 
 //******************************************************************************
 // History
@@ -104,3 +105,15 @@
 "history.motivation.ad" = "time mode";
 "history.today" = "Today";
 "history.yesterday" = "Yesterday";
+
+//******************************************************************************
+// Settings
+//******************************************************************************
+"settings.notifications" = "Notifications";
+"settings.appearance" = "Appearance";
+"settings.getInTouch" = "Get in touch";
+"settings.about" = "About";
+"settings.darkMode" = "Dark Mode";
+"settings.emailUs" = "Email us";
+"settings.terms" = "Terms of service";
+"settings.policy" = "Privacy policy";

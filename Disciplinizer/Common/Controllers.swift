@@ -43,8 +43,6 @@ enum Controller {
 
     static func createSettings() -> UIViewController {
         let vc = SettingsViewController.fromStoryboard(.settings)
-        let presenter = SettingsPresenter(view: vc)
-        vc.presenter = presenter
 
         return vc
     }
@@ -55,7 +53,7 @@ enum Controller {
         return vc
     }
     
-    static func catStore() -> UIViewController {
+    static func createCatStore() -> UIViewController {
         let vc = CatStoreViewController.fromStoryboard(.catStore)
 
         return vc

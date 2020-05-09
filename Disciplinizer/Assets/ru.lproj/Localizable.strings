@@ -45,15 +45,15 @@
 // Lose
 //******************************************************************************
 
-"lose.cat.title" = "Твой кот покинул тебя";
+"lose.cat.title" = "Твой питомец покинул тебя";
 "lose.cat.description" = "Теперь ты живешь один";
-"lose.cat.mainButton" = "Получить нового кота";
-"lose.cat.secondaryButton" = "Продолжить без кота";
+"lose.cat.mainButton" = "Получить нового питомца";
+"lose.cat.secondaryButton" = "Продолжить без питомца";
 
 "lose.ad.title" = "Потеря времени - твое наказание";
 "lose.ad.description" = "Просмотри 3 рекламныx ролика";
 "lose.ad.mainButton" = "Посмотреть 3 рекламныx ролка";
-"lose.ad.secondaryButton" = "Купить кота вместо просмотра";
+"lose.ad.secondaryButton" = "Купить питомца вместо просмотра";
 
 //******************************************************************************
 // Motivational Item
@@ -71,7 +71,7 @@
 "motivationItem.description.cat" = "Возможность потерять друга будет тебя мотивировать.";
 
 "motivationItem.info.haveCat" = "сейчас живет с тобой";
-"motivationItem.info.notCat" = "у тебя нет кота";
+"motivationItem.info.notCat" = "у тебя нет питомца";
 
 "motivationItem.action.title" = "Выбрать";
 
@@ -107,6 +107,7 @@
 "alert.title.success" = "Успешно!";
 "alert.message.success" = "Теперь у Вас новый питомец";
 "alert.action.back" = "Назад";
+"buy.action" = "Купить";
 
 //******************************************************************************
 // History
@@ -117,3 +118,16 @@
 "history.motivation.ad" = "сохранить время";
 "history.today" = "Сегодня";
 "history.yesterday" = "Вчера";
+
+//******************************************************************************
+// Settings
+//******************************************************************************
+"settings.notifications" = "Уведомления";
+"settings.appearance" = "Интерфейс";
+"settings.getInTouch" = "Связаться с разработчиками";
+"settings.about" = "О Приложении";
+"settings.darkMode" = "Темная тема";
+"settings.emailUs" = "Написать разработчикам";
+"settings.terms" = "Правила использования";
+"settings.policy" = "Политика приватности";
+

@@ -604,7 +604,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 24 images.
+  /// This `R.image` struct is generated, and contains static references to 25 images.
   struct image {
     /// Image `ad_icon`.
     static let ad_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad_icon")
@@ -642,6 +642,8 @@ struct R: Rswift.Validatable {
     static let play = Rswift.ImageResource(bundle: R.hostingBundle, name: "play")
     /// Image `settings_icon`.
     static let settings_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_icon")
+    /// Image `settings_titleBackground`.
+    static let settings_titleBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_titleBackground")
     /// Image `stop_button`.
     static let stop_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "stop_button")
     /// Image `tilda_cat`.
@@ -782,6 +784,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "settings_titleBackground", bundle: ..., traitCollection: ...)`
+    static func settings_titleBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.settings_titleBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "stop_button", bundle: ..., traitCollection: ...)`
     static func stop_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.stop_button, compatibleWith: traitCollection)
@@ -826,7 +835,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `CatStoreCollectionCell`.
     static let catStoreCollectionCell = _R.nib._CatStoreCollectionCell()
@@ -838,6 +847,8 @@ struct R: Rswift.Validatable {
     static let motivationView = _R.nib._MotivationView()
     /// Nib `PageCollectionViewCell`.
     static let pageCollectionViewCell = _R.nib._PageCollectionViewCell()
+    /// Nib `SettingsCell`.
+    static let settingsCell = _R.nib._SettingsCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CatStoreCollectionCell", in: bundle)`
@@ -879,6 +890,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SettingsCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.settingsCell) instead")
+    static func settingsCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.settingsCell)
+    }
+    #endif
+
     static func catStoreCollectionCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CatStoreCollectionCell? {
       return R.nib.catStoreCollectionCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CatStoreCollectionCell
     }
@@ -899,15 +918,21 @@ struct R: Rswift.Validatable {
       return R.nib.pageCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PageCollectionViewCell
     }
 
+    static func settingsCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingsCell? {
+      return R.nib.settingsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingsCell
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ChallengeCell`.
     static let challengeCell: Rswift.ReuseIdentifier<HistoryChallengeCell> = Rswift.ReuseIdentifier(identifier: "ChallengeCell")
     /// Reuse identifier `PageCollectionViewCell`.
     static let pageCollectionViewCell: Rswift.ReuseIdentifier<PageCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PageCollectionViewCell")
+    /// Reuse identifier `SettingsCell`.
+    static let settingsCell: Rswift.ReuseIdentifier<SettingsCell> = Rswift.ReuseIdentifier(identifier: "SettingsCell")
     /// Reuse identifier `SongSelectCell`.
     static let songSelectCell: Rswift.ReuseIdentifier<SongSelectCell> = Rswift.ReuseIdentifier(identifier: "SongSelectCell")
 
@@ -1237,7 +1262,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 56 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 65 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1251,14 +1276,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSecondPageContent = Rswift.StringResource(key: "guide.secondPage.content", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: About
+      ///
+      /// Locales: ru, en
+      static let settingsAbout = Rswift.StringResource(key: "settings.about", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Ad
       ///
       /// Locales: en
       static let motivationItemAdTitle = Rswift.StringResource(key: "motivationItem.ad.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Appearance
+      ///
+      /// Locales: ru, en
+      static let settingsAppearance = Rswift.StringResource(key: "settings.appearance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Back
       ///
       /// Locales: ru, en
       static let alertActionBack = Rswift.StringResource(key: "alert.action.back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Buy
+      ///
+      /// Locales: ru, en
+      static let buyAction = Rswift.StringResource(key: "buy.action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Buy a cat instead
       ///
       /// Locales: ru, en
@@ -1283,6 +1320,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let motivationItemLevel1Title = Rswift.StringResource(key: "motivationItem.level1.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Dark Mode
+      ///
+      /// Locales: ru, en
+      static let settingsDarkMode = Rswift.StringResource(key: "settings.darkMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Do you really want to give up?
       ///
       /// Locales: ru, en
@@ -1291,6 +1332,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideSecondPageTitle = Rswift.StringResource(key: "guide.secondPage.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Email us
+      ///
+      /// Locales: ru, en
+      static let settingsEmailUs = Rswift.StringResource(key: "settings.emailUs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Execute a penalty and watch 3 ads
       ///
       /// Locales: ru, en
@@ -1311,6 +1356,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseCatMainButton = Rswift.StringResource(key: "lose.cat.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Get in touch
+      ///
+      /// Locales: ru, en
+      static let settingsGetInTouch = Rswift.StringResource(key: "settings.getInTouch", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Give up
       ///
       /// Locales: ru, en
@@ -1355,6 +1404,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideNext = Rswift.StringResource(key: "guide.next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Notifications
+      ///
+      /// Locales: ru, en
+      static let settingsNotifications = Rswift.StringResource(key: "settings.notifications", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
       /// Locales: en
@@ -1363,6 +1416,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionAd = Rswift.StringResource(key: "motivationItem.description.ad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Privacy policy
+      ///
+      /// Locales: ru, en
+      static let settingsPolicy = Rswift.StringResource(key: "settings.policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Set mode
       ///
       /// Locales: ru, en
@@ -1387,6 +1444,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationActionTitle = Rswift.StringResource(key: "creation.actionTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Terms of service
+      ///
+      /// Locales: ru, en
+      static let settingsTerms = Rswift.StringResource(key: "settings.terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
       ///
       /// Locales: ru, en
@@ -1513,6 +1574,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.secondPage.content", bundle: bundle, comment: "")
       }
 
+      /// en translation: About
+      ///
+      /// Locales: ru, en
+      static func settingsAbout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.about", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.about"
+        }
+
+        return NSLocalizedString("settings.about", bundle: bundle, comment: "")
+      }
+
       /// en translation: Ad
       ///
       /// Locales: en
@@ -1528,6 +1604,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.ad.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Appearance
+      ///
+      /// Locales: ru, en
+      static func settingsAppearance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.appearance", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.appearance"
+        }
+
+        return NSLocalizedString("settings.appearance", bundle: bundle, comment: "")
+      }
+
       /// en translation: Back
       ///
       /// Locales: ru, en
@@ -1541,6 +1632,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert.action.back", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Buy
+      ///
+      /// Locales: ru, en
+      static func buyAction(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("buy.action", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "buy.action"
+        }
+
+        return NSLocalizedString("buy.action", bundle: bundle, comment: "")
       }
 
       /// en translation: Buy a cat instead
@@ -1633,6 +1739,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.level1.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Dark Mode
+      ///
+      /// Locales: ru, en
+      static func settingsDarkMode(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.darkMode", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.darkMode"
+        }
+
+        return NSLocalizedString("settings.darkMode", bundle: bundle, comment: "")
+      }
+
       /// en translation: Do you really want to give up?
       ///
       /// Locales: ru, en
@@ -1661,6 +1782,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.secondPage.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Email us
+      ///
+      /// Locales: ru, en
+      static func settingsEmailUs(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.emailUs", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.emailUs"
+        }
+
+        return NSLocalizedString("settings.emailUs", bundle: bundle, comment: "")
       }
 
       /// en translation: Execute a penalty and watch 3 ads
@@ -1736,6 +1872,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lose.cat.mainButton", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Get in touch
+      ///
+      /// Locales: ru, en
+      static func settingsGetInTouch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.getInTouch", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.getInTouch"
+        }
+
+        return NSLocalizedString("settings.getInTouch", bundle: bundle, comment: "")
       }
 
       /// en translation: Give up
@@ -1903,6 +2054,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.next", bundle: bundle, comment: "")
       }
 
+      /// en translation: Notifications
+      ///
+      /// Locales: ru, en
+      static func settingsNotifications(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.notifications", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.notifications"
+        }
+
+        return NSLocalizedString("settings.notifications", bundle: bundle, comment: "")
+      }
+
       /// en translation: Pinko
       ///
       /// Locales: en
@@ -1931,6 +2097,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.description.ad", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Privacy policy
+      ///
+      /// Locales: ru, en
+      static func settingsPolicy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.policy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.policy"
+        }
+
+        return NSLocalizedString("settings.policy", bundle: bundle, comment: "")
       }
 
       /// en translation: Set mode
@@ -2021,6 +2202,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.actionTitle", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Terms of service
+      ///
+      /// Locales: ru, en
+      static func settingsTerms(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.terms", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.terms"
+        }
+
+        return NSLocalizedString("settings.terms", bundle: bundle, comment: "")
       }
 
       /// en translation: This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.  To improve your motivation we challenge you to make a real bet that costs you money or time!
@@ -2483,6 +2679,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _SettingsCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = SettingsCell
+
+      let bundle = R.hostingBundle
+      let identifier = "SettingsCell"
+      let name = "SettingsCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingsCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingsCell
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -2833,9 +3043,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "settings_titleBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'settings_titleBackground' is used in storyboard 'Settings', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTGray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTGray' is used in storyboard 'Settings', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Settings', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "blueBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blueBackground' is used in storyboard 'Settings', but couldn't be loaded.") }
         }
         if _R.storyboard.settings().settingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewController' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
       }

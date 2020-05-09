@@ -34,6 +34,10 @@
 		3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */; };
 		3A1AC66C241E5FB000DB3CFA /* MotivationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */; };
 		3A1AC66E241E5FBA00DB3CFA /* DurationParameterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */; };
+		3A1F532D2466A14400298045 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F532C2466A14400298045 /* SettingsCell.swift */; };
+		3A1F532F2466A15600298045 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F532E2466A15600298045 /* SettingsSection.swift */; };
+		3A1F53332466A75B00298045 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1F53322466A75B00298045 /* SettingsCell.xib */; };
+		3A1F53352466CD5E00298045 /* SettingsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F53342466CD5E00298045 /* SettingsSectionHeader.swift */; };
 		3A1FA56E245C1E05000BAA20 /* CatStoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA56D245C1E05000BAA20 /* CatStoreConfigurator.swift */; };
 		3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FA56F245C1E21000BAA20 /* CatStore.storyboard */; };
 		3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA571245C1E34000BAA20 /* CatStorePresenter.swift */; };
@@ -88,6 +92,9 @@
 		3A70084624154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */; };
 		3A7EC84724603E91001EFC05 /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */; };
 		3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */; };
+		3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84C246192E3001EFC05 /* CollectionView.swift */; };
+		3A7EC84F246197BD001EFC05 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */; };
+		3A7EC88024669F52001EFC05 /* SettingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */; };
 		3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6672410D07600225DA4 /* R.generated.swift */; };
 		3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */; };
 		3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6872413B05C00225DA4 /* StartChallenge.swift */; };
@@ -201,6 +208,10 @@
 		3A1AC668241E5EDA00DB3CFA /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		3A1AC66B241E5FAF00DB3CFA /* MotivationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationParameterUseCase.swift; sourceTree = "<group>"; };
 		3A1AC66D241E5FBA00DB3CFA /* DurationParameterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationParameterUseCase.swift; sourceTree = "<group>"; };
+		3A1F532C2466A14400298045 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		3A1F532E2466A15600298045 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		3A1F53322466A75B00298045 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		3A1F53342466CD5E00298045 /* SettingsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionHeader.swift; sourceTree = "<group>"; };
 		3A1FA56D245C1E05000BAA20 /* CatStoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStoreConfigurator.swift; sourceTree = "<group>"; };
 		3A1FA56F245C1E21000BAA20 /* CatStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatStore.storyboard; sourceTree = "<group>"; };
 		3A1FA571245C1E34000BAA20 /* CatStorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStorePresenter.swift; sourceTree = "<group>"; };
@@ -260,6 +271,9 @@
 		3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataChallengesGatewayTest.swift; sourceTree = "<group>"; };
 		3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
 		3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		3A7EC84C246192E3001EFC05 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionView.swift; sourceTree = "<group>"; };
 		3A8DB6672410D07600225DA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3A8DB66B2410D7F900225DA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeConfigurator.swift; sourceTree = "<group>"; };
@@ -471,6 +485,23 @@
 			path = ChallengeParameters;
 			sourceTree = "<group>";
 		};
+		3A1F53302466A58800298045 /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F532C2466A14400298045 /* SettingsCell.swift */,
+				3A1F53322466A75B00298045 /* SettingsCell.xib */,
+			);
+			path = SettingsCell;
+			sourceTree = "<group>";
+		};
+		3A1F53312466A59F00298045 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F532E2466A15600298045 /* SettingsSection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3A1FA56C245C1CF4000BAA20 /* CatStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,7 +644,6 @@
 		3A47D679230F1E2900B2B200 /* OutdatedModules */ = {
 			isa = PBXGroup;
 			children = (
-				54C2AB8B2378A6C800BB2D90 /* Settings */,
 				3AA12728232ABB3C004206E5 /* Guide */,
 			);
 			path = OutdatedModules;
@@ -777,6 +807,25 @@
 			path = HistoryHeaderView;
 			sourceTree = "<group>";
 		};
+		3A7EC87E24669E64001EFC05 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3A7EC84C246192E3001EFC05 /* CollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		3A7EC88124669F56001EFC05 /* SettingsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */,
+				3A1F53312466A59F00298045 /* Model */,
+				3A1F53302466A58800298045 /* SettingsCell */,
+				3A1F53342466CD5E00298045 /* SettingsSectionHeader.swift */,
+			);
+			path = SettingsCollectionView;
+			sourceTree = "<group>";
+		};
 		3A8DB66D2410DA4000225DA4 /* Refactored */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,6 +921,7 @@
 				3A653DC3241CE91200BE613C /* Ad */,
 				3A2F572D2311B50300212317 /* Alert */,
 				3A1FA580245EA5BA000BAA20 /* Loading */,
+				54C2AB8B2378A6C800BB2D90 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1013,6 +1063,7 @@
 		544EC480233BAA7800417DAF /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				3A7EC87E24669E64001EFC05 /* CollectionView */,
 				544EC481233BAA8300417DAF /* Buttons */,
 			);
 			path = UIElements;
@@ -1029,9 +1080,11 @@
 		54C2AB8B2378A6C800BB2D90 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */,
+				3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */,
 				54B9D76F2378B98500752B2A /* SettingsPresenter.swift */,
+				54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */,
 				3A653DCE241D2A5100BE613C /* Settings.storyboard */,
+				3A7EC88124669F56001EFC05 /* SettingsCollectionView */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1176,6 +1229,7 @@
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,
 				3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */,
 				3AD068962358ED09003D30A6 /* PageNavigation.storyboard in Resources */,
+				3A1F53332466A75B00298045 /* SettingsCell.xib in Resources */,
 				3ACD2C7F240C2EB00017FABC /* Guide.storyboard in Resources */,
 				C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */,
 				3A1FA588245EA5F7000BAA20 /* Loading.storyboard in Resources */,
@@ -1335,8 +1389,10 @@
 				3A653DC0241CC13400BE613C /* MusicSelectionConfigurator.swift in Sources */,
 				3A1AC669241E5EDA00DB3CFA /* UserDefaultsError.swift in Sources */,
 				5432587A237A094D0082DEB0 /* SongSelectCell.swift in Sources */,
+				3A7EC84F246197BD001EFC05 /* SettingsConfigurator.swift in Sources */,
 				3A47D671230F1D1A00B2B200 /* NetworkError.swift in Sources */,
 				3A653DBC241ABA6600BE613C /* DisplayAvailableSongs.swift in Sources */,
+				3A1F532D2466A14400298045 /* SettingsCell.swift in Sources */,
 				3ACD2C7C240C2E620017FABC /* NSManagedObjectContext-Utils.swift in Sources */,
 				3ACD2C5D240C2DE60017FABC /* HistoryChallengeCell.swift in Sources */,
 				3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */,
@@ -1360,6 +1416,7 @@
 				3A1FA56E245C1E05000BAA20 /* CatStoreConfigurator.swift in Sources */,
 				3A00A50B2383187F0011ACDC /* JWT.swift in Sources */,
 				C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */,
+				3A1F532F2466A15600298045 /* SettingsSection.swift in Sources */,
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,
 				3A653DB9241A155400BE613C /* SongsGateway.swift in Sources */,
 				3A2F573C231272DF00212317 /* LockStateRequests.swift in Sources */,
@@ -1378,6 +1435,7 @@
 				3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */,
 				3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */,
 				3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */,
+				3A1F53352466CD5E00298045 /* SettingsSectionHeader.swift in Sources */,
 				3AA1272E232ABC8D004206E5 /* CustomPageControl.swift in Sources */,
 				3ACD2C76240C2E620017FABC /* CreateChallenge.swift in Sources */,
 				3A653DB5241A129A00BE613C /* SongsGatewayProtocol.swift in Sources */,
@@ -1401,6 +1459,7 @@
 				3A653DC7241CE98A00BE613C /* AdPresenter.swift in Sources */,
 				3ACD2C78240C2E620017FABC /* DeleteChallenge.swift in Sources */,
 				C1FE2042234FB36A00377004 /* NotificationManager.swift in Sources */,
+				3A7EC88024669F52001EFC05 /* SettingsCollectionView.swift in Sources */,
 				3A1FA584245EA5E1000BAA20 /* LoadingPresenter.swift in Sources */,
 				54008D8B237C9F2D0072EC00 /* Song.swift in Sources */,
 				3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */,
@@ -1428,6 +1487,7 @@
 				3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
 				3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */,
+				3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */,
 				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,
 				C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */,
 				3A653DBE241ABA8600BE613C /* ChangePlaybackState.swift in Sources */,

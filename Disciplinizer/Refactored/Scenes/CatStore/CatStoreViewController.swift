@@ -62,7 +62,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
                                              itemImage: item.image,
                                              descriptionTitle: "",
                                              description: "",
-                                             actionButtonTitle: "Buy") {
+                                             actionButtonTitle: Strings.buyAction()) {
                                                 self.presenter.didTapBuyButton(onItemWithIndex: indexPath.row)
             }
             
