@@ -25,9 +25,12 @@ class KeychainService {
         static let keychainAccessId = rootName
 
         static let isAppLocked = getName(name: "isAppLocked")
-        static let isGuideWatched = getName(name: "isGuideWatched")
+        static let isFirstLaunch = getName(name: "isFirstLaunch")
+        static let purchasedItem = getName(name: "purchasedItem")
+        static let selectedItem = getName(name: "selectedItem")
+        static let selectedTime = getName(name: "selectedTime")
 
-        private static let rootName = "com.d80.concentrationTracker"
+        private static let rootName = "com.antonkliukin.disciplinizer"
 
         private static func getName(name: String) -> String {
             return rootName + "." + name
@@ -94,26 +97,70 @@ class KeychainService {
 }
 
 extension KeychainService {
-    static func setLockStateTo(_ state: LockState) {
-        KeychainService.shared.setValue(key: Constants.isAppLocked, value: state.rawValue)
-    }
+    static var appLockState: LockState {
+        get {
+            guard let stringState = KeychainService.shared.getValue(key: Constants.isAppLocked),
+                  let state = LockState(rawValue: stringState) else {
+                    return .unlocked
+            }
 
-    static func getLockState() -> LockState? {
-        guard let stringState = KeychainService.shared.getValue(key: Constants.isAppLocked),
-              let state = LockState(rawValue: stringState) else {
-                return nil
+            return state
         }
-
-        return state
+        set {
+            KeychainService.shared.setValue(key: Constants.isAppLocked, value: newValue.rawValue)
+        }
     }
 
-    static func setGuideState(isWatched: Bool) {
-        KeychainService.shared.setValue(key: Constants.isGuideWatched, value: isWatched ? "true" : "false")
+    
+    static var isFirstLaunch: Bool {
+        get {
+            guard let isWatched = KeychainService.shared.getValue(key: Constants.isFirstLaunch) else { return true }
+
+            return isWatched == "true"
+        }
+        
+        set {
+            KeychainService.shared.setValue(key: Constants.isFirstLaunch, value: newValue ? "true" : "false")
+        }
+    }
+    
+    static var purchasedItem: MotivationalItem? {
+        get {
+            guard let rawValue = KeychainService.shared.getValue(key: Constants.purchasedItem), let item = MotivationalItem(rawValue: rawValue) else { return nil }
+
+            return item
+        }
+        
+        set {
+            if let value = newValue {
+                KeychainService.shared.setValue(key: Constants.purchasedItem, value: value.rawValue)
+            }
+        }
     }
 
-    static func getGuideState() -> Bool {
-        guard let isWatched = KeychainService.shared.getValue(key: Constants.isGuideWatched) else { return false }
+    static var selectedItem: MotivationalItem? {
+        get {
+            guard let rawValue = KeychainService.shared.getValue(key: Constants.selectedItem), let item = MotivationalItem(rawValue: rawValue) else { return nil }
 
-        return isWatched == "true"
+            return item
+        }
+        
+        set {
+            if let value = newValue {
+                KeychainService.shared.setValue(key: Constants.selectedItem, value: value.rawValue)
+            }
+        }
+    }
+
+    static var selectedTime: Int {
+        get {
+            guard let stringTime = KeychainService.shared.getValue(key: Constants.selectedTime), let time = Int(stringTime) else { return 30 }
+
+            return time
+        }
+        
+        set {
+            KeychainService.shared.setValue(key: Constants.selectedTime, value: String(newValue))
+        }
     }
 }

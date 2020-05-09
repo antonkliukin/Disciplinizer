@@ -72,7 +72,6 @@ extension GuidePresenter: GuidePresenterProtocol {
     }
 
     func dismiss() {
-        KeychainService.setGuideState(isWatched: true)
         view?.router?.dismiss()
     }
 }

@@ -50,7 +50,7 @@ final class NetworkManager {
 
     func request<T: Codable>(requestBuilder: RequestBuilder,
                              acceptableCodes: [Int] = successResponseCodes,
-                             _ completionHandler: @escaping (Swift.Result<T, Error>) -> Void) {
+                             _ completionHandler: @escaping (Swift.Result<T?, Error>) -> Void) {
         request(requestBuilder: requestBuilder) { (result) in
             switch result {
             case .success(let data):
@@ -64,7 +64,7 @@ final class NetworkManager {
                 } catch DecodingError.typeMismatch(let type, let context) {
                     print("ERROR: Unexpected type: \(type), description: \(context.debugDescription), \(context.codingPath)")
                 } catch {
-                    //completionHandler(.failure(error))
+                    completionHandler(.success(nil))
                 }
             case .failure(let error):
                 completionHandler(.failure(error))

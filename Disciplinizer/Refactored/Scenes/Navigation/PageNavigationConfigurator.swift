@@ -19,9 +19,12 @@ class PageNavigationConfigurator: PageNavigationConfiguratorProtocol {
         let coreDataChallengesGateway = CoreDataChallengesGateway(viewContext: viewContext)
 
         let getLastChallengeUseCase = DisplayLastChallengeUseCase(challengesGateway: coreDataChallengesGateway)
+        let challengeParameterGateway = ChallengeParametersPersistenceGateway()
+        let motivationParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParameterGateway)
 
         let presenter = PageNavigationPresenter(view: pageNavigationViewController,
-                                                getLastChallengeUseCase: getLastChallengeUseCase)
+                                                getLastChallengeUseCase: getLastChallengeUseCase,
+                                                motivationParameterUseCase: motivationParameterUseCase)
 
         pageNavigationViewController.presenter = presenter
     }

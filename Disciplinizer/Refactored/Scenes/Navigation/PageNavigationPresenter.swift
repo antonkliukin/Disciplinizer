@@ -9,22 +9,30 @@
 import Foundation
 
 protocol PageNavigationPresenterProtocol {
-    func viewDidAppear()
+    func viewDidLoad()
+    func viewWillAppear()
 }
 
 final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     weak var view: PageNavigationViewProtocol?
-    var getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol?
+    
+    private var getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol?
+    private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
+    
+    func viewDidLoad() {
+        //checkIfLocked()
+    }
 
-    func viewDidAppear() {
-        checkIfLocked()
-        showGuideIfFirstLaunch()
+    func viewWillAppear() {
+        checkIfFirstLaunch()
     }
 
     required init(view: PageNavigationViewProtocol,
-                  getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol) {
+                  getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol,
+                  motivationParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
         self.getLastChallengeUseCase = getLastChallengeUseCase
+        self.motivationParameterUseCase = motivationParameterUseCase
     }
 
     private func checkIfLocked() {
@@ -53,10 +61,23 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
             }
         }
     }
-
-    private func showGuideIfFirstLaunch() {
-        if !KeychainService.getGuideState() {
-            view?.router?.present(Controller.guide())
+    
+    private func checkIfFirstLaunch() {
+        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
+            // TODO: Delete test conditions
+            if true/*isFirstLaunch*/, true/*KeychainService.isFirstLaunch*/ {
+                KeychainService.isFirstLaunch = false
+                KeychainService.appLockState = .unlocked
+                AppLockManager.shared.changeStateTo(.unlocked)
+                self.addPaidItem()
+                
+                // self.view?.router?.present(Controller.guide())
+            }
         }
+    }
+    
+    private func addPaidItem() {
+        let paid = MotivationalItem.level1
+        motivationParameterUseCase.addPaid(motivationalItem: paid) { (_) in }
     }
 }

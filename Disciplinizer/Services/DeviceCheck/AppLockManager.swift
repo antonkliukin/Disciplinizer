@@ -19,6 +19,7 @@ enum LockState: String {
 protocol AppLockManagerProtocol {
     func getCurrentState(completion: @escaping (LockState) -> Void)
     func changeStateTo(_ state: LockState)
+    func checkIfFirstLaunch(completion: @escaping (Bool) -> Void)
 }
 
 final class AppLockManager: AppLockManagerProtocol {
@@ -48,13 +49,24 @@ final class AppLockManager: AppLockManagerProtocol {
             completion(deviceToken)
         })
     }
+    
+    func checkIfFirstLaunch(completion: @escaping (Bool) -> Void) {
 
-    func getCurrentState(completion: @escaping (LockState) -> Void) {
-
-        if let stateFromKeychain = KeychainService.getLockState() {
-            completion(stateFromKeychain)
-            return
+        getDeviceToken { (deviceToken) in
+            let model = DeviceCheckRequestModel(deviceToken: deviceToken ?? "", bit0: nil, bit1: nil)
+            
+            LockStateRequestManager.shared.getBits(model: model) { (result) in
+                switch result {
+                case .success:
+                    completion(false)
+                case .failure:
+                    completion(true)
+                }
+            }
         }
+    }
+    
+    func getCurrentState(completion: @escaping (LockState) -> Void) {
 
         getDeviceToken { (deviceToken) in
             let model = DeviceCheckRequestModel(deviceToken: deviceToken ?? "", bit0: nil, bit1: nil)
@@ -75,8 +87,6 @@ final class AppLockManager: AppLockManagerProtocol {
 
     func changeStateTo(_ state: LockState) {
         let bit0 = state == .locked
-
-        KeychainService.setLockStateTo(state)
 
         getDeviceToken { (deviceToken) in
             let model = DeviceCheckRequestModel(deviceToken: deviceToken ?? "", bit0: bit0, bit1: false)

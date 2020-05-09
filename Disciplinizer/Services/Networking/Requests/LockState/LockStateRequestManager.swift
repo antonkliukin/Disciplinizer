@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum DeviceCheckRequesError: Error {
+    case noInfoAboutDevice
+}
+
 struct DeviceCheckRequestModel: Codable {
     let deviceToken: String
     let timestamp = Date().currentTimeMillis()
@@ -42,13 +46,24 @@ class LockStateRequestManager {
 
     private init() {}
 
-    func getBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<DeviceCheckResponseModel, Error>) -> Void) {
+    func getBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<DeviceCheckResponseModel, DeviceCheckRequesError>) -> Void) {
         let request = API.LockStateRequests.getBits(model: model)
-
-        networkManager.request(requestBuilder: request, completionHandler)
+        
+        networkManager.request(requestBuilder: request) { (result: Result<DeviceCheckResponseModel?, Error>) in
+            switch result {
+            case .success(let model):
+                if let model = model {
+                    completionHandler(.success(model))
+                } else {
+                    completionHandler(.failure(.noInfoAboutDevice))
+                }
+            case .failure(_):
+                completionHandler(.failure(.noInfoAboutDevice))
+            }
+        }
     }
 
-    func updateBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<String, Error>) -> Void) {
+    func updateBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<String?, Error>) -> Void) {
         let request = API.LockStateRequests.updateBits(model: model)
 
         networkManager.request(requestBuilder: request, completionHandler)
