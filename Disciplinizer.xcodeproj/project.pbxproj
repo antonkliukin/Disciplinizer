@@ -586,10 +586,11 @@
 		3A47D65A230F18FB00B2B200 /* Disciplinizer */ = {
 			isa = PBXGroup;
 			children = (
-				3A8DB66D2410DA4000225DA4 /* Refactored */,
 				3A47D677230F1DE600B2B200 /* Application */,
+				3ACD2C62240C2E620017FABC /* Core */,
+				3ACD2C6C240C2E620017FABC /* EntityGateway */,
+				3ACD2C56240C2DE60017FABC /* Scenes */,
 				3AB765CB231C298D007FA888 /* Common */,
-				3A47D679230F1E2900B2B200 /* OutdatedModules */,
 				3A112B1D230F23F50064A7D9 /* Extensions */,
 				3A47D678230F1E1D00B2B200 /* Services */,
 				3A47D67A230F1E3A00B2B200 /* Assets */,
@@ -639,14 +640,6 @@
 				C1FE2041234FB36A00377004 /* NotificationManager.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		3A47D679230F1E2900B2B200 /* OutdatedModules */ = {
-			isa = PBXGroup;
-			children = (
-				3AA12728232ABB3C004206E5 /* Guide */,
-			);
-			path = OutdatedModules;
 			sourceTree = "<group>";
 		};
 		3A47D67A230F1E3A00B2B200 /* Assets */ = {
@@ -826,16 +819,6 @@
 			path = SettingsCollectionView;
 			sourceTree = "<group>";
 		};
-		3A8DB66D2410DA4000225DA4 /* Refactored */ = {
-			isa = PBXGroup;
-			children = (
-				3ACD2C62240C2E620017FABC /* Core */,
-				3ACD2C6C240C2E620017FABC /* EntityGateway */,
-				3ACD2C56240C2DE60017FABC /* Scenes */,
-			);
-			path = Refactored;
-			sourceTree = "<group>";
-		};
 		3A9F9A702377099400022C38 /* Blocked */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,19 +892,20 @@
 		3ACD2C56240C2DE60017FABC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3AA12728232ABB3C004206E5 /* Guide */,
 				3AD068942358ECD2003D30A6 /* Navigation */,
 				3A0D5A17234E5CDD00F20BC3 /* Creation */,
 				3A0742AA241E3A5A003B1A83 /* TimeSelection */,
 				3A0742A1241E2B65003B1A83 /* MotivationSelection */,
 				3A1FA56C245C1CF4000BAA20 /* CatStore */,
 				C13CFA1D23660E640022863E /* Current */,
-				3ACD2C57240C2DE60017FABC /* History */,
 				3A9F9A702377099400022C38 /* Blocked */,
+				3ACD2C57240C2DE60017FABC /* History */,
+				54C2AB8B2378A6C800BB2D90 /* Settings */,
 				3A653DB1241A10B400BE613C /* Music */,
 				3A653DC3241CE91200BE613C /* Ad */,
 				3A2F572D2311B50300212317 /* Alert */,
 				3A1FA580245EA5BA000BAA20 /* Loading */,
-				54C2AB8B2378A6C800BB2D90 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
