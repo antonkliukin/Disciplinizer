@@ -8,10 +8,6 @@
 
 import UIKit
 
-enum TimeSelectionViewState {
-    case onHold, valid, invalid
-}
-
 protocol TimeSelectionViewProtocol: ViewProtocol {
     func showErrorMessage(_ message: String)
     func hideErrorMessage()

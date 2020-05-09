@@ -14,6 +14,10 @@ protocol TimeSelectionPresenterProtocol {
     func didTapSaveButton()
 }
 
+enum TimeSelectionViewState {
+    case onHold, valid, invalid
+}
+
 class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     weak var view: TimeSelectionViewProtocol?
     
@@ -63,7 +67,12 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
         }
         
         guard input.count > 1 else {
-            
+            changeViewState(.onHold)
+
+            return
+        }
+        
+        if input.count == 2, Int(input) ?? 0 <= 12 {
             changeViewState(.onHold)
             
             return
