@@ -11,6 +11,7 @@ import Foundation
 protocol CatStorePresenterProtocol {
     func viewDidLoad()
     func didTapBuyButton(onItemWithIndex index: Int)
+    func didTapCloseButton()
 }
 
 class CatStorePresenter: CatStorePresenterProtocol {
@@ -29,6 +30,10 @@ class CatStorePresenter: CatStorePresenterProtocol {
         
     func viewDidLoad() {
         view?.showMotivationItems(items)
+    }
+    
+    func didTapCloseButton() {
+        view?.router?.dismiss()
     }
         
     func didTapBuyButton(onItemWithIndex index: Int) {

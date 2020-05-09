@@ -12,6 +12,7 @@ protocol ChangePlaybackStateUseCaseProtocol {
     func play(song: Song, withVolume volume: Float, completionHandler: @escaping (_ result: Result<Void, Error>) -> Void)
     func stop(song: Song, completionHandler: @escaping (_ result: Result<Void, Error>) -> Void)
     func setVolume(value: Float, completionHandler: @escaping (_ result: Result<Void, Error>) -> Void)
+    func getPlaying(completionHandler: @escaping (_ result: Result<Song?, Error>) -> Void)
 }
 
 class ChangePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol {
@@ -31,5 +32,9 @@ class ChangePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol {
 
     func setVolume(value: Float, completionHandler: @escaping (Result<Void, Error>) -> Void) {
         songsGateway.setVolume(value: value, completionHandler: completionHandler)
+    }
+    
+    func getPlaying(completionHandler: @escaping (Result<Song?, Error>) -> Void) {
+        songsGateway.getPlaying(completionHandler: completionHandler)
     }
 }

@@ -20,6 +20,7 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
     var presenter: MusicSelectionPresenterProtocol?
     var configurator = MusicSelectionConfigurator()
     var songs: [Song] = []
+    var currentSong: Song?
 
     func setupSongsList(songs: [Song]) {
         self.songs = songs
@@ -38,6 +39,8 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableView.reloadData()
 
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
             self.shadowView.alpha = 1
@@ -74,28 +77,22 @@ extension MusicSelectViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: SongSelectCell.reuseId, for: indexPath)
         
         if let cell = cell as? SongSelectCell {
-            cell.setTitle(songs[indexPath.row].title)
+            let song = songs[indexPath.row]
+            cell.configure(title: song.title, isPlaying: currentSong == song)
         }
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else {
-            assertionFailure()
-            return
+        let song = songs[indexPath.row]
+        
+        if currentSong == song {
+            currentSong = nil
+        } else {
+            currentSong = song
         }
 
-        cell.setSelected(true, animated: true)
-        presenter?.didSelect(song: songs[indexPath.row])
-    }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else {
-            assertionFailure()
-            return
-        }
-
-        cell.setSelected(false, animated: true)
+        presenter?.didSelect(song: song)
     }
 }

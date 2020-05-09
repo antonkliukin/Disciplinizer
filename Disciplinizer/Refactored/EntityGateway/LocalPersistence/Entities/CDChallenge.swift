@@ -13,7 +13,7 @@ extension CDChallenge {
         return Challenge(id: id ?? "",
                          startDate: startDate,
                          finishDate: finishDate,
-                         duration: Int(durationInMinutes),
+                         durationInMinutes: Int(durationInMinutes),
                          isSuccess: isSuccess,
                          motivationalItem: MotivationalItem(rawValue: motivationalItemId ?? "0") ?? .ad)
     }
@@ -33,7 +33,7 @@ extension CDChallenge {
         id = challenge.id
         startDate = challenge.startDate
         finishDate = challenge.finishDate
-        durationInMinutes = Int16(challenge.duration)
+        durationInMinutes = Int16(challenge.durationInMinutes)
         isSuccess = challenge.isSuccess
         motivationalItemId = challenge.motivationalItem.rawValue
     }

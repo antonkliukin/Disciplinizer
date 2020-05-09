@@ -60,7 +60,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 self.selectedDurationInMinutes = durationInMinutes
                 
                 let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
-                                                       valueTitle: "\(durationInMinutes) min",
+                                                       valueTitle: Strings.durationInMinutes(minutes: durationInMinutes),
                                                        actionTitle: Strings.creationActionTitle(),
                                                        action: {
                                                         let selectTimeVC = Controller.timeSelection()
@@ -69,10 +69,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 
                 self.view?.configureTimeView(model: timeViewModel)
             case .failure:
-                self.selectedDurationInMinutes = 30 * 60
+                self.selectedDurationInMinutes = 30
                 
                 let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
-                                                       valueTitle: "\(30) min",
+                                                       valueTitle: Strings.durationInMinutes(minutes: 30),
                                                        actionTitle: Strings.creationActionTitle(),
                                                        action: {
                                                         let selectTimeVC = Controller.timeSelection()
@@ -96,11 +96,18 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                                                                 let selectMotivationVC = Controller.motivationSelection()
                                                                 self.view?.router?.push(selectMotivationVC)
                 })
-
+                
                 self.view?.configureMotivationView(model: motivationViewModel)
             case .failure:
-                assertionFailure()
-                                                                
+                let item = MotivationalItem.ad
+                self.motivationParameterUseCase.select(motivationalItem: item) { (result) in
+                    switch result {
+                    case .success:
+                        self.configureMotivationView()
+                    case .failure:
+                        assertionFailure()
+                    }
+                }
             }
         }
     }

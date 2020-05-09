@@ -12,7 +12,7 @@ struct Challenge {
     var id: String
     var startDate: Date?
     var finishDate: Date?
-    var duration: Int
+    var durationInMinutes: Int
     var isSuccess: Bool
     var motivationalItem: MotivationalItem
 }

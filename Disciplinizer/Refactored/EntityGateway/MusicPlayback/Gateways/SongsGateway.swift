@@ -10,7 +10,8 @@ import SwiftySound
 import AVFoundation
 
 class SongsGateway: SongsGatewayProtocol {
-    var currentSong: Sound?
+    var currentSong: Song?
+    var currentSound: Sound?
     var currentMutedSong: Sound?
 
     func getAll(completionHandler: @escaping (Result<[Song], Error>) -> Void) {
@@ -56,18 +57,26 @@ class SongsGateway: SongsGatewayProtocol {
     }
 
     func play(song: Song, withVolume volume: Float, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        currentSong = song
+
         let sound = Sound(url: song.url)
-        currentSong = sound
+        currentSound = sound
         sound?.volume = volume
         sound?.play(numberOfLoops: -1)
     }
 
     func stop(song: Song, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        currentSong?.stop()
         currentSong = nil
+        
+        currentSound?.stop()
+        currentSound = nil
     }
 
     func setVolume(value: Float, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        currentSong?.volume = value
+        currentSound?.volume = value
+    }
+    
+    func getPlaying(completionHandler: @escaping (Result<Song?, Error>) -> Void) {
+        completionHandler(.success(currentSong))
     }
 }

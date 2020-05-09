@@ -17,17 +17,11 @@ class SongSelectCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
-        self.playButton.setImage(playImage(active: false), for: .normal)
     }
 
-    func setTitle(_ title: String) {
+    func configure(title: String, isPlaying: Bool) {
         songNameLabel.text = title
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        self.playButton.setImage(playImage(active: selected), for: .normal)
+        self.playButton.setImage(playImage(active: isPlaying), for: .normal)
     }
 
     private func playImage(active: Bool) -> UIImage? {

@@ -15,4 +15,5 @@ protocol SongsGatewayProtocol {
     func stopMutedPlayback(completionHandler: @escaping (Result<Void, Error>) -> Void)
     func stop(song: Song, completionHandler: @escaping (_ result: Result<Void, Error>) -> Void)
     func setVolume(value: Float, completionHandler: @escaping (_ result: Result<Void, Error>) -> Void)
+    func getPlaying(completionHandler: @escaping (_ result: Result<Song?, Error>) -> Void)
 }

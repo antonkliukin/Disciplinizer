@@ -81,7 +81,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         let todayTotalDuration = challenges.reduce(0) { (result, challenge) -> Int in
             guard let finishDate = challenge.finishDate else { return result }
             
-            return Calendar.current.isDateInToday(finishDate) ? result + challenge.duration : result
+            return Calendar.current.isDateInToday(finishDate) ? result + challenge.durationInMinutes : result
         }
         
         self.view?.display(todayTotalDuration: Strings.durationInMinutes(minutes: todayTotalDuration))
@@ -91,7 +91,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         var bestResult = 0
         
         for challenges in challengesByDates {
-            let bestForDay = challenges.reduce(0, { $0 + $1.duration })
+            let bestForDay = challenges.reduce(0, { $0 + $1.durationInMinutes })
             bestResult = max(bestResult, bestForDay)
         }
         
@@ -146,7 +146,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         let challenge = challenges[row]
 
         cell.display(result: challenge.isSuccess ? Strings.historySuccess() : Strings.historyFailed())
-        cell.display(duration: Strings.durationInMinutes(minutes: challenge.duration))
+        cell.display(duration: Strings.durationInMinutes(minutes: challenge.durationInMinutes))
         cell.display(motivationType: challenge.motivationalItem == .ad ? Strings.historyMotivationAd() : Strings.historyMotivationCat())
         
         if let startDate = challenge.startDate, let finishDate = challenge.finishDate {
@@ -158,7 +158,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         let sortedKeys = Array(challenges.keys).sorted(by: <)
         let date = sortedKeys[section]
         
-        let totalResultForDate = challenges[date]?.reduce(0, { $0 + $1.duration }) ?? 0
+        let totalResultForDate = challenges[date]?.reduce(0, { $0 + $1.durationInMinutes }) ?? 0
         
         let calendar = Calendar.current
         var dateString = ""

@@ -43,7 +43,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                   changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol) {
         self.view = view
         self.challenge = challenge
-        self.durationInSeconds = Int(challenge.duration)
+        self.durationInSeconds = Int(challenge.durationInMinutes * 60)
         self.startChallengeUseCase = startChallengeUseCase
         self.finishChallengeUseCase = finishChallengeUseCase
         self.changeMutedPlaybackStateUseCase = changeMutedPlaybackStateUseCase
@@ -212,7 +212,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 let adIsItem = finishedChallenge.motivationalItem == .ad
 
                 if isLose, adIsItem {
-                    print("Lose, app will be blocked until ad is viewed")
+                    print("Lose, the app will be blocked until ad is viewed")
                     AppLockManager.shared.changeStateTo(.locked)
                 } else if isLose {
                     print("Lose without blocking")

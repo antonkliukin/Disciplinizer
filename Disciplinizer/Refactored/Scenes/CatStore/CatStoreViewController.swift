@@ -15,6 +15,7 @@ protocol CatStoreViewProtocol: ViewProtocol {
 class CatStoreViewController: UIViewController, CatStoreViewProtocol {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var closeButtonImage: UIImageView!
     
     let configurator = CatStoreConfigurator()
     var presenter: CatStorePresenter!
@@ -34,6 +35,16 @@ class CatStoreViewController: UIViewController, CatStoreViewProtocol {
         collectionView.decelerationRate = .fast
         
         setupMessageView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        closeButtonImage.isHidden = navigationController != nil
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        presenter.didTapCloseButton()
     }
     
     func showMotivationItems(_ items: [MotivationalItem]) {
@@ -82,7 +93,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension CatStoreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 50, left: 0, bottom: 210, right: 0)
+        return UIEdgeInsets(top: 50, left: 0, bottom: 300, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
