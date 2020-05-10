@@ -36,7 +36,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     private var sections: [[ChatMessage]] = [[ChatMessage(text: "")]]
     private let configurator = GuideChatConfigurator()
     private var collectionView = ChatCollectionView(sections: [[]])
-    private let itemHeight: CGFloat = 100
+    private let itemHeight: CGFloat = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()

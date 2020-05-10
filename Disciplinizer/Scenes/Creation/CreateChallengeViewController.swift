@@ -60,7 +60,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         configurator.configure(createChallengeViewController: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_  animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true

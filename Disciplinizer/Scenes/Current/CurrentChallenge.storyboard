@@ -96,7 +96,7 @@ watching 3 ads if you give up</string>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I">
                                 <rect key="frame" x="167" y="702" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

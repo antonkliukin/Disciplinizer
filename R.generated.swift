@@ -3217,9 +3217,14 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct guide: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let createChallengeViewController = StoryboardViewControllerResource<CreateChallengeViewController>(identifier: "CreateChallengeViewController")
       let guideViewController = StoryboardViewControllerResource<GuideViewController>(identifier: "GuideViewController")
       let modeSelectionViewController = StoryboardViewControllerResource<ModeSelectionViewController>(identifier: "ModeSelectionViewController")
       let name = "Guide"
+
+      func createChallengeViewController(_: Void = ()) -> CreateChallengeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createChallengeViewController)
+      }
 
       func guideViewController(_: Void = ()) -> GuideViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: guideViewController)
@@ -3231,9 +3236,12 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "BackgroundBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'BackgroundBlue' is used in storyboard 'Guide', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Guide', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'Guide', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'Guide', but couldn't be loaded.") }
         }
+        if _R.storyboard.guide().createChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChallengeViewController' could not be loaded from storyboard 'Guide' as 'CreateChallengeViewController'.") }
         if _R.storyboard.guide().guideViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'guideViewController' could not be loaded from storyboard 'Guide' as 'GuideViewController'.") }
         if _R.storyboard.guide().modeSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'modeSelectionViewController' could not be loaded from storyboard 'Guide' as 'ModeSelectionViewController'.") }
       }

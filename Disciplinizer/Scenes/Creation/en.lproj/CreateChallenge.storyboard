@@ -53,6 +53,9 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="294" id="9qn-wq-gh4"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79K-w6-qVD">
                                                         <rect key="frame" x="162" y="430" width="90" height="90"/>
@@ -73,10 +76,11 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="79K-w6-qVD" firstAttribute="centerX" secondItem="QPI-9a-DOG" secondAttribute="centerX" id="2z9-OE-5Zp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="al5-aG-cxQ" secondAttribute="trailing" constant="60" id="MIk-R9-4Mm"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="al5-aG-cxQ" secondAttribute="trailing" constant="20" id="MIk-R9-4Mm"/>
                                                     <constraint firstItem="79K-w6-qVD" firstAttribute="top" secondItem="al5-aG-cxQ" secondAttribute="bottom" constant="70" id="WaB-pw-KtW"/>
-                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="leading" secondItem="QPI-9a-DOG" secondAttribute="leading" constant="60" id="ebI-jl-RGg"/>
+                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QPI-9a-DOG" secondAttribute="leading" constant="20" id="ebI-jl-RGg"/>
                                                     <constraint firstItem="al5-aG-cxQ" firstAttribute="top" secondItem="QPI-9a-DOG" secondAttribute="top" constant="50" id="gSY-9m-jEP"/>
+                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="centerX" secondItem="QPI-9a-DOG" secondAttribute="centerX" id="p3i-78-997"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="79K-w6-qVD" secondAttribute="bottom" constant="30" id="uTv-1e-5Gx"/>
                                                 </constraints>
                                             </view>

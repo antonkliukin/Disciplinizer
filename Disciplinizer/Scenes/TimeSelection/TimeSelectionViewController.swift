@@ -21,6 +21,7 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
     @IBOutlet weak var timeTextFieldLineView: UIView!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var saveButton: MainButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var presenter: TimeSelectionPresenterProtocol!
     var configurator: TimeSelectionConfiguratorProtocol?
@@ -29,6 +30,12 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         super.viewDidLoad()
 
         configurator?.configure(timeSelectionViewController: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
                 
         presenter.viewDidLoad()
     }
@@ -38,6 +45,25 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+        var contentInset: UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
         
     func showErrorMessage(_ message: String) {

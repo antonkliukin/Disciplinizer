@@ -97,13 +97,17 @@ and don’t pick up your phone to succeed </string>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="314" id="7Pe-5K-JXt"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="lQo-Xr-3lY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FQ2-8K-Xau" secondAttribute="leading" constant="20" id="BUv-dm-aXr"/>
                                             <constraint firstItem="lQo-Xr-3lY" firstAttribute="centerY" secondItem="FQ2-8K-Xau" secondAttribute="centerY" multiplier="0.7" id="EHa-Ty-sGa"/>
-                                            <constraint firstItem="lQo-Xr-3lY" firstAttribute="leading" secondItem="FQ2-8K-Xau" secondAttribute="leading" constant="50" id="I6q-V8-1YK"/>
-                                            <constraint firstAttribute="trailing" secondItem="lQo-Xr-3lY" secondAttribute="trailing" constant="50" id="Ky8-Rv-TzZ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lQo-Xr-3lY" secondAttribute="trailing" constant="20" id="rlF-1h-nJM"/>
+                                            <constraint firstItem="lQo-Xr-3lY" firstAttribute="centerX" secondItem="FQ2-8K-Xau" secondAttribute="centerX" id="rni-Fb-o7C"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -131,6 +135,7 @@ and don’t pick up your phone to succeed </string>
                     <connections>
                         <outlet property="errorMessageLabel" destination="Pbj-5G-cle" id="DPy-uO-Dlw"/>
                         <outlet property="saveButton" destination="YY2-PO-GT4" id="BKQ-ke-Vyu"/>
+                        <outlet property="scrollView" destination="dcF-yd-Jkh" id="l2S-Uf-9Uq"/>
                         <outlet property="timeTextField" destination="U7T-hn-3sB" id="51T-Fl-wNU"/>
                         <outlet property="timeTextFieldLineView" destination="Rc6-w4-i6R" id="4JI-48-lhK"/>
                     </connections>

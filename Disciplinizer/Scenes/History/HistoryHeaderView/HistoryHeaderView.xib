@@ -28,10 +28,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="okU-oa-v2x" secondAttribute="bottom" constant="20" id="Bs1-Os-nJe"/>
-                        <constraint firstItem="okU-oa-v2x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mTM-ll-Bnx" secondAttribute="leading" constant="20" id="NFX-Ml-ntF"/>
+                        <constraint firstItem="okU-oa-v2x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mTM-ll-Bnx" secondAttribute="leading" constant="10" id="NFX-Ml-ntF"/>
                         <constraint firstItem="okU-oa-v2x" firstAttribute="centerX" secondItem="mTM-ll-Bnx" secondAttribute="centerX" id="OGU-3v-Qbd"/>
                         <constraint firstItem="okU-oa-v2x" firstAttribute="top" secondItem="mTM-ll-Bnx" secondAttribute="top" constant="20" id="ZMX-8q-6WQ"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="okU-oa-v2x" secondAttribute="trailing" constant="20" id="jht-Wq-RGF"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="okU-oa-v2x" secondAttribute="trailing" constant="10" id="jht-Wq-RGF"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awY-Y9-bXB">

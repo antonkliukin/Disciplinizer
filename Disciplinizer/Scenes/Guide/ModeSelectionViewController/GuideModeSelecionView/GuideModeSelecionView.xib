@@ -41,16 +41,16 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cGm-fB-YAn">
-                    <rect key="frame" x="20" y="90" width="141" height="44"/>
+                    <rect key="frame" x="10" y="90" width="161" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cat mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAe-uK-pxW">
-                            <rect key="frame" x="33.5" y="0.0" width="74.5" height="20.5"/>
+                            <rect key="frame" x="43.5" y="0.0" width="74.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you fail, a cat leaves you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22r-Ja-lg8">
-                            <rect key="frame" x="1.5" y="30.5" width="138.5" height="13.5"/>
+                            <rect key="frame" x="11.5" y="30.5" width="138.5" height="13.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -60,9 +60,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cGm-fB-YAn" secondAttribute="trailing" constant="20" id="DD2-6t-1we"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cGm-fB-YAn" secondAttribute="trailing" constant="10" id="DD2-6t-1we"/>
                 <constraint firstItem="cGm-fB-YAn" firstAttribute="top" secondItem="r3x-FG-LuU" secondAttribute="bottom" constant="10" id="SXX-8L-0ue"/>
-                <constraint firstItem="cGm-fB-YAn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="e85-Yf-QUU"/>
+                <constraint firstItem="cGm-fB-YAn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="e85-Yf-QUU"/>
                 <constraint firstItem="r3x-FG-LuU" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mlc-48-cdk"/>
                 <constraint firstItem="r3x-FG-LuU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="oKK-LO-O4r"/>
             </constraints>
