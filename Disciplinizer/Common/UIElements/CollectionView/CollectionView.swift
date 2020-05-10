@@ -17,7 +17,7 @@ public enum CellReuse<T> {
 
 open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
-    public typealias CellContextClosure = (Cell, Item, IndexPath) -> Void
+    public typealias CellContextClosure = (Cell, Item, IndexPath, Int) -> Void
     open var didSelect: CellContextClosure?
     open var didFocus: CellContextClosure?
     open var didScroll: ((UIScrollView) -> Void)?
@@ -33,7 +33,7 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
     }
 
     /// CellType class is automatically registered if CellReuse is .Identifier
-    public init(sections: [[Item]] = [], layout: UICollectionViewLayout, cellReuseIdentifier: CellReuse<Item> = .identifier("Item"), cellConfig: @escaping (Cell, Item, IndexPath) -> Void) {
+    public init(sections: [[Item]] = [], layout: UICollectionViewLayout, cellReuseIdentifier: CellReuse<Item> = .identifier("Item"), cellConfig: @escaping (Cell, Item, IndexPath, Int) -> Void) {
         self.sections = sections
         self.cellReuseIdentifier = cellReuseIdentifier
         self.cellConfig = cellConfig
@@ -87,7 +87,7 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
         guard let indexPath = context.nextFocusedIndexPath,
             let cell = cellForItem(at: indexPath) as? Cell,
             let item = itemAtIndexPath(indexPath) else { return }
-        didFocus?(cell, item, indexPath)
+        didFocus?(cell, item, indexPath, sections[indexPath.section].count)
     }
 
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -97,7 +97,7 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = cellForItem(at: indexPath) as? Cell,
             let item = itemAtIndexPath(indexPath) else { return }
-        didSelect?(cell, item, indexPath)
+        didSelect?(cell, item, indexPath, sections[indexPath.section].count)
     }
 
     open func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
@@ -122,7 +122,7 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
                 initialConfigureClosure?(cell)
             }
             cell.tag = 3
-            cellConfig(cell, item, indexPath)
+            cellConfig(cell, item, indexPath, sections[indexPath.section].count)
         }
 
         return cell
@@ -192,7 +192,7 @@ extension CollectionView where Cell: CollectionViewCell, Cell.Item == Item {
 
     /// Automatically configured cell
     public convenience init(sections: [[Item]] = [], layout: UICollectionViewLayout, cellReuseIdentifier: CellReuse<Item> = .identifier("Item")) {
-        self.init(sections: sections, layout: layout, cellReuseIdentifier: cellReuseIdentifier) { cell, item, _ in
+        self.init(sections: sections, layout: layout, cellReuseIdentifier: cellReuseIdentifier) { cell, item, _, _ in
             cell.configure(item)
         }
     }

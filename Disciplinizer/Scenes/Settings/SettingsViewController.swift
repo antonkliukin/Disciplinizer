@@ -44,7 +44,6 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     
     var collectionView = SettingsCollectionView(sections: [[]])
     
-    
     private let configurator = SettingsConfigurator()
     
     override func viewDidLoad() {

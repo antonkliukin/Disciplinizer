@@ -10,6 +10,17 @@
 "guide.catMotivation.message" = "We give you 1 free cat. If a cat will leave, you can buy another one.";
 "guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
+"guide.message1" = "Hello, I am Didi and I will help you in becoming a discipline expert.";
+"guide.message2" = "Just set a timer and do not pick up your phone concentrating on your task.";
+"guide.message3" = "Everytime you fail concentrating, there would be a penalty.";
+"guide.message4" = "The possibility of losing something increases productivity!";
+"guide.message5" = "We are most sad when we lose someone we love or time.";
+"guide.message6" = "Imagine you live with a cat. It’s your best friend!";
+"guide.message7" = "A cat will leave you in case of fail if you choose a cat mode.";
+"guide.message8" = "Or you’ll lose your time watching 3 ads if you choose a time mode.";
+"guide.message9" = "Let’s get down to business. Good luck!";
+
+
 //******************************************************************************
 // Notifications
 //******************************************************************************

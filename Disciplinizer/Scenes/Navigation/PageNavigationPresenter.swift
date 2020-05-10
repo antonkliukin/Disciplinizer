@@ -67,8 +67,14 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
         }
     }
     
+    var test = true
+    
     private func checkIfFirstLaunch() {
-        self.view?.router?.present(Controller.guide())
+        if test {
+            test = false
+            self.view?.router?.present(Controller.guideChat())
+        }
+        
         return
             
 //        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in

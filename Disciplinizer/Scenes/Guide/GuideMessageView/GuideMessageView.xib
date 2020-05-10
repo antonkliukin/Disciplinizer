@@ -14,6 +14,8 @@
                 <outlet property="avatarImageView" destination="hfU-QU-Mw8" id="GKQ-0q-ABI"/>
                 <outlet property="avatarView" destination="jOk-YZ-y4v" id="eVH-1l-tuF"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="tKL-Nx-duB"/>
+                <outlet property="dotsStack" destination="XFz-0B-vkU" id="KoQ-hF-TOV"/>
+                <outlet property="messageBackgroundImageView" destination="Men-Ka-SDS" id="Zkx-QP-e1Q"/>
                 <outlet property="messageLabel" destination="tvZ-de-g0h" id="xcP-7X-sTN"/>
                 <outlet property="nameTitleLabel" destination="Fue-El-Way" id="jv1-Az-WUy"/>
             </connections>
@@ -71,12 +73,56 @@
                     <color key="textColor" name="orange"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XFz-0B-vkU">
+                    <rect key="frame" x="55" y="123" width="35" height="5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh8-xS-MKQ">
+                            <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.54117647058823526" blue="0.34509803921568627" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="0JT-qZ-KbJ"/>
+                                <constraint firstAttribute="width" constant="5" id="71v-jG-7bi"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="2.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQF-cV-gxp">
+                            <rect key="frame" x="15" y="0.0" width="5" height="5"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.54117647058823526" blue="0.34509803921568627" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="2.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-vF-FIg">
+                            <rect key="frame" x="30" y="0.0" width="5" height="5"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.54117647058823526" blue="0.34509803921568627" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="2.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="UpD-vF-FIg" firstAttribute="width" secondItem="Yh8-xS-MKQ" secondAttribute="width" id="9I7-np-wpT"/>
+                        <constraint firstItem="UpD-vF-FIg" firstAttribute="height" secondItem="Yh8-xS-MKQ" secondAttribute="height" id="aFB-NG-64Z"/>
+                        <constraint firstItem="sQF-cV-gxp" firstAttribute="height" secondItem="Yh8-xS-MKQ" secondAttribute="height" id="oeC-9G-Ygf"/>
+                        <constraint firstItem="sQF-cV-gxp" firstAttribute="width" secondItem="Yh8-xS-MKQ" secondAttribute="width" id="q0o-X1-1Uc"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Men-Ka-SDS" firstAttribute="top" secondItem="Fue-El-Way" secondAttribute="bottom" constant="4" id="MuU-bH-Kie"/>
                 <constraint firstItem="jOk-YZ-y4v" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Uln-gt-lo4"/>
+                <constraint firstItem="XFz-0B-vkU" firstAttribute="leading" secondItem="hfU-QU-Mw8" secondAttribute="trailing" constant="20" id="Wny-Z4-O2l"/>
                 <constraint firstItem="hfU-QU-Mw8" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="bottom" constant="-10" id="XHg-hn-eJo"/>
+                <constraint firstItem="XFz-0B-vkU" firstAttribute="centerY" secondItem="jOk-YZ-y4v" secondAttribute="centerY" id="bPG-I1-adc"/>
                 <constraint firstItem="jOk-YZ-y4v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cT5-kw-tBT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hdG-AS-O9A" secondAttribute="trailing" id="qbk-M0-ejW"/>
                 <constraint firstItem="hdG-AS-O9A" firstAttribute="leading" secondItem="hfU-QU-Mw8" secondAttribute="trailing" constant="10" id="wmN-ir-KhH"/>

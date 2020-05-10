@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
   struct storyboard {
     /// Storyboard `Ad`.
     static let ad = _R.storyboard.ad()
@@ -103,6 +103,8 @@ struct R: Rswift.Validatable {
     static let createChallenge = _R.storyboard.createChallenge()
     /// Storyboard `CurrentChallenge`.
     static let currentChallenge = _R.storyboard.currentChallenge()
+    /// Storyboard `GuideChat`.
+    static let guideChat = _R.storyboard.guideChat()
     /// Storyboard `Guide`.
     static let guide = _R.storyboard.guide()
     /// Storyboard `History`.
@@ -168,6 +170,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Guide", bundle: ...)`
     static func guide(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.guide)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "GuideChat", bundle: ...)`
+    static func guideChat(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.guideChat)
     }
     #endif
 
@@ -891,12 +900,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `CatStoreCollectionCell`.
     static let catStoreCollectionCell = _R.nib._CatStoreCollectionCell()
     /// Nib `ChallengeParameterView`.
     static let challengeParameterView = _R.nib._ChallengeParameterView()
+    /// Nib `ChatCell`.
+    static let chatCell = _R.nib._ChatCell()
     /// Nib `GuideMessageView`.
     static let guideMessageView = _R.nib._GuideMessageView()
     /// Nib `GuideModeSelecionView`.
@@ -921,6 +932,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.challengeParameterView) instead")
     static func challengeParameterView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.challengeParameterView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ChatCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.chatCell) instead")
+    static func chatCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.chatCell)
     }
     #endif
 
@@ -972,6 +991,10 @@ struct R: Rswift.Validatable {
       return R.nib.challengeParameterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func chatCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ChatCell? {
+      return R.nib.chatCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChatCell
+    }
+
     static func guideMessageView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.guideMessageView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -995,10 +1018,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ChallengeCell`.
     static let challengeCell: Rswift.ReuseIdentifier<HistoryChallengeCell> = Rswift.ReuseIdentifier(identifier: "ChallengeCell")
+    /// Reuse identifier `ChatCell`.
+    static let chatCell: Rswift.ReuseIdentifier<ChatCell> = Rswift.ReuseIdentifier(identifier: "ChatCell")
     /// Reuse identifier `SettingsCell`.
     static let settingsCell: Rswift.ReuseIdentifier<SettingsCell> = Rswift.ReuseIdentifier(identifier: "SettingsCell")
     /// Reuse identifier `SongSelectCell`.
@@ -1330,7 +1355,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 63 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 72 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1340,6 +1365,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ru
       static let historyConcentrationDuration = Rswift.StringResource(key: "history.concentrationDuration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: A cat will leave you in case of fail if you choose a cat mode.
+      ///
+      /// Locales: ru, en
+      static let guideMessage7 = Rswift.StringResource(key: "guide.message7", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: About
       ///
       /// Locales: ru, en
@@ -1400,6 +1429,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsEmailUs = Rswift.StringResource(key: "settings.emailUs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Everytime you fail concentrating, there would be a penalty.
+      ///
+      /// Locales: ru, en
+      static let guideMessage3 = Rswift.StringResource(key: "guide.message3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Execute a penalty and watch 3 ads
       ///
       /// Locales: ru, en
@@ -1428,6 +1461,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionCat = Rswift.StringResource(key: "motivationItem.description.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Hello, I am Didi and I will help you in becoming a discipline expert.
+      ///
+      /// Locales: ru, en
+      static let guideMessage1 = Rswift.StringResource(key: "guide.message1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: If you fail, a cat leaves you
       ///
       /// Locales: ru, en
@@ -1448,6 +1485,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentAlertGiveUpAdDescription = Rswift.StringResource(key: "current.alert.giveUp.adDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Imagine you live with a cat. It’s your best friend!
+      ///
+      /// Locales: ru, en
+      static let guideMessage6 = Rswift.StringResource(key: "guide.message6", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Just set a timer and do not pick up your phone concentrating on your task.
+      ///
+      /// Locales: ru, en
+      static let guideMessage2 = Rswift.StringResource(key: "guide.message2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Let’s get down to business. Good luck!
+      ///
+      /// Locales: ru, en
+      static let guideMessage9 = Rswift.StringResource(key: "guide.message9", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Mode is set
       ///
       /// Locales: ru, en
@@ -1464,6 +1513,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsNotifications = Rswift.StringResource(key: "settings.notifications", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Or you’ll lose your time watching 3 ads if you choose a time mode.
+      ///
+      /// Locales: ru, en
+      static let guideMessage8 = Rswift.StringResource(key: "guide.message8", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
       /// Locales: en
@@ -1496,6 +1549,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsTerms = Rswift.StringResource(key: "settings.terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: The possibility of losing something increases productivity!
+      ///
+      /// Locales: ru, en
+      static let guideMessage4 = Rswift.StringResource(key: "guide.message4", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tilda
       ///
       /// Locales: en
@@ -1520,6 +1577,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdDescription = Rswift.StringResource(key: "lose.ad.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: We are most sad when we lose someone we love or time.
+      ///
+      /// Locales: ru, en
+      static let guideMessage5 = Rswift.StringResource(key: "guide.message5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: We give you 1 free cat. If a cat will leave, you can buy another one.
       ///
       /// Locales: ru, en
@@ -1617,6 +1678,21 @@ struct R: Rswift.Validatable {
 
         let format = NSLocalizedString("history.concentrationDuration", bundle: bundle, comment: "")
         return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: A cat will leave you in case of fail if you choose a cat mode.
+      ///
+      /// Locales: ru, en
+      static func guideMessage7(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message7", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message7"
+        }
+
+        return NSLocalizedString("guide.message7", bundle: bundle, comment: "")
       }
 
       /// en translation: About
@@ -1844,6 +1920,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("settings.emailUs", bundle: bundle, comment: "")
       }
 
+      /// en translation: Everytime you fail concentrating, there would be a penalty.
+      ///
+      /// Locales: ru, en
+      static func guideMessage3(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message3", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message3"
+        }
+
+        return NSLocalizedString("guide.message3", bundle: bundle, comment: "")
+      }
+
       /// en translation: Execute a penalty and watch 3 ads
       ///
       /// Locales: ru, en
@@ -1949,6 +2040,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.description.cat", bundle: bundle, comment: "")
       }
 
+      /// en translation: Hello, I am Didi and I will help you in becoming a discipline expert.
+      ///
+      /// Locales: ru, en
+      static func guideMessage1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message1"
+        }
+
+        return NSLocalizedString("guide.message1", bundle: bundle, comment: "")
+      }
+
       /// en translation: If you fail, a cat leaves you
       ///
       /// Locales: ru, en
@@ -2024,6 +2130,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("current.alert.giveUp.adDescription", bundle: bundle, comment: "")
       }
 
+      /// en translation: Imagine you live with a cat. It’s your best friend!
+      ///
+      /// Locales: ru, en
+      static func guideMessage6(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message6", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message6"
+        }
+
+        return NSLocalizedString("guide.message6", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Just set a timer and do not pick up your phone concentrating on your task.
+      ///
+      /// Locales: ru, en
+      static func guideMessage2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message2", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message2"
+        }
+
+        return NSLocalizedString("guide.message2", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Let’s get down to business. Good luck!
+      ///
+      /// Locales: ru, en
+      static func guideMessage9(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message9", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message9"
+        }
+
+        return NSLocalizedString("guide.message9", bundle: bundle, comment: "")
+      }
+
       /// en translation: Mode is set
       ///
       /// Locales: ru, en
@@ -2082,6 +2233,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.notifications", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Or you’ll lose your time watching 3 ads if you choose a time mode.
+      ///
+      /// Locales: ru, en
+      static func guideMessage8(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message8", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message8"
+        }
+
+        return NSLocalizedString("guide.message8", bundle: bundle, comment: "")
       }
 
       /// en translation: Pinko
@@ -2204,6 +2370,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("settings.terms", bundle: bundle, comment: "")
       }
 
+      /// en translation: The possibility of losing something increases productivity!
+      ///
+      /// Locales: ru, en
+      static func guideMessage4(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message4", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message4"
+        }
+
+        return NSLocalizedString("guide.message4", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tilda
       ///
       /// Locales: en
@@ -2292,6 +2473,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lose.ad.description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: We are most sad when we lose someone we love or time.
+      ///
+      /// Locales: ru, en
+      static func guideMessage5(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message5", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message5"
+        }
+
+        return NSLocalizedString("guide.message5", bundle: bundle, comment: "")
       }
 
       /// en translation: We give you 1 free cat. If a cat will leave, you can buy another one.
@@ -2659,6 +2855,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ChatCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ChatCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ChatCell"
+      let name = "ChatCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ChatCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChatCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _GuideMessageView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GuideMessageView"
@@ -2766,6 +2976,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try guide.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try guideChat.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try history.validate()
@@ -2947,6 +3160,26 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.guide().guideViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'guideViewController' could not be loaded from storyboard 'Guide' as 'GuideViewController'.") }
         if _R.storyboard.guide().modeSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'modeSelectionViewController' could not be loaded from storyboard 'Guide' as 'ModeSelectionViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct guideChat: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let guideChatViewController = StoryboardViewControllerResource<GuideChatViewController>(identifier: "GuideChatViewController")
+      let name = "GuideChat"
+
+      func guideChatViewController(_: Void = ()) -> GuideChatViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: guideChatViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.guideChat().guideChatViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'guideChatViewController' could not be loaded from storyboard 'GuideChat' as 'GuideChatViewController'.") }
       }
 
       fileprivate init() {}

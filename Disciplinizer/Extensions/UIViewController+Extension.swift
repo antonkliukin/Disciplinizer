@@ -12,6 +12,7 @@ extension UIViewController {
     enum Storyboard: String {
         case alert = "Alert"
         case guide = "Guide"
+        case guideChat = "GuideChat"
         case createChallenge = "CreateChallenge"
         case pageNavigation = "PageNavigation"
         case settings = "Settings"

@@ -14,7 +14,7 @@ final class SettingsCollectionView: CollectionView<SettingsCell, SettingsSection
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
 
-        super.init(sections: sections, layout: layout, cellReuseIdentifier: .identifier(SettingsCell.id)) { (cell, model, _) in
+        super.init(sections: sections, layout: layout, cellReuseIdentifier: .identifier(SettingsCell.id)) { (cell, model, _, _) in
             cell.configure(model)
         }
     }

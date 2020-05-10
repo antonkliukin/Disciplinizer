@@ -91,6 +91,16 @@ enum Controller {
         return vc
     }
     
+    static func guideChat() -> UIViewController {
+        let vc = GuideChatViewController.fromStoryboard(.guideChat)
+        vc.modalPresentationStyle = .fullScreen
+        let presenter = GuideChatPresenter(view: vc)
+        vc.presenter = presenter
+
+        return vc
+    }
+
+    
     static func modeSelection(routerDelegate: RouterDelegateProtocol?) -> UIViewController {
         let vc = ModeSelectionViewController.fromStoryboard(.guide)
         let configurator = ModeSelectoinConfigurator(routerDelegate: routerDelegate)

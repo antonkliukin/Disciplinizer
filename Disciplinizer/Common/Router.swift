@@ -74,18 +74,12 @@ class Router: RouterProtocol {
     func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool = false) {
         if toRoot {
             var rootVC = initialController
-            var VCsToDismiss: [UIViewController] = []
 
             while let vc = rootVC.presentingViewController {
-                VCsToDismiss.append(vc)
                 rootVC = vc
             }
-
-            for vc in VCsToDismiss {
-                vc.dismiss(animated: animated, completion: nil)
-            }
-
-            completion?()
+            
+            rootVC.dismiss(animated: animated, completion: completion)
         } else {
             initialController.dismiss(animated: animated, completion: completion)
         }

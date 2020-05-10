@@ -92,6 +92,13 @@
 		3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */; };
 		3A663A1E2467C8BB00472B75 /* GuideMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A1D2467C8BB00472B75 /* GuideMessageView.swift */; };
 		3A663A202467C95500472B75 /* GuideMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A663A1F2467C95500472B75 /* GuideMessageView.xib */; };
+		3A663A242468005700472B75 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A232468005700472B75 /* ChatCollectionView.swift */; };
+		3A663A262468009D00472B75 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A252468009D00472B75 /* ChatCell.swift */; };
+		3A663A28246800B200472B75 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A663A27246800B200472B75 /* ChatCell.xib */; };
+		3A663A2A2468027500472B75 /* GuideChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A292468027500472B75 /* GuideChatViewController.swift */; };
+		3A663A2C2468028000472B75 /* GuideChatConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A2B2468028000472B75 /* GuideChatConfigurator.swift */; };
+		3A663A2E2468028B00472B75 /* GuideChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A2D2468028B00472B75 /* GuideChatPresenter.swift */; };
+		3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A663A2F246803E500472B75 /* GuideChat.storyboard */; };
 		3A7008322414EB990028CE21 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7008312414EB990028CE21 /* CoreDataError.swift */; };
 		3A70083924153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */; };
 		3A70083F24153FF90028CE21 /* ChallengesGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */; };
@@ -273,6 +280,13 @@
 		3A653DDF241D2AEE00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateChallenge.strings; sourceTree = "<group>"; };
 		3A663A1D2467C8BB00472B75 /* GuideMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMessageView.swift; sourceTree = "<group>"; };
 		3A663A1F2467C95500472B75 /* GuideMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideMessageView.xib; sourceTree = "<group>"; };
+		3A663A232468005700472B75 /* ChatCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
+		3A663A252468009D00472B75 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		3A663A27246800B200472B75 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		3A663A292468027500472B75 /* GuideChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideChatViewController.swift; sourceTree = "<group>"; };
+		3A663A2B2468028000472B75 /* GuideChatConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideChatConfigurator.swift; sourceTree = "<group>"; };
+		3A663A2D2468028B00472B75 /* GuideChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideChatPresenter.swift; sourceTree = "<group>"; };
+		3A663A2F246803E500472B75 /* GuideChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuideChat.storyboard; sourceTree = "<group>"; };
 		3A7008312414EB990028CE21 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChallengesUseCaseTest.swift; sourceTree = "<group>"; };
 		3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesGatewaySpy.swift; sourceTree = "<group>"; };
@@ -773,6 +787,36 @@
 			path = GuideMessageView;
 			sourceTree = "<group>";
 		};
+		3A663A212467FF1100472B75 /* GuideChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A663A222468000A00472B75 /* ChatCollectionView */,
+				3A663A292468027500472B75 /* GuideChatViewController.swift */,
+				3A663A2B2468028000472B75 /* GuideChatConfigurator.swift */,
+				3A663A2D2468028B00472B75 /* GuideChatPresenter.swift */,
+				3A663A2F246803E500472B75 /* GuideChat.storyboard */,
+			);
+			path = GuideChatViewController;
+			sourceTree = "<group>";
+		};
+		3A663A222468000A00472B75 /* ChatCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3A663A312468078B00472B75 /* ChatCell */,
+				3A663A232468005700472B75 /* ChatCollectionView.swift */,
+			);
+			path = ChatCollectionView;
+			sourceTree = "<group>";
+		};
+		3A663A312468078B00472B75 /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A663A252468009D00472B75 /* ChatCell.swift */,
+				3A663A27246800B200472B75 /* ChatCell.xib */,
+			);
+			path = ChatCell;
+			sourceTree = "<group>";
+		};
 		3A70083A24153F6C0028CE21 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +902,7 @@
 		3AA12728232ABB3C004206E5 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				3A663A212467FF1100472B75 /* GuideChatViewController */,
 				3A663A1C2467C8AB00472B75 /* GuideMessageView */,
 				3A6395E52467C3A200E04E95 /* ModeSelectionViewController */,
 				3AA12729232ABC01004206E5 /* GuideViewController.swift */,
@@ -1209,7 +1254,9 @@
 				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
 				3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */,
 				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
+				3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */,
 				3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */,
+				3A663A28246800B200472B75 /* ChatCell.xib in Resources */,
 				54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */,
 				3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
@@ -1375,6 +1422,7 @@
 				3A47D673230F1D3600B2B200 /* NetworkService.swift in Sources */,
 				3ACD2C75240C2E620017FABC /* ChallengesGatewayProtocol.swift in Sources */,
 				3AC2237A2365B3710075C773 /* Result+Success.swift in Sources */,
+				3A663A2A2468027500472B75 /* GuideChatViewController.swift in Sources */,
 				3A2F573523125E4000212317 /* UIViewController+Extension.swift in Sources */,
 				3A1FA57F245E9B62000BAA20 /* AlertConfigurator.swift in Sources */,
 				3A1FA574245C1E43000BAA20 /* CatStoreViewController.swift in Sources */,
@@ -1429,8 +1477,10 @@
 				3AC223782365AB840075C773 /* Date+Extensions.swift in Sources */,
 				3A2F572F2311B51800212317 /* AlertViewController.swift in Sources */,
 				3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */,
+				3A663A262468009D00472B75 /* ChatCell.swift in Sources */,
 				3A1F53352466CD5E00298045 /* SettingsSectionHeader.swift in Sources */,
 				3ACD2C76240C2E620017FABC /* CreateChallenge.swift in Sources */,
+				3A663A2C2468028000472B75 /* GuideChatConfigurator.swift in Sources */,
 				3A653DB5241A129A00BE613C /* SongsGatewayProtocol.swift in Sources */,
 				54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */,
 				3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */,
@@ -1438,6 +1488,7 @@
 				3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */,
 				3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */,
 				3ACD2C7A240C2E620017FABC /* CoreDataStack.swift in Sources */,
+				3A663A2E2468028B00472B75 /* GuideChatPresenter.swift in Sources */,
 				3A47D682230F217200B2B200 /* KeychainService.swift in Sources */,
 				3A00A4EF238194B20011ACDC /* AppLockManager.swift in Sources */,
 				3A47D66F230F1CF300B2B200 /* API.swift in Sources */,
@@ -1458,6 +1509,7 @@
 				54008D8B237C9F2D0072EC00 /* Song.swift in Sources */,
 				3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */,
 				3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */,
+				3A663A242468005700472B75 /* ChatCollectionView.swift in Sources */,
 				3AB765CD231C299F007FA888 /* Controllers.swift in Sources */,
 				3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */,
 				3A0D5A1B234E5E6F00F20BC3 /* CreateChallengeViewController.swift in Sources */,
