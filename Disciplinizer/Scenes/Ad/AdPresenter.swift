@@ -33,8 +33,7 @@ class AdPresenter: NSObject, AdPresenterProtocol {
             return nil
         }
 
-        // TODO: Prod - ca-app-pub-6894098236140382/9379068244
-        rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+        rewardedAd = GADRewardedAd(adUnitID: Config.shared.getAdUnitID())
         rewardedAd?.load(GADRequest()) { [weak self] error in
             if let error = error {
                 print("Loading failed: \(error)")

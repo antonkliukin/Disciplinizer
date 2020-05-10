@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CreateChallengePresenterProtocol {
     func viewWillAppear()
@@ -40,11 +40,17 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
 
     func startButtonTapped() {
-        // TODO: Check if notifications are enabled. If not, show alert redirecting user to notif settings
         let isNotifEnabled = NotificationManager.shared.isAuthorized()
 
         guard isNotifEnabled else {
-            assertionFailure()
+            let alertModel = AlertModel(title: Strings.creationAlertNotificationsTitle(),
+                                        message: Strings.creationAlertNotificationsDescription(),
+                                        positiveActionTitle: Strings.creationAlertNotificationsPositive(),
+                                        positiveAction: { UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) },
+                                        negativeActionTitle: Strings.creationAlertNotificationsNegative(),
+                                        negativeAction: nil)
+            view?.router?.present(Controller.alert(model: alertModel))
+            
             return
         }
 

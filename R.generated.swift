@@ -1355,7 +1355,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 72 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 76 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1385,6 +1385,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertActionBack = Rswift.StringResource(key: "alert.action.back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static let creationAlertNotificationsNegative = Rswift.StringResource(key: "creation.alert.notifications.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Buy
       ///
       /// Locales: ru, en
@@ -1457,6 +1461,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentAlertGiveUpNegative = Rswift.StringResource(key: "current.alert.giveUp.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Go to settings
+      ///
+      /// Locales: ru, en
+      static let creationAlertNotificationsPositive = Rswift.StringResource(key: "creation.alert.notifications.positive", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Having a friend that you can lose keeps you motivated.
       ///
       /// Locales: ru, en
@@ -1489,6 +1497,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage6 = Rswift.StringResource(key: "guide.message6", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: In order to start a challenge you need turn off notifications
+      ///
+      /// Locales: ru, en
+      static let creationAlertNotificationsDescription = Rswift.StringResource(key: "creation.alert.notifications.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Just set a timer and do not pick up your phone concentrating on your task.
       ///
       /// Locales: ru, en
@@ -1513,6 +1525,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsNotifications = Rswift.StringResource(key: "settings.notifications", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Notifications are disabled
+      ///
+      /// Locales: ru, en
+      static let creationAlertNotificationsTitle = Rswift.StringResource(key: "creation.alert.notifications.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Or you’ll lose your time watching 3 ads if you choose a time mode.
       ///
       /// Locales: ru, en
@@ -1753,6 +1769,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert.action.back", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static func creationAlertNotificationsNegative(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.notifications.negative", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.notifications.negative"
+        }
+
+        return NSLocalizedString("creation.alert.notifications.negative", bundle: bundle, comment: "")
       }
 
       /// en translation: Buy
@@ -2025,6 +2056,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("current.alert.giveUp.negative", bundle: bundle, comment: "")
       }
 
+      /// en translation: Go to settings
+      ///
+      /// Locales: ru, en
+      static func creationAlertNotificationsPositive(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.notifications.positive", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.notifications.positive"
+        }
+
+        return NSLocalizedString("creation.alert.notifications.positive", bundle: bundle, comment: "")
+      }
+
       /// en translation: Having a friend that you can lose keeps you motivated.
       ///
       /// Locales: ru, en
@@ -2145,6 +2191,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.message6", bundle: bundle, comment: "")
       }
 
+      /// en translation: In order to start a challenge you need turn off notifications
+      ///
+      /// Locales: ru, en
+      static func creationAlertNotificationsDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.notifications.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.notifications.description"
+        }
+
+        return NSLocalizedString("creation.alert.notifications.description", bundle: bundle, comment: "")
+      }
+
       /// en translation: Just set a timer and do not pick up your phone concentrating on your task.
       ///
       /// Locales: ru, en
@@ -2233,6 +2294,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.notifications", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Notifications are disabled
+      ///
+      /// Locales: ru, en
+      static func creationAlertNotificationsTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.notifications.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.notifications.title"
+        }
+
+        return NSLocalizedString("creation.alert.notifications.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Or you’ll lose your time watching 3 ads if you choose a time mode.

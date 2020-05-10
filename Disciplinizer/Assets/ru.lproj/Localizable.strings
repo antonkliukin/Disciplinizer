@@ -84,6 +84,11 @@
 "creation.actionTitle" = "Нажмите чтобы изменить";
 "creation.saveTime" = "не потерять время";
 "creation.saveCat" = "не потерять питомца";
+"creation.alert.notifications.title" = "Уведомления выключены";
+"creation.alert.notifications.description" = "Для того, чтобы начать испытание, необходимо включить уведомления";
+"creation.alert.notifications.positive" = "Открыть настройки";
+"creation.alert.notifications.negative" = "Назад";
+
 
 //******************************************************************************
 // Time Selection

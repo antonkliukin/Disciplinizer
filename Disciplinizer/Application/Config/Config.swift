@@ -20,6 +20,7 @@ final class Config {
 
     fileprivate enum ConfigurationKey: String {
         case deviceCheckBaseURL
+        case adUnitID
     }
 
     static let shared = Config()
@@ -55,14 +56,23 @@ final class Config {
             assertionFailure("Config - init(): No '" + ConfigurationKey.deviceCheckBaseURL.rawValue + "' key in Config.plist.")
             return
         }
+        
+        guard let adUnitID = dict[ConfigurationKey.adUnitID.rawValue]  else {
+            assertionFailure("Config - init(): No '" + ConfigurationKey.adUnitID.rawValue + "' key in Config.plist.")
+            return
+        }
 
         configs[.deviceCheckBaseURL] = deviceCheckBaseURL
+        configs[.adUnitID] = adUnitID
     }
 }
 
 extension Config {
     func getDeviceCheckBaseURL() -> String {
-        // TODO: Change to be production
         return configs[.deviceCheckBaseURL]!
+    }
+    
+    func getAdUnitID() -> String {
+        return configs[.adUnitID]!
     }
 }

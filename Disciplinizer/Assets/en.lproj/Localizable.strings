@@ -72,6 +72,10 @@
 "creation.actionTitle" = "Tap to change";
 "creation.saveTime" = "save time";
 "creation.saveCat" = "save a cat";
+"creation.alert.notifications.title" = "Notifications are disabled";
+"creation.alert.notifications.description" = "In order to start a challenge you need turn off notifications";
+"creation.alert.notifications.positive" = "Go to settings";
+"creation.alert.notifications.negative" = "Back";
 
 //******************************************************************************
 // Time Selection
