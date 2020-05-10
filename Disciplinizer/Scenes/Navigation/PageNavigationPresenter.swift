@@ -11,6 +11,7 @@ import Foundation
 protocol PageNavigationPresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidAppear()
 }
 
 final class PageNavigationPresenter: PageNavigationPresenterProtocol {
@@ -20,10 +21,14 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
     
     func viewDidLoad() {
-        //checkIfLocked()
+        //
     }
-
+    
     func viewWillAppear() {
+        //
+    }
+        
+    func viewDidAppear() {
         checkIfFirstLaunch()
     }
 
@@ -63,17 +68,20 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     }
     
     private func checkIfFirstLaunch() {
-        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
-            // TODO: Delete test conditions
-            if true/*isFirstLaunch*/, true/*KeychainService.isFirstLaunch*/ {
-                KeychainService.isFirstLaunch = false
-                KeychainService.appLockState = .unlocked
-                AppLockManager.shared.changeStateTo(.unlocked)
-                self.addPaidItem()
-                
-                // self.view?.router?.present(Controller.guide())
-            }
-        }
+        self.view?.router?.present(Controller.guide())
+        return
+            
+//        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
+//            // TODO: Delete test conditions
+//            if true/*isFirstLaunch*/, true/*KeychainService.isFirstLaunch*/ {
+//                KeychainService.isFirstLaunch = false
+//                KeychainService.appLockState = .unlocked
+//                AppLockManager.shared.changeStateTo(.unlocked)
+//                self.addPaidItem()
+//                
+//                // self.view?.router?.present(Controller.guide())
+//            }
+//        }
     }
     
     private func addPaidItem() {

@@ -9,69 +9,31 @@
 import Foundation
 
 protocol GuidePresenterProtocol: class {
-    var currentPageIndex: Int { get set }
-    func viewDidLoad()
-    func nextPageTapped()
-    func closeTapped()
-    func didScrollToPage(atIndex index: Int)
-    func getPageViewModels() -> [PageModel]?
+    func didTapNext()
+    func viewDidAppear()
 }
 
-class GuidePresenter {
+class GuidePresenter: GuidePresenterProtocol {
     weak var view: GuideViewProtocol?
+    
+    private var currentIndex = 0
 
-    var pageModels: [PageModel]?
-
-    var isReadyToFinish = false
-    var currentPageIndex = 0 {
-        didSet {
-            let lastPageIndex = (pageModels?.count ?? 0) - 1
-            guard currentPageIndex >= 0, currentPageIndex <= lastPageIndex else {
-                currentPageIndex = oldValue
-                return
-            }
-
-            isReadyToFinish = currentPageIndex >= lastPageIndex
-            view?.changeNextButtonState(isReadyToFinish: isReadyToFinish)
-        }
-    }
-
-    required init(view: GuideViewProtocol) {
+    init(view: GuideViewProtocol) {
         self.view = view
     }
-}
-
-extension GuidePresenter: GuidePresenterProtocol {
-    func viewDidLoad() {
-        //pageModels = PageProvider().getPages()
+    
+    func viewDidAppear() {
+        view?.updateProgressBar(progress: 0.33, completion: nil)
     }
-
-    func getPageViewModels() -> [PageModel]? {
-        return []//PageProvider().getPages()
-    }
-
-    func didScrollToPage(atIndex index: Int) {
-        currentPageIndex = index
-    }
-
-    func nextPageTapped() {
-        guard !isReadyToFinish else {
-            dismiss()
-            return
+    
+    func didTapNext() {
+        if currentIndex == 1 {
+            view?.updateProgressBar(progress: 1) {
+                self.view?.router?.dismiss()
+            }
+        } else {
+            view?.updateProgressBar(progress: 0.66, completion: nil)
+            currentIndex += 1
         }
-
-        let previousIndex = currentPageIndex
-        currentPageIndex += 1
-        if previousIndex != currentPageIndex {
-            view?.openPage(withIndex: currentPageIndex)
-        }
-    }
-
-    func closeTapped() {
-        dismiss()
-    }
-
-    func dismiss() {
-        view?.router?.dismiss()
     }
 }

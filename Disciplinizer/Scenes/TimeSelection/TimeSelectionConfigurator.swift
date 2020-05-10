@@ -13,12 +13,18 @@ protocol TimeSelectionConfiguratorProtocol {
 }
 
 class TimeSelectionConfigurator: TimeSelectionConfiguratorProtocol {
+    weak var routerDelegate: RouterDelegateProtocol?
+    
+    init(routerDelegate: RouterDelegateProtocol?) {
+        self.routerDelegate = routerDelegate
+    }
     
     func configure(timeSelectionViewController: TimeSelectionViewController) {
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()
         let durationParameterUseCase = DurationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
 
         let presenter = TimeSelectionPresenter(view: timeSelectionViewController,
+                                               routerDelegate: routerDelegate,
                                                durationParameterUseCase: durationParameterUseCase)
 
         timeSelectionViewController.presenter = presenter

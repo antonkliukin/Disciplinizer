@@ -35,6 +35,12 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
         
         presenter?.viewWillAppear()
     }
+        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter?.viewDidAppear()
+    }
     
     override var selectedViewController: UIViewController? {
         didSet {

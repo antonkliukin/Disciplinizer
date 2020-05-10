@@ -25,10 +25,14 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     
     private var isEnteredTimeValid = false
     private var enteredDurationInMinutes = 0
+    
+    private weak var routerDelegate: RouterDelegateProtocol?
 
     init(view: TimeSelectionViewProtocol,
+         routerDelegate: RouterDelegateProtocol?,
          durationParameterUseCase: DurationParameterUseCaseProtocol) {
         self.view = view
+        self.routerDelegate = routerDelegate
         self.durationParameterUseCase = durationParameterUseCase
     }
     
@@ -93,7 +97,11 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
             durationParameterUseCase.select(durationInMinutes: Int(enteredDurationInMinutes)) { (durationSavingResult) in
                 switch durationSavingResult {
                 case .success:
-                    self.view?.router?.pop()
+                    if let router = self.routerDelegate {
+                        router.didTapNext()
+                    } else {
+                        self.view?.router?.pop()
+                    }
                 case .failure:
                     assertionFailure()
                 }

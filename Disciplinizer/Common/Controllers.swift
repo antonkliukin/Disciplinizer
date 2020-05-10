@@ -59,8 +59,11 @@ enum Controller {
         return vc
     }
 
-    static func timeSelection() -> UIViewController {
+    static func timeSelection(routerDelegate: RouterDelegateProtocol? = nil) -> UIViewController {
         let vc = TimeSelectionViewController.fromStoryboard(.timeSelection)
+        let configurator = TimeSelectionConfigurator(routerDelegate: routerDelegate)
+        
+        vc.configurator = configurator
 
         return vc
     }
@@ -85,6 +88,15 @@ enum Controller {
         let presenter = GuidePresenter(view: vc)
         vc.presenter = presenter
 
+        return vc
+    }
+    
+    static func modeSelection(routerDelegate: RouterDelegateProtocol?) -> UIViewController {
+        let vc = ModeSelectionViewController.fromStoryboard(.guide)
+        let configurator = ModeSelectoinConfigurator(routerDelegate: routerDelegate)
+
+        vc.configurator = configurator
+        
         return vc
     }
 

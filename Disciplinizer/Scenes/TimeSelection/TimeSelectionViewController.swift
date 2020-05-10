@@ -23,12 +23,12 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
     @IBOutlet weak var saveButton: MainButton!
     
     var presenter: TimeSelectionPresenterProtocol!
-    var configurator = TimeSelectionConfigurator()
+    var configurator: TimeSelectionConfiguratorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configurator.configure(timeSelectionViewController: self)
+        configurator?.configure(timeSelectionViewController: self)
                 
         presenter.viewDidLoad()
     }

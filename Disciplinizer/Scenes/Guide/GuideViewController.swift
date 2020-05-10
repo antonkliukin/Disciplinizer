@@ -9,146 +9,74 @@
 import UIKit
 
 protocol GuideViewProtocol: ViewProtocol {
-    func openPage(withIndex index: Int)
-    func changeNextButtonState(isReadyToFinish: Bool)
-    func reloadData()
+    func updateProgressBar(progress: CGFloat, completion: (() -> Void)?)
 }
 
-class GuideViewController: UIViewController {
-    @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var pageControlContainer: UIView!
-    @IBOutlet private weak var nextButton: UIButton!
-    @IBOutlet private weak var closeButton: UIButton!
-    private var pageControl: CustomPageControl!
+extension Notification.Name {
+    static let didTapNext = Notification.Name("didTapNext")
+}
 
-    var presenter: GuidePresenterProtocol?
-    var pages: [PageModel] {
-        return presenter?.getPageViewModels() ?? []
-    }
-    var currentCellIndex: Int {
-        return presenter?.currentPageIndex ?? 0
-    }
-
-    let collectionViewMargin: CGFloat = 0
-    let cellSpacing: CGFloat = 0
-    var cellWidth: CGFloat = 0
-    var cellHeight: CGFloat {
-        return collectionView.bounds.height
-    }
-
-    override public func viewDidLoad() {
+class GuideViewController: UIViewController, GuideViewProtocol {
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fullProgressBarView: UIView!
+    
+    var presenter: GuidePresenterProtocol!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-        presenter?.viewDidLoad()
-        setup()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidTapNext), name: .didTapNext, object: nil)
     }
-
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        presenter?.nextPageTapped()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter.viewDidAppear()
     }
-
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        presenter?.closeTapped()
+    
+    @objc private func onDidTapNext() {
+        presenter.didTapNext()
     }
-
-    private func setup() {
-        pageControl = CustomPageControl(frame: pageControlContainer.bounds)
-        pageControlContainer.addSubview(pageControl)
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
-        let bundle = Bundle(for: PageCollectionViewCell.self)
-        let nib = UINib(nibName: PageCollectionViewCell.nameOfClass, bundle: bundle)
-        collectionView.register(nib, forCellWithReuseIdentifier: PageCollectionViewCell.reuseId)
-
-        let layout = UICollectionViewFlowLayout()
-        collectionView?.collectionViewLayout = layout
-        collectionView?.decelerationRate = .fast
-        collectionView?.bounces = false
-
-        cellWidth =  UIScreen.main.bounds.width - collectionViewMargin * 2.0
-        layout.headerReferenceSize = CGSize(width: collectionViewMargin, height: 0)
-        layout.footerReferenceSize = CGSize(width: collectionViewMargin, height: 0)
-
-        layout.minimumLineSpacing = cellSpacing
-        layout.scrollDirection = .horizontal
-    }
-}
-
-extension GuideViewController: UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.configureWith(numberOfDots: pages.count)
-
-        return pages.count
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCollectionViewCell.reuseId, for: indexPath)
-
-        if let cell = cell as? PageCollectionViewCell {
-            let page = pages[indexPath.row]
-            cell.configure(with: page.titleText, content: page.contentText)
-        }
-
-        return cell
-    }
-}
-
-extension GuideViewController: UICollectionViewDelegateFlowLayout {
-    public func collectionView(_ collectionView: UICollectionView,
-                               layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-}
-
-extension GuideViewController: UIScrollViewDelegate {
-    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-
-        let pageWidth = Float(cellWidth + cellSpacing)
-        let targetXContentOffset = Float(targetContentOffset.pointee.x)
-        let contentWidth = Float(collectionView!.contentSize.width  )
-        var newPageIndex = Float(currentCellIndex)
-
-        if velocity.x == 0 {
-            newPageIndex = floor((targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
-        } else {
-            newPageIndex = Float(velocity.x > 0 ? currentCellIndex + 1 : currentCellIndex - 1)
-            if newPageIndex < 0 {
-                newPageIndex = 0
-            }
-            if newPageIndex > (contentWidth / pageWidth) {
-                newPageIndex = ceil(contentWidth / pageWidth) - 1.0
-            }
-        }
-
-        let point = CGPoint(x: CGFloat(newPageIndex * pageWidth), y: targetContentOffset.pointee.y)
-        targetContentOffset.pointee = point
-
-        presenter?.didScrollToPage(atIndex: Int(newPageIndex))
-        pageControl.currentIndex = currentCellIndex
-    }
-}
-
-extension GuideViewController: GuideViewProtocol {
-    func changeNextButtonState(isReadyToFinish: Bool) {
-        let nextButtonTitle = isReadyToFinish ? Strings.guideGotIt() : Strings.guideNext()
-
-        UIView.animate(withDuration: 0.3) {
-            self.closeButton.isHidden = isReadyToFinish
-            self.pageControlContainer.isHidden = isReadyToFinish
-            self.nextButton.setTitle(nextButtonTitle, for: .normal)
+    
+    func updateProgressBar(progress: CGFloat, completion: (() -> Void)? = nil) {
+        progressBarWidthConstraint.constant = fullProgressBarView.bounds.width * progress
+                
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            completion?()
         }
     }
+}
 
-    func openPage(withIndex index: Int) {
-        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
-        pageControl.currentIndex = index
+class GuidePageViewController: UIPageViewController, UIPageViewControllerDataSource, RouterDelegateProtocol {
+    
+    
+    private var timeSelectionVC: UIViewController?
+    private var modeSelectionVC: UIViewController?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        timeSelectionVC = Controller.timeSelection(routerDelegate: self)
+        modeSelectionVC = Controller.modeSelection(routerDelegate: self)
+        
+        setViewControllers([timeSelectionVC!], direction: .forward, animated: true, completion: nil)
     }
-
-    public func reloadData() {
-        collectionView.reloadData()
+    
+    func didTapNext() {
+        NotificationCenter.default.post(name: .didTapNext, object: nil)
+        
+        if viewControllers?.first == timeSelectionVC {
+            setViewControllers([modeSelectionVC!], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return nil
     }
 }

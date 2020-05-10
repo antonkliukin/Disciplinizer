@@ -1,26 +1,14 @@
 //******************************************************************************
-// Alert
-//******************************************************************************
-"alert.example" = "Localized string";
-
-//******************************************************************************
 // Guide
 //******************************************************************************
-"guide.next" = "Next";
-"guide.skip" = "Skip";
-"guide.gotIt" = "Got it!";
-
-"guide.firstPage.content" = "This app is dedicated to help you focus on important things, without being distracted on messages, social networks or games.\n\nTo improve your motivation we challenge you to make a real bet that costs you money or time!";
-
-"guide.firstPage.title" = "Hello!";
-
-"guide.secondPage.content" = "1. Set task time.\n\n2. Make a bet. You might choose between time and money, it will highly increase your motivation!\n\n3. The main rule is simple - do not leave the app. You can lock your phone or stay on the challenge screen.";
-
-"guide.secondPage.title" = "Does your task require concentration?";
-
-"guide.thirdPage.content" = "Follow the rules, stay focused and remember — time is money and you might lose it!";
-
-"guide.thirdPage.title" = "Start the challenge!";
+"guide.motivationSelection.title" = "Choose motivation";
+"guide.motivationSelection.description" = "What penalty would you want to choose?";
+"guide.catMotivation.title" = "cat mode";
+"guide.catMotivation.description" = "If you fail, a cat leaves you";
+"guide.timeMotivation.title" = "time mode";
+"guide.timeMotivation.description" = "If you fail, you must watch 3 ads in a row";
+"guide.catMotivation.message" = "We give you 1 free cat. If a cat will leave, you can buy another one.";
+"guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
 //******************************************************************************
 // Notifications
