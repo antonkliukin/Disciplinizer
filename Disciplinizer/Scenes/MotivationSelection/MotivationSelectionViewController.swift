@@ -48,6 +48,12 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         presenter.viewWillAppear()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+                
+        presenter.viewDidAppear()
+    }
+    
     func setupModeSegmentedControl() {
         if #available(iOS 13, *) {
             return

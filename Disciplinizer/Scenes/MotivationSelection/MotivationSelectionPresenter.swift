@@ -11,6 +11,7 @@ import Foundation
 protocol MotivationSelectionPresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidAppear()
     func didSelectIndex(_ index: Int)
     func didTapSetModeButton()
 }
@@ -31,12 +32,12 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     }
     
     func viewDidLoad() {
-        
-    }
-    
-    func viewWillAppear() {
         configureViewForSelectedMotivationalItem()
     }
+    
+    func viewWillAppear() {}
+    
+    func viewDidAppear() {}
     
     func didSelectIndex(_ index: Int) {
         let isPaidSelected = index == 0

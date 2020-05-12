@@ -14,14 +14,22 @@ enum MainButtonStyle {
 
 class MainButton: UIButton {
     
+    override var backgroundColor: UIColor? {
+        didSet {
+            print(backgroundColor)
+        }
+    }
+    
     var style: MainButtonStyle = .main
     var isResponsive: Bool = false {
         didSet {
-            switch style {
-            case .main:
-                backgroundColor = isResponsive ? R.color.lightBlue() : R.color.buttonGrey()
-            case .secondary:
-                backgroundColor = isResponsive ? R.color.lightGrey() : R.color.lightGrey()
+            DispatchQueue.main.async {
+                switch self.style {
+                case .main:
+                    self.backgroundColor = self.isResponsive ? R.color.lightBlue() : R.color.buttonGrey()
+                case .secondary:
+                    self.backgroundColor = self.isResponsive ? R.color.lightGrey() : R.color.lightGrey()
+                }
             }
         }
     }
