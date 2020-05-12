@@ -113,6 +113,7 @@
                         <outlet property="modeSegmentedControl" destination="iwN-YS-bvu" id="ymz-8n-a2c"/>
                         <outlet property="motivationItemView" destination="nCv-Zw-G3m" id="XgS-8f-0c7"/>
                         <outlet property="setButton" destination="GCB-TT-GrP" id="cEe-wP-TJ5"/>
+                        <outlet property="titleLabel" destination="cCM-iR-ZOG" id="620-gJ-AAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlV-Zy-2UY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

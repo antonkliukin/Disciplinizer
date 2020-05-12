@@ -29,6 +29,8 @@ class CatStorePresenter: CatStorePresenterProtocol {
     }
         
     func viewDidLoad() {
+        view?.set(viewTitle: Strings.catStoreTitle())
+        view?.set(description: Strings.catStoreDescription())
         view?.showMotivationItems(items)
     }
     

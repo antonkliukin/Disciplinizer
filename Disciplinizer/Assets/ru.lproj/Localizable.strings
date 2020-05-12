@@ -56,12 +56,16 @@
 //******************************************************************************
 // Motivational Item
 //******************************************************************************
-"motivationItem.ad" = "Ad";
-"motivationItem.level1" = "Cuddly";
-"motivationItem.level2" = "Fluffy";
-"motivationItem.level3" = "Tilda";
-"motivationItem.level4" = "Pinko";
-"motivationItem.level5" = "Valli";
+"motivationItem.ad.title" = "Реклама";
+"motivationItem.level1.title" = "Cuddly";
+"motivationItem.level2.title" = "Fluffy";
+"motivationItem.level3.title" = "Tilda";
+"motivationItem.level4.title" = "Pinko";
+"motivationItem.level5.title" = "Valli";
+
+"motivationItem.title" = "Изменить мотивацию";
+"motivationItem.catMode" = "Сохранить питомца";
+"motivationItem.timeMode" = "Сохранить время";
 
 "motivationItem.descriptionTitle" = "Мотивация";
 
@@ -112,6 +116,8 @@
 //******************************************************************************
 // Cat Store
 //******************************************************************************
+"catStore.title" = "Выбери нового кота";
+"catStore.description" = "Не сделай его грустным снова";
 "alert.title.success" = "Успешно!";
 "alert.message.success" = "Теперь у Вас новый питомец";
 "alert.action.back" = "Назад";

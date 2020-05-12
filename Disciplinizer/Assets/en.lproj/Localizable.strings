@@ -51,6 +51,10 @@
 "motivationItem.level4.title" = "Pinko";
 "motivationItem.level5.title" = "Valli";
 
+"motivationItem.title" = "Change mode";
+"motivationItem.catMode" = "Cat mode";
+"motivationItem.timeMode" = "Time mode";
+
 "motivationItem.descriptionTitle" = "Motivation";
 
 "motivationItem.description.ad" = "Possibility of loosing time watching a few ads in case of fail will keep you motivated.";
@@ -100,6 +104,8 @@
 //******************************************************************************
 // Cat Store
 //******************************************************************************
+"catStore.title" = "Choose a new cat";
+"catStore.description" = "Don’t make it sad again";
 "alert.title.success" = "Success!";
 "alert.message.success" = "You now have a new pet in your home";
 "alert.action.back" = "Back";

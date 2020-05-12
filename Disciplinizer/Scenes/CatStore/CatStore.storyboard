@@ -108,7 +108,9 @@
                     <connections>
                         <outlet property="closeButtonImage" destination="ZOj-P4-C2G" id="tLZ-J4-0kp"/>
                         <outlet property="collectionView" destination="Cvy-8r-9BI" id="Gsk-Rb-jtK"/>
+                        <outlet property="descriptionLabel" destination="tWZ-TG-f1N" id="uRQ-7k-k1h"/>
                         <outlet property="messageView" destination="Rmn-d2-9Dz" id="J7l-kO-FaV"/>
+                        <outlet property="titleLabel" destination="pQ9-b4-owE" id="8K1-0s-OYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSa-EX-hsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

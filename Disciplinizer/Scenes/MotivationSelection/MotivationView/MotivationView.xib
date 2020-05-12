@@ -85,8 +85,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Having a freind that you could lose keeps you motivated." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9R-N9-Plr">
-                                            <rect key="frame" x="20" y="55.999999999999993" width="243" height="28.666666666666664"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Having a freind that you could lose keeps you motivated." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L9R-N9-Plr">
+                                            <rect key="frame" x="20" y="51.999999999999993" width="243" height="28.666666666666664"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -100,9 +100,10 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="L9R-N9-Plr" secondAttribute="bottom" constant="8" id="4o1-bo-Lub"/>
                                         <constraint firstItem="L9R-N9-Plr" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" constant="20" id="Bdj-xh-GIm"/>
                                         <constraint firstItem="SUP-Gf-X6w" firstAttribute="leading" secondItem="4do-38-kNZ" secondAttribute="leading" constant="20" id="Cap-nm-Hvv"/>
-                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="top" secondItem="SUP-Gf-X6w" secondAttribute="bottom" constant="8" id="DRG-Iy-4DJ"/>
+                                        <constraint firstItem="L9R-N9-Plr" firstAttribute="top" secondItem="SUP-Gf-X6w" secondAttribute="bottom" constant="4" id="DRG-Iy-4DJ"/>
                                         <constraint firstAttribute="trailing" secondItem="SUP-Gf-X6w" secondAttribute="trailing" constant="8" id="Usc-gD-nZN"/>
                                         <constraint firstAttribute="trailing" secondItem="L9R-N9-Plr" secondAttribute="trailing" constant="8" id="VxR-OS-kdQ"/>
                                         <constraint firstItem="wwi-uR-ftG" firstAttribute="centerY" secondItem="4do-38-kNZ" secondAttribute="centerY" id="bT5-D0-wb0"/>

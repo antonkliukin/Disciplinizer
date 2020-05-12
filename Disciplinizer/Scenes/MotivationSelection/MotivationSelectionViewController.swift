@@ -9,6 +9,8 @@
 import UIKit
 
 protocol MotivationSelectionViewProtocol: ViewProtocol {
+    func set(viewTitle: String)
+    func set(titleForIndexOne: String, indexTwo: String)
     func changeSetButtonTitle(title: String)
     func changeSetButtonState(isResponsive: Bool)
     func selectIndex(_ index: Int)
@@ -22,6 +24,8 @@ protocol MotivationSelectionViewProtocol: ViewProtocol {
 }
 
 class MotivatonSelectionViewController: UIViewController, MotivationSelectionViewProtocol {
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var motivationItemView: MotivationView!
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var setButton: MainButton!
@@ -52,6 +56,15 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         super.viewDidAppear(animated)
                 
         presenter.viewDidAppear()
+    }
+    
+    func set(viewTitle: String) {
+        titleLabel.text = viewTitle
+    }
+    
+    func set(titleForIndexOne: String, indexTwo: String) {
+        modeSegmentedControl.setTitle(titleForIndexOne, forSegmentAt: 0)
+        modeSegmentedControl.setTitle(indexTwo, forSegmentAt: 1)
     }
     
     func setupModeSegmentedControl() {

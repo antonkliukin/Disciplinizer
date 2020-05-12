@@ -32,6 +32,8 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     }
     
     func viewDidLoad() {
+        view?.set(viewTitle: Strings.motivationItemTitle())
+        view?.set(titleForIndexOne: Strings.motivationItemCatMode(), indexTwo: Strings.motivationItemTimeMode())
         configureViewForSelectedMotivationalItem()
     }
     

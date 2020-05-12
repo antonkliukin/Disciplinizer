@@ -9,10 +9,15 @@
 import UIKit
 
 protocol CatStoreViewProtocol: ViewProtocol {
+    func set(viewTitle: String)
+    func set(description: String)
     func showMotivationItems(_ items: [MotivationalItem])
 }
 
 class CatStoreViewController: UIViewController, CatStoreViewProtocol {
+        
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var closeButtonImage: UIImageView!
@@ -45,6 +50,14 @@ class CatStoreViewController: UIViewController, CatStoreViewProtocol {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         presenter.didTapCloseButton()
+    }
+    
+    func set(viewTitle: String) {
+        titleLabel.text = viewTitle
+    }
+    
+    func set(description: String) {
+        descriptionLabel.text = description
     }
     
     func showMotivationItems(_ items: [MotivationalItem]) {
