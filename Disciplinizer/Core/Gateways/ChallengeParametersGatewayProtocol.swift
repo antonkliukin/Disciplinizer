@@ -15,4 +15,5 @@ protocol ChallengeParametersGatewayProtocols {
     func getDurationInMinutes(completionHandler: @escaping (Result<Int, Error>) -> Void)
     func savePaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void)
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void)
+    func deletePaid(completionHandler: @escaping (Result<Void, Error>) -> Void)
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol MotivationSelectionPresenterProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func didSelectIndex(_ index: Int)
     func didTapSetModeButton()
 }
@@ -30,6 +31,10 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     }
     
     func viewDidLoad() {
+        
+    }
+    
+    func viewWillAppear() {
         configureViewForSelectedMotivationalItem()
     }
     

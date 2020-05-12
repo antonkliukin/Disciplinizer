@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer_background" translatesAutoresizingMaskIntoConstraints="NO" id="P5x-wf-5Z5">
-                                <rect key="frame" x="25" y="221" width="364" height="364"/>
+                                <rect key="frame" x="-119" y="77" width="652" height="652"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P5x-wf-5Z5" secondAttribute="height" id="dbt-du-wNa"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
-                                <rect key="frame" x="107" y="318" width="200.5" height="150"/>
+                                <rect key="frame" x="3.5" y="318" width="407.5" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
-                                        <rect key="frame" x="70" y="0.0" width="60.5" height="50"/>
+                                        <rect key="frame" x="173.5" y="0.0" width="60.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W5-2K-w5e">
-                                        <rect key="frame" x="0.0" y="50" width="200.5" height="50"/>
+                                        <rect key="frame" x="103.5" y="50" width="200.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
                                                 <rect key="frame" x="0.0" y="0.0" width="58.5" height="50"/>
@@ -87,7 +87,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
-                                        <rect key="frame" x="12" y="100" width="176.5" height="50"/>
+                                        <rect key="frame" x="115.5" y="100" width="176.5" height="50"/>
                                         <string key="text">You’ll have to spend time
 watching 3 ads if you give up</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -97,7 +97,7 @@ watching 3 ads if you give up</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Ov-J9I">
-                                <rect key="frame" x="167" y="702" width="80" height="80"/>
+                                <rect key="frame" x="167" y="712" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9Jf-xY-G9M"/>
@@ -112,7 +112,7 @@ watching 3 ads if you give up</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-Ym-Tqb">
-                                <rect key="frame" x="310" y="720" width="44" height="44"/>
+                                <rect key="frame" x="310" y="730" width="44" height="44"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IaK-RU-irG"/>
@@ -131,14 +131,13 @@ watching 3 ads if you give up</string>
                         <constraints>
                             <constraint firstItem="eYj-Ov-J9I" firstAttribute="centerX" secondItem="Gtb-Pj-fHB" secondAttribute="centerX" id="5Mv-Vw-rGa"/>
                             <constraint firstItem="e2g-Ym-Tqb" firstAttribute="centerY" secondItem="eYj-Ov-J9I" secondAttribute="centerY" id="A6j-Yu-ilw"/>
-                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="80" id="Iqp-7b-S5V"/>
-                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="P5x-wf-5Z5" secondAttribute="trailing" constant="25" id="LeS-QP-oNd"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="70" id="Iqp-7b-S5V"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" multiplier="0.9" id="MLN-6d-mO6"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="P5x-wf-5Z5" secondAttribute="centerY" constant="-10" id="bsS-FX-yIh"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="60" id="mvO-H6-9Us"/>
-                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="25" id="n8A-4a-foQ"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="P5x-wf-5Z5" secondAttribute="centerX" id="nLi-kS-ly3"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="pbx-2U-GMh"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="width" secondItem="EPG-tM-6br" secondAttribute="width" multiplier="1.6" id="x0I-Wb-vqZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtb-Pj-fHB"/>
                     </view>

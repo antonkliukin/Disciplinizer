@@ -220,6 +220,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No history to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhD-GE-OMx">
+                                <rect key="frame" x="10" y="335" width="355" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-q7-cfM">
                                 <rect key="frame" x="279" y="54" width="76" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -245,11 +251,14 @@
                             <constraint firstItem="HUs-dh-q65" firstAttribute="top" secondItem="j4W-34-BHp" secondAttribute="bottom" constant="30" id="RYg-Bw-jgI"/>
                             <constraint firstItem="BY6-iS-mSk" firstAttribute="trailing" secondItem="lAv-EX-abC" secondAttribute="trailing" constant="80" id="ZM8-Zj-gxd"/>
                             <constraint firstItem="nAC-dU-QDs" firstAttribute="height" secondItem="oLh-TB-uQs" secondAttribute="height" multiplier="0.32" id="aie-BP-u9e"/>
+                            <constraint firstItem="xhD-GE-OMx" firstAttribute="leading" secondItem="TBj-Ts-zVe" secondAttribute="leading" constant="10" id="etP-3q-rnv"/>
                             <constraint firstItem="nAC-dU-QDs" firstAttribute="leading" secondItem="TBj-Ts-zVe" secondAttribute="leading" id="h1W-Cp-3p0"/>
                             <constraint firstItem="j4W-34-BHp" firstAttribute="top" secondItem="nAC-dU-QDs" secondAttribute="bottom" constant="-55" id="iv0-40-8N3"/>
                             <constraint firstItem="j4W-34-BHp" firstAttribute="leading" secondItem="TBj-Ts-zVe" secondAttribute="leading" constant="35" id="mVC-D5-2jn"/>
                             <constraint firstItem="BY6-iS-mSk" firstAttribute="bottom" secondItem="lAv-EX-abC" secondAttribute="bottom" constant="70" id="mwf-w1-gEZ"/>
                             <constraint firstItem="TBj-Ts-zVe" firstAttribute="trailing" secondItem="j4W-34-BHp" secondAttribute="trailing" constant="35" id="nPQ-AK-ofW"/>
+                            <constraint firstItem="xhD-GE-OMx" firstAttribute="top" secondItem="j4W-34-BHp" secondAttribute="bottom" constant="40" id="o2k-Uu-GFS"/>
+                            <constraint firstItem="TBj-Ts-zVe" firstAttribute="trailing" secondItem="xhD-GE-OMx" secondAttribute="trailing" constant="10" id="xkp-mw-6DQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TBj-Ts-zVe"/>
                     </view>
@@ -257,6 +266,7 @@
                     <connections>
                         <outlet property="bestResultView" destination="j4W-34-BHp" id="KbS-hN-oEr"/>
                         <outlet property="bestTotalDuraionLabel" destination="0Zc-jK-oFs" id="Atx-Q8-GYn"/>
+                        <outlet property="noHistoryLabel" destination="xhD-GE-OMx" id="YMP-4b-2iC"/>
                         <outlet property="tableView" destination="HUs-dh-q65" id="mEQ-5Y-SQb"/>
                         <outlet property="titleLabel" destination="lAv-EX-abC" id="gMc-QG-cuU"/>
                         <outlet property="todayTotalDurationLabel" destination="LQ7-qC-bFj" id="OBC-HN-DRS"/>

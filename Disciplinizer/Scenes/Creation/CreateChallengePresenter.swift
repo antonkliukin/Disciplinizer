@@ -126,9 +126,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 return
             }
             
+            // TODO: Test data
             let challengeParameters = ChallengeParameters(startDate: Date(),
                                                           finishDate: nil,
-                                                          durationInMinutes: self.selectedDurationInMinutes,
+                                                          durationInMinutes: 1,//self.selectedDurationInMinutes,
                                                           isSuccess: false,
                                                           motivationalItem: item)
 

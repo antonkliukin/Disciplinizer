@@ -11,6 +11,7 @@ import UIKit
 protocol HistoryViewProtocol: ViewProtocol {
     func display(todayTotalDuration: String)
     func display(bestTotalDuraion: String)
+    func configure(noHistoryMessage: String)
     func refresh()
 }
 
@@ -21,6 +22,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     @IBOutlet private weak var bestResultView: UIView!
     @IBOutlet private weak var todayTotalDurationLabel: UILabel!
     @IBOutlet private weak var bestTotalDuraionLabel: UILabel!
+    @IBOutlet private weak var noHistoryLabel: UILabel!
     
     var presenter: HistoryPresenterProtocol!
 
@@ -78,15 +80,19 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     func display(bestTotalDuraion: String) {
         bestTotalDuraionLabel.text = bestTotalDuraion
     }
-
+    
+    func configure(noHistoryMessage: String) {
+        noHistoryLabel.isHidden = presenter.numberOfDates > 0
+        noHistoryLabel.text = noHistoryMessage
+    }
+    
     @IBAction func clearButtonTapped(_ sender: Any) {
         presenter.clearButtonTapped()
     }
 
     func refresh() {
+        noHistoryLabel.isHidden = presenter.numberOfDates > 0
         tableView.reloadData()
-        configureTopBackgroundView()
-        configureBestResultView()
     }
 }
 

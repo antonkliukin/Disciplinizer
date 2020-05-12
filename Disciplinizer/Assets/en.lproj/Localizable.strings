@@ -108,6 +108,7 @@
 "history.motivation.ad" = "time mode";
 "history.today" = "Today";
 "history.yesterday" = "Yesterday";
+"history.noHistory" = "No history to show";
 
 //******************************************************************************
 // Settings

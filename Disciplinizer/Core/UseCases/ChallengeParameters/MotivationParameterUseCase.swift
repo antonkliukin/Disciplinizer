@@ -13,6 +13,7 @@ protocol MotivationParameterUseCaseProtocol {
     func getSelectedMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void)
     func addPaid(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void)
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void)
+    func deletePaid(completionHandler: @escaping (Result<Void, Error>) -> Void)
 }
 
 class MotivationParameterUseCase: MotivationParameterUseCaseProtocol {
@@ -36,5 +37,9 @@ class MotivationParameterUseCase: MotivationParameterUseCaseProtocol {
 
     func getPaid(completionHandler: @escaping (Result<MotivationalItem?, Error>) -> Void) {
         challengesParametersGateway.getPaid(completionHandler: completionHandler)
+    }
+    
+    func deletePaid(completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        challengesParametersGateway.deletePaid(completionHandler: completionHandler)
     }
 }

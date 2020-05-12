@@ -134,6 +134,8 @@ extension KeychainService {
         set {
             if let value = newValue {
                 KeychainService.shared.setValue(key: Constants.purchasedItem, value: value.rawValue)
+            } else {
+                KeychainService.shared.remove(at: Constants.purchasedItem)
             }
         }
     }

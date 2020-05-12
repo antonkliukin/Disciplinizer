@@ -74,7 +74,7 @@
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-TT-GrP" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
                                         <rect key="frame" x="25" y="671.5" width="364" height="44"/>
-                                        <color key="backgroundColor" name="LightBlue"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="XZT-vL-WcD"/>
                                         </constraints>
@@ -121,7 +121,7 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="LightBlue">
+        <namedColor name="lightBlue">
             <color red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

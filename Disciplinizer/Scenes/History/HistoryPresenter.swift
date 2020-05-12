@@ -25,13 +25,16 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     private let deleteChallengesUseCase: DeleteChallengeUseCaseProtocol
 
     private var challenges: [Date: [Challenge]] = [:]
+    private var sortedDates: [Date] {
+        Array(challenges.keys).sorted(by: >)
+    }
 
     var numberOfDates: Int {
         challenges.keys.count
     }
 
     func numberOfChallengesForDate(section: Int) -> Int {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let sortedKeys = sortedDates
         let key = sortedKeys[section]
 
         return challenges[key]?.count ?? 0
@@ -46,7 +49,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func viewDidLoad() {
-        //loadChallenges()
+        view?.configure(noHistoryMessage: Strings.historyNoHistory())
     }
 
     func viewWillAppear() {
@@ -73,7 +76,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     private func refreshBestResultsView() {
-        self.showTotalTodayResult(challenges: challenges.filter { Calendar.current.isDateInToday($0.key) }.flatMap { $0.value })
+        self.showTotalTodayResult(challenges: challenges.filter { Calendar.current.isDateInToday($0.key) }.flatMap { $0.value }.filter { $0.isSuccess })
         self.showBestDayResult(challengesByDates: Array(challenges.values))
     }
     
@@ -91,7 +94,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         var bestResult = 0
         
         for challenges in challengesByDates {
-            let bestForDay = challenges.reduce(0, { $0 + $1.durationInMinutes })
+            let bestForDay = challenges.filter { $0.isSuccess }.reduce(0, { $0 + $1.durationInMinutes })
             bestResult = max(bestResult, bestForDay)
         }
         
@@ -102,6 +105,8 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         deleteChallengesUseCase.deleteAll { [weak self] (result) in
             switch result {
             case .success:
+                self?.challenges.removeAll()
+                self?.refreshBestResultsView()
                 self?.view?.refresh()
                 return
             case .failure:
@@ -113,7 +118,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func didTapDelete(forRow row: Int, inSection section: Int) {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let sortedKeys = sortedDates
         let date = sortedKeys[section]
         guard let challenges = challenges[date], challenges.count > row else {
             assertionFailure()
@@ -136,7 +141,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func configure(cell: HistoryChallengeCellViewProtocol, forRow row: Int, inSection section: Int) {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let sortedKeys = sortedDates
         let date = sortedKeys[section]
         guard let challenges = challenges[date], challenges.count > row else {
             assertionFailure()
@@ -155,10 +160,10 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func configure(header: HistoryHeaderView, forSection section: Int) {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let sortedKeys = sortedDates
         let date = sortedKeys[section]
         
-        let totalResultForDate = challenges[date]?.reduce(0, { $0 + $1.durationInMinutes }) ?? 0
+        let totalResultForDate = challenges[date]?.filter { $0.isSuccess }.reduce(0, { $0 + $1.durationInMinutes }) ?? 0
         
         let calendar = Calendar.current
         var dateString = ""
@@ -176,7 +181,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     private func titleForDate(section: Int) -> String {
-        let sortedKeys = Array(challenges.keys).sorted(by: <)
+        let sortedKeys = sortedDates
         let date = sortedKeys[section]
         
         let formatter = DateFormatter()
@@ -209,12 +214,12 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             
             for (date, _) in dict {
                 if calendar.isDate(date, inSameDayAs: startDate) {
-                    dict[date, default: []].append(challenge)
+                    dict[date, default: []].insert(challenge, at: 0)
                     continue outerLoop
                 }
             }
 
-            dict[startDate, default: []].append(challenge)
+            dict[startDate, default: []].insert(challenge, at: 0)
         }
 
         return dict

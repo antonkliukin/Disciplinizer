@@ -54,14 +54,16 @@ class CatStorePresenter: CatStorePresenterProtocol {
                     assertionFailure()
                 }
             case .failure:
-                assertionFailure()
-                return
+                self.view?.router?.dismiss()
             }
         }
     }
     
     private func finishPurchasing(forItem item: MotivationalItem) {
         self.motivationParameterUseCase.addPaid(motivationalItem: item) { (result) in
+            
+            self.motivationParameterUseCase.select(motivationalItem: item) { (_) in }
+            
             let alertModel = AlertModel(title: Strings.alertTitleSuccess(),
                                         message: Strings.alertMessageSuccess(),
                                         positiveActionTitle: Strings.alertActionBack(),

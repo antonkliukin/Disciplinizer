@@ -60,4 +60,9 @@ class ChallengeParametersPersistenceGateway: ChallengeParametersGatewayProtocols
         
         completionHandler(.success(item))
     }
+    
+    func deletePaid(completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        KeychainService.purchasedItem = nil
+        completionHandler(.success)
+    }
 }

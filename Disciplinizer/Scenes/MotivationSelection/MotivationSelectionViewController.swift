@@ -34,14 +34,31 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
 
         configurator.configure(motivationSelectionViewController: self)
         
+        setupModeSegmentedControl()
+                
         presenter.viewDidLoad()
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
+        
+        presenter.viewWillAppear()
+    }
+    
+    func setupModeSegmentedControl() {
+        if #available(iOS 13, *) {
+            return
+        } else {
+            modeSegmentedControl.tintColor = .lightGray
+            modeSegmentedControl.backgroundColor = .white
+
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+            modeSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            modeSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        }
     }
     
     func changeSetButtonTitle(title: String) {

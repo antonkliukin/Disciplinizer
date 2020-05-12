@@ -1355,7 +1355,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 76 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 77 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1521,6 +1521,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionTitle = Rswift.StringResource(key: "motivationItem.descriptionTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: No history to show
+      ///
+      /// Locales: ru, en
+      static let historyNoHistory = Rswift.StringResource(key: "history.noHistory", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Notifications
       ///
       /// Locales: ru, en
@@ -2279,6 +2283,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.descriptionTitle", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No history to show
+      ///
+      /// Locales: ru, en
+      static func historyNoHistory(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.noHistory", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.noHistory"
+        }
+
+        return NSLocalizedString("history.noHistory", bundle: bundle, comment: "")
       }
 
       /// en translation: Notifications
@@ -3349,7 +3368,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "LightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightBlue' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightBlue' is used in storyboard 'MotivationSelection', but couldn't be loaded.") }
         }
         if _R.storyboard.motivationSelection().motivatonSelectionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'motivatonSelectionViewController' could not be loaded from storyboard 'MotivationSelection' as 'MotivatonSelectionViewController'.") }
       }

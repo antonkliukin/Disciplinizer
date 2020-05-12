@@ -49,14 +49,14 @@ class AlertViewController: UIViewController, AlertViewProtocol {
     private func presentAlert() {
         let alert = UIAlertController(title: alertModel?.title, message: alertModel?.message, preferredStyle: .alert)
         
-        if let positiveTitle = alertModel?.positiveActionTitle {
+        if let positiveTitle = alertModel?.positiveActionTitle, !positiveTitle.isEmpty {
             let action = UIAlertAction(title: positiveTitle, style: .default) { (_) in
                 self.presenter.didTapPositiveAlertAction()
             }
             alert.addAction(action)
         }
         
-        if let negativeTitle = alertModel?.negativeActionTitle {
+        if let negativeTitle = alertModel?.negativeActionTitle, !negativeTitle.isEmpty {
             let action = UIAlertAction(title: negativeTitle, style: .destructive) { (_) in
                 self.presenter.didTapNegativeAlertAction()
             }

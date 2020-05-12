@@ -35,18 +35,22 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
 
     private var loseTimer: Timer?
     private var willLeaveAppTimestampDate: Date?
+    
+    private var motivationParameterUseCase: MotivationParameterUseCaseProtocol
 
     required init(view: CurrentChallengeViewProtocol,
                   challenge: Challenge,
                   startChallengeUseCase: StartChallengeUseCaseProtocol,
                   finishChallengeUseCase: FinishChallengeUseCaseProtocol,
-                  changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol) {
+                  changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol,
+                  motivationParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
         self.challenge = challenge
         self.durationInSeconds = Int(challenge.durationInMinutes * 60)
         self.startChallengeUseCase = startChallengeUseCase
         self.finishChallengeUseCase = finishChallengeUseCase
         self.changeMutedPlaybackStateUseCase = changeMutedPlaybackStateUseCase
+        self.motivationParameterUseCase = motivationParameterUseCase
     }
 
     func viewDidLoad() {
@@ -215,6 +219,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                     print("Lose, the app will be blocked until ad is viewed")
                     AppLockManager.shared.changeStateTo(.locked)
                 } else if isLose {
+                    // TODO: delete paid, select ad
+                    self.motivationParameterUseCase.deletePaid { (_) in }
+                    self.motivationParameterUseCase.select(motivationalItem: .ad) { (_) in }
                     print("Lose without blocking")
                 }
 

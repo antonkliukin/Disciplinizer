@@ -70,10 +70,10 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     var test = true
     
     private func checkIfFirstLaunch() {
-        if test {
-            test = false
-            self.view?.router?.present(Controller.guideChat())
-        }
+//        if test {
+//            test = false
+//            self.view?.router?.present(Controller.guideChat())
+//        }
         
         return
             
