@@ -1346,7 +1346,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 82 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 86 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1396,10 +1396,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemActionTitle = Rswift.StringResource(key: "motivationItem.action.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Choose an interval from 15 to 120 minutes and don’t pick up your phone to succeed 
+      ///
+      /// Locales: ru, en
+      static let timeSelectionDescription = Rswift.StringResource(key: "timeSelection.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Choose motivation
       ///
       /// Locales: ru, en
       static let guideMotivationSelectionTitle = Rswift.StringResource(key: "guide.motivationSelection.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Choose time to concentrate
+      ///
+      /// Locales: ru, en
+      static let timeSelectionTitle = Rswift.StringResource(key: "timeSelection.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Clear all
       ///
       /// Locales: ru, en
@@ -1432,6 +1440,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsEmailUs = Rswift.StringResource(key: "settings.emailUs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Enter Minutes Here
+      ///
+      /// Locales: ru, en
+      static let timeSelectionPlaceholder = Rswift.StringResource(key: "timeSelection.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Everytime you fail concentrating, there would be a penalty.
       ///
       /// Locales: ru, en
@@ -1556,6 +1568,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsPolicy = Rswift.StringResource(key: "settings.policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Save
+      ///
+      /// Locales: ru, en
+      static let timeSelectionSaveButtonTitle = Rswift.StringResource(key: "timeSelection.saveButtonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Set mode
       ///
       /// Locales: ru, en
@@ -1861,6 +1877,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.action.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Choose an interval from 15 to 120 minutes and don’t pick up your phone to succeed 
+      ///
+      /// Locales: ru, en
+      static func timeSelectionDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.description"
+        }
+
+        return NSLocalizedString("timeSelection.description", bundle: bundle, comment: "")
+      }
+
       /// en translation: Choose motivation
       ///
       /// Locales: ru, en
@@ -1874,6 +1905,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.motivationSelection.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Choose time to concentrate
+      ///
+      /// Locales: ru, en
+      static func timeSelectionTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.title"
+        }
+
+        return NSLocalizedString("timeSelection.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Clear all
@@ -1994,6 +2040,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.emailUs", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter Minutes Here
+      ///
+      /// Locales: ru, en
+      static func timeSelectionPlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.placeholder"
+        }
+
+        return NSLocalizedString("timeSelection.placeholder", bundle: bundle, comment: "")
       }
 
       /// en translation: Everytime you fail concentrating, there would be a penalty.
@@ -2459,6 +2520,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.policy", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Save
+      ///
+      /// Locales: ru, en
+      static func timeSelectionSaveButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.saveButtonTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.saveButtonTitle"
+        }
+
+        return NSLocalizedString("timeSelection.saveButtonTitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Set mode

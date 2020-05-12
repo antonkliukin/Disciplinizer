@@ -83,6 +83,10 @@
 // Time Selection
 //******************************************************************************
 "timeSelection.errorMessage" = "please enter time from 15 to 120 minutes";
+"timeSelection.title" = "Choose time to concentrate";
+"timeSelection.description" = "Choose an interval from 15 to 120 minutes and don’t pick up your phone to succeed ";
+"timeSelection.placeholder" = "Enter Minutes Here";
+"timeSelection.saveButtonTitle" = "Save";
 
 //******************************************************************************
 // Current

@@ -29,7 +29,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-5Y-oFW">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="183"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
@@ -133,11 +133,13 @@ and don’t pick up your phone to succeed </string>
                         <viewLayoutGuide key="safeArea" id="Kxy-nT-1Pg"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="M6k-GL-LLY" id="ZYS-Hb-vCJ"/>
                         <outlet property="errorMessageLabel" destination="Pbj-5G-cle" id="DPy-uO-Dlw"/>
                         <outlet property="saveButton" destination="YY2-PO-GT4" id="BKQ-ke-Vyu"/>
                         <outlet property="scrollView" destination="dcF-yd-Jkh" id="l2S-Uf-9Uq"/>
                         <outlet property="timeTextField" destination="U7T-hn-3sB" id="51T-Fl-wNU"/>
                         <outlet property="timeTextFieldLineView" destination="Rc6-w4-i6R" id="4JI-48-lhK"/>
+                        <outlet property="titleLabel" destination="qym-6J-z2t" id="6Mz-Dv-33y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh7-Qf-Onm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,10 @@
 import UIKit
 
 protocol TimeSelectionViewProtocol: ViewProtocol {
+    func set(viewTitle: String)
+    func set(description: String)
+    func set(placeholder: String)
+    func set(saveButtonTitle: String)
     func showErrorMessage(_ message: String)
     func hideErrorMessage()
     func changeSaveButtonState(isEnabled: Bool)
@@ -16,7 +20,9 @@ protocol TimeSelectionViewProtocol: ViewProtocol {
 }
 
 class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
-    
+        
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var timeTextFieldLineView: UIView!
     @IBOutlet weak var errorMessageLabel: UILabel!
@@ -64,6 +70,22 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
     @objc func keyboardWillHide(notification: NSNotification) {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
+    }
+    
+    func set(viewTitle: String) {
+        titleLabel.text = viewTitle
+    }
+    
+    func set(description: String) {
+        descriptionLabel.text = description
+    }
+    
+    func set(placeholder: String) {
+        timeTextField.placeholder = placeholder
+    }
+    
+    func set(saveButtonTitle: String) {
+        saveButton.setTitle(saveButtonTitle, for: .normal)
     }
         
     func showErrorMessage(_ message: String) {

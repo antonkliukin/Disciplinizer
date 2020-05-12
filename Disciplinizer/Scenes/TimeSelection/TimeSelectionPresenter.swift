@@ -38,6 +38,10 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     
     func viewDidLoad() {
         changeViewState(.onHold)
+        view?.set(viewTitle: Strings.timeSelectionTitle())
+        view?.set(description: Strings.timeSelectionDescription())
+        view?.set(placeholder: Strings.timeSelectionPlaceholder())
+        view?.set(saveButtonTitle: Strings.timeSelectionSaveButtonTitle())
     }
     
     func changeViewState(_ state: TimeSelectionViewState) {
