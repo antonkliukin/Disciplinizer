@@ -9,6 +9,9 @@
 import UIKit
 
 protocol HistoryViewProtocol: ViewProtocol {
+    func set(viewTitle: String)
+    func set(todayScoreTitle: String, bestScoreTitle: String)
+    func set(clearButtonTitle: String)
     func display(todayTotalDuration: String)
     func display(bestTotalDuraion: String)
     func configure(noHistoryMessage: String)
@@ -23,6 +26,9 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     @IBOutlet private weak var todayTotalDurationLabel: UILabel!
     @IBOutlet private weak var bestTotalDuraionLabel: UILabel!
     @IBOutlet private weak var noHistoryLabel: UILabel!
+    @IBOutlet private weak var todayScoreTitleLabel: UILabel!
+    @IBOutlet private weak var bestScoreTitleLabel: UILabel!
+    @IBOutlet private weak var clearButton: UIButton!
     
     var presenter: HistoryPresenterProtocol!
 
@@ -59,6 +65,19 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
         presenter.viewWillAppear()
         
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func set(viewTitle: String) {
+        title = viewTitle
+    }
+    
+    func set(todayScoreTitle: String, bestScoreTitle: String) {
+        todayScoreTitleLabel.text = todayScoreTitle
+        bestScoreTitleLabel.text = bestScoreTitle
+    }
+    
+    func set(clearButtonTitle: String) {
+        clearButton.setTitle(clearButtonTitle, for: .normal)
     }
     
     private func configureTopBackgroundView() {

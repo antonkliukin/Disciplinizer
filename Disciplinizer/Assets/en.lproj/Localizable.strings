@@ -102,6 +102,7 @@
 //******************************************************************************
 // History
 //******************************************************************************
+"history.title" = "History";
 "history.success" = "Success";
 "history.failed" = "Failed";
 "history.motivation.cat" = "cat mode";
@@ -109,6 +110,9 @@
 "history.today" = "Today";
 "history.yesterday" = "Yesterday";
 "history.noHistory" = "No history to show";
+"history.today" = "Today";
+"history.bestScore" = "Best score";
+"history.clear" = "Clear all";
 
 //******************************************************************************
 // Settings

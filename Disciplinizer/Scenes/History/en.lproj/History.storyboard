@@ -265,10 +265,13 @@
                     <navigationItem key="navigationItem" id="Xq2-Xi-bmF"/>
                     <connections>
                         <outlet property="bestResultView" destination="j4W-34-BHp" id="KbS-hN-oEr"/>
+                        <outlet property="bestScoreTitleLabel" destination="RqL-ly-vKW" id="cML-YQ-eIl"/>
                         <outlet property="bestTotalDuraionLabel" destination="0Zc-jK-oFs" id="Atx-Q8-GYn"/>
+                        <outlet property="clearButton" destination="UfG-q7-cfM" id="ZFf-yc-IwH"/>
                         <outlet property="noHistoryLabel" destination="xhD-GE-OMx" id="YMP-4b-2iC"/>
                         <outlet property="tableView" destination="HUs-dh-q65" id="mEQ-5Y-SQb"/>
                         <outlet property="titleLabel" destination="lAv-EX-abC" id="gMc-QG-cuU"/>
+                        <outlet property="todayScoreTitleLabel" destination="t6x-5C-zbz" id="2ml-Am-eec"/>
                         <outlet property="todayTotalDurationLabel" destination="LQ7-qC-bFj" id="OBC-HN-DRS"/>
                         <outlet property="topBackgroundView" destination="nAC-dU-QDs" id="7Yp-Re-aXv"/>
                     </connections>

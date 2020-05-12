@@ -1346,7 +1346,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 77 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 80 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1380,6 +1380,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsNegative = Rswift.StringResource(key: "creation.alert.notifications.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Best score
+      ///
+      /// Locales: ru, en
+      static let historyBestScore = Rswift.StringResource(key: "history.bestScore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Buy
       ///
       /// Locales: ru, en
@@ -1396,6 +1400,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMotivationSelectionTitle = Rswift.StringResource(key: "guide.motivationSelection.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Clear all
+      ///
+      /// Locales: ru, en
+      static let historyClear = Rswift.StringResource(key: "history.clear", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Click to avoid losing!
       ///
       /// Locales: ru, en
@@ -1464,6 +1472,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage1 = Rswift.StringResource(key: "guide.message1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: History
+      ///
+      /// Locales: ru, en
+      static let historyTitle = Rswift.StringResource(key: "history.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: If you fail, a cat leaves you
       ///
       /// Locales: ru, en
@@ -1781,6 +1793,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("creation.alert.notifications.negative", bundle: bundle, comment: "")
       }
 
+      /// en translation: Best score
+      ///
+      /// Locales: ru, en
+      static func historyBestScore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.bestScore", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.bestScore"
+        }
+
+        return NSLocalizedString("history.bestScore", bundle: bundle, comment: "")
+      }
+
       /// en translation: Buy
       ///
       /// Locales: ru, en
@@ -1839,6 +1866,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.motivationSelection.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clear all
+      ///
+      /// Locales: ru, en
+      static func historyClear(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.clear", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.clear"
+        }
+
+        return NSLocalizedString("history.clear", bundle: bundle, comment: "")
       }
 
       /// en translation: Click to avoid losing!
@@ -2094,6 +2136,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.message1", bundle: bundle, comment: "")
+      }
+
+      /// en translation: History
+      ///
+      /// Locales: ru, en
+      static func historyTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.title"
+        }
+
+        return NSLocalizedString("history.title", bundle: bundle, comment: "")
       }
 
       /// en translation: If you fail, a cat leaves you

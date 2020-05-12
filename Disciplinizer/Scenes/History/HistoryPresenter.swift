@@ -49,6 +49,10 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func viewDidLoad() {
+        view?.set(viewTitle: Strings.historyTitle())
+        view?.set(todayScoreTitle: Strings.historyToday(),
+                  bestScoreTitle: Strings.historyBestScore())
+        view?.set(clearButtonTitle: Strings.historyClear())
         view?.configure(noHistoryMessage: Strings.historyNoHistory())
     }
 
@@ -151,6 +155,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         let challenge = challenges[row]
 
         cell.display(result: challenge.isSuccess ? Strings.historySuccess() : Strings.historyFailed())
+        cell.setResultTextColor(color: challenge.isSuccess ? R.color.greenText()! : R.color.redText()!)
         cell.display(duration: Strings.durationInMinutes(minutes: challenge.durationInMinutes))
         cell.display(motivationType: challenge.motivationalItem == .ad ? Strings.historyMotivationAd() : Strings.historyMotivationCat())
         

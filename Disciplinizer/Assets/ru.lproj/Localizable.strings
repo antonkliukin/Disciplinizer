@@ -82,8 +82,8 @@
 "creation.timeTitle" = "Время";
 "creation.motivationTitle" = "Мотивация";
 "creation.actionTitle" = "Нажмите чтобы изменить";
-"creation.saveTime" = "не потерять время";
-"creation.saveCat" = "не потерять питомца";
+"creation.saveTime" = "сохранить время";
+"creation.saveCat" = "сохранить питомца";
 "creation.alert.notifications.title" = "Уведомления выключены";
 "creation.alert.notifications.description" = "Для того, чтобы начать испытание, необходимо включить уведомления";
 "creation.alert.notifications.positive" = "Открыть настройки";
@@ -115,13 +115,17 @@
 //******************************************************************************
 // History
 //******************************************************************************
+"history.title" = "История";
 "history.success" = "Успех";
-"history.failed" = "Провал";
+"history.failed" = "Неудача";
 "history.motivation.cat" = "сохранить питомца";
 "history.motivation.ad" = "сохранить время";
 "history.today" = "Сегодня";
 "history.yesterday" = "Вчера";
 "history.noHistory" = "Пока нет истории";
+"history.today" = "Сегодня";
+"history.bestScore" = "Лучший результат";
+"history.clear" = "Отчистить";
 
 //******************************************************************************
 // Settings
