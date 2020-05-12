@@ -9,6 +9,7 @@
 import UIKit
 
 protocol CreateChallengePresenterProtocol {
+    func viewDidLoad()
     func viewWillAppear()
     func startButtonTapped()
 }
@@ -30,6 +31,11 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         self.createChallengeUseCase = createChallengeUseCase
         self.motivationParameterUseCase = motivationalItemUseCase
         self.durationParameterUseCase = durationParameterUseCase
+    }
+    
+    func viewDidLoad() {
+        view?.set(viewTitle: Strings.creationTitle())
+        view?.set(startButtonTitle: Strings.creationStartButtonTitle())
     }
 
     func viewWillAppear() {

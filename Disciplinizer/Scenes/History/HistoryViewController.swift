@@ -37,8 +37,6 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = title
-
         configurator.configure(historyViewController: self)
 
         tableView.delegate = self
@@ -69,6 +67,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     
     func set(viewTitle: String) {
         title = viewTitle
+        titleLabel.text = title
     }
     
     func set(todayScoreTitle: String, bestScoreTitle: String) {

@@ -1346,7 +1346,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 80 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 82 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1460,6 +1460,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentAlertGiveUpNegative = Rswift.StringResource(key: "current.alert.giveUp.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Go
+      ///
+      /// Locales: ru, en
+      static let creationStartButtonTitle = Rswift.StringResource(key: "creation.startButtonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Go to settings
       ///
       /// Locales: ru, en
@@ -1592,6 +1596,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let historyToday = Rswift.StringResource(key: "history.today", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Tracker
+      ///
+      /// Locales: ru, en
+      static let creationTitle = Rswift.StringResource(key: "creation.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Valli
       ///
       /// Locales: en
@@ -2093,6 +2101,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("current.alert.giveUp.negative", bundle: bundle, comment: "")
       }
 
+      /// en translation: Go
+      ///
+      /// Locales: ru, en
+      static func creationStartButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.startButtonTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.startButtonTitle"
+        }
+
+        return NSLocalizedString("creation.startButtonTitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Go to settings
       ///
       /// Locales: ru, en
@@ -2586,6 +2609,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("history.today", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tracker
+      ///
+      /// Locales: ru, en
+      static func creationTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.title"
+        }
+
+        return NSLocalizedString("creation.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Valli

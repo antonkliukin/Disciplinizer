@@ -25,22 +25,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66T-Ao-1q4">
                     <rect key="frame" x="0.0" y="0.0" width="351" height="136"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-98-99Z">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-98-99Z">
                             <rect key="frame" x="0.0" y="0.0" width="351" height="111.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-5R-JVB">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="37"/>
+                                    <rect key="frame" x="10" y="0.0" width="331" height="37"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="DarkBlueText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k08-ej-IUc">
-                                    <rect key="frame" x="0.0" y="5" width="351" height="106.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="k08-ej-IUc">
+                                    <rect key="frame" x="10" y="5" width="331" height="106.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" name="DarkBlueText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="k08-ej-IUc" firstAttribute="leading" secondItem="iJS-98-99Z" secondAttribute="leading" constant="10" id="hq0-mE-2aP"/>
+                                <constraint firstAttribute="trailing" secondItem="EIo-5R-JVB" secondAttribute="trailing" constant="10" id="lcw-a5-3hq"/>
+                                <constraint firstAttribute="trailing" secondItem="k08-ej-IUc" secondAttribute="trailing" constant="10" id="oJO-PI-CPr"/>
+                                <constraint firstItem="EIo-5R-JVB" firstAttribute="leading" secondItem="iJS-98-99Z" secondAttribute="leading" constant="10" id="voz-hb-rgM"/>
+                            </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjr-Ld-mDu">
                             <rect key="frame" x="0.0" y="94.5" width="351" height="41.5"/>

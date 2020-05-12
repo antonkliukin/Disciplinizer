@@ -9,6 +9,8 @@
 import UIKit
 
 protocol CreateChallengeViewProtocol: ViewProtocol {
+    func set(viewTitle: String)
+    func set(startButtonTitle: String)
     func changeStartButtonState(isActive: Bool)
     func configureTimeView(model: ParameterViewModel)
     func configureMotivationView(model: ParameterViewModel)
@@ -45,6 +47,15 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         startButton.layer.borderWidth = 10
         startButton.layer.borderColor = R.color.buttonLightBlue()!.cgColor
     }
+    
+    func set(viewTitle: String) {
+        title = viewTitle
+        contentViewLabel.text = title
+    }
+    
+    func set(startButtonTitle: String) {
+        startButton.setTitle(startButtonTitle, for: .normal)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +69,8 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         configureStartButton()
         
         configurator.configure(createChallengeViewController: self)
+        
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_  animated: Bool) {
@@ -73,7 +86,6 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     }
         
     private func setupContentView() {
-        contentViewLabel.text = title
         contentView.roundCorners(corners: .top, radius: 22)
     }
 }

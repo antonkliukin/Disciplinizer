@@ -76,6 +76,8 @@
 "creation.alert.notifications.description" = "In order to start a challenge you need turn off notifications";
 "creation.alert.notifications.positive" = "Go to settings";
 "creation.alert.notifications.negative" = "Back";
+"creation.title" = "Tracker";
+"creation.startButtonTitle" = "Go";
 
 //******************************************************************************
 // Time Selection

@@ -88,7 +88,8 @@
 "creation.alert.notifications.description" = "Для того, чтобы начать испытание, необходимо включить уведомления";
 "creation.alert.notifications.positive" = "Открыть настройки";
 "creation.alert.notifications.negative" = "Назад";
-
+"creation.title" = "Трекер";
+"creation.startButtonTitle" = "Начать";
 
 //******************************************************************************
 // Time Selection
