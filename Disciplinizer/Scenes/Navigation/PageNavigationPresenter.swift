@@ -29,6 +29,7 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
         
     func viewDidAppear() {
         checkIfFirstLaunch()
+        checkIfShowGuide()
     }
 
     required init(view: PageNavigationViewProtocol,
@@ -46,8 +47,6 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
                 KeychainService.appLockState = .unlocked
                 
                 self.addPaidItem()
-                
-                self.view?.router?.present(Controller.guideChat(), animated: false, forcePresent: false, completion: nil)
             }
         }
     }
@@ -55,5 +54,14 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     private func addPaidItem() {
         let paid = MotivationalItem.level1
         motivationParameterUseCase.addPaid(motivationalItem: paid) { (_) in }
+    }
+    
+    private func checkIfShowGuide() {
+        let isFirstLaunchEntry = UserDefaults.standard.bool(forKey: "isFirstLaunch")
+        
+        if isFirstLaunchEntry == false {
+            UserDefaults.standard.set(true, forKey: "isFirstLaunch")
+            self.view?.router?.present(Controller.guideChat(), animated: false, forcePresent: false, completion: nil)
+        }
     }
 }
