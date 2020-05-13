@@ -10,6 +10,7 @@ import Foundation
 
 protocol SettingsPresenterProtocol {
     func didTapMusicSelect()
+    func viewDidLoad()
 }
 
 final class SettingsPresenter: SettingsPresenterProtocol {
@@ -17,6 +18,10 @@ final class SettingsPresenter: SettingsPresenterProtocol {
 
     required init(view: SettingsViewProtocol) {
         self.view = view
+    }
+    
+    func viewDidLoad() {
+        view.set(viewTitle: Strings.settingsTitle())
     }
     
     func didTapMusicSelect() {

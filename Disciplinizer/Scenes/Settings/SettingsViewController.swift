@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SettingsViewProtocol: ViewProtocol {
-
+    func set(viewTitle: String)
 }
 
 class SettingsViewController: UIViewController, SettingsViewProtocol {
@@ -51,11 +51,12 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         
         configurator.configure(settingsViewController: self)
 
-        titleLabel.text = title
         titleBackgroundView.roundCorners(corners: .bottom, radius: 24)
         addCollectionView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,11 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         collectionView.flowLayout.itemSize = CGSize(width: view.bounds.size.width - 32, height: 50)
         collectionView.sections = sections
         collectionView.reloadData()
+    }
+    
+    func set(viewTitle: String) {
+        titleLabel.text = viewTitle
+        titleLabel.text = title
     }
     
     @objc private func didBecomeActive() {

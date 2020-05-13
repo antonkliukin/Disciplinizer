@@ -43,6 +43,7 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     private func configureView() {
         view?.display(titleText: Strings.guideMotivationSelectionTitle())
         view?.display(descriptionText: Strings.guideMotivationSelectionDescription())
+        view?.configureNextButtonTitle(title: Strings.guideNextButtonTitle())
     }
     
     private func selectDefaultMode() {

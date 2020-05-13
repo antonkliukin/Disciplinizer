@@ -11,6 +11,9 @@ import UIKit
 // MARK: - Current Challenge View Protocol
 
 protocol CurrentChallengeViewProtocol: ViewProtocol {
+    func set(timerTitle: String)
+    func set(timerDescription: String)
+    func set(giveUpButtonTitle: String)
     var isDeviceLocked: Bool { get }
     func updateTimer(hours: String, minutes: String, seconds: String)
 }
@@ -18,13 +21,15 @@ protocol CurrentChallengeViewProtocol: ViewProtocol {
 // MARK: - Current Challenge View Controller
 
 final class CurrentChallengeViewController: UIViewController, CurrentChallengeViewProtocol {
+    
+    @IBOutlet weak var timerTitleLabel: UILabel!
+    @IBOutlet weak var timerDescriptionLabel: UILabel!
+    
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var giveUpButton: MainButton!
     @IBOutlet weak var musicSelectionButton: UIButton!
-    
-    
     
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
@@ -51,6 +56,18 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         super.viewDidAppear(animated)
 
         presenter?.viewDidAppear()
+    }
+    
+    func set(timerTitle: String) {
+        timerTitleLabel.text = timerTitle
+    }
+    
+    func set(timerDescription: String) {
+        timerDescriptionLabel.text = timerDescription
+    }
+    
+    func set(giveUpButtonTitle: String) {
+        giveUpButton.setTitle(giveUpButtonTitle, for: .normal)
     }
     
     private func setupUI() {

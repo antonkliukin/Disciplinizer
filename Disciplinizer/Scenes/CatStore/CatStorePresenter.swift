@@ -62,6 +62,9 @@ class CatStorePresenter: CatStorePresenterProtocol {
     }
     
     private func finishPurchasing(forItem item: MotivationalItem) {
+        AppLockManager.shared.changeStateTo(.unlocked)
+        KeychainService.appLockState = .unlocked
+        
         self.motivationParameterUseCase.addPaid(motivationalItem: item) { (result) in
             
             self.motivationParameterUseCase.select(motivationalItem: item) { (_) in }
@@ -70,7 +73,12 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         message: Strings.alertMessageSuccess(),
                                         positiveActionTitle: Strings.alertActionBack(),
                                         positiveAction: {
-                                            self.view?.router?.pop(animated: true, toRoot: true)
+                                            if self.view?.isPresented ?? false {
+                                                self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+                                            } else {
+                                                self.view?.router?.pop(animated: true, toRoot: true)
+                                            }
+                                            
             })
             
             let alertVC = Controller.alert(model: alertModel)

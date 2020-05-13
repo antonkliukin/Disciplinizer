@@ -17,7 +17,6 @@ protocol PageNavigationPresenterProtocol {
 final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     weak var view: PageNavigationViewProtocol?
     
-    private var getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol?
     private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
     
     func viewDidLoad() {
@@ -33,61 +32,24 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     }
 
     required init(view: PageNavigationViewProtocol,
-                  getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol,
                   motivationParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
-        self.getLastChallengeUseCase = getLastChallengeUseCase
         self.motivationParameterUseCase = motivationParameterUseCase
     }
-
-    private func checkIfLocked() {
-        AppLockManager.shared.getCurrentState { (state) in
-            switch state {
-            case .locked:
-                self.getLastChallengeUseCase?.displayLastChallenge(completionHandler: { (lastChallengeGettingResult) in
-                    switch lastChallengeGettingResult {
-                    case .success(let lastChallenge):
-                        guard let challenge = lastChallenge, !challenge.isSuccess else {
-                            assertionFailure()
-                            return
-                        }
-
-                        let losingVC = Controller.createLosing(withFailedChallenge: challenge)
-                        self.view?.router?.present(losingVC, animated: true, forcePresent: true, completion: nil)
-                    case .failure:
-                        assertionFailure()
-                        return
-                    }
-
-                })
-                return
-            case .unlocked:
-                return
+            
+    private func checkIfFirstLaunch() {
+        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
+            if isFirstLaunch, KeychainService.isFirstLaunch {
+                KeychainService.isFirstLaunch = false
+                
+                AppLockManager.shared.changeStateTo(.unlocked)
+                KeychainService.appLockState = .unlocked
+                
+                self.addPaidItem()
+                
+                self.view?.router?.present(Controller.guideChat(), animated: false, forcePresent: false, completion: nil)
             }
         }
-    }
-    
-    var test = true
-    
-    private func checkIfFirstLaunch() {
-//        if test {
-//            test = false
-//            self.view?.router?.present(Controller.guideChat())
-//        }
-        
-        return
-            
-//        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
-//            // TODO: Delete test conditions
-//            if true/*isFirstLaunch*/, true/*KeychainService.isFirstLaunch*/ {
-//                KeychainService.isFirstLaunch = false
-//                KeychainService.appLockState = .unlocked
-//                AppLockManager.shared.changeStateTo(.unlocked)
-//                self.addPaidItem()
-//                
-//                // self.view?.router?.present(Controller.guide())
-//            }
-//        }
     }
     
     private func addPaidItem() {

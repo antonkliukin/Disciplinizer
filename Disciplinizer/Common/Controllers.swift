@@ -129,7 +129,9 @@ enum Controller {
 
     static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
         let vc = BlockedViewController.fromStoryboard(.blocked)
-        vc.modalPresentationStyle = .fullScreen
+
+        vc.modalPresentationStyle = .currentContext
+        
         let configurator = BlockedStateConfigurator(challenge: challenge)
         vc.configurator = configurator
 
@@ -138,7 +140,7 @@ enum Controller {
 
     static func createAdVC() -> UIViewController {
         let vc = AdViewController.fromStoryboard(.ad)
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
 
         return vc
     }

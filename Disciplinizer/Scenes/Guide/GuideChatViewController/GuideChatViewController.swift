@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GuideChatViewProtocol: ViewProtocol {
-
+    func set(nextButtonTitle: String)
 }
 
 class GuideChatViewController: UIViewController, GuideChatViewProtocol {
@@ -36,12 +36,14 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     private var sections: [[ChatMessage]] = [[ChatMessage(text: "")]]
     private let configurator = GuideChatConfigurator()
     private var collectionView = ChatCollectionView(sections: [[]])
-    private let itemHeight: CGFloat = 120
+    private let itemHeight: CGFloat = 130
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configurator.configure(guideChatViewController: self)
+        
+        presenter?.viewDidLoad()
         
         addCollectionView()
     }
@@ -62,6 +64,10 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         updateCollectionView()
 
         startTimer()
+    }
+    
+    func set(nextButtonTitle: String) {
+        nextButton.setTitle(nextButtonTitle, for: .normal)
     }
     
     private func updateCollectionView() {
@@ -112,7 +118,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { (_) in
             let indexForNewMessage = self.sections[0].count - 1
             
             guard indexForNewMessage < self.messagesToShow.count else { return }

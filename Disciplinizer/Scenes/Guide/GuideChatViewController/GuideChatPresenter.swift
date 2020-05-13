@@ -10,6 +10,7 @@ import Foundation
 
 protocol GuideChatPresenterProtocol {
     func didTapGotItButton()
+    func viewDidLoad()
 }
 
 final class GuideChatPresenter: GuideChatPresenterProtocol {
@@ -17,6 +18,10 @@ final class GuideChatPresenter: GuideChatPresenterProtocol {
 
     required init(view: GuideChatViewProtocol) {
         self.view = view
+    }
+    
+    func viewDidLoad() {
+        view?.set(nextButtonTitle: Strings.guideGotItTitle())
     }
     
     func didTapGotItButton() {

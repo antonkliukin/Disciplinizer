@@ -22,9 +22,13 @@ class BlockedStateConfigurator: BlockedStateConfiguratorProtocol {
     func configure(blockedViewController: BlockedViewController) {
         let purchasesManager = PurchasesManager.shared
         
+        let challengeParametersGateway = ChallengeParametersPersistenceGateway()
+        let motivationalItemParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
+        
         let presenter = BlockedPresenter(view: blockedViewController,
                                          failedChallenge: challenge,
-                                         purchasesManager: purchasesManager)
+                                         purchasesManager: purchasesManager,
+                                         motivationalItemParameterUseCase: motivationalItemParameterUseCase)
 
         blockedViewController.presenter = presenter
     }

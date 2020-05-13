@@ -1,6 +1,9 @@
 //******************************************************************************
 // Guide
 //******************************************************************************
+"guide.gotIt.title" = "Got it";
+"guide.nextButton.title" = "Next";
+
 "guide.motivationSelection.title" = "Choose motivation";
 "guide.motivationSelection.description" = "What penalty would you want to choose?";
 "guide.catMotivation.title" = "cat mode";
@@ -95,6 +98,10 @@
 //******************************************************************************
 // Current
 //******************************************************************************
+"current.timer.title" = "Time left";
+"current.timer.adDescription" = "You’ll have to spend time watching 3 ads if you give up";
+"current.timer.catDescription" = "Your cat will leave you if you give up";
+"current.giveUpButton.title" = "Give up";
 "current.alert.giveUp.title" = "Do you really want to give up?";
 "current.alert.giveUp.catDescription" = "If you’ll give up, your cat will leave you";
 "current.alert.giveUp.adDescription" = "If you’ll give up, you’ll have to watch 3 ads.";
@@ -129,6 +136,7 @@
 //******************************************************************************
 // Settings
 //******************************************************************************
+"settings.title" = "Settings";
 "settings.notifications" = "Notifications";
 "settings.appearance" = "Appearance";
 "settings.getInTouch" = "Get in touch";

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol PageNavigationViewProtocol: ViewProtocol {
-
 }
 
 final class PageNavigationViewController: UITabBarController, PageNavigationViewProtocol {
@@ -17,7 +16,7 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
     var controllers: [UIViewController] = []
 
     private let configurator = PageNavigationConfigurator()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +41,14 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
         presenter?.viewDidAppear()
     }
     
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        
+        for vc in controllers {
+            vc.presentedViewController?.dismiss(animated: flag, completion: completion)
+        }
+    }
+        
     override var selectedViewController: UIViewController? {
         didSet {
             updateTabBarItems()

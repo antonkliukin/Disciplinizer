@@ -54,6 +54,10 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     func viewDidLoad() {
+        view?.set(timerTitle: Strings.currentTimerTitle())
+        view?.set(timerDescription: challenge.motivationalItem == .ad ? Strings.currentTimerAdDescription() : Strings.currentTimerCatDescription())
+        view?.set(giveUpButtonTitle: Strings.currentGiveUpButtonTitle())
+        
         setupMusicController()
 
         updateTimerView()
@@ -216,12 +220,16 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 let adIsItem = finishedChallenge.motivationalItem == .ad
 
                 if isLose, adIsItem {
-                    print("Lose, the app will be blocked until ad is viewed")
                     AppLockManager.shared.changeStateTo(.locked)
+                    KeychainService.appLockState = .locked
+                    
+                    print("Lose, the app will be blocked until ad is viewed")
                 } else if isLose {
-                    // TODO: delete paid, select ad
                     self.motivationParameterUseCase.deletePaid { (_) in }
                     self.motivationParameterUseCase.select(motivationalItem: .ad) { (_) in }
+                    AppLockManager.shared.changeStateTo(.locked)
+                    KeychainService.appLockState = .locked
+
                     print("Lose without blocking")
                 }
 

@@ -23,11 +23,14 @@ class CreateChallengeConfigurator: CreateChallengeConfiguratorProtocol {
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()
         let motivationalItemParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
         let durationParameterUseCase = DurationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
+        
+        let getLastChallengeUseCase = DisplayLastChallengeUseCase(challengesGateway: coreDataChallengesGateway)
 
         let presenter = CreateChallengePresenter(view: createChallengeViewController,
                                                  createChallengeUseCase: createChallengeUseCase,
                                                  motivationalItemUseCase: motivationalItemParameterUseCase,
-                                                 durationParameterUseCase: durationParameterUseCase)
+                                                 durationParameterUseCase: durationParameterUseCase,
+                                                 getLastChallengeUseCase: getLastChallengeUseCase)
 
         createChallengeViewController.presenter = presenter
     }

@@ -19,6 +19,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private let createChallengeUseCase: CreateChallengeUseCaseProtocol
     private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
+    private let getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol
 
     private var newChallenge: Challenge!
     private var selectedDurationInMinutes = 0
@@ -26,11 +27,13 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     init(view: CreateChallengeViewProtocol,
          createChallengeUseCase: CreateChallengeUseCaseProtocol,
          motivationalItemUseCase: MotivationParameterUseCaseProtocol,
-         durationParameterUseCase: DurationParameterUseCaseProtocol) {
+         durationParameterUseCase: DurationParameterUseCaseProtocol,
+         getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol) {
         self.view = view
         self.createChallengeUseCase = createChallengeUseCase
         self.motivationParameterUseCase = motivationalItemUseCase
         self.durationParameterUseCase = durationParameterUseCase
+        self.getLastChallengeUseCase = getLastChallengeUseCase
     }
     
     func viewDidLoad() {
@@ -39,10 +42,44 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
 
     func viewWillAppear() {
+        checkIfLocked()
+
         configureTimeView()
         configureMotivationView()
         
         view?.changeStartButtonState(isActive: true)
+    }
+    
+    private func checkIfLocked() {
+        AppLockManager.shared.getCurrentState { (state) in
+            switch state {
+            case .locked:
+                self.showBlockedView()
+            case .unlocked:
+                if KeychainService.appLockState == .locked {
+                    self.showBlockedView()
+                }
+            }
+        }
+    }
+    
+    private func showBlockedView() {
+        self.getLastChallengeUseCase.displayLastChallenge(completionHandler: { (lastChallengeGettingResult) in
+            switch lastChallengeGettingResult {
+            case .success(let lastChallenge):
+                guard let challenge = lastChallenge, !challenge.isSuccess else {
+                    assertionFailure()
+                    return
+                }
+
+                let losingVC = Controller.createLosing(withFailedChallenge: challenge)
+                self.view?.router?.present(losingVC, animated: false, forcePresent: true, completion: nil)
+            case .failure:
+                assertionFailure()
+                return
+            }
+
+        })
     }
 
     func startButtonTapped() {
@@ -131,11 +168,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 assertionFailure()
                 return
             }
-            
-            // TODO: Test data
+            // TODO: delete test duration
             let challengeParameters = ChallengeParameters(startDate: Date(),
                                                           finishDate: nil,
-                                                          durationInMinutes: self.selectedDurationInMinutes,
+                                                          durationInMinutes: 1,//self.selectedDurationInMinutes,
                                                           isSuccess: false,
                                                           motivationalItem: item)
 

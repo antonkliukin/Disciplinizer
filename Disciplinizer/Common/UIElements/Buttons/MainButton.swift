@@ -14,12 +14,6 @@ enum MainButtonStyle {
 
 class MainButton: UIButton {
     
-    override var backgroundColor: UIColor? {
-        didSet {
-            print(backgroundColor)
-        }
-    }
-    
     var style: MainButtonStyle = .main
     var isResponsive: Bool = false {
         didSet {

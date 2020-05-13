@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer_background" translatesAutoresizingMaskIntoConstraints="NO" id="P5x-wf-5Z5">
-                                <rect key="frame" x="-119" y="77" width="652" height="652"/>
+                                <rect key="frame" x="20" y="216" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P5x-wf-5Z5" secondAttribute="height" id="dbt-du-wNa"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
-                                <rect key="frame" x="3.5" y="318" width="407.5" height="150"/>
+                                <rect key="frame" x="90" y="318" width="234" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
-                                        <rect key="frame" x="173.5" y="0.0" width="60.5" height="50"/>
+                                        <rect key="frame" x="87" y="0.0" width="60.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W5-2K-w5e">
-                                        <rect key="frame" x="103.5" y="50" width="200.5" height="50"/>
+                                        <rect key="frame" x="17" y="50" width="200.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
                                                 <rect key="frame" x="0.0" y="0.0" width="58.5" height="50"/>
@@ -87,7 +87,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
-                                        <rect key="frame" x="115.5" y="100" width="176.5" height="50"/>
+                                        <rect key="frame" x="29" y="100" width="176.5" height="50"/>
                                         <string key="text">You’ll have to spend time
 watching 3 ads if you give up</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -133,7 +133,9 @@ watching 3 ads if you give up</string>
                             <constraint firstItem="e2g-Ym-Tqb" firstAttribute="centerY" secondItem="eYj-Ov-J9I" secondAttribute="centerY" id="A6j-Yu-ilw"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="70" id="Iqp-7b-S5V"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" multiplier="0.9" id="MLN-6d-mO6"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="20" id="YAf-z2-kKe"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="P5x-wf-5Z5" secondAttribute="centerY" constant="-10" id="bsS-FX-yIh"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="P5x-wf-5Z5" secondAttribute="trailing" constant="20" id="ifr-Wn-B1a"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="60" id="mvO-H6-9Us"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="P5x-wf-5Z5" secondAttribute="centerX" id="nLi-kS-ly3"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="pbx-2U-GMh"/>
@@ -147,6 +149,8 @@ watching 3 ads if you give up</string>
                         <outlet property="minutesLabel" destination="sTc-nR-cFY" id="LuR-Sg-XuG"/>
                         <outlet property="musicSelectionButton" destination="e2g-Ym-Tqb" id="Zs4-2e-UGB"/>
                         <outlet property="secondsLabel" destination="hch-i9-Gc8" id="cXc-2r-riV"/>
+                        <outlet property="timerDescriptionLabel" destination="cbj-nI-Bfj" id="Fws-JM-3ci"/>
+                        <outlet property="timerTitleLabel" destination="lci-T7-9qP" id="wTA-V2-9XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1a-Vu-3Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

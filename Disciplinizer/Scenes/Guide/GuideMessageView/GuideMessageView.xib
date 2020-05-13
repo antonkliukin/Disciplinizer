@@ -32,7 +32,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="444" height="100.5"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We give you 1 free cat. If a cat will leave, you can buy another one." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-de-g0h">
-                            <rect key="frame" x="20" y="10" width="414" height="80.5"/>
+                            <rect key="frame" x="20" y="8" width="414" height="84.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -40,10 +40,11 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="tvZ-de-g0h" secondAttribute="bottom" constant="10" id="6pd-H7-yno"/>
+                        <constraint firstAttribute="bottom" secondItem="tvZ-de-g0h" secondAttribute="bottom" constant="8" id="6pd-H7-yno"/>
                         <constraint firstAttribute="trailing" secondItem="tvZ-de-g0h" secondAttribute="trailing" constant="10" id="Blu-Q8-0yi"/>
-                        <constraint firstItem="tvZ-de-g0h" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="top" constant="10" id="DRl-Mg-YGa"/>
+                        <constraint firstItem="tvZ-de-g0h" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="top" constant="8" id="DRl-Mg-YGa"/>
                         <constraint firstItem="Men-Ka-SDS" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="top" id="JHe-ZI-exu"/>
+                        <constraint firstItem="tvZ-de-g0h" firstAttribute="centerY" secondItem="Men-Ka-SDS" secondAttribute="centerY" id="LBh-7t-Wyu"/>
                         <constraint firstItem="tvZ-de-g0h" firstAttribute="leading" secondItem="hdG-AS-O9A" secondAttribute="leading" constant="20" id="Tof-Df-Jmk"/>
                         <constraint firstItem="Men-Ka-SDS" firstAttribute="leading" secondItem="hdG-AS-O9A" secondAttribute="leading" id="i50-Lf-sdz"/>
                         <constraint firstAttribute="bottom" secondItem="Men-Ka-SDS" secondAttribute="bottom" id="qDA-Y7-Cro"/>
@@ -127,7 +128,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hdG-AS-O9A" secondAttribute="trailing" id="qbk-M0-ejW"/>
                 <constraint firstItem="hdG-AS-O9A" firstAttribute="leading" secondItem="hfU-QU-Mw8" secondAttribute="trailing" constant="10" id="wmN-ir-KhH"/>
                 <constraint firstItem="Fue-El-Way" firstAttribute="leading" secondItem="Men-Ka-SDS" secondAttribute="leading" constant="20" id="xdB-CB-MTy"/>
-                <constraint firstItem="Fue-El-Way" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="zgE-p3-DE4"/>
+                <constraint firstItem="Fue-El-Way" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zgE-p3-DE4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -135,7 +136,7 @@
         </view>
     </objects>
     <resources>
-        <image name="didi" width="25" height="25"/>
+        <image name="didi" width="166" height="166"/>
         <image name="message_bubble" width="263" height="56"/>
         <namedColor name="orange">
             <color red="0.74509803921568629" green="0.54117647058823526" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

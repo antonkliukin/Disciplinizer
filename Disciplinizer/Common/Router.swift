@@ -26,7 +26,7 @@ protocol RouterProtocol {
 }
 
 class Router: RouterProtocol {
-    let initialController: UIViewController
+    var initialController: UIViewController
 
     init(initialController: UIViewController) {
         self.initialController = initialController

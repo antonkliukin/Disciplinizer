@@ -1,6 +1,9 @@
 //******************************************************************************
 // Guide
 //******************************************************************************
+"guide.gotIt.title" = "Понятно";
+"guide.nextButton.title" = "Далее";
+
 "guide.motivationSelection.title" = "Выбери мотивацию";
 "guide.motivationSelection.description" = "Какой режим даст тебе больше мотивации?";
 "guide.catMotivation.title" = "сохранить питомца";
@@ -16,7 +19,7 @@
 "guide.message4" = "Возможность потерять что-нибудь ценное увеличивает мотивацию и продуктивность.";
 "guide.message5" = "Лишиться друга или потерять время - одни из самых грустных событий в жизни.";
 "guide.message6" = "Представь, что с тобой живет питомец. Это твой лучший друг!";
-"guide.message7" = "Твой питомец покинет тебя в случае неудачи, если ты выберишь режим сохранения питомца.";
+"guide.message7" = "Твой питомец покинет тебя в случае неудачи, если ты выберешь режим сохранения питомца.";
 "guide.message8" = "Или ты потеряешь свое драгоценное время просмотром трех рекламных роликов.";
 "guide.message9" = "Давай приступим. Удачи!";
 
@@ -57,11 +60,11 @@
 // Motivational Item
 //******************************************************************************
 "motivationItem.ad.title" = "Реклама";
-"motivationItem.level1.title" = "Cuddly";
-"motivationItem.level2.title" = "Fluffy";
-"motivationItem.level3.title" = "Tilda";
-"motivationItem.level4.title" = "Pinko";
-"motivationItem.level5.title" = "Valli";
+"motivationItem.level1.title" = "Барсик";
+"motivationItem.level2.title" = "Мотя";
+"motivationItem.level3.title" = "Муся";
+"motivationItem.level4.title" = "Джессика";
+"motivationItem.level5.title" = "Пушинка";
 
 "motivationItem.title" = "Изменить мотивацию";
 "motivationItem.catMode" = "Сохранить питомца";
@@ -107,6 +110,10 @@
 //******************************************************************************
 // Current
 //******************************************************************************
+"current.timer.title" = "Осталось времени";
+"current.timer.adDescription" = "Тебе придется посмотреть 3 рекламных ролика, если проиграешь или сдашься";
+"current.timer.catDescription" = "Твой питомец уйдет, если проиграешь или сдашься";
+"current.giveUpButton.title" = "Сдаться";
 "current.alert.giveUp.title" = "Уверены, что хотите сдаться?";
 "current.alert.giveUp.catDescription" = "Если сдадитесь - потеряете своего питомца";
 "current.alert.giveUp.adDescription" = "Если сдадитесь - вам придется посмотреть три рекламных ролика";
@@ -141,6 +148,7 @@
 //******************************************************************************
 // Settings
 //******************************************************************************
+"settings.title" = "Настройки";
 "settings.notifications" = "Уведомления";
 "settings.appearance" = "Интерфейс";
 "settings.getInTouch" = "Связаться с разработчиками";

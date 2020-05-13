@@ -18,13 +18,16 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     private weak var view: BlockedViewProtocol?
     private var challenge: Challenge
     private var purchasesManager: PurchasesManager
+    private var motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol
 
     init(view: BlockedViewProtocol,
          failedChallenge: Challenge,
-         purchasesManager: PurchasesManager) {
+         purchasesManager: PurchasesManager,
+         motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
         self.challenge = failedChallenge
         self.purchasesManager = purchasesManager
+        self.motivationalItemParameterUseCase = motivationalItemParameterUseCase
     }
 
     func viewDidLoad() {
@@ -32,9 +35,16 @@ final class BlockedPresenter: BlockedPresenterProtocol {
             view?.configureLoseTitle(Strings.loseAdTitle())
             view?.configureLoseDescription(Strings.loseAdDescription())
             view?.setMainButtonTitle(Strings.loseAdMainButton())
-            view?.setSecondaryButtonTitle(Strings.loseAdSecondaryButton())
             view?.setImage(R.image.timer()!)
+            
+            motivationalItemParameterUseCase.getPaid { (result) in
+                if (try? result.get()) == nil {
+                    self.view?.setSecondaryButtonTitle(Strings.loseAdSecondaryButton())
+                }
+            }
         } else {
+            unlockApp()
+            
             view?.configureLoseTitle(Strings.loseCatTitle())
             view?.configureLoseDescription(Strings.loseCatDescription())
             view?.setMainButtonTitle(Strings.loseCatMainButton())
@@ -57,5 +67,10 @@ final class BlockedPresenter: BlockedPresenterProtocol {
         } else {
             view?.router?.dismiss()
         }
+    }
+    
+    private func unlockApp() {
+        AppLockManager.shared.changeStateTo(.unlocked)
+        KeychainService.appLockState = .unlocked
     }
 }

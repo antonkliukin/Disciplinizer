@@ -56,8 +56,9 @@ extension AdPresenter: GADRewardedAdDelegate {
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         watchedAds += 1
 
-        if watchedAds == numberOfAdsToShow {
+        if watchedAds >= numberOfAdsToShow {
             AppLockManager.shared.changeStateTo(.unlocked)
+            KeychainService.appLockState = .unlocked
         }
 
       print("Reward received with currency: \(reward.type), amount \(reward.amount).")

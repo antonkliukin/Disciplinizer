@@ -9,6 +9,7 @@
 import UIKit
 
 protocol CatStoreViewProtocol: ViewProtocol {
+    var isPresented: Bool { get }
     func set(viewTitle: String)
     func set(description: String)
     func showMotivationItems(_ items: [MotivationalItem])
@@ -24,6 +25,9 @@ class CatStoreViewController: UIViewController, CatStoreViewProtocol {
     
     let configurator = CatStoreConfigurator()
     var presenter: CatStorePresenter!
+    var isPresented: Bool {
+        navigationController == nil
+    }
     
     private var items: [MotivationalItem] = []
         
@@ -45,7 +49,7 @@ class CatStoreViewController: UIViewController, CatStoreViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        closeButtonImage.isHidden = navigationController != nil
+        closeButtonImage.isHidden = !isPresented
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
