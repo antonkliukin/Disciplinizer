@@ -31,7 +31,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Men-Ka-SDS">
                             <rect key="frame" x="0.0" y="0.0" width="444" height="100.5"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We give you 1 free cat. If a cat will leave, you can buy another one." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-de-g0h">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We give you 1 free cat. If a cat will leave, you can buy another one." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-de-g0h">
                             <rect key="frame" x="20" y="8" width="414" height="84.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
@@ -128,7 +128,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hdG-AS-O9A" secondAttribute="trailing" id="qbk-M0-ejW"/>
                 <constraint firstItem="hdG-AS-O9A" firstAttribute="leading" secondItem="hfU-QU-Mw8" secondAttribute="trailing" constant="10" id="wmN-ir-KhH"/>
                 <constraint firstItem="Fue-El-Way" firstAttribute="leading" secondItem="Men-Ka-SDS" secondAttribute="leading" constant="20" id="xdB-CB-MTy"/>
-                <constraint firstItem="Fue-El-Way" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zgE-p3-DE4"/>
+                <constraint firstItem="Fue-El-Way" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="zgE-p3-DE4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

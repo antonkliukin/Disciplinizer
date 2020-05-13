@@ -347,6 +347,7 @@
 		3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationPresenter.swift; sourceTree = "<group>"; };
 		3AD0689E235B175B003D30A6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionPresenter.swift; sourceTree = "<group>"; };
 		5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Metting The Sun.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Metting The Sun.dataset/Metting The Sun.mp3"; sourceTree = SOURCE_ROOT; };
@@ -363,6 +364,8 @@
 		54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.debug.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disciplinizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.prod.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.prod.xcconfig"; sourceTree = "<group>"; };
+		B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.stage.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.stage.xcconfig"; sourceTree = "<group>"; };
 		C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.release.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.release.xcconfig"; sourceTree = "<group>"; };
 		C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentChallenge.storyboard; sourceTree = "<group>"; };
 		C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengeViewController.swift; sourceTree = "<group>"; };
@@ -1130,6 +1133,9 @@
 			children = (
 				6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */,
 				C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */,
+				4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */,
+				B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */,
+				A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1626,7 +1632,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3A47D668230F18FC00B2B200 /* Debug */ = {
+		3A47D668230F18FC00B2B200 /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1686,9 +1692,9 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = Test;
 		};
-		3A47D669230F18FC00B2B200 /* Release */ = {
+		3A47D669230F18FC00B2B200 /* Prod */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1742,14 +1748,15 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Prod;
 		};
-		3A47D66B230F18FC00B2B200 /* Debug */ = {
+		3A47D66B230F18FC00B2B200 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */;
+			baseConfigurationReference = 4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
@@ -1764,14 +1771,15 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Debug;
+			name = Test;
 		};
-		3A47D66C230F18FC00B2B200 /* Release */ = {
+		3A47D66C230F18FC00B2B200 /* Prod */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */;
+			baseConfigurationReference = A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1785,9 +1793,9 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Release;
+			name = Prod;
 		};
-		3ACD2C8C240CD6210017FABC /* Debug */ = {
+		3ACD2C8C240CD6210017FABC /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1807,9 +1815,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Disciplinizer.app/Disciplinizer";
 			};
-			name = Debug;
+			name = Test;
 		};
-		3ACD2C8D240CD6210017FABC /* Release */ = {
+		3ACD2C8D240CD6210017FABC /* Prod */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1829,7 +1837,114 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Disciplinizer.app/Disciplinizer";
 			};
-			name = Release;
+			name = Prod;
+		};
+		3AE4E623246C4899004C4D38 /* Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Stage;
+		};
+		3AE4E624246C4899004C4D38 /* Stage */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YJ66LV4LL7;
+				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
+				PRODUCT_NAME = Disciplinizer;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Stage;
+		};
+		3AE4E625246C4899004C4D38 /* Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ66LV4LL7;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				INFOPLIST_FILE = DisciplinizerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.ConcentrationTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Disciplinizer.app/Disciplinizer";
+			};
+			name = Stage;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1837,29 +1952,32 @@
 		3A47D653230F18FB00B2B200 /* Build configuration list for PBXProject "Disciplinizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A47D668230F18FC00B2B200 /* Debug */,
-				3A47D669230F18FC00B2B200 /* Release */,
+				3A47D668230F18FC00B2B200 /* Test */,
+				3AE4E623246C4899004C4D38 /* Stage */,
+				3A47D669230F18FC00B2B200 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Test;
 		};
 		3A47D66A230F18FC00B2B200 /* Build configuration list for PBXNativeTarget "Disciplinizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A47D66B230F18FC00B2B200 /* Debug */,
-				3A47D66C230F18FC00B2B200 /* Release */,
+				3A47D66B230F18FC00B2B200 /* Test */,
+				3AE4E624246C4899004C4D38 /* Stage */,
+				3A47D66C230F18FC00B2B200 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Test;
 		};
 		3ACD2C8B240CD6210017FABC /* Build configuration list for PBXNativeTarget "DisciplinizerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3ACD2C8C240CD6210017FABC /* Debug */,
-				3ACD2C8D240CD6210017FABC /* Release */,
+				3ACD2C8C240CD6210017FABC /* Test */,
+				3AE4E625246C4899004C4D38 /* Stage */,
+				3ACD2C8D240CD6210017FABC /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Test;
 		};
 /* End XCConfigurationList section */
 

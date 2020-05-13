@@ -36,7 +36,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     private var sections: [[ChatMessage]] = [[ChatMessage(text: "")]]
     private let configurator = GuideChatConfigurator()
     private var collectionView = ChatCollectionView(sections: [[]])
-    private let itemHeight: CGFloat = 130
+    private let itemHeight: CGFloat = 110
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +94,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionBottonConstraint = collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        collectionBottonConstraint = collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         collectionBottonConstraint?.isActive = true
         collectionButtonConstraint = collectionView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -50)
         collectionButtonConstraint?.isActive = false

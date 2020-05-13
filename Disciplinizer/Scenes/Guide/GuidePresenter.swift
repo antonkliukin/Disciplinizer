@@ -29,7 +29,9 @@ class GuidePresenter: GuidePresenterProtocol {
     func didTapNext() {
         if currentIndex == 1 {
             view?.updateProgressBar(progress: 1) {
-                self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+                self.view?.router?.dismiss(animated: true, completion: {
+                    NotificationManager.shared.requestAuthorization()
+                }, toRoot: true)
             }
         } else {
             view?.updateProgressBar(progress: 0.66, completion: nil)

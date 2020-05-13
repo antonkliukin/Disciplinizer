@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = pageVC
 
-        NotificationManager.shared.requestAuthorization()
         Sound.category = .playback
         
         do {

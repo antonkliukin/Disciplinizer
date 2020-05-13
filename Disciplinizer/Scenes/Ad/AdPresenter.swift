@@ -35,8 +35,9 @@ class AdPresenter: NSObject, AdPresenterProtocol {
 
         rewardedAd = GADRewardedAd(adUnitID: Config.shared.getAdUnitID())
         rewardedAd?.load(GADRequest()) { [weak self] error in
-            if let error = error {
-                print("Loading failed: \(error)")
+            if error != nil {
+                AppLockManager.shared.changeStateTo(.unlocked)
+                KeychainService.appLockState = .unlocked
             } else {
                 guard let self = self, let vc = self.view as? AdViewController else {
                     assertionFailure()
