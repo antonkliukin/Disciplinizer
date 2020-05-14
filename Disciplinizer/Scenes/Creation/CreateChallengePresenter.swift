@@ -11,6 +11,7 @@ import UIKit
 protocol CreateChallengePresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidAppear()
     func startButtonTapped()
 }
 
@@ -50,6 +51,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         view?.changeStartButtonState(isActive: true)
     }
     
+    func viewDidAppear() {
+        
+    }
+    
     private func checkIfLocked() {
         AppLockManager.shared.getCurrentState { (state) in
             switch state {
@@ -73,7 +78,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 }
 
                 let losingVC = Controller.createLosing(withFailedChallenge: challenge)
-                self.view?.router?.present(losingVC, animated: false, forcePresent: true, completion: nil)
+                self.view?.router?.add(losingVC)
             case .failure:
                 assertionFailure()
                 return

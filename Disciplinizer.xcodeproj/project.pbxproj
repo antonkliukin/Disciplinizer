@@ -155,6 +155,7 @@
 		3AD068982358ED1D003D30A6 /* PageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */; };
 		3AD0689A2358F085003D30A6 /* PageNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */; };
 		3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0689E235B175B003D30A6 /* PageCell.swift */; };
+		3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E627246DBF21004C4D38 /* RootViewController.swift */; };
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
@@ -346,6 +347,7 @@
 		3AD068972358ED1D003D30A6 /* PageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationViewController.swift; sourceTree = "<group>"; };
 		3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationPresenter.swift; sourceTree = "<group>"; };
 		3AD0689E235B175B003D30A6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		3AE4E627246DBF21004C4D38 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 		3ACD2C56240C2DE60017FABC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3AE4E626246DBF12004C4D38 /* Root */,
 				3AA12728232ABB3C004206E5 /* Guide */,
 				3AD068942358ECD2003D30A6 /* Navigation */,
 				3A0D5A17234E5CDD00F20BC3 /* Creation */,
@@ -1097,6 +1100,14 @@
 				3AD0689E235B175B003D30A6 /* PageCell.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		3AE4E626246DBF12004C4D38 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3AE4E627246DBF21004C4D38 /* RootViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		544EC480233BAA7800417DAF /* UIElements */ = {
@@ -1533,6 +1544,7 @@
 				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,
 				3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */,
 				3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */,
+				3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */,
 				54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */,
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,

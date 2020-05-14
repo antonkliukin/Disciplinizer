@@ -23,12 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-
-        let pageVC = Controller.createPageNavigation()
-
+        
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = pageVC
+        window?.rootViewController = rootVC
 
         Sound.category = .playback
         

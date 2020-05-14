@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GuideViewProtocol: ViewProtocol {
-    func updateProgressBar(progress: CGFloat, completion: (() -> Void)?)
+    func updateProgressBar(progress: CGFloat, animated: Bool, completion: (() -> Void)?)
 }
 
 extension Notification.Name {
@@ -26,6 +26,8 @@ class GuideViewController: UIViewController, GuideViewProtocol {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidTapNext), name: .didTapNext, object: nil)
+        
+        presenter.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,13 +40,17 @@ class GuideViewController: UIViewController, GuideViewProtocol {
         presenter.didTapNext()
     }
     
-    func updateProgressBar(progress: CGFloat, completion: (() -> Void)? = nil) {
+    func updateProgressBar(progress: CGFloat, animated: Bool, completion: (() -> Void)? = nil) {
         progressBarWidthConstraint.constant = fullProgressBarView.bounds.width * progress
-                
-        UIView.animate(withDuration: 0.3, animations: {
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                completion?()
+            }
+        } else {
             self.view.layoutIfNeeded()
-        }) { (_) in
-            completion?()
         }
     }
 }

@@ -65,22 +65,16 @@ class GuideMessageView: UIView {
     }
     
     private func startActivityViewAnimation() {
-        
         var animationDelay = 0.0
         let delayTimePoints = [0.12, 0.24, 0.36]
         
-        print("start anim")
-        print(debugDescription)
-
         for i in 0..<dotsStack.arrangedSubviews.count {
             let dotView = dotsStack.arrangedSubviews[i]
 
             animationDelay += delayTimePoints[i]
             UIView.animate(withDuration: 0.5, delay: animationDelay, options: [.autoreverse, .repeat, .curveEaseInOut], animations: {
                 dotView.transform = CGAffineTransform(scaleX: 2, y: 2)
-            }) { (_) in
-                //dotView.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }
+            }) 
         }
     }
 }
