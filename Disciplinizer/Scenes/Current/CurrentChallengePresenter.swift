@@ -142,7 +142,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 return
             }
 
-            print("App state", UIApplication.shared.applicationState)
             self.saveFinishedChallenge(self.challenge, withResult: .lose)
         })
     }
@@ -157,21 +156,23 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         // TODO: Legal BG check - Version 2
         let timeSinceResign = Date().timeIntervalSince(willLeaveAppTimestampDate)
         let wasPowerPressed = timeSinceResign < 0.1
-
+        
         if wasPowerPressed {
             print("Background is legal")
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                NotificationManager.sendReturnToAppNotification()
-                self.fireLoseTimer(withInterval: 10)
-                print("Background is NOT legal. Lose timer has been started.")
+                if UIApplication.shared.applicationState == .background {
+                    NotificationManager.sendReturnToAppNotification()
+                    self.fireLoseTimer(withInterval: 10)
+                    print("Background is NOT legal. Lose timer has been started.")
+                }
             }
         }
-
-//         TODO: Legal BG check - Version 1
-//        isBackgroundLegal { (isLegal) in
-//            if isLegal {
-//                print("Background is legal")
+        
+        //         TODO: Legal BG check - Version 1
+        //        isBackgroundLegal { (isLegal) in
+        //            if isLegal {
+        //                print("Background is legal")
 //            } else {
 //                self.fireLoseTimer(withInterval: 10)
 //                print("Background is NOT legal. Lose timer has been started.")
@@ -180,6 +181,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     func didReturnToApp() {
+        print("Did return to the app")
         loseTimer?.invalidate()
     }
 
