@@ -72,15 +72,22 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         self.getLastChallengeUseCase.displayLastChallenge(completionHandler: { (lastChallengeGettingResult) in
             switch lastChallengeGettingResult {
             case .success(let lastChallenge):
-                guard let challenge = lastChallenge, !challenge.isSuccess else {
-                    assertionFailure()
+                let stubChallenge = Challenge(id: UUID().uuidString,
+                                              startDate: nil,
+                                              finishDate: nil,
+                                              durationInMinutes: 0,
+                                              isSuccess: false,
+                                              motivationalItem: .ad)
+                
+                let challenge = lastChallenge ?? stubChallenge
+                
+                guard !challenge.isSuccess else {
                     return
                 }
 
                 let losingVC = Controller.createLosing(withFailedChallenge: challenge)
                 self.view?.router?.present(losingVC)
             case .failure:
-                assertionFailure()
                 return
             }
 
