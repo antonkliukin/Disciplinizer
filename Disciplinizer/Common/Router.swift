@@ -79,6 +79,10 @@ class Router: RouterProtocol {
                 rootVC = vc
             }
             
+            if rootVC is RootViewController, let firstChild = rootVC.children.first {
+                rootVC = firstChild
+            }
+            
             rootVC.dismiss(animated: animated, completion: completion)
         } else {
             initialController.dismiss(animated: animated, completion: completion)

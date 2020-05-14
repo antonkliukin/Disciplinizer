@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CurrentChallengePresenterProtocol: class {
     func viewDidLoad()
@@ -142,6 +142,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                 return
             }
 
+            print("App state", UIApplication.shared.applicationState)
             self.saveFinishedChallenge(self.challenge, withResult: .lose)
         })
     }

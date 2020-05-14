@@ -32,6 +32,8 @@ class RootViewController: UIViewController {
             present(Controller.guideChat(), animated: false, completion: {
                 self.stubView.removeFromSuperview()
             })
+        } else {
+            self.stubView.removeFromSuperview()
         }
     }
 }
