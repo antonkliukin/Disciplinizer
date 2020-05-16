@@ -81,9 +81,9 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                             
             })
             
-            let alertVC = Controller.alert(model: alertModel)
+            let alert = Controller.createAlert(alertModel: alertModel)
             
-            self.view?.router?.present(alertVC)
+            self.view?.router?.present(alert)
         }
     }
 }

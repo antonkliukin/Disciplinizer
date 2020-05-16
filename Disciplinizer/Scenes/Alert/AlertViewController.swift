@@ -18,6 +18,36 @@ struct AlertModel {
     var negativeAction: (() -> Void)? = nil
 }
 
+extension Controller {
+    static func createAlert(alertModel: AlertModel) -> UIAlertController {
+        let alert = UIAlertController(title: alertModel.title, message: alertModel.message, preferredStyle: .alert)
+        
+        let positiveTitle = alertModel.positiveActionTitle
+
+        if !positiveTitle.isEmpty {
+            let action = UIAlertAction(title: positiveTitle, style: .default) { (_) in
+                alert.dismiss(animated: true, completion: {
+                    alertModel.positiveAction?()
+                })
+            }
+            alert.addAction(action)
+        }
+        
+        let negativeTitle = alertModel.negativeActionTitle
+        
+        if !negativeTitle.isEmpty {
+            let action = UIAlertAction(title: negativeTitle, style: .destructive) { (_) in
+                alert.dismiss(animated: true, completion: {
+                    alertModel.negativeAction?()
+                })
+            }
+            alert.addAction(action)
+        }
+        
+        return alert
+    }
+}
+
 protocol AlertViewProtocol: ViewProtocol {
     func configure(_ alert: AlertModel)
 }
@@ -38,10 +68,12 @@ class AlertViewController: UIViewController, AlertViewProtocol {
         presenter.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         presentAlert()
     }
-    
+        
     func configure(_ alert: AlertModel) {
         alertModel = alert
     }
@@ -63,6 +95,6 @@ class AlertViewController: UIViewController, AlertViewProtocol {
             alert.addAction(action)
         }
         
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: false, completion: nil)
     }
 }

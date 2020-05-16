@@ -144,6 +144,10 @@
 "history.today" = "Сегодня";
 "history.bestScore" = "Лучший результат";
 "history.clear" = "Отчистить";
+"history.alert.title" = "Вы точно хотите удалить историю?";
+"history.alert.description" = "После удаления ее невозможно будет восстановить";
+"history.alert.clear" = "Удалить";
+"history.alert.cancel" = "Отменить";
 
 //******************************************************************************
 // Settings

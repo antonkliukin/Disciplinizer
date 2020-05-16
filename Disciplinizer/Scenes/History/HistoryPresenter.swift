@@ -106,19 +106,29 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
 
     func clearButtonTapped() {
-        deleteChallengesUseCase.deleteAll { [weak self] (result) in
-            switch result {
-            case .success:
-                self?.challenges.removeAll()
-                self?.refreshBestResultsView()
-                self?.view?.refresh()
-                return
-            case .failure:
-                //self?.view?.showError(errorMessage: error.localizedDescription)
-                assertionFailure()
-                return
-            }
-        }
+        let alertModel = AlertModel(title: Strings.historyAlertTitle(),
+                                    message: Strings.historyAlertDescription(),
+                                    positiveActionTitle: Strings.historyAlertCancel(),
+                                    positiveAction: nil,
+                                    negativeActionTitle: Strings.historyAlertClear(),
+                                    negativeAction: {
+                                        self.deleteChallengesUseCase.deleteAll { [weak self] (result) in
+                                                switch result {
+                                                case .success:
+                                                    self?.challenges.removeAll()
+                                                    self?.refreshBestResultsView()
+                                                    self?.view?.refresh()
+                                                    return
+                                                case .failure:
+                                                    //self?.view?.showError(errorMessage: error.localizedDescription)
+                                                    assertionFailure()
+                                                    return
+                                                }
+                                            }
+        })
+        
+        let alert = Controller.createAlert(alertModel: alertModel)
+        view?.router?.present(alert)
     }
     
     func didTapDelete(forRow row: Int, inSection section: Int) {

@@ -41,9 +41,6 @@ final class MusicSelectionPresenter: MusicSelectionPresenterProtocol {
     }
     
     func didSelect(song: Song) {
-        view.router?.dismiss()
-
-        
         changePlaybackStateUseCase.getPlaying { (result) in
             switch result {
             case .success(let currentSong):

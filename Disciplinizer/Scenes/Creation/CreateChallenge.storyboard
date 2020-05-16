@@ -33,10 +33,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="733.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="al5-aG-cxQ">
-                                                        <rect key="frame" x="60" y="50" width="294" height="310"/>
+                                                        <rect key="frame" x="77" y="50" width="260" height="310"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbx-DH-gAe" customClass="ChallengeParameterView" customModule="Disciplinizer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="140"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="260" height="140"/>
                                                                 <color key="backgroundColor" name="CTWhite"/>
                                                                 <gestureRecognizers/>
                                                                 <constraints>
@@ -44,7 +44,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-H8-Qiz" customClass="ChallengeParameterView" customModule="Disciplinizer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="170" width="294" height="140"/>
+                                                                <rect key="frame" x="0.0" y="170" width="260" height="140"/>
                                                                 <color key="backgroundColor" name="CTWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="140" id="nfa-2k-Mlw"/>
@@ -54,7 +54,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="294" id="9qn-wq-gh4"/>
+                                                            <constraint firstAttribute="width" constant="260" id="9qn-wq-gh4"/>
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79K-w6-qVD">
@@ -76,9 +76,9 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="79K-w6-qVD" firstAttribute="centerX" secondItem="QPI-9a-DOG" secondAttribute="centerX" id="2z9-OE-5Zp"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="al5-aG-cxQ" secondAttribute="trailing" constant="20" id="MIk-R9-4Mm"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="al5-aG-cxQ" secondAttribute="trailing" constant="10" id="MIk-R9-4Mm"/>
                                                     <constraint firstItem="79K-w6-qVD" firstAttribute="top" secondItem="al5-aG-cxQ" secondAttribute="bottom" constant="70" id="WaB-pw-KtW"/>
-                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QPI-9a-DOG" secondAttribute="leading" constant="20" id="ebI-jl-RGg"/>
+                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QPI-9a-DOG" secondAttribute="leading" constant="10" id="ebI-jl-RGg"/>
                                                     <constraint firstItem="al5-aG-cxQ" firstAttribute="top" secondItem="QPI-9a-DOG" secondAttribute="top" constant="50" id="gSY-9m-jEP"/>
                                                     <constraint firstItem="al5-aG-cxQ" firstAttribute="centerX" secondItem="QPI-9a-DOG" secondAttribute="centerX" id="p3i-78-997"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="79K-w6-qVD" secondAttribute="bottom" constant="30" id="uTv-1e-5Gx"/>

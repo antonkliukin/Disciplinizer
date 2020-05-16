@@ -94,5 +94,6 @@ extension MusicSelectViewController: UITableViewDelegate, UITableViewDataSource 
         }
 
         presenter?.didSelect(song: song)
+        tableView.reloadData()
     }
 }

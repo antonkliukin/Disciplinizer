@@ -104,7 +104,9 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                                         positiveAction: { UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) },
                                         negativeActionTitle: Strings.creationAlertNotificationsNegative(),
                                         negativeAction: nil)
-            view?.router?.present(Controller.alert(model: alertModel))
+            
+            let alert = Controller.createAlert(alertModel: alertModel)
+            view?.router?.present(alert)
             
             return
         }

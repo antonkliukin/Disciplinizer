@@ -81,7 +81,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                                         self.saveFinishedChallenge(self.challenge, withResult: .lose)
         })
         
-        let alert = Controller.alert(model: alertModel)
+        let alert = Controller.createAlert(alertModel: alertModel)
         view?.router?.present(alert)
     }
 

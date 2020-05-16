@@ -1023,110 +1023,9 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.history` struct is generated, and contains static references to 5 localization keys.
-    struct history {
-      /// ru translation: Duration
-      ///
-      /// Locales: ru
-      static let iVpHgORqText = Rswift.StringResource(key: "IVp-hg-ORq.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Is paid
-      ///
-      /// Locales: ru
-      static let k91GZbText = Rswift.StringResource(key: "10K-91-gZb.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Is success
-      ///
-      /// Locales: ru
-      static let qMeRrUexText = Rswift.StringResource(key: "qMe-Rr-Uex.text", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: История
-      ///
-      /// Locales: ru
-      static let mzHK2TF2Title = Rswift.StringResource(key: "mzH-k2-TF2.title", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Отчистить
-      ///
-      /// Locales: ru
-      static let ufGQ7CfMNormalTitle = Rswift.StringResource(key: "UfG-q7-cfM.normalTitle", tableName: "History", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-
-      /// ru translation: Duration
-      ///
-      /// Locales: ru
-      static func iVpHgORqText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("IVp-hg-ORq.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "IVp-hg-ORq.text"
-        }
-
-        return NSLocalizedString("IVp-hg-ORq.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Is paid
-      ///
-      /// Locales: ru
-      static func k91GZbText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("10K-91-gZb.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "10K-91-gZb.text"
-        }
-
-        return NSLocalizedString("10K-91-gZb.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Is success
-      ///
-      /// Locales: ru
-      static func qMeRrUexText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("qMe-Rr-Uex.text", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "qMe-Rr-Uex.text"
-        }
-
-        return NSLocalizedString("qMe-Rr-Uex.text", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: История
-      ///
-      /// Locales: ru
-      static func mzHK2TF2Title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("mzH-k2-TF2.title", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "mzH-k2-TF2.title"
-        }
-
-        return NSLocalizedString("mzH-k2-TF2.title", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Отчистить
-      ///
-      /// Locales: ru
-      static func ufGQ7CfMNormalTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "History", preferredLanguages: preferredLanguages) else {
-          return "UfG-q7-cfM.normalTitle"
-        }
-
-        return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: bundle, comment: "")
-      }
-
-      fileprivate init() {}
-    }
-
-    /// This `R.string.localizable` struct is generated, and contains static references to 98 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 102 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1172,6 +1071,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdSecondaryButton = Rswift.StringResource(key: "lose.ad.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: ru, en
+      static let historyAlertCancel = Rswift.StringResource(key: "history.alert.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Cat mode
       ///
       /// Locales: ru, en
@@ -1200,6 +1103,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let timeSelectionTitle = Rswift.StringResource(key: "timeSelection.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Clear
+      ///
+      /// Locales: ru, en
+      static let historyAlertClear = Rswift.StringResource(key: "history.alert.clear", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Clear all
       ///
       /// Locales: ru, en
@@ -1224,6 +1131,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsDarkMode = Rswift.StringResource(key: "settings.darkMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Do you really want to clear your history?
+      ///
+      /// Locales: ru, en
+      static let historyAlertTitle = Rswift.StringResource(key: "history.alert.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Do you really want to give up?
       ///
       /// Locales: ru, en
@@ -1292,6 +1203,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let historyTitle = Rswift.StringResource(key: "history.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: If you clear your history it cannot be restored
+      ///
+      /// Locales: ru, en
+      static let historyAlertDescription = Rswift.StringResource(key: "history.alert.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: If you fail, a cat leaves you
       ///
       /// Locales: ru, en
@@ -1690,6 +1605,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.ad.secondaryButton", bundle: bundle, comment: "")
       }
 
+      /// en translation: Cancel
+      ///
+      /// Locales: ru, en
+      static func historyAlertCancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.alert.cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.alert.cancel"
+        }
+
+        return NSLocalizedString("history.alert.cancel", bundle: bundle, comment: "")
+      }
+
       /// en translation: Cat mode
       ///
       /// Locales: ru, en
@@ -1795,6 +1725,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("timeSelection.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Clear
+      ///
+      /// Locales: ru, en
+      static func historyAlertClear(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.alert.clear", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.alert.clear"
+        }
+
+        return NSLocalizedString("history.alert.clear", bundle: bundle, comment: "")
+      }
+
       /// en translation: Clear all
       ///
       /// Locales: ru, en
@@ -1883,6 +1828,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.darkMode", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Do you really want to clear your history?
+      ///
+      /// Locales: ru, en
+      static func historyAlertTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.alert.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.alert.title"
+        }
+
+        return NSLocalizedString("history.alert.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Do you really want to give up?
@@ -2138,6 +2098,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("history.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: If you clear your history it cannot be restored
+      ///
+      /// Locales: ru, en
+      static func historyAlertDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.alert.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.alert.description"
+        }
+
+        return NSLocalizedString("history.alert.description", bundle: bundle, comment: "")
       }
 
       /// en translation: If you fail, a cat leaves you
@@ -2993,69 +2968,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.info.notCat", bundle: bundle, comment: "")
-      }
-
-      fileprivate init() {}
-    }
-
-    /// This `R.string.settings` struct is generated, and contains static references to 3 localization keys.
-    struct settings {
-      /// ru translation: Selected Song: 
-      ///
-      /// Locales: ru
-      static let ipOLQGqEText = Rswift.StringResource(key: "ipO-LQ-GqE.text", tableName: "Settings", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Song Name #1
-      ///
-      /// Locales: ru
-      static let nzfHVP6gText = Rswift.StringResource(key: "Nzf-HV-P6g.text", tableName: "Settings", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Настройки
-      ///
-      /// Locales: ru
-      static let gIYxX24Title = Rswift.StringResource(key: "0gI-Yx-x24.title", tableName: "Settings", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-
-      /// ru translation: Selected Song: 
-      ///
-      /// Locales: ru
-      static func ipOLQGqEText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("ipO-LQ-GqE.text", tableName: "Settings", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Settings", preferredLanguages: preferredLanguages) else {
-          return "ipO-LQ-GqE.text"
-        }
-
-        return NSLocalizedString("ipO-LQ-GqE.text", tableName: "Settings", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Song Name #1
-      ///
-      /// Locales: ru
-      static func nzfHVP6gText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Nzf-HV-P6g.text", tableName: "Settings", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Settings", preferredLanguages: preferredLanguages) else {
-          return "Nzf-HV-P6g.text"
-        }
-
-        return NSLocalizedString("Nzf-HV-P6g.text", tableName: "Settings", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Настройки
-      ///
-      /// Locales: ru
-      static func gIYxX24Title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("0gI-Yx-x24.title", tableName: "Settings", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Settings", preferredLanguages: preferredLanguages) else {
-          return "0gI-Yx-x24.title"
-        }
-
-        return NSLocalizedString("0gI-Yx-x24.title", tableName: "Settings", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

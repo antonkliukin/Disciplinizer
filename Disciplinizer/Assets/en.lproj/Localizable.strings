@@ -132,6 +132,10 @@
 "history.today" = "Today";
 "history.bestScore" = "Best score";
 "history.clear" = "Clear all";
+"history.alert.title" = "Do you really want to clear your history?";
+"history.alert.description" = "If you clear your history it cannot be restored";
+"history.alert.clear" = "Clear";
+"history.alert.cancel" = "Cancel";
 
 //******************************************************************************
 // Settings
