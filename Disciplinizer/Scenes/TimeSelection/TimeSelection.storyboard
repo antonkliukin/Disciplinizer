@@ -24,10 +24,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Xr-3lY">
-                                                <rect key="frame" x="50" y="138" width="314" height="297"/>
+                                                <rect key="frame" x="50" y="133" width="314" height="307"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-5Y-oFW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="183"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="193"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
@@ -44,18 +44,18 @@ and don’t pick up your phone to succeed </string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2GM-6W-gvs">
-                                                                <rect key="frame" x="0.0" y="138" width="314" height="45"/>
+                                                                <rect key="frame" x="0.0" y="138" width="314" height="55"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Minutes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7T-hn-3sB">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="27"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                                         <connections>
                                                                             <action selector="didEnterNumber:" destination="2Ik-c9-iwE" eventType="editingChanged" id="c27-TS-0WB"/>
                                                                         </connections>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iib-Zo-ebb">
-                                                                        <rect key="frame" x="0.0" y="22" width="314" height="2"/>
+                                                                        <rect key="frame" x="0.0" y="32" width="314" height="2"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-w4-i6R">
                                                                                 <rect key="frame" x="50" y="0.5" width="214" height="1"/>
@@ -74,7 +74,7 @@ and don’t pick up your phone to succeed </string>
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-5G-cle">
-                                                                        <rect key="frame" x="0.0" y="29" width="314" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="314" height="16"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" name="errorRed"/>
                                                                         <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@ and don’t pick up your phone to succeed </string>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-PO-GT4" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="253" width="314" height="44"/>
+                                                        <rect key="frame" x="0.0" y="263" width="314" height="44"/>
                                                         <color key="backgroundColor" name="LightBlue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="62d-lj-wJO"/>

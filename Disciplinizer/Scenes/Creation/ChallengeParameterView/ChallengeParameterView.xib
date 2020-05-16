@@ -26,16 +26,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="351" height="136"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-98-99Z">
-                            <rect key="frame" x="0.0" y="0.0" width="351" height="111.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="105"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-5R-JVB">
-                                    <rect key="frame" x="10" y="0.0" width="331" height="37"/>
+                                    <rect key="frame" x="10" y="0.0" width="331" height="35"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="DarkBlueText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="k08-ej-IUc">
-                                    <rect key="frame" x="10" y="5" width="331" height="106.5"/>
+                                    <rect key="frame" x="10" y="3" width="331" height="102"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" name="DarkBlueText"/>
                                     <nil key="highlightedColor"/>
@@ -49,8 +49,8 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjr-Ld-mDu">
-                            <rect key="frame" x="0.0" y="94.5" width="351" height="41.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <rect key="frame" x="0.0" y="85" width="351" height="51"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" name="LightGreyText"/>
                             <nil key="highlightedColor"/>
                         </label>

@@ -1,9 +1,0 @@
-
-/* Class = "UIViewController"; title = "Settings"; ObjectID = "0gI-Yx-x24"; */
-"0gI-Yx-x24.title" = "Настройки";
-
-/* Class = "UILabel"; text = "Song Name #1"; ObjectID = "Nzf-HV-P6g"; */
-"Nzf-HV-P6g.text" = "Song Name #1";
-
-/* Class = "UILabel"; text = "Selected Song: "; ObjectID = "ipO-LQ-GqE"; */
-"ipO-LQ-GqE.text" = "Selected Song: ";

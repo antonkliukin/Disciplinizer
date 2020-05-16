@@ -97,13 +97,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="evn-B6-DWw">
-                                                <rect key="frame" x="30" y="40" width="354" height="488.5"/>
+                                                <rect key="frame" x="30" y="40" width="354" height="490.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="D5R-Ei-FAE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="488.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="490.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="omL-3u-Lkg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="58.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="60.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose motivation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKj-9B-p0r">
                                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="26.5"/>
@@ -112,15 +112,15 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What penalty would you want to choose?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYs-1o-dpg">
-                                                                        <rect key="frame" x="0.0" y="42.5" width="354" height="16"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <rect key="frame" x="0.0" y="42.5" width="354" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="r0u-BC-m8p">
-                                                                <rect key="frame" x="0.0" y="98.5" width="354" height="200"/>
+                                                                <rect key="frame" x="0.0" y="100.5" width="354" height="200"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ock-mQ-VPl" customClass="GuideModeSelecionView" customModule="Disciplinizer" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="169" height="200"/>
@@ -136,7 +136,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wK3-3R-EMa" customClass="GuideMessageView" customModule="Disciplinizer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="338.5" width="354" height="150"/>
+                                                                <rect key="frame" x="0.0" y="340.5" width="354" height="150"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="150" id="SoB-Ex-nYL"/>

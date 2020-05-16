@@ -89,7 +89,6 @@
 		3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DCA241CF16800BE613C /* Ad.storyboard */; };
 		3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DCE241D2A5100BE613C /* Settings.storyboard */; };
 		3A653DD1241D2A9000BE613C /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DD3241D2A9000BE613C /* History.storyboard */; };
-		3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */; };
 		3A663A1E2467C8BB00472B75 /* GuideMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A1D2467C8BB00472B75 /* GuideMessageView.swift */; };
 		3A663A202467C95500472B75 /* GuideMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A663A1F2467C95500472B75 /* GuideMessageView.xib */; };
 		3A663A242468005700472B75 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A663A232468005700472B75 /* ChatCollectionView.swift */; };
@@ -156,6 +155,7 @@
 		3AD0689A2358F085003D30A6 /* PageNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */; };
 		3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0689E235B175B003D30A6 /* PageCell.swift */; };
 		3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E627246DBF21004C4D38 /* RootViewController.swift */; };
+		3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E62A246FDA04004C4D38 /* CreateChallenge.storyboard */; };
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
@@ -191,7 +191,6 @@
 /* Begin PBXFileReference section */
 		3A008BD3231F93CA00B9286B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BD5231F93FA00B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
-		3A008BD6231F93FA00B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3A008BDB231F965500B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A008BDD231F966400B9286B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A00A4EE238194B20011ACDC /* AppLockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockManager.swift; sourceTree = "<group>"; };
@@ -244,7 +243,6 @@
 		3A2F573623125EEA00212317 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		3A2F57392312729800212317 /* LockStateRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequestManager.swift; sourceTree = "<group>"; };
 		3A2F573B231272DF00212317 /* LockStateRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequests.swift; sourceTree = "<group>"; };
-		3A40A38C241E06C500272231 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/History.strings; sourceTree = "<group>"; };
 		3A47D658230F18FB00B2B200 /* Disciplinizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disciplinizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A47D65B230F18FB00B2B200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A47D662230F18FC00B2B200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -274,11 +272,6 @@
 		3A653DC6241CE98A00BE613C /* AdPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPresenter.swift; sourceTree = "<group>"; };
 		3A653DC8241CE9E800BE613C /* AdConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfigurator.swift; sourceTree = "<group>"; };
 		3A653DCA241CF16800BE613C /* Ad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ad.storyboard; sourceTree = "<group>"; };
-		3A653DCD241D2A5100BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		3A653DD0241D2A6900BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
-		3A653DD8241D2AAA00BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/History.storyboard; sourceTree = "<group>"; };
-		3A653DDC241D2AE900BE613C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CreateChallenge.storyboard; sourceTree = "<group>"; };
-		3A653DDF241D2AEE00BE613C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateChallenge.strings; sourceTree = "<group>"; };
 		3A663A1D2467C8BB00472B75 /* GuideMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMessageView.swift; sourceTree = "<group>"; };
 		3A663A1F2467C95500472B75 /* GuideMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideMessageView.xib; sourceTree = "<group>"; };
 		3A663A232468005700472B75 /* ChatCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
@@ -348,6 +341,9 @@
 		3AD068992358F085003D30A6 /* PageNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationPresenter.swift; sourceTree = "<group>"; };
 		3AD0689E235B175B003D30A6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		3AE4E627246DBF21004C4D38 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3AE4E62A246FDA04004C4D38 /* CreateChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateChallenge.storyboard; sourceTree = "<group>"; };
+		3AE4E62C246FDA64004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/History.storyboard; sourceTree = "<group>"; };
+		3AE4E62D246FDA86004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -464,7 +460,7 @@
 				3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */,
 				3A0D5A1C234E5EAC00F20BC3 /* CreateChallengePresenter.swift */,
 				3A0D5A1A234E5E6F00F20BC3 /* CreateChallengeViewController.swift */,
-				3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */,
+				3AE4E62A246FDA04004C4D38 /* CreateChallenge.storyboard */,
 				3AA1A1052454375300955BD5 /* ChallengeParameterView */,
 			);
 			path = Creation;
@@ -1264,7 +1260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A653DDB241D2AE900BE613C /* CreateChallenge.storyboard in Resources */,
+				3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
 				3A9F9A76237709C800022C38 /* Blocked.storyboard in Resources */,
@@ -1609,7 +1605,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A47D665230F18FC00B2B200 /* Base */,
-				3A008BD6231F93FA00B9286B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1617,8 +1612,7 @@
 		3A653DCE241D2A5100BE613C /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A653DCD241D2A5100BE613C /* en */,
-				3A653DD0241D2A6900BE613C /* ru */,
+				3AE4E62D246FDA86004C4D38 /* Base */,
 			);
 			name = Settings.storyboard;
 			sourceTree = "<group>";
@@ -1626,19 +1620,9 @@
 		3A653DD3241D2A9000BE613C /* History.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A653DD8241D2AAA00BE613C /* en */,
-				3A40A38C241E06C500272231 /* ru */,
+				3AE4E62C246FDA64004C4D38 /* Base */,
 			);
 			name = History.storyboard;
-			sourceTree = "<group>";
-		};
-		3A653DDD241D2AE900BE613C /* CreateChallenge.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A653DDC241D2AE900BE613C /* en */,
-				3A653DDF241D2AEE00BE613C /* ru */,
-			);
-			name = CreateChallenge.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

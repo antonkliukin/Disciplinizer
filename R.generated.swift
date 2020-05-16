@@ -1023,223 +1023,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 5 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
-    /// This `R.string.createChallenge` struct is generated, and contains static references to 11 localization keys.
-    struct createChallenge {
-      /// ru translation: 10 Min
-      ///
-      /// Locales: ru
-      static let bB1OBWLText = Rswift.StringResource(key: "5bB-1O-bWL.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: CHOSE MODE
-      ///
-      /// Locales: ru
-      static let fdTLOVmText = Rswift.StringResource(key: "1fd-TL-OVm.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Free
-      ///
-      /// Locales: ru
-      static let ct5JMG5NSegmentTitles1 = Rswift.StringResource(key: "Ct5-JM-g5N.segmentTitles[1]", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: In order to take a challenge, please select a desired mode
-      ///
-      /// Locales: ru
-      static let fa1Dt5rsText = Rswift.StringResource(key: "fa1-Dt-5rs.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Let's get down to business!
-      ///
-      /// Locales: ru
-      static let dEz3MSYgText = Rswift.StringResource(key: "DEz-3M-sYg.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Paid
-      ///
-      /// Locales: ru
-      static let ct5JMG5NSegmentTitles0 = Rswift.StringResource(key: "Ct5-JM-g5N.segmentTitles[0]", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Price
-      ///
-      /// Locales: ru
-      static let pBl73EjcText = Rswift.StringResource(key: "pBl-73-Ejc.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: SET TIME
-      ///
-      /// Locales: ru
-      static let jsvBS0eZText = Rswift.StringResource(key: "jsv-bS-0eZ.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Start
-      ///
-      /// Locales: ru
-      static let cctOF4TYNormalTitle = Rswift.StringResource(key: "cct-OF-4TY.normalTitle", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: YOUR BET
-      ///
-      /// Locales: ru
-      static let ed98gRUEText = Rswift.StringResource(key: "ed9-8g-RUE.text", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Новый
-      ///
-      /// Locales: ru
-      static let ejRfSwgTitle = Rswift.StringResource(key: "2EJ-rf-Swg.title", tableName: "CreateChallenge", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-
-      /// ru translation: 10 Min
-      ///
-      /// Locales: ru
-      static func bB1OBWLText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("5bB-1O-bWL.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "5bB-1O-bWL.text"
-        }
-
-        return NSLocalizedString("5bB-1O-bWL.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: CHOSE MODE
-      ///
-      /// Locales: ru
-      static func fdTLOVmText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("1fd-TL-OVm.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "1fd-TL-OVm.text"
-        }
-
-        return NSLocalizedString("1fd-TL-OVm.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Free
-      ///
-      /// Locales: ru
-      static func ct5JMG5NSegmentTitles1(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Ct5-JM-g5N.segmentTitles[1]", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "Ct5-JM-g5N.segmentTitles[1]"
-        }
-
-        return NSLocalizedString("Ct5-JM-g5N.segmentTitles[1]", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: In order to take a challenge, please select a desired mode
-      ///
-      /// Locales: ru
-      static func fa1Dt5rsText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("fa1-Dt-5rs.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "fa1-Dt-5rs.text"
-        }
-
-        return NSLocalizedString("fa1-Dt-5rs.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Let's get down to business!
-      ///
-      /// Locales: ru
-      static func dEz3MSYgText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("DEz-3M-sYg.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "DEz-3M-sYg.text"
-        }
-
-        return NSLocalizedString("DEz-3M-sYg.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Paid
-      ///
-      /// Locales: ru
-      static func ct5JMG5NSegmentTitles0(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Ct5-JM-g5N.segmentTitles[0]", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "Ct5-JM-g5N.segmentTitles[0]"
-        }
-
-        return NSLocalizedString("Ct5-JM-g5N.segmentTitles[0]", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Price
-      ///
-      /// Locales: ru
-      static func pBl73EjcText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("pBl-73-Ejc.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "pBl-73-Ejc.text"
-        }
-
-        return NSLocalizedString("pBl-73-Ejc.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: SET TIME
-      ///
-      /// Locales: ru
-      static func jsvBS0eZText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("jsv-bS-0eZ.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "jsv-bS-0eZ.text"
-        }
-
-        return NSLocalizedString("jsv-bS-0eZ.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Start
-      ///
-      /// Locales: ru
-      static func cctOF4TYNormalTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("cct-OF-4TY.normalTitle", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "cct-OF-4TY.normalTitle"
-        }
-
-        return NSLocalizedString("cct-OF-4TY.normalTitle", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: YOUR BET
-      ///
-      /// Locales: ru
-      static func ed98gRUEText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("ed9-8g-RUE.text", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "ed9-8g-RUE.text"
-        }
-
-        return NSLocalizedString("ed9-8g-RUE.text", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      /// ru translation: Новый
-      ///
-      /// Locales: ru
-      static func ejRfSwgTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("2EJ-rf-Swg.title", tableName: "CreateChallenge", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CreateChallenge", preferredLanguages: preferredLanguages) else {
-          return "2EJ-rf-Swg.title"
-        }
-
-        return NSLocalizedString("2EJ-rf-Swg.title", tableName: "CreateChallenge", bundle: bundle, comment: "")
-      }
-
-      fileprivate init() {}
-    }
-
     /// This `R.string.history` struct is generated, and contains static references to 5 localization keys.
     struct history {
       /// ru translation: Duration
@@ -1338,11 +1123,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("UfG-q7-cfM.normalTitle", tableName: "History", bundle: bundle, comment: "")
       }
 
-      fileprivate init() {}
-    }
-
-    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
-    struct launchScreen {
       fileprivate init() {}
     }
 
@@ -1456,10 +1236,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsEmailUs = Rswift.StringResource(key: "settings.emailUs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Enter Minutes Here
-      ///
-      /// Locales: ru, en
-      static let timeSelectionPlaceholder = Rswift.StringResource(key: "timeSelection.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Everytime you fail concentrating, there would be a penalty.
       ///
       /// Locales: ru, en
@@ -1636,6 +1412,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationTimeTitle = Rswift.StringResource(key: "creation.timeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Time in minutes
+      ///
+      /// Locales: ru, en
+      static let timeSelectionPlaceholder = Rswift.StringResource(key: "timeSelection.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Time is your penalty
       ///
       /// Locales: ru, en
@@ -2148,21 +1928,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.emailUs", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Enter Minutes Here
-      ///
-      /// Locales: ru, en
-      static func timeSelectionPlaceholder(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("timeSelection.placeholder", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "timeSelection.placeholder"
-        }
-
-        return NSLocalizedString("timeSelection.placeholder", bundle: bundle, comment: "")
       }
 
       /// en translation: Everytime you fail concentrating, there would be a penalty.
@@ -2823,6 +2588,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.timeTitle", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Time in minutes
+      ///
+      /// Locales: ru, en
+      static func timeSelectionPlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timeSelection.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timeSelection.placeholder"
+        }
+
+        return NSLocalizedString("timeSelection.placeholder", bundle: bundle, comment: "")
       }
 
       /// en translation: Time is your penalty

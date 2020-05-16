@@ -87,10 +87,10 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
-                                        <rect key="frame" x="29" y="100" width="176.5" height="50"/>
+                                        <rect key="frame" x="17.5" y="100" width="199" height="50"/>
                                         <string key="text">You’ll have to spend time
 watching 3 ads if you give up</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
