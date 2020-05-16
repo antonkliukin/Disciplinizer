@@ -53,6 +53,10 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
         
         let nextCellTopSpace = contentOffset.y - (cellHeight * CGFloat(attributes.indexPath.row + 1))
         let liftCellToTopRate: CGFloat = topInset - abs(nextCellTopSpace) / (cellHeight / topInset)
+                
+        if let cell = collectionView.cellForItem(at: attributes.indexPath) as? CatStoreCollectionCell {
+            cell.showBorder(cellTopSpace == 0)
+        }
         
         if nextCellTopSpace + cellHeight > 0 {
             if nextCellTopSpace >= 0 {

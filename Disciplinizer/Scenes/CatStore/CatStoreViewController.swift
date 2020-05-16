@@ -100,6 +100,7 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.catMotivationView.priceLabel.isHidden = false
             cell.catMotivationView.priceLabel.textColor = item.priceColor
             cell.catMotivationView.priceLabel.text = item.price.localizedPrice ?? "Price"
+            cell.showBorder(indexPath.item == 0)
             
             return cell
         }

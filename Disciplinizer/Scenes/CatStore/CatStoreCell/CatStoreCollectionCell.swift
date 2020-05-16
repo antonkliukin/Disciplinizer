@@ -16,8 +16,12 @@ class CatStoreCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        catMotivationView.mainView.layer.borderWidth = 2
-        catMotivationView.mainView.layer.borderColor = R.color.darkBlueText()!.cgColor
         catMotivationView.mainView.roundCorners(corners: .all, radius: 16)
+        showBorder(false)
+    }
+    
+    func showBorder(_ show: Bool) {
+        catMotivationView.mainView.layer.borderWidth = show ? 2 : 0
+        catMotivationView.mainView.layer.borderColor = R.color.darkBlueText()!.cgColor
     }
 }
