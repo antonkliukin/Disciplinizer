@@ -53,6 +53,12 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         navigationController?.navigationBar.tintColor = .black
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        timeTextField.becomeFirstResponder()
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
