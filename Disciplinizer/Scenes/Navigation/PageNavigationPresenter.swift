@@ -53,5 +53,6 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     private func addPaidItem() {
         let paid = MotivationalItem.level5
         motivationParameterUseCase.addPaid(motivationalItem: paid) { (_) in }
+        motivationParameterUseCase.select(motivationalItem: paid) { (_) in }
     }
 }

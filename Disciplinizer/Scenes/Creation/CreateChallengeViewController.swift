@@ -59,12 +59,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TODO: Delete test data
-//        UserDefaults.standard.set("-1", forKey: "purchasedItem")
-//        UserDefaults.standard.set("0", forKey: "selectedItem")
-//        UserDefaults.standard.set(23, forKey: "selectedTime")
-        
+                
         setupContentView()
         configureStartButton()
         

@@ -34,7 +34,7 @@ final class ChatCollectionView: CollectionView<ChatCell, ChatMessage> {
         let text = sections[0][indexPath.item].text
         
         if text == "catSticker" {
-            return CGSize(width: flowLayout.itemSize.width, height: 130)
+            return CGSize(width: flowLayout.itemSize.width, height: 150)
         } else {
             let horizontalPadding: CGFloat = 65
             let size = CGSize(width: flowLayout.itemSize.width - horizontalPadding, height: flowLayout.itemSize.height - 20)

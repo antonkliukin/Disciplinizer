@@ -1148,6 +1148,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let catStoreDescription = Rswift.StringResource(key: "catStore.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: During this time you're not allowed to use you phone.
+      ///
+      /// Locales: ru, en
+      static let guideMessage5 = Rswift.StringResource(key: "guide.message5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Email us
       ///
       /// Locales: ru, en
@@ -1196,10 +1200,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemDescriptionCat = Rswift.StringResource(key: "motivationItem.description.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Hello, I am Didi!
+      ///
+      /// Locales: ru, en
+      static let guideMessage1 = Rswift.StringResource(key: "guide.message1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: History
       ///
       /// Locales: ru, en
       static let historyTitle = Rswift.StringResource(key: "history.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: I give you the most expensive one - Valli cat.
+      ///
+      /// Locales: ru, en
+      static let guideMessage8 = Rswift.StringResource(key: "guide.message8", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: I'll tell you how not to get distracted by your phone when you need to complete a task.
+      ///
+      /// Locales: ru, en
+      static let guideMessage2 = Rswift.StringResource(key: "guide.message2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: If you clear your history it cannot be restored
       ///
       /// Locales: ru, en
@@ -1216,6 +1232,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideTimeMotivationMessage = Rswift.StringResource(key: "guide.timeMotivation.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: If you start using your phone - you will have to watch 3 ads!
+      ///
+      /// Locales: ru, en
+      static let guideMessage13 = Rswift.StringResource(key: "guide.message13", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: If you start using your phone - your pet will leave!
+      ///
+      /// Locales: ru, en
+      static let guideMessage10 = Rswift.StringResource(key: "guide.message10", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: If you’ll give up, your cat will leave you
       ///
       /// Locales: ru, en
@@ -1228,6 +1252,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsDescription = Rswift.StringResource(key: "creation.alert.notifications.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: In this case you will need to buy another one to continue using Saving a pet mode.
+      ///
+      /// Locales: ru, en
+      static let guideMessage11 = Rswift.StringResource(key: "guide.message11", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Let's get started. Good luck!
+      ///
+      /// Locales: ru, en
+      static let guideMessage15 = Rswift.StringResource(key: "guide.message15", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Loosing your precious time!
+      ///
+      /// Locales: ru, en
+      static let guideMessage14 = Rswift.StringResource(key: "guide.message14", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Mode is set
       ///
       /// Locales: ru, en
@@ -1256,6 +1292,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsTitle = Rswift.StringResource(key: "creation.alert.notifications.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: On the next screen you will set up a timer.
+      ///
+      /// Locales: ru, en
+      static let guideMessage4 = Rswift.StringResource(key: "guide.message4", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Or when you want to take a break from social media.
+      ///
+      /// Locales: ru, en
+      static let guideMessage3 = Rswift.StringResource(key: "guide.message3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
       /// Locales: ru, en
@@ -1296,6 +1340,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsTerms = Rswift.StringResource(key: "settings.terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: The first - Saving a pet.
+      ///
+      /// Locales: ru, en
+      static let guideMessage7 = Rswift.StringResource(key: "guide.message7", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: The socond - Saving time.
+      ///
+      /// Locales: ru, en
+      static let guideMessage12 = Rswift.StringResource(key: "guide.message12", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tilda
       ///
       /// Locales: ru, en
@@ -1320,6 +1372,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemTimeMode = Rswift.StringResource(key: "motivationItem.timeMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: To achieve this you have two modes.
+      ///
+      /// Locales: ru, en
+      static let guideMessage6 = Rswift.StringResource(key: "guide.message6", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Today
       ///
       /// Locales: ru, en
@@ -1416,62 +1472,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemInfoNotCat = Rswift.StringResource(key: "motivationItem.info.notCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: В течение этого времени ты обязуешься не использовать телефон.
-      ///
-      /// Locales: ru, en
-      static let guideMessage5 = Rswift.StringResource(key: "guide.message5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: В этом тебе помогут два режима мотивации.
-      ///
-      /// Locales: ru, en
-      static let guideMessage6 = Rswift.StringResource(key: "guide.message6", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Второй режим - Сохранение времени.
-      ///
-      /// Locales: ru, en
-      static let guideMessage12 = Rswift.StringResource(key: "guide.message12", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Давай приступим. Удачи!
-      ///
-      /// Locales: ru, en
-      static let guideMessage15 = Rswift.StringResource(key: "guide.message15", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Если ты начнешь пользоваться телефоном, тебе придется смотреть 3 рекламы.
-      ///
-      /// Locales: ru, en
-      static let guideMessage13 = Rswift.StringResource(key: "guide.message13", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Если ты начнешь пользоваться телефоном, то питомец покинет тебя!
-      ///
-      /// Locales: ru, en
-      static let guideMessage10 = Rswift.StringResource(key: "guide.message10", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: И если ты захочешь использовать этот режим дальше, тебе придется купить нового.
-      ///
-      /// Locales: ru, en
-      static let guideMessage11 = Rswift.StringResource(key: "guide.message11", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: И ты потеряешь свое драгоценное время!
-      ///
-      /// Locales: ru, en
-      static let guideMessage14 = Rswift.StringResource(key: "guide.message14", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Или просто для отдыха от социальных сетей.
-      ///
-      /// Locales: ru, en
-      static let guideMessage3 = Rswift.StringResource(key: "guide.message3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: На следующем экране тебе предложать установить количество минут на таймере.
-      ///
-      /// Locales: ru, en
-      static let guideMessage4 = Rswift.StringResource(key: "guide.message4", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Первый - Сохранения питомца.
-      ///
-      /// Locales: ru, en
-      static let guideMessage7 = Rswift.StringResource(key: "guide.message7", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Привет, я - Диди!
-      ///
-      /// Locales: ru, en
-      static let guideMessage1 = Rswift.StringResource(key: "guide.message1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Я дарю тебе самого дорогого питомца - кошку Пушинку.
-      ///
-      /// Locales: ru, en
-      static let guideMessage8 = Rswift.StringResource(key: "guide.message8", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Я расскажу тебе как не отвлекаться на телефон для выполнения важной задачи.
-      ///
-      /// Locales: ru, en
-      static let guideMessage2 = Rswift.StringResource(key: "guide.message2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
 
       /// en translation: %#@minutes@
       ///
@@ -1897,6 +1897,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("catStore.description", bundle: bundle, comment: "")
       }
 
+      /// en translation: During this time you're not allowed to use you phone.
+      ///
+      /// Locales: ru, en
+      static func guideMessage5(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message5", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message5"
+        }
+
+        return NSLocalizedString("guide.message5", bundle: bundle, comment: "")
+      }
+
       /// en translation: Email us
       ///
       /// Locales: ru, en
@@ -2077,6 +2092,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.description.cat", bundle: bundle, comment: "")
       }
 
+      /// en translation: Hello, I am Didi!
+      ///
+      /// Locales: ru, en
+      static func guideMessage1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message1"
+        }
+
+        return NSLocalizedString("guide.message1", bundle: bundle, comment: "")
+      }
+
       /// en translation: History
       ///
       /// Locales: ru, en
@@ -2090,6 +2120,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("history.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: I give you the most expensive one - Valli cat.
+      ///
+      /// Locales: ru, en
+      static func guideMessage8(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message8", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message8"
+        }
+
+        return NSLocalizedString("guide.message8", bundle: bundle, comment: "")
+      }
+
+      /// en translation: I'll tell you how not to get distracted by your phone when you need to complete a task.
+      ///
+      /// Locales: ru, en
+      static func guideMessage2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message2", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message2"
+        }
+
+        return NSLocalizedString("guide.message2", bundle: bundle, comment: "")
       }
 
       /// en translation: If you clear your history it cannot be restored
@@ -2152,6 +2212,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.timeMotivation.message", bundle: bundle, comment: "")
       }
 
+      /// en translation: If you start using your phone - you will have to watch 3 ads!
+      ///
+      /// Locales: ru, en
+      static func guideMessage13(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message13", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message13"
+        }
+
+        return NSLocalizedString("guide.message13", bundle: bundle, comment: "")
+      }
+
+      /// en translation: If you start using your phone - your pet will leave!
+      ///
+      /// Locales: ru, en
+      static func guideMessage10(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message10", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message10"
+        }
+
+        return NSLocalizedString("guide.message10", bundle: bundle, comment: "")
+      }
+
       /// en translation: If you’ll give up, your cat will leave you
       ///
       /// Locales: ru, en
@@ -2195,6 +2285,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.alert.notifications.description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: In this case you will need to buy another one to continue using Saving a pet mode.
+      ///
+      /// Locales: ru, en
+      static func guideMessage11(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message11", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message11"
+        }
+
+        return NSLocalizedString("guide.message11", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Let's get started. Good luck!
+      ///
+      /// Locales: ru, en
+      static func guideMessage15(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message15", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message15"
+        }
+
+        return NSLocalizedString("guide.message15", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Loosing your precious time!
+      ///
+      /// Locales: ru, en
+      static func guideMessage14(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message14", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message14"
+        }
+
+        return NSLocalizedString("guide.message14", bundle: bundle, comment: "")
       }
 
       /// en translation: Mode is set
@@ -2300,6 +2435,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.alert.notifications.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: On the next screen you will set up a timer.
+      ///
+      /// Locales: ru, en
+      static func guideMessage4(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message4", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message4"
+        }
+
+        return NSLocalizedString("guide.message4", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Or when you want to take a break from social media.
+      ///
+      /// Locales: ru, en
+      static func guideMessage3(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message3", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message3"
+        }
+
+        return NSLocalizedString("guide.message3", bundle: bundle, comment: "")
       }
 
       /// en translation: Pinko
@@ -2452,6 +2617,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("settings.terms", bundle: bundle, comment: "")
       }
 
+      /// en translation: The first - Saving a pet.
+      ///
+      /// Locales: ru, en
+      static func guideMessage7(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message7", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message7"
+        }
+
+        return NSLocalizedString("guide.message7", bundle: bundle, comment: "")
+      }
+
+      /// en translation: The socond - Saving time.
+      ///
+      /// Locales: ru, en
+      static func guideMessage12(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message12", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message12"
+        }
+
+        return NSLocalizedString("guide.message12", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tilda
       ///
       /// Locales: ru, en
@@ -2540,6 +2735,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.timeMode", bundle: bundle, comment: "")
+      }
+
+      /// en translation: To achieve this you have two modes.
+      ///
+      /// Locales: ru, en
+      static func guideMessage6(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.message6", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.message6"
+        }
+
+        return NSLocalizedString("guide.message6", bundle: bundle, comment: "")
       }
 
       /// en translation: Today
@@ -2900,216 +3110,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.info.notCat", bundle: bundle, comment: "")
-      }
-
-      /// en translation: В течение этого времени ты обязуешься не использовать телефон.
-      ///
-      /// Locales: ru, en
-      static func guideMessage5(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message5", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message5"
-        }
-
-        return NSLocalizedString("guide.message5", bundle: bundle, comment: "")
-      }
-
-      /// en translation: В этом тебе помогут два режима мотивации.
-      ///
-      /// Locales: ru, en
-      static func guideMessage6(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message6", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message6"
-        }
-
-        return NSLocalizedString("guide.message6", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Второй режим - Сохранение времени.
-      ///
-      /// Locales: ru, en
-      static func guideMessage12(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message12", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message12"
-        }
-
-        return NSLocalizedString("guide.message12", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Давай приступим. Удачи!
-      ///
-      /// Locales: ru, en
-      static func guideMessage15(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message15", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message15"
-        }
-
-        return NSLocalizedString("guide.message15", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Если ты начнешь пользоваться телефоном, тебе придется смотреть 3 рекламы.
-      ///
-      /// Locales: ru, en
-      static func guideMessage13(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message13", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message13"
-        }
-
-        return NSLocalizedString("guide.message13", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Если ты начнешь пользоваться телефоном, то питомец покинет тебя!
-      ///
-      /// Locales: ru, en
-      static func guideMessage10(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message10", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message10"
-        }
-
-        return NSLocalizedString("guide.message10", bundle: bundle, comment: "")
-      }
-
-      /// en translation: И если ты захочешь использовать этот режим дальше, тебе придется купить нового.
-      ///
-      /// Locales: ru, en
-      static func guideMessage11(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message11", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message11"
-        }
-
-        return NSLocalizedString("guide.message11", bundle: bundle, comment: "")
-      }
-
-      /// en translation: И ты потеряешь свое драгоценное время!
-      ///
-      /// Locales: ru, en
-      static func guideMessage14(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message14", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message14"
-        }
-
-        return NSLocalizedString("guide.message14", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Или просто для отдыха от социальных сетей.
-      ///
-      /// Locales: ru, en
-      static func guideMessage3(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message3", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message3"
-        }
-
-        return NSLocalizedString("guide.message3", bundle: bundle, comment: "")
-      }
-
-      /// en translation: На следующем экране тебе предложать установить количество минут на таймере.
-      ///
-      /// Locales: ru, en
-      static func guideMessage4(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message4", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message4"
-        }
-
-        return NSLocalizedString("guide.message4", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Первый - Сохранения питомца.
-      ///
-      /// Locales: ru, en
-      static func guideMessage7(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message7", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message7"
-        }
-
-        return NSLocalizedString("guide.message7", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Привет, я - Диди!
-      ///
-      /// Locales: ru, en
-      static func guideMessage1(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message1", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message1"
-        }
-
-        return NSLocalizedString("guide.message1", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Я дарю тебе самого дорогого питомца - кошку Пушинку.
-      ///
-      /// Locales: ru, en
-      static func guideMessage8(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message8", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message8"
-        }
-
-        return NSLocalizedString("guide.message8", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Я расскажу тебе как не отвлекаться на телефон для выполнения важной задачи.
-      ///
-      /// Locales: ru, en
-      static func guideMessage2(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.message2", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.message2"
-        }
-
-        return NSLocalizedString("guide.message2", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
