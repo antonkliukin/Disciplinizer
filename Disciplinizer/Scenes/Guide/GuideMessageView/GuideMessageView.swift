@@ -9,20 +9,19 @@
 import UIKit
 
 enum GuideMessageViewState {
-    case inProgress, text
+    case sticker, text
 }
 
 class GuideMessageView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var avatarView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var dotsStack: UIStackView!
-    @IBOutlet weak var messageBackgroundImageView: UIImageView!
+    @IBOutlet weak var stickerImageView: UIImageView!
     
-    private var isAnimationRunning = false
-        
+    
+    @IBOutlet weak var messageBackgroundView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -39,42 +38,25 @@ class GuideMessageView: UIView {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        stickerImageView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+        stickerImageView.layer.shadowOpacity = 1
+        stickerImageView.layer.shadowRadius = 25
+        stickerImageView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        stickerImageView.clipsToBounds = false
+        
         changeState(.text)
     }
     
     func changeState(_ state: GuideMessageViewState) {
         switch state {
         case .text:
-            dotsStack.isHidden = true
-            nameTitleLabel.isHidden = false
             messageLabel.isHidden = false
-            messageBackgroundImageView.isHidden = false
-        case .inProgress:
-            dotsStack.isHidden = false
-            nameTitleLabel.isHidden = true
+            messageBackgroundView.isHidden = false
+            stickerImageView.isHidden = true
+        case .sticker:
             messageLabel.isHidden = true
-            messageBackgroundImageView.isHidden = true
-            
-            startActivityViewAnimation()
-            
-            if !isAnimationRunning {
-                
-                isAnimationRunning = true
-            }
-        }
-    }
-    
-    private func startActivityViewAnimation() {
-        var animationDelay = 0.0
-        let delayTimePoints = [0.12, 0.24, 0.36]
-        
-        for i in 0..<dotsStack.arrangedSubviews.count {
-            let dotView = dotsStack.arrangedSubviews[i]
-
-            animationDelay += delayTimePoints[i]
-            UIView.animate(withDuration: 0.5, delay: animationDelay, options: [.autoreverse, .repeat, .curveEaseInOut], animations: {
-                dotView.transform = CGAffineTransform(scaleX: 2, y: 2)
-            }) 
+            messageBackgroundView.isHidden = true
+            stickerImageView.isHidden = false
         }
     }
 }

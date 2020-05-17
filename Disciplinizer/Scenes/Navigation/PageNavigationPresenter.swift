@@ -41,17 +41,17 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
         AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
             if isFirstLaunch, KeychainService.isFirstLaunch {
                 KeychainService.isFirstLaunch = false
-                
+
                 AppLockManager.shared.changeStateTo(.unlocked)
                 KeychainService.appLockState = .unlocked
-                
+
                 self.addPaidItem()
             }
         }
     }
     
     private func addPaidItem() {
-        let paid = MotivationalItem.level1
+        let paid = MotivationalItem.level5
         motivationParameterUseCase.addPaid(motivationalItem: paid) { (_) in }
     }
 }

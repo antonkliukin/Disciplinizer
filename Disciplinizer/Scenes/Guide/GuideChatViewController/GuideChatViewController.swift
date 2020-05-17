@@ -10,19 +10,22 @@ import UIKit
 
 protocol GuideChatViewProtocol: ViewProtocol {
     func set(nextButtonTitle: String)
+    func set(typingLabelText: String)
 }
 
 class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     @IBOutlet weak var nextButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: MainButton!
+    @IBOutlet weak var typingLabel: UILabel!
+    @IBOutlet weak var dotsStack: UIStackView!
+    @IBOutlet weak var topView: UIView!
     
     var presenter: GuideChatPresenterProtocol?
 
-    private var collectionViewHeight: NSLayoutConstraint?
     private var timer: Timer?
+    private var isAnimationRunning = false
     
     private var messagesToShow = [
-            ChatMessage(text: Strings.guideMessage1()),
             ChatMessage(text: Strings.guideMessage2()),
             ChatMessage(text: Strings.guideMessage3()),
             ChatMessage(text: Strings.guideMessage4()),
@@ -30,13 +33,23 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
             ChatMessage(text: Strings.guideMessage6()),
             ChatMessage(text: Strings.guideMessage7()),
             ChatMessage(text: Strings.guideMessage8()),
-            ChatMessage(text: Strings.guideMessage9())
+            ChatMessage(text: Strings.guideMessage9()),
+            ChatMessage(text: Strings.guideMessage10()),
+            ChatMessage(text: Strings.guideMessage11()),
+            ChatMessage(text: Strings.guideMessage12()),
+            ChatMessage(text: Strings.guideMessage13()),
+            ChatMessage(text: Strings.guideMessage14()),
+            ChatMessage(text: Strings.guideMessage15())
     ]
     
-    private var sections: [[ChatMessage]] = [[ChatMessage(text: "")]]
+    private var sections: [[ChatMessage]] = [[]]
     private let configurator = GuideChatConfigurator()
     private var collectionView = ChatCollectionView(sections: [[]])
     private let itemHeight: CGFloat = 110
+    
+    private var collectionBottonConstraint: NSLayoutConstraint?
+    private var collectionButtonConstraint: NSLayoutConstraint?
+    private var collectionTopConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,52 +59,77 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         presenter?.viewDidLoad()
         
         addCollectionView()
+        configureTopView()
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        nextButtonHeightConstraint.constant = 0
-        view.layoutIfNeeded()
+        showNextButton(false)
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         collectionView.flowLayout.itemSize = CGSize(width: view.bounds.size.width - 50, height: itemHeight)
-        collectionView.flowLayout.minimumLineSpacing = 0
+        collectionView.flowLayout.minimumLineSpacing = 20
         collectionView.flowLayout.minimumInteritemSpacing = 0
+        collectionView.flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        
+        sections[0].append(ChatMessage(text: Strings.guideMessage1()))
         updateCollectionView()
 
         startTimer()
+                
+        startActivityViewAnimation()
+        
+        if !isAnimationRunning {
+            isAnimationRunning = true
+        }
+    }
+    
+    private func configureTopView() {
+        topView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+        topView.layer.shadowOpacity = 1
+        topView.layer.shadowRadius = 25
+        topView.layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
+    
+    private func showNextButton(_ show: Bool) {
+        nextButton.isHidden = !show
+        nextButtonHeightConstraint.constant = show ? 44 : 0
+        view.layoutIfNeeded()
+    }
+    
+    func set(typingLabelText: String) {
+        typingLabel.text = typingLabelText
+    }
+    
+    private func startActivityViewAnimation() {
+        var animationDelay = 0.0
+        let delayTimePoints = [0.12, 0.24, 0.36]
+        
+        for i in 0..<dotsStack.arrangedSubviews.count {
+            let dotView = dotsStack.arrangedSubviews[i]
+
+            animationDelay += delayTimePoints[i]
+            UIView.animate(withDuration: 0.5, delay: animationDelay, options: [.autoreverse, .repeat, .curveEaseInOut], animations: {
+                dotView.transform = CGAffineTransform(scaleX: 2, y: 2)
+            })
+        }
     }
     
     func set(nextButtonTitle: String) {
         nextButton.setTitle(nextButtonTitle, for: .normal)
     }
-    
-    private func updateCollectionView() {
-        collectionView.sections = sections
-        updateCollectionViewHeight()
-        collectionView.reloadData()
-        collectionView.scrollToItem(at: IndexPath(item: sections[0].count - 1, section: 0), at: .bottom, animated: true)
-    }
-    
-    var collectionBottonConstraint: NSLayoutConstraint?
-    var collectionButtonConstraint: NSLayoutConstraint?
-    var collectionTopConstraint: NSLayoutConstraint?
-        
+                
     private func addCollectionView() {
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
+        view.insertSubview(collectionView, at: 0)
 
-        collectionViewHeight = collectionView.heightAnchor.constraint(equalToConstant: itemHeight)
-        collectionViewHeight?.isActive = true
-        collectionTopConstraint = collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        collectionTopConstraint?.isActive = false
-        
-        
+        collectionTopConstraint = collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor)
+        collectionTopConstraint?.isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionBottonConstraint = collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
@@ -101,44 +139,57 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         
         collectionView.register(UINib(nibName: ChatCell.id, bundle: .main), forCellWithReuseIdentifier: ChatCell.id)
     }
-    
-    private func updateCollectionViewHeight() {
-        let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         
-        if collectionViewHeight!.constant >= safeAreaHeight {
-            collectionViewHeight?.isActive = false
-            collectionTopConstraint?.isActive = true
-        } else {
-            collectionViewHeight?.constant = CGFloat(sections[0].count) * itemHeight
-        }
-        
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (_) in
             let indexForNewMessage = self.sections[0].count - 1
             
             guard indexForNewMessage < self.messagesToShow.count else { return }
             
             let newMessage = self.messagesToShow[indexForNewMessage]
-            self.sections[0].insert(newMessage, at: self.sections[0].count - 1)
+            self.sections[0].append(newMessage)
                         
             if indexForNewMessage >= self.messagesToShow.count - 1 {
-                self.sections[0].removeLast()
+                self.isTyping(false)
                 self.timer?.invalidate()
-                self.nextButtonHeightConstraint.constant = 44
+                self.showNextButton(true)
                 self.collectionBottonConstraint?.isActive = false
                 self.collectionButtonConstraint?.isActive = true
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.layoutIfNeeded()
+                })
             }
             
             self.updateCollectionView()
         }
     }
     
+    private func updateCollectionView() {
+        collectionView.sections = sections
+        
+        let delay = sections[0].count == 1 ? 1.0 : 0
+        
+        UIView.animate(withDuration: 0.3, delay: delay, options: .curveEaseOut, animations: {
+            self.collectionView.performBatchUpdates({
+                let nextIndexPath = IndexPath(item: self.sections[0].count - 1, section: 0)
+                self.collectionView.insertItems(at: [nextIndexPath])
+            }, completion: { _ in
+                self.scrollToLastMessage()
+            })
+        }, completion: { _ in })
+    }
+    
+    private func scrollToLastMessage() {
+        collectionView.scrollToItem(at: IndexPath(item: sections[0].count - 1, section: 0), at: .bottom, animated: true)
+    }
+    
     @IBAction func gotItButtonTapped(_ sender: Any) {
         presenter?.didTapGotItButton()
+    }
+    
+    private func isTyping(_ isTyping: Bool) {
+        dotsStack.isHidden = !isTyping
+        typingLabel.isHidden = !isTyping
     }
 }

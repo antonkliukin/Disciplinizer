@@ -3,6 +3,7 @@
 //******************************************************************************
 "guide.gotIt.title" = "Got it";
 "guide.nextButton.title" = "Next";
+"guide.typingText" = "typing";
 
 "guide.motivationSelection.title" = "Choose motivation";
 "guide.motivationSelection.description" = "What penalty would you want to choose?";
@@ -13,16 +14,28 @@
 "guide.catMotivation.message" = "We give you 1 free cat. If a cat will leave, you can buy another one.";
 "guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
-"guide.message1" = "Hello, I am Didi and I will help you in becoming a discipline expert.";
-"guide.message2" = "Just set a timer and do not pick up your phone concentrating on your task.";
-"guide.message3" = "Everytime you fail concentrating, there would be a penalty.";
-"guide.message4" = "The possibility of losing something increases productivity!";
-"guide.message5" = "We are most sad when we lose someone we love or time.";
-"guide.message6" = "Imagine you live with a cat. It’s your best friend!";
-"guide.message7" = "A cat will leave you in case of fail if you choose a cat mode.";
-"guide.message8" = "Or you’ll lose your time watching 3 ads if you choose a time mode.";
-"guide.message9" = "Let’s get down to business. Good luck!";
+"guide.message1" = "Hello, I am Didi!";
+"guide.message2" = "I'll tell you how not to get distracted by your phone when you need to complete a task.";
+"guide.message3" = "Or when you want to take a break from social media.";
 
+"guide.message4" = "On the next screen you will set up a timer.";
+"guide.message5" = "During this time you're not allowed to use you phone.";
+
+"guide.message6" = "To achieve this you have two modes.";
+
+"guide.message7" = "The first - Saving a pet.";
+"guide.message8" = "I give you the most expensive one - Valli cat.";
+
+"guide.message9" = "catSticker";
+
+"guide.message10" = "If you start using your phone - your pet will leave!";
+"guide.message11" = "In this case you will need to buy another one to continue using Saving a pet mode.";
+
+"guide.message12" = "The socond - Saving time.";
+"guide.message13" = "If you start using your phone - you will have to watch 3 ads!";
+"guide.message14" = "Loosing your precious time!";
+
+"guide.message15" = "Let's get started. Good luck!";
 
 //******************************************************************************
 // Notifications

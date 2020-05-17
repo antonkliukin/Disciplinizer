@@ -17,15 +17,7 @@ final class ChatCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
         
-        for dotView in messageView.dotsStack.arrangedSubviews {
-            dotView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }
-    }
-    
     func configure(_ message: String) {
         messageView.messageLabel.text = message
     }

@@ -156,6 +156,7 @@
 		3AD0689F235B175B003D30A6 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0689E235B175B003D30A6 /* PageCell.swift */; };
 		3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E627246DBF21004C4D38 /* RootViewController.swift */; };
 		3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E62A246FDA04004C4D38 /* CreateChallenge.storyboard */; };
+		3AE4E62F24713213004C4D38 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E62E24713213004C4D38 /* String+Extension.swift */; };
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
@@ -344,6 +345,7 @@
 		3AE4E62A246FDA04004C4D38 /* CreateChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateChallenge.storyboard; sourceTree = "<group>"; };
 		3AE4E62C246FDA64004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/History.storyboard; sourceTree = "<group>"; };
 		3AE4E62D246FDA86004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		3AE4E62E24713213004C4D38 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				3AC223772365AB840075C773 /* Date+Extensions.swift */,
 				3AC223792365B3710075C773 /* Result+Success.swift */,
 				3AA1A1062454690600955BD5 /* UIView+Extension.swift */,
+				3AE4E62E24713213004C4D38 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1470,6 +1473,7 @@
 				3A1F533824672F4700298045 /* GuideModeSelecionView.swift in Sources */,
 				3A1FA56E245C1E05000BAA20 /* CatStoreConfigurator.swift in Sources */,
 				3A00A50B2383187F0011ACDC /* JWT.swift in Sources */,
+				3AE4E62F24713213004C4D38 /* String+Extension.swift in Sources */,
 				C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */,
 				3A1F532F2466A15600298045 /* SettingsSection.swift in Sources */,
 				3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */,

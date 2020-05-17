@@ -22,6 +22,7 @@ final class GuideChatPresenter: GuideChatPresenterProtocol {
     
     func viewDidLoad() {
         view?.set(nextButtonTitle: Strings.guideGotItTitle())
+        view?.set(typingLabelText: Strings.guideTypingText())
     }
     
     func didTapGotItButton() {

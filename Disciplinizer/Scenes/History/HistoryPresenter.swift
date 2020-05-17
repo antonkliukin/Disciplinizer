@@ -106,6 +106,8 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
 
     func clearButtonTapped() {
+        guard !challenges.isEmpty else { return }
+        
         let alertModel = AlertModel(title: Strings.historyAlertTitle(),
                                     message: Strings.historyAlertDescription(),
                                     positiveActionTitle: Strings.historyAlertCancel(),

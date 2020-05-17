@@ -26,7 +26,12 @@ class ModeSelectionViewController: UIViewController, ModeSelectionViewProtocol {
     @IBOutlet weak var catModeSelectionView: GuideModeSelecionView!
     @IBOutlet weak var timeModeSelectionView: GuideModeSelecionView!
     @IBOutlet weak var messageView: GuideMessageView!
+    @IBOutlet weak var messageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var nextButton: MainButton!
+    
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
         
     var presenter: ModeSelectionPresenterProtocol!
     var configurator: ModeSelectoinConfiguratorProtocol?
@@ -43,6 +48,19 @@ class ModeSelectionViewController: UIViewController, ModeSelectionViewProtocol {
         timeModeSelectionView.addGestureRecognizer(timeModeTapGesture)
         
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateMessageViewHeight()
+    }
+    
+    private func updateMessageViewHeight() {
+        let messageText = messageView.messageLabel.text
+        if let text = messageText {
+            let size = text.estimateFrameForText(ofFont: .systemFont(ofSize: 15), inRect: CGSize(width: stackView.bounds.width - 65, height: 100))
+            messageViewHeight.constant = size.height + 40
+        }
     }
         
     @objc private func didTapCatMode() {
@@ -79,6 +97,7 @@ class ModeSelectionViewController: UIViewController, ModeSelectionViewProtocol {
     
     func display(message: String) {
         messageView.messageLabel.text = message
+        updateMessageViewHeight()
     }
     
     func configureNextButtonTitle(title: String) {
