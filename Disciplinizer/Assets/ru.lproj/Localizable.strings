@@ -23,7 +23,7 @@
 
 "guide.message6" = "В этом тебе помогут два режима мотивации.";
 
-"guide.message7" = "Первый - Сохранения питомца.";
+"guide.message7" = "Первый - Сохранение питомца.";
 "guide.message8" = "Я дарю тебе самого дорогого питомца - кошку Пушинку.";
 "guide.message9" = "catSticker";
 "guide.message10" = "Если ты начнешь пользоваться телефоном, то питомец покинет тебя!";
@@ -127,6 +127,9 @@
 "current.alert.giveUp.adDescription" = "Если сдадитесь - вам придется посмотреть три рекламных ролика";
 "current.alert.giveUp.positive" = "Продолжить";
 "current.alert.giveUp.negative" = "Сдаться";
+"current.congrats" = "Поздравляем!";
+"current.backButton.title" = "Вернуться в меню";
+"current.successDescription" = "Ты отлично справляешься!";
 
 //******************************************************************************
 // Cat Store

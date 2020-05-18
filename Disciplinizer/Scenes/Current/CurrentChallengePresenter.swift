@@ -13,6 +13,7 @@ protocol CurrentChallengePresenterProtocol: class {
     func viewDidAppear()
     func didTapStopChallenge()
     func didTapMusicSelection()
+    func didTapBackButton()
 
     func willLeaveApp()
     func didLeaveApp()
@@ -92,6 +93,10 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         }
 
         view?.router?.present(vc)
+    }
+    
+    func didTapBackButton() {
+        self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
     }
 
     private func setupMusicController() {
@@ -234,9 +239,13 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                     KeychainService.appLockState = .locked
 
                     print("Lose without blocking")
+                } else {
+                    self.view?.set(congratsTitleLabel: Strings.currentCongrats())
+                    self.view?.set(backToMenuButtonTitle: Strings.currentBackButtonTitle())
+                    self.view?.set(timerDescription: Strings.currentSuccessDescription())
+                    self.view?.hideGiveUpButton()
+                    self.view?.hideMusicSelectionButton()
                 }
-
-                self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
             case .failure:
                 assertionFailure()
             }

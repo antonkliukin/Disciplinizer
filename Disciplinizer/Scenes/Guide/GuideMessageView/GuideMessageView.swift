@@ -37,13 +37,7 @@ class GuideMessageView: UIView {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        stickerImageView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-        stickerImageView.layer.shadowOpacity = 1
-        stickerImageView.layer.shadowRadius = 15
-        stickerImageView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        stickerImageView.clipsToBounds = false
-        
+                
         changeState(.text)
     }
     

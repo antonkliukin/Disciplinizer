@@ -24,27 +24,32 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Xr-3lY">
-                                                <rect key="frame" x="50" y="133" width="314" height="307"/>
+                                                <rect key="frame" x="50" y="145" width="314" height="283"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-5Y-oFW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="193"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="169"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6k-GL-LLY">
-                                                                <rect key="frame" x="0.0" y="66.5" width="314" height="31.5"/>
-                                                                <string key="text">Choose an interval from 15 to 120 minutes
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="O4w-aK-Nhb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="314" height="74"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time to concentrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="qym-6J-z2t">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6k-GL-LLY">
+                                                                        <rect key="frame" x="0.0" y="42.5" width="314" height="31.5"/>
+                                                                        <string key="text">Choose an interval from 15 to 120 minutes
 and don’t pick up your phone to succeed </string>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2GM-6W-gvs">
-                                                                <rect key="frame" x="0.0" y="138" width="314" height="55"/>
+                                                                <rect key="frame" x="0.0" y="114" width="314" height="55"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Minutes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7T-hn-3sB">
                                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="27"/>
@@ -84,7 +89,7 @@ and don’t pick up your phone to succeed </string>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-PO-GT4" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="263" width="314" height="44"/>
+                                                        <rect key="frame" x="0.0" y="239" width="314" height="44"/>
                                                         <color key="backgroundColor" name="LightBlue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="62d-lj-wJO"/>

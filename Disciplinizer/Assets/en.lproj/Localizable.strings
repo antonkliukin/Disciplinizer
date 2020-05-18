@@ -120,6 +120,9 @@
 "current.alert.giveUp.adDescription" = "If you’ll give up, you’ll have to watch 3 ads.";
 "current.alert.giveUp.positive" = "Continue";
 "current.alert.giveUp.negative" = "Give up";
+"current.congrats" = "Congrats!";
+"current.backButton.title" = "Back to menu";
+"current.successDescription" = "You’re doing great!";
 
 //******************************************************************************
 // Cat Store

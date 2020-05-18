@@ -1034,7 +1034,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 109 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 112 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1064,6 +1064,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsNegative = Rswift.StringResource(key: "creation.alert.notifications.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Back to menu
+      ///
+      /// Locales: ru, en
+      static let currentBackButtonTitle = Rswift.StringResource(key: "current.backButton.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Best score
       ///
       /// Locales: ru, en
@@ -1120,6 +1124,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnTitle = Rswift.StringResource(key: "notifications.return.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Congrats!
+      ///
+      /// Locales: ru, en
+      static let currentCongrats = Rswift.StringResource(key: "current.congrats", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Continue
       ///
       /// Locales: ru, en
@@ -1344,7 +1352,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage7 = Rswift.StringResource(key: "guide.message7", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: The socond - Saving time.
+      /// en translation: The second - Saving time.
       ///
       /// Locales: ru, en
       static let guideMessage12 = Rswift.StringResource(key: "guide.message12", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1428,6 +1436,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentTimerAdDescription = Rswift.StringResource(key: "current.timer.adDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: You’re doing great!
+      ///
+      /// Locales: ru, en
+      static let currentSuccessDescription = Rswift.StringResource(key: "current.successDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: cat mode
       ///
       /// Locales: ru, en
@@ -1580,6 +1592,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("creation.alert.notifications.negative", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back to menu
+      ///
+      /// Locales: ru, en
+      static func currentBackButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.backButton.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.backButton.title"
+        }
+
+        return NSLocalizedString("current.backButton.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Best score
@@ -1790,6 +1817,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications.return.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Congrats!
+      ///
+      /// Locales: ru, en
+      static func currentCongrats(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.congrats", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.congrats"
+        }
+
+        return NSLocalizedString("current.congrats", bundle: bundle, comment: "")
       }
 
       /// en translation: Continue
@@ -2632,7 +2674,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.message7", bundle: bundle, comment: "")
       }
 
-      /// en translation: The socond - Saving time.
+      /// en translation: The second - Saving time.
       ///
       /// Locales: ru, en
       static func guideMessage12(preferredLanguages: [String]? = nil) -> String {
@@ -2945,6 +2987,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("current.timer.adDescription", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You’re doing great!
+      ///
+      /// Locales: ru, en
+      static func currentSuccessDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("current.successDescription", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "current.successDescription"
+        }
+
+        return NSLocalizedString("current.successDescription", bundle: bundle, comment: "")
       }
 
       /// en translation: cat mode

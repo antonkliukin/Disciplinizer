@@ -14,6 +14,10 @@ protocol CurrentChallengeViewProtocol: ViewProtocol {
     func set(timerTitle: String)
     func set(timerDescription: String)
     func set(giveUpButtonTitle: String)
+    func set(congratsTitleLabel: String)
+    func set(backToMenuButtonTitle: String)
+    func hideGiveUpButton()
+    func hideMusicSelectionButton()
     var isDeviceLocked: Bool { get }
     func updateTimer(hours: String, minutes: String, seconds: String)
 }
@@ -21,7 +25,6 @@ protocol CurrentChallengeViewProtocol: ViewProtocol {
 // MARK: - Current Challenge View Controller
 
 final class CurrentChallengeViewController: UIViewController, CurrentChallengeViewProtocol {
-    
     @IBOutlet weak var timerTitleLabel: UILabel!
     @IBOutlet weak var timerDescriptionLabel: UILabel!
     
@@ -30,6 +33,8 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var giveUpButton: MainButton!
     @IBOutlet weak var musicSelectionButton: UIButton!
+    @IBOutlet weak var backToMenuButton: MainButton!
+    @IBOutlet weak var congratsLabel: UILabel!
     
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
@@ -68,6 +73,24 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     
     func set(giveUpButtonTitle: String) {
         giveUpButton.setTitle(giveUpButtonTitle, for: .normal)
+    }
+    
+    func set(congratsTitleLabel: String) {
+        congratsLabel.text = congratsTitleLabel
+        congratsLabel.isHidden = false
+    }
+    
+    func set(backToMenuButtonTitle: String) {
+        backToMenuButton.setTitle(backToMenuButtonTitle, for: .normal)
+        backToMenuButton.isHidden = false
+    }
+    
+    func hideGiveUpButton() {
+        giveUpButton.isHidden = true
+    }
+    
+    func hideMusicSelectionButton() {
+        musicSelectionButton.isHidden = true
     }
     
     private func setupUI() {
@@ -111,5 +134,9 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
 
     @objc private func willTerminate() {
         presenter?.didCloseApp()
+    }
+    
+    @IBAction func didTapBackButton(_ sender: Any) {
+        presenter?.didTapBackButton()
     }
 }

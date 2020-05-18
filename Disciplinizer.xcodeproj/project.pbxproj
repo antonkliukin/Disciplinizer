@@ -1765,7 +1765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1787,7 +1787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1916,7 +1916,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;

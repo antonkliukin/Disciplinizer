@@ -134,5 +134,5 @@ extension NotificationManager {
                 UIApplication.shared.applicationIconBadgeNumber += 1
             }
         }
-    }
+    }    
 }

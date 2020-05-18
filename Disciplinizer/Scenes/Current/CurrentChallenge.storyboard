@@ -24,16 +24,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-tM-6br">
-                                <rect key="frame" x="90" y="318" width="234" height="150"/>
+                                <rect key="frame" x="63" y="318" width="288" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lci-T7-9qP">
-                                        <rect key="frame" x="87" y="0.0" width="60.5" height="50"/>
+                                        <rect key="frame" x="114" y="0.0" width="60.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="lightBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W5-2K-w5e">
-                                        <rect key="frame" x="17" y="50" width="200.5" height="50"/>
+                                        <rect key="frame" x="44" y="50" width="200.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-Hf-ifj">
                                                 <rect key="frame" x="0.0" y="0.0" width="58.5" height="50"/>
@@ -86,8 +86,8 @@
                                             <constraint firstItem="sTc-nR-cFY" firstAttribute="width" secondItem="hUh-Hf-ifj" secondAttribute="width" id="yvx-6y-eVQ"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
-                                        <rect key="frame" x="17.5" y="100" width="199" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-nI-Bfj">
+                                        <rect key="frame" x="44.5" y="100" width="199" height="50"/>
                                         <string key="text">You’ll have to spend time
 watching 3 ads if you give up</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -126,6 +126,22 @@ watching 3 ads if you give up</string>
                                     <action selector="didTapMusicSelectionButton:" destination="vrb-aV-sEL" eventType="touchUpInside" id="PaP-b9-apC"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6A-8U-m1b" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
+                                <rect key="frame" x="25" y="768" width="364" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HSq-uV-74O"/>
+                                </constraints>
+                                <state key="normal" title="Back to menu"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="vrb-aV-sEL" eventType="touchUpInside" id="XrF-ja-Vi2"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esz-dP-7MX">
+                                <rect key="frame" x="10" y="159.5" width="394" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" name="lightBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -133,17 +149,25 @@ watching 3 ads if you give up</string>
                             <constraint firstItem="e2g-Ym-Tqb" firstAttribute="centerY" secondItem="eYj-Ov-J9I" secondAttribute="centerY" id="A6j-Yu-ilw"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="eYj-Ov-J9I" secondAttribute="bottom" constant="70" id="Iqp-7b-S5V"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerY" secondItem="asX-k3-r91" secondAttribute="centerY" multiplier="0.9" id="MLN-6d-mO6"/>
+                            <constraint firstItem="esz-dP-7MX" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="10" id="NKG-2b-7Ys"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="top" secondItem="esz-dP-7MX" secondAttribute="bottom" constant="30" id="O4w-Kx-qBp"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="20" id="YAf-z2-kKe"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="esz-dP-7MX" secondAttribute="trailing" constant="10" id="aYj-EV-jBB"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerY" secondItem="P5x-wf-5Z5" secondAttribute="centerY" constant="-10" id="bsS-FX-yIh"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="P5x-wf-5Z5" secondAttribute="trailing" constant="20" id="ifr-Wn-B1a"/>
                             <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="e2g-Ym-Tqb" secondAttribute="trailing" constant="60" id="mvO-H6-9Us"/>
                             <constraint firstItem="EPG-tM-6br" firstAttribute="centerX" secondItem="P5x-wf-5Z5" secondAttribute="centerX" id="nLi-kS-ly3"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="bottom" secondItem="p6A-8U-m1b" secondAttribute="bottom" constant="50" id="pQ2-6M-5zB"/>
                             <constraint firstItem="P5x-wf-5Z5" firstAttribute="centerX" secondItem="asX-k3-r91" secondAttribute="centerX" id="pbx-2U-GMh"/>
-                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="width" secondItem="EPG-tM-6br" secondAttribute="width" multiplier="1.6" id="x0I-Wb-vqZ"/>
+                            <constraint firstItem="p6A-8U-m1b" firstAttribute="leading" secondItem="Gtb-Pj-fHB" secondAttribute="leading" constant="25" id="tjK-VK-xw7"/>
+                            <constraint firstItem="Gtb-Pj-fHB" firstAttribute="trailing" secondItem="p6A-8U-m1b" secondAttribute="trailing" constant="25" id="tkO-Mk-uiX"/>
+                            <constraint firstItem="P5x-wf-5Z5" firstAttribute="width" secondItem="EPG-tM-6br" secondAttribute="width" multiplier="1.3" id="x0I-Wb-vqZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtb-Pj-fHB"/>
                     </view>
                     <connections>
+                        <outlet property="backToMenuButton" destination="p6A-8U-m1b" id="cUY-2w-C8k"/>
+                        <outlet property="congratsLabel" destination="esz-dP-7MX" id="pCg-qH-197"/>
                         <outlet property="giveUpButton" destination="eYj-Ov-J9I" id="dSJ-o0-908"/>
                         <outlet property="hoursLabel" destination="hUh-Hf-ifj" id="YjR-19-Aac"/>
                         <outlet property="minutesLabel" destination="sTc-nR-cFY" id="LuR-Sg-XuG"/>
