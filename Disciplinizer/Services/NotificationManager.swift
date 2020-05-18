@@ -26,7 +26,8 @@ class NotificationManager: NSObject {
     private let notificationCenter = UNUserNotificationCenter.current()
 
     enum Identifier {
-        static let loseNotifId = "com.conc.loseNofification"
+        static let loseNotifId = "com.disciplinizer.loseNofification"
+        static let winNotifId = "com.disciplinizer.winNofification"
     }
     
     func scheduleNotification(type: NotificationType, identifier: String, completionHandler: @escaping NotificationManagerCallback) {
@@ -131,8 +132,24 @@ extension NotificationManager {
             if !keepInNotificationCenter {
                 NotificationManager.shared.notificationCenter.removeDeliveredNotifications(withIdentifiers: [Identifier.loseNotifId])
             } else {
-                UIApplication.shared.applicationIconBadgeNumber += 1
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber += 1
+                }
             }
         }
-    }    
+    }
+    
+    static func sendSuccessNotification(keepInNotificationCenter: Bool = false) {
+        let notifType = NotificationType.basic(title: Strings.notificationsWinTitle(),
+                                               message: Strings.notificationsWinBody())
+        NotificationManager.shared.scheduleNotification(type: notifType, identifier: Identifier.winNotifId) { _ in
+            if !keepInNotificationCenter {
+                NotificationManager.shared.notificationCenter.removeDeliveredNotifications(withIdentifiers: [Identifier.winNotifId])
+            } else {
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber += 1
+                }
+            }
+        }
+    }
 }

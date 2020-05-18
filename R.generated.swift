@@ -1034,7 +1034,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 112 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 114 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1340,6 +1340,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let alertTitleSuccess = Rswift.StringResource(key: "alert.title.success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Success!
+      ///
+      /// Locales: ru, en
+      static let notificationsWinTitle = Rswift.StringResource(key: "notifications.win.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tap to change
       ///
       /// Locales: ru, en
@@ -1424,6 +1428,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsReturnBody = Rswift.StringResource(key: "notifications.return.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: You've been staying away from phone during planned time!
+      ///
+      /// Locales: ru, en
+      static let notificationsWinBody = Rswift.StringResource(key: "notifications.win.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Your cat left you
       ///
       /// Locales: ru, en
@@ -2629,6 +2637,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("alert.title.success", bundle: bundle, comment: "")
       }
 
+      /// en translation: Success!
+      ///
+      /// Locales: ru, en
+      static func notificationsWinTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications.win.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "notifications.win.title"
+        }
+
+        return NSLocalizedString("notifications.win.title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tap to change
       ///
       /// Locales: ru, en
@@ -2942,6 +2965,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications.return.body", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You've been staying away from phone during planned time!
+      ///
+      /// Locales: ru, en
+      static func notificationsWinBody(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications.win.body", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "notifications.win.body"
+        }
+
+        return NSLocalizedString("notifications.win.body", bundle: bundle, comment: "")
       }
 
       /// en translation: Your cat left you

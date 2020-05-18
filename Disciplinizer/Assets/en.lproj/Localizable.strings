@@ -42,6 +42,8 @@
 //******************************************************************************
 "notifications.return.title" = "Click to avoid losing!";
 "notifications.return.body" = "You will lose your challenge if don't return to the app!";
+"notifications.win.title" = "Success!";
+"notifications.win.body" = "You've been staying away from phone during planned time!";
 
 //******************************************************************************
 // Lose

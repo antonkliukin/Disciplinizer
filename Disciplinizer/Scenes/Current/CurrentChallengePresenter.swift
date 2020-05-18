@@ -125,6 +125,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     private func invalidateTimer() {
         if let timer = challengeTimer {
             timer.invalidate()
+            challengeTimer = nil
         }
     }
 
@@ -141,6 +142,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     private func fireLoseTimer(withInterval interval: Int) {
+        guard challengeTimer != nil else { return }
+        
         self.loseTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: false, block: { [weak self] (_) in
             guard let self = self else {
                 assertionFailure()
@@ -188,6 +191,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     func didReturnToApp() {
         print("Did return to the app")
         loseTimer?.invalidate()
+        loseTimer = nil
     }
 
     func didCloseApp() {
@@ -240,11 +244,15 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
 
                     print("Lose without blocking")
                 } else {
-                    self.view?.set(congratsTitleLabel: Strings.currentCongrats())
-                    self.view?.set(backToMenuButtonTitle: Strings.currentBackButtonTitle())
-                    self.view?.set(timerDescription: Strings.currentSuccessDescription())
-                    self.view?.hideGiveUpButton()
-                    self.view?.hideMusicSelectionButton()
+                    DispatchQueue.main.async {
+                        self.view?.set(congratsTitleLabel: Strings.currentCongrats())
+                        self.view?.set(backToMenuButtonTitle: Strings.currentBackButtonTitle())
+                        self.view?.set(timerDescription: Strings.currentSuccessDescription())
+                        self.view?.hideGiveUpButton()
+                        self.view?.hideMusicSelectionButton()
+                        
+                        NotificationManager.sendSuccessNotification(keepInNotificationCenter: true)
+                    }
                 }
             case .failure:
                 assertionFailure()
