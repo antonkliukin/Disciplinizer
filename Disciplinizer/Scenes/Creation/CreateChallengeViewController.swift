@@ -17,11 +17,12 @@ protocol CreateChallengeViewProtocol: ViewProtocol {
 }
 
 final class CreateChallengeViewController: UIViewController, CreateChallengeViewProtocol {
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewLabel: UILabel!
     @IBOutlet weak var motivationTypeParameterView: ChallengeParameterView!
     @IBOutlet weak var timeParameterView: ChallengeParameterView!
+    @IBOutlet weak var startButtonShadowView: UIView!
     @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet weak var topBackgroundView: UIView!
 
     private let configurator = CreateChallengeConfigurator()
 
@@ -44,8 +45,11 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     
     func configureStartButton() {
         startButton.roundCorners(corners: .all, radius: startButton.bounds.width / 2)
-        startButton.layer.borderWidth = 10
-        startButton.layer.borderColor = R.color.buttonLightBlue()!.cgColor
+        startButton.addShadow(alpha: 0.15, blur: 4)
+
+        
+        startButtonShadowView.roundCorners(corners: .all, radius: startButtonShadowView.bounds.width / 2)
+        startButtonShadowView.addShadow(alpha: 0.15, blur: 4)
     }
     
     func set(viewTitle: String) {
@@ -60,7 +64,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        setupContentView()
+        setupTopView()
         configureStartButton()
         
         configurator.configure(createChallengeViewController: self)
@@ -86,7 +90,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         presenter.startButtonTapped()
     }
         
-    private func setupContentView() {
-        contentView.roundCorners(corners: .top, radius: 22)
+    private func setupTopView() {
+        topBackgroundView.roundCorners(corners: .bottom, radius: 24)
     }
 }

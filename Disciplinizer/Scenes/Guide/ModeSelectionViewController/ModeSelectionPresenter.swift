@@ -20,16 +20,11 @@ protocol RouterDelegateProtocol: class {
 }
 
 final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
-    func viewDidLoad() {
-        configureView()
-        selectDefaultMode()
-        configureModeViews()
-    }
-    
     weak var view: ModeSelectionViewProtocol?
     weak var routerDelegate: RouterDelegateProtocol?
     
-    private var selectedMode: MotivationalItem = .level1
+    private var selectedItem: MotivationalItem = .ad
+    private var paidItem: MotivationalItem? = nil
     private var motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol
     
     init(view: ModeSelectionViewProtocol,
@@ -38,6 +33,24 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
         self.view = view
         self.routerDelegate = routerDelegate
         self.motivationalItemParameterUseCase = motivationalItemParameterUseCase
+    }
+    
+    func viewDidLoad() {
+        configureView()
+        selectDefaultMode()
+        configureModeViews()
+        getPaidItem()
+    }
+    
+    private func getPaidItem() {
+        motivationalItemParameterUseCase.getPaid { (result) in
+            guard let item = try? result.get() else {
+                assertionFailure()
+                return
+            }
+            
+            self.paidItem = item
+        }
     }
     
     private func configureView() {
@@ -62,21 +75,24 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     }
     
     func didTapCatMode() {
-        selectedMode = .level1
+        if let item = self.paidItem {
+            self.selectedItem = item
+        }
+        
         view?.changeCatModeViewState(.selected)
         view?.changeTimeModeViewState(.unselected)
         view?.display(message: Strings.guideCatMotivationMessage())
     }
     
     func didTapTimeMode() {
-        selectedMode = .ad
+        selectedItem = .ad
         view?.changeCatModeViewState(.unselected)
         view?.changeTimeModeViewState(.selected)
         view?.display(message: Strings.guideTimeMotivationMessage())
     }
     
     func didTapNextButton() {
-        motivationalItemParameterUseCase.select(motivationalItem: selectedMode) { (_) in }
+        motivationalItemParameterUseCase.select(motivationalItem: selectedItem) { (_) in }
         routerDelegate?.didTapNext()
     }
 }

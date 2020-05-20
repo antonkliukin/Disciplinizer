@@ -11,6 +11,7 @@ import UIKit
 struct ParameterViewModel {
     var title: String = ""
     var valueTitle: String = ""
+    var valueImage: UIImage? = nil
     var actionTitle: String = ""
     var action: () -> Void = {}
 }
@@ -20,6 +21,7 @@ final class ChallengeParameterView: UIView {
     @IBOutlet weak var parameterTitleLabel: UILabel!
     @IBOutlet weak var parameterValueLabel: UILabel!
     @IBOutlet weak var actionTitleLabel: UILabel!
+    @IBOutlet weak var valueImageView: UIImageView!
     
     private var action: (() -> Void) = {}
     
@@ -55,7 +57,14 @@ final class ChallengeParameterView: UIView {
         parameterTitleLabel.text = model.title
         parameterValueLabel.text = model.valueTitle
         actionTitleLabel.text = model.actionTitle
+        valueImageView.isHidden = true
         self.action = model.action
+        
+        if model.valueTitle.isEmpty {
+            parameterValueLabel.isHidden = true
+            valueImageView.isHidden = false
+            valueImageView.image = model.valueImage
+        }
     }
     
     private func addTapGesture() {

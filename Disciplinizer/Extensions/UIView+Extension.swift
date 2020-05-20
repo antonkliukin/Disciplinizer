@@ -10,15 +10,25 @@ import UIKit
 
 extension UIView {
     
-    func addShadow(shadowColor: UIColor = .black,
-                   offSet: CGSize = CGSize(width: 0, height: 4),
-                   opacity: Float = 0.2,
-                   shadowRadius: CGFloat = 5) {
+    func addShadow(color: UIColor = .black,
+                   alpha: Float = 0.08,
+                   x: CGFloat = 0,
+                   y: CGFloat = 4,
+                   blur: CGFloat = 15,
+                   spread: CGFloat = 0) {
         
-        layer.shadowColor = shadowColor.cgColor
-        layer.shadowOffset = offSet
-        layer.shadowOpacity = opacity
-        layer.shadowRadius = shadowRadius
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = alpha
+        layer.shadowOffset = CGSize(width: x, height: y)
+        layer.shadowRadius = blur / UIScreen.main.scale
+        
+        if spread == 0 {
+            layer.shadowPath = nil
+        } else {
+            let dx = -spread
+            let rect = bounds.insetBy(dx: dx, dy: dx)
+            layer.shadowPath = UIBezierPath(rect: rect).cgPath
+        }
     }
     
     func roundCorners(corners: ViewCorners = .all,

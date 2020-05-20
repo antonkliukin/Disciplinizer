@@ -28,31 +28,12 @@ final class PageNavigationPresenter: PageNavigationPresenterProtocol {
     }
         
     func viewDidAppear() {
-        checkIfFirstLaunch()
+        //
     }
 
     required init(view: PageNavigationViewProtocol,
                   motivationParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
         self.motivationParameterUseCase = motivationParameterUseCase
-    }
-            
-    private func checkIfFirstLaunch() {
-        AppLockManager.shared.checkIfFirstLaunch { (isFirstLaunch) in
-            if isFirstLaunch, KeychainService.isFirstLaunch {
-                KeychainService.isFirstLaunch = false
-
-                AppLockManager.shared.changeStateTo(.unlocked)
-                KeychainService.appLockState = .unlocked
-
-                self.addPaidItem()
-            }
-        }
-    }
-    
-    private func addPaidItem() {
-        let paid = MotivationalItem.level5
-        motivationParameterUseCase.addPaid(motivationalItem: paid) { (_) in }
-        motivationParameterUseCase.select(motivationalItem: paid) { (_) in }
     }
 }

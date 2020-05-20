@@ -4,6 +4,7 @@
 "guide.gotIt.title" = "Понятно";
 "guide.nextButton.title" = "Далее";
 "guide.typingText" = "набирает";
+"guide.online" = "в сети";
 
 "guide.motivationSelection.title" = "Выбери мотивацию";
 "guide.motivationSelection.description" = "Какой режим даст тебе больше мотивации?";
@@ -69,7 +70,7 @@
 //******************************************************************************
 // Motivational Item
 //******************************************************************************
-"motivationItem.ad.title" = "Реклама";
+"motivationItem.ad.title" = "Сохранение времени";
 "motivationItem.level1.title" = "Барсик";
 "motivationItem.level2.title" = "Мотя";
 "motivationItem.level3.title" = "Муся";

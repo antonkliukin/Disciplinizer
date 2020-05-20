@@ -67,7 +67,7 @@
     <resources>
         <image name="settings_titleBackground" width="167" height="157"/>
         <namedColor name="blueBackground">
-            <color red="0.77647058823529413" green="0.81568627450980391" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.62352941176470589" green="0.77647058823529413" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

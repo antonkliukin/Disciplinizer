@@ -80,6 +80,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                                         self.invalidateTimer()
 
                                         self.saveFinishedChallenge(self.challenge, withResult: .lose)
+                                        
+                                        self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
         })
         
         let alert = Controller.createAlert(alertModel: alertModel)

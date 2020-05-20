@@ -4,6 +4,7 @@
 "guide.gotIt.title" = "Got it";
 "guide.nextButton.title" = "Next";
 "guide.typingText" = "typing";
+"guide.online" = "online";
 
 "guide.motivationSelection.title" = "Choose motivation";
 "guide.motivationSelection.description" = "What penalty would you want to choose?";
@@ -14,7 +15,7 @@
 "guide.catMotivation.message" = "We give you 1 free cat. If a cat will leave, you can buy another one.";
 "guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
-"guide.message1" = "Hello, I am Didi!";
+"guide.message1" = "Hello, I'm Didi!";
 "guide.message2" = "I'll tell you how not to get distracted by your phone when you need to complete a task.";
 "guide.message3" = "Or when you want to take a break from social media.";
 
@@ -62,7 +63,7 @@
 //******************************************************************************
 // Motivational Item
 //******************************************************************************
-"motivationItem.ad.title" = "Ad";
+"motivationItem.ad.title" = "Saving time";
 "motivationItem.level1.title" = "Cuddly";
 "motivationItem.level2.title" = "Fluffy";
 "motivationItem.level3.title" = "Tilda";

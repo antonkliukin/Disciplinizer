@@ -21,10 +21,7 @@ final class SettingsCell: UICollectionViewCell {
         
         contentView.roundCorners(corners: .all, radius: 8)
         
-        addShadow(shadowColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.1),
-                  offSet: CGSize(width: 0, height: 4),
-                  opacity: 1,
-                  shadowRadius: 15)
+        addShadow()
         clipsToBounds = false
     }
     

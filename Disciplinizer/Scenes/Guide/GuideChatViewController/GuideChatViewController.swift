@@ -89,10 +89,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     }
     
     private func configureTopView() {
-        topView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-        topView.layer.shadowOpacity = 1
-        topView.layer.shadowRadius = 25
-        topView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        topView.addShadow(alpha: 0.15, y: 4, blur: 25)
     }
     
     private func showNextButton(_ show: Bool) {
@@ -190,6 +187,6 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     
     private func isTyping(_ isTyping: Bool) {
         dotsStack.isHidden = !isTyping
-        typingLabel.isHidden = !isTyping
+        typingLabel.text = Strings.guideOnline()
     }
 }

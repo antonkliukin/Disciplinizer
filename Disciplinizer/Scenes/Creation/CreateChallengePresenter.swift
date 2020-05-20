@@ -151,9 +151,8 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         motivationParameterUseCase.getSelectedMotivationalItem { (result) in
             switch result {
             case .success(let item):
-                let title = item == .ad ? Strings.creationSaveTime() : Strings.creationSaveCat()
                 let motivationViewModel = ParameterViewModel(title: Strings.creationMotivationTitle(),
-                                                             valueTitle: title,
+                                                             valueImage: item.image,
                                                              actionTitle: Strings.creationActionTitle(),
                                                              action: {
                                                                 let selectMotivationVC = Controller.motivationSelection()
