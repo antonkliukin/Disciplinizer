@@ -126,6 +126,8 @@
 		3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A1062454690600955BD5 /* UIView+Extension.swift */; };
 		3AA1A10A24567EB800955BD5 /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1A10924567EB800955BD5 /* MotivationView.swift */; };
 		3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A10B24567F0400955BD5 /* MotivationView.xib */; };
+		3AAA3A392475A20100954D5C /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA3A382475A20100954D5C /* LaunchScreenView.swift */; };
+		3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAA3A3A2475A21100954D5C /* LaunchScreenView.xib */; };
 		3AB765CA231BDBC1007FA888 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765C9231BDBC1007FA888 /* Router.swift */; };
 		3AB765CD231C299F007FA888 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CC231C299F007FA888 /* Controllers.swift */; };
 		3AB765CF231C29BE007FA888 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB765CE231C29BE007FA888 /* ViewProtocol.swift */; };
@@ -312,6 +314,8 @@
 		3AA1A1062454690600955BD5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3AA1A10924567EB800955BD5 /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
 		3AA1A10B24567F0400955BD5 /* MotivationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MotivationView.xib; sourceTree = "<group>"; };
+		3AAA3A382475A20100954D5C /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		3AAA3A3A2475A21100954D5C /* LaunchScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
 		3AB765C9231BDBC1007FA888 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3AB765CC231C299F007FA888 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		3AB765CE231C29BE007FA888 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -934,6 +938,15 @@
 			path = MotivationView;
 			sourceTree = "<group>";
 		};
+		3AAA3A372475A1DD00954D5C /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA3A382475A20100954D5C /* LaunchScreenView.swift */,
+				3AAA3A3A2475A21100954D5C /* LaunchScreenView.xib */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		3AB765CB231C298D007FA888 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,6 +961,7 @@
 		3ACD2C56240C2DE60017FABC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3AAA3A372475A1DD00954D5C /* LaunchScreen */,
 				3AE4E626246DBF12004C4D38 /* Root */,
 				3AA12728232ABB3C004206E5 /* Guide */,
 				3AD068942358ECD2003D30A6 /* Navigation */,
@@ -1270,6 +1284,7 @@
 				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
 				3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */,
 				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
+				3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */,
 				3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */,
 				3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */,
 				3A663A28246800B200472B75 /* ChatCell.xib in Resources */,
@@ -1504,6 +1519,7 @@
 				3A9F9A72237709B300022C38 /* BlockedViewController.swift in Sources */,
 				3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */,
 				3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */,
+				3AAA3A392475A20100954D5C /* LaunchScreenView.swift in Sources */,
 				3ACD2C7A240C2E620017FABC /* CoreDataStack.swift in Sources */,
 				3A663A2E2468028B00472B75 /* GuideChatPresenter.swift in Sources */,
 				3A47D682230F217200B2B200 /* KeychainService.swift in Sources */,

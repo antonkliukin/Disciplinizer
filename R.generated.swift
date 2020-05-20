@@ -900,7 +900,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `CatStoreCollectionCell`.
     static let catStoreCollectionCell = _R.nib._CatStoreCollectionCell()
@@ -914,6 +914,8 @@ struct R: Rswift.Validatable {
     static let guideModeSelecionView = _R.nib._GuideModeSelecionView()
     /// Nib `HistoryHeaderView`.
     static let historyHeaderView = _R.nib._HistoryHeaderView()
+    /// Nib `LaunchScreenView`.
+    static let launchScreenView = _R.nib._LaunchScreenView()
     /// Nib `MotivationView`.
     static let motivationView = _R.nib._MotivationView()
     /// Nib `SettingsCell`.
@@ -968,6 +970,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LaunchScreenView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.launchScreenView) instead")
+    static func launchScreenView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.launchScreenView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "MotivationView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.motivationView) instead")
     static func motivationView(_: Void = ()) -> UIKit.UINib {
@@ -1005,6 +1015,10 @@ struct R: Rswift.Validatable {
 
     static func historyHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HistoryHeaderView? {
       return R.nib.historyHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HistoryHeaderView
+    }
+
+    static func launchScreenView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.launchScreenView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func motivationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -3261,6 +3275,7 @@ struct _R: Rswift.Validatable {
       try _ChallengeParameterView.validate()
       try _GuideMessageView.validate()
       try _GuideModeSelecionView.validate()
+      try _LaunchScreenView.validate()
       try _MotivationView.validate()
     }
 
@@ -3352,6 +3367,25 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HistoryHeaderView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HistoryHeaderView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LaunchScreenView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "LaunchScreenView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "launch_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_cat' is used in nib 'LaunchScreenView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "launch_title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_title' is used in nib 'LaunchScreenView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "CTBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlue' is used in storyboard 'LaunchScreenView', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}

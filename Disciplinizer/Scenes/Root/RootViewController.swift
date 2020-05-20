@@ -11,7 +11,7 @@ import UIKit
 var rootVC = RootViewController()
 
 class RootViewController: UIViewController {
-    private var stubView = UIView()
+    private var stubView = LaunchScreenView()
     private var isReady = false
     
     override func viewDidLoad() {
