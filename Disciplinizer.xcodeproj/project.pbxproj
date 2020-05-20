@@ -1855,7 +1855,7 @@
 			};
 			name = Prod;
 		};
-		3AE4E623246C4899004C4D38 /* Stage */ = {
+		3AE4E623246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1915,9 +1915,9 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Stage;
+			name = Dev;
 		};
-		3AE4E624246C4899004C4D38 /* Stage */ = {
+		3AE4E624246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */;
 			buildSettings = {
@@ -1938,9 +1938,9 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Stage;
+			name = Dev;
 		};
-		3AE4E625246C4899004C4D38 /* Stage */ = {
+		3AE4E625246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1960,7 +1960,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Disciplinizer.app/Disciplinizer";
 			};
-			name = Stage;
+			name = Dev;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1969,7 +1969,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A47D668230F18FC00B2B200 /* Test */,
-				3AE4E623246C4899004C4D38 /* Stage */,
+				3AE4E623246C4899004C4D38 /* Dev */,
 				3A47D669230F18FC00B2B200 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1979,7 +1979,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A47D66B230F18FC00B2B200 /* Test */,
-				3AE4E624246C4899004C4D38 /* Stage */,
+				3AE4E624246C4899004C4D38 /* Dev */,
 				3A47D66C230F18FC00B2B200 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1989,7 +1989,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3ACD2C8C240CD6210017FABC /* Test */,
-				3AE4E625246C4899004C4D38 /* Stage */,
+				3AE4E625246C4899004C4D38 /* Dev */,
 				3ACD2C8D240CD6210017FABC /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;

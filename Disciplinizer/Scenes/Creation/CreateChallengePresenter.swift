@@ -181,10 +181,12 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 assertionFailure()
                 return
             }
+            
+            let duration = Config.shared.devDurationInMinutes() ?? self.selectedDurationInMinutes
 
             let challengeParameters = ChallengeParameters(startDate: Date(),
                                                           finishDate: nil,
-                                                          durationInMinutes: self.selectedDurationInMinutes,
+                                                          durationInMinutes: duration,
                                                           isSuccess: false,
                                                           motivationalItem: item)
 

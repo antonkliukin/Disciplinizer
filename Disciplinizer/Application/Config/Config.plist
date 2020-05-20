@@ -9,12 +9,14 @@
 		<key>adUnitID</key>
 		<string>ca-app-pub-6894098236140382/9379068244</string>
 	</dict>
-	<key>Stage</key>
+	<key>Dev</key>
 	<dict>
 		<key>deviceCheckBaseURL</key>
 		<string>https://api.development.devicecheck.apple.com/v1/</string>
 		<key>adUnitID</key>
 		<string>ca-app-pub-3940256099942544/1712485313</string>
+		<key>testDurationInMinutes</key>
+		<string>1</string>
 	</dict>
 	<key>Test</key>
 	<dict>

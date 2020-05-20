@@ -14,13 +14,15 @@ final class Config {
     }
 
     fileprivate enum Configuration: String {
-        case debug = "Test"
-        case release = "Prod"
+        case dev = "Dev"
+        case test = "Test"
+        case prod = "Prod"
     }
 
     fileprivate enum ConfigurationKey: String {
         case deviceCheckBaseURL
         case adUnitID
+        case testDurationInMinutes
     }
 
     static let shared = Config()
@@ -64,6 +66,7 @@ final class Config {
 
         configs[.deviceCheckBaseURL] = deviceCheckBaseURL
         configs[.adUnitID] = adUnitID
+        configs[.testDurationInMinutes] = dict[ConfigurationKey.testDurationInMinutes.rawValue]
     }
 }
 
@@ -74,5 +77,11 @@ extension Config {
     
     func getAdUnitID() -> String {
         return configs[.adUnitID]!
+    }
+    
+    func devDurationInMinutes() -> Int? {
+        guard let duration = configs[.testDurationInMinutes] else { return nil }
+        
+        return Int(duration)
     }
 }

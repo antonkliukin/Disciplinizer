@@ -157,7 +157,7 @@
 "history.noHistory" = "Пока нет истории";
 "history.today" = "Сегодня";
 "history.bestScore" = "Лучший результат";
-"history.clear" = "Отчистить";
+"history.clear" = "Очистить";
 "history.alert.title" = "Вы точно хотите удалить историю?";
 "history.alert.description" = "После удаления ее невозможно будет восстановить";
 "history.alert.clear" = "Удалить";
