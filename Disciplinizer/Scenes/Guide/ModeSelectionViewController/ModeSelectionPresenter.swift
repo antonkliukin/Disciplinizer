@@ -44,12 +44,7 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     
     private func getPaidItem() {
         motivationalItemParameterUseCase.getPaid { (result) in
-            guard let item = try? result.get() else {
-                assertionFailure()
-                return
-            }
-            
-            self.paidItem = item
+            self.paidItem = try? result.get()
         }
     }
     
@@ -75,10 +70,7 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     }
     
     func didTapCatMode() {
-        if let item = self.paidItem {
-            self.selectedItem = item
-        }
-        
+        selectedItem = paidItem ?? .ad
         view?.changeCatModeViewState(.selected)
         view?.changeTimeModeViewState(.unselected)
         view?.display(message: Strings.guideCatMotivationMessage())
