@@ -3417,7 +3417,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Ad', but couldn't be loaded.") }
         }
         if _R.storyboard.ad().adViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'adViewController' could not be loaded from storyboard 'Ad' as 'AdViewController'.") }
       }
@@ -3459,7 +3458,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "crying_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crying_cat' is used in storyboard 'Blocked', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'Blocked', but couldn't be loaded.") }
           if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'Blocked', but couldn't be loaded.") }
         }
         if _R.storyboard.blocked().blockedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blockedViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }

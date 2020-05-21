@@ -90,7 +90,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="CTWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3fv-Rq-llR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zmj-U1-V5h" secondAttribute="leading" constant="20" id="4ct-xH-T17"/>
                             <constraint firstItem="zmj-U1-V5h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3fv-Rq-llR" secondAttribute="trailing" constant="20" id="5nc-mx-axc"/>
@@ -120,9 +120,6 @@
     </scenes>
     <resources>
         <image name="crying_cat" width="116" height="116"/>
-        <namedColor name="CTWhite">
-            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="darkBlueText">
             <color red="0.16078431372549021" green="0.31372549019607843" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

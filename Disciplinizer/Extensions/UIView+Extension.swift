@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     
     func addShadow(color: UIColor = .black,
-                   alpha: Float = 0.08,
+                   alpha: Float = 0.15,
                    x: CGFloat = 0,
                    y: CGFloat = 4,
                    blur: CGFloat = 15,

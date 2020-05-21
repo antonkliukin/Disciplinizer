@@ -192,6 +192,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.dev.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.dev.xcconfig"; sourceTree = "<group>"; };
 		3A008BD3231F93CA00B9286B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BD5231F93FA00B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BDB231F965500B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1160,6 +1161,7 @@
 				4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */,
 				B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */,
 				A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */,
+				22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1340,7 +1342,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1919,7 +1921,7 @@
 		};
 		3AE4E624246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */;
+			baseConfigurationReference = 22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
