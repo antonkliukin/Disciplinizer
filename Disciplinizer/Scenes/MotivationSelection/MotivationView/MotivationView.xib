@@ -20,6 +20,7 @@
                 <outlet property="mainView" destination="SdQ-Ku-r88" id="Bjl-6o-Qd5"/>
                 <outlet property="motivationDescription" destination="L9R-N9-Plr" id="GMl-ak-h1s"/>
                 <outlet property="motivationDescriptionTitle" destination="SUP-Gf-X6w" id="tnF-f5-JEu"/>
+                <outlet property="motivationTitleBackgroundView" destination="lNB-pH-im1" id="yuF-NO-8Sd"/>
                 <outlet property="motivationTitleLabel" destination="RS7-aK-Rpt" id="0cU-RP-cfW"/>
                 <outlet property="priceLabel" destination="wwi-uR-ftG" id="VRm-1q-u8S"/>
             </connections>
@@ -125,17 +126,6 @@
                         <constraint firstAttribute="trailing" secondItem="G1l-lQ-cPT" secondAttribute="trailing" id="r0g-32-N6g"/>
                     </constraints>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS7-aK-Rpt">
-                    <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
-                    <color key="backgroundColor" name="LightGrey"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="9kK-KG-nCo"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Ayv-OS-ClS"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-Xf-QDm" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
                     <rect key="frame" x="231.66666666666663" y="395" width="140" height="40"/>
                     <color key="backgroundColor" name="LightGrey"/>
@@ -157,6 +147,27 @@
                     <color key="textColor" name="redText"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNB-pH-im1">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS7-aK-Rpt">
+                            <rect key="frame" x="8" y="0.0" width="74" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="lightGrey"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Ef8-mr-DBM"/>
+                        <constraint firstAttribute="height" constant="30" id="KhY-2u-qR1"/>
+                        <constraint firstItem="RS7-aK-Rpt" firstAttribute="leading" secondItem="lNB-pH-im1" secondAttribute="leading" constant="8" id="PcJ-PQ-g4P"/>
+                        <constraint firstAttribute="trailing" secondItem="RS7-aK-Rpt" secondAttribute="trailing" constant="8" id="efI-Qp-lrq"/>
+                        <constraint firstAttribute="bottom" secondItem="RS7-aK-Rpt" secondAttribute="bottom" id="lfq-aj-fz7"/>
+                        <constraint firstItem="RS7-aK-Rpt" firstAttribute="top" secondItem="lNB-pH-im1" secondAttribute="top" id="pIV-s3-YwL"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -165,11 +176,11 @@
                 <constraint firstItem="OWi-fQ-So4" firstAttribute="top" secondItem="SdQ-Ku-r88" secondAttribute="bottom" priority="250" constant="8" id="5To-IA-IIr"/>
                 <constraint firstItem="OWi-fQ-So4" firstAttribute="top" secondItem="y2a-Xf-QDm" secondAttribute="bottom" priority="750" constant="8" id="Nnn-qW-ENv"/>
                 <constraint firstItem="SdQ-Ku-r88" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="POa-ac-D7q"/>
-                <constraint firstItem="RS7-aK-Rpt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iEp-5W-3Ln"/>
-                <constraint firstItem="RS7-aK-Rpt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="jHQ-ns-AZT"/>
+                <constraint firstItem="lNB-pH-im1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZVA-IC-Vei"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OWi-fQ-So4" secondAttribute="trailing" constant="30" id="kah-3E-8VZ"/>
-                <constraint firstItem="SdQ-Ku-r88" firstAttribute="top" secondItem="RS7-aK-Rpt" secondAttribute="bottom" constant="-15" id="li2-mJ-PTP"/>
+                <constraint firstItem="SdQ-Ku-r88" firstAttribute="top" secondItem="lNB-pH-im1" secondAttribute="bottom" constant="-15" id="li2-mJ-PTP"/>
                 <constraint firstItem="y2a-Xf-QDm" firstAttribute="centerX" secondItem="SdQ-Ku-r88" secondAttribute="centerX" id="mTn-V4-QJp"/>
+                <constraint firstItem="lNB-pH-im1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="up7-2a-VOO"/>
                 <constraint firstAttribute="trailing" secondItem="SdQ-Ku-r88" secondAttribute="trailing" constant="30" id="xGk-Vt-ocx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="y2a-Xf-QDm" secondAttribute="bottom" id="xMt-0r-VZg"/>
             </constraints>
@@ -181,6 +192,9 @@
     <resources>
         <image name="no_cat" width="93" height="96"/>
         <namedColor name="LightGrey">
+            <color red="0.85098039215686272" green="0.87450980392156863" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGrey">
             <color red="0.85098039215686272" green="0.87450980392156863" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="redText">

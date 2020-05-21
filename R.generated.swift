@@ -240,22 +240,8 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 28 colors.
+  /// This `R.color` struct is generated, and contains static references to 21 colors.
   struct color {
-    /// Color `AppColor`.
-    static let appColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColor")
-    /// Color `CTBlack`.
-    static let ctBlack = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTBlack")
-    /// Color `CTBlue`.
-    static let ctBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTBlue")
-    /// Color `CTGray`.
-    static let ctGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTGray")
-    /// Color `CTOrange`.
-    static let ctOrange = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTOrange")
-    /// Color `CTPurple`.
-    static let ctPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTPurple")
-    /// Color `CTWhite`.
-    static let ctWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "CTWhite")
     /// Color `LightGreyText`.
     static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
     /// Color `NavigationItemSelected`.
@@ -298,69 +284,6 @@ struct R: Rswift.Validatable {
     static let purple = Rswift.ColorResource(bundle: R.hostingBundle, name: "purple")
     /// Color `redText`.
     static let redText = Rswift.ColorResource(bundle: R.hostingBundle, name: "redText")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "AppColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func appColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.appColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTBlack", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctBlack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctBlack, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTBlue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctBlue, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTGray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctGray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTOrange", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctOrange(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctOrange, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTPurple", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctPurple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctPurple, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "CTWhite", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func ctWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.ctWhite, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "LightGreyText", bundle: ..., traitCollection: ...)`
@@ -3403,6 +3326,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "no_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'no_cat' is used in nib 'MotivationView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "LightGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGrey' is used in storyboard 'MotivationView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightGrey' is used in storyboard 'MotivationView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "redText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'redText' is used in storyboard 'MotivationView', but couldn't be loaded.") }
         }
       }

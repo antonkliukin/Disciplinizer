@@ -46,8 +46,8 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     func configureStartButton() {
         startButton.roundCorners(corners: .all, radius: startButton.bounds.width / 2)
         startButton.addShadow(alpha: 0.15, blur: 4)
+        startButton.titleLabel?.adjustsFontSizeToFitWidth = true
 
-        
         startButtonShadowView.roundCorners(corners: .all, radius: startButtonShadowView.bounds.width / 2)
         startButtonShadowView.addShadow(alpha: 0.15, blur: 4)
     }

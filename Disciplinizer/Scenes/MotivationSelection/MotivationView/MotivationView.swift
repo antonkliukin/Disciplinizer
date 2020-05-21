@@ -17,6 +17,7 @@ enum MotivationViewState {
 class MotivationView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var motivationTitleBackgroundView: UIView!
     @IBOutlet weak var motivationTitleLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var motivationDescriptionTitle: UILabel!
@@ -58,6 +59,7 @@ class MotivationView: UIView {
                    info: String = "",
                    actionButtonTitle: String = "",
                    actionButtonAction: @escaping () -> Void = {}) {
+        motivationTitleBackgroundView.isHidden = title.isEmpty
         motivationTitleLabel.isHidden = title.isEmpty
         motivationTitleLabel.text = title
                 
@@ -88,5 +90,6 @@ class MotivationView: UIView {
     
     private func setupMotivationTitleLabel() {
         motivationTitleLabel.roundCorners(radius: motivationTitleLabel.bounds.size.height / 2)
+        motivationTitleBackgroundView.roundCorners(radius: motivationTitleBackgroundView.bounds.size.height / 2)
     }
 }
