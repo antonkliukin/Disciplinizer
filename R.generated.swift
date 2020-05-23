@@ -1089,7 +1089,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let catStoreDescription = Rswift.StringResource(key: "catStore.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: During this time you're not allowed to use you phone.
+      /// en translation: During this time you're not allowed to use your phone.
       ///
       /// Locales: ru, en
       static let guideMessage5 = Rswift.StringResource(key: "guide.message5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1173,7 +1173,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideTimeMotivationMessage = Rswift.StringResource(key: "guide.timeMotivation.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: If you start using your phone - you will have to watch 3 ads!
+      /// en translation: If you start using your phone - you will have to watch 3 ads in a row!
       ///
       /// Locales: ru, en
       static let guideMessage13 = Rswift.StringResource(key: "guide.message13", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1873,7 +1873,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("catStore.description", bundle: bundle, comment: "")
       }
 
-      /// en translation: During this time you're not allowed to use you phone.
+      /// en translation: During this time you're not allowed to use your phone.
       ///
       /// Locales: ru, en
       static func guideMessage5(preferredLanguages: [String]? = nil) -> String {
@@ -2188,7 +2188,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.timeMotivation.message", bundle: bundle, comment: "")
       }
 
-      /// en translation: If you start using your phone - you will have to watch 3 ads!
+      /// en translation: If you start using your phone - you will have to watch 3 ads in a row!
       ///
       /// Locales: ru, en
       static func guideMessage13(preferredLanguages: [String]? = nil) -> String {

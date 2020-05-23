@@ -714,7 +714,7 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		3A6395E52467C3A200E04E95 /* ModeSelectionViewController */ = {
+		3A6395E52467C3A200E04E95 /* GuideModeSelectionViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3A6395EA2467C41900E04E95 /* ModeSelectoinConfigurator.swift */,
@@ -722,7 +722,7 @@
 				3A6395E62467C3CE00E04E95 /* ModeSelectionViewController.swift */,
 				3A1F533624672EEC00298045 /* GuideModeSelecionView */,
 			);
-			path = ModeSelectionViewController;
+			path = GuideModeSelectionViewController;
 			sourceTree = "<group>";
 		};
 		3A653DB1241A10B400BE613C /* Music */ = {
@@ -799,6 +799,7 @@
 		3A663A212467FF1100472B75 /* GuideChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3A663A1C2467C8AB00472B75 /* GuideMessageView */,
 				3A663A222468000A00472B75 /* ChatCollectionView */,
 				3A663A292468027500472B75 /* GuideChatViewController.swift */,
 				3A663A2B2468028000472B75 /* GuideChatConfigurator.swift */,
@@ -912,8 +913,7 @@
 			isa = PBXGroup;
 			children = (
 				3A663A212467FF1100472B75 /* GuideChatViewController */,
-				3A663A1C2467C8AB00472B75 /* GuideMessageView */,
-				3A6395E52467C3A200E04E95 /* ModeSelectionViewController */,
+				3A6395E52467C3A200E04E95 /* GuideModeSelectionViewController */,
 				3AA12729232ABC01004206E5 /* GuideViewController.swift */,
 				3AA1272F232ABD15004206E5 /* GuidePresenter.swift */,
 				3ACD2C7E240C2EB00017FABC /* Guide.storyboard */,
@@ -1342,7 +1342,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1774,7 +1774,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
@@ -1797,7 +1797,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1925,7 +1925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
