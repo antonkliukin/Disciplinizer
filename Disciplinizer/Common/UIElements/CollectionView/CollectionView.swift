@@ -45,9 +45,6 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
         registerClass(Cell.self)
         delegate = self
         dataSource = self
-        
-        // TODO: Delete
-        // contentInsetAdjustmentBehavior = .never
     }
 
     public required init?(coder aDecoder: NSCoder) {

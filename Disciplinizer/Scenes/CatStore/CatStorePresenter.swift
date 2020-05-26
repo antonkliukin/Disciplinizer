@@ -77,7 +77,6 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         positiveActionTitle: Strings.alertActionBack(),
                                         positiveAction: {
                                             if self.view?.isPresented ?? false {
-                                                // TODO: here
                                                 self.view?.router?.dismissPresenting(animated: true, completion: nil)
                                             } else {
                                                 self.view?.router?.pop(animated: true, toRoot: true)

@@ -80,7 +80,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                                         self.invalidateTimer()
 
                                         self.saveFinishedChallenge(self.challenge, withResult: .lose)
-                                        // TODO: here
+
                                         self.view?.router?.dismiss()
         })
         
@@ -98,7 +98,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
     
     func didTapBackButton() {
-        // TODO: here
         view?.router?.dismiss()
     }
 
