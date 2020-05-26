@@ -60,7 +60,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cGm-fB-YAn" secondAttribute="bottom" id="BQp-t4-mkG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cGm-fB-YAn" secondAttribute="bottom" constant="5" id="BQp-t4-mkG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cGm-fB-YAn" secondAttribute="trailing" constant="10" id="DD2-6t-1we"/>
                 <constraint firstItem="cGm-fB-YAn" firstAttribute="top" secondItem="r3x-FG-LuU" secondAttribute="bottom" constant="10" id="SXX-8L-0ue"/>
                 <constraint firstItem="cGm-fB-YAn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="e85-Yf-QUU"/>

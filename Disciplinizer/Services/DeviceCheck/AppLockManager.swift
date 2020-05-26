@@ -93,7 +93,7 @@ final class AppLockManager: AppLockManagerProtocol {
             LockStateRequestManager.shared.updateBits(model: model, completionHandler: { (result) in
                 switch result {
                 case .success(let response):
-                    print(response)
+                    print(response as Any)
                 case .failure(let error):
                     print(error)
                 }

@@ -66,8 +66,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     }
     
     func set(viewTitle: String) {
-        title = viewTitle
-        titleLabel.text = title
+        titleLabel.text = viewTitle
     }
     
     func set(todayScoreTitle: String, bestScoreTitle: String) {

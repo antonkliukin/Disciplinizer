@@ -14,13 +14,7 @@ protocol MotivationSelectionViewProtocol: ViewProtocol {
     func changeSetButtonTitle(title: String)
     func changeSetButtonState(isResponsive: Bool)
     func selectIndex(_ index: Int)
-    func configureMotivationView(title: String,
-                                 itemImage: UIImage,
-                                 descriptionTitle: String,
-                                 description: String,
-                                 info: String,
-                                 actionButtonTitle: String,
-                                 actionButtonAction: @escaping () -> Void)
+    func displayMotivationView(withItem item: MotivationalItem, didTapActionButton: @escaping () -> Void)
 }
 
 class MotivatonSelectionViewController: UIViewController, MotivationSelectionViewProtocol {
@@ -48,16 +42,8 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
+    }
         
-        presenter.viewWillAppear()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-                
-        presenter.viewDidAppear()
-    }
-    
     func set(viewTitle: String) {
         titleLabel.text = viewTitle
     }
@@ -88,20 +74,8 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         setButton.isResponsive = isResponsive
     }
     
-    func configureMotivationView(title: String,
-                                 itemImage: UIImage,
-                                 descriptionTitle: String,
-                                 description: String,
-                                 info: String,
-                                 actionButtonTitle: String,
-                                 actionButtonAction: @escaping () -> Void) {
-        motivationItemView.configure(title: title,
-                                     itemImage: itemImage,
-                                     descriptionTitle: descriptionTitle,
-                                     description: description,
-                                     info: info,
-                                     actionButtonTitle: actionButtonTitle,
-                                     actionButtonAction: actionButtonAction)
+    func displayMotivationView(withItem item: MotivationalItem, didTapActionButton: @escaping () -> Void) {
+        motivationItemView.configure(withItem: item, didTapActionButton: didTapActionButton)
     }
     
     func selectIndex(_ index: Int) {

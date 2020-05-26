@@ -15,9 +15,6 @@ protocol PageNavigationConfiguratorProtocol {
 class PageNavigationConfigurator: PageNavigationConfiguratorProtocol {
 
     func configure(pageNavigationViewController: PageNavigationViewController) {
-        let viewContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        let coreDataChallengesGateway = CoreDataChallengesGateway(viewContext: viewContext)
-
         let challengeParameterGateway = ChallengeParametersPersistenceGateway()
         let motivationParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParameterGateway)
 

@@ -10,7 +10,7 @@ import UIKit
 
 var rootVC = RootViewController()
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, ViewProtocol {
     private var stubView = LaunchScreenView()
     private var isReady = false
     
@@ -60,7 +60,7 @@ class RootViewController: UIViewController {
     private func checkIfFirstLaunch() {
         let isFirstLaunchStampExist = UserDefaults.standard.bool(forKey: "isFirstLaunch")
         if isFirstLaunchStampExist == false {
-            present(Controller.guideChat(), animated: false, completion: {
+            router?.present(Controller.guideChat(), animated: false, forcePresent: false, completion: {
                 self.stubView.removeFromSuperview()
             })
         } else {

@@ -8,21 +8,16 @@
 
 import UIKit
 
-// MARK: - Current Challenge View Protocol
-
 protocol CurrentChallengeViewProtocol: ViewProtocol {
-    func set(timerTitle: String)
-    func set(timerDescription: String)
-    func set(giveUpButtonTitle: String)
-    func set(congratsTitleLabel: String)
-    func set(backToMenuButtonTitle: String)
+    func display(timerTitle: String)
+    func display(timerDescription: String)
+    func display(giveUpButtonTitle: String)
+    func display(congratsTitle: String)
+    func display(backToMenuButtonTitle: String)
     func hideGiveUpButton()
     func hideMusicSelectionButton()
-    var isDeviceLocked: Bool { get }
-    func updateTimer(hours: String, minutes: String, seconds: String)
+    func updateTimer(timeUnits: TimeUnits)
 }
-
-// MARK: - Current Challenge View Controller
 
 final class CurrentChallengeViewController: UIViewController, CurrentChallengeViewProtocol {
     @IBOutlet weak var timerTitleLabel: UILabel!
@@ -31,6 +26,7 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
+    
     @IBOutlet weak var giveUpButton: MainButton!
     @IBOutlet weak var musicSelectionButton: UIButton!
     @IBOutlet weak var backToMenuButton: MainButton!
@@ -39,10 +35,6 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     var presenter: CurrentChallengePresenterProtocol?
     var configurator: CurrentChallengeConfiguratorProtocol?
 
-    var isDeviceLocked: Bool {
-        UIScreen.main.brightness == 0.0
-    }
-
     private var notifCenter = NotificationCenter.default
 
     override func viewDidLoad() {
@@ -50,11 +42,11 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
 
         configurator?.configure(currentChallengeViewController: self)
         
-        setupUI()
+        configureUI()
+        
+        addAppDelegateObservers()
         
         presenter?.viewDidLoad()
-
-        addAppDelegateObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,24 +55,24 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         presenter?.viewDidAppear()
     }
     
-    func set(timerTitle: String) {
+    func display(timerTitle: String) {
         timerTitleLabel.text = timerTitle
     }
     
-    func set(timerDescription: String) {
+    func display(timerDescription: String) {
         timerDescriptionLabel.text = timerDescription
     }
     
-    func set(giveUpButtonTitle: String) {
+    func display(giveUpButtonTitle: String) {
         giveUpButton.setTitle(giveUpButtonTitle, for: .normal)
     }
     
-    func set(congratsTitleLabel: String) {
-        congratsLabel.text = congratsTitleLabel
+    func display(congratsTitle: String) {
+        congratsLabel.text = congratsTitle
         congratsLabel.isHidden = false
     }
     
-    func set(backToMenuButtonTitle: String) {
+    func display(backToMenuButtonTitle: String) {
         backToMenuButton.setTitle(backToMenuButtonTitle, for: .normal)
         backToMenuButton.isHidden = false
     }
@@ -93,7 +85,13 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         musicSelectionButton.isHidden = true
     }
     
-    private func setupUI() {
+    func updateTimer(timeUnits: TimeUnits) {
+        hoursLabel.text = timeUnits.hours
+        minutesLabel.text = timeUnits.minutes
+        secondsLabel.text = timeUnits.seconds
+    }
+    
+    private func configureUI() {
         giveUpButton.roundCorners(corners: .all, radius: giveUpButton.bounds.size.height / 2)
         musicSelectionButton.roundCorners(corners: .all, radius: musicSelectionButton.bounds.size.height / 2)
     }
@@ -102,17 +100,14 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
         presenter?.didTapStopChallenge()
     }
     
-    
     @IBAction private func didTapMusicSelectionButton(_ sender: Any) {
         presenter?.didTapMusicSelection()
     }
     
-    func updateTimer(hours: String, minutes: String, seconds: String) {
-        hoursLabel.text = hours
-        minutesLabel.text = minutes
-        secondsLabel.text = seconds
+    @IBAction private func didTapBackButton(_ sender: Any) {
+        presenter?.didTapBackButton()
     }
-            
+                
     private func addAppDelegateObservers() {
         notifCenter.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notifCenter.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -134,9 +129,5 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
 
     @objc private func willTerminate() {
         presenter?.didCloseApp()
-    }
-    
-    @IBAction func didTapBackButton(_ sender: Any) {
-        presenter?.didTapBackButton()
     }
 }

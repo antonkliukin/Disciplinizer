@@ -9,9 +9,9 @@
 "guide.motivationSelection.title" = "Выбери мотивацию";
 "guide.motivationSelection.description" = "Какой режим даст тебе больше мотивации?";
 "guide.catMotivation.title" = "сохранить питомца";
-"guide.catMotivation.description" = "Если ты проиграешь - твой питомец уйдет";
+"guide.catMotivation.description" = "Если проиграешь - твой питомец уйдет";
 "guide.timeMotivation.title" = "сохранить время";
-"guide.timeMotivation.description" = "Если ты проиграешь, то будешь обязать посмотреть 3 рекламных ролика";
+"guide.timeMotivation.description" = "Если проиграешь, то будешь обязан посмотреть 3 рекламных ролика";
 "guide.catMotivation.message" = "Мы дарим тебе одного бесплатного питомца. Если он уйдет, ты сможешь купить нового.";
 "guide.timeMotivation.message" = "Если тебе не нравится реклама, то необходимость просмотра рекламных роликов в случае проигрыша будет поддерживать твою мотивацию!";
 
@@ -45,16 +45,6 @@
 "notifications.win.body" = "Вы смогли не использовать телефон в течение запланированного времени!";
 
 //******************************************************************************
-// Songs Names
-//******************************************************************************
-"songNames.mettingSun" = "Metting The Sun";
-"songNames.floatingPoint" = "Floating Point";
-"songNames.leavingWonderland" = "Leaving Wonderland";
-"songNames.distantPlace" = "Distant Place";
-"songNames.pillowTalk" = "Pillow Talk";
-"songNames.longDays" = "Long Days";
-
-//******************************************************************************
 // Lose
 //******************************************************************************
 "lose.cat.title" = "Твой питомец покинул тебя";
@@ -64,7 +54,7 @@
 
 "lose.ad.title" = "Потеря времени - твое наказание";
 "lose.ad.description" = "Просмотри 3 рекламныx ролика";
-"lose.ad.mainButton" = "Посмотреть 3 рекламныx ролка";
+"lose.ad.mainButton" = "Посмотреть 3 рекламныx ролика";
 "lose.ad.secondaryButton" = "Купить питомца вместо просмотра";
 
 //******************************************************************************
@@ -137,7 +127,7 @@
 //******************************************************************************
 // Cat Store
 //******************************************************************************
-"catStore.title" = "Выбери нового кота";
+"catStore.title" = "Выбери нового питомца";
 "catStore.description" = "Не сделай его грустным снова";
 "alert.title.success" = "Успешно!";
 "alert.message.success" = "Теперь у Вас новый питомец";

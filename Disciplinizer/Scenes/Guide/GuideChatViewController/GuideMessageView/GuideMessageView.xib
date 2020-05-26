@@ -26,8 +26,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-AS-O9A">
                     <rect key="frame" x="45" y="0.0" width="444" height="182"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We give you 1 free cat. If a cat will leave, you can buy another one." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-de-g0h">
-                            <rect key="frame" x="10" y="10" width="424" height="162"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We give you 1 free cat. If a cat will leave, you can buy another one." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-de-g0h">
+                            <rect key="frame" x="10" y="0.0" width="424" height="182"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -37,8 +37,8 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="tvZ-de-g0h" secondAttribute="trailing" constant="10" id="X5g-Rb-eqW"/>
                         <constraint firstItem="tvZ-de-g0h" firstAttribute="centerY" secondItem="hdG-AS-O9A" secondAttribute="centerY" id="e6o-ca-aPp"/>
-                        <constraint firstItem="tvZ-de-g0h" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="top" constant="10" id="kGB-IG-gUg"/>
-                        <constraint firstAttribute="bottom" secondItem="tvZ-de-g0h" secondAttribute="bottom" constant="10" id="q1x-ge-gdh"/>
+                        <constraint firstItem="tvZ-de-g0h" firstAttribute="top" secondItem="hdG-AS-O9A" secondAttribute="top" id="kGB-IG-gUg"/>
+                        <constraint firstAttribute="bottom" secondItem="tvZ-de-g0h" secondAttribute="bottom" id="q1x-ge-gdh"/>
                         <constraint firstItem="tvZ-de-g0h" firstAttribute="leading" secondItem="hdG-AS-O9A" secondAttribute="leading" constant="10" id="suZ-no-r96"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

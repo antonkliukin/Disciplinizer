@@ -28,11 +28,8 @@ class ModeSelectionViewController: UIViewController, ModeSelectionViewProtocol {
     @IBOutlet weak var messageView: GuideMessageView!
     @IBOutlet weak var messageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var nextButton: MainButton!
-    
-    
     @IBOutlet weak var stackView: UIStackView!
     
-        
     var presenter: ModeSelectionPresenterProtocol!
     var configurator: ModeSelectoinConfiguratorProtocol?
     

@@ -86,20 +86,9 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatStoreCollectionCell.id, for: indexPath)
         
         if let cell = cell as? CatStoreCollectionCell {
-            cell.catMotivationView.configure(title: item.title,
-                                             itemImage: item.image,
-                                             descriptionTitle: "",
-                                             description: "",
-                                             actionButtonTitle: Strings.buyAction()) {
-                                                self.presenter.didTapBuyButton(onItemWithIndex: indexPath.row)
-            }
-            
-            cell.catMotivationView.motivationTitleLabel.backgroundColor = item.color
-            cell.catMotivationView.actionButton.backgroundColor = item.color
-            cell.catMotivationView.actionButton.setTitleColor(item.textColor, for: .normal)
-            cell.catMotivationView.priceLabel.isHidden = false
-            cell.catMotivationView.priceLabel.textColor = item.priceColor
-            cell.catMotivationView.priceLabel.text = item.price.localizedPrice ?? "Price"
+            cell.configure(withItem: item, onBuyButtonTap: {
+                self.presenter.didTapBuyButton(onItemWithIndex: indexPath.item)
+            })
             cell.showBorder(indexPath.item == 0)
             
             return cell
@@ -110,19 +99,27 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
 }
 
 extension CatStoreViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 50, left: 0, bottom: 300, right: 0)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 210)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }

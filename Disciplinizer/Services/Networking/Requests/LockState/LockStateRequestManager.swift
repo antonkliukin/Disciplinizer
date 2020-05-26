@@ -57,7 +57,7 @@ class LockStateRequestManager {
                 } else {
                     completionHandler(.failure(.noInfoAboutDevice))
                 }
-            case .failure(_):
+            case .failure:
                 completionHandler(.failure(.noInfoAboutDevice))
             }
         }

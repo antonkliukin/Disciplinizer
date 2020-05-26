@@ -17,7 +17,7 @@ final class ChatCollectionView: CollectionView<ChatCell, ChatMessage> {
     init(sections: [[ChatMessage]]) {
         let layout = SideAnimationCollectionViewLayout()
         
-        super.init(sections: sections, layout: layout, cellReuseIdentifier: .identifier(ChatCell.id)) { (cell, model, indexPath, numberOfItemsInSection) in
+        super.init(sections: sections, layout: layout, cellReuseIdentifier: .identifier(ChatCell.id)) { (cell, model, _, _) in
             cell.configure(model.text)
             cell.messageView.changeState(model.text == "catSticker" ? .sticker : .text)
         }
@@ -27,9 +27,11 @@ final class ChatCollectionView: CollectionView<ChatCell, ChatMessage> {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
         var height: CGFloat = 110
-        let verticalPadding: CGFloat = 30
+        let verticalPadding: CGFloat = 20
         
         let text = sections[0][indexPath.item].text
         

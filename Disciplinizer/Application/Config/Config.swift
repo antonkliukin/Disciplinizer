@@ -23,6 +23,7 @@ final class Config {
         case deviceCheckBaseURL
         case adUnitID
         case testDurationInMinutes
+        case numberOfAds
     }
 
     static let shared = Config()
@@ -67,6 +68,7 @@ final class Config {
         configs[.deviceCheckBaseURL] = deviceCheckBaseURL
         configs[.adUnitID] = adUnitID
         configs[.testDurationInMinutes] = dict[ConfigurationKey.testDurationInMinutes.rawValue]
+        configs[.numberOfAds] = dict[ConfigurationKey.numberOfAds.rawValue]
     }
 }
 
@@ -83,5 +85,11 @@ extension Config {
         guard let duration = configs[.testDurationInMinutes] else { return nil }
         
         return Int(duration)
+    }
+    
+    func numberOfAds() -> Int? {
+        guard let numberOfAds = configs[.numberOfAds] else { return nil }
+        
+        return Int(numberOfAds)
     }
 }

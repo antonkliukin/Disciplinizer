@@ -6,7 +6,7 @@
 //  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CatStorePresenterProtocol {
     func viewDidLoad()
@@ -17,6 +17,8 @@ protocol CatStorePresenterProtocol {
 class CatStorePresenter: CatStorePresenterProtocol {
     weak var view: CatStoreViewProtocol?
     private var motivationParameterUseCase: MotivationParameterUseCaseProtocol
+    
+    private var loadingVC: UIViewController?
         
     private var items: [MotivationalItem] {
         MotivationalItem.allCats
@@ -47,16 +49,17 @@ class CatStorePresenter: CatStorePresenterProtocol {
                 switch state {
                 case .purchasing:
                     let loading = Controller.loading()
+                    self.loadingVC = loading
                     self.view?.router?.present(loading)
                 case .purchased:
-                    self.view?.router?.dismiss()
-                                        
-                    self.finishPurchasing(forItem: item)
+                    self.loadingVC?.dismiss(animated: true, completion: {
+                        self.finishPurchasing(forItem: item)
+                    })
                 default:
                     assertionFailure()
                 }
             case .failure:
-                self.view?.router?.dismiss()
+                self.view?.router?.dismissPresenting(animated: true, completion: nil)
             }
         }
     }
@@ -65,7 +68,7 @@ class CatStorePresenter: CatStorePresenterProtocol {
         AppLockManager.shared.changeStateTo(.unlocked)
         KeychainService.appLockState = .unlocked
         
-        self.motivationParameterUseCase.addPaid(motivationalItem: item) { (result) in
+        self.motivationParameterUseCase.addPaid(motivationalItem: item) { (_) in
             
             self.motivationParameterUseCase.select(motivationalItem: item) { (_) in }
             
@@ -74,7 +77,8 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         positiveActionTitle: Strings.alertActionBack(),
                                         positiveAction: {
                                             if self.view?.isPresented ?? false {
-                                                self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+                                                // TODO: here
+                                                self.view?.router?.dismissPresenting(animated: true, completion: nil)
                                             } else {
                                                 self.view?.router?.pop(animated: true, toRoot: true)
                                             }

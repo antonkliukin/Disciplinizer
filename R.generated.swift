@@ -9,14 +9,14 @@ import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
-  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
+  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap { Locale(identifier: $0) } ?? Locale.current
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
 
   /// Find first language and bundle for which the table exists
   fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
     // Filter preferredLanguages to localizations, use first locale
     var languages = preferredLanguages
-      .map(Locale.init)
+      .map { Locale(identifier: $0) }
       .prefix(1)
       .flatMap { locale -> [String] in
         if hostingBundle.localizations.contains(locale.identifier) {
@@ -955,8 +955,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `CatStoreCell`.
+    static let catStoreCell: Rswift.ReuseIdentifier<CatStoreCollectionCell> = Rswift.ReuseIdentifier(identifier: "CatStoreCell")
     /// Reuse identifier `ChallengeCell`.
     static let challengeCell: Rswift.ReuseIdentifier<HistoryChallengeCell> = Rswift.ReuseIdentifier(identifier: "ChallengeCell")
     /// Reuse identifier `ChatCell`.
@@ -3195,6 +3197,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _CatStoreCollectionCell.validate()
       try _ChallengeParameterView.validate()
       try _GuideMessageView.validate()
       try _GuideModeSelecionView.validate()
@@ -3202,7 +3205,7 @@ struct _R: Rswift.Validatable {
       try _MotivationView.validate()
     }
 
-    struct _CatStoreCollectionCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+    struct _CatStoreCollectionCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = CatStoreCollectionCell
 
       let bundle = R.hostingBundle
@@ -3211,6 +3214,14 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CatStoreCollectionCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CatStoreCollectionCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "no_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'no_cat' is used in nib 'CatStoreCollectionCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "LightGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGrey' is used in storyboard 'CatStoreCollectionCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightGrey' is used in storyboard 'CatStoreCollectionCell', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}

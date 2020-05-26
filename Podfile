@@ -7,10 +7,11 @@ target 'Disciplinizer' do
   # Pods for Disciplinizer
   pod 'Alamofire', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
-  pod 'R.swift', '~> 5.0'
+  pod 'R.swift', '~> 5.2.0'
   pod 'SwiftySound', '~> 1.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'SwiftLint'
 
 end

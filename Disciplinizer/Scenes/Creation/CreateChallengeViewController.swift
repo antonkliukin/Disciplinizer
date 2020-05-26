@@ -53,8 +53,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     }
     
     func set(viewTitle: String) {
-        title = viewTitle
-        contentViewLabel.text = title
+        contentViewLabel.text = viewTitle
     }
     
     func set(startButtonTitle: String) {

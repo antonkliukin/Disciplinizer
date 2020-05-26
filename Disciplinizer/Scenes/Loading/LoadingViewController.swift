@@ -23,7 +23,12 @@ class LoadingViewController: UIViewController, LoadingViewProtocol {
         
         configurator.configure(loadingViewController: self)
         
-        activityIndicator.style = .whiteLarge
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .whiteLarge
+        } else {
+            activityIndicator.style = .white
+        }
+        
         activityIndicator.color = R.color.blueBackground()
     }
 }

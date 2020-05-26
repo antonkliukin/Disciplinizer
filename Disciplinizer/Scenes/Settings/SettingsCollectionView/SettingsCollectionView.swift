@@ -23,8 +23,12 @@ final class SettingsCollectionView: CollectionView<SettingsCell, SettingsSection
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SettingsSectionHeader", for: indexPath) as? SettingsSectionHeader {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                        withReuseIdentifier: "SettingsSectionHeader",
+                                                                        for: indexPath) as? SettingsSectionHeader {
             let title = SettingsSectionItem.headerTitle(forIndexPath: indexPath)
             header.titleLabel.text = title
             return header
@@ -33,8 +37,9 @@ final class SettingsCollectionView: CollectionView<SettingsCell, SettingsSection
         return UICollectionReusableView()
     }
     
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: flowLayout.itemSize.width, height: 40)
     }
 }
-

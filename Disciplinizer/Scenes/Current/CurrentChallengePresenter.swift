@@ -55,9 +55,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     func viewDidLoad() {
-        view?.set(timerTitle: Strings.currentTimerTitle())
-        view?.set(timerDescription: challenge.motivationalItem == .ad ? Strings.currentTimerAdDescription() : Strings.currentTimerCatDescription())
-        view?.set(giveUpButtonTitle: Strings.currentGiveUpButtonTitle())
+        view?.display(timerTitle: Strings.currentTimerTitle())
+        view?.display(timerDescription: challenge.motivationalItem == .ad ? Strings.currentTimerAdDescription() : Strings.currentTimerCatDescription())
+        view?.display(giveUpButtonTitle: Strings.currentGiveUpButtonTitle())
         
         setupMusicController()
 
@@ -80,8 +80,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                                         self.invalidateTimer()
 
                                         self.saveFinishedChallenge(self.challenge, withResult: .lose)
-                                        
-                                        self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+                                        // TODO: here
+                                        self.view?.router?.dismiss()
         })
         
         let alert = Controller.createAlert(alertModel: alertModel)
@@ -98,7 +98,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
     
     func didTapBackButton() {
-        self.view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+        // TODO: here
+        view?.router?.dismiss()
     }
 
     private func setupMusicController() {
@@ -106,12 +107,12 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         musicView = musicController
     }
 
-    private func convertSecondsToTimeString(_ timeInSeconds: Int) -> (hours: String, minutes: String, seconds: String) {
+    private func convertedToTimeUnits(timeInSeconds: Int) -> TimeUnits {
         let seconds = String(format: "%0.2d", timeInSeconds % 60)
         let minutes = String(format: "%0.2d", (timeInSeconds / 60) % 60)
         let hours = String(format: "%0.2d", timeInSeconds / 3600)
         
-        return (hours, minutes, seconds)
+        return TimeUnits(seconds: seconds, minutes: minutes, hours: hours)
     }
     
     @objc private func updateTimer() {
@@ -128,18 +129,6 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         if let timer = challengeTimer {
             timer.invalidate()
             challengeTimer = nil
-        }
-    }
-
-    private func isBackgroundLegal(handler: @escaping (Bool) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if !(self.view?.isDeviceLocked ?? false) {
-                NotificationManager.sendReturnToAppNotification()
-                handler(false)
-            } else {
-                print("Device was locked")
-                handler(true)
-            }
         }
     }
 
@@ -168,26 +157,16 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         let wasPowerPressed = timeSinceResign < 0.1
         
         if wasPowerPressed {
-            print("Background is legal")
+            print("> Background is legal")
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 if UIApplication.shared.applicationState == .background {
                     NotificationManager.sendReturnToAppNotification()
                     self.fireLoseTimer(withInterval: 10)
-                    print("Background is NOT legal. Lose timer has been started.")
+                    print("> Background is NOT legal. Lose timer has been started.")
                 }
             }
         }
-        
-        //         TODO: Legal BG check - Version 1
-        //        isBackgroundLegal { (isLegal) in
-        //            if isLegal {
-        //                print("Background is legal")
-//            } else {
-//                self.fireLoseTimer(withInterval: 10)
-//                print("Background is NOT legal. Lose timer has been started.")
-//            }
-//        }
     }
 
     func didReturnToApp() {
@@ -201,7 +180,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     private func start(_ challenge: Challenge) {
-        print("New challenge has been started")
+        print("> New challenge has been started")
 
         self.changeMutedPlaybackStateUseCase.startMutedPlayback { (_) in return }
 
@@ -237,19 +216,19 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                     AppLockManager.shared.changeStateTo(.locked)
                     KeychainService.appLockState = .locked
                     
-                    print("Lose, the app will be blocked until ad is viewed")
+                    print("> Lose, the app will be blocked until ad is viewed")
                 } else if isLose {
                     self.motivationParameterUseCase.deletePaid { (_) in }
                     self.motivationParameterUseCase.select(motivationalItem: .ad) { (_) in }
                     AppLockManager.shared.changeStateTo(.locked)
                     KeychainService.appLockState = .locked
 
-                    print("Lose without blocking")
+                    print("> Lose without blocking")
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.set(congratsTitleLabel: Strings.currentCongrats())
-                        self.view?.set(backToMenuButtonTitle: Strings.currentBackButtonTitle())
-                        self.view?.set(timerDescription: Strings.currentSuccessDescription())
+                        self.view?.display(congratsTitle: Strings.currentCongrats())
+                        self.view?.display(backToMenuButtonTitle: Strings.currentBackButtonTitle())
+                        self.view?.display(timerDescription: Strings.currentSuccessDescription())
                         self.view?.hideGiveUpButton()
                         self.view?.hideMusicSelectionButton()
                         
@@ -263,7 +242,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
     
     private func updateTimerView() {
-        let timeString = convertSecondsToTimeString(durationInSeconds)
-        view?.updateTimer(hours: timeString.hours, minutes: timeString.minutes, seconds: timeString.seconds)
+        let timeUnits = convertedToTimeUnits(timeInSeconds: durationInSeconds)
+        view?.updateTimer(timeUnits: timeUnits)
     }
 }

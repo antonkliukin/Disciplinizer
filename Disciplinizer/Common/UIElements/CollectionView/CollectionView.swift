@@ -33,7 +33,10 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
     }
 
     /// CellType class is automatically registered if CellReuse is .Identifier
-    public init(sections: [[Item]] = [], layout: UICollectionViewLayout, cellReuseIdentifier: CellReuse<Item> = .identifier("Item"), cellConfig: @escaping (Cell, Item, IndexPath, Int) -> Void) {
+    public init(sections: [[Item]] = [],
+                layout: UICollectionViewLayout,
+                cellReuseIdentifier: CellReuse<Item> = .identifier("Item"),
+                cellConfig: @escaping (Cell, Item, IndexPath, Int) -> Void) {
         self.sections = sections
         self.cellReuseIdentifier = cellReuseIdentifier
         self.cellConfig = cellConfig
@@ -83,7 +86,9 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
 
     // MARK: UICollectionViewDelegateFlowLayout
 
-    open func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+    open func collectionView(_ collectionView: UICollectionView,
+                             didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
+                             with coordinator: UIFocusAnimationCoordinator) {
         guard let indexPath = context.nextFocusedIndexPath,
             let cell = cellForItem(at: indexPath) as? Cell,
             let item = itemAtIndexPath(indexPath) else { return }
@@ -128,24 +133,32 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
         return cell
     }
 
-    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    open func collectionView(_ collectionView: UICollectionView,
+                             viewForSupplementaryElementOfKind kind: String,
+                             at indexPath: IndexPath) -> UICollectionReusableView {
         // Should be overridden
         let emptyView = UICollectionReusableView()
         emptyView.isHidden = true
         return emptyView
     }
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             referenceSizeForHeaderInSection section: Int) -> CGSize {
         // Should be overriden if customising section header
         .zero
     }
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             referenceSizeForFooterInSection section: Int) -> CGSize {
         // Should be overriden if customising section footer
         .zero
     }
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             insetForSectionAt section: Int) -> UIEdgeInsets {
         // Should be overriden if customising section header
         flowLayout.sectionInset
     }
@@ -155,15 +168,21 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
 
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         flowLayout.minimumLineSpacing
     }
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         flowLayout.minimumInteritemSpacing
     }
 
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             sizeForItemAt indexPath: IndexPath) -> CGSize {
         flowLayout.itemSize
     }
 }

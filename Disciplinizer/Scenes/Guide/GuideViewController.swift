@@ -57,7 +57,6 @@ class GuideViewController: UIViewController, GuideViewProtocol {
 
 class GuidePageViewController: UIPageViewController, UIPageViewControllerDataSource, RouterDelegateProtocol {
     
-    
     private var timeSelectionVC: UIViewController?
     private var modeSelectionVC: UIViewController?
     

@@ -11,7 +11,7 @@ import UIKit
 struct ParameterViewModel {
     var title: String = ""
     var valueTitle: String = ""
-    var valueImage: UIImage? = nil
+    var valueImage: UIImage?
     var actionTitle: String = ""
     var action: () -> Void = {}
 }

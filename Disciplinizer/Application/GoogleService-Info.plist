@@ -32,5 +32,7 @@
 	<string>1:938464753247:ios:241504a5354335ec6b8dea</string>
 	<key>DATABASE_URL</key>
 	<string>https://concentration-tracker.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-6894098236140382~5986618145</string>
 </dict>
 </plist>

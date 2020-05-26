@@ -59,6 +59,8 @@
 		3A2F573723125EEA00212317 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2F573623125EEA00212317 /* Alert.storyboard */; };
 		3A2F573A2312729800212317 /* LockStateRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F57392312729800212317 /* LockStateRequestManager.swift */; };
 		3A2F573C231272DF00212317 /* LockStateRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F573B231272DF00212317 /* LockStateRequests.swift */; };
+		3A44409324799796004BDD80 /* TimeUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A44409224799796004BDD80 /* TimeUnits.swift */; };
+		3A444095247ABC55004BDD80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A444094247ABC55004BDD80 /* GoogleService-Info.plist */; };
 		3A47D65C230F18FB00B2B200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47D65B230F18FB00B2B200 /* AppDelegate.swift */; };
 		3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A47D662230F18FC00B2B200 /* Assets.xcassets */; };
 		3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A47D664230F18FC00B2B200 /* LaunchScreen.storyboard */; };
@@ -69,7 +71,6 @@
 		3A47D67D230F1E8100B2B200 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47D67C230F1E8100B2B200 /* Config.swift */; };
 		3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A47D67E230F1E8B00B2B200 /* Config.plist */; };
 		3A47D682230F217200B2B200 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47D681230F217200B2B200 /* KeychainService.swift */; };
-		3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */; };
 		3A5C53FE245EDCCC00BF1A26 /* MusicSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5C53FD245EDCCC00BF1A26 /* MusicSelection.storyboard */; };
 		3A6395E72467C3CE00E04E95 /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6395E62467C3CE00E04E95 /* ModeSelectionViewController.swift */; };
 		3A6395E92467C40900E04E95 /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6395E82467C40900E04E95 /* ModeSelectionPresenter.swift */; };
@@ -247,6 +248,8 @@
 		3A2F573623125EEA00212317 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		3A2F57392312729800212317 /* LockStateRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequestManager.swift; sourceTree = "<group>"; };
 		3A2F573B231272DF00212317 /* LockStateRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateRequests.swift; sourceTree = "<group>"; };
+		3A44409224799796004BDD80 /* TimeUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnits.swift; sourceTree = "<group>"; };
+		3A444094247ABC55004BDD80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A47D658230F18FB00B2B200 /* Disciplinizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disciplinizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A47D65B230F18FB00B2B200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A47D662230F18FC00B2B200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,7 +261,6 @@
 		3A47D67C230F1E8100B2B200 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3A47D67E230F1E8B00B2B200 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3A47D681230F217200B2B200 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
-		3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A5C53FD245EDCCC00BF1A26 /* MusicSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicSelection.storyboard; sourceTree = "<group>"; };
 		3A6395E62467C3CE00E04E95 /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
 		3A6395E82467C40900E04E95 /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
@@ -644,7 +646,7 @@
 				3A47D67B230F1E5A00B2B200 /* Config */,
 				3A47D65B230F18FB00B2B200 /* AppDelegate.swift */,
 				3A47D664230F18FC00B2B200 /* LaunchScreen.storyboard */,
-				3A5AF904240D7A4A00597FA6 /* GoogleService-Info.plist */,
+				3A444094247ABC55004BDD80 /* GoogleService-Info.plist */,
 				3A8DB66B2410D7F900225DA4 /* Info.plist */,
 			);
 			path = Application;
@@ -1029,8 +1031,8 @@
 			isa = PBXGroup;
 			children = (
 				3ACD2C6B240C2E620017FABC /* Challenge.swift */,
-				54008D8A237C9F2D0072EC00 /* Song.swift */,
 				3A0742B3241E5970003B1A83 /* MotivationalItem.swift */,
+				54008D8A237C9F2D0072EC00 /* Song.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1182,6 +1184,7 @@
 				C13CFA2223660F8C0022863E /* CurrentChallengePresenter.swift */,
 				C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */,
 				C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */,
+				3A44409224799796004BDD80 /* TimeUnits.swift */,
 			);
 			path = Current;
 			sourceTree = "<group>";
@@ -1284,7 +1287,6 @@
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
 				3A9F9A76237709C800022C38 /* Blocked.storyboard in Resources */,
 				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
-				3A5AF905240D7A4A00597FA6 /* GoogleService-Info.plist in Resources */,
 				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
 				3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */,
 				3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */,
@@ -1309,6 +1311,7 @@
 				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
 				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
+				3A444095247ABC55004BDD80 /* GoogleService-Info.plist in Resources */,
 				3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */,
 				3A663A202467C95500472B75 /* GuideMessageView.xib in Resources */,
 				3A008BD2231F93CA00B9286B /* Localizable.stringsdict in Resources */,
@@ -1364,7 +1367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		3A5AF906240D7CF900597FA6 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1568,6 +1571,7 @@
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
 				3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
+				3A44409324799796004BDD80 /* TimeUnits.swift in Sources */,
 				3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */,
 				3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */,
 				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,
@@ -1774,7 +1778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
@@ -1797,7 +1801,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1925,7 +1929,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";

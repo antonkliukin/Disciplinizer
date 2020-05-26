@@ -38,7 +38,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
              SettingsSectionItem(title: Strings.settingsPolicy(), action: { (_) in
                  print("")
              }, actionViewType: .tap)
-            ],
+            ]
         ]
     }
     
@@ -70,7 +70,6 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     
     func set(viewTitle: String) {
         titleLabel.text = viewTitle
-        titleLabel.text = title
     }
     
     @objc private func didBecomeActive() {
@@ -88,7 +87,9 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         collectionView.register(UINib(nibName: SettingsCell.id, bundle: .main), forCellWithReuseIdentifier: SettingsCell.id)
-        collectionView.register(SettingsSectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SettingsSectionHeader")
+        collectionView.register(SettingsSectionHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "SettingsSectionHeader")
     }
     
     @IBAction private func selectMusicButtonTapped(_ sender: Any) {

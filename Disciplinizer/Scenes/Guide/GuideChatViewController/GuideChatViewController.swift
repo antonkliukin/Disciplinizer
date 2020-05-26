@@ -89,7 +89,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     }
     
     private func configureTopView() {
-        topView.addShadow(alpha: 0.15, y: 4, blur: 25)
+        topView.addShadow(alpha: 0.15, yOffset: 4, blur: 25)
     }
     
     private func showNextButton(_ show: Bool) {
@@ -106,10 +106,10 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         var animationDelay = 0.0
         let delayTimePoints = [0.12, 0.24, 0.36]
         
-        for i in 0..<dotsStack.arrangedSubviews.count {
-            let dotView = dotsStack.arrangedSubviews[i]
+        for dotViewIndex in 0..<dotsStack.arrangedSubviews.count {
+            let dotView = dotsStack.arrangedSubviews[dotViewIndex]
 
-            animationDelay += delayTimePoints[i]
+            animationDelay += delayTimePoints[dotViewIndex]
             UIView.animate(withDuration: 0.5, delay: animationDelay, options: [.autoreverse, .repeat, .curveEaseInOut], animations: {
                 dotView.transform = CGAffineTransform(scaleX: 2, y: 2)
             })

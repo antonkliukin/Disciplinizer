@@ -41,7 +41,7 @@ class MotivationView: UIView {
     }
         
     private func commonInit() {
-        Bundle.main.loadNibNamed("MotivationView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Self.nameOfClass, owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -52,31 +52,25 @@ class MotivationView: UIView {
         setupMotivationTitleLabel()
     }
     
-    func configure(title: String = "",
-                   itemImage: UIImage,
-                   descriptionTitle: String,
-                   description: String,
-                   info: String = "",
-                   actionButtonTitle: String = "",
-                   actionButtonAction: @escaping () -> Void = {}) {
-        motivationTitleBackgroundView.isHidden = title.isEmpty
-        motivationTitleLabel.isHidden = title.isEmpty
-        motivationTitleLabel.text = title
+    func configure(withItem item: MotivationalItem, didTapActionButton: (() -> Void)?) {
+        motivationTitleBackgroundView.isHidden = item.title.isEmpty
+        motivationTitleLabel.isHidden = item.title.isEmpty
+        motivationTitleLabel.text = item.title
                 
-        infoLabel.isHidden = info.isEmpty
-        infoLabel.text = info
-        infoLabel.textColor = title.isEmpty ? R.color.redText() : R.color.greenText()!
+        infoLabel.isHidden = item.info.isEmpty
+        infoLabel.text = item.info
+        infoLabel.textColor = item.title.isEmpty ? R.color.redText() : R.color.greenText()!
         
-        actionButton.isHidden = actionButtonTitle.isEmpty
-        actionButton.setTitle(actionButtonTitle, for: .normal)
-        action = actionButtonAction
+        actionButton.isHidden = item.actionTitle.isEmpty
+        actionButton.setTitle(item.actionTitle, for: .normal)
+        action = didTapActionButton
         
-        infoLabelActionButtonConstraint.priority = actionButtonTitle.isEmpty ? .defaultLow : .defaultHigh
-        infoLabelMainViewConstraint.priority = actionButtonTitle.isEmpty ? .defaultHigh : .defaultLow
+        infoLabelActionButtonConstraint.priority = item.actionTitle.isEmpty ? .defaultLow : .defaultHigh
+        infoLabelMainViewConstraint.priority = item.actionTitle.isEmpty ? .defaultHigh : .defaultLow
         
-        itemImageView.image = itemImage
-        motivationDescriptionTitle.text = descriptionTitle
-        motivationDescription.text = description
+        itemImageView.image = item.image
+        motivationDescriptionTitle.text = item.descriptionTitle
+        motivationDescription.text = item.description
     }
     
     @IBAction func didTapActionButton(_ sender: Any) {

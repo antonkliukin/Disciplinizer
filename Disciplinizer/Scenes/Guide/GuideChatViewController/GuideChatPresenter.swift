@@ -26,6 +26,6 @@ final class GuideChatPresenter: GuideChatPresenterProtocol {
     }
     
     func didTapGotItButton() {
-        view.router?.present(Controller.guide())
+        view.router?.add(Controller.guide(), frame: nil, animated: true)
     }
 }

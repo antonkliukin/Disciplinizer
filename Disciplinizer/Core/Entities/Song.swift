@@ -16,6 +16,7 @@ struct Song {
 
 extension Song: Equatable {
     static func == (lhs: Song, rhs: Song) -> Bool {
+        // TODO: Better to compare ids as url isn't reliable
         return lhs.url == rhs.url
     }
 }

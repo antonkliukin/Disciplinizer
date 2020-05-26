@@ -17,7 +17,7 @@ class AdPresenter: NSObject, AdPresenterProtocol {
 
     weak var view: AdViewProtocol?
     var rewardedAd: GADRewardedAd?
-    var numberOfAdsToShow = 3
+    var numberOfAdsToShow = Config.shared.numberOfAds() ?? 3
     var watchedAds = 0
 
     init(view: AdViewProtocol) {
@@ -75,7 +75,7 @@ extension AdPresenter: GADRewardedAdDelegate {
         if watchedAds < numberOfAdsToShow {
             self.rewardedAd = createAndLoadRewardedAd()
         } else {
-            view?.router?.dismiss(animated: true, completion: nil, toRoot: true)
+            view?.router?.dismissPresenting(animated: true, completion: nil)
         }
     }
 

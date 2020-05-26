@@ -24,7 +24,7 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     weak var routerDelegate: RouterDelegateProtocol?
     
     private var selectedItem: MotivationalItem = .ad
-    private var paidItem: MotivationalItem? = nil
+    private var paidItem: MotivationalItem?
     private var motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol
     
     init(view: ModeSelectionViewProtocol,

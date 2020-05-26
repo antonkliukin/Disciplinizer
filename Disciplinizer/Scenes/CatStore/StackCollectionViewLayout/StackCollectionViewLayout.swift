@@ -12,7 +12,8 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
     private let topInset: CGFloat = 50
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return super.layoutAttributesForElements(in: rect)?.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }.compactMap(addStackAnimationToAttributes)
+        return super.layoutAttributesForElements(in: rect)?.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }
+            .compactMap(addStackAnimationToAttributes)
     }
     
     override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -27,14 +28,13 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
 
         for layoutAttributes in super.layoutAttributesForElements(in: targetRect)! {
             let itemOffset = layoutAttributes.frame.origin.y
-            if (abs(itemOffset - verticalOffset) < abs(offsetAdjustment)) {
+            if abs(itemOffset - verticalOffset) < abs(offsetAdjustment) {
                 offsetAdjustment = itemOffset - verticalOffset
             }
         }
         
         return CGPoint(x: proposedContentOffset.x, y: proposedContentOffset.y + offsetAdjustment - topInset)
     }
-    
     
     private func addStackAnimationToAttributes(_ attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let collectionView = self.collectionView else { return attributes }

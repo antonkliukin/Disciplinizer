@@ -42,6 +42,8 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        timeTextField.becomeFirstResponder()
                 
         presenter.viewDidLoad()
     }
@@ -52,29 +54,26 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        timeTextField.becomeFirstResponder()
-    }
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         let userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-
-        var contentInset: UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 20
-        scrollView.contentInset = contentInset
+        
+        if let keyboardFramveValue = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue {
+            var keyboardFrame: CGRect = keyboardFramveValue.cgRectValue
+            keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+            
+            var contentInset: UIEdgeInsets = self.scrollView.contentInset
+            contentInset.bottom = keyboardFrame.size.height + 20
+            scrollView.contentInset = contentInset
+        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        let contentInset: UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
     

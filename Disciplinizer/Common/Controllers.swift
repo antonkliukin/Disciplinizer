@@ -37,6 +37,7 @@ enum Controller {
 
     static func createChallenge() -> UIViewController {
         let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
+        vc.definesPresentationContext = true
 
         return vc
     }
@@ -55,6 +56,7 @@ enum Controller {
     
     static func createCatStore() -> UIViewController {
         let vc = CatStoreViewController.fromStoryboard(.catStore)
+        vc.modalPresentationStyle = .currentContext
 
         return vc
     }
@@ -84,7 +86,7 @@ enum Controller {
 
     static func guide() -> UIViewController {
         let vc = GuideViewController.fromStoryboard(.guide)
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .currentContext
         let presenter = GuidePresenter(view: vc)
         vc.presenter = presenter
 
@@ -94,13 +96,13 @@ enum Controller {
     static func guideChat() -> UIViewController {
         let vc = GuideChatViewController.fromStoryboard(.guideChat)
         vc.modalPresentationStyle = .fullScreen
+
         let presenter = GuideChatPresenter(view: vc)
         vc.presenter = presenter
 
         return vc
     }
 
-    
     static func modeSelection(routerDelegate: RouterDelegateProtocol?) -> UIViewController {
         let vc = ModeSelectionViewController.fromStoryboard(.guide)
         let configurator = ModeSelectoinConfigurator(routerDelegate: routerDelegate)
@@ -129,7 +131,7 @@ enum Controller {
 
     static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
         let vc = BlockedViewController.fromStoryboard(.blocked)
-
+        vc.definesPresentationContext = true
         vc.modalPresentationStyle = .currentContext
         
         let configurator = BlockedStateConfigurator(challenge: challenge)
@@ -140,7 +142,7 @@ enum Controller {
 
     static func createAdVC() -> UIViewController {
         let vc = AdViewController.fromStoryboard(.ad)
-        vc.modalPresentationStyle = .overFullScreen
+        vc.modalPresentationStyle = .overCurrentContext
 
         return vc
     }

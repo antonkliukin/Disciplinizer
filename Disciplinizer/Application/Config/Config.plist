@@ -17,6 +17,8 @@
 		<string>ca-app-pub-3940256099942544/1712485313</string>
 		<key>testDurationInMinutes</key>
 		<string>1</string>
+		<key>numberOfAds</key>
+		<string>1</string>
 	</dict>
 	<key>Test</key>
 	<dict>

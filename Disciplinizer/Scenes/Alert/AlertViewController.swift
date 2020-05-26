@@ -8,14 +8,13 @@
 
 import UIKit
 
-
 struct AlertModel {
     var title = ""
     var message = ""
     var positiveActionTitle = ""
-    var positiveAction: (() -> Void)? = nil
+    var positiveAction: (() -> Void)?
     var negativeActionTitle = ""
-    var negativeAction: (() -> Void)? = nil
+    var negativeAction: (() -> Void)?
 }
 
 extension Controller {

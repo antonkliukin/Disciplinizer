@@ -10,8 +10,8 @@ import UIKit
 
 protocol RouterProtocol {
     func add(_ viewController: UIViewController)
-    func add(_ viewController: UIViewController, frame: CGRect?)
-    func present(_ viewController: UIViewController)
+    func add(_ viewController: UIViewController, frame: CGRect?, animated: Bool)
+    func present(_ vc: UIViewController)
     ///  - parameter forcePresent: Dismisses another currently presented controller if any.
     func present(_ vc: UIViewController, animated: Bool, forcePresent: Bool, completion: (() -> Void)?)
     func push(_ viewController: UIViewController)
@@ -20,8 +20,9 @@ protocol RouterProtocol {
     ///  - parameter toRoot: True - pops all pushed VCs to root VC, false - pops the topmost pushed VC.
     func pop(animated: Bool, toRoot: Bool)
     func dismiss()
-    ///  - parameter toRoot: True - dismisses all presented VCs to root VC, false - dismesses the topmost presented VC.
-    func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool)
+    ///  Dsmisses presenting VC and all presented VCs
+    func dismissPresenting(animated: Bool, completion: (() -> Void)?)
+    func dismiss(animated: Bool, completion: (() -> Void)?)
     func remove()
 }
 
@@ -37,9 +38,9 @@ class Router: RouterProtocol {
         add(viewController, frame: frame)
     }
         
-    func add(_ viewController: UIViewController, frame: CGRect? = .zero) {
+    func add(_ viewController: UIViewController, frame: CGRect? = .zero, animated: Bool = false) {
         let frame = initialController.view.bounds
-        initialController.add(viewController, frame: frame)
+        initialController.add(viewController, frame: frame, animated: animated)
     }
 
     func present(_ vc: UIViewController) {
@@ -70,25 +71,21 @@ class Router: RouterProtocol {
     func dismiss() {
         dismiss(animated: true, completion: nil)
     }
+    
+    func dismissPresenting(animated: Bool, completion: (() -> Void)?) {
+        var presentingVC = initialController
 
-    func dismiss(animated: Bool, completion: (() -> Void)?, toRoot: Bool = false) {
-        if toRoot {
-            var rootVC = initialController
-
-            while let vc = rootVC.presentingViewController {
-                rootVC = vc
-            }
-            
-            if rootVC is RootViewController, let firstChild = rootVC.children.first {
-                rootVC = firstChild
-            }
-                        
-            rootVC.dismiss(animated: animated, completion: completion)
-        } else {
-            initialController.dismiss(animated: animated, completion: completion)
+        while let vc = presentingVC.presentingViewController {
+            presentingVC = vc
         }
-    }
 
+        presentingVC.dismiss(animated: animated, completion: completion)
+    }
+    
+    func dismiss(animated: Bool, completion: (() -> Void)?) {
+        initialController.dismiss(animated: animated, completion: completion)
+    }
+    
     func remove() {
         initialController.remove()
     }
@@ -108,16 +105,28 @@ class Router: RouterProtocol {
     }
 }
 
-@nonobjc extension UIViewController {
-    func add(_ child: UIViewController, frame: CGRect? = nil) {
+extension UIViewController {
+    func add(_ child: UIViewController, frame: CGRect? = nil, animated: Bool = false) {
         child.modalPresentationStyle = .overCurrentContext
         addChild(child)
 
         if let frame = frame {
             child.view.frame = frame
         }
-
+        
         view.addSubview(child.view)
+        
+        if animated {
+            child.view.frame.origin.y = view.frame.maxY
+
+            DispatchQueue.main.async {
+                UIView.transition(with: self.view, duration: 0.3, options: .curveEaseOut, animations: {
+                    self.view.addSubview(child.view)
+                    child.view.frame.origin.y = self.view.frame.origin.y
+                }, completion: nil)
+            }
+        }
+
         child.didMove(toParent: self)
     }
 

@@ -84,9 +84,15 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
     private func setupTabBarImages() {
         for (index, item) in (tabBar.items ?? []).enumerated() {
             switch index {
-            case 0: item.image = R.image.history_icon()
-            case 1: item.image = R.image.tracker_icon()
-            case 2: item.image = R.image.settings_icon()
+            case 0:
+                item.image = R.image.history_icon()
+                item.title = Strings.historyTitle()
+            case 1:
+                item.image = R.image.tracker_icon()
+                item.title = Strings.creationTitle()
+            case 2:
+                item.image = R.image.settings_icon()
+                item.title = Strings.settingsTitle()
             default:
                 break
             }

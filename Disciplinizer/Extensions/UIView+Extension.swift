@@ -12,14 +12,14 @@ extension UIView {
     
     func addShadow(color: UIColor = .black,
                    alpha: Float = 0.12,
-                   x: CGFloat = 0,
-                   y: CGFloat = 4,
+                   xOffset: CGFloat = 0,
+                   yOffset: CGFloat = 4,
                    blur: CGFloat = 15,
                    spread: CGFloat = 0) {
         
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = alpha
-        layer.shadowOffset = CGSize(width: x, height: y)
+        layer.shadowOffset = CGSize(width: xOffset, height: yOffset)
         layer.shadowRadius = blur / UIScreen.main.scale
         
         if spread == 0 {

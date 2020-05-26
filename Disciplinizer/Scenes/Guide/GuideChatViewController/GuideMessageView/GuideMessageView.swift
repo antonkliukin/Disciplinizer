@@ -19,7 +19,6 @@ class GuideMessageView: UIView {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var stickerImageView: UIImageView!
     
-    
     @IBOutlet weak var messageBackgroundView: UIView!
     
     override init(frame: CGRect) {

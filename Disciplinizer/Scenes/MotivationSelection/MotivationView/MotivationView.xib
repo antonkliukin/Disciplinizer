@@ -22,7 +22,6 @@
                 <outlet property="motivationDescriptionTitle" destination="SUP-Gf-X6w" id="tnF-f5-JEu"/>
                 <outlet property="motivationTitleBackgroundView" destination="lNB-pH-im1" id="yuF-NO-8Sd"/>
                 <outlet property="motivationTitleLabel" destination="RS7-aK-Rpt" id="0cU-RP-cfW"/>
-                <outlet property="priceLabel" destination="wwi-uR-ftG" id="VRm-1q-u8S"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -92,12 +91,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwi-uR-ftG">
-                                            <rect key="frame" x="109.99999999999999" y="187" width="51.333333333333329" height="26.333333333333343"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -107,9 +100,7 @@
                                         <constraint firstItem="L9R-N9-Plr" firstAttribute="top" secondItem="SUP-Gf-X6w" secondAttribute="bottom" constant="4" id="DRG-Iy-4DJ"/>
                                         <constraint firstAttribute="trailing" secondItem="SUP-Gf-X6w" secondAttribute="trailing" constant="8" id="Usc-gD-nZN"/>
                                         <constraint firstAttribute="trailing" secondItem="L9R-N9-Plr" secondAttribute="trailing" constant="8" id="VxR-OS-kdQ"/>
-                                        <constraint firstItem="wwi-uR-ftG" firstAttribute="centerY" secondItem="4do-38-kNZ" secondAttribute="centerY" id="bT5-D0-wb0"/>
                                         <constraint firstItem="SUP-Gf-X6w" firstAttribute="top" secondItem="4do-38-kNZ" secondAttribute="top" constant="30" id="eX3-3q-YZP"/>
-                                        <constraint firstItem="wwi-uR-ftG" firstAttribute="centerX" secondItem="4do-38-kNZ" secondAttribute="centerX" id="wGd-1V-SuV"/>
                                     </constraints>
                                 </view>
                             </subviews>

@@ -111,7 +111,6 @@ extension KeychainService {
         }
     }
 
-    
     static var isFirstLaunch: Bool {
         get {
             guard let isWatched = KeychainService.shared.getValue(key: Constants.isFirstLaunch) else { return true }
@@ -126,7 +125,8 @@ extension KeychainService {
     
     static var purchasedItem: MotivationalItem? {
         get {
-            guard let rawValue = KeychainService.shared.getValue(key: Constants.purchasedItem), let item = MotivationalItem(rawValue: rawValue) else { return nil }
+            guard let rawValue = KeychainService.shared.getValue(key: Constants.purchasedItem),
+                  let item = MotivationalItem(rawValue: rawValue) else { return nil }
 
             return item
         }
@@ -142,7 +142,8 @@ extension KeychainService {
 
     static var selectedItem: MotivationalItem? {
         get {
-            guard let rawValue = KeychainService.shared.getValue(key: Constants.selectedItem), let item = MotivationalItem(rawValue: rawValue) else { return nil }
+            guard let rawValue = KeychainService.shared.getValue(key: Constants.selectedItem),
+                  let item = MotivationalItem(rawValue: rawValue) else { return nil }
 
             return item
         }

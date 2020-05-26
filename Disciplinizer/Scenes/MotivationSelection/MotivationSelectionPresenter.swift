@@ -10,8 +10,6 @@ import Foundation
 
 protocol MotivationSelectionPresenterProtocol {
     func viewDidLoad()
-    func viewWillAppear()
-    func viewDidAppear()
     func didSelectIndex(_ index: Int)
     func didTapSetModeButton()
 }
@@ -36,11 +34,7 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
         view?.set(titleForIndexOne: Strings.motivationItemCatMode(), indexTwo: Strings.motivationItemTimeMode())
         configureViewForSelectedMotivationalItem()
     }
-    
-    func viewWillAppear() {}
-    
-    func viewDidAppear() {}
-    
+        
     func didSelectIndex(_ index: Int) {
         let isPaidSelected = index == 0
         
@@ -58,7 +52,8 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
                 if item == .noPaidItem {
                     self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonAbleToSet())
                 } else {
-                    let title = self.newlySelectedMotivationalItem != self.selectedMotivationalItem ? Strings.motivationItemSetButtonAbleToSet() : Strings.motivationItemSetButtonUnableToSet()
+                    let title = self.newlySelectedMotivationalItem != self.selectedMotivationalItem ? Strings.motivationItemSetButtonAbleToSet() :
+                        Strings.motivationItemSetButtonUnableToSet()
                     self.changeSetModeState(isAbleToSet: self.newlySelectedMotivationalItem != self.selectedMotivationalItem, andTitle: title)
                 }
                 
@@ -116,15 +111,9 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
         motivationalItemUseCase.getPaid(completionHandler: completionHandler)
     }
         
-    func configureMotivationalView(withItem item: MotivationalItem) {
-        view?.configureMotivationView(title: item.title,
-                                      itemImage: item.image,
-                                      descriptionTitle: item.descriptionTitle,
-                                      description: item.description,
-                                      info: item.info,
-                                      actionButtonTitle: item.actionTitle,
-                                      actionButtonAction: {
-                                        self.view?.router?.push(Controller.createCatStore())
+    private func configureMotivationalView(withItem item: MotivationalItem) {
+        view?.displayMotivationView(withItem: item, didTapActionButton: {
+            self.view?.router?.push(Controller.createCatStore())
         })
     }
     

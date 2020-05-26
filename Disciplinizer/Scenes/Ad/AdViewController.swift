@@ -13,6 +13,8 @@ protocol AdViewProtocol: ViewProtocol {
 }
 
 class AdViewController: UIViewController, AdViewProtocol {
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     var presenter: AdPresenterProtocol?
     var configurator = AdConfigurator()
 
@@ -21,5 +23,11 @@ class AdViewController: UIViewController, AdViewProtocol {
 
         configurator.configure(adViewController: self)
         presenter?.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .whiteLarge
+        } else {
+            activityIndicator.style = .white
+        }
     }
 }
