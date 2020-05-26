@@ -35,10 +35,10 @@ class GuidePresenter: GuidePresenterProtocol {
         if currentIndex == 1 {
             view?.updateProgressBar(progress: 1, animated: true) {
                 UserDefaults.standard.set(true, forKey: "isFirstLaunch")
-
-                self.view?.router?.dismissPresenting(animated: true, completion: {
+                
+                rootVC.dismiss(animated: true, allPresented: true) {
                     NotificationManager.shared.requestAuthorization()
-                })
+                }
             }
         } else {
             view?.updateProgressBar(progress: 0.66, animated: true, completion: nil)

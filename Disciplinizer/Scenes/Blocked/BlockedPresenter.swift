@@ -55,7 +55,7 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     
     func didTapMainButton() {
         if challenge.motivationalItem == .ad {
-            view?.router?.present(Controller.createAdVC())
+            rootVC.present(Controller.createAdVC(), animated: true, completion: nil)
         } else {
             view?.router?.present(Controller.createCatStore())
         }

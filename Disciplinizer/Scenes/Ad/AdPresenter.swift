@@ -75,7 +75,7 @@ extension AdPresenter: GADRewardedAdDelegate {
         if watchedAds < numberOfAdsToShow {
             self.rewardedAd = createAndLoadRewardedAd()
         } else {
-            view?.router?.dismissPresenting(animated: true, completion: nil)
+            rootVC.dismiss(animated: true, allPresented: true)
         }
     }
 

@@ -168,3 +168,8 @@
 "settings.emailUs" = "Email us";
 "settings.terms" = "Terms of service";
 "settings.policy" = "Privacy policy";
+
+//******************************************************************************
+// Music
+//******************************************************************************
+"music.title" = "Choose a melody that could help you to concentrate";

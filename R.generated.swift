@@ -973,7 +973,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 115 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 116 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1031,6 +1031,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemActionTitle = Rswift.StringResource(key: "motivationItem.action.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Choose a melody that could help you to concentrate
+      ///
+      /// Locales: ru, en
+      static let musicTitle = Rswift.StringResource(key: "music.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Choose a new cat
       ///
       /// Locales: ru, en
@@ -1648,6 +1652,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.action.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Choose a melody that could help you to concentrate
+      ///
+      /// Locales: ru, en
+      static func musicTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("music.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "music.title"
+        }
+
+        return NSLocalizedString("music.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Choose a new cat

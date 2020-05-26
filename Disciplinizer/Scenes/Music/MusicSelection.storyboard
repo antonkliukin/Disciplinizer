@@ -118,7 +118,7 @@
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7w-wk-eN1">
-                                        <rect key="frame" x="70" y="41" width="274" height="36"/>
+                                        <rect key="frame" x="30" y="41" width="354" height="36"/>
                                         <string key="text">Choose a melody that could help 
 you to concentrate </string>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -129,14 +129,14 @@ you to concentrate </string>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Qhi-zv-qPw" secondAttribute="bottom" constant="8" id="50U-OE-oqV"/>
-                                    <constraint firstItem="Q7w-wk-eN1" firstAttribute="leading" secondItem="jgG-HR-rJL" secondAttribute="leading" constant="70" id="5Dy-15-3WA"/>
+                                    <constraint firstItem="Q7w-wk-eN1" firstAttribute="leading" secondItem="jgG-HR-rJL" secondAttribute="leading" constant="30" id="5Dy-15-3WA"/>
                                     <constraint firstItem="Qhi-zv-qPw" firstAttribute="leading" secondItem="jgG-HR-rJL" secondAttribute="leading" constant="16" id="Eph-V9-3hB"/>
                                     <constraint firstAttribute="height" constant="400" id="FX0-Te-j9W"/>
                                     <constraint firstItem="yTN-4g-50b" firstAttribute="centerX" secondItem="jgG-HR-rJL" secondAttribute="centerX" id="LkV-t4-4as"/>
                                     <constraint firstItem="Qhi-zv-qPw" firstAttribute="top" secondItem="Q7w-wk-eN1" secondAttribute="bottom" constant="30" id="WVs-xY-kyb"/>
                                     <constraint firstAttribute="trailing" secondItem="Qhi-zv-qPw" secondAttribute="trailing" constant="16" id="eF2-Rn-bDF"/>
                                     <constraint firstItem="Q7w-wk-eN1" firstAttribute="top" secondItem="yTN-4g-50b" secondAttribute="bottom" constant="16" id="hVu-lG-0Ft"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q7w-wk-eN1" secondAttribute="trailing" constant="70" id="oeK-8J-egt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q7w-wk-eN1" secondAttribute="trailing" constant="30" id="oeK-8J-egt"/>
                                     <constraint firstItem="yTN-4g-50b" firstAttribute="top" secondItem="jgG-HR-rJL" secondAttribute="top" constant="22" id="xk5-33-JOt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -161,6 +161,7 @@ you to concentrate </string>
                     <connections>
                         <outlet property="shadowView" destination="kkG-cc-5aI" id="Olo-q9-dEd"/>
                         <outlet property="tableView" destination="Qhi-zv-qPw" id="os6-ri-GrP"/>
+                        <outlet property="titleLabel" destination="Q7w-wk-eN1" id="pZT-y7-o2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8z-N3-iL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

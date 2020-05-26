@@ -9,12 +9,15 @@
 import UIKit
 
 protocol MusicSelectionViewProtocol: ViewProtocol {
+    func display(title: String)
     func setupSongsList(songs: [Song])
 }
 
 final class MusicSelectViewController: UIViewController, MusicSelectionViewProtocol {
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var shadowView: UIView!
+    
     private var transitionPositionObserver: NSKeyValueObservation?
 
     var presenter: MusicSelectionPresenterProtocol?
@@ -22,6 +25,10 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
     var songs: [Song] = []
     var currentSong: Song?
 
+    func display(title: String) {
+        titleLabel.text = title
+    }
+    
     func setupSongsList(songs: [Song]) {
         self.songs = songs
         tableView.reloadData()

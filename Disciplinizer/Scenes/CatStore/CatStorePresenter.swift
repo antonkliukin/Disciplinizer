@@ -6,7 +6,7 @@
 //  Copyright © 2020 Anton Kliukin. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol CatStorePresenterProtocol {
     func viewDidLoad()
@@ -17,9 +17,7 @@ protocol CatStorePresenterProtocol {
 class CatStorePresenter: CatStorePresenterProtocol {
     weak var view: CatStoreViewProtocol?
     private var motivationParameterUseCase: MotivationParameterUseCaseProtocol
-    
-    private var loadingVC: UIViewController?
-        
+            
     private var items: [MotivationalItem] {
         MotivationalItem.allCats
     }
@@ -49,17 +47,16 @@ class CatStorePresenter: CatStorePresenterProtocol {
                 switch state {
                 case .purchasing:
                     let loading = Controller.loading()
-                    self.loadingVC = loading
-                    self.view?.router?.present(loading)
+                    rootVC.present(loading, animated: true, completion: nil)
                 case .purchased:
-                    self.loadingVC?.dismiss(animated: true, completion: {
+                    rootVC.dismiss(animated: true, allPresented: false) {
                         self.finishPurchasing(forItem: item)
-                    })
+                    }
                 default:
                     assertionFailure()
                 }
             case .failure:
-                self.view?.router?.dismissPresenting(animated: true, completion: nil)
+                rootVC.dismiss(animated: true, allPresented: true)
             }
         }
     }
@@ -77,7 +74,7 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         positiveActionTitle: Strings.alertActionBack(),
                                         positiveAction: {
                                             if self.view?.isPresented ?? false {
-                                                self.view?.router?.dismissPresenting(animated: true, completion: nil)
+                                                rootVC.dismiss(animated: true, allPresented: true)
                                             } else {
                                                 self.view?.router?.pop(animated: true, toRoot: true)
                                             }

@@ -37,7 +37,6 @@ enum Controller {
 
     static func createChallenge() -> UIViewController {
         let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
-        vc.definesPresentationContext = true
 
         return vc
     }
@@ -80,6 +79,7 @@ enum Controller {
     
     static func loading() -> UIViewController {
         let vc = LoadingViewController.fromStoryboard(.loading)
+        vc.modalPresentationStyle = .overFullScreen
 
         return vc
     }
@@ -131,7 +131,6 @@ enum Controller {
 
     static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
         let vc = BlockedViewController.fromStoryboard(.blocked)
-        vc.definesPresentationContext = true
         vc.modalPresentationStyle = .currentContext
         
         let configurator = BlockedStateConfigurator(challenge: challenge)

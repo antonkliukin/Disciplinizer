@@ -20,8 +20,6 @@ protocol RouterProtocol {
     ///  - parameter toRoot: True - pops all pushed VCs to root VC, false - pops the topmost pushed VC.
     func pop(animated: Bool, toRoot: Bool)
     func dismiss()
-    ///  Dsmisses presenting VC and all presented VCs
-    func dismissPresenting(animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
     func remove()
 }
@@ -71,17 +69,7 @@ class Router: RouterProtocol {
     func dismiss() {
         dismiss(animated: true, completion: nil)
     }
-    
-    func dismissPresenting(animated: Bool, completion: (() -> Void)?) {
-        var presentingVC = initialController
-
-        while let vc = presentingVC.presentingViewController {
-            presentingVC = vc
-        }
-
-        presentingVC.dismiss(animated: animated, completion: completion)
-    }
-    
+        
     func dismiss(animated: Bool, completion: (() -> Void)?) {
         initialController.dismiss(animated: animated, completion: completion)
     }
