@@ -24,6 +24,7 @@ final class Config {
         case adUnitID
         case testDurationInMinutes
         case numberOfAds
+        case chatMessageDelay
     }
 
     static let shared = Config()
@@ -69,6 +70,7 @@ final class Config {
         configs[.adUnitID] = adUnitID
         configs[.testDurationInMinutes] = dict[ConfigurationKey.testDurationInMinutes.rawValue]
         configs[.numberOfAds] = dict[ConfigurationKey.numberOfAds.rawValue]
+        configs[.chatMessageDelay] = dict[ConfigurationKey.chatMessageDelay.rawValue]
     }
 }
 
@@ -91,5 +93,11 @@ extension Config {
         guard let numberOfAds = configs[.numberOfAds] else { return nil }
         
         return Int(numberOfAds)
+    }
+    
+    func chatMessageDelay() -> Int? {
+        guard let chatMessageDelay = configs[.chatMessageDelay] else { return nil }
+        
+        return Int(chatMessageDelay)
     }
 }

@@ -19,6 +19,8 @@
 		<string>1</string>
 		<key>numberOfAds</key>
 		<string>1</string>
+		<key>chatMessageDelay</key>
+		<string>1</string>
 	</dict>
 	<key>Test</key>
 	<dict>

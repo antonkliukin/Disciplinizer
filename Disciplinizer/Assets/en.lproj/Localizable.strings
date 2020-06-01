@@ -7,12 +7,12 @@
 "guide.online" = "online";
 
 "guide.motivationSelection.title" = "Choose motivation";
-"guide.motivationSelection.description" = "What penalty would you want to choose?";
+"guide.motivationSelection.description" = "Which penalty do you choose?";
 "guide.catMotivation.title" = "cat mode";
 "guide.catMotivation.description" = "If you fail, a cat leaves you";
 "guide.timeMotivation.title" = "time mode";
 "guide.timeMotivation.description" = "If you fail, you must watch 3 ads in a row";
-"guide.catMotivation.message" = "We give you 1 free cat. If a cat will leave, you can buy another one.";
+"guide.catMotivation.message" = "We give you 1 free cat. If your cat leaves you can buy another.";
 "guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
 "guide.message1" = "Hello, I'm Didi!";
@@ -24,15 +24,15 @@
 
 "guide.message6" = "To achieve this you have two modes.";
 
-"guide.message7" = "The first - Saving a pet.";
-"guide.message8" = "I give you the most expensive one - Valli cat.";
+"guide.message7" = "The first - 'Saving a Pet'.";
+"guide.message8" = "I give you the most expensive one - Valli.";
 
 "guide.message9" = "catSticker";
 
 "guide.message10" = "If you start using your phone - your pet will leave!";
-"guide.message11" = "In this case you will need to buy another one to continue using Saving a pet mode.";
+"guide.message11" = "In this case you will need to buy another one to continue using 'Saving a Pet' mode.";
 
-"guide.message12" = "The second - Saving time.";
+"guide.message12" = "The second - 'Saving Time'.";
 "guide.message13" = "If you start using your phone - you will have to watch 3 ads in a row!";
 "guide.message14" = "Loosing your precious time!";
 
@@ -166,8 +166,8 @@
 "settings.about" = "About";
 "settings.darkMode" = "Dark Mode";
 "settings.emailUs" = "Email us";
-"settings.terms" = "Terms of service";
-"settings.policy" = "Privacy policy";
+"settings.terms" = "Terms of Service";
+"settings.policy" = "Privacy Policy";
 
 //******************************************************************************
 // Music

@@ -138,7 +138,9 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     }
         
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (_) in
+        let chatMessageDelay = TimeInterval(Config.shared.chatMessageDelay() ?? 4)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: chatMessageDelay, repeats: true) { (_) in
             let indexForNewMessage = self.sections[0].count - 1
             
             guard indexForNewMessage < self.messagesToShow.count else { return }
