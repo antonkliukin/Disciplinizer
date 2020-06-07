@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BlockedViewProtocol: ViewProtocol {
+protocol LoseViewProtocol: ViewProtocol {
     func configureLoseTitle(_ title: String)
     func configureLoseDescription(_ description: String)
     func setImage(_ image: UIImage)
@@ -16,7 +16,7 @@ protocol BlockedViewProtocol: ViewProtocol {
     func setSecondaryButtonTitle(_ title: String)
 }
 
-final class BlockedViewController: UIViewController, BlockedViewProtocol {
+final class LoseViewController: UIViewController, LoseViewProtocol {
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var loseTitleLabel: UILabel!
     @IBOutlet weak var loseDescriptionLabel: UILabel!
@@ -24,15 +24,15 @@ final class BlockedViewController: UIViewController, BlockedViewProtocol {
     @IBOutlet weak var mainButton: MainButton!
     @IBOutlet weak var secondaryButton: UIButton!
     
-    var presenter: BlockedPresenterProtocol?
-    var configurator: BlockedStateConfiguratorProtocol?
+    var presenter: LosePresenterProtocol?
+    var configurator: LoseConfiguratorProtocol?
 
     override func viewDidLoad() {
-        configurator?.configure(blockedViewController: self)
+        configurator?.configure(viewController: self)
         setupMessageView()
         presenter?.viewDidLoad()
     }
-    
+
     private func setupMessageView() {
         messageView.roundCorners(corners: .all, radius: 16)
         messageView.layer.borderWidth = 2

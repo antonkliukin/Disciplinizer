@@ -23,7 +23,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
     @IBOutlet weak var startButtonShadowView: UIView!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet weak var topBackgroundView: UIView!
-
+    
     private let configurator = CreateChallengeConfigurator()
 
     var presenter: CreateChallengePresenterProtocol!

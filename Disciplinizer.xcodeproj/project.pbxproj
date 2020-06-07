@@ -77,7 +77,7 @@
 		3A6395EB2467C41900E04E95 /* ModeSelectoinConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6395EA2467C41900E04E95 /* ModeSelectoinConfigurator.swift */; };
 		3A653D9A24155E2700BE613C /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9924155E2700BE613C /* NSError.swift */; };
 		3A653D9C2416378C00BE613C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653D9B2416378C00BE613C /* Result.swift */; };
-		3A653DAE24196B6B00BE613C /* BlockedStateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */; };
+		3A653DAE24196B6B00BE613C /* LoseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DAD24196B6B00BE613C /* LoseConfigurator.swift */; };
 		3A653DB5241A129A00BE613C /* SongsGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DB4241A129A00BE613C /* SongsGatewayProtocol.swift */; };
 		3A653DB9241A155400BE613C /* SongsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DB8241A155400BE613C /* SongsGateway.swift */; };
 		3A653DBC241ABA6600BE613C /* DisplayAvailableSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A653DBB241ABA6600BE613C /* DisplayAvailableSongs.swift */; };
@@ -116,9 +116,9 @@
 		3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */; };
 		3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */; };
 		3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9F9A6E2376FFC400022C38 /* StoreKit.framework */; };
-		3A9F9A72237709B300022C38 /* BlockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A71237709B300022C38 /* BlockedViewController.swift */; };
-		3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A73237709BD00022C38 /* BlockedPresenter.swift */; };
-		3A9F9A76237709C800022C38 /* Blocked.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F9A75237709C800022C38 /* Blocked.storyboard */; };
+		3A9F9A72237709B300022C38 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A71237709B300022C38 /* LoseViewController.swift */; };
+		3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A73237709BD00022C38 /* LosePresenter.swift */; };
+		3A9F9A76237709C800022C38 /* Lose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F9A75237709C800022C38 /* Lose.storyboard */; };
 		3A9F9A792377200300022C38 /* PurchasesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A782377200300022C38 /* PurchasesManager.swift */; };
 		3AA1272A232ABC01004206E5 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA12729232ABC01004206E5 /* GuideViewController.swift */; };
 		3AA12730232ABD15004206E5 /* GuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1272F232ABD15004206E5 /* GuidePresenter.swift */; };
@@ -267,7 +267,7 @@
 		3A6395EA2467C41900E04E95 /* ModeSelectoinConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectoinConfigurator.swift; sourceTree = "<group>"; };
 		3A653D9924155E2700BE613C /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		3A653D9B2416378C00BE613C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedStateConfigurator.swift; sourceTree = "<group>"; };
+		3A653DAD24196B6B00BE613C /* LoseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseConfigurator.swift; sourceTree = "<group>"; };
 		3A653DB4241A129A00BE613C /* SongsGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsGatewayProtocol.swift; sourceTree = "<group>"; };
 		3A653DB8241A155400BE613C /* SongsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsGateway.swift; sourceTree = "<group>"; };
 		3A653DBB241ABA6600BE613C /* DisplayAvailableSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAvailableSongs.swift; sourceTree = "<group>"; };
@@ -306,9 +306,9 @@
 		3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLastChallenge.swift; sourceTree = "<group>"; };
 		3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationConfigurator.swift; sourceTree = "<group>"; };
 		3A9F9A6E2376FFC400022C38 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		3A9F9A71237709B300022C38 /* BlockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedViewController.swift; sourceTree = "<group>"; };
-		3A9F9A73237709BD00022C38 /* BlockedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedPresenter.swift; sourceTree = "<group>"; };
-		3A9F9A75237709C800022C38 /* Blocked.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Blocked.storyboard; sourceTree = "<group>"; };
+		3A9F9A71237709B300022C38 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
+		3A9F9A73237709BD00022C38 /* LosePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosePresenter.swift; sourceTree = "<group>"; };
+		3A9F9A75237709C800022C38 /* Lose.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lose.storyboard; sourceTree = "<group>"; };
 		3A9F9A782377200300022C38 /* PurchasesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesManager.swift; sourceTree = "<group>"; };
 		3AA12729232ABC01004206E5 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		3AA1272F232ABD15004206E5 /* GuidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePresenter.swift; sourceTree = "<group>"; };
@@ -892,15 +892,15 @@
 			path = SettingsCollectionView;
 			sourceTree = "<group>";
 		};
-		3A9F9A702377099400022C38 /* Blocked */ = {
+		3A9F9A702377099400022C38 /* Lose */ = {
 			isa = PBXGroup;
 			children = (
-				3A653DAD24196B6B00BE613C /* BlockedStateConfigurator.swift */,
-				3A9F9A71237709B300022C38 /* BlockedViewController.swift */,
-				3A9F9A73237709BD00022C38 /* BlockedPresenter.swift */,
-				3A9F9A75237709C800022C38 /* Blocked.storyboard */,
+				3A653DAD24196B6B00BE613C /* LoseConfigurator.swift */,
+				3A9F9A71237709B300022C38 /* LoseViewController.swift */,
+				3A9F9A73237709BD00022C38 /* LosePresenter.swift */,
+				3A9F9A75237709C800022C38 /* Lose.storyboard */,
 			);
-			path = Blocked;
+			path = Lose;
 			sourceTree = "<group>";
 		};
 		3A9F9A772377150C00022C38 /* Purchases */ = {
@@ -973,7 +973,7 @@
 				3A0742A1241E2B65003B1A83 /* MotivationSelection */,
 				3A1FA56C245C1CF4000BAA20 /* CatStore */,
 				C13CFA1D23660E640022863E /* Current */,
-				3A9F9A702377099400022C38 /* Blocked */,
+				3A9F9A702377099400022C38 /* Lose */,
 				3ACD2C57240C2DE60017FABC /* History */,
 				54C2AB8B2378A6C800BB2D90 /* Settings */,
 				3A653DB1241A10B400BE613C /* Music */,
@@ -1285,7 +1285,7 @@
 				3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
-				3A9F9A76237709C800022C38 /* Blocked.storyboard in Resources */,
+				3A9F9A76237709C800022C38 /* Lose.storyboard in Resources */,
 				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
 				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
 				3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */,
@@ -1521,7 +1521,7 @@
 				3A653DB5241A129A00BE613C /* SongsGatewayProtocol.swift in Sources */,
 				54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */,
 				3ACD2C5E240C2DE60017FABC /* HistoryConfigurator.swift in Sources */,
-				3A9F9A72237709B300022C38 /* BlockedViewController.swift in Sources */,
+				3A9F9A72237709B300022C38 /* LoseViewController.swift in Sources */,
 				3A1FA57C245C3B15000BAA20 /* StackCollectionViewLayout.swift in Sources */,
 				3A1FA572245C1E34000BAA20 /* CatStorePresenter.swift in Sources */,
 				3AAA3A392475A20100954D5C /* LaunchScreenView.swift in Sources */,
@@ -1570,14 +1570,14 @@
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
 				3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */,
-				3A9F9A74237709BD00022C38 /* BlockedPresenter.swift in Sources */,
+				3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */,
 				3A44409324799796004BDD80 /* TimeUnits.swift in Sources */,
 				3AA1A1072454690600955BD5 /* UIView+Extension.swift in Sources */,
 				3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */,
 				3A0742B2241E3AAB003B1A83 /* TimeSelectionPresenter.swift in Sources */,
 				C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */,
 				3A653DBE241ABA8600BE613C /* ChangePlaybackState.swift in Sources */,
-				3A653DAE24196B6B00BE613C /* BlockedStateConfigurator.swift in Sources */,
+				3A653DAE24196B6B00BE613C /* LoseConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

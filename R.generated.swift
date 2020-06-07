@@ -95,8 +95,6 @@ struct R: Rswift.Validatable {
     static let ad = _R.storyboard.ad()
     /// Storyboard `Alert`.
     static let alert = _R.storyboard.alert()
-    /// Storyboard `Blocked`.
-    static let blocked = _R.storyboard.blocked()
     /// Storyboard `CatStore`.
     static let catStore = _R.storyboard.catStore()
     /// Storyboard `CreateChallenge`.
@@ -113,6 +111,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Loading`.
     static let loading = _R.storyboard.loading()
+    /// Storyboard `Lose`.
+    static let lose = _R.storyboard.lose()
     /// Storyboard `MotivationSelection`.
     static let motivationSelection = _R.storyboard.motivationSelection()
     /// Storyboard `MusicSelection`.
@@ -135,13 +135,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Alert", bundle: ...)`
     static func alert(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.alert)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Blocked", bundle: ...)`
-    static func blocked(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.blocked)
     }
     #endif
 
@@ -202,6 +195,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Lose", bundle: ...)`
+    static func lose(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.lose)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "MotivationSelection", bundle: ...)`
     static func motivationSelection(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.motivationSelection)
@@ -242,10 +242,6 @@ struct R: Rswift.Validatable {
 
   /// This `R.color` struct is generated, and contains static references to 21 colors.
   struct color {
-    /// Color `LightGreyText`.
-    static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreyText")
-    /// Color `NavigationItemSelected`.
-    static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "NavigationItemSelected")
     /// Color `blueBackground`.
     static let blueBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueBackground")
     /// Color `brownCat`.
@@ -272,10 +268,14 @@ struct R: Rswift.Validatable {
     static let lightBlueCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightBlueCat")
     /// Color `lightBlue`.
     static let lightBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightBlue")
+    /// Color `lightGreyText`.
+    static let lightGreyText = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGreyText")
     /// Color `lightGrey`.
     static let lightGrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGrey")
     /// Color `lightOrangeCat`.
     static let lightOrangeCat = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightOrangeCat")
+    /// Color `navigationItemSelected`.
+    static let navigationItemSelected = Rswift.ColorResource(bundle: R.hostingBundle, name: "navigationItemSelected")
     /// Color `orange`.
     static let orange = Rswift.ColorResource(bundle: R.hostingBundle, name: "orange")
     /// Color `pinkCat`.
@@ -284,24 +284,6 @@ struct R: Rswift.Validatable {
     static let purple = Rswift.ColorResource(bundle: R.hostingBundle, name: "purple")
     /// Color `redText`.
     static let redText = Rswift.ColorResource(bundle: R.hostingBundle, name: "redText")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "LightGreyText", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func lightGreyText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.lightGreyText, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "NavigationItemSelected", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func navigationItemSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.navigationItemSelected, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "blueBackground", bundle: ..., traitCollection: ...)`
@@ -430,11 +412,29 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightGreyText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightGreyText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightGreyText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "lightOrangeCat", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func lightOrangeCat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.lightOrangeCat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "navigationItemSelected", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func navigationItemSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.navigationItemSelected, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3392,9 +3392,6 @@ struct _R: Rswift.Validatable {
       try alert.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try blocked.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try catStore.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -3417,6 +3414,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try loading.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try lose.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try motivationSelection.validate()
@@ -3469,28 +3469,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.alert().alertViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'alertViewController' could not be loaded from storyboard 'Alert' as 'AlertViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct blocked: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let blockedViewController = StoryboardViewControllerResource<BlockedViewController>(identifier: "BlockedViewController")
-      let bundle = R.hostingBundle
-      let name = "Blocked"
-
-      func blockedViewController(_: Void = ()) -> BlockedViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: blockedViewController)
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "crying_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crying_cat' is used in storyboard 'Blocked', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'Blocked', but couldn't be loaded.") }
-        }
-        if _R.storyboard.blocked().blockedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blockedViewController' could not be loaded from storyboard 'Blocked' as 'BlockedViewController'.") }
       }
 
       fileprivate init() {}
@@ -3673,6 +3651,28 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.loading().loadingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loadingViewController' could not be loaded from storyboard 'Loading' as 'LoadingViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct lose: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let loseViewController = StoryboardViewControllerResource<LoseViewController>(identifier: "LoseViewController")
+      let name = "Lose"
+
+      func loseViewController(_: Void = ()) -> LoseViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loseViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "crying_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crying_cat' is used in storyboard 'Lose', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'Lose', but couldn't be loaded.") }
+        }
+        if _R.storyboard.lose().loseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loseViewController' could not be loaded from storyboard 'Lose' as 'LoseViewController'.") }
       }
 
       fileprivate init() {}

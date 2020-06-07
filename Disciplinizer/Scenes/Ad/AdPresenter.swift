@@ -13,15 +13,21 @@ protocol AdPresenterProtocol {
     func viewDidLoad()
 }
 
-class AdPresenter: NSObject, AdPresenterProtocol {
+protocol AdDismissDelegateProtocol: class {
+    func didDismiss()
+}
 
+class AdPresenter: NSObject, AdPresenterProtocol {
+    weak var adDismissDelegate: AdDismissDelegateProtocol?
+    
     weak var view: AdViewProtocol?
     var rewardedAd: GADRewardedAd?
     var numberOfAdsToShow = Config.shared.numberOfAds() ?? 3
     var watchedAds = 0
 
-    init(view: AdViewProtocol) {
+    init(view: AdViewProtocol, adDismissDelegate: AdDismissDelegateProtocol) {
         self.view = view
+        self.adDismissDelegate = adDismissDelegate
     }
 
     func viewDidLoad() {
@@ -75,7 +81,9 @@ extension AdPresenter: GADRewardedAdDelegate {
         if watchedAds < numberOfAdsToShow {
             self.rewardedAd = createAndLoadRewardedAd()
         } else {
-            rootVC.dismiss(animated: true, allPresented: true)
+            rootVC.dismiss(animated: true) {
+                self.adDismissDelegate?.didDismiss()
+            }
         }
     }
 

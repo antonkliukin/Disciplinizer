@@ -25,8 +25,6 @@ final class SettingsPresenter: SettingsPresenterProtocol {
     }
     
     func didTapMusicSelect() {
-        let vc = Controller.createMusicSelect()
 
-        self.view.router?.present(vc)
     }
 }

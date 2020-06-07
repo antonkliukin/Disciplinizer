@@ -8,19 +8,19 @@
 
 import Foundation
 
-protocol BlockedPresenterProtocol {
+protocol LosePresenterProtocol {
     func viewDidLoad()
     func didTapMainButton()
     func didTapSecondaryButton()
 }
 
-final class BlockedPresenter: BlockedPresenterProtocol {
-    private weak var view: BlockedViewProtocol?
+final class LosePresenter: LosePresenterProtocol {
+    private weak var view: LoseViewProtocol?
     private var challenge: Challenge
     private var purchasesManager: PurchasesManager
     private var motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol
 
-    init(view: BlockedViewProtocol,
+    init(view: LoseViewProtocol,
          failedChallenge: Challenge,
          purchasesManager: PurchasesManager,
          motivationalItemParameterUseCase: MotivationParameterUseCaseProtocol) {
@@ -52,10 +52,10 @@ final class BlockedPresenter: BlockedPresenterProtocol {
             view?.setImage(R.image.crying_cat()!)
         }
     }
-    
+        
     func didTapMainButton() {
         if challenge.motivationalItem == .ad {
-            rootVC.present(Controller.createAdVC(), animated: true, completion: nil)
+            rootVC.present(Controller.createAdVC(adDismissDelegate: self), animated: true, completion: nil)
         } else {
             view?.router?.present(Controller.createCatStore())
         }
@@ -72,5 +72,11 @@ final class BlockedPresenter: BlockedPresenterProtocol {
     private func unlockApp() {
         AppLockManager.shared.changeStateTo(.unlocked)
         KeychainService.appLockState = .unlocked
+    }
+}
+
+extension LosePresenter: AdDismissDelegateProtocol {
+    func didDismiss() {
+        view?.router?.dismissToParent(snapshot: false, completion: nil)
     }
 }

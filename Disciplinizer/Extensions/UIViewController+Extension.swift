@@ -17,7 +17,7 @@ extension UIViewController {
         case pageNavigation = "PageNavigation"
         case settings = "Settings"
         case history = "History"
-        case blocked = "Blocked"
+        case blocked = "Lose"
         case currentChallenge = "CurrentChallenge"
         case ad = "Ad"
         case motivationSelection = "MotivationSelection"

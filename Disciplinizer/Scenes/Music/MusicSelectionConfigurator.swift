@@ -13,13 +13,17 @@ protocol MusicSelectionConfiguratorProtocol {
 }
 
 class MusicSelectionConfigurator: MusicSelectionConfiguratorProtocol {
+    
+    private var changePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol
+    private var displaySongsUseCase: DisplaySongsUseCaseProtocol
+    
+    init(changePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol,
+         displaySongsUseCase: DisplaySongsUseCaseProtocol) {
+        self.changePlaybackStateUseCase =  changePlaybackStateUseCase
+        self.displaySongsUseCase = displaySongsUseCase
+    }
 
     func configure(musicSelectionViewController: MusicSelectViewController) {
-        let songsGateway = SongsGateway()
-
-        let changePlaybackStateUseCase = ChangePlaybackStateUseCase(songsGateway: songsGateway)
-        let displaySongsUseCase = DisplaySongsUseCase(songsGateway: songsGateway)
-
         let presenter = MusicSelectionPresenter(view: musicSelectionViewController,
                                                 changePlaybackStateUseCase: changePlaybackStateUseCase,
                                                 displaySongsUseCase: displaySongsUseCase)

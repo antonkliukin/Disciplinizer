@@ -11,7 +11,7 @@ import UIKit
 protocol CurrentChallengePresenterProtocol: class {
     func viewDidLoad()
     func viewDidAppear()
-    func didTapStopChallenge()
+    func didTapGiveUpButton()
     func didTapMusicSelection()
     func didTapBackButton()
 
@@ -28,6 +28,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
 
     private let startChallengeUseCase: StartChallengeUseCaseProtocol
     private let finishChallengeUseCase: FinishChallengeUseCaseProtocol
+    private let changePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol
     private let changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol
 
     private let challenge: Challenge
@@ -43,6 +44,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                   challenge: Challenge,
                   startChallengeUseCase: StartChallengeUseCaseProtocol,
                   finishChallengeUseCase: FinishChallengeUseCaseProtocol,
+                  changePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol,
                   changeMutedPlaybackStateUseCase: ChangeMutedPlaybackStateUseCaseProtocol,
                   motivationParameterUseCase: MotivationParameterUseCaseProtocol) {
         self.view = view
@@ -50,6 +52,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         self.durationInSeconds = Int(challenge.durationInMinutes * 60)
         self.startChallengeUseCase = startChallengeUseCase
         self.finishChallengeUseCase = finishChallengeUseCase
+        self.changePlaybackStateUseCase = changePlaybackStateUseCase
         self.changeMutedPlaybackStateUseCase = changeMutedPlaybackStateUseCase
         self.motivationParameterUseCase = motivationParameterUseCase
     }
@@ -68,7 +71,7 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         start(challenge)
     }
         
-    func didTapStopChallenge() {
+    func didTapGiveUpButton() {
         let alertDescription = challenge.motivationalItem == .ad ? Strings.currentAlertGiveUpAdDescription() : Strings.currentAlertGiveUpCatDescription()
         
         let alertModel = AlertModel(title: Strings.currentAlertGiveUpTitle(),
@@ -102,7 +105,11 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     private func setupMusicController() {
-        let musicController = Controller.createMusicSelect()
+        let songsGateway = SongsGateway()
+        let displaySongsUseCase = DisplaySongsUseCase(songsGateway: songsGateway)
+
+        let musicController = Controller.createMusicSelect(changePlaybackStateUseCase: changePlaybackStateUseCase,
+                                                           displaySongsUseCase: displaySongsUseCase)
         musicView = musicController
     }
 
@@ -204,6 +211,11 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
             }
 
             self.invalidateTimer()
+            self.changePlaybackStateUseCase.getPlaying { (result) in
+                guard let currentSong = try? result.get() else { return }
+                
+                self.changePlaybackStateUseCase.stop(song: currentSong) { (_) in }
+            }
             self.changeMutedPlaybackStateUseCase.stopMutedPlayback { (_) in return }
 
             switch finishingResult {
@@ -215,12 +227,16 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                     AppLockManager.shared.changeStateTo(.locked)
                     KeychainService.appLockState = .locked
                     
+                    self.view?.router?.dismiss()
+                    
                     print("> Lose, the app will be blocked until ad is viewed")
                 } else if isLose {
                     self.motivationParameterUseCase.deletePaid { (_) in }
                     self.motivationParameterUseCase.select(motivationalItem: .ad) { (_) in }
                     AppLockManager.shared.changeStateTo(.locked)
                     KeychainService.appLockState = .locked
+                    
+                    self.view?.router?.dismiss()
 
                     print("> Lose without blocking")
                 } else {

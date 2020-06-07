@@ -97,7 +97,7 @@ final class CurrentChallengeViewController: UIViewController, CurrentChallengeVi
     }
 
     @IBAction private func didTapGiveUpButton(_ sender: MainButton) {
-        presenter?.didTapStopChallenge()
+        presenter?.didTapGiveUpButton()
     }
     
     @IBAction private func didTapMusicSelectionButton(_ sender: Any) {

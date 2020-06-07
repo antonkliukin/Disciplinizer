@@ -27,6 +27,7 @@ class CurrentChallengeConfigurator: CurrentChallengeConfiguratorProtocol {
         let finishChallengeUseCase = FinishChallengeUseCase(challengesGateway: coreDataChallengesGateway)
 
         let songsGateway = SongsGateway()
+        let changePlaybackStateUseCase = ChangePlaybackStateUseCase(songsGateway: songsGateway)
         let changeMutedPlaybackStateUseCase = ChangeMutedPlaybackStateUseCase(songsGateway: songsGateway)
         
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()
@@ -36,6 +37,7 @@ class CurrentChallengeConfigurator: CurrentChallengeConfiguratorProtocol {
                                                   challenge: challenge,
                                                   startChallengeUseCase: startChallengeUseCase,
                                                   finishChallengeUseCase: finishChallengeUseCase,
+                                                  changePlaybackStateUseCase: changePlaybackStateUseCase,
                                                   changeMutedPlaybackStateUseCase: changeMutedPlaybackStateUseCase,
                                                   motivationParameterUseCase: motivationParameterUseCase)
         

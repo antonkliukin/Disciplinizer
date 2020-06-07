@@ -16,12 +16,12 @@ class AdViewController: UIViewController, AdViewProtocol {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var presenter: AdPresenterProtocol?
-    var configurator = AdConfigurator()
+    var configurator: AdConfigurator?
 
     override func viewDidLoad() {
       super.viewDidLoad()
 
-        configurator.configure(adViewController: self)
+        configurator?.configure(adViewController: self)
         presenter?.viewDidLoad()
         
         if #available(iOS 13.0, *) {

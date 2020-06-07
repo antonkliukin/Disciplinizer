@@ -19,6 +19,7 @@ protocol RouterProtocol {
     func pop()
     ///  - parameter toRoot: True - pops all pushed VCs to root VC, false - pops the topmost pushed VC.
     func pop(animated: Bool, toRoot: Bool)
+    func dismissToParent(snapshot: Bool, completion: (() -> Void)?)
     func dismiss()
     func dismiss(animated: Bool, completion: (() -> Void)?)
     func remove()
@@ -64,6 +65,23 @@ class Router: RouterProtocol {
         }
 
         navController.pushViewController(vc, animated: animated)
+    }
+    
+    func dismissToParent(snapshot: Bool, completion: (() -> Void)?) {
+        let presenting = initialController
+        
+        var snapshotView: UIView?
+        if snapshot {
+            // This is used to prevent underlying VC's view showing during animated dismissal
+            snapshotView = presenting.view.snapshotView(afterScreenUpdates: true)
+        }
+                
+        if let snapshotView = snapshotView {
+            snapshotView.frame = presenting.presentedViewController?.view.frame ?? .zero
+            presenting.presentedViewController?.view.addSubview(snapshotView)
+        }
+        
+        presenting.dismiss(animated: true, completion: completion)
     }
 
     func dismiss() {

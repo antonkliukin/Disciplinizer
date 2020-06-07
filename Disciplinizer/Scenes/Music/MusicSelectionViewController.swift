@@ -21,7 +21,7 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
     private var transitionPositionObserver: NSKeyValueObservation?
 
     var presenter: MusicSelectionPresenterProtocol?
-    var configurator = MusicSelectionConfigurator()
+    var configurator: MusicSelectionConfigurator?
     var songs: [Song] = []
     var currentSong: Song?
 
@@ -37,7 +37,7 @@ final class MusicSelectViewController: UIViewController, MusicSelectionViewProto
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configurator.configure(musicSelectionViewController: self)
+        configurator?.configure(musicSelectionViewController: self)
 
         presenter?.viewDidLoad()
 

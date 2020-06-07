@@ -13,21 +13,7 @@ var rootVC = RootViewController()
 class RootViewController: UIViewController, ViewProtocol {
     private var stubView = LaunchScreenView()
     private var isReady = false
-    
-    func dismiss(animated flag: Bool, allPresented: Bool, completion: (() -> Void)? = nil) {
-        super.dismiss(animated: flag, completion: {
-            completion?()
-            
-            if allPresented {
-                if let childVC = self.children.first as? PageNavigationViewController {
-                    for vc in childVC.viewControllers ?? [] {
-                        vc.dismiss(animated: flag, completion: nil)
-                    }
-                }
-            }
-        })
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

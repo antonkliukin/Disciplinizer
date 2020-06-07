@@ -36,7 +36,7 @@ class GuidePresenter: GuidePresenterProtocol {
             view?.updateProgressBar(progress: 1, animated: true) {
                 UserDefaults.standard.set(true, forKey: "isFirstLaunch")
                 
-                rootVC.dismiss(animated: true, allPresented: true) {
+                rootVC.dismiss(animated: true) {
                     NotificationManager.shared.requestAuthorization()
                 }
             }

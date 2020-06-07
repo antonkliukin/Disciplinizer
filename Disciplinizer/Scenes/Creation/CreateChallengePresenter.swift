@@ -85,7 +85,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                     return
                 }
 
-                let losingVC = Controller.createLosing(withFailedChallenge: challenge)
+                let losingVC = Controller.createLose(withFailedChallenge: challenge)
                 self.view?.router?.present(losingVC, animated: true, forcePresent: false, completion: nil)
             case .failure:
                 return

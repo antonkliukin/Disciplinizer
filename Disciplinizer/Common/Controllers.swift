@@ -37,6 +37,7 @@ enum Controller {
 
     static func createChallenge() -> UIViewController {
         let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
+        vc.definesPresentationContext = true
 
         return vc
     }
@@ -112,10 +113,16 @@ enum Controller {
         return vc
     }
 
-    static func createMusicSelect() -> MusicSelectViewController {
+    static func createMusicSelect(changePlaybackStateUseCase: ChangePlaybackStateUseCaseProtocol,
+                                  displaySongsUseCase: DisplaySongsUseCaseProtocol) -> MusicSelectViewController {
         let vc = MusicSelectViewController.fromStoryboard(.musicSelection)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
+                
+        let configurator = MusicSelectionConfigurator(changePlaybackStateUseCase: changePlaybackStateUseCase,
+                                                      displaySongsUseCase: displaySongsUseCase)
+        
+        vc.configurator = configurator
         
         return vc
     }
@@ -129,19 +136,22 @@ enum Controller {
         return vc
     }
 
-    static func createLosing(withFailedChallenge challenge: Challenge) -> UIViewController {
-        let vc = BlockedViewController.fromStoryboard(.blocked)
+    static func createLose(withFailedChallenge challenge: Challenge) -> UIViewController {
+        let vc = LoseViewController.fromStoryboard(.blocked)
         vc.modalPresentationStyle = .currentContext
         
-        let configurator = BlockedStateConfigurator(challenge: challenge)
+        let configurator = LoseConfigurator(challenge: challenge)
         vc.configurator = configurator
 
         return vc
     }
 
-    static func createAdVC() -> UIViewController {
+    static func createAdVC(adDismissDelegate: AdDismissDelegateProtocol) -> UIViewController {
         let vc = AdViewController.fromStoryboard(.ad)
         vc.modalPresentationStyle = .overCurrentContext
+        
+        let configurator = AdConfigurator(adDismissDelegate: adDismissDelegate)
+        vc.configurator = configurator
 
         return vc
     }

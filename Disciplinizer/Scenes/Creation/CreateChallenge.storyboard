@@ -100,6 +100,7 @@
                                                     <constraint firstItem="6BV-ar-Dsp" firstAttribute="centerY" secondItem="79K-w6-qVD" secondAttribute="centerY" id="ScP-Gv-c7r"/>
                                                     <constraint firstItem="79K-w6-qVD" firstAttribute="top" secondItem="al5-aG-cxQ" secondAttribute="bottom" constant="60" id="WaB-pw-KtW"/>
                                                     <constraint firstItem="al5-aG-cxQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QPI-9a-DOG" secondAttribute="leading" constant="10" id="ebI-jl-RGg"/>
+                                                    <constraint firstItem="al5-aG-cxQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QPI-9a-DOG" secondAttribute="top" constant="100" id="gSY-9m-jEP"/>
                                                     <constraint firstItem="6BV-ar-Dsp" firstAttribute="centerX" secondItem="79K-w6-qVD" secondAttribute="centerX" id="oBN-KK-aai"/>
                                                     <constraint firstItem="al5-aG-cxQ" firstAttribute="centerX" secondItem="QPI-9a-DOG" secondAttribute="centerX" id="p3i-78-997"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="79K-w6-qVD" secondAttribute="bottom" constant="30" id="uTv-1e-5Gx"/>
@@ -137,7 +138,7 @@
                             <constraint firstItem="jVj-1t-gvu" firstAttribute="leading" secondItem="9Kj-69-dix" secondAttribute="leading" id="ERc-36-4EM"/>
                             <constraint firstItem="9Kj-69-dix" firstAttribute="trailing" secondItem="UPj-or-PQu" secondAttribute="trailing" id="H3M-wy-qUG"/>
                             <constraint firstItem="UPj-or-PQu" firstAttribute="leading" secondItem="9Kj-69-dix" secondAttribute="leading" id="Lal-cn-Nuk"/>
-                            <constraint firstItem="al5-aG-cxQ" firstAttribute="top" secondItem="jVj-1t-gvu" secondAttribute="bottom" constant="-50" id="M4N-bb-BTA"/>
+                            <constraint firstItem="al5-aG-cxQ" firstAttribute="top" secondItem="jVj-1t-gvu" secondAttribute="bottom" priority="250" constant="-50" id="M4N-bb-BTA"/>
                             <constraint firstItem="jVj-1t-gvu" firstAttribute="height" secondItem="gLX-jH-Nx7" secondAttribute="height" multiplier="0.32" id="M64-Wy-8YU"/>
                             <constraint firstItem="UPj-or-PQu" firstAttribute="top" secondItem="9Kj-69-dix" secondAttribute="top" id="V4E-ES-Sfo"/>
                             <constraint firstItem="9Kj-69-dix" firstAttribute="trailing" secondItem="jVj-1t-gvu" secondAttribute="trailing" id="fOY-uZ-3BV"/>

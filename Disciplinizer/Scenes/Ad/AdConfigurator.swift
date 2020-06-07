@@ -9,8 +9,14 @@
 import Foundation
 
 class AdConfigurator {
+    weak var adDismissDelegate: AdDismissDelegateProtocol!
+    
+    init(adDismissDelegate: AdDismissDelegateProtocol) {
+        self.adDismissDelegate = adDismissDelegate
+    }
+    
     func configure(adViewController: AdViewController) {
-        let presenter = AdPresenter(view: adViewController)
+        let presenter = AdPresenter(view: adViewController, adDismissDelegate: adDismissDelegate)
         adViewController.presenter = presenter
     }
 }

@@ -49,14 +49,14 @@ class CatStorePresenter: CatStorePresenterProtocol {
                     let loading = Controller.loading()
                     rootVC.present(loading, animated: true, completion: nil)
                 case .purchased:
-                    rootVC.dismiss(animated: true, allPresented: false) {
-                        self.finishPurchasing(forItem: item)
+                    rootVC.dismiss(animated: true) {
+                       self.finishPurchasing(forItem: item)
                     }
                 default:
                     assertionFailure()
                 }
             case .failure:
-                rootVC.dismiss(animated: true, allPresented: true)
+                self.view?.router?.dismissToParent(snapshot: true, completion: nil)
             }
         }
     }
@@ -74,7 +74,8 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         positiveActionTitle: Strings.alertActionBack(),
                                         positiveAction: {
                                             if self.view?.isPresented ?? false {
-                                                rootVC.dismiss(animated: true, allPresented: true)
+                                                self.view?.router?.dismissToParent(snapshot: true, completion: nil)
+                                                //rootVC.dismiss(animated: true, allPresented: true)
                                             } else {
                                                 self.view?.router?.pop(animated: true, toRoot: true)
                                             }
