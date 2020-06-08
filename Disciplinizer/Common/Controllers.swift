@@ -28,13 +28,7 @@ enum Controller {
 
         return vc
     }
-
-    static func createHistory() -> UIViewController {
-        let vc = HistoryViewController.fromStoryboard(.history)
-
-        return vc
-    }
-
+    
     static func createChallenge() -> UIViewController {
         let vc = CreateChallengeViewController.fromStoryboard(.createChallenge)
         vc.definesPresentationContext = true
@@ -42,8 +36,16 @@ enum Controller {
         return vc
     }
 
+    static func createHistory() -> UIViewController {
+        let vc = HistoryViewController.fromStoryboard(.history)
+        vc.definesPresentationContext = true
+
+        return vc
+    }
+
     static func createSettings() -> UIViewController {
         let vc = SettingsViewController.fromStoryboard(.settings)
+        vc.definesPresentationContext = true
 
         return vc
     }

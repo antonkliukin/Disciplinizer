@@ -53,6 +53,7 @@ final class LoseViewController: UIViewController, LoseViewProtocol {
     
     func setMainButtonTitle(_ title: String) {
         mainButton.setTitle(title, for: .normal)
+        mainButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     func setSecondaryButtonTitle(_ title: String) {

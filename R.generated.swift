@@ -3257,8 +3257,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "cuddly_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cuddly_cat' is used in nib 'ChallengeParameterView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "DarkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkBlueText' is used in storyboard 'ChallengeParameterView', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "LightGreyText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGreyText' is used in storyboard 'ChallengeParameterView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'ChallengeParameterView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightGreyText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightGreyText' is used in storyboard 'ChallengeParameterView', but couldn't be loaded.") }
         }
       }
 
@@ -3337,7 +3337,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "launch_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_cat' is used in nib 'LaunchScreenView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "launch_title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_title' is used in nib 'LaunchScreenView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlue' is used in storyboard 'LaunchScreenView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'LaunchScreenView', but couldn't be loaded.") }
         }
       }
 
@@ -3509,7 +3509,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "titleBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'titleBackground' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTWhite' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
           if UIKit.UIColor(named: "blueBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blueBackground' is used in storyboard 'CreateChallenge', but couldn't be loaded.") }
         }
         if _R.storyboard.createChallenge().createChallengeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChallengeViewController' could not be loaded from storyboard 'CreateChallenge' as 'CreateChallengeViewController'.") }
@@ -3629,7 +3628,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "launch_cat", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_cat' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if UIKit.UIImage(named: "launch_title", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch_title' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "CTBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CTBlue' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkBlueText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkBlueText' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
       }
 

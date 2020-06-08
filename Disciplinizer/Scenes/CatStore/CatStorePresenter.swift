@@ -75,7 +75,6 @@ class CatStorePresenter: CatStorePresenterProtocol {
                                         positiveAction: {
                                             if self.view?.isPresented ?? false {
                                                 self.view?.router?.dismissToParent(snapshot: true, completion: nil)
-                                                //rootVC.dismiss(animated: true, allPresented: true)
                                             } else {
                                                 self.view?.router?.pop(animated: true, toRoot: true)
                                             }

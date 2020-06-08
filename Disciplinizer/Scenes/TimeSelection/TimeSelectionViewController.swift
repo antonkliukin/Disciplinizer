@@ -42,8 +42,6 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
-        timeTextField.becomeFirstResponder()
                 
         presenter.viewDidLoad()
     }
@@ -53,6 +51,12 @@ class TimeSelectionViewController: UIViewController, TimeSelectionViewProtocol {
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        timeTextField.becomeFirstResponder()
     }
         
     @objc func dismissKeyboard() {

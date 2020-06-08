@@ -14,17 +14,8 @@ enum ActionViewType {
 }
 
 struct SettingsSectionItem {
+    var sectionTitle = ""
     var title = ""
     var action: (Bool) -> Void = { _ in }
     var actionViewType: ActionViewType = .tap
-    
-    static func headerTitle(forIndexPath indexPath: IndexPath) -> String {
-        switch indexPath.section {
-        case 0: return Strings.settingsNotifications()
-        case 1: return Strings.settingsAppearance()
-        case 2: return Strings.settingsGetInTouch()
-        case 3: return Strings.settingsAbout()
-        default: return ""
-        }
-    }
 }

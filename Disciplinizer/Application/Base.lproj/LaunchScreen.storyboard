@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="CTBlue"/>
+                        <color key="backgroundColor" name="darkBlueText"/>
                         <constraints>
                             <constraint firstItem="l1B-hH-bGS" firstAttribute="top" secondItem="zbN-yU-d3a" secondAttribute="bottom" constant="30" id="7gu-TN-1RY"/>
                             <constraint firstItem="l1B-hH-bGS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="bst-dF-fD4"/>
@@ -48,7 +48,7 @@
     <resources>
         <image name="launch_cat" width="300" height="300"/>
         <image name="launch_title" width="156" height="21"/>
-        <namedColor name="CTBlue">
+        <namedColor name="darkBlueText">
             <color red="0.16078431372549021" green="0.31372549019607843" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

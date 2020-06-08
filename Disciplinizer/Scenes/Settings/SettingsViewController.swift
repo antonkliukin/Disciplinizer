@@ -14,30 +14,40 @@ protocol SettingsViewProtocol: ViewProtocol {
 
 class SettingsViewController: UIViewController, SettingsViewProtocol {
     var presenter: SettingsPresenterProtocol?
-
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var titleBackgroundView: UIView!
     
     private var sections: [[SettingsSectionItem]] {
         return [
-            [SettingsSectionItem(title: Strings.settingsNotifications(), action: { (isOn) in
-                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-            }, actionViewType: .switcher(isOn: NotificationManager.shared.isAuthorized()))
+            [SettingsSectionItem(sectionTitle: Strings.settingsNotifications(),
+                                 title: Strings.settingsNotifications(),
+                                 action: { (isOn) in UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) },
+                                 actionViewType: .switcher(isOn: NotificationManager.shared.isAuthorized()))
             ],
-            [SettingsSectionItem(title: Strings.settingsDarkMode(), action: { (isOn) in
-                print(isOn)
-            }, actionViewType: .switcher(isOn: true))
+            /*
+            [SettingsSectionItem(sectionTitle: Strings.settingsAppearance(),
+                                 title: Strings.settingsDarkMode(),
+                                 action: { (isOn) in print(isOn) },
+                                 actionViewType: .switcher(isOn: true))
             ],
-            [SettingsSectionItem(title: Strings.settingsEmailUs(), action: { (_) in
-                print("")
-            }, actionViewType: .tap)
+            */
+            [SettingsSectionItem(sectionTitle: Strings.settingsGetInTouch(),
+                                 title: Strings.settingsEmailUs(),
+                                 action: { (_) in print("Email Us") },
+                                 actionViewType: .tap)
             ],
-            [SettingsSectionItem(title: Strings.settingsTerms(), action: { (_) in
-                print("")
-            }, actionViewType: .tap),
-             SettingsSectionItem(title: Strings.settingsPolicy(), action: { (_) in
-                 print("")
-             }, actionViewType: .tap)
+            [
+            /*
+            SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
+                                 title: Strings.settingsTerms(),
+                                 action: { (_) in print("Terms") },
+                                 actionViewType: .tap),
+             */
+             SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
+                                 title: Strings.settingsPolicy(),
+                                 action: { (_) in print("Policy") },
+                                 actionViewType: .tap)
             ]
         ]
     }
@@ -50,7 +60,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         super.viewDidLoad()
         
         configurator.configure(settingsViewController: self)
-
+        
         titleBackgroundView.roundCorners(corners: .bottom, radius: 24)
         addCollectionView()
         
@@ -90,13 +100,5 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         collectionView.register(SettingsSectionHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "SettingsSectionHeader")
-    }
-    
-    @IBAction private func selectMusicButtonTapped(_ sender: Any) {
-        presenter?.didTapMusicSelect()
-    }
-    
-    func updateMusicConfiguration(with model: Song) {
-        //songNameLabel.text = model.title
     }
 }

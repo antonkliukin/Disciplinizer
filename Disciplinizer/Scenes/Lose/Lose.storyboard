@@ -66,6 +66,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="b6a-ug-LXQ"/>
                                         </constraints>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Get a new cat"/>
                                         <connections>
                                             <action selector="mainButtonTapped:" destination="KCX-c9-j2p" eventType="touchUpInside" id="pfu-Vx-B25"/>

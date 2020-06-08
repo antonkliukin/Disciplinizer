@@ -29,7 +29,8 @@ final class SettingsCollectionView: CollectionView<SettingsCell, SettingsSection
         if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                         withReuseIdentifier: "SettingsSectionHeader",
                                                                         for: indexPath) as? SettingsSectionHeader {
-            let title = SettingsSectionItem.headerTitle(forIndexPath: indexPath)
+            
+            let title = sections[indexPath.section].first?.sectionTitle ?? ""
             header.titleLabel.text = title
             return header
         }
