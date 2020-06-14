@@ -12,10 +12,6 @@ protocol GuideViewProtocol: ViewProtocol {
     func updateProgressBar(progress: CGFloat, animated: Bool, completion: (() -> Void)?)
 }
 
-extension Notification.Name {
-    static let didTapNext = Notification.Name("didTapNext")
-}
-
 class GuideViewController: UIViewController, GuideViewProtocol {
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var fullProgressBarView: UIView!

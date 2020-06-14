@@ -77,6 +77,6 @@ final class LosePresenter: LosePresenterProtocol {
 
 extension LosePresenter: AdDismissDelegateProtocol {
     func didDismiss() {
-        view?.router?.dismissToParent(snapshot: false, completion: nil)
+        view?.router?.dismissToParent(snapshot: true, completion: nil)
     }
 }

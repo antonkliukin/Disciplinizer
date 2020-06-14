@@ -70,22 +70,28 @@ class Router: RouterProtocol {
     func dismissToParent(snapshot: Bool, completion: (() -> Void)?) {
         var presentingVC = initialController
         
+        // This is used to prevent an underlying VC's view from being shown during an animated dismissal.
         var snapshotView: UIView?
         if snapshot {
-            // This is used to prevent underlying VC's view showing during animated dismissal
             snapshotView = presentingVC.view.snapshotView(afterScreenUpdates: true)
         }
-                
-        if let snapshotView = snapshotView {
-            snapshotView.frame = presentingVC.presentingViewController?.view.frame ?? .zero
-            presentingVC.presentingViewController?.view.addSubview(snapshotView)
-        }
-        
+
         while let nextPresentingVC = presentingVC.presentingViewController {
             presentingVC = nextPresentingVC
         }
                 
-        presentingVC.dismiss(animated: true, completion: completion)
+        if let snapshotView = snapshotView {
+            snapshotView.frame = presentingVC.view.frame
+            presentingVC.view.addSubview(snapshotView)
+        }
+          
+        presentingVC.dismiss(animated: false, completion: {
+            UIView.animate(withDuration: 0.2, animations: {
+                snapshotView?.frame.origin.y = snapshotView?.superview?.frame.maxY ?? 0
+            }) { (_) in
+                snapshotView?.removeFromSuperview()
+            }
+        })
     }
 
     func dismiss() {

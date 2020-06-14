@@ -58,7 +58,7 @@ enum Controller {
     
     static func createCatStore() -> UIViewController {
         let vc = CatStoreViewController.fromStoryboard(.catStore)
-        vc.modalPresentationStyle = .currentContext
+        vc.modalPresentationStyle = .overCurrentContext
 
         return vc
     }
@@ -140,7 +140,7 @@ enum Controller {
 
     static func createLose(withFailedChallenge challenge: Challenge) -> UIViewController {
         let vc = LoseViewController.fromStoryboard(.blocked)
-        vc.modalPresentationStyle = .currentContext
+        vc.modalPresentationStyle = .overCurrentContext
         
         let configurator = LoseConfigurator(challenge: challenge)
         vc.configurator = configurator

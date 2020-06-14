@@ -40,19 +40,28 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     func viewDidLoad() {
         view?.set(viewTitle: Strings.creationTitle())
         view?.set(startButtonTitle: Strings.creationStartButtonTitle())
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateMotivationView),
+                                               name: Notification.Name.selectedMotivationalItemChanged,
+                                               object: nil)
     }
 
     func viewWillAppear() {
         checkIfLocked()
 
         configureTimeView()
-        configureMotivationView()
+        updateMotivationView()
         
         view?.changeStartButtonState(isActive: true)
     }
     
     func viewDidAppear() {
         
+    }
+    
+    @objc private func updateMotivationView() {
+        configureMotivationView()
     }
     
     private func checkIfLocked() {

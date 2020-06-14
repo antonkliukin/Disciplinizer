@@ -51,7 +51,7 @@
                                     <constraint firstItem="RCM-K8-fDU" firstAttribute="leading" secondItem="Rmn-d2-9Dz" secondAttribute="leading" id="unQ-gg-ZaQ"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-8r-9BI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-8r-9BI">
                                 <rect key="frame" x="10" y="204" width="394" height="658"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Rh-kD-74d" customClass="StackCollectionViewLayout" customModule="Disciplinizer" customModuleProvider="target">

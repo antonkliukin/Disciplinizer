@@ -1011,7 +1011,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let buyAction = Rswift.StringResource(key: "buy.action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Buy a cat instead
+      /// en translation: Buy a pet instead
       ///
       /// Locales: ru, en
       static let loseAdSecondaryButton = Rswift.StringResource(key: "lose.ad.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1019,10 +1019,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let historyAlertCancel = Rswift.StringResource(key: "history.alert.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Cat mode
-      ///
-      /// Locales: ru, en
-      static let motivationItemCatMode = Rswift.StringResource(key: "motivationItem.catMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Change mode
       ///
       /// Locales: ru, en
@@ -1035,7 +1031,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let musicTitle = Rswift.StringResource(key: "music.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Choose a new cat
+      /// en translation: Choose a new pet
       ///
       /// Locales: ru, en
       static let catStoreTitle = Rswift.StringResource(key: "catStore.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1071,7 +1067,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentAlertGiveUpPositive = Rswift.StringResource(key: "current.alert.giveUp.positive", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Continue without a cat
+      /// en translation: Continue without a pet
       ///
       /// Locales: ru, en
       static let loseCatSecondaryButton = Rswift.StringResource(key: "lose.cat.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1115,7 +1111,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemLevel2Title = Rswift.StringResource(key: "motivationItem.level2.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Get a new cat
+      /// en translation: Get a new pet
       ///
       /// Locales: ru, en
       static let loseCatMainButton = Rswift.StringResource(key: "lose.cat.mainButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1167,7 +1163,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let historyAlertDescription = Rswift.StringResource(key: "history.alert.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: If you fail, a cat leaves you
+      /// en translation: If you fail, a pet leaves you
       ///
       /// Locales: ru, en
       static let guideCatMotivationDescription = Rswift.StringResource(key: "guide.catMotivation.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1187,7 +1183,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage10 = Rswift.StringResource(key: "guide.message10", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: If you’ll give up, your cat will leave you
+      /// en translation: If you’ll give up, your pet will leave you
       ///
       /// Locales: ru, en
       static let currentAlertGiveUpCatDescription = Rswift.StringResource(key: "current.alert.giveUp.catDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1247,6 +1243,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage3 = Rswift.StringResource(key: "guide.message3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Pet mode
+      ///
+      /// Locales: ru, en
+      static let motivationItemCatMode = Rswift.StringResource(key: "motivationItem.catMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
       /// Locales: ru, en
@@ -1347,7 +1347,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let loseAdDescription = Rswift.StringResource(key: "lose.ad.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: We give you 1 free cat. If your cat leaves you can buy another.
+      /// en translation: We give you 1 free pet. If your pet leaves you can buy another.
       ///
       /// Locales: ru, en
       static let guideCatMotivationMessage = Rswift.StringResource(key: "guide.catMotivation.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1375,11 +1375,11 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let notificationsWinBody = Rswift.StringResource(key: "notifications.win.body", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Your cat left you
+      /// en translation: Your pet left you
       ///
       /// Locales: ru, en
       static let loseCatTitle = Rswift.StringResource(key: "lose.cat.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Your cat will leave you if you give up
+      /// en translation: Your pet will leave you if you give up
       ///
       /// Locales: ru, en
       static let currentTimerCatDescription = Rswift.StringResource(key: "current.timer.catDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1391,14 +1391,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let currentSuccessDescription = Rswift.StringResource(key: "current.successDescription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: cat mode
-      ///
-      /// Locales: ru, en
-      static let guideCatMotivationTitle = Rswift.StringResource(key: "guide.catMotivation.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: cat mode
-      ///
-      /// Locales: ru, en
-      static let historyMotivationCat = Rswift.StringResource(key: "history.motivation.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: catSticker
       ///
       /// Locales: ru, en
@@ -1411,11 +1403,19 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideOnline = Rswift.StringResource(key: "guide.online", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: pet mode
+      ///
+      /// Locales: ru, en
+      static let guideCatMotivationTitle = Rswift.StringResource(key: "guide.catMotivation.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: pet mode
+      ///
+      /// Locales: ru, en
+      static let historyMotivationCat = Rswift.StringResource(key: "history.motivation.cat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: please enter time from 15 to 120 minutes
       ///
       /// Locales: ru, en
       static let timeSelectionErrorMessage = Rswift.StringResource(key: "timeSelection.errorMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: save a cat
+      /// en translation: save a pet
       ///
       /// Locales: ru, en
       static let creationSaveCat = Rswift.StringResource(key: "creation.saveCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1435,7 +1435,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideTypingText = Rswift.StringResource(key: "guide.typingText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: you have no cat
+      /// en translation: you have no pet
       ///
       /// Locales: ru, en
       static let motivationItemInfoNotCat = Rswift.StringResource(key: "motivationItem.info.notCat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
@@ -1579,7 +1579,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("buy.action", bundle: bundle, comment: "")
       }
 
-      /// en translation: Buy a cat instead
+      /// en translation: Buy a pet instead
       ///
       /// Locales: ru, en
       static func loseAdSecondaryButton(preferredLanguages: [String]? = nil) -> String {
@@ -1607,21 +1607,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("history.alert.cancel", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Cat mode
-      ///
-      /// Locales: ru, en
-      static func motivationItemCatMode(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("motivationItem.catMode", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "motivationItem.catMode"
-        }
-
-        return NSLocalizedString("motivationItem.catMode", bundle: bundle, comment: "")
       }
 
       /// en translation: Change mode
@@ -1669,7 +1654,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("music.title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Choose a new cat
+      /// en translation: Choose a new pet
       ///
       /// Locales: ru, en
       static func catStoreTitle(preferredLanguages: [String]? = nil) -> String {
@@ -1804,7 +1789,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("current.alert.giveUp.positive", bundle: bundle, comment: "")
       }
 
-      /// en translation: Continue without a cat
+      /// en translation: Continue without a pet
       ///
       /// Locales: ru, en
       static func loseCatSecondaryButton(preferredLanguages: [String]? = nil) -> String {
@@ -1969,7 +1954,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.level2.title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Get a new cat
+      /// en translation: Get a new pet
       ///
       /// Locales: ru, en
       static func loseCatMainButton(preferredLanguages: [String]? = nil) -> String {
@@ -2164,7 +2149,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("history.alert.description", bundle: bundle, comment: "")
       }
 
-      /// en translation: If you fail, a cat leaves you
+      /// en translation: If you fail, a pet leaves you
       ///
       /// Locales: ru, en
       static func guideCatMotivationDescription(preferredLanguages: [String]? = nil) -> String {
@@ -2239,7 +2224,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.message10", bundle: bundle, comment: "")
       }
 
-      /// en translation: If you’ll give up, your cat will leave you
+      /// en translation: If you’ll give up, your pet will leave you
       ///
       /// Locales: ru, en
       static func currentAlertGiveUpCatDescription(preferredLanguages: [String]? = nil) -> String {
@@ -2462,6 +2447,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.message3", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pet mode
+      ///
+      /// Locales: ru, en
+      static func motivationItemCatMode(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.catMode", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.catMode"
+        }
+
+        return NSLocalizedString("motivationItem.catMode", bundle: bundle, comment: "")
       }
 
       /// en translation: Pinko
@@ -2839,7 +2839,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.ad.description", bundle: bundle, comment: "")
       }
 
-      /// en translation: We give you 1 free cat. If your cat leaves you can buy another.
+      /// en translation: We give you 1 free pet. If your pet leaves you can buy another.
       ///
       /// Locales: ru, en
       static func guideCatMotivationMessage(preferredLanguages: [String]? = nil) -> String {
@@ -2944,7 +2944,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.win.body", bundle: bundle, comment: "")
       }
 
-      /// en translation: Your cat left you
+      /// en translation: Your pet left you
       ///
       /// Locales: ru, en
       static func loseCatTitle(preferredLanguages: [String]? = nil) -> String {
@@ -2959,7 +2959,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lose.cat.title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Your cat will leave you if you give up
+      /// en translation: Your pet will leave you if you give up
       ///
       /// Locales: ru, en
       static func currentTimerCatDescription(preferredLanguages: [String]? = nil) -> String {
@@ -3002,36 +3002,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("current.successDescription", bundle: bundle, comment: "")
-      }
-
-      /// en translation: cat mode
-      ///
-      /// Locales: ru, en
-      static func guideCatMotivationTitle(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("guide.catMotivation.title", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "guide.catMotivation.title"
-        }
-
-        return NSLocalizedString("guide.catMotivation.title", bundle: bundle, comment: "")
-      }
-
-      /// en translation: cat mode
-      ///
-      /// Locales: ru, en
-      static func historyMotivationCat(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("history.motivation.cat", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "history.motivation.cat"
-        }
-
-        return NSLocalizedString("history.motivation.cat", bundle: bundle, comment: "")
       }
 
       /// en translation: catSticker
@@ -3079,6 +3049,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.online", bundle: bundle, comment: "")
       }
 
+      /// en translation: pet mode
+      ///
+      /// Locales: ru, en
+      static func guideCatMotivationTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guide.catMotivation.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "guide.catMotivation.title"
+        }
+
+        return NSLocalizedString("guide.catMotivation.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: pet mode
+      ///
+      /// Locales: ru, en
+      static func historyMotivationCat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history.motivation.cat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history.motivation.cat"
+        }
+
+        return NSLocalizedString("history.motivation.cat", bundle: bundle, comment: "")
+      }
+
       /// en translation: please enter time from 15 to 120 minutes
       ///
       /// Locales: ru, en
@@ -3094,7 +3094,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("timeSelection.errorMessage", bundle: bundle, comment: "")
       }
 
-      /// en translation: save a cat
+      /// en translation: save a pet
       ///
       /// Locales: ru, en
       static func creationSaveCat(preferredLanguages: [String]? = nil) -> String {
@@ -3169,7 +3169,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("guide.typingText", bundle: bundle, comment: "")
       }
 
-      /// en translation: you have no cat
+      /// en translation: you have no pet
       ///
       /// Locales: ru, en
       static func motivationItemInfoNotCat(preferredLanguages: [String]? = nil) -> String {

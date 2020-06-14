@@ -103,6 +103,7 @@
 		3A70083924153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083824153EDE0028CE21 /* DeleteChallengesUseCaseTest.swift */; };
 		3A70083F24153FF90028CE21 /* ChallengesGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */; };
 		3A70084624154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */; };
+		3A753F1624954B7A005E0347 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A753F1524954B7A005E0347 /* NotificationName.swift */; };
 		3A7EC84724603E91001EFC05 /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */; };
 		3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */; };
 		3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84C246192E3001EFC05 /* CollectionView.swift */; };
@@ -292,6 +293,7 @@
 		3A70083E24153FF90028CE21 /* ChallengesGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesGatewaySpy.swift; sourceTree = "<group>"; };
 		3A700843241545350028CE21 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A70084524154DBD0028CE21 /* CoreDataChallengesGatewayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataChallengesGatewayTest.swift; sourceTree = "<group>"; };
+		3A753F1524954B7A005E0347 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		3A7EC84624603E91001EFC05 /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
 		3A7EC84824603EA5001EFC05 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
 		3A7EC84C246192E3001EFC05 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				3AC223792365B3710075C773 /* Result+Success.swift */,
 				3AA1A1062454690600955BD5 /* UIView+Extension.swift */,
 				3AE4E62E24713213004C4D38 /* String+Extension.swift */,
+				3A753F1524954B7A005E0347 /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1568,6 +1571,7 @@
 				3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */,
 				54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */,
 				3A653DC2241CD3CF00BE613C /* ChangeMutedPlaybackState.swift in Sources */,
+				3A753F1624954B7A005E0347 /* NotificationName.swift in Sources */,
 				3A00A513238323A20011ACDC /* Data+Extension.swift in Sources */,
 				3A1FA582245EA5D6000BAA20 /* LoadingConfigurator.swift in Sources */,
 				3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */,

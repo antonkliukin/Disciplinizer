@@ -8,11 +8,11 @@
 
 "guide.motivationSelection.title" = "Choose motivation";
 "guide.motivationSelection.description" = "Which penalty do you choose?";
-"guide.catMotivation.title" = "cat mode";
-"guide.catMotivation.description" = "If you fail, a cat leaves you";
+"guide.catMotivation.title" = "pet mode";
+"guide.catMotivation.description" = "If you fail, a pet leaves you";
 "guide.timeMotivation.title" = "time mode";
 "guide.timeMotivation.description" = "If you fail, you must watch 3 ads in a row";
-"guide.catMotivation.message" = "We give you 1 free cat. If your cat leaves you can buy another.";
+"guide.catMotivation.message" = "We give you 1 free pet. If your pet leaves you can buy another.";
 "guide.timeMotivation.message" = "If you hate ads, then avoiding it will make you highly motivated!";
 
 "guide.message1" = "Hello, I'm Didi!";
@@ -50,15 +50,15 @@
 // Lose
 //******************************************************************************
 
-"lose.cat.title" = "Your cat left you";
+"lose.cat.title" = "Your pet left you";
 "lose.cat.description" = "You live alone now";
-"lose.cat.mainButton" = "Get a new cat";
-"lose.cat.secondaryButton" = "Continue without a cat";
+"lose.cat.mainButton" = "Get a new pet";
+"lose.cat.secondaryButton" = "Continue without a pet";
 
 "lose.ad.title" = "Time is your penalty";
 "lose.ad.description" = "Watch 3 ads";
 "lose.ad.mainButton" = "Execute a penalty and watch 3 ads";
-"lose.ad.secondaryButton" = "Buy a cat instead";
+"lose.ad.secondaryButton" = "Buy a pet instead";
 
 //******************************************************************************
 // Motivational Item
@@ -71,7 +71,7 @@
 "motivationItem.level5.title" = "Valli";
 
 "motivationItem.title" = "Change mode";
-"motivationItem.catMode" = "Cat mode";
+"motivationItem.catMode" = "Pet mode";
 "motivationItem.timeMode" = "Time mode";
 
 "motivationItem.descriptionTitle" = "Motivation";
@@ -80,7 +80,7 @@
 "motivationItem.description.cat" = "Having a friend that you can lose keeps you motivated.";
 
 "motivationItem.info.haveCat" = "now lives with you";
-"motivationItem.info.notCat" = "you have no cat";
+"motivationItem.info.notCat" = "you have no pet";
 
 "motivationItem.action.title" = "Choose";
 
@@ -94,7 +94,7 @@
 "creation.motivationTitle" = "Motivation";
 "creation.actionTitle" = "Tap to change";
 "creation.saveTime" = "save time";
-"creation.saveCat" = "save a cat";
+"creation.saveCat" = "save a pet";
 "creation.alert.notifications.title" = "Notifications are disabled";
 "creation.alert.notifications.description" = "In order to start a challenge you need turn off notifications";
 "creation.alert.notifications.positive" = "Go to settings";
@@ -116,10 +116,10 @@
 //******************************************************************************
 "current.timer.title" = "Time left";
 "current.timer.adDescription" = "You’ll have to spend time watching 3 ads if you give up";
-"current.timer.catDescription" = "Your cat will leave you if you give up";
+"current.timer.catDescription" = "Your pet will leave you if you give up";
 "current.giveUpButton.title" = "Give up";
 "current.alert.giveUp.title" = "Do you really want to give up?";
-"current.alert.giveUp.catDescription" = "If you’ll give up, your cat will leave you";
+"current.alert.giveUp.catDescription" = "If you’ll give up, your pet will leave you";
 "current.alert.giveUp.adDescription" = "If you’ll give up, you’ll have to watch 3 ads.";
 "current.alert.giveUp.positive" = "Continue";
 "current.alert.giveUp.negative" = "Give up";
@@ -130,7 +130,7 @@
 //******************************************************************************
 // Cat Store
 //******************************************************************************
-"catStore.title" = "Choose a new cat";
+"catStore.title" = "Choose a new pet";
 "catStore.description" = "Don’t make it sad again";
 "alert.title.success" = "Success!";
 "alert.message.success" = "You now have a new pet in your home";
@@ -143,7 +143,7 @@
 "history.title" = "History";
 "history.success" = "Success";
 "history.failed" = "Failed";
-"history.motivation.cat" = "cat mode";
+"history.motivation.cat" = "pet mode";
 "history.motivation.ad" = "time mode";
 "history.today" = "Today";
 "history.yesterday" = "Yesterday";

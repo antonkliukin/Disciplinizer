@@ -24,7 +24,11 @@ class MotivationParameterUseCase: MotivationParameterUseCaseProtocol {
     }
 
     func select(motivationalItem: MotivationalItem, completionHandler: @escaping (Result<Void, Error>) -> Void) {
-        challengesParametersGateway.save(motivationalItem: motivationalItem, completionHandler: completionHandler)
+        challengesParametersGateway.save(motivationalItem: motivationalItem, completionHandler: { result in
+            NotificationCenter.default.post(name: Notification.Name.selectedMotivationalItemChanged, object: nil)
+            
+            completionHandler(result)
+        })
     }
 
     func getSelectedMotivationalItem(completionHandler: @escaping (Result<MotivationalItem, Error>) -> Void) {
