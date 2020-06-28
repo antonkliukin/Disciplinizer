@@ -12,22 +12,20 @@ struct AlertModel {
     var title = ""
     var message = ""
     var positiveActionTitle = ""
-    var positiveAction: (() -> Void)?
     var negativeActionTitle = ""
-    var negativeAction: (() -> Void)?
 }
 
 extension Controller {
-    static func createAlert(alertModel: AlertModel) -> UIAlertController {
+    static func createAlert(alertModel: AlertModel,
+                            didTapPositive: (() -> Void)? = nil,
+                            didTapNegative: (() -> Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: alertModel.title, message: alertModel.message, preferredStyle: .alert)
         
         let positiveTitle = alertModel.positiveActionTitle
 
         if !positiveTitle.isEmpty {
             let action = UIAlertAction(title: positiveTitle, style: .default) { (_) in
-                alert.dismiss(animated: true, completion: {
-                    alertModel.positiveAction?()
-                })
+                didTapPositive?()
             }
             alert.addAction(action)
         }
@@ -36,9 +34,7 @@ extension Controller {
         
         if !negativeTitle.isEmpty {
             let action = UIAlertAction(title: negativeTitle, style: .destructive) { (_) in
-                alert.dismiss(animated: true, completion: {
-                    alertModel.negativeAction?()
-                })
+                didTapNegative?()
             }
             alert.addAction(action)
         }

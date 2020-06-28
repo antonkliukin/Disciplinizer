@@ -12,7 +12,7 @@ var rootVC = RootViewController()
 
 class RootViewController: UIViewController, ViewProtocol {
     private var stubView = LaunchScreenView()
-    private var isReady = false
+    private var isAppReady = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +23,19 @@ class RootViewController: UIViewController, ViewProtocol {
         stubView.frame = view.frame
         view.addSubview(stubView)
         
-        prepareForUse()
+        prepareApp()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
                 
-        if isReady {
+        if isAppReady {
             checkIfFirstLaunch()
         }
     }
     
-    private func prepareForUse() {
-        PurchasesManager.shared.getAvailiableBets { (_) in return }
+    private func prepareApp() {
+        PurchasesManager.shared.getAvailiablePrices { (_) in return }
 
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()
         let motivationParameterUseCase = MotivationParameterUseCase(challengesParametersGateway: challengeParametersGateway)
@@ -52,7 +52,7 @@ class RootViewController: UIViewController, ViewProtocol {
                 motivationParameterUseCase.select(motivationalItem: paid) { (_) in }
             }
             
-            self.isReady = true
+            self.isAppReady = true
             self.checkIfFirstLaunch()
         }
     }

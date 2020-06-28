@@ -42,8 +42,12 @@ class AdPresenter: NSObject, AdPresenterProtocol {
         rewardedAd = GADRewardedAd(adUnitID: Config.shared.getAdUnitID())
         rewardedAd?.load(GADRequest()) { [weak self] error in
             if error != nil {
-                AppLockManager.shared.changeStateTo(.unlocked)
-                KeychainService.appLockState = .unlocked
+                let alertModel = AlertModel(title: Strings.loseAdAlertFailedTitle(),
+                                            message: Strings.loseAdAlertFailedMessage(),
+                                            positiveActionTitle: Strings.loseAdAlertFailedAction())
+                
+                let alertVC = Controller.createAlert(alertModel: alertModel, didTapPositive: { rootVC.dismiss(animated: true, completion: nil) })
+                self?.view?.router?.present(alertVC)
             } else {
                 guard let self = self, let vc = self.view as? AdViewController else {
                     assertionFailure()

@@ -110,11 +110,12 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             let alertModel = AlertModel(title: Strings.creationAlertNotificationsTitle(),
                                         message: Strings.creationAlertNotificationsDescription(),
                                         positiveActionTitle: Strings.creationAlertNotificationsPositive(),
-                                        positiveAction: { UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) },
-                                        negativeActionTitle: Strings.creationAlertNotificationsNegative(),
-                                        negativeAction: nil)
+                                        negativeActionTitle: Strings.creationAlertNotificationsNegative())
             
-            let alert = Controller.createAlert(alertModel: alertModel)
+            let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
+                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            })
+            
             view?.router?.present(alert)
             
             return

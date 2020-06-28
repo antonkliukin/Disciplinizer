@@ -29,9 +29,30 @@ class CatStorePresenter: CatStorePresenterProtocol {
     }
         
     func viewDidLoad() {
-        view?.set(viewTitle: Strings.catStoreTitle())
-        view?.set(description: Strings.catStoreDescription())
-        view?.showMotivationItems(items)
+        if PurchasesManager.shared.didGetPrices {
+            setupStoreView()
+        } else {
+            PurchasesManager.shared.getAvailiablePrices { (prices) in
+                DispatchQueue.main.async {
+                    if prices.isEmpty {
+                        let alertModel = AlertModel(title: Strings.catStoreAlertFailedTitle(),
+                                                    message: Strings.catStoreAlertFailedMessage(),
+                                                    positiveActionTitle: Strings.catStoreAlertFailedAction())
+                        
+                        let alertVC = Controller.createAlert(alertModel: alertModel, didTapPositive: {
+                            if self.view?.isPresented ?? false {
+                                self.view?.router?.dismiss()
+                            } else {
+                                self.view?.router?.pop(animated: true, toRoot: true)
+                            }
+                        })
+                        self.view?.router?.present(alertVC)
+                    } else {
+                        self.setupStoreView()
+                    }
+                }
+            }
+        }
     }
     
     func didTapCloseButton() {
@@ -56,9 +77,15 @@ class CatStorePresenter: CatStorePresenterProtocol {
                     assertionFailure()
                 }
             case .failure:
-                self.view?.router?.dismissToParent(snapshot: true, completion: nil)
+                rootVC.dismiss(animated: true)
             }
         }
+    }
+    
+    private func setupStoreView() {
+        view?.set(viewTitle: Strings.catStoreTitle())
+        view?.set(description: Strings.catStoreDescription())
+        view?.showMotivationItems(items)
     }
     
     private func finishPurchasing(forItem item: MotivationalItem) {
@@ -71,17 +98,15 @@ class CatStorePresenter: CatStorePresenterProtocol {
             
             let alertModel = AlertModel(title: Strings.alertTitleSuccess(),
                                         message: Strings.alertMessageSuccess(),
-                                        positiveActionTitle: Strings.alertActionBack(),
-                                        positiveAction: {
-                                            if self.view?.isPresented ?? false {
-                                                self.view?.router?.dismissToParent(snapshot: true, completion: nil)
-                                            } else {
-                                                self.view?.router?.pop(animated: true, toRoot: true)
-                                            }
-                                            
-            })
+                                        positiveActionTitle: Strings.alertActionBack())
             
-            let alert = Controller.createAlert(alertModel: alertModel)
+            let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
+                if self.view?.isPresented ?? false {
+                    self.view?.router?.dismissToParent(snapshot: true, completion: nil)
+                } else {
+                    self.view?.router?.pop(animated: true, toRoot: true)
+                }
+            })
             
             self.view?.router?.present(alert)
         }

@@ -973,7 +973,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 116 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 122 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -987,6 +987,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let settingsAbout = Rswift.StringResource(key: "settings.about", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Ad Loading Failed
+      ///
+      /// Locales: ru, en
+      static let loseAdAlertFailedTitle = Rswift.StringResource(key: "lose.ad.alert.failed.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Appearance
       ///
       /// Locales: ru, en
@@ -1235,6 +1239,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsTitle = Rswift.StringResource(key: "creation.alert.notifications.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: OK
+      ///
+      /// Locales: ru, en
+      static let catStoreAlertFailedAction = Rswift.StringResource(key: "catStore.alert.failed.action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: OK
+      ///
+      /// Locales: ru, en
+      static let loseAdAlertFailedAction = Rswift.StringResource(key: "lose.ad.alert.failed.action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: On the next screen you will set up a timer.
       ///
       /// Locales: ru, en
@@ -1247,10 +1259,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemCatMode = Rswift.StringResource(key: "motivationItem.catMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Pets Loading Failed
+      ///
+      /// Locales: ru, en
+      static let catStoreAlertFailedTitle = Rswift.StringResource(key: "catStore.alert.failed.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
       /// Locales: ru, en
       static let motivationItemLevel4Title = Rswift.StringResource(key: "motivationItem.level4.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Please check your internet connection and try again
+      ///
+      /// Locales: ru, en
+      static let catStoreAlertFailedMessage = Rswift.StringResource(key: "catStore.alert.failed.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Please check your internet connection and try again
+      ///
+      /// Locales: ru, en
+      static let loseAdAlertFailedMessage = Rswift.StringResource(key: "lose.ad.alert.failed.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Possibility of loosing time watching a few ads in case of fail will keep you motivated.
       ///
       /// Locales: ru, en
@@ -1487,6 +1511,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings.about", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ad Loading Failed
+      ///
+      /// Locales: ru, en
+      static func loseAdAlertFailedTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.alert.failed.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.alert.failed.title"
+        }
+
+        return NSLocalizedString("lose.ad.alert.failed.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Appearance
@@ -2419,6 +2458,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("creation.alert.notifications.title", bundle: bundle, comment: "")
       }
 
+      /// en translation: OK
+      ///
+      /// Locales: ru, en
+      static func catStoreAlertFailedAction(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("catStore.alert.failed.action", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "catStore.alert.failed.action"
+        }
+
+        return NSLocalizedString("catStore.alert.failed.action", bundle: bundle, comment: "")
+      }
+
+      /// en translation: OK
+      ///
+      /// Locales: ru, en
+      static func loseAdAlertFailedAction(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.alert.failed.action", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.alert.failed.action"
+        }
+
+        return NSLocalizedString("lose.ad.alert.failed.action", bundle: bundle, comment: "")
+      }
+
       /// en translation: On the next screen you will set up a timer.
       ///
       /// Locales: ru, en
@@ -2464,6 +2533,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.catMode", bundle: bundle, comment: "")
       }
 
+      /// en translation: Pets Loading Failed
+      ///
+      /// Locales: ru, en
+      static func catStoreAlertFailedTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("catStore.alert.failed.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "catStore.alert.failed.title"
+        }
+
+        return NSLocalizedString("catStore.alert.failed.title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Pinko
       ///
       /// Locales: ru, en
@@ -2477,6 +2561,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("motivationItem.level4.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please check your internet connection and try again
+      ///
+      /// Locales: ru, en
+      static func catStoreAlertFailedMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("catStore.alert.failed.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "catStore.alert.failed.message"
+        }
+
+        return NSLocalizedString("catStore.alert.failed.message", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please check your internet connection and try again
+      ///
+      /// Locales: ru, en
+      static func loseAdAlertFailedMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lose.ad.alert.failed.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lose.ad.alert.failed.message"
+        }
+
+        return NSLocalizedString("lose.ad.alert.failed.message", bundle: bundle, comment: "")
       }
 
       /// en translation: Possibility of loosing time watching a few ads in case of fail will keep you motivated.

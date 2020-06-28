@@ -63,10 +63,10 @@
                                 <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk3-08-IM5">
-                                <rect key="frame" x="349" y="64" width="45" height="45"/>
+                                <rect key="frame" x="350" y="44" width="64" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="6Si-Qb-e9g"/>
-                                    <constraint firstAttribute="height" constant="45" id="NWb-Im-ago"/>
+                                    <constraint firstAttribute="width" constant="64" id="6Si-Qb-e9g"/>
+                                    <constraint firstAttribute="height" constant="65" id="NWb-Im-ago"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -83,16 +83,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" secondItem="Kk3-08-IM5" secondAttribute="trailing" constant="20" id="7vp-TF-FFx"/>
-                            <constraint firstItem="Kk3-08-IM5" firstAttribute="top" secondItem="RXk-CV-O0s" secondAttribute="top" constant="20" id="N1E-qa-DUv"/>
+                            <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" secondItem="Kk3-08-IM5" secondAttribute="trailing" id="7vp-TF-FFx"/>
+                            <constraint firstItem="Kk3-08-IM5" firstAttribute="top" secondItem="RXk-CV-O0s" secondAttribute="top" id="N1E-qa-DUv"/>
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RXk-CV-O0s" secondAttribute="leading" constant="30" id="NYh-uJ-SJq"/>
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="top" secondItem="RXk-CV-O0s" secondAttribute="top" constant="50" id="WaA-KJ-x6w"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rmn-d2-9Dz" secondAttribute="trailing" constant="30" id="Wlq-W1-9Ij"/>
                             <constraint firstItem="Cvy-8r-9BI" firstAttribute="top" secondItem="Rmn-d2-9Dz" secondAttribute="bottom" constant="10" id="bWj-Ji-5i5"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="bottom" secondItem="Cvy-8r-9BI" secondAttribute="bottom" id="ifx-3w-oja"/>
                             <constraint firstItem="RXk-CV-O0s" firstAttribute="trailing" secondItem="Cvy-8r-9BI" secondAttribute="trailing" constant="10" id="kw2-wU-KUW"/>
-                            <constraint firstItem="ZOj-P4-C2G" firstAttribute="top" secondItem="Kk3-08-IM5" secondAttribute="top" id="pnL-yA-hAH"/>
-                            <constraint firstItem="ZOj-P4-C2G" firstAttribute="trailing" secondItem="Kk3-08-IM5" secondAttribute="trailing" id="r1J-qc-eKo"/>
+                            <constraint firstItem="ZOj-P4-C2G" firstAttribute="top" secondItem="Kk3-08-IM5" secondAttribute="top" constant="20" id="pnL-yA-hAH"/>
+                            <constraint firstItem="ZOj-P4-C2G" firstAttribute="trailing" secondItem="Kk3-08-IM5" secondAttribute="trailing" constant="-20" id="r1J-qc-eKo"/>
                             <constraint firstItem="Rmn-d2-9Dz" firstAttribute="centerX" secondItem="RXk-CV-O0s" secondAttribute="centerX" id="suw-7B-DvW"/>
                             <constraint firstItem="Cvy-8r-9BI" firstAttribute="leading" secondItem="RXk-CV-O0s" secondAttribute="leading" constant="10" id="wf1-pR-Kdv"/>
                         </constraints>

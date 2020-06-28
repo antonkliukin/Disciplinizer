@@ -77,17 +77,15 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
         let alertModel = AlertModel(title: Strings.currentAlertGiveUpTitle(),
                                     message: alertDescription,
                                     positiveActionTitle: Strings.currentAlertGiveUpPositive(),
-                                    positiveAction: nil,
-                                    negativeActionTitle: Strings.currentAlertGiveUpNegative(),
-                                    negativeAction: {
-                                        self.invalidateTimer()
-
-                                        self.saveFinishedChallenge(self.challenge, withResult: .lose)
-
-                                        self.view?.router?.dismiss()
-        })
+                                    negativeActionTitle: Strings.currentAlertGiveUpNegative())
         
-        let alert = Controller.createAlert(alertModel: alertModel)
+        let alert = Controller.createAlert(alertModel: alertModel, didTapNegative: {
+            self.invalidateTimer()
+
+            self.saveFinishedChallenge(self.challenge, withResult: .lose)
+
+            self.view?.router?.dismiss()
+        })
         view?.router?.present(alert)
     }
 

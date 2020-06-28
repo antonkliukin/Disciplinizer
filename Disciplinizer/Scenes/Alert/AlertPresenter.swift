@@ -31,11 +31,9 @@ class AlertPresenter: AlertPresenterProtocol {
 
     func didTapPositiveAlertAction() {
         view?.router?.dismiss()
-        model.positiveAction?()
     }
     
     func didTapNegativeAlertAction() {
         view?.router?.dismiss()
-        model.negativeAction?()
     }
 }

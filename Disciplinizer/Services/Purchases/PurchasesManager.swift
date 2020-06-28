@@ -8,19 +8,19 @@
 
 import StoreKit
 
-protocol BetProtocol {
+protocol PriceProtocol {
     var localizedPrice: String? { get }
     var id: String { get }
 }
 
-enum StoreProductPrice: CaseIterable, BetProtocol {
+enum StoreProductPrice: CaseIterable, PriceProtocol {
     case oneDollar
     case twoDollars
     case threeDollars
     case fourDollars
     case fiveDollars
 
-    static var availiableBets: [String: String] = [:]
+    static var availiablePrices: [String: String] = [:]
 
     var id: String {
         let baseId = "com.antonkliukin.disciplinizer"
@@ -35,21 +35,21 @@ enum StoreProductPrice: CaseIterable, BetProtocol {
     }
 
     var localizedPrice: String? {
-        return StoreProductPrice.availiableBets[self.id]
+        return StoreProductPrice.availiablePrices[self.id]
     }
 }
 
 enum PurchaseError: Error {
     case userError
-    case gettingBetsError
+    case gettingPricesError
     case generalError
 
     var localizedDescription: String {
         switch self {
         case .userError:
             return "User is not authorized to make payments"
-        case .gettingBetsError:
-            return "Cannot get avalilible bets"
+        case .gettingPricesError:
+            return "Cannot get avalilible prices"
         case .generalError:
             return "General error"
         }
@@ -60,8 +60,15 @@ final class PurchasesManager: NSObject, SKPaymentTransactionObserver {
     static let shared = PurchasesManager()
     
     var didFinishPurchasing: ((Result<SKPaymentTransactionState, PurchaseError>) -> Void)?
-    var getBetsCompletion: (([BetProtocol]) -> Void)?
+    var didGetPrices: Bool {
+        !StoreProductPrice.availiablePrices.isEmpty
+    }
+    var getPricesCompletion: (([PriceProtocol]) -> Void)?
     var productsRequest: SKProductsRequest?
+    
+    var userCanMakePayment: Bool {
+        return SKPaymentQueue.canMakePayments()
+    }
 
     override init() {
         super.init()
@@ -91,10 +98,6 @@ final class PurchasesManager: NSObject, SKPaymentTransactionObserver {
         }
     }
 
-    var userCanMakePayment: Bool {
-        return SKPaymentQueue.canMakePayments()
-    }
-
     func makePurchase(price: StoreProductPrice, result: @escaping (Result<SKPaymentTransactionState, PurchaseError>) -> Void) {
         guard userCanMakePayment else {
             result(.failure(.userError))
@@ -108,22 +111,28 @@ final class PurchasesManager: NSObject, SKPaymentTransactionObserver {
         didFinishPurchasing = result
     }
 
-    func getAvailiableBets(completion: @escaping ([BetProtocol]) -> Void) {
+    func getAvailiablePrices(completion: @escaping ([PriceProtocol]) -> Void) {
         productsRequest = SKProductsRequest(productIdentifiers: Set(StoreProductPrice.allCases.map { $0.id }))
         productsRequest?.delegate = self
         productsRequest?.start()
 
-        getBetsCompletion = completion
+        getPricesCompletion = completion
+    }
+}
+
+extension PurchasesManager: SKRequestDelegate {
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        getPricesCompletion?([])
     }
 }
 
 extension PurchasesManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         for product in response.products {
-            StoreProductPrice.availiableBets[product.productIdentifier] = product.localizedPrice
+            StoreProductPrice.availiablePrices[product.productIdentifier] = product.localizedPrice
         }
 
-        getBetsCompletion?(StoreProductPrice.allCases)
+        getPricesCompletion?(StoreProductPrice.allCases)
     }
 }
 
