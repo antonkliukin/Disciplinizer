@@ -11,7 +11,6 @@ import UIKit
 protocol CreateChallengePresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidAppear()
     func startButtonTapped()
 }
 
@@ -21,8 +20,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     private let motivationParameterUseCase: MotivationParameterUseCaseProtocol
     private let durationParameterUseCase: DurationParameterUseCaseProtocol
     private let getLastChallengeUseCase: DisplayLastChallengeUseCaseProtocol
-
-    private var newChallenge: Challenge!
+    
     private var selectedDurationInMinutes = 0
 
     init(view: CreateChallengeViewProtocol,
@@ -55,11 +53,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         
         view?.changeStartButtonState(isActive: true)
     }
-    
-    func viewDidAppear() {
         
-    }
-    
     @objc private func updateMotivationView() {
         configureMotivationView()
     }
@@ -107,23 +101,25 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         let isNotifEnabled = NotificationManager.shared.isAuthorized()
 
         guard isNotifEnabled else {
-            let alertModel = AlertModel(title: Strings.creationAlertNotificationsTitle(),
-                                        message: Strings.creationAlertNotificationsDescription(),
-                                        positiveActionTitle: Strings.creationAlertNotificationsPositive(),
-                                        negativeActionTitle: Strings.creationAlertNotificationsNegative())
-            
-            let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
-                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-            })
-            
-            view?.router?.present(alert)
+            showDisabledNotificationsAlert()
             
             return
         }
 
-        view?.changeStartButtonState(isActive: false)
-
-        createChallenge()
+        createAndStartChallenge()
+    }
+    
+    private func showDisabledNotificationsAlert() {
+        let alertModel = AlertModel(title: Strings.creationAlertNotificationsTitle(),
+                                    message: Strings.creationAlertNotificationsDescription(),
+                                    positiveActionTitle: Strings.creationAlertNotificationsPositive(),
+                                    negativeActionTitle: Strings.creationAlertNotificationsNegative())
+        
+        let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
+             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        })
+        
+        view?.router?.present(alert)
     }
     
     private func configureTimeView() {
@@ -184,7 +180,7 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         }
     }
     
-    private func createChallenge() {
+    private func createAndStartChallenge() {
         
         motivationParameterUseCase.getSelectedMotivationalItem { (result) in
             guard let item = try? result.get() else {
@@ -192,30 +188,55 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
                 return
             }
             
-            let duration = Config.shared.devDurationInMinutes() ?? self.selectedDurationInMinutes
+            let createAndStartBlock = {
+                self.view?.changeStartButtonState(isActive: false)
 
-            let challengeParameters = ChallengeParameters(startDate: Date(),
-                                                          finishDate: nil,
-                                                          durationInMinutes: duration,
-                                                          isSuccess: false,
-                                                          motivationalItem: item)
+                let duration = Config.shared.devDurationInMinutes() ?? self.selectedDurationInMinutes
 
-            self.createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
-                guard let self = self else {
-                    assertionFailure()
-                    return
-                }
+                let challengeParameters = ChallengeParameters(startDate: Date(),
+                                                              finishDate: nil,
+                                                              durationInMinutes: duration,
+                                                              isSuccess: false,
+                                                              motivationalItem: item)
 
-                switch creationResult {
-                case .success(let createdChallenge):
-                    self.view?.router?.present(Controller.currentChallenge(with: createdChallenge),
-                                               animated: true,
-                                               forcePresent: false,
-                                               completion: nil)
-                case .failure:
-                    assertionFailure()
+                self.createChallengeUseCase.createWith(parameters: challengeParameters) { [weak self] (creationResult) in
+                    guard let self = self else {
+                        assertionFailure()
+                        return
+                    }
+
+                    switch creationResult {
+                    case .success(let createdChallenge):
+                        self.view?.router?.present(Controller.currentChallenge(with: createdChallenge),
+                                                   animated: true,
+                                                   forcePresent: false,
+                                                   completion: nil)
+                    case .failure:
+                        assertionFailure()
+                    }
                 }
             }
+            
+            if !(item == .ad) {
+                self.showPetModeAlert {
+                    createAndStartBlock()
+                }
+            } else {
+                createAndStartBlock()
+            }
         }
+    }
+    
+    private func showPetModeAlert(startChallengeAction: @escaping () -> Void) {
+        let alertModel = AlertModel(title: Strings.creationAlertPetModeTitle(),
+                                    message: Strings.creationAlertPetModeDescription(),
+                                    positiveActionTitle: Strings.creationAlertPetModePositive(),
+                                    negativeActionTitle: Strings.creationAlertPetModeNegative())
+        
+        let alert = Controller.createAlert(alertModel: alertModel, didTapNegative: {
+             startChallengeAction()
+        })
+        
+        view?.router?.present(alert)
     }
 }

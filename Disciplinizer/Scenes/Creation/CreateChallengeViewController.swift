@@ -78,13 +78,7 @@ final class CreateChallengeViewController: UIViewController, CreateChallengeView
         
         presenter.viewWillAppear()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        presenter.viewDidAppear()
-    }
-    
     @IBAction private func startButtonTapped(_ sender: Any) {
         presenter.startButtonTapped()
     }

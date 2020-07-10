@@ -547,7 +547,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 30 images.
+  /// This `R.image` struct is generated, and contains static references to 31 images.
   struct image {
     /// Image `ad_icon`.
     static let ad_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad_icon")
@@ -573,6 +573,8 @@ struct R: Rswift.Validatable {
     static let launch_title = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch_title")
     /// Image `message_bubble`.
     static let message_bubble = Rswift.ImageResource(bundle: R.hostingBundle, name: "message_bubble")
+    /// Image `more_icon`.
+    static let more_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "more_icon")
     /// Image `music.note.list`.
     static let musicNoteList = Rswift.ImageResource(bundle: R.hostingBundle, name: "music.note.list")
     /// Image `music_icon`.
@@ -691,6 +693,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "message_bubble", bundle: ..., traitCollection: ...)`
     static func message_bubble(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.message_bubble, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "more_icon", bundle: ..., traitCollection: ...)`
+    static func more_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.more_icon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -973,7 +982,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 122 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 127 localization keys.
     struct localizable {
       /// en translation: %#@minutes@
       ///
@@ -1003,10 +1012,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let creationAlertNotificationsNegative = Rswift.StringResource(key: "creation.alert.notifications.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static let creationAlertPetModePositive = Rswift.StringResource(key: "creation.alert.petMode.positive", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static let motivationItemBackButton = Rswift.StringResource(key: "motivationItem.backButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Back to menu
       ///
       /// Locales: ru, en
       static let currentBackButtonTitle = Rswift.StringResource(key: "current.backButton.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Be ready to see your Pet leaving in case of failure!
+      ///
+      /// Locales: ru, en
+      static let creationAlertPetModeDescription = Rswift.StringResource(key: "creation.alert.petMode.description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Best score
       ///
       /// Locales: ru, en
@@ -1215,6 +1236,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemSetButtonUnableToSet = Rswift.StringResource(key: "motivationItem.setButton.unableToSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: More
+      ///
+      /// Locales: ru, en
+      static let settingsTitle = Rswift.StringResource(key: "settings.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Motivation
       ///
       /// Locales: ru, en
@@ -1255,6 +1280,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let guideMessage3 = Rswift.StringResource(key: "guide.message3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Pet Mode Selected
+      ///
+      /// Locales: ru, en
+      static let creationAlertPetModeTitle = Rswift.StringResource(key: "creation.alert.petMode.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pet mode
       ///
       /// Locales: ru, en
@@ -1295,10 +1324,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let motivationItemSetButtonAbleToSet = Rswift.StringResource(key: "motivationItem.setButton.ableToSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
-      /// en translation: Settings
+      /// en translation: Start
       ///
       /// Locales: ru, en
-      static let settingsTitle = Rswift.StringResource(key: "settings.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      static let creationAlertPetModeNegative = Rswift.StringResource(key: "creation.alert.petMode.negative", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Success
       ///
       /// Locales: ru, en
@@ -1573,6 +1602,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("creation.alert.notifications.negative", bundle: bundle, comment: "")
       }
 
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static func creationAlertPetModePositive(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.petMode.positive", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.petMode.positive"
+        }
+
+        return NSLocalizedString("creation.alert.petMode.positive", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back
+      ///
+      /// Locales: ru, en
+      static func motivationItemBackButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("motivationItem.backButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "motivationItem.backButton"
+        }
+
+        return NSLocalizedString("motivationItem.backButton", bundle: bundle, comment: "")
+      }
+
       /// en translation: Back to menu
       ///
       /// Locales: ru, en
@@ -1586,6 +1645,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("current.backButton.title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Be ready to see your Pet leaving in case of failure!
+      ///
+      /// Locales: ru, en
+      static func creationAlertPetModeDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.petMode.description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.petMode.description"
+        }
+
+        return NSLocalizedString("creation.alert.petMode.description", bundle: bundle, comment: "")
       }
 
       /// en translation: Best score
@@ -2368,6 +2442,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.setButton.unableToSet", bundle: bundle, comment: "")
       }
 
+      /// en translation: More
+      ///
+      /// Locales: ru, en
+      static func settingsTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings.title"
+        }
+
+        return NSLocalizedString("settings.title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Motivation
       ///
       /// Locales: ru, en
@@ -2516,6 +2605,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("guide.message3", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pet Mode Selected
+      ///
+      /// Locales: ru, en
+      static func creationAlertPetModeTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("creation.alert.petMode.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "creation.alert.petMode.title"
+        }
+
+        return NSLocalizedString("creation.alert.petMode.title", bundle: bundle, comment: "")
       }
 
       /// en translation: Pet mode
@@ -2668,19 +2772,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("motivationItem.setButton.ableToSet", bundle: bundle, comment: "")
       }
 
-      /// en translation: Settings
+      /// en translation: Start
       ///
       /// Locales: ru, en
-      static func settingsTitle(preferredLanguages: [String]? = nil) -> String {
+      static func creationAlertPetModeNegative(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("settings.title", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("creation.alert.petMode.negative", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "settings.title"
+          return "creation.alert.petMode.negative"
         }
 
-        return NSLocalizedString("settings.title", bundle: bundle, comment: "")
+        return NSLocalizedString("creation.alert.petMode.negative", bundle: bundle, comment: "")
       }
 
       /// en translation: Success

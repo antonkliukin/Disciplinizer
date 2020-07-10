@@ -91,7 +91,7 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
                 item.image = R.image.tracker_icon()
                 item.title = Strings.creationTitle()
             case 2:
-                item.image = R.image.settings_icon()
+                item.image = R.image.more_icon()
                 item.title = Strings.settingsTitle()
             default:
                 break

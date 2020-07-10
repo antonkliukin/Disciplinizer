@@ -91,6 +91,8 @@
 "motivationItem.setButton.ableToSet" = "Set mode";
 "motivationItem.setButton.unableToSet" = "Mode is set";
 
+"motivationItem.backButton" = "Back";
+
 //******************************************************************************
 // Creation
 //******************************************************************************
@@ -105,6 +107,10 @@
 "creation.alert.notifications.negative" = "Back";
 "creation.title" = "Tracker";
 "creation.startButtonTitle" = "Go";
+"creation.alert.petMode.title" = "Pet Mode Selected";
+"creation.alert.petMode.description" = "Be ready to see your Pet leaving in case of failure!";
+"creation.alert.petMode.positive" = "Back";
+"creation.alert.petMode.negative" = "Start";
 
 //******************************************************************************
 // Time Selection
@@ -166,7 +172,7 @@
 //******************************************************************************
 // Settings
 //******************************************************************************
-"settings.title" = "Settings";
+"settings.title" = "More";
 "settings.notifications" = "Notifications";
 "settings.appearance" = "Appearance";
 "settings.getInTouch" = "Get in touch";

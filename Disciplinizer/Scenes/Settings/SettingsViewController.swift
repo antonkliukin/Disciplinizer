@@ -34,19 +34,20 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
             */
             [SettingsSectionItem(sectionTitle: Strings.settingsGetInTouch(),
                                  title: Strings.settingsEmailUs(),
-                                 action: { (_) in print("Email Us") },
+                                 action: { (_) in
+                                    if let emailURL = URL(string: "mailto:support@disciplinizer.com") {
+                                        UIApplication.shared.open(emailURL)
+                                    }
+            },
                                  actionViewType: .tap)
             ],
-            [
-            /*
-            SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
-                                 title: Strings.settingsTerms(),
-                                 action: { (_) in print("Terms") },
-                                 actionViewType: .tap),
-             */
-             SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
+            [SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
                                  title: Strings.settingsPolicy(),
-                                 action: { (_) in print("Policy") },
+                                 action: { (_) in
+                                    if let policyURL = URL(string: "http://disciplinizer.com/policy/") {
+                                        UIApplication.shared.open(policyURL)
+                                    }
+             },
                                  actionViewType: .tap)
             ]
         ]

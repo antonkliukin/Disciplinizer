@@ -80,6 +80,8 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                                     negativeActionTitle: Strings.currentAlertGiveUpNegative())
         
         let alert = Controller.createAlert(alertModel: alertModel, didTapNegative: {
+            guard self.challengeTimer?.isValid ?? false else { return }
+            
             self.invalidateTimer()
 
             self.saveFinishedChallenge(self.challenge, withResult: .lose)

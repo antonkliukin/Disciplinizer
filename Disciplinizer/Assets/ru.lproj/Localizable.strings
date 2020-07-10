@@ -88,6 +88,8 @@
 "motivationItem.setButton.ableToSet" = "Выбрать режим";
 "motivationItem.setButton.unableToSet" = "Режим выбран";
 
+"motivationItem.backButton" = "Назад";
+
 //******************************************************************************
 // Creation
 //******************************************************************************
@@ -102,6 +104,10 @@
 "creation.alert.notifications.negative" = "Назад";
 "creation.title" = "Трекер";
 "creation.startButtonTitle" = "Начать";
+"creation.alert.petMode.title" = "Режим сохранения питомца";
+"creation.alert.petMode.description" = "Будьте готовы к потере Питомца в случае проигрыша!";
+"creation.alert.petMode.positive" = "Назад";
+"creation.alert.petMode.negative" = "Начать";
 
 //******************************************************************************
 // Time Selection
@@ -163,7 +169,7 @@
 //******************************************************************************
 // Settings
 //******************************************************************************
-"settings.title" = "Настройки";
+"settings.title" = "Еще";
 "settings.notifications" = "Уведомления";
 "settings.appearance" = "Интерфейс";
 "settings.getInTouch" = "Связаться с разработчиками";
