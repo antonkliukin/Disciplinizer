@@ -30,6 +30,9 @@ class CatStoreViewController: UIViewController, CatStoreViewProtocol {
     }
     
     private var items: [MotivationalItem] = []
+    private var stackLayout: StackCollectionViewLayout? {
+        collectionView.collectionViewLayout as? StackCollectionViewLayout
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,12 +92,53 @@ extension CatStoreViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.configure(withItem: item, onBuyButtonTap: {
                 self.presenter.didTapBuyButton(onItemWithIndex: indexPath.item)
             })
-            cell.showBorder(indexPath.item == 0)
+            
+            let shouldBeFocused = indexPath.item == 0
+            cell.showBorder(shouldBeFocused)
+            
+            if shouldBeFocused {
+                stackLayout?.focusedCell = cell
+            }
             
             return cell
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        scrollToIndex(indexPath)
+    }
+    
+    private func scrollToIndex(_ indexPath: IndexPath, animated: Bool = true) {
+        guard let layout = stackLayout else {
+            return
+        }
+        
+        guard let focusedCell = layout.focusedCell else {
+            return
+        }
+        
+        guard let focusedCellIndex = collectionView.indexPath(for: focusedCell)?.row else {
+            return
+        }
+                
+        let selectedCellIndex = indexPath.row
+        let cellHeight = focusedCell.bounds.height
+                
+        var newOffset = collectionView.contentOffset
+        
+        if selectedCellIndex > focusedCellIndex {
+            newOffset = CGPoint(x: collectionView.contentOffset.x,
+                                    y: collectionView.contentOffset.y + cellHeight)
+        } else if selectedCellIndex < focusedCellIndex {
+            newOffset = CGPoint(x: collectionView.contentOffset.x,
+                                    y: collectionView.contentOffset.y - cellHeight)
+        } else {
+            return
+        }
+
+        collectionView.setContentOffset(newOffset, animated: animated)
     }
 }
 

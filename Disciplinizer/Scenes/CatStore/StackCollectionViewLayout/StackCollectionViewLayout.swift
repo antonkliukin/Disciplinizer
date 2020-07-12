@@ -9,10 +9,12 @@
 import UIKit
 
 class StackCollectionViewLayout: UICollectionViewFlowLayout {
+    var focusedCell: CatStoreCollectionCell?
+    
     private let topInset: CGFloat = 50
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return super.layoutAttributesForElements(in: rect)?.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }
+        super.layoutAttributesForElements(in: rect)?.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }
             .compactMap(addStackAnimationToAttributes)
     }
     
@@ -21,7 +23,6 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-
         var offsetAdjustment = CGFloat.greatestFiniteMagnitude
         let verticalOffset = proposedContentOffset.y
         let targetRect = CGRect(origin: CGPoint(x: 0, y: proposedContentOffset.y), size: self.collectionView!.bounds.size)
@@ -32,10 +33,10 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
                 offsetAdjustment = itemOffset - verticalOffset
             }
         }
-        
+
         return CGPoint(x: proposedContentOffset.x, y: proposedContentOffset.y + offsetAdjustment - topInset)
     }
-    
+        
     private func addStackAnimationToAttributes(_ attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let collectionView = self.collectionView else { return attributes }
         
@@ -53,9 +54,14 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
         
         let nextCellTopSpace = contentOffset.y - (cellHeight * CGFloat(attributes.indexPath.row + 1))
         let liftCellToTopRate: CGFloat = topInset - abs(nextCellTopSpace) / (cellHeight / topInset)
-                
+                        
         if let cell = collectionView.cellForItem(at: attributes.indexPath) as? CatStoreCollectionCell {
-            cell.showBorder(cellTopSpace == 0)
+            let isCellFocused = cellTopSpace == 0
+            cell.showBorder(isCellFocused)
+            
+            if isCellFocused {
+                focusedCell = cell
+            }
         }
         
         if nextCellTopSpace + cellHeight > 0 {
@@ -74,7 +80,7 @@ class StackCollectionViewLayout: UICollectionViewFlowLayout {
         }
         
         attributes.zIndex = attributes.indexPath.row
-        
+                                
         return attributes
     }
 }
