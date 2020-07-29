@@ -31,12 +31,13 @@
 
 "guide.message10" = "If you start using your phone - your pet will leave!";
 "guide.message11" = "In this case you will need to buy another one to continue using 'Saving a Pet' mode.";
+"guide.message12" = "From each purchase 50% is given to animal welfare organizations.";
 
-"guide.message12" = "The second - 'Saving Time'.";
-"guide.message13" = "If you start using your phone - you will have to watch 3 ads in a row!";
-"guide.message14" = "Loosing your precious time!";
+"guide.message13" = "The second - 'Saving Time'.";
+"guide.message14" = "If you start using your phone - you will have to watch 3 ads in a row!";
+"guide.message15" = "Loosing your precious time!";
 
-"guide.message15" = "Let's get started. Good luck!";
+"guide.message16" = "Let's get started. Good luck!";
 
 //******************************************************************************
 // Notifications
@@ -181,6 +182,8 @@
 "settings.emailUs" = "Email us";
 "settings.terms" = "Terms of Service";
 "settings.policy" = "Privacy Policy";
+"settings.weCare" = "We Care";
+"settings.drugFund" = "Non-profit charity fund «DRUG»";
 
 //******************************************************************************
 // Music

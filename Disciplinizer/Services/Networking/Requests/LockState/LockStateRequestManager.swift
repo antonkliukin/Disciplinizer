@@ -15,7 +15,7 @@ enum DeviceCheckRequesError: Error {
 struct DeviceCheckRequestModel: Codable {
     let deviceToken: String
     let timestamp = Date().currentTimeMillis()
-    let transactionId = "randomStringD80"
+    let transactionId = "disciplinizerTransactionId"
     let bit0: Bool?
     let bit1: Bool?
 

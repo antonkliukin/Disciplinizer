@@ -32,6 +32,15 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
                                  actionViewType: .switcher(isOn: true))
             ],
             */
+            [SettingsSectionItem(sectionTitle: Strings.settingsWeCare(),
+                                 title: Strings.settingsDrugFund(),
+                                 action: { (_) in
+                                    if let organizationURL = URL(string: "http://priyut-drug.ru/") {
+                                        UIApplication.shared.open(organizationURL)
+                                    }
+            },
+                                 actionViewType: .tap)
+            ],
             [SettingsSectionItem(sectionTitle: Strings.settingsGetInTouch(),
                                  title: Strings.settingsEmailUs(),
                                  action: { (_) in

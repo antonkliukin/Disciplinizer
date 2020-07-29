@@ -24,7 +24,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
 
     private var timer: Timer?
     private var isAnimationRunning = false
-    
+    // TODO: Refactor. It'd be better to inject this data. 
     private var messagesToShow = [
             ChatMessage(text: Strings.guideMessage2()),
             ChatMessage(text: Strings.guideMessage3()),
@@ -39,7 +39,8 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
             ChatMessage(text: Strings.guideMessage12()),
             ChatMessage(text: Strings.guideMessage13()),
             ChatMessage(text: Strings.guideMessage14()),
-            ChatMessage(text: Strings.guideMessage15())
+            ChatMessage(text: Strings.guideMessage15()),
+            ChatMessage(text: Strings.guideMessage16())
     ]
     
     private var sections: [[ChatMessage]] = [[]]
