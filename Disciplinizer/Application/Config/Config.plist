@@ -5,7 +5,7 @@
 	<key>Prod</key>
 	<dict>
 		<key>deviceCheckBaseURL</key>
-		<string>https://api.devicecheck.apple.com</string>
+		<string>https://api.devicecheck.apple.com/</string>
 		<key>adUnitID</key>
 		<string>ca-app-pub-6894098236140382/9379068244</string>
 	</dict>
