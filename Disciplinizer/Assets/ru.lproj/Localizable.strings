@@ -29,7 +29,7 @@
 "guide.message9" = "catSticker";
 "guide.message10" = "Если ты начнешь пользоваться телефоном, то питомец покинет тебя!";
 "guide.message11" = "И если ты захочешь использовать этот режим дальше, тебе придется купить нового.";
-"guide.message12" = "С каждой покупки 30% переводится благотворительным организациям, помогающим животным.";
+"guide.message12" = "С каждой покупки 50% переводится благотворительным организациям, помогающим животным.";
 
 "guide.message13" = "Второй режим - Сохранение времени.";
 "guide.message14" = "Если ты начнешь пользоваться телефоном, тебе придется смотреть 3 рекламы.";
@@ -100,9 +100,9 @@
 "creation.saveTime" = "сохранить время";
 "creation.saveCat" = "сохранить питомца";
 "creation.alert.notifications.title" = "Уведомления выключены";
-"creation.alert.notifications.description" = "Для того, чтобы начать испытание, необходимо включить уведомления";
+"creation.alert.notifications.description" = "Мы рекомендуем включить уведомления. Это поможет тебе не проиграть.";
 "creation.alert.notifications.positive" = "Открыть настройки";
-"creation.alert.notifications.negative" = "Назад";
+"creation.alert.notifications.negative" = "Продолжить без уведомлений";
 "creation.title" = "Трекер";
 "creation.startButtonTitle" = "Начать";
 "creation.alert.petMode.title" = "Режим сохранения питомца";
