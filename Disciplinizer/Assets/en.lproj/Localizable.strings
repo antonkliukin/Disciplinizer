@@ -31,13 +31,15 @@
 
 "guide.message10" = "If you start using your phone - your pet will leave!";
 "guide.message11" = "In this case you will need to buy another one to continue using 'Saving a Pet' mode.";
-"guide.message12" = "From each purchase 50% is given to animal welfare organizations.";
 
-"guide.message13" = "The second - 'Saving Time'.";
-"guide.message14" = "If you start using your phone - you will have to watch 3 ads in a row!";
-"guide.message15" = "Loosing your precious time!";
+"guide.message12" = "50% of our income is given to animal welfare organizations!";
+"guide.message13" = "You can help too! Just donate to one of the funds on \"More\" tab.";
 
-"guide.message16" = "Let's get started. Good luck!";
+"guide.message14" = "The second - 'Saving Time'.";
+"guide.message15" = "If you start using your phone - you will have to watch 3 ads in a row!";
+"guide.message16" = "Loosing your precious time!";
+
+"guide.message17" = "Let's get started. Good luck!";
 
 //******************************************************************************
 // Notifications

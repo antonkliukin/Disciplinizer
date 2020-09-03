@@ -40,7 +40,8 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
             ChatMessage(text: Strings.guideMessage13()),
             ChatMessage(text: Strings.guideMessage14()),
             ChatMessage(text: Strings.guideMessage15()),
-            ChatMessage(text: Strings.guideMessage16())
+            ChatMessage(text: Strings.guideMessage16()),
+            ChatMessage(text: Strings.guideMessage17())
     ]
     
     private var sections: [[ChatMessage]] = [[]]
