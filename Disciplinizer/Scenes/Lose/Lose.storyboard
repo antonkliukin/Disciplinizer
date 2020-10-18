@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blocked-->
+        <scene sceneID="ynb-Tj-mjR">
+            <objects>
+                <viewController storyboardIdentifier="LoseViewController" title="Blocked" id="KCX-c9-j2p" customClass="LoseViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngq-Xf-loc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fv-Rq-llR">
+                                <rect key="frame" x="57" y="94" width="300" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-Zq-I0r">
+                                        <rect key="frame" x="0.0" y="8" width="300" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cat left you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="axe-5M-dh0">
+                                                <rect key="frame" x="10" y="0.0" width="280" height="52"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You live alone now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-JH-AE6">
+                                                <rect key="frame" x="87" y="32" width="126" height="52"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="axe-5M-dh0" firstAttribute="leading" secondItem="8ED-Zq-I0r" secondAttribute="leading" constant="10" id="HCk-9G-0kk"/>
+                                            <constraint firstAttribute="trailing" secondItem="axe-5M-dh0" secondAttribute="trailing" constant="10" id="pmL-ak-ods"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8ED-Zq-I0r" secondAttribute="trailing" id="1KQ-ba-DRx"/>
+                                    <constraint firstAttribute="height" constant="100" id="XRO-EJ-wRX"/>
+                                    <constraint firstAttribute="bottom" secondItem="8ED-Zq-I0r" secondAttribute="bottom" constant="8" id="ZRj-v4-qJn"/>
+                                    <constraint firstItem="8ED-Zq-I0r" firstAttribute="leading" secondItem="3fv-Rq-llR" secondAttribute="leading" id="pip-oG-ShR"/>
+                                    <constraint firstAttribute="width" priority="750" constant="300" id="w3Z-S6-OCi"/>
+                                    <constraint firstItem="8ED-Zq-I0r" firstAttribute="top" secondItem="3fv-Rq-llR" secondAttribute="top" constant="8" id="ylf-9Y-Z58"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crying_cat" translatesAutoresizingMaskIntoConstraints="NO" id="W4a-zb-D87">
+                                <rect key="frame" x="91" y="234" width="232" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Pyl-ye-I5y"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HRq-QW-7jA">
+                                <rect key="frame" x="30" y="394" width="354" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE8-Ux-s2a" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="b6a-ug-LXQ"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="Get a new cat"/>
+                                        <connections>
+                                            <action selector="mainButtonTapped:" destination="KCX-c9-j2p" eventType="touchUpInside" id="pfu-Vx-B25"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJy-Wg-rwq">
+                                        <rect key="frame" x="162" y="54" width="30" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="oNd-El-kuz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" name="darkBlueText"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondaryButtonTapped:" destination="KCX-c9-j2p" eventType="touchUpInside" id="x1B-Qq-msC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aE8-Ux-s2a" firstAttribute="width" secondItem="HRq-QW-7jA" secondAttribute="width" id="7Qb-vb-Gp5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3fv-Rq-llR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zmj-U1-V5h" secondAttribute="leading" constant="20" id="4ct-xH-T17"/>
+                            <constraint firstItem="zmj-U1-V5h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3fv-Rq-llR" secondAttribute="trailing" constant="20" id="5nc-mx-axc"/>
+                            <constraint firstItem="W4a-zb-D87" firstAttribute="centerX" secondItem="ngq-Xf-loc" secondAttribute="centerX" id="9dt-IS-9hR"/>
+                            <constraint firstItem="W4a-zb-D87" firstAttribute="top" secondItem="3fv-Rq-llR" secondAttribute="bottom" constant="40" id="DOz-4W-S3e"/>
+                            <constraint firstItem="3fv-Rq-llR" firstAttribute="top" secondItem="zmj-U1-V5h" secondAttribute="top" constant="50" id="GiE-NA-WF8"/>
+                            <constraint firstItem="HRq-QW-7jA" firstAttribute="leading" secondItem="zmj-U1-V5h" secondAttribute="leading" constant="30" id="Hrb-Pv-yb3"/>
+                            <constraint firstItem="3fv-Rq-llR" firstAttribute="centerX" secondItem="ngq-Xf-loc" secondAttribute="centerX" id="QFz-RX-DOr"/>
+                            <constraint firstItem="zmj-U1-V5h" firstAttribute="trailing" secondItem="HRq-QW-7jA" secondAttribute="trailing" constant="30" id="kxi-bG-JAi"/>
+                            <constraint firstItem="HRq-QW-7jA" firstAttribute="top" secondItem="W4a-zb-D87" secondAttribute="bottom" constant="40" id="rvS-xu-J43"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zmj-U1-V5h"/>
+                    </view>
+                    <connections>
+                        <outlet property="loseDescriptionLabel" destination="HOs-JH-AE6" id="e4G-Eg-w3a"/>
+                        <outlet property="loseImageView" destination="W4a-zb-D87" id="Xio-4H-Noa"/>
+                        <outlet property="loseTitleLabel" destination="axe-5M-dh0" id="97y-E9-uFN"/>
+                        <outlet property="mainButton" destination="aE8-Ux-s2a" id="xVh-uM-ZWv"/>
+                        <outlet property="messageView" destination="3fv-Rq-llR" id="XQZ-xA-3PM"/>
+                        <outlet property="secondaryButton" destination="jJy-Wg-rwq" id="2hp-1S-6BD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-CF-0vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crying_cat" width="116" height="116"/>
+        <namedColor name="darkBlueText">
+            <color red="0.16078431372549021" green="0.31372549019607843" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

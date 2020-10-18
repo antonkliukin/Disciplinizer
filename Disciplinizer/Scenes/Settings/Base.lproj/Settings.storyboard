@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="p5o-yL-u6b">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" title="Settings" id="0gI-Yx-x24" customClass="SettingsViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pp3-Yc-sxO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOh-5k-Aa6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-3N-zdw">
+                                        <rect key="frame" x="24" y="75.5" width="84" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_titleBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8aG-w4-b7y">
+                                        <rect key="frame" x="-32" y="-38" width="220" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="7yP-cP-mvO"/>
+                                            <constraint firstAttribute="height" constant="220" id="IPp-SQ-qNS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="blueBackground"/>
+                                <constraints>
+                                    <constraint firstItem="8aG-w4-b7y" firstAttribute="bottom" secondItem="BaX-3N-zdw" secondAttribute="bottom" constant="80" id="HhF-lD-LmB"/>
+                                    <constraint firstAttribute="height" constant="110" id="LF6-0M-FfC"/>
+                                    <constraint firstItem="BaX-3N-zdw" firstAttribute="leading" secondItem="UOh-5k-Aa6" secondAttribute="leading" constant="24" id="LMW-qu-Ha9"/>
+                                    <constraint firstAttribute="bottom" secondItem="BaX-3N-zdw" secondAttribute="bottom" constant="8" id="W2e-MX-H5d"/>
+                                    <constraint firstItem="BaX-3N-zdw" firstAttribute="trailing" secondItem="8aG-w4-b7y" secondAttribute="trailing" constant="-80" id="hOj-cP-Z6U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UOh-5k-Aa6" firstAttribute="top" secondItem="pp3-Yc-sxO" secondAttribute="top" id="O9w-cD-yzC"/>
+                            <constraint firstItem="uP3-B4-3ta" firstAttribute="trailing" secondItem="UOh-5k-Aa6" secondAttribute="trailing" id="iQM-SF-gKG"/>
+                            <constraint firstItem="UOh-5k-Aa6" firstAttribute="leading" secondItem="uP3-B4-3ta" secondAttribute="leading" id="pUF-lW-T3C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uP3-B4-3ta"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qyW-N5-xm3"/>
+                    <connections>
+                        <outlet property="titleBackgroundView" destination="UOh-5k-Aa6" id="D26-q5-n19"/>
+                        <outlet property="titleLabel" destination="BaX-3N-zdw" id="1wQ-ax-9jv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lPn-YP-cEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="settings_titleBackground" width="167" height="157"/>
+        <namedColor name="blueBackground">
+            <color red="0.62352941176470589" green="0.77647058823529413" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

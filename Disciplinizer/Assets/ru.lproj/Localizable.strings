@@ -1,0 +1,190 @@
+//******************************************************************************
+// Guide
+//******************************************************************************
+"guide.gotIt.title" = "Понятно";
+"guide.nextButton.title" = "Далее";
+"guide.typingText" = "набирает";
+"guide.online" = "в сети";
+
+"guide.motivationSelection.title" = "Выбери мотивацию";
+"guide.motivationSelection.description" = "Какой режим даст тебе больше мотивации?";
+"guide.catMotivation.title" = "сохранить питомца";
+"guide.catMotivation.description" = "Если проиграешь - твой питомец уйдет";
+"guide.timeMotivation.title" = "сохранить время";
+"guide.timeMotivation.description" = "Если проиграешь, то будешь обязан посмотреть 3 рекламных ролика";
+"guide.catMotivation.message" = "Мы дарим тебе одного бесплатного питомца. Если он уйдет, ты сможешь купить нового.";
+"guide.timeMotivation.message" = "Если тебе не нравится реклама, то необходимость просмотра рекламных роликов в случае проигрыша будет поддерживать твою мотивацию!";
+
+"guide.message1" = "Привет, я - Диди!";
+"guide.message2" = "Я расскажу тебе как не отвлекаться на телефон для выполнения важной задачи.";
+"guide.message3" = "Или просто для отдыха от социальных сетей.";
+
+"guide.message4" = "На следующем экране тебе предложат установить количество минут на таймере.";
+"guide.message5" = "В течение этого времени ты обязуешься не использовать телефон.";
+
+"guide.message6" = "В этом тебе помогут два режима мотивации.";
+
+"guide.message7" = "Первый - Сохранение питомца.";
+"guide.message8" = "Я дарю тебе самого дорогого питомца - кошку Пушинку.";
+"guide.message9" = "catSticker";
+"guide.message10" = "Если ты начнешь пользоваться телефоном, то питомец покинет тебя!";
+"guide.message11" = "И если ты захочешь использовать этот режим дальше, тебе придется купить нового.";
+
+"guide.message12" = "Мы отдаем 50% нашей прибыли благотворительным организациям, помогающим животным!";
+"guide.message13" = "Ты тоже можешь помочь, сделав пожертвование в один из фондов на вкладке \"Еще\".";
+
+"guide.message14" = "Второй режим - Сохранение времени.";
+"guide.message15" = "Если ты начнешь пользоваться телефоном, тебе придется смотреть 3 рекламы.";
+"guide.message16" = "И ты потеряешь свое драгоценное время!";
+
+"guide.message17" = "Давай приступим. Удачи!";
+
+//******************************************************************************
+// Notifications
+//******************************************************************************
+"notifications.return.title" = "Нажми, чтобы не проиграть!";
+"notifications.return.body" = "Вы проиграете в текущем испытании, если не вернетесь в приложение!";
+"notifications.win.title" = "Успех!";
+"notifications.win.body" = "Вы смогли не использовать телефон в течение запланированного времени!";
+
+//******************************************************************************
+// Lose
+//******************************************************************************
+"lose.cat.title" = "Твой питомец покинул тебя";
+"lose.cat.description" = "Теперь ты живешь один";
+"lose.cat.mainButton" = "Получить нового питомца";
+"lose.cat.secondaryButton" = "Продолжить без питомца";
+
+"lose.ad.title" = "Потеря времени - твое наказание";
+"lose.ad.description" = "Просмотри 3 рекламныx ролика";
+"lose.ad.mainButton" = "Посмотреть 3 рекламныx ролика";
+"lose.ad.secondaryButton" = "Купить питомца вместо просмотра";
+
+"lose.ad.alert.failed.title" = "Не удалось загрузить рекламу";
+"lose.ad.alert.failed.message" = "Проверьте Ваше интернет соединение и повторите попытку";
+"lose.ad.alert.failed.action" = "OK";
+
+//******************************************************************************
+// Motivational Item
+//******************************************************************************
+"motivationItem.ad.title" = "Сохранение времени";
+"motivationItem.level1.title" = "Барсик";
+"motivationItem.level2.title" = "Мотя";
+"motivationItem.level3.title" = "Муся";
+"motivationItem.level4.title" = "Джессика";
+"motivationItem.level5.title" = "Пушинка";
+
+"motivationItem.title" = "Изменить мотивацию";
+"motivationItem.catMode" = "Сохранить питомца";
+"motivationItem.timeMode" = "Сохранить время";
+
+"motivationItem.descriptionTitle" = "Мотивация";
+
+"motivationItem.description.ad" = "Возможность потратить свое время на просмотр несколькиx рекламныx роликов будет тебя мотивировать.";
+"motivationItem.description.cat" = "Возможность потерять друга будет тебя мотивировать.";
+
+"motivationItem.info.haveCat" = "сейчас живет с тобой";
+"motivationItem.info.notCat" = "у тебя нет питомца";
+
+"motivationItem.action.title" = "Выбрать";
+
+"motivationItem.setButton.ableToSet" = "Выбрать режим";
+"motivationItem.setButton.unableToSet" = "Режим выбран";
+
+"motivationItem.backButton" = "Назад";
+
+//******************************************************************************
+// Creation
+//******************************************************************************
+"creation.timeTitle" = "Время";
+"creation.motivationTitle" = "Мотивация";
+"creation.actionTitle" = "Нажми, чтобы изменить";
+"creation.saveTime" = "сохранить время";
+"creation.saveCat" = "сохранить питомца";
+"creation.alert.notifications.title" = "Уведомления выключены";
+"creation.alert.notifications.description" = "Мы рекомендуем включить уведомления. Это поможет тебе не проиграть.";
+"creation.alert.notifications.positive" = "Открыть настройки";
+"creation.alert.notifications.negative" = "Продолжить без уведомлений";
+"creation.title" = "Трекер";
+"creation.startButtonTitle" = "Начать";
+"creation.alert.petMode.title" = "Режим сохранения питомца";
+"creation.alert.petMode.description" = "Будь готов к потере Питомца в случае проигрыша!";
+"creation.alert.petMode.positive" = "Назад";
+"creation.alert.petMode.negative" = "Начать";
+
+//******************************************************************************
+// Time Selection
+//******************************************************************************
+"timeSelection.errorMessage" = "пожайлуста, введи время от 15 до 120 минут";
+"timeSelection.title" = "Выбери время для концентрации";
+"timeSelection.description" = "Введи время в минутах от 15 до 120. Для успешного завершения концентрации не используй телефон в течение этого времени.";
+"timeSelection.placeholder" = "Время в минутах";
+"timeSelection.saveButtonTitle" = "Сохранить";
+
+//******************************************************************************
+// Current
+//******************************************************************************
+"current.timer.title" = "Осталось";
+"current.timer.adDescription" = "Тебе придется посмотреть 3 рекламных ролика в случае неудачи";
+"current.timer.catDescription" = "Твой питомец уйдет в случае неудачи";
+"current.giveUpButton.title" = "Сдаться";
+"current.alert.giveUp.title" = "Уверены, что хотите сдаться?";
+"current.alert.giveUp.catDescription" = "Если сдашься - потеряешь своего питомца";
+"current.alert.giveUp.adDescription" = "Если сдашься - тебе придется посмотреть три рекламных ролика";
+"current.alert.giveUp.positive" = "Продолжить";
+"current.alert.giveUp.negative" = "Сдаться";
+"current.congrats" = "Поздравляем!";
+"current.backButton.title" = "Вернуться в меню";
+"current.successDescription" = "Ты отлично справляешься!";
+
+//******************************************************************************
+// Cat Store
+//******************************************************************************
+"catStore.title" = "Выбери нового питомца";
+"catStore.description" = "Не сделай его грустным снова";
+"alert.title.success" = "Успешно!";
+"alert.message.success" = "Теперь у тебя новый питомец";
+"alert.action.back" = "Назад";
+"buy.action" = "Купить";
+"catStore.alert.failed.title" = "Не удалось загрузить питомцев";
+"catStore.alert.failed.message" = "Проверьте Ваше интернет соединение и повторите попытку";
+"catStore.alert.failed.action" = "OK";
+
+//******************************************************************************
+// History
+//******************************************************************************
+"history.title" = "История";
+"history.success" = "Успех";
+"history.failed" = "Неудача";
+"history.motivation.cat" = "сохранить питомца";
+"history.motivation.ad" = "сохранить время";
+"history.today" = "Сегодня";
+"history.yesterday" = "Вчера";
+"history.noHistory" = "Пока нет истории";
+"history.today" = "Сегодня";
+"history.bestScore" = "Лучший результат";
+"history.clear" = "Очистить";
+"history.alert.title" = "Ты точно хочешь удалить историю?";
+"history.alert.description" = "После удаления ее невозможно будет восстановить";
+"history.alert.clear" = "Удалить";
+"history.alert.cancel" = "Отменить";
+
+//******************************************************************************
+// Settings
+//******************************************************************************
+"settings.title" = "Еще";
+"settings.notifications" = "Уведомления";
+"settings.appearance" = "Интерфейс";
+"settings.getInTouch" = "Связаться с разработчиками";
+"settings.about" = "О Приложении";
+"settings.darkMode" = "Темная тема";
+"settings.emailUs" = "Написать разработчикам";
+"settings.terms" = "Правила использования";
+"settings.policy" = "Политика приватности";
+"settings.weCare" = "Мы помогаем";
+"settings.drugFund" = "Благотворительный Фонд «ДРУГ»";
+
+//******************************************************************************
+// Music
+//******************************************************************************
+"music.title" = "Выбери мелодию, которая поможет тебе сконцентрироваться";

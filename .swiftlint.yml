@@ -1,0 +1,31 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - R.generated.swift
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+warning_threshold: 1
+disabled_rules:
+  - trailing_whitespace
+  - todo
+  - multiple_closures_with_trailing_closure
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+line_length: 160
+file_length:
+  warning: 500
+  error: 1200
+type_name:
+  min_length: 2
+  max_length: # warning and error
+    warning: 50
+    error: 60
+identifier_name:
+  allowed_symbols: "_"
+  min_length: 2
+  excluded:
+    - id
+reporter: "xcode"
+nesting:
+  type_level: 2

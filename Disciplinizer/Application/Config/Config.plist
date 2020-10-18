@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Prod</key>
+	<dict>
+		<key>deviceCheckBaseURL</key>
+		<string>https://api.devicecheck.apple.com/</string>
+		<key>adUnitID</key>
+		<string>ca-app-pub-6894098236140382/9379068244</string>
+	</dict>
+	<key>Dev</key>
+	<dict>
+		<key>deviceCheckBaseURL</key>
+		<string>https://api.development.devicecheck.apple.com/v1/</string>
+		<key>adUnitID</key>
+		<string>ca-app-pub-3940256099942544/1712485313</string>
+		<key>testDurationInMinutes</key>
+		<string>1</string>
+		<key>numberOfAds</key>
+		<string>1</string>
+		<key>chatMessageDelay</key>
+		<string>1</string>
+	</dict>
+	<key>Test</key>
+	<dict>
+		<key>deviceCheckBaseURL</key>
+		<string>https://api.development.devicecheck.apple.com/v1/</string>
+		<key>adUnitID</key>
+		<string>ca-app-pub-3940256099942544/1712485313</string>
+	</dict>
+</dict>
+</plist>

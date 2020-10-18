@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Motivaton Selection View Controller-->
+        <scene sceneID="FTa-d4-mdH">
+            <objects>
+                <viewController storyboardIdentifier="MotivatonSelectionViewController" id="FfG-Zb-MfZ" customClass="MotivatonSelectionViewController" customModule="Disciplinizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mx5-54-sF3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-iR-ZOG">
+                                <rect key="frame" x="25" y="60" width="140.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxG-e9-iqk" userLabel="ParentContenView">
+                                <rect key="frame" x="0.0" y="106.5" width="414" height="755.5"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-Ln-7nf">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="755.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrY-oG-T4D" userLabel="ContentView">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="755.5"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-YS-bvu">
+                                                        <rect key="frame" x="16" y="0.0" width="382" height="32"/>
+                                                        <segments>
+                                                            <segment title="Cat mode"/>
+                                                            <segment title="Time mode"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="didSelectMode:" destination="FfG-Zb-MfZ" eventType="valueChanged" id="z50-QT-Vv7"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCv-Zw-G3m" customClass="MotivationView" customModule="Disciplinizer" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="81" width="384" height="210"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="210" id="Qtb-LX-pLJ"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="nCv-Zw-G3m" secondAttribute="trailing" constant="15" id="4la-w4-dGy"/>
+                                                    <constraint firstItem="iwN-YS-bvu" firstAttribute="leading" secondItem="VrY-oG-T4D" secondAttribute="leading" constant="16" id="6v5-a0-Fuv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iwN-YS-bvu" secondAttribute="trailing" constant="16" id="XqT-w0-Vny"/>
+                                                    <constraint firstItem="iwN-YS-bvu" firstAttribute="top" secondItem="VrY-oG-T4D" secondAttribute="top" id="eK0-Ez-s0G"/>
+                                                    <constraint firstItem="nCv-Zw-G3m" firstAttribute="top" secondItem="iwN-YS-bvu" secondAttribute="bottom" constant="50" id="g44-ho-7ka"/>
+                                                    <constraint firstItem="nCv-Zw-G3m" firstAttribute="leading" secondItem="VrY-oG-T4D" secondAttribute="leading" constant="15" id="rQi-hO-o0b"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="trailing" secondItem="7V5-XA-6le" secondAttribute="trailing" id="4b6-78-crh"/>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="height" secondItem="Bxf-Ln-7nf" secondAttribute="height" priority="250" id="RyW-Jj-Ztv"/>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="top" secondItem="7V5-XA-6le" secondAttribute="top" id="dKF-uw-1Y2"/>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="bottom" secondItem="7V5-XA-6le" secondAttribute="bottom" id="jS9-md-mrp"/>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="leading" secondItem="7V5-XA-6le" secondAttribute="leading" id="nBn-XV-2s9"/>
+                                            <constraint firstItem="VrY-oG-T4D" firstAttribute="width" secondItem="4Bd-lP-5dx" secondAttribute="width" id="v1H-YB-P1t"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="7V5-XA-6le"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="4Bd-lP-5dx"/>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-TT-GrP" customClass="MainButton" customModule="Disciplinizer" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="671.5" width="364" height="44"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XZT-vL-WcD"/>
+                                        </constraints>
+                                        <state key="normal" title="Set mode">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setModeButtonTapped:" destination="FfG-Zb-MfZ" eventType="touchUpInside" id="Ffr-pz-eBS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GCB-TT-GrP" firstAttribute="leading" secondItem="CxG-e9-iqk" secondAttribute="leading" constant="25" id="4CY-jP-FdC"/>
+                                    <constraint firstItem="Bxf-Ln-7nf" firstAttribute="leading" secondItem="CxG-e9-iqk" secondAttribute="leading" id="68b-K4-Y0A"/>
+                                    <constraint firstItem="Bxf-Ln-7nf" firstAttribute="top" secondItem="CxG-e9-iqk" secondAttribute="top" id="Nnb-zh-npn"/>
+                                    <constraint firstAttribute="trailing" secondItem="GCB-TT-GrP" secondAttribute="trailing" constant="25" id="Ynd-mT-6lI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bxf-Ln-7nf" secondAttribute="trailing" id="bpW-8X-77V"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bxf-Ln-7nf" secondAttribute="bottom" id="gds-ZD-1PV"/>
+                                    <constraint firstAttribute="bottom" secondItem="GCB-TT-GrP" secondAttribute="bottom" constant="40" id="rcS-Qf-dVG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cCM-iR-ZOG" firstAttribute="top" secondItem="5tP-jo-ksd" secondAttribute="top" constant="16" id="F3C-cz-jxJ"/>
+                            <constraint firstItem="5tP-jo-ksd" firstAttribute="bottom" secondItem="CxG-e9-iqk" secondAttribute="bottom" id="W6T-Rb-v6Z"/>
+                            <constraint firstItem="CxG-e9-iqk" firstAttribute="top" secondItem="cCM-iR-ZOG" secondAttribute="bottom" constant="20" id="k6m-4j-LXO"/>
+                            <constraint firstItem="5tP-jo-ksd" firstAttribute="trailing" secondItem="CxG-e9-iqk" secondAttribute="trailing" id="nNh-GD-06G"/>
+                            <constraint firstItem="cCM-iR-ZOG" firstAttribute="leading" secondItem="5tP-jo-ksd" secondAttribute="leading" constant="25" id="qhh-Bw-Vij"/>
+                            <constraint firstItem="CxG-e9-iqk" firstAttribute="leading" secondItem="5tP-jo-ksd" secondAttribute="leading" id="yAZ-su-ZML"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5tP-jo-ksd"/>
+                    </view>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="iwN-YS-bvu" id="ymz-8n-a2c"/>
+                        <outlet property="motivationItemView" destination="nCv-Zw-G3m" id="XgS-8f-0c7"/>
+                        <outlet property="setButton" destination="GCB-TT-GrP" id="cEe-wP-TJ5"/>
+                        <outlet property="titleLabel" destination="cCM-iR-ZOG" id="620-gJ-AAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YlV-Zy-2UY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="-25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="lightBlue">
+            <color red="0.32941176470588235" green="0.45098039215686275" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
