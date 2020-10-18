@@ -10,12 +10,19 @@ import UIKit
 
 var rootVC = RootViewController()
 
-class RootViewController: UIViewController, ViewProtocol {
+protocol RootViewProtocol: ViewProtocol {}
+
+class RootViewController: UIViewController, RootViewProtocol {
+    var presenter: RootViewPresenterProtocol?
+    var configurator = RootViewConfigurator()
+    
     private var stubView = LaunchScreenView()
     private var isAppReady = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configurator.configure(rootViewController: self)
         
         rootVC.add(Controller.createPageNavigation())
         
@@ -24,6 +31,8 @@ class RootViewController: UIViewController, ViewProtocol {
         view.addSubview(stubView)
         
         prepareApp()
+        
+        presenter?.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +43,7 @@ class RootViewController: UIViewController, ViewProtocol {
         }
     }
     
-    private func prepareApp() {
+    private func prepareApp() {        
         PurchasesManager.shared.getAvailiablePrices { (_) in return }
 
         let challengeParametersGateway = ChallengeParametersPersistenceGateway()

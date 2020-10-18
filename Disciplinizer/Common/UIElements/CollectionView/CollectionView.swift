@@ -188,13 +188,14 @@ open class CollectionView<Cell: UICollectionViewCell, Item>: UICollectionView, U
 extension CollectionView {
 
     public var items: [Item] {
-        set {
-            sections = [newValue]
-        }
         get {
             return sections.reduce([]) {
                 $0 + $1
             }
+        }
+
+        set {
+            sections = [newValue]
         }
     }
 

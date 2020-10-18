@@ -42,7 +42,7 @@ class CoreDataChallengesGateway: LocalPersistenceChallengesGatewayProtocol {
 
     func add(parameters: ChallengeParameters, completionHandler: (_ challenge: Result<Challenge, Error>) -> Void) {
         guard let coreDataChallenge = viewContext.addEntity(withType: CDChallenge.self) else {
-            completionHandler(.failure(CoreError(message: "Failed adding the challenge in the data base")))
+            completionHandler(.failure(CoreError(message: "Failed adding the challenge to the data base")))
             return
         }
 

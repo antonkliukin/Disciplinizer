@@ -8,39 +8,12 @@
 
 import Alamofire
 
-class NetworkState {
-    static var isConnected: Bool {
-        return NetworkReachabilityManager()?.isReachable ?? false
-    }
-}
-
-extension RequestBuilder {
-    func asURLRequest() throws -> URLRequest {
-        var urlRequest = try URLRequest(url: baseURL.appendingPathComponent(path),
-                                        method: self.method,
-                                        headers: self.headers)
-        urlRequest.httpBody = self.body
-        urlRequest.allHTTPHeaderFields = self.headers
-        urlRequest = method == .post ?
-            try URLEncoding(destination: .queryString).encode(urlRequest, with: queryParameters) :
-            try URLEncoding.default.encode(urlRequest, with: queryParameters)
-        urlRequest.timeoutInterval = 30
-
-        return urlRequest
-    }
-}
-
 final class NetworkManager {
 
-    let sessionManager: Alamofire.SessionManager = {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-
-        let manager = Alamofire.SessionManager(configuration: configuration)
-
-        manager.delegate.taskWillPerformHTTPRedirectionWithCompletion = { session, task, response, request, completion in
-            completion(nil)
-        }
+    let sessionManager: Alamofire.Session = {
+        let configuration = URLSessionConfiguration.af.default
+        let manager = Alamofire.Session(configuration: configuration)
+        
         return manager
     }()
 
@@ -48,7 +21,7 @@ final class NetworkManager {
     static let successResponseCodes =  Array(200..<300)
     static let anyResponseCodes = Array(0..<600)
 
-    func request<T: Codable>(requestBuilder: RequestBuilder,
+    func request<T: Codable>(requestBuilder: ApiRequestProtocol,
                              acceptableCodes: [Int] = successResponseCodes,
                              _ completionHandler: @escaping (Swift.Result<T?, Error>) -> Void) {
         request(requestBuilder: requestBuilder) { (result) in
@@ -72,7 +45,7 @@ final class NetworkManager {
         }
     }
 
-    private func request(requestBuilder: RequestBuilder,
+    private func request(requestBuilder: ApiRequestProtocol,
                          acceptableCodes: [Int] = anyResponseCodes,
                          completionHandler: @escaping (Swift.Result<Data, Error>) -> Void) {
         sessionManager.request(requestBuilder).validate(statusCode: acceptableCodes).responseData(completionHandler: { (response) in

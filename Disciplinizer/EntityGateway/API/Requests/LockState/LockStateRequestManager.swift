@@ -47,7 +47,7 @@ class LockStateRequestManager {
     private init() {}
 
     func getBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<DeviceCheckResponseModel, DeviceCheckRequesError>) -> Void) {
-        let request = API.LockStateRequests.getBits(model: model)
+        let request = API.LockStateRequest.getBits(model: model)
         
         networkManager.request(requestBuilder: request) { (result: Result<DeviceCheckResponseModel?, Error>) in
             switch result {
@@ -64,7 +64,7 @@ class LockStateRequestManager {
     }
 
     func updateBits(model: DeviceCheckRequestModel, completionHandler: @escaping (Result<String?, Error>) -> Void) {
-        let request = API.LockStateRequests.updateBits(model: model)
+        let request = API.LockStateRequest.updateBits(model: model)
 
         networkManager.request(requestBuilder: request, completionHandler)
     }

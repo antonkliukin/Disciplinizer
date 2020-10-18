@@ -1,0 +1,37 @@
+[
+{
+  "id": "1",
+  "title": "Барсик",
+  "description": "",
+  "avatarURL": "http://disciplinizer.com/pets/cuddly_cat.pdf",
+  "imageURL": ""
+},
+{
+  "id": "2",
+  "title": "Мотя",
+  "description": "",
+  "avatarURL": "http://disciplinizer.com/pets/fluffy_cat.pdf",
+  "imageURL": ""
+},
+{
+  "id": "3",
+  "title": "Муся",
+  "description": "",
+  "avatarURL": "http://disciplinizer.com/pets/pinko_cat.pdf",
+  "imageURL": ""
+},
+{
+  "id": "4",
+  "title": "Джессика",
+  "description": "",
+  "avatarURL": "http://disciplinizer.com/pets/tilda_cat.pdf",
+  "imageURL": ""
+},
+{
+  "id": "5",
+  "title": "Пушинка",
+  "description": "",
+  "avatarURL": "http://disciplinizer.com/pets/valli_cat.pdf",
+  "imageURL": ""
+}
+]

@@ -5,12 +5,13 @@ target 'Disciplinizer' do
   use_frameworks!
 
   # Pods for Disciplinizer
-  pod 'Alamofire', '~> 4.0'
+  pod 'Alamofire', '~> 5.0'
   pod 'KeychainAccess', '~> 3.0'
   pod 'R.swift', '~> 5.2.0'
   pod 'SwiftySound', '~> 1.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/RemoteConfig'
   pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftLint'
 

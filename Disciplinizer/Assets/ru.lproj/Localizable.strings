@@ -68,11 +68,6 @@
 // Motivational Item
 //******************************************************************************
 "motivationItem.ad.title" = "Сохранение времени";
-"motivationItem.level1.title" = "Барсик";
-"motivationItem.level2.title" = "Мотя";
-"motivationItem.level3.title" = "Муся";
-"motivationItem.level4.title" = "Джессика";
-"motivationItem.level5.title" = "Пушинка";
 
 "motivationItem.title" = "Изменить мотивацию";
 "motivationItem.catMode" = "Сохранить питомца";

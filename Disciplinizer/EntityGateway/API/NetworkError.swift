@@ -12,7 +12,7 @@ enum NetworkError: LocalizedError {
     case alamofireError(AFError)
     case urlError(URLError)
     case decodingError(DecodingError)
-    case unknown(Error)
+    case unknown
 
     var errorDescription: String? {
         switch self {
@@ -22,8 +22,8 @@ enum NetworkError: LocalizedError {
             return "URL Error: " + error.localizedDescription
         case .decodingError(let error):
             return "Decoding Error: " + error.localizedDescription
-        case .unknown(let error):
-            return "Unknown Error: " + error.localizedDescription
+        case .unknown:
+            return "Unknown Error" 
         }
     }
 }

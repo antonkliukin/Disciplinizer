@@ -8,6 +8,14 @@
 
 import UIKit
 
+struct MotivationalItemConfig: Codable {
+    let id: String
+    let title: String
+    let description: String
+    let avatarURL: String?
+    let imageURL: String? 
+}
+
 enum MotivationalItem: String, CaseIterable {
     case noPaidItem = "-1"
     case ad = "0"

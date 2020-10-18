@@ -1,25 +1,16 @@
 //
-//  RequestBuilder.swift
+//  ExampleUserRequests.swift
 //  Disciplinizer
 //
-//  Created by Anton Kliukin on 22/08/2019.
+//  Created by Anton Kliukin on 25/08/2019.
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
 import Alamofire
 
-protocol RequestBuilder: URLRequestConvertible {
-    var method: HTTPMethod { get }
-    var path: String { get }
-    var baseURL: URL { get }
-    var headers: [String: String]? { get }
-    var body: Data? { get }
-    var queryParameters: [String: Any]? { get }
-}
+protocol LockStateRequestProtocol: ApiRequestProtocol {}
 
-protocol LockStateRequestBuilder: RequestBuilder {}
-
-extension LockStateRequestBuilder {
+extension LockStateRequestProtocol {
     var method: HTTPMethod {
         return .post
     }
@@ -57,5 +48,39 @@ QBqpx79P
 
     var queryParameters: [String: Any]? {
         return [:]
+    }
+}
+
+extension API {
+    enum LockStateRequest: LockStateRequestProtocol {
+        case getBits(model: DeviceCheckRequestModel)
+        case updateBits(model: DeviceCheckRequestModel)
+
+        var method: HTTPMethod {
+            switch self {
+            case .getBits: return .post
+            case .updateBits: return .post
+            }
+        }
+
+        var path: String {
+            switch self {
+            case .getBits:
+                return "query_two_bits"
+            case .updateBits:
+                return "update_two_bits"
+            }
+        }
+
+        var body: Data? {
+            switch self {
+            case .getBits(let model):
+                let data = try? JSONEncoder().encode(model)
+                return data
+            case .updateBits(let model):
+                let data = try? JSONEncoder().encode(model)
+                return data
+            }
+        }
     }
 }

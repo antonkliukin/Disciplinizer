@@ -477,10 +477,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 8 files.
+  /// This `R.file` struct is generated, and contains static references to 9 files.
   struct file {
     /// Resource file `Config.plist`.
     static let configPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "plist")
+    /// Resource file `DefaultPets.json`.
+    static let defaultPetsJson = Rswift.FileResource(bundle: R.hostingBundle, name: "DefaultPets", pathExtension: "json")
     /// Resource file `Distant Place.mp3`.
     static let distantPlaceMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Distant Place", pathExtension: "mp3")
     /// Resource file `Floating Point.mp3`.
@@ -499,6 +501,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Config", withExtension: "plist")`
     static func configPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.configPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DefaultPets", withExtension: "json")`
+    static func defaultPetsJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.defaultPetsJson
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1102,8 +1110,8 @@ struct R: Rswift.Validatable {
       static let loseCatSecondaryButton = Rswift.StringResource(key: "lose.cat.secondaryButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Cuddly
       ///
-      /// Locales: ru, en
-      static let motivationItemLevel1Title = Rswift.StringResource(key: "motivationItem.level1.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// Locales: en
+      static let motivationItemLevel1Title = Rswift.StringResource(key: "motivationItem.level1.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Dark Mode
       ///
       /// Locales: ru, en
@@ -1138,8 +1146,8 @@ struct R: Rswift.Validatable {
       static let historyFailed = Rswift.StringResource(key: "history.failed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Fluffy
       ///
-      /// Locales: ru, en
-      static let motivationItemLevel2Title = Rswift.StringResource(key: "motivationItem.level2.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// Locales: en
+      static let motivationItemLevel2Title = Rswift.StringResource(key: "motivationItem.level2.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Get a new pet
       ///
       /// Locales: ru, en
@@ -1302,8 +1310,8 @@ struct R: Rswift.Validatable {
       static let catStoreAlertFailedTitle = Rswift.StringResource(key: "catStore.alert.failed.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Pinko
       ///
-      /// Locales: ru, en
-      static let motivationItemLevel4Title = Rswift.StringResource(key: "motivationItem.level4.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// Locales: en
+      static let motivationItemLevel4Title = Rswift.StringResource(key: "motivationItem.level4.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Please check your internet connection and try again
       ///
       /// Locales: ru, en
@@ -1366,8 +1374,8 @@ struct R: Rswift.Validatable {
       static let guideMessage14 = Rswift.StringResource(key: "guide.message14", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Tilda
       ///
-      /// Locales: ru, en
-      static let motivationItemLevel3Title = Rswift.StringResource(key: "motivationItem.level3.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// Locales: en
+      static let motivationItemLevel3Title = Rswift.StringResource(key: "motivationItem.level3.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Time
       ///
       /// Locales: ru, en
@@ -1402,8 +1410,8 @@ struct R: Rswift.Validatable {
       static let creationTitle = Rswift.StringResource(key: "creation.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Valli
       ///
-      /// Locales: ru, en
-      static let motivationItemLevel5Title = Rswift.StringResource(key: "motivationItem.level5.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// Locales: en
+      static let motivationItemLevel5Title = Rswift.StringResource(key: "motivationItem.level5.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Watch 3 ads
       ///
       /// Locales: ru, en
@@ -1950,7 +1958,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cuddly
       ///
-      /// Locales: ru, en
+      /// Locales: en
       static func motivationItemLevel1Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("motivationItem.level1.title", bundle: hostingBundle, comment: "")
@@ -2085,7 +2093,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Fluffy
       ///
-      /// Locales: ru, en
+      /// Locales: en
       static func motivationItemLevel2Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("motivationItem.level2.title", bundle: hostingBundle, comment: "")
@@ -2700,7 +2708,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Pinko
       ///
-      /// Locales: ru, en
+      /// Locales: en
       static func motivationItemLevel4Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("motivationItem.level4.title", bundle: hostingBundle, comment: "")
@@ -2940,7 +2948,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Tilda
       ///
-      /// Locales: ru, en
+      /// Locales: en
       static func motivationItemLevel3Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("motivationItem.level3.title", bundle: hostingBundle, comment: "")
@@ -3075,7 +3083,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Valli
       ///
-      /// Locales: ru, en
+      /// Locales: en
       static func motivationItemLevel5Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("motivationItem.level5.title", bundle: hostingBundle, comment: "")
