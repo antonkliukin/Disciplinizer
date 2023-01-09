@@ -35,9 +35,9 @@ class CatStorePresenter: CatStorePresenterProtocol {
             PurchasesManager.shared.getAvailiablePrices { (prices) in
                 DispatchQueue.main.async {
                     if prices.isEmpty {
-                        let alertModel = AlertModel(title: Strings.catStoreAlertFailedTitle(),
-                                                    message: Strings.catStoreAlertFailedMessage(),
-                                                    positiveActionTitle: Strings.catStoreAlertFailedAction())
+                        let alertModel = AlertModel(title: R.string.localizable.catStoreAlertFailedTitle(),
+                                                    message: R.string.localizable.catStoreAlertFailedMessage(),
+                                                    positiveActionTitle: R.string.localizable.catStoreAlertFailedAction())
                         
                         let alertVC = Controller.createAlert(alertModel: alertModel, didTapPositive: {
                             if self.view?.isPresented ?? false {
@@ -83,8 +83,8 @@ class CatStorePresenter: CatStorePresenterProtocol {
     }
     
     private func setupStoreView() {
-        view?.set(viewTitle: Strings.catStoreTitle())
-        view?.set(description: Strings.catStoreDescription())
+        view?.set(viewTitle: R.string.localizable.catStoreTitle())
+        view?.set(description: R.string.localizable.catStoreDescription())
         view?.showMotivationItems(items)
     }
     
@@ -96,9 +96,9 @@ class CatStorePresenter: CatStorePresenterProtocol {
             
             self.motivationParameterUseCase.select(motivationalItem: item) { (_) in }
             
-            let alertModel = AlertModel(title: Strings.alertTitleSuccess(),
-                                        message: Strings.alertMessageSuccess(),
-                                        positiveActionTitle: Strings.alertActionBack())
+            let alertModel = AlertModel(title: R.string.localizable.alertTitleSuccess(),
+                                        message: R.string.localizable.alertMessageSuccess(),
+                                        positiveActionTitle: R.string.localizable.alertActionBack())
             
             let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
                 if self.view?.isPresented ?? false {

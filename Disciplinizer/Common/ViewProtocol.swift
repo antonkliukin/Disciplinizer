@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ViewProtocol: class { }
+protocol ViewProtocol: AnyObject { }
 
 extension ViewProtocol {
     var router: RouterProtocol? {

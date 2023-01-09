@@ -6,6 +6,6 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
-import Rswift
-
-typealias Strings = R.string.localizable
+//import Rswift
+//
+//typealias R.string.localizable = R.string.localizable

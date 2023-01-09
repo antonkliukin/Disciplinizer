@@ -41,7 +41,7 @@ class CatStoreCollectionCell: UICollectionViewCell {
         
         catImageView.image = item.image
         
-        buyButton.setTitle(Strings.buyAction(), for: .normal)
+        buyButton.setTitle(R.string.localizable.buyAction(), for: .normal)
         buyButton.backgroundColor = item.color
         buyButton.setTitleColor(item.textColor, for: .normal)
         

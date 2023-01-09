@@ -15,7 +15,7 @@ protocol ModeSelectionPresenterProtocol {
     func viewDidLoad()
 }
 
-protocol RouterDelegateProtocol: class {
+protocol RouterDelegateProtocol: AnyObject {
     func didTapNext()
 }
 
@@ -49,23 +49,23 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     }
     
     private func configureView() {
-        view?.display(titleText: Strings.guideMotivationSelectionTitle())
-        view?.display(descriptionText: Strings.guideMotivationSelectionDescription())
-        view?.configureNextButtonTitle(title: Strings.guideNextButtonTitle())
+        view?.display(titleText: R.string.localizable.guideMotivationSelectionTitle())
+        view?.display(descriptionText: R.string.localizable.guideMotivationSelectionDescription())
+        view?.configureNextButtonTitle(title: R.string.localizable.guideNextButtonTitle())
     }
     
     private func selectDefaultMode() {
         view?.changeCatModeViewState(.selected)
         view?.changeTimeModeViewState(.unselected)
-        view?.display(message: Strings.guideCatMotivationMessage())
+        view?.display(message: R.string.localizable.guideCatMotivationMessage())
     }
     
     private func configureModeViews() {
-        view?.configureCatModeView(title: Strings.guideCatMotivationTitle(),
-                                   desctiption: Strings.guideCatMotivationDescription(),
+        view?.configureCatModeView(title: R.string.localizable.guideCatMotivationTitle(),
+                                   desctiption: R.string.localizable.guideCatMotivationDescription(),
                                    image: R.image.paw()!)
-        view?.configureTimeModeView(title: Strings.guideTimeMotivationTitle(),
-                                    desctiption: Strings.guideTimeMotivationDescription(),
+        view?.configureTimeModeView(title: R.string.localizable.guideTimeMotivationTitle(),
+                                    desctiption: R.string.localizable.guideTimeMotivationDescription(),
                                     image: R.image.timer_guide()!)
     }
     
@@ -73,14 +73,14 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
         selectedItem = paidItem ?? .ad
         view?.changeCatModeViewState(.selected)
         view?.changeTimeModeViewState(.unselected)
-        view?.display(message: Strings.guideCatMotivationMessage())
+        view?.display(message: R.string.localizable.guideCatMotivationMessage())
     }
     
     func didTapTimeMode() {
         selectedItem = .ad
         view?.changeCatModeViewState(.unselected)
         view?.changeTimeModeViewState(.selected)
-        view?.display(message: Strings.guideTimeMotivationMessage())
+        view?.display(message: R.string.localizable.guideTimeMotivationMessage())
     }
     
     func didTapNextButton() {

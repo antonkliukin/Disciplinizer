@@ -30,8 +30,8 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.set(viewTitle: Strings.motivationItemTitle())
-        view?.set(titleForIndexOne: Strings.motivationItemCatMode(), indexTwo: Strings.motivationItemTimeMode())
+        view?.set(viewTitle: R.string.localizable.motivationItemTitle())
+        view?.set(titleForIndexOne: R.string.localizable.motivationItemCatMode(), indexTwo: R.string.localizable.motivationItemTimeMode())
         configureViewForSelectedMotivationalItem()
     }
         
@@ -50,10 +50,10 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
             
             if let item = self.newlySelectedMotivationalItem {
                 if item == .noPaidItem {
-                    self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonAbleToSet())
+                    self.changeSetModeState(isAbleToSet: false, andTitle: R.string.localizable.motivationItemSetButtonAbleToSet())
                 } else {
-                    let title = self.newlySelectedMotivationalItem != self.selectedMotivationalItem ? Strings.motivationItemSetButtonAbleToSet() :
-                        Strings.motivationItemSetButtonUnableToSet()
+                    let title = self.newlySelectedMotivationalItem != self.selectedMotivationalItem ? R.string.localizable.motivationItemSetButtonAbleToSet() :
+                        R.string.localizable.motivationItemSetButtonUnableToSet()
                     self.changeSetModeState(isAbleToSet: self.newlySelectedMotivationalItem != self.selectedMotivationalItem, andTitle: title)
                 }
                 
@@ -99,7 +99,7 @@ class MotivatoinSelectionPresenter: MotivationSelectionPresenterProtocol {
                     self.view?.selectIndex(1)
                 }
                 
-                self.changeSetModeState(isAbleToSet: false, andTitle: Strings.motivationItemSetButtonUnableToSet())
+                self.changeSetModeState(isAbleToSet: false, andTitle: R.string.localizable.motivationItemSetButtonUnableToSet())
             } else {
                 self.selectedMotivationalItem = self.paidMotivationalItem
                 self.configureMotivationalView(withItem: self.paidMotivationalItem)

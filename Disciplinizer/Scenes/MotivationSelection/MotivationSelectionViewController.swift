@@ -34,7 +34,7 @@ class MotivatonSelectionViewController: UIViewController, MotivationSelectionVie
         
         setupModeSegmentedControl()
         
-        navigationController?.navigationBar.topItem?.title = Strings.motivationItemBackButton()
+        navigationController?.navigationBar.topItem?.title = R.string.localizable.motivationItemBackButton()
                 
         presenter.viewDidLoad()
     }

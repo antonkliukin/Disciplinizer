@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,13 +109,25 @@
 		3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84C246192E3001EFC05 /* CollectionView.swift */; };
 		3A7EC84F246197BD001EFC05 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */; };
 		3A7EC88024669F52001EFC05 /* SettingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */; };
-		3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6672410D07600225DA4 /* R.generated.swift */; };
 		3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */; };
 		3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6872413B05C00225DA4 /* StartChallenge.swift */; };
 		3A8DB68A2413B41500225DA4 /* FinishChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6892413B41500225DA4 /* FinishChallenge.swift */; };
 		3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */; };
 		3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */; };
 		3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */; };
+		3A9EBE55296BD9F500F07D0F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE54296BD9F500F07D0F /* Alamofire */; };
+		3A9EBE58296BDA6D00F07D0F /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE57296BDA6D00F07D0F /* KeychainAccess */; };
+		3A9EBE5B296BDAC000F07D0F /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */; };
+		3A9EBE61296BDB8800F07D0F /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE60296BDB8800F07D0F /* SwiftySound */; };
+		3A9EBE64296BDC2C00F07D0F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */; };
+		3A9EBE66296BDC2C00F07D0F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */; };
+		3A9EBE69296BDD1000F07D0F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */; };
+		3A9EBE82296BE7F100F07D0F /* Floating Point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */; };
+		3A9EBE83296BE7F100F07D0F /* Long Days.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */; };
+		3A9EBE84296BE7F100F07D0F /* Pillow Talk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */; };
+		3A9EBE85296BE7F100F07D0F /* Leaving Wonderland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */; };
+		3A9EBE86296BE7F100F07D0F /* Metting The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */; };
+		3A9EBE87296BE7F100F07D0F /* Distant Place.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */; };
 		3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9F9A6E2376FFC400022C38 /* StoreKit.framework */; };
 		3A9F9A72237709B300022C38 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A71237709B300022C38 /* LoseViewController.swift */; };
 		3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A73237709BD00022C38 /* LosePresenter.swift */; };
@@ -164,19 +176,12 @@
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
-		5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */; };
-		54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5432586F237A01A70082DEB0 /* Floating Point.mp3 */; };
-		54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */; };
-		54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325873237A01BB0082DEB0 /* Distant Place.mp3 */; };
-		54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325875237A01C10082DEB0 /* Long Days.mp3 */; };
-		54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325877237A01C60082DEB0 /* Pillow Talk.mp3 */; };
 		5432587A237A094D0082DEB0 /* SongSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54325879237A094D0082DEB0 /* SongSelectCell.swift */; };
 		544EC47F233BAA7300417DAF /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EC47E233BAA7300417DAF /* MainButton.swift */; };
 		544EC485233BB04800417DAF /* UIButton+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EC484233BB04800417DAF /* UIButton+Factory.swift */; };
 		54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */; };
 		54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76F2378B98500752B2A /* SettingsPresenter.swift */; };
 		54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */; };
-		8E23F3A6ED7BF56A9CA451B5 /* Pods_Disciplinizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */; };
 		C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */; };
 		C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */; };
 		C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CFA2223660F8C0022863E /* CurrentChallengePresenter.swift */; };
@@ -194,7 +199,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.dev.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.dev.xcconfig"; sourceTree = "<group>"; };
 		3A008BD3231F93CA00B9286B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BD5231F93FA00B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BDB231F965500B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -299,7 +303,6 @@
 		3A7EC84C246192E3001EFC05 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionView.swift; sourceTree = "<group>"; };
-		3A8DB6672410D07600225DA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3A8DB66B2410D7F900225DA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB6872413B05C00225DA4 /* StartChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChallenge.swift; sourceTree = "<group>"; };
@@ -307,6 +310,12 @@
 		3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallnegeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLastChallenge.swift; sourceTree = "<group>"; };
 		3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationConfigurator.swift; sourceTree = "<group>"; };
+		3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Floating Point.mp3"; sourceTree = "<group>"; };
+		3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Long Days.mp3"; sourceTree = "<group>"; };
+		3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Pillow Talk.mp3"; sourceTree = "<group>"; };
+		3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Leaving Wonderland.mp3"; sourceTree = "<group>"; };
+		3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Metting The Sun.mp3"; sourceTree = "<group>"; };
+		3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Distant Place.mp3"; sourceTree = "<group>"; };
 		3A9F9A6E2376FFC400022C38 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3A9F9A71237709B300022C38 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		3A9F9A73237709BD00022C38 /* LosePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosePresenter.swift; sourceTree = "<group>"; };
@@ -356,26 +365,14 @@
 		3AE4E62D246FDA86004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		3AE4E62E24713213004C4D38 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionPresenter.swift; sourceTree = "<group>"; };
-		5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Metting The Sun.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Metting The Sun.dataset/Metting The Sun.mp3"; sourceTree = SOURCE_ROOT; };
-		5432586F237A01A70082DEB0 /* Floating Point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Floating Point.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Floating Point.dataset/Floating Point.mp3"; sourceTree = SOURCE_ROOT; };
-		54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Leaving Wonderland.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Leaving Wonderland.dataset/Leaving Wonderland.mp3"; sourceTree = SOURCE_ROOT; };
-		54325873237A01BB0082DEB0 /* Distant Place.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Distant Place.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Distant Place.dataset/Distant Place.mp3"; sourceTree = SOURCE_ROOT; };
-		54325875237A01C10082DEB0 /* Long Days.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Long Days.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Long Days.dataset/Long Days.mp3"; sourceTree = SOURCE_ROOT; };
-		54325877237A01C60082DEB0 /* Pillow Talk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pillow Talk.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Pillow Talk.dataset/Pillow Talk.mp3"; sourceTree = SOURCE_ROOT; };
 		54325879237A094D0082DEB0 /* SongSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSelectCell.swift; sourceTree = "<group>"; };
 		544EC47E233BAA7300417DAF /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		544EC484233BB04800417DAF /* UIButton+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Factory.swift"; sourceTree = "<group>"; };
 		54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionViewController.swift; sourceTree = "<group>"; };
 		54B9D76F2378B98500752B2A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.debug.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.debug.xcconfig"; sourceTree = "<group>"; };
-		A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disciplinizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.prod.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.prod.xcconfig"; sourceTree = "<group>"; };
-		B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.stage.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.stage.xcconfig"; sourceTree = "<group>"; };
-		C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.release.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.release.xcconfig"; sourceTree = "<group>"; };
 		C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentChallenge.storyboard; sourceTree = "<group>"; };
 		C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengeViewController.swift; sourceTree = "<group>"; };
 		C13CFA2223660F8C0022863E /* CurrentChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengePresenter.swift; sourceTree = "<group>"; };
@@ -388,7 +385,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */,
-				8E23F3A6ED7BF56A9CA451B5 /* Pods_Disciplinizer.framework in Frameworks */,
+				3A9EBE61296BDB8800F07D0F /* SwiftySound in Frameworks */,
+				3A9EBE64296BDC2C00F07D0F /* FirebaseAnalytics in Frameworks */,
+				3A9EBE66296BDC2C00F07D0F /* FirebaseCrashlytics in Frameworks */,
+				3A9EBE69296BDD1000F07D0F /* GoogleMobileAds in Frameworks */,
+				3A9EBE5B296BDAC000F07D0F /* RswiftLibrary in Frameworks */,
+				3A9EBE55296BD9F500F07D0F /* Alamofire in Frameworks */,
+				3A9EBE58296BDA6D00F07D0F /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +597,6 @@
 				3A47D65A230F18FB00B2B200 /* Disciplinizer */,
 				3ACD2C85240CD6210017FABC /* DisciplinizerTests */,
 				3A47D659230F18FB00B2B200 /* Products */,
-				6831F0844C4EA152F0B66DD5 /* Pods */,
 				BA92F336F5D35B4C752CDD6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -670,8 +672,7 @@
 		3A47D67A230F1E3A00B2B200 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3A8DB6672410D07600225DA4 /* R.generated.swift */,
-				3A60A92F23336E9D0037E0A4 /* Sounds */,
+				3A9EBE6E296BE60C00F07D0F /* Soundtracks */,
 				3A15514A232B7C8300265B89 /* R+Shortcuts.swift */,
 				3A47D662230F18FC00B2B200 /* Assets.xcassets */,
 				3A008BD4231F93CA00B9286B /* Localizable.stringsdict */,
@@ -704,19 +705,6 @@
 				3ACD2C90240CD70E0017FABC /* NSManagedObjectContextSpy.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		3A60A92F23336E9D0037E0A4 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				54325877237A01C60082DEB0 /* Pillow Talk.mp3 */,
-				54325875237A01C10082DEB0 /* Long Days.mp3 */,
-				54325873237A01BB0082DEB0 /* Distant Place.mp3 */,
-				54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */,
-				5432586F237A01A70082DEB0 /* Floating Point.mp3 */,
-				5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		3A6395E52467C3A200E04E95 /* GuideModeSelectionViewController */ = {
@@ -893,6 +881,19 @@
 				3A1F53342466CD5E00298045 /* SettingsSectionHeader.swift */,
 			);
 			path = SettingsCollectionView;
+			sourceTree = "<group>";
+		};
+		3A9EBE6E296BE60C00F07D0F /* Soundtracks */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */,
+				3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */,
+				3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */,
+				3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */,
+				3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */,
+				3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */,
+			);
+			path = Soundtracks;
 			sourceTree = "<group>";
 		};
 		3A9F9A702377099400022C38 /* Lose */ = {
@@ -1158,24 +1159,10 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		6831F0844C4EA152F0B66DD5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */,
-				C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */,
-				4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */,
-				B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */,
-				A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */,
-				22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BA92F336F5D35B4C752CDD6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3A9F9A6E2376FFC400022C38 /* StoreKit.framework */,
-				A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1199,20 +1186,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A47D66A230F18FC00B2B200 /* Build configuration list for PBXNativeTarget "Disciplinizer" */;
 			buildPhases = (
-				E5A2512958F05A693BAC311C /* [CP] Check Pods Manifest.lock */,
-				3A008BDE231FCCC600B9286B /* R.Swift */,
 				3A47D654230F18FB00B2B200 /* Sources */,
 				3A47D655230F18FB00B2B200 /* Frameworks */,
 				3A47D656230F18FB00B2B200 /* Resources */,
-				545A368AF60C3C4894516425 /* [CP] Embed Pods Frameworks */,
-				3A11B5AB2315B268007B1D54 /* SwiftLint */,
 				3A5AF906240D7CF900597FA6 /* Crashlytics */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3A9EBE5D296BDADE00F07D0F /* PBXTargetDependency */,
 			);
 			name = Disciplinizer;
+			packageProductDependencies = (
+				3A9EBE54296BD9F500F07D0F /* Alamofire */,
+				3A9EBE57296BDA6D00F07D0F /* KeychainAccess */,
+				3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */,
+				3A9EBE60296BDB8800F07D0F /* SwiftySound */,
+				3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */,
+				3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */,
+				3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */,
+			);
 			productName = Disciplinizer;
 			productReference = 3A47D658230F18FB00B2B200 /* Disciplinizer.app */;
 			productType = "com.apple.product-type.application";
@@ -1270,6 +1263,14 @@
 				ru,
 			);
 			mainGroup = 3A47D64F230F18FB00B2B200;
+			packageReferences = (
+				3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */,
+				3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */,
+				3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 3A47D659230F18FB00B2B200 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1287,20 +1288,19 @@
 			files = (
 				3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
+				3A9EBE84296BE7F100F07D0F /* Pillow Talk.mp3 in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
 				3A9F9A76237709C800022C38 /* Lose.storyboard in Resources */,
-				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
-				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
 				3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */,
 				3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */,
 				3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */,
 				3A663A28246800B200472B75 /* ChatCell.xib in Resources */,
-				54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */,
 				3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
-				5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */,
 				3A5C53FE245EDCCC00BF1A26 /* MusicSelection.storyboard in Resources */,
 				3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */,
+				3A9EBE86296BE7F100F07D0F /* Metting The Sun.mp3 in Resources */,
+				3A9EBE83296BE7F100F07D0F /* Long Days.mp3 in Resources */,
 				3A0742AF241E3AAB003B1A83 /* TimeSelection.storyboard in Resources */,
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,
 				3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */,
@@ -1311,12 +1311,13 @@
 				3A1FA588245EA5F7000BAA20 /* Loading.storyboard in Resources */,
 				3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */,
 				3A1F533A24672FB200298045 /* GuideModeSelecionView.xib in Resources */,
-				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
+				3A9EBE85296BE7F100F07D0F /* Leaving Wonderland.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
-				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
 				3A444095247ABC55004BDD80 /* GoogleService-Info.plist in Resources */,
+				3A9EBE82296BE7F100F07D0F /* Floating Point.mp3 in Resources */,
 				3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */,
 				3A663A202467C95500472B75 /* GuideMessageView.xib in Resources */,
+				3A9EBE87296BE7F100F07D0F /* Distant Place.mp3 in Resources */,
 				3A008BD2231F93CA00B9286B /* Localizable.stringsdict in Resources */,
 				3A1FA579245C247F000BAA20 /* CatStoreCollectionCell.xib in Resources */,
 				3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */,
@@ -1334,44 +1335,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A008BDE231FCCC600B9286B /* R.Swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = R.Swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-		3A11B5AB2315B268007B1D54 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
-		};
 		3A5AF906240D7CF900597FA6 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1390,7 +1353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		3ACD2C95240CD9230017FABC /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1409,45 +1372,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		545A368AF60C3C4894516425 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5A2512958F05A693BAC311C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Disciplinizer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1565,7 +1489,6 @@
 				3A47D65C230F18FB00B2B200 /* AppDelegate.swift in Sources */,
 				3A0742B6241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift in Sources */,
 				3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */,
-				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,
 				3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */,
 				3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */,
 				3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */,
@@ -1605,6 +1528,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3A9EBE5D296BDADE00F07D0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 3A9EBE5C296BDADE00F07D0F /* RswiftGenerateInternalResources */;
+		};
 		3ACD2C8A240CD6210017FABC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A47D657230F18FB00B2B200 /* Disciplinizer */;
@@ -1710,7 +1637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1766,7 +1693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1778,7 +1705,6 @@
 		};
 		3A47D66B230F18FC00B2B200 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1786,12 +1712,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1801,19 +1728,19 @@
 		};
 		3A47D66C230F18FC00B2B200 /* Prod */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1917,7 +1844,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1929,7 +1856,6 @@
 		};
 		3AE4E624246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1937,12 +1863,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -2006,6 +1933,99 @@
 			defaultConfigurationName = Test;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A9EBE54296BD9F500F07D0F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3A9EBE57296BDA6D00F07D0F /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		3A9EBE5C296BDADE00F07D0F /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		3A9EBE60296BDB8800F07D0F /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+		3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3ACD2C48240C2D730017FABC /* DataBaseSchema.xcdatamodeld */ = {

@@ -30,7 +30,7 @@ final class MusicSelectionPresenter: MusicSelectionPresenterProtocol {
     }
 
     func viewDidLoad() {
-        view.display(title: Strings.musicTitle())
+        view.display(title: R.string.localizable.musicTitle())
         
         displaySongsUseCase.getAll { (getSongsResult) in
             guard let songs = try? getSongsResult.get() else {

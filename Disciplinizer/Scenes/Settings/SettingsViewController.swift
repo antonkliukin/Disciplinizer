@@ -20,20 +20,20 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     
     private var sections: [[SettingsSectionItem]] {
         return [
-            [SettingsSectionItem(sectionTitle: Strings.settingsNotifications(),
-                                 title: Strings.settingsNotifications(),
+            [SettingsSectionItem(sectionTitle: R.string.localizable.settingsNotifications(),
+                                 title: R.string.localizable.settingsNotifications(),
                                  action: { (isOn) in UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) },
                                  actionViewType: .switcher(isOn: NotificationManager.shared.isAuthorized()))
             ],
             /*
-            [SettingsSectionItem(sectionTitle: Strings.settingsAppearance(),
-                                 title: Strings.settingsDarkMode(),
+            [SettingsSectionItem(sectionTitle: R.string.localizable.settingsAppearance(),
+                                 title: R.string.localizable.settingsDarkMode(),
                                  action: { (isOn) in print(isOn) },
                                  actionViewType: .switcher(isOn: true))
             ],
             */
-            [SettingsSectionItem(sectionTitle: Strings.settingsWeCare(),
-                                 title: Strings.settingsDrugFund(),
+            [SettingsSectionItem(sectionTitle: R.string.localizable.settingsWeCare(),
+                                 title: R.string.localizable.settingsDrugFund(),
                                  action: { (_) in
                                     if let organizationURL = URL(string: "http://priyut-drug.ru/") {
                                         UIApplication.shared.open(organizationURL)
@@ -41,8 +41,8 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
             },
                                  actionViewType: .tap)
             ],
-            [SettingsSectionItem(sectionTitle: Strings.settingsGetInTouch(),
-                                 title: Strings.settingsEmailUs(),
+            [SettingsSectionItem(sectionTitle: R.string.localizable.settingsGetInTouch(),
+                                 title: R.string.localizable.settingsEmailUs(),
                                  action: { (_) in
                                     if let emailURL = URL(string: "mailto:support@disciplinizer.com") {
                                         UIApplication.shared.open(emailURL)
@@ -50,8 +50,8 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
             },
                                  actionViewType: .tap)
             ],
-            [SettingsSectionItem(sectionTitle: Strings.settingsAbout(),
-                                 title: Strings.settingsPolicy(),
+            [SettingsSectionItem(sectionTitle: R.string.localizable.settingsAbout(),
+                                 title: R.string.localizable.settingsPolicy(),
                                  action: { (_) in
                                     if let policyURL = URL(string: "http://disciplinizer.com/policy/") {
                                         UIApplication.shared.open(policyURL)

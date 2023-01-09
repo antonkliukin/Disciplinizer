@@ -13,7 +13,7 @@ protocol AdPresenterProtocol {
     func viewDidLoad()
 }
 
-protocol AdDismissDelegateProtocol: class {
+protocol AdDismissDelegateProtocol: AnyObject {
     func didDismiss()
 }
 
@@ -39,12 +39,13 @@ class AdPresenter: NSObject, AdPresenterProtocol {
             return nil
         }
 
-        rewardedAd = GADRewardedAd(adUnitID: Config.shared.getAdUnitID())
-        rewardedAd?.load(GADRequest()) { [weak self] error in
+        let request = GADRequest()
+        GADRewardedAd.load(withAdUnitID: Config.shared.getAdUnitID(),
+                           request: request) { [weak self] ad, error in
             if error != nil {
-                let alertModel = AlertModel(title: Strings.loseAdAlertFailedTitle(),
-                                            message: Strings.loseAdAlertFailedMessage(),
-                                            positiveActionTitle: Strings.loseAdAlertFailedAction())
+                let alertModel = AlertModel(title: R.string.localizable.loseAdAlertFailedTitle(),
+                                            message: R.string.localizable.loseAdAlertFailedMessage(),
+                                            positiveActionTitle: R.string.localizable.loseAdAlertFailedAction())
                 
                 let alertVC = Controller.createAlert(alertModel: alertModel, didTapPositive: { rootVC.dismiss(animated: true, completion: nil) })
                 self?.view?.router?.present(alertVC)
@@ -54,7 +55,21 @@ class AdPresenter: NSObject, AdPresenterProtocol {
                     return
                 }
 
-                self.rewardedAd?.present(fromRootViewController: vc, delegate: self)
+                if let ad = self.rewardedAd {
+                    ad.present(fromRootViewController: vc) {
+                        let reward = ad.adReward
+                        print("Reward received with currency \(reward.amount), amount \(reward.amount.doubleValue)")
+                        
+                        self.watchedAds += 1
+                        
+                        if self.watchedAds >= self.numberOfAdsToShow {
+                            AppLockManager.shared.changeStateTo(.unlocked)
+                            KeychainService.appLockState = .unlocked
+                        }
+                    }
+                } else {
+                    print("Ad wasn't ready")
+                }
             }
         }
 
@@ -62,26 +77,9 @@ class AdPresenter: NSObject, AdPresenterProtocol {
     }
 }
 
-extension AdPresenter: GADRewardedAdDelegate {
-
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
-        watchedAds += 1
-
-        if watchedAds >= numberOfAdsToShow {
-            AppLockManager.shared.changeStateTo(.unlocked)
-            KeychainService.appLockState = .unlocked
-        }
-
-      print("Reward received with currency: \(reward.type), amount \(reward.amount).")
-    }
-
-    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
-      print("Rewarded ad presented.")
-    }
-
-    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
-        print("Rewarded ad dismissed.")
-
+extension AdPresenter: GADFullScreenContentDelegate {
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         if watchedAds < numberOfAdsToShow {
             self.rewardedAd = createAndLoadRewardedAd()
         } else {
@@ -89,9 +87,5 @@ extension AdPresenter: GADRewardedAdDelegate {
                 self.adDismissDelegate?.didDismiss()
             }
         }
-    }
-
-    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
-      print("Rewarded ad failed to present.")
     }
 }

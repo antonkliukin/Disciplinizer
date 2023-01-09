@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 
 class NetworkState {
@@ -17,8 +18,7 @@ class NetworkState {
 extension RequestBuilder {
     func asURLRequest() throws -> URLRequest {
         var urlRequest = try URLRequest(url: baseURL.appendingPathComponent(path),
-                                        method: self.method,
-                                        headers: self.headers)
+                                        method: self.method)
         urlRequest.httpBody = self.body
         urlRequest.allHTTPHeaderFields = self.headers
         urlRequest = method == .post ?
@@ -32,15 +32,13 @@ extension RequestBuilder {
 
 final class NetworkManager {
 
-    let sessionManager: Alamofire.SessionManager = {
+    let sessionManager: Alamofire.Session = {
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+        let manager = Alamofire.Session(configuration: configuration)
 
-        let manager = Alamofire.SessionManager(configuration: configuration)
-
-        manager.delegate.taskWillPerformHTTPRedirectionWithCompletion = { session, task, response, request, completion in
-            completion(nil)
-        }
+//        manager.delegate.taskWillPerformHTTPRedirectionWithCompletion = { session, task, response, request, completion in
+//            completion(nil)
+//        }
         return manager
     }()
 

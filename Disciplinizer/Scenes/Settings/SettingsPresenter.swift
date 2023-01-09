@@ -20,6 +20,6 @@ final class SettingsPresenter: SettingsPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view.set(viewTitle: Strings.settingsTitle())
+        view.set(viewTitle: R.string.localizable.settingsTitle())
     }
 }

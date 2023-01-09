@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
+import Foundation
 import KeychainAccess
 
 class KeychainService {
@@ -99,8 +100,8 @@ class KeychainService {
 extension KeychainService {
     static var appLockState: LockState {
         get {
-            guard let stringState = KeychainService.shared.getValue(key: Constants.isAppLocked),
-                  let state = LockState(rawValue: stringState) else {
+            guard let Stringstate = KeychainService.shared.getValue(key: Constants.isAppLocked),
+                  let state = LockState(rawValue: Stringstate) else {
                     return .unlocked
             }
 

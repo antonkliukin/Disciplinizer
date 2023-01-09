@@ -38,10 +38,10 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
     
     func viewDidLoad() {
         changeViewState(.onHold)
-        view?.set(viewTitle: Strings.timeSelectionTitle())
-        view?.set(description: Strings.timeSelectionDescription())
-        view?.set(placeholder: Strings.timeSelectionPlaceholder())
-        view?.set(saveButtonTitle: Strings.timeSelectionSaveButtonTitle())
+        view?.set(viewTitle: R.string.localizable.timeSelectionTitle())
+        view?.set(description: R.string.localizable.timeSelectionDescription())
+        view?.set(placeholder: R.string.localizable.timeSelectionPlaceholder())
+        view?.set(saveButtonTitle: R.string.localizable.timeSelectionSaveButtonTitle())
     }
     
     func changeViewState(_ state: TimeSelectionViewState) {
@@ -51,7 +51,7 @@ class TimeSelectionPresenter: TimeSelectionPresenterProtocol {
             view?.changeSaveButtonState(isEnabled: false)
             isEnteredTimeValid = false
         case .invalid:
-            view?.showErrorMessage(Strings.timeSelectionErrorMessage())
+            view?.showErrorMessage(R.string.localizable.timeSelectionErrorMessage())
             view?.changeSaveButtonState(isEnabled: false)
             isEnteredTimeValid = false
         case .valid:

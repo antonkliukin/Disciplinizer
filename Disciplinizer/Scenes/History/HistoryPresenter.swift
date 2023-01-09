@@ -49,11 +49,11 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.set(viewTitle: Strings.historyTitle())
-        view?.set(todayScoreTitle: Strings.historyToday(),
-                  bestScoreTitle: Strings.historyBestScore())
-        view?.set(clearButtonTitle: Strings.historyClear())
-        view?.configure(noHistoryMessage: Strings.historyNoHistory())
+        view?.set(viewTitle: R.string.localizable.historyTitle())
+        view?.set(todayScoreTitle: R.string.localizable.historyToday(),
+                  bestScoreTitle: R.string.localizable.historyBestScore())
+        view?.set(clearButtonTitle: R.string.localizable.historyClear())
+        view?.configure(noHistoryMessage: R.string.localizable.historyNoHistory())
     }
 
     func viewWillAppear() {
@@ -91,7 +91,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             return Calendar.current.isDateInToday(finishDate) ? result + challenge.durationInMinutes : result
         }
         
-        self.view?.display(todayTotalDuration: Strings.durationInMinutes(minutes: todayTotalDuration))
+        self.view?.display(todayTotalDuration: R.string.localizable.durationInMinutes(minutes: todayTotalDuration))
     }
     
     private func showBestDayResult(challengesByDates: [[Challenge]]) {
@@ -102,16 +102,16 @@ final class HistoryPresenter: HistoryPresenterProtocol {
             bestResult = max(bestResult, bestForDay)
         }
         
-        view?.display(bestTotalDuraion: Strings.durationInMinutes(minutes: bestResult))
+        view?.display(bestTotalDuraion: R.string.localizable.durationInMinutes(minutes: bestResult))
     }
 
     func clearButtonTapped() {
         guard !challenges.isEmpty else { return }
         
-        let alertModel = AlertModel(title: Strings.historyAlertTitle(),
-                                    message: Strings.historyAlertDescription(),
-                                    positiveActionTitle: Strings.historyAlertCancel(),
-                                    negativeActionTitle: Strings.historyAlertClear())
+        let alertModel = AlertModel(title: R.string.localizable.historyAlertTitle(),
+                                    message: R.string.localizable.historyAlertDescription(),
+                                    positiveActionTitle: R.string.localizable.historyAlertCancel(),
+                                    negativeActionTitle: R.string.localizable.historyAlertClear())
         
         let alert = Controller.createAlert(alertModel: alertModel,
                                            didTapNegative: {
@@ -165,10 +165,10 @@ final class HistoryPresenter: HistoryPresenterProtocol {
 
         let challenge = challenges[row]
 
-        cell.display(result: challenge.isSuccess ? Strings.historySuccess() : Strings.historyFailed())
+        cell.display(result: challenge.isSuccess ? R.string.localizable.historySuccess() : R.string.localizable.historyFailed())
         cell.setResultTextColor(color: challenge.isSuccess ? R.color.greenText()! : R.color.redText()!)
-        cell.display(duration: Strings.durationInMinutes(minutes: challenge.durationInMinutes))
-        cell.display(motivationType: challenge.motivationalItem == .ad ? Strings.historyMotivationAd() : Strings.historyMotivationCat())
+        cell.display(duration: R.string.localizable.durationInMinutes(minutes: challenge.durationInMinutes))
+        cell.display(motivationType: challenge.motivationalItem == .ad ? R.string.localizable.historyMotivationAd() : R.string.localizable.historyMotivationCat())
         
         if let startDate = challenge.startDate, let finishDate = challenge.finishDate {
             cell.display(timePeriod: getTimePerion(startDate: startDate, finishDate: finishDate))
@@ -185,15 +185,15 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         var dateString = ""
         
         if calendar.isDateInToday(date) {
-            dateString = Strings.historyToday()
+            dateString = R.string.localizable.historyToday()
         } else if calendar.isDateInTomorrow(date) {
-            dateString = Strings.historyYesterday()
+            dateString = R.string.localizable.historyYesterday()
         } else {
             dateString = titleForDate(section: section)
         }
         
         header.dateLabel.text = dateString
-        header.todayDuration.text = Strings.historyConcentrationDuration(totalDurationForDay: totalResultForDate)
+        header.todayDuration.text = R.string.localizable.historyConcentrationDuration(totalDurationForDay: totalResultForDate)
     }
     
     private func titleForDate(section: Int) -> String {
