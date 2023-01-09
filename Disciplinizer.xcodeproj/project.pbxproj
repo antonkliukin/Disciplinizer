@@ -1720,7 +1720,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1741,7 +1741,7 @@
 				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1869,7 +1869,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YJ66LV4LL7;
 				INFOPLIST_FILE = "$(SRCROOT)/Disciplinizer/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
