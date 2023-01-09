@@ -32,23 +32,23 @@ final class LosePresenter: LosePresenterProtocol {
 
     func viewDidLoad() {
         if challenge.motivationalItem == .ad {
-            view?.configureLoseTitle(Strings.loseAdTitle())
-            view?.configureLoseDescription(Strings.loseAdDescription())
-            view?.setMainButtonTitle(Strings.loseAdMainButton())
+            view?.configureLoseTitle(R.string.localizable.loseAdTitle())
+            view?.configureLoseDescription(R.string.localizable.loseAdDescription())
+            view?.setMainButtonTitle(R.string.localizable.loseAdMainButton())
             view?.setImage(R.image.timer()!)
             
             motivationalItemParameterUseCase.getPaid { (result) in
                 if (try? result.get()) == nil {
-                    self.view?.setSecondaryButtonTitle(Strings.loseAdSecondaryButton())
+                    self.view?.setSecondaryButtonTitle(R.string.localizable.loseAdSecondaryButton())
                 }
             }
         } else {
             unlockApp()
             
-            view?.configureLoseTitle(Strings.loseCatTitle())
-            view?.configureLoseDescription(Strings.loseCatDescription())
-            view?.setMainButtonTitle(Strings.loseCatMainButton())
-            view?.setSecondaryButtonTitle(Strings.loseCatSecondaryButton())
+            view?.configureLoseTitle(R.string.localizable.loseCatTitle())
+            view?.configureLoseDescription(R.string.localizable.loseCatDescription())
+            view?.setMainButtonTitle(R.string.localizable.loseCatMainButton())
+            view?.setSecondaryButtonTitle(R.string.localizable.loseCatSecondaryButton())
             view?.setImage(R.image.crying_cat()!)
         }
     }

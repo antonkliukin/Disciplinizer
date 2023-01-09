@@ -26,22 +26,22 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     private var isAnimationRunning = false
     // TODO: Refactor. It'd be better to inject this data. 
     private var messagesToShow = [
-            ChatMessage(text: Strings.guideMessage2()),
-            ChatMessage(text: Strings.guideMessage3()),
-            ChatMessage(text: Strings.guideMessage4()),
-            ChatMessage(text: Strings.guideMessage5()),
-            ChatMessage(text: Strings.guideMessage6()),
-            ChatMessage(text: Strings.guideMessage7()),
-            ChatMessage(text: Strings.guideMessage8()),
-            ChatMessage(text: Strings.guideMessage9()),
-            ChatMessage(text: Strings.guideMessage10()),
-            ChatMessage(text: Strings.guideMessage11()),
-            ChatMessage(text: Strings.guideMessage12()),
-            ChatMessage(text: Strings.guideMessage13()),
-            ChatMessage(text: Strings.guideMessage14()),
-            ChatMessage(text: Strings.guideMessage15()),
-            ChatMessage(text: Strings.guideMessage16()),
-            ChatMessage(text: Strings.guideMessage17())
+            ChatMessage(text: R.string.localizable.guideMessage2()),
+            ChatMessage(text: R.string.localizable.guideMessage3()),
+            ChatMessage(text: R.string.localizable.guideMessage4()),
+            ChatMessage(text: R.string.localizable.guideMessage5()),
+            ChatMessage(text: R.string.localizable.guideMessage6()),
+            ChatMessage(text: R.string.localizable.guideMessage7()),
+            ChatMessage(text: R.string.localizable.guideMessage8()),
+            ChatMessage(text: R.string.localizable.guideMessage9()),
+            ChatMessage(text: R.string.localizable.guideMessage10()),
+            ChatMessage(text: R.string.localizable.guideMessage11()),
+            ChatMessage(text: R.string.localizable.guideMessage12()),
+            ChatMessage(text: R.string.localizable.guideMessage13()),
+            ChatMessage(text: R.string.localizable.guideMessage14()),
+            ChatMessage(text: R.string.localizable.guideMessage15()),
+            ChatMessage(text: R.string.localizable.guideMessage16()),
+            ChatMessage(text: R.string.localizable.guideMessage17())
     ]
     
     private var sections: [[ChatMessage]] = [[]]
@@ -78,7 +78,7 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
         collectionView.flowLayout.minimumInteritemSpacing = 0
         collectionView.flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        sections[0].append(ChatMessage(text: Strings.guideMessage1()))
+        sections[0].append(ChatMessage(text: R.string.localizable.guideMessage1()))
         updateCollectionView()
 
         startTimer()
@@ -191,6 +191,6 @@ class GuideChatViewController: UIViewController, GuideChatViewProtocol {
     
     private func isTyping(_ isTyping: Bool) {
         dotsStack.isHidden = !isTyping
-        typingLabel.text = Strings.guideOnline()
+        typingLabel.text = R.string.localizable.guideOnline()
     }
 }

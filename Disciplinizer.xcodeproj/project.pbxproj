@@ -122,6 +122,12 @@
 		3A9EBE64296BDC2C00F07D0F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */; };
 		3A9EBE66296BDC2C00F07D0F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */; };
 		3A9EBE69296BDD1000F07D0F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */; };
+		3A9EBE82296BE7F100F07D0F /* Floating Point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */; };
+		3A9EBE83296BE7F100F07D0F /* Long Days.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */; };
+		3A9EBE84296BE7F100F07D0F /* Pillow Talk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */; };
+		3A9EBE85296BE7F100F07D0F /* Leaving Wonderland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */; };
+		3A9EBE86296BE7F100F07D0F /* Metting The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */; };
+		3A9EBE87296BE7F100F07D0F /* Distant Place.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */; };
 		3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9F9A6E2376FFC400022C38 /* StoreKit.framework */; };
 		3A9F9A72237709B300022C38 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A71237709B300022C38 /* LoseViewController.swift */; };
 		3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A73237709BD00022C38 /* LosePresenter.swift */; };
@@ -170,12 +176,6 @@
 		3AF004BB241555C900EACA17 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF004BA241555C900EACA17 /* Challenge.swift */; };
 		54008D8B237C9F2D0072EC00 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8A237C9F2D0072EC00 /* Song.swift */; };
 		54008D8D237CA0EA0072EC00 /* MusicSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */; };
-		5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */; };
-		54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5432586F237A01A70082DEB0 /* Floating Point.mp3 */; };
-		54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */; };
-		54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325873237A01BB0082DEB0 /* Distant Place.mp3 */; };
-		54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325875237A01C10082DEB0 /* Long Days.mp3 */; };
-		54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54325877237A01C60082DEB0 /* Pillow Talk.mp3 */; };
 		5432587A237A094D0082DEB0 /* SongSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54325879237A094D0082DEB0 /* SongSelectCell.swift */; };
 		544EC47F233BAA7300417DAF /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EC47E233BAA7300417DAF /* MainButton.swift */; };
 		544EC485233BB04800417DAF /* UIButton+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EC484233BB04800417DAF /* UIButton+Factory.swift */; };
@@ -310,6 +310,12 @@
 		3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallnegeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLastChallenge.swift; sourceTree = "<group>"; };
 		3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigationConfigurator.swift; sourceTree = "<group>"; };
+		3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Floating Point.mp3"; sourceTree = "<group>"; };
+		3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Long Days.mp3"; sourceTree = "<group>"; };
+		3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Pillow Talk.mp3"; sourceTree = "<group>"; };
+		3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Leaving Wonderland.mp3"; sourceTree = "<group>"; };
+		3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Metting The Sun.mp3"; sourceTree = "<group>"; };
+		3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Distant Place.mp3"; sourceTree = "<group>"; };
 		3A9F9A6E2376FFC400022C38 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3A9F9A71237709B300022C38 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		3A9F9A73237709BD00022C38 /* LosePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosePresenter.swift; sourceTree = "<group>"; };
@@ -361,12 +367,6 @@
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionPresenter.swift; sourceTree = "<group>"; };
-		5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Metting The Sun.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Metting The Sun.dataset/Metting The Sun.mp3"; sourceTree = SOURCE_ROOT; };
-		5432586F237A01A70082DEB0 /* Floating Point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Floating Point.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Floating Point.dataset/Floating Point.mp3"; sourceTree = SOURCE_ROOT; };
-		54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Leaving Wonderland.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Leaving Wonderland.dataset/Leaving Wonderland.mp3"; sourceTree = SOURCE_ROOT; };
-		54325873237A01BB0082DEB0 /* Distant Place.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Distant Place.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Distant Place.dataset/Distant Place.mp3"; sourceTree = SOURCE_ROOT; };
-		54325875237A01C10082DEB0 /* Long Days.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Long Days.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Long Days.dataset/Long Days.mp3"; sourceTree = SOURCE_ROOT; };
-		54325877237A01C60082DEB0 /* Pillow Talk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pillow Talk.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Pillow Talk.dataset/Pillow Talk.mp3"; sourceTree = SOURCE_ROOT; };
 		54325879237A094D0082DEB0 /* SongSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSelectCell.swift; sourceTree = "<group>"; };
 		544EC47E233BAA7300417DAF /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		544EC484233BB04800417DAF /* UIButton+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Factory.swift"; sourceTree = "<group>"; };
@@ -672,7 +672,7 @@
 		3A47D67A230F1E3A00B2B200 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3A60A92F23336E9D0037E0A4 /* Sounds */,
+				3A9EBE6E296BE60C00F07D0F /* Soundtracks */,
 				3A15514A232B7C8300265B89 /* R+Shortcuts.swift */,
 				3A47D662230F18FC00B2B200 /* Assets.xcassets */,
 				3A008BD4231F93CA00B9286B /* Localizable.stringsdict */,
@@ -705,19 +705,6 @@
 				3ACD2C90240CD70E0017FABC /* NSManagedObjectContextSpy.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		3A60A92F23336E9D0037E0A4 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				54325877237A01C60082DEB0 /* Pillow Talk.mp3 */,
-				54325875237A01C10082DEB0 /* Long Days.mp3 */,
-				54325873237A01BB0082DEB0 /* Distant Place.mp3 */,
-				54325871237A01AF0082DEB0 /* Leaving Wonderland.mp3 */,
-				5432586F237A01A70082DEB0 /* Floating Point.mp3 */,
-				5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		3A6395E52467C3A200E04E95 /* GuideModeSelectionViewController */ = {
@@ -894,6 +881,19 @@
 				3A1F53342466CD5E00298045 /* SettingsSectionHeader.swift */,
 			);
 			path = SettingsCollectionView;
+			sourceTree = "<group>";
+		};
+		3A9EBE6E296BE60C00F07D0F /* Soundtracks */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EBE81296BE7F100F07D0F /* Distant Place.mp3 */,
+				3A9EBE7C296BE7F100F07D0F /* Floating Point.mp3 */,
+				3A9EBE7F296BE7F100F07D0F /* Leaving Wonderland.mp3 */,
+				3A9EBE7D296BE7F100F07D0F /* Long Days.mp3 */,
+				3A9EBE80296BE7F100F07D0F /* Metting The Sun.mp3 */,
+				3A9EBE7E296BE7F100F07D0F /* Pillow Talk.mp3 */,
+			);
+			path = Soundtracks;
 			sourceTree = "<group>";
 		};
 		3A9F9A702377099400022C38 /* Lose */ = {
@@ -1288,20 +1288,19 @@
 			files = (
 				3AE4E62B246FDA04004C4D38 /* CreateChallenge.storyboard in Resources */,
 				3A47D67F230F1E8B00B2B200 /* Config.plist in Resources */,
+				3A9EBE84296BE7F100F07D0F /* Pillow Talk.mp3 in Resources */,
 				3A2F573723125EEA00212317 /* Alert.storyboard in Resources */,
 				3A9F9A76237709C800022C38 /* Lose.storyboard in Resources */,
-				54325876237A01C20082DEB0 /* Long Days.mp3 in Resources */,
-				54325878237A01C60082DEB0 /* Pillow Talk.mp3 in Resources */,
 				3AAA3A3B2475A21100954D5C /* LaunchScreenView.xib in Resources */,
 				3A663A30246803E500472B75 /* GuideChat.storyboard in Resources */,
 				3A7EC84924603EA5001EFC05 /* HistoryHeaderView.xib in Resources */,
 				3A663A28246800B200472B75 /* ChatCell.xib in Resources */,
-				54325872237A01AF0082DEB0 /* Leaving Wonderland.mp3 in Resources */,
 				3A47D666230F18FC00B2B200 /* LaunchScreen.storyboard in Resources */,
 				3A008BDA231F965500B9286B /* Localizable.strings in Resources */,
-				5432586E237A01A10082DEB0 /* Metting The Sun.mp3 in Resources */,
 				3A5C53FE245EDCCC00BF1A26 /* MusicSelection.storyboard in Resources */,
 				3A653DCB241CF16800BE613C /* Ad.storyboard in Resources */,
+				3A9EBE86296BE7F100F07D0F /* Metting The Sun.mp3 in Resources */,
+				3A9EBE83296BE7F100F07D0F /* Long Days.mp3 in Resources */,
 				3A0742AF241E3AAB003B1A83 /* TimeSelection.storyboard in Resources */,
 				3A47D663230F18FC00B2B200 /* Assets.xcassets in Resources */,
 				3A653DCC241D2A5100BE613C /* Settings.storyboard in Resources */,
@@ -1312,12 +1311,13 @@
 				3A1FA588245EA5F7000BAA20 /* Loading.storyboard in Resources */,
 				3AA1A10C24567F0400955BD5 /* MotivationView.xib in Resources */,
 				3A1F533A24672FB200298045 /* GuideModeSelecionView.xib in Resources */,
-				54325874237A01BB0082DEB0 /* Distant Place.mp3 in Resources */,
+				3A9EBE85296BE7F100F07D0F /* Leaving Wonderland.mp3 in Resources */,
 				3AA1A102245434DB00955BD5 /* ChallengeParameterView.xib in Resources */,
-				54325870237A01A80082DEB0 /* Floating Point.mp3 in Resources */,
 				3A444095247ABC55004BDD80 /* GoogleService-Info.plist in Resources */,
+				3A9EBE82296BE7F100F07D0F /* Floating Point.mp3 in Resources */,
 				3A1FA570245C1E21000BAA20 /* CatStore.storyboard in Resources */,
 				3A663A202467C95500472B75 /* GuideMessageView.xib in Resources */,
+				3A9EBE87296BE7F100F07D0F /* Distant Place.mp3 in Resources */,
 				3A008BD2231F93CA00B9286B /* Localizable.stringsdict in Resources */,
 				3A1FA579245C247F000BAA20 /* CatStoreCollectionCell.xib in Resources */,
 				3A0742A9241E2C0D003B1A83 /* MotivationSelection.storyboard in Resources */,
@@ -1353,7 +1353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		3ACD2C95240CD9230017FABC /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1637,7 +1637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1693,7 +1693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1844,7 +1844,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

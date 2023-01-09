@@ -86,13 +86,13 @@ final class PageNavigationViewController: UITabBarController, PageNavigationView
             switch index {
             case 0:
                 item.image = R.image.history_icon()
-                item.title = Strings.historyTitle()
+                item.title = R.string.localizable.historyTitle()
             case 1:
                 item.image = R.image.tracker_icon()
-                item.title = Strings.creationTitle()
+                item.title = R.string.localizable.creationTitle()
             case 2:
                 item.image = R.image.more_icon()
-                item.title = Strings.settingsTitle()
+                item.title = R.string.localizable.settingsTitle()
             default:
                 break
             }

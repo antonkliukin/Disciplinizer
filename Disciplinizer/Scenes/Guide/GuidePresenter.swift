@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol GuidePresenterProtocol: class {
+protocol GuidePresenterProtocol: AnyObject {
     func didTapNext()
     func viewDidLoad()
     func viewDidAppear()

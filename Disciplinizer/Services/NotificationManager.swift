@@ -115,7 +115,7 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -127,7 +127,7 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
 
 extension NotificationManager {
     static func sendReturnToAppNotification(keepInNotificationCenter: Bool = false) {
-        let notifType = NotificationType.basic(title: Strings.notificationsReturnTitle(), message: Strings.notificationsReturnBody())
+        let notifType = NotificationType.basic(title: R.string.localizable.notificationsReturnTitle(), message: R.string.localizable.notificationsReturnBody())
         NotificationManager.shared.scheduleNotification(type: notifType, identifier: Identifier.loseNotifId) { _ in
             if !keepInNotificationCenter {
                 NotificationManager.shared.notificationCenter.removeDeliveredNotifications(withIdentifiers: [Identifier.loseNotifId])
@@ -140,8 +140,8 @@ extension NotificationManager {
     }
     
     static func sendSuccessNotification(keepInNotificationCenter: Bool = false) {
-        let notifType = NotificationType.basic(title: Strings.notificationsWinTitle(),
-                                               message: Strings.notificationsWinBody())
+        let notifType = NotificationType.basic(title: R.string.localizable.notificationsWinTitle(),
+                                               message: R.string.localizable.notificationsWinBody())
         NotificationManager.shared.scheduleNotification(type: notifType, identifier: Identifier.winNotifId) { _ in
             if !keepInNotificationCenter {
                 NotificationManager.shared.notificationCenter.removeDeliveredNotifications(withIdentifiers: [Identifier.winNotifId])

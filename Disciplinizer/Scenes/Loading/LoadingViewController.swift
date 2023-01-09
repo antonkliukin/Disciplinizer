@@ -24,7 +24,7 @@ class LoadingViewController: UIViewController, LoadingViewProtocol {
         configurator.configure(loadingViewController: self)
         
         if #available(iOS 13.0, *) {
-            activityIndicator.style = .whiteLarge
+            activityIndicator.style = .large
         } else {
             activityIndicator.style = .white
         }

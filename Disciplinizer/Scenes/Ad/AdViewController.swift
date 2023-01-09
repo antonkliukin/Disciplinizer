@@ -25,7 +25,7 @@ class AdViewController: UIViewController, AdViewProtocol {
         presenter?.viewDidLoad()
         
         if #available(iOS 13.0, *) {
-            activityIndicator.style = .whiteLarge
+            activityIndicator.style = .large
         } else {
             activityIndicator.style = .white
         }

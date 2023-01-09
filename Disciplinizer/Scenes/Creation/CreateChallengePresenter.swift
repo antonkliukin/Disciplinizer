@@ -36,8 +36,8 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.set(viewTitle: Strings.creationTitle())
-        view?.set(startButtonTitle: Strings.creationStartButtonTitle())
+        view?.set(viewTitle: R.string.localizable.creationTitle())
+        view?.set(startButtonTitle: R.string.localizable.creationStartButtonTitle())
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateMotivationView),
@@ -110,10 +110,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     private func showDisabledNotificationsAlert() {
-        let alertModel = AlertModel(title: Strings.creationAlertNotificationsTitle(),
-                                    message: Strings.creationAlertNotificationsDescription(),
-                                    positiveActionTitle: Strings.creationAlertNotificationsPositive(),
-                                    negativeActionTitle: Strings.creationAlertNotificationsNegative())
+        let alertModel = AlertModel(title: R.string.localizable.creationAlertNotificationsTitle(),
+                                    message: R.string.localizable.creationAlertNotificationsDescription(),
+                                    positiveActionTitle: R.string.localizable.creationAlertNotificationsPositive(),
+                                    negativeActionTitle: R.string.localizable.creationAlertNotificationsNegative())
         
         let alert = Controller.createAlert(alertModel: alertModel, didTapPositive: {
              UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
@@ -130,9 +130,9 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             case .success(let durationInMinutes):
                 self.selectedDurationInMinutes = durationInMinutes
                 
-                let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
-                                                       valueTitle: Strings.durationInMinutes(minutes: durationInMinutes),
-                                                       actionTitle: Strings.creationActionTitle(),
+                let timeViewModel = ParameterViewModel(title: R.string.localizable.creationTimeTitle(),
+                                                       valueTitle: R.string.localizable.durationInMinutes(minutes: durationInMinutes),
+                                                       actionTitle: R.string.localizable.creationActionTitle(),
                                                        action: {
                                                         let selectTimeVC = Controller.timeSelection()
                                                         self.view?.router?.push(selectTimeVC)
@@ -142,9 +142,9 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
             case .failure:
                 self.selectedDurationInMinutes = 30
                 
-                let timeViewModel = ParameterViewModel(title: Strings.creationTimeTitle(),
-                                                       valueTitle: Strings.durationInMinutes(minutes: 30),
-                                                       actionTitle: Strings.creationActionTitle(),
+                let timeViewModel = ParameterViewModel(title: R.string.localizable.creationTimeTitle(),
+                                                       valueTitle: R.string.localizable.durationInMinutes(minutes: 30),
+                                                       actionTitle: R.string.localizable.creationActionTitle(),
                                                        action: {
                                                         let selectTimeVC = Controller.timeSelection()
                                                         self.view?.router?.push(selectTimeVC)
@@ -159,9 +159,9 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
         motivationParameterUseCase.getSelectedMotivationalItem { (result) in
             switch result {
             case .success(let item):
-                let motivationViewModel = ParameterViewModel(title: Strings.creationMotivationTitle(),
+                let motivationViewModel = ParameterViewModel(title: R.string.localizable.creationMotivationTitle(),
                                                              valueImage: item.image,
-                                                             actionTitle: Strings.creationActionTitle(),
+                                                             actionTitle: R.string.localizable.creationActionTitle(),
                                                              action: {
                                                                 let selectMotivationVC = Controller.motivationSelection()
                                                                 self.view?.router?.push(selectMotivationVC)
@@ -230,10 +230,10 @@ final class CreateChallengePresenter: CreateChallengePresenterProtocol {
     }
     
     private func showPetModeAlert(startChallengeAction: @escaping () -> Void) {
-        let alertModel = AlertModel(title: Strings.creationAlertPetModeTitle(),
-                                    message: Strings.creationAlertPetModeDescription(),
-                                    positiveActionTitle: Strings.creationAlertPetModePositive(),
-                                    negativeActionTitle: Strings.creationAlertPetModeNegative())
+        let alertModel = AlertModel(title: R.string.localizable.creationAlertPetModeTitle(),
+                                    message: R.string.localizable.creationAlertPetModeDescription(),
+                                    positiveActionTitle: R.string.localizable.creationAlertPetModePositive(),
+                                    negativeActionTitle: R.string.localizable.creationAlertPetModeNegative())
         
         let alert = Controller.createAlert(alertModel: alertModel, didTapNegative: {
              startChallengeAction()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CurrentChallengePresenterProtocol: class {
+protocol CurrentChallengePresenterProtocol: AnyObject {
     func viewDidLoad()
     func viewDidAppear()
     func didTapGiveUpButton()
@@ -58,9 +58,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
 
     func viewDidLoad() {
-        view?.display(timerTitle: Strings.currentTimerTitle())
-        view?.display(timerDescription: challenge.motivationalItem == .ad ? Strings.currentTimerAdDescription() : Strings.currentTimerCatDescription())
-        view?.display(giveUpButtonTitle: Strings.currentGiveUpButtonTitle())
+        view?.display(timerTitle: R.string.localizable.currentTimerTitle())
+        view?.display(timerDescription: challenge.motivationalItem == .ad ? R.string.localizable.currentTimerAdDescription() : R.string.localizable.currentTimerCatDescription())
+        view?.display(giveUpButtonTitle: R.string.localizable.currentGiveUpButtonTitle())
         
         setupMusicController()
 
@@ -72,12 +72,12 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
     }
         
     func didTapGiveUpButton() {
-        let alertDescription = challenge.motivationalItem == .ad ? Strings.currentAlertGiveUpAdDescription() : Strings.currentAlertGiveUpCatDescription()
+        let alertDescription = challenge.motivationalItem == .ad ? R.string.localizable.currentAlertGiveUpAdDescription() : R.string.localizable.currentAlertGiveUpCatDescription()
         
-        let alertModel = AlertModel(title: Strings.currentAlertGiveUpTitle(),
+        let alertModel = AlertModel(title: R.string.localizable.currentAlertGiveUpTitle(),
                                     message: alertDescription,
-                                    positiveActionTitle: Strings.currentAlertGiveUpPositive(),
-                                    negativeActionTitle: Strings.currentAlertGiveUpNegative())
+                                    positiveActionTitle: R.string.localizable.currentAlertGiveUpPositive(),
+                                    negativeActionTitle: R.string.localizable.currentAlertGiveUpNegative())
         
         let alert = Controller.createAlert(alertModel: alertModel, didTapNegative: {
             guard self.challengeTimer?.isValid ?? false else { return }
@@ -241,9 +241,9 @@ final class CurrentChallengePresenter: CurrentChallengePresenterProtocol {
                     print("> Lose without blocking")
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.display(congratsTitle: Strings.currentCongrats())
-                        self.view?.display(backToMenuButtonTitle: Strings.currentBackButtonTitle())
-                        self.view?.display(timerDescription: Strings.currentSuccessDescription())
+                        self.view?.display(congratsTitle: R.string.localizable.currentCongrats())
+                        self.view?.display(backToMenuButtonTitle: R.string.localizable.currentBackButtonTitle())
+                        self.view?.display(timerDescription: R.string.localizable.currentSuccessDescription())
                         self.view?.hideGiveUpButton()
                         self.view?.hideMusicSelectionButton()
                         

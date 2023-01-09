@@ -24,12 +24,12 @@ enum MotivationalItem: String, CaseIterable {
     var title: String {
         switch self {
         case .noPaidItem: return ""
-        case .ad: return Strings.motivationItemAdTitle()
-        case .level1: return Strings.motivationItemLevel1Title()
-        case .level2: return Strings.motivationItemLevel2Title()
-        case .level3: return Strings.motivationItemLevel3Title()
-        case .level4: return Strings.motivationItemLevel4Title()
-        case .level5: return Strings.motivationItemLevel5Title()
+        case .ad: return R.string.localizable.motivationItemAdTitle()
+        case .level1: return R.string.localizable.motivationItemLevel1Title()
+        case .level2: return R.string.localizable.motivationItemLevel2Title()
+        case .level3: return R.string.localizable.motivationItemLevel3Title()
+        case .level4: return R.string.localizable.motivationItemLevel4Title()
+        case .level5: return R.string.localizable.motivationItemLevel5Title()
         }
     }
     
@@ -46,28 +46,28 @@ enum MotivationalItem: String, CaseIterable {
     }
     
     var descriptionTitle: String {
-        Strings.motivationItemDescriptionTitle()
+        R.string.localizable.motivationItemDescriptionTitle()
     }
     
     var description: String {
         switch self {
-        case .ad: return Strings.motivationItemDescriptionAd()
-        default: return Strings.motivationItemDescriptionCat()
+        case .ad: return R.string.localizable.motivationItemDescriptionAd()
+        default: return R.string.localizable.motivationItemDescriptionCat()
         }
     }
         
     var actionTitle: String {
         switch self {
-        case .noPaidItem: return Strings.motivationItemActionTitle()
+        case .noPaidItem: return R.string.localizable.motivationItemActionTitle()
         default: return ""
         }
     }
     
     var info: String {
         switch self {
-        case .noPaidItem: return Strings.motivationItemInfoNotCat()
+        case .noPaidItem: return R.string.localizable.motivationItemInfoNotCat()
         case .ad: return ""
-        default: return Strings.motivationItemInfoHaveCat()
+        default: return R.string.localizable.motivationItemInfoHaveCat()
         }
     }
     

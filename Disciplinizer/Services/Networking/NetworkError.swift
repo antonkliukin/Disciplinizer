@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Kliukin. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 
 enum NetworkError: LocalizedError {
