@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -176,7 +176,6 @@
 		54B9D76E2378B89D00752B2A /* MusicSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */; };
 		54B9D7702378B98500752B2A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9D76F2378B98500752B2A /* SettingsPresenter.swift */; };
 		54C2AB8D2378A71700BB2D90 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */; };
-		8E23F3A6ED7BF56A9CA451B5 /* Pods_Disciplinizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */; };
 		C13CFA1F23660F340022863E /* CurrentChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */; };
 		C13CFA2123660F5B0022863E /* CurrentChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */; };
 		C13CFA2323660F8C0022863E /* CurrentChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CFA2223660F8C0022863E /* CurrentChallengePresenter.swift */; };
@@ -194,7 +193,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.dev.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.dev.xcconfig"; sourceTree = "<group>"; };
 		3A008BD3231F93CA00B9286B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BD5231F93FA00B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3A008BDB231F965500B9286B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 		3AE4E62D246FDA86004C4D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		3AE4E62E24713213004C4D38 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3AF004BA241555C900EACA17 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.test.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.test.xcconfig"; sourceTree = "<group>"; };
 		54008D8A237C9F2D0072EC00 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		54008D8C237CA0EA0072EC00 /* MusicSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionPresenter.swift; sourceTree = "<group>"; };
 		5432586D237A01A10082DEB0 /* Metting The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Metting The Sun.mp3"; path = "Disciplinizer/Assets/Assets.xcassets/Backround Sounds/Metting The Sun.dataset/Metting The Sun.mp3"; sourceTree = SOURCE_ROOT; };
@@ -371,11 +368,6 @@
 		54B9D76D2378B89D00752B2A /* MusicSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSelectionViewController.swift; sourceTree = "<group>"; };
 		54B9D76F2378B98500752B2A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		54C2AB8C2378A71700BB2D90 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.debug.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.debug.xcconfig"; sourceTree = "<group>"; };
-		A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disciplinizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.prod.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.prod.xcconfig"; sourceTree = "<group>"; };
-		B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.stage.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.stage.xcconfig"; sourceTree = "<group>"; };
-		C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disciplinizer.release.xcconfig"; path = "Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer.release.xcconfig"; sourceTree = "<group>"; };
 		C13CFA1E23660F340022863E /* CurrentChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentChallenge.storyboard; sourceTree = "<group>"; };
 		C13CFA2023660F5B0022863E /* CurrentChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengeViewController.swift; sourceTree = "<group>"; };
 		C13CFA2223660F8C0022863E /* CurrentChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengePresenter.swift; sourceTree = "<group>"; };
@@ -388,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */,
-				8E23F3A6ED7BF56A9CA451B5 /* Pods_Disciplinizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +585,6 @@
 				3A47D65A230F18FB00B2B200 /* Disciplinizer */,
 				3ACD2C85240CD6210017FABC /* DisciplinizerTests */,
 				3A47D659230F18FB00B2B200 /* Products */,
-				6831F0844C4EA152F0B66DD5 /* Pods */,
 				BA92F336F5D35B4C752CDD6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1158,24 +1148,10 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		6831F0844C4EA152F0B66DD5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6EAA0EA7AAB1BA0601FC3C40 /* Pods-Disciplinizer.debug.xcconfig */,
-				C01F4A87855913F92D58FEA5 /* Pods-Disciplinizer.release.xcconfig */,
-				4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */,
-				B402BDA40D8D9573AD059826 /* Pods-Disciplinizer.stage.xcconfig */,
-				A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */,
-				22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BA92F336F5D35B4C752CDD6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3A9F9A6E2376FFC400022C38 /* StoreKit.framework */,
-				A3E6C7D86C3631977C339740 /* Pods_Disciplinizer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1199,12 +1175,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A47D66A230F18FC00B2B200 /* Build configuration list for PBXNativeTarget "Disciplinizer" */;
 			buildPhases = (
-				E5A2512958F05A693BAC311C /* [CP] Check Pods Manifest.lock */,
 				3A008BDE231FCCC600B9286B /* R.Swift */,
 				3A47D654230F18FB00B2B200 /* Sources */,
 				3A47D655230F18FB00B2B200 /* Frameworks */,
 				3A47D656230F18FB00B2B200 /* Resources */,
-				545A368AF60C3C4894516425 /* [CP] Embed Pods Frameworks */,
 				3A11B5AB2315B268007B1D54 /* SwiftLint */,
 				3A5AF906240D7CF900597FA6 /* Crashlytics */,
 			);
@@ -1409,45 +1383,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		545A368AF60C3C4894516425 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Disciplinizer/Pods-Disciplinizer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5A2512958F05A693BAC311C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Disciplinizer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1778,7 +1713,6 @@
 		};
 		3A47D66B230F18FC00B2B200 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FFD08602978579C5439CDB7 /* Pods-Disciplinizer.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1801,7 +1735,6 @@
 		};
 		3A47D66C230F18FC00B2B200 /* Prod */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A70842B04F162BFD3DDDFD44 /* Pods-Disciplinizer.prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1929,7 +1862,6 @@
 		};
 		3AE4E624246C4899004C4D38 /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22729D8DA371BF1F9355210D /* Pods-Disciplinizer.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
