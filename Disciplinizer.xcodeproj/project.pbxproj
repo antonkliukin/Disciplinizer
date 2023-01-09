@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,13 +109,19 @@
 		3A7EC84D246192E4001EFC05 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84C246192E3001EFC05 /* CollectionView.swift */; };
 		3A7EC84F246197BD001EFC05 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */; };
 		3A7EC88024669F52001EFC05 /* SettingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */; };
-		3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6672410D07600225DA4 /* R.generated.swift */; };
 		3A8DB68424117E1700225DA4 /* CreateChallengeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */; };
 		3A8DB6882413B05C00225DA4 /* StartChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6872413B05C00225DA4 /* StartChallenge.swift */; };
 		3A8DB68A2413B41500225DA4 /* FinishChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6892413B41500225DA4 /* FinishChallenge.swift */; };
 		3A8DB68D2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68C2413EB7E00225DA4 /* CurrentChallnegeConfigurator.swift */; };
 		3A8DB68F2413F5BD00225DA4 /* DisplayLastChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB68E2413F5BD00225DA4 /* DisplayLastChallenge.swift */; };
 		3A8DB6912413F71200225DA4 /* PageNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB6902413F71200225DA4 /* PageNavigationConfigurator.swift */; };
+		3A9EBE55296BD9F500F07D0F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE54296BD9F500F07D0F /* Alamofire */; };
+		3A9EBE58296BDA6D00F07D0F /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE57296BDA6D00F07D0F /* KeychainAccess */; };
+		3A9EBE5B296BDAC000F07D0F /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */; };
+		3A9EBE61296BDB8800F07D0F /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE60296BDB8800F07D0F /* SwiftySound */; };
+		3A9EBE64296BDC2C00F07D0F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */; };
+		3A9EBE66296BDC2C00F07D0F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */; };
+		3A9EBE69296BDD1000F07D0F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */; };
 		3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9F9A6E2376FFC400022C38 /* StoreKit.framework */; };
 		3A9F9A72237709B300022C38 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A71237709B300022C38 /* LoseViewController.swift */; };
 		3A9F9A74237709BD00022C38 /* LosePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F9A73237709BD00022C38 /* LosePresenter.swift */; };
@@ -297,7 +303,6 @@
 		3A7EC84C246192E3001EFC05 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		3A7EC84E246197BD001EFC05 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		3A7EC87F24669F52001EFC05 /* SettingsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionView.swift; sourceTree = "<group>"; };
-		3A8DB6672410D07600225DA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3A8DB66B2410D7F900225DA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DB68324117E1700225DA4 /* CreateChallengeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeConfigurator.swift; sourceTree = "<group>"; };
 		3A8DB6872413B05C00225DA4 /* StartChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChallenge.swift; sourceTree = "<group>"; };
@@ -380,6 +385,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9F9A6F2376FFC400022C38 /* StoreKit.framework in Frameworks */,
+				3A9EBE61296BDB8800F07D0F /* SwiftySound in Frameworks */,
+				3A9EBE64296BDC2C00F07D0F /* FirebaseAnalytics in Frameworks */,
+				3A9EBE66296BDC2C00F07D0F /* FirebaseCrashlytics in Frameworks */,
+				3A9EBE69296BDD1000F07D0F /* GoogleMobileAds in Frameworks */,
+				3A9EBE5B296BDAC000F07D0F /* RswiftLibrary in Frameworks */,
+				3A9EBE55296BD9F500F07D0F /* Alamofire in Frameworks */,
+				3A9EBE58296BDA6D00F07D0F /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +672,6 @@
 		3A47D67A230F1E3A00B2B200 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3A8DB6672410D07600225DA4 /* R.generated.swift */,
 				3A60A92F23336E9D0037E0A4 /* Sounds */,
 				3A15514A232B7C8300265B89 /* R+Shortcuts.swift */,
 				3A47D662230F18FC00B2B200 /* Assets.xcassets */,
@@ -1175,18 +1186,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A47D66A230F18FC00B2B200 /* Build configuration list for PBXNativeTarget "Disciplinizer" */;
 			buildPhases = (
-				3A008BDE231FCCC600B9286B /* R.Swift */,
 				3A47D654230F18FB00B2B200 /* Sources */,
 				3A47D655230F18FB00B2B200 /* Frameworks */,
 				3A47D656230F18FB00B2B200 /* Resources */,
-				3A11B5AB2315B268007B1D54 /* SwiftLint */,
 				3A5AF906240D7CF900597FA6 /* Crashlytics */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3A9EBE5D296BDADE00F07D0F /* PBXTargetDependency */,
 			);
 			name = Disciplinizer;
+			packageProductDependencies = (
+				3A9EBE54296BD9F500F07D0F /* Alamofire */,
+				3A9EBE57296BDA6D00F07D0F /* KeychainAccess */,
+				3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */,
+				3A9EBE60296BDB8800F07D0F /* SwiftySound */,
+				3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */,
+				3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */,
+				3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */,
+			);
 			productName = Disciplinizer;
 			productReference = 3A47D658230F18FB00B2B200 /* Disciplinizer.app */;
 			productType = "com.apple.product-type.application";
@@ -1244,6 +1263,14 @@
 				ru,
 			);
 			mainGroup = 3A47D64F230F18FB00B2B200;
+			packageReferences = (
+				3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */,
+				3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */,
+				3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 3A47D659230F18FB00B2B200 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1308,44 +1335,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A008BDE231FCCC600B9286B /* R.Swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = R.Swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-		3A11B5AB2315B268007B1D54 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
-		};
 		3A5AF906240D7CF900597FA6 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1500,7 +1489,6 @@
 				3A47D65C230F18FB00B2B200 /* AppDelegate.swift in Sources */,
 				3A0742B6241E5BC3003B1A83 /* ChallengeParametersGatewayProtocol.swift in Sources */,
 				3ACD2C50240C2D730017FABC /* DataBaseSchema.xcdatamodeld in Sources */,
-				3A8DB6682410D07600225DA4 /* R.generated.swift in Sources */,
 				3A2F57312311B5BF00212317 /* AlertPresenter.swift in Sources */,
 				3AA1A1042454373D00955BD5 /* ChallengeParameterView.swift in Sources */,
 				3AE4E628246DBF21004C4D38 /* RootViewController.swift in Sources */,
@@ -1540,6 +1528,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3A9EBE5D296BDADE00F07D0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 3A9EBE5C296BDADE00F07D0F /* RswiftGenerateInternalResources */;
+		};
 		3ACD2C8A240CD6210017FABC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A47D657230F18FB00B2B200 /* Disciplinizer */;
@@ -1726,6 +1718,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1747,6 +1740,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1875,6 +1869,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonkliukin.disciplinizer;
 				PRODUCT_NAME = Disciplinizer;
 				SWIFT_VERSION = 5.0;
@@ -1938,6 +1933,99 @@
 			defaultConfigurationName = Test;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A9EBE54296BD9F500F07D0F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE53296BD9F500F07D0F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3A9EBE57296BDA6D00F07D0F /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE56296BDA6D00F07D0F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		3A9EBE5A296BDAC000F07D0F /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE59296BDAC000F07D0F /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		3A9EBE5C296BDADE00F07D0F /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		3A9EBE60296BDB8800F07D0F /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE5F296BDB8800F07D0F /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+		3A9EBE63296BDC2C00F07D0F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3A9EBE65296BDC2C00F07D0F /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE62296BDC2C00F07D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		3A9EBE68296BDD1000F07D0F /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9EBE67296BDD1000F07D0F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3ACD2C48240C2D730017FABC /* DataBaseSchema.xcdatamodeld */ = {
